@@ -6,12 +6,12 @@
       items:
         - name: Altri metodi di installazione
           href: other-install.md
-    - name: Introduzione
+    - name: Attività iniziali
       href: get-started-azureps.md
     - name: Accesso
       href: authenticate-azureps.md
       items:
-        - name: Creare un’entità servizio
+        - name: Creare un'entità servizio
           href: create-azure-service-principal-azureps.md
     - name: Query
       href: queries-azureps.md
