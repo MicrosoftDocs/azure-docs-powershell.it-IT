@@ -1,6 +1,6 @@
 ---
 title: Log delle modifiche di Azure PowerShell | Microsoft Docs
-description: "Questa è una cronologia delle modifiche apportate ad Azure PowerShell nella versione più recente."
+description: Questa è una cronologia delle modifiche apportate ad Azure PowerShell nella versione più recente.
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -9,13 +9,13 @@ ms.service: azure-powershell
 ms.product: azure
 ms.devlang: powershell
 ms.topic: conceptual
-ms.workload: 
+ms.workload: ''
 ms.date: 05/18/2017
 ms.openlocfilehash: 04f89e8d47d0825d46cb1b8817efbcc0cafa0acd
-ms.sourcegitcommit: b256bf48e15ee98865de0fae50e7b81878b03a54
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="release-notes"></a>Note sulla versione
 
@@ -34,7 +34,7 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
     + RServer è ora un'opzione di configurazione in Add-AzureRmHDInsightConfigValues. Permette l'impostazione del flag RStudio per indicare che è necessario eseguire l'installazione di R Studio.
 * LogicApp
   - I cmdlet Set-AzureRmIntegrationAccountSchema e Set-AzureRmIntegrationAccountMap sono stati corretti per quanto riguarda il problema relativo a contentLink (impostazione simultanea di content e contentLink, che produce un errore di aggiornamento).
-* Network
+* Rete
   - Aggiunta del supporto per nuove funzionalità del firewall applicazione Web ai gateway applicazione
     + Aggiunta di New-AzureRmApplicationGatewayFirewallDisabledRuleGroupConfig
     + Aggiunta di Get-AzureRmApplicationGatewayAvailableWafRuleSets (alias: List-AzureRmApplicationGatewayAvailableWafRuleSets)

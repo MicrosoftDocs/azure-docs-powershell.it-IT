@@ -1,6 +1,6 @@
 ---
 title: Log delle modifiche di Azure PowerShell | Microsoft Docs
-description: "Questa è una cronologia delle modifiche apportate ad Azure PowerShell nella versione più recente."
+description: Questa è una cronologia delle modifiche apportate ad Azure PowerShell nella versione più recente.
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -9,13 +9,13 @@ ms.service: azure-powershell
 ms.product: azure
 ms.devlang: powershell
 ms.topic: conceptual
-ms.workload: 
+ms.workload: ''
 ms.date: 07/26/2017
 ms.openlocfilehash: d8a891673df343551cbd805016c2d25ee4e31c8c
-ms.sourcegitcommit: e6b7e20bbd04eda51416c56b13f867102b602d1a
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/07/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="release-notes"></a>Note sulla versione
 
@@ -230,7 +230,7 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
   * Esposizione di MaintenanceRedeployStatus nell'output -Status di Get-AzureRmVM
   * Esposizione di restrizioni e funzionalità per il formato di tabella di Get-AzureRmComputeResourceSku
 * DataLakeStore
-  * Correzione del problema: https://github.com/Azure/azure-powershell/issues/4323
+  * Correzione per il problema: https://github.com/Azure/azure-powershell/issues/4323
 * Hub eventi
   * Aggiunta della proprietà ResourceGroup a NamespaceAttributes
     - 'ResourceGroup' ottiene il nome del gruppo di risorse in cui si trova lo spazio dei nomi
@@ -315,7 +315,7 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
         - Introduzione dell'API per recuperare il log del server di Analysis Services, Export-AzureAnalysisServicesInstanceLog
 * Automazione
     * Impostazione corretta del valore TimeZone per le pianificazioni settimanale e mensile per New-AzureRmAutomationSchedule
-        - Altre informazioni sono disponibili in questo problema: https://github.com/Azure/azure-powershell/issues/3043
+        - Per altre informazioni, vedere questo problema: https://github.com/Azure/azure-powershell/issues/3043
 * AzureBatch
     - Aggiunta del nuovo cmdlet Get-AzureBatchJobPreparationAndReleaseTaskStatus.
     - Aggiunta di inizio e fine dell'intervallo di byte ai parametri per Get-AzureBatchNodeFileContent.
@@ -437,7 +437,7 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
         - Get-AzureRmVirtualNetworkUsageList
 * Profilo
     * Correzione dell'errore che si verifica durante l'uso di Import-AzureRmContext o Save-AzureRmContext
-        - Altre informazioni sono disponibili in questo problema: https://github.com/Azure/azure-powershell/issues/3954
+        - Per altre informazioni, vedere questo problema: https://github.com/Azure/azure-powershell/issues/3954
 * RecoveryServices.SiteRecovery
     * Introduzione di un nuovo modulo per le operazioni su Azure Site Recovery.
         - Tutti i cmdlet iniziano con AzureRmRecoveryServicesAsr*
@@ -447,7 +447,7 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
     * I cmdlet di aggiornamento del server sono deprecati perché la versione precedente del server (2.0) non esiste più.
     * Aggiunta del nuovo parametro facoltativo "AssignIdentity" ai cmdlet New-AzureRmSqlServer e Set-AzureRmSqlServer per supportare il provisioning di un'identità per la risorsa SQL Server
     * Il parametro ResourceGroupName è ora facoltativo per Get-AzureRmSqlServer
-        - Altre informazioni sono disponibili nel problema seguente: https://github.com/Azure/azure-powershell/issues/635
+        - Per altre informazioni, vedere il problema seguente: https://github.com/Azure/azure-powershell/issues/635
 * ServiceManagement per ExpressRoute:
     * Aggiornamento del cmdlet New-AzureBgpPeering per aggiungere le nuove opzioni seguenti:
         - PeerAddressType: è possibile specificare i valori "IPv4" o "IPv6" per creare un peering BGP con il tipo di famiglia di indirizzi corrispondente
@@ -554,7 +554,7 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
   - Rimozione delle proprietà DataDiskNames e NetworkInterfaceIDs duplicate dall'oggetto PS VM.
   - Rendere i parametri DataDiskNames e NetworkInterfaceIDs facoltativi, rispettivamente in Remove-AzureRmVMDataDisk e Remove-AzureRmVMNetworkInterface.
   - Correzione del problema dei pipe dei cmdlet Get nel caso in cui restituiscano un oggetto elenco.
-  - Ridenominazione dei cmdlet che erano in conflitto con i cmdlet RDFE. Per altre informazioni, vedere il problema https://github.com/Azure/azure-powershell/issues/2917
+  - Ridenominazione dei cmdlet che erano in conflitto con i cmdlet RDFE. Per maggiori dettagli, vedere il problema https://github.com/Azure/azure-powershell/issues/2917
     + `New-AzureVMSqlServerAutoBackupConfig` è stata rinominata `New-AzureRmVMSqlServerAutoBackupConfig`
     + `New-AzureVMSqlServerAutoPatchingConfig` è stata rinominata `New-AzureRmVMSqlServerAutoPatchingConfig`
     + `New-AzureVMSqlServerKeyVaultCredentialConfig` è stata rinominata `New-AzureRmVMSqlServerKeyVaultCredentialConfig`
