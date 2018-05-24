@@ -2,8 +2,8 @@
 title: Log delle modifiche di Azure PowerShell | Microsoft Docs
 description: Questa è una cronologia delle modifiche apportate ad Azure PowerShell nella versione più recente.
 services: azure
-author: sdwheeler
-ms.author: sewhee
+author: sptramer
+ms.author: sttramer
 manager: carmonm
 ms.service: azure-powershell
 ms.product: azure
@@ -11,11 +11,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 05/18/2017
-ms.openlocfilehash: 04f89e8d47d0825d46cb1b8817efbcc0cafa0acd
-ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
+ms.openlocfilehash: ec01bca961bbeebf089b4da5951f4b810ccd7a11
+ms.sourcegitcommit: 5971c92cb023bdd1d71fa2ad0a3b378abfbd092a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="release-notes"></a>Note sulla versione
 

@@ -2,19 +2,19 @@
 title: Formattazione dei risultati delle query | Microsoft Docs
 description: Come eseguire una query delle risorse in Azure e formattare i risultati.
 services: azure
-author: sdwheeler
-ms.author: sewhee
+author: sptramer
+ms.author: sttramer
 manager: carmonm
 ms.product: azure
 ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 916cf8590de89762bade4f01ce5a502383d51796
-ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
+ms.openlocfilehash: f416b2ad0bfdb7c2865d5a5fbbf2db614b356ecb
+ms.sourcegitcommit: 5971c92cb023bdd1d71fa2ad0a3b378abfbd092a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="formatting-query-results"></a>Formattazione dei risultati delle query
 

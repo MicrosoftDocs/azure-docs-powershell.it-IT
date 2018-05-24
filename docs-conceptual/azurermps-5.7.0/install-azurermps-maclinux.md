@@ -2,19 +2,19 @@
 title: Installare e configurare Azure PowerShell in macOS e Linux | Microsoft Docs
 description: Come installare e configurare Azure PowerShell per il primo uso in macOS e Linux.
 services: azure
-author: sdwheeler
-ms.author: sewhee
+author: sptramer
+ms.author: sttramer
 manager: carmonm
 ms.product: azure
 ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/12/2018
-ms.openlocfilehash: eed7a35fcf20a17c83d9e5e3272be4b77fa12c34
-ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
+ms.openlocfilehash: 7228ca9791f174cb3554dd359b3723e98589ee17
+ms.sourcegitcommit: 5971c92cb023bdd1d71fa2ad0a3b378abfbd092a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="install-and-configure-azure-powershell-on-macos-and-linux"></a>Installare e configurare Azure PowerShell in macOS e Linux
 
