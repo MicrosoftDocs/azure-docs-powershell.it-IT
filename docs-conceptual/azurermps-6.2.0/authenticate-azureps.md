@@ -1,0 +1,96 @@
+---
+title: Accedere ad Azure PowerShell
+description: Accedere ad Azure PowerShell
+services: azure
+author: sptramer
+ms.author: sttramer
+manager: carmonm
+ms.devlang: powershell
+ms.topic: conceptual
+ms.date: 05/15/2017
+ms.openlocfilehash: f7ed78f9908517661001cad7b3eeae8b732640cc
+ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34819763"
+---
+# <a name="log-in-with-azure-powershell"></a>Accedere ad Azure PowerShell
+
+Azure PowerShell supporta più metodi di accesso. Il modo più semplice per iniziare consiste nell'accedere in modo interattivo dalla riga di comando.
+
+## <a name="interactive-log-in"></a>Accesso interattivo
+
+1. Digitare `Connect-AzureRmAccount`. Apparirà una finestra di dialogo che richiede le credenziali di Azure.
+
+2. Digitare l'indirizzo di posta elettronica e la password associati all'account. Le informazioni delle credenziali vengono autenticate e salvate in Azure, quindi la finestra viene chiusa.
+
+## <a name="log-in-with-a-service-principal"></a>Accesso con un'entità servizio
+
+Le entità servizio consentono di creare account non interattivi da usare per la modifica delle risorse. Le entità servizio sono analoghe agli account utente a cui è possibile applicare delle regole mediante Azure Active Directory. Concedendo le autorizzazioni minime necessarie a un'entità servizio, è possibile garantire una sicurezza ancora maggiore agli script di automazione.
+
+1. Se non si dispone già di un'entità servizio, [crearne una](create-azure-service-principal-azureps.md).
+
+2. Accedere con l'entità servizio.
+
+    ```azurepowershell-interactive
+    Connect-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
+    ```
+
+    Per ottenere il TenantId, accedere in modo interattivo e quindi recuperare il TenantId dalla sottoscrizione.
+
+    ```azurepowershell-interactive
+    Get-AzureRmSubscription
+    ```
+
+    ```output
+    Environment           : AzureCloud
+    Account               : username@contoso.com
+    TenantId              : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+    SubscriptionId        : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+    SubscriptionName      : My Production Subscription
+    CurrentStorageAccount :
+    ```
+
+### <a name="log-in-using-an-azure-vm-managed-service-identity"></a>Accedere tramite un'Identità del servizio gestito della macchina virtuale di Azure
+
+Identità del servizio gestito è una funzionalità in anteprima di Azure Active Directory. È possibile usare un'entità servizio di Identità del servizio gestito per eseguire l'accesso e acquisire un token di accesso solo app per accedere ad altre risorse.
+
+Per altre informazioni su Identità del servizio gestito, vedere [How to use an Azure VM Managed Service Identity (MSI) for sign-in and token acquisition](/azure/active-directory/msi-how-to-get-access-token-using-msi) (Come usare un'Identità del servizio gestito della macchina virtuale di Azure per l'accesso e l'acquisizione di token).
+
+## <a name="log-in-to-another-cloud"></a>Accedere a un altro cloud
+
+I servizi cloud di Azure offrono più ambienti conformi alle norme in materia di gestione dei dati vigenti in diversi paesi. Se l'account di Azure si trova in un cloud governativo è necessario specificare l'ambiente quando si accede. Ad esempio, se l'account si trova nel cloud della Cina, accedere usando il comando seguente:
+
+```azurepowershell-interactive
+Connect-AzureRmAccount -Environment AzureChinaCloud
+```
+
+Usare il comando seguente per visualizzare un elenco degli ambienti disponibili:
+
+```azurepowershell-interactive
+Get-AzureRmEnvironment | Select-Object Name
+```
+
+```output
+Name
+----
+AzureCloud
+AzureChinaCloud
+AzureUSGovernment
+AzureGermanCloud
+```
+
+## <a name="learn-more-about-managing-azure-role-based-access"></a>Altre informazioni sulla gestione degli accessi in base al ruolo in Azure
+
+Per altre informazioni su autenticazione e gestione delle sottoscrizioni in Azure, vedere [Gestire account, sottoscrizioni e ruoli amministrativi](/azure/active-directory/role-based-access-control-configure).
+
+Cmdlet di Azure PowerShell per la gestione dei ruoli
+
+* [Get-AzureRmRoleAssignment](/powershell/module/AzureRM.Resources/Get-AzureRmRoleAssignment)
+* [Get-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/Get-AzureRmRoleDefinition)
+* [New-AzureRmRoleAssignment](/powershell/module/AzureRM.Resources/New-AzureRmRoleAssignment)
+* [New-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/New-AzureRmRoleDefinition)
+* [Remove-AzureRmRoleAssignment](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleAssignment)
+* [Remove-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleDefinition)
+* [Set-AzureRmRoleDefinition](/powershell/moduel/AzureRM.Resources/Set-AzureRmRoleDefinition)
