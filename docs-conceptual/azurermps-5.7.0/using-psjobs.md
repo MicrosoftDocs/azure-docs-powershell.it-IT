@@ -1,19 +1,18 @@
 ---
 title: Esecuzione in parallelo dei cmdlet tramite processi di PowerShell
 description: Come eseguire i cmdlet in parallelo tramite il parametro -AsJob.
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/11/2017
-ms.openlocfilehash: df64fabe95b927551c10196d7b6b26a8f400335d
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: a986824d952ccf6cd52dc86418899f3805a38973
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34820273"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323493"
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>Esecuzione in parallelo dei cmdlet tramite processi di PowerShell
 
@@ -24,14 +23,14 @@ Azure PowerShell dipende in modo significativo dall'effettuazione e dall'attesa 
 
 I processi di PowerShell vengono eseguiti in processi separati. È quindi necessario che le informazioni sulla connessione di Azure siano condivise correttamente con i processi creati. Al momento della connessione dell'account Azure alla sessione di PowerShell con `Connect-AzureRmAccount`, è possibile passare il contesto a un processo.
 
-```powershell
+```azurepowershell-interactive
 $creds = Get-Credential
 $job = Start-Job { param($context,$vmadmin) New-AzureRmVM -Name MyVm -AzureRmContext $context -Credential $vmadmin} -Arguments (Get-AzureRmContext),$creds
 ```
 
 Se tuttavia si ha scelto di salvare automaticamente il contesto con `Enable-AzureRmContextAutosave`, il contesto viene condiviso automaticamente con qualsiasi processo creato.
 
-```powershell
+```azurepowershell-interactive
 Enable-AzureRmContextAutosave
 $creds = Get-Credential
 $job = Start-Job { param($vmadmin) New-AzureRmVM -Name MyVm -Credential $vmadmin} -Arguments $creds
@@ -42,19 +41,19 @@ $job = Start-Job { param($vmadmin) New-AzureRmVM -Name MyVm -Credential $vmadmin
 Per comodità, Azure PowerShell fornisce anche un'opzione `-AsJob` per alcuni cmdlet a esecuzione prolungata.
 L'opzione `-AsJob` semplifica la creazione di processi di PowerShell.
 
-```powershell
+```azurepowershell-interactive
 $creds = Get-Credential
 $job = New-AzureRmVM -Name MyVm -Credential $creds -AsJob
 ```
 
 È possibile esaminare il processo e il rispettivo stato in qualsiasi momento con `Get-Job` e `Get-AzureRmVM`.
 
-```powershell
+```azurepowershell-interactive
 Get-Job $job
 Get-AzureRmVM MyVm
 ```
 
-```Output
+```output
 Id Name                                       PSJobTypeName         State   HasMoreData Location  Command
 -- ----                                       -------------         -----   ----------- --------  -------
 1  Long Running Operation for 'New-AzureRmVM' AzureLongRunningJob`1 Running True        localhost New-AzureRmVM
@@ -70,12 +69,12 @@ Dopo il completamento, è possibile ottenere il risultato del processo con `Rece
 > `Receive-Job` restituisce il risultato dal cmdlet come se il flag `-AsJob` non fosse presente.
 > Ad esempio, il risultato `Receive-Job` di `Do-Action -AsJob` è dello stesso tipo del risultato di `Do-Action`.
 
-```powershell
+```azurepowershell-interactive
 $vm = Receive-Job $job
 $vm
 ```
 
-```Output
+```output
 ResourceGroupName        : MyVm
 Id                       : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/MyVm/providers/Microsoft.Compute/virtualMachines/MyVm
 VmId                     : dff1f79e-a8f7-4664-ab72-0ec28b9fbb5b
@@ -95,7 +94,7 @@ FullyQualifiedDomainName : myvmmyvm.eastus.cloudapp.azure.com
 
 Creare più VM contemporaneamente.
 
-```powershell
+```azurepowershell-interactive
 $creds = Get-Credential
 # Create 10 jobs.
 for($k = 0; $k -lt 10; $k++) {
@@ -110,7 +109,7 @@ Get-AzureRmVM
 
 In questo esempio il cmdlet `Wait-Job` provoca la sospensione dello script durante l'esecuzione del processo. L'esecuzione dello script continua dopo il completamento di tutti i processi. Ciò permette di creare alcuni processi in esecuzione in parallelo e quindi di attendere il completamento prima di continuare.
 
-```Output
+```output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
 2      Long Running... AzureLongRun... Running       True            localhost            New-AzureRmVM

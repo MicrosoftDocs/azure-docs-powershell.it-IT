@@ -2,19 +2,18 @@
 title: Creare un'entità servizio di Azure con Azure PowerShell
 description: Informazioni su come creare un'entità servizio per un'app o un servizio con Azure PowerShell.
 keywords: Azure PowerShell, Azure Active Directory, Azure AD, AD, Controllo degli accessi in base al ruolo
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: 616f4cc4ca634261450f277a8ac3bac516d8eeaf
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: bc6cfb64568df3446df924a5df76b6bb84dba2d0
+ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821820"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "34853747"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Creare un'entità servizio di Azure con Azure PowerShell
 
