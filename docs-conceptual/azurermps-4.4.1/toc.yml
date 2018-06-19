@@ -17,25 +17,25 @@
       items:
         - name: Creare un'entità servizio
           href: create-azure-service-principal-azureps.md
-        - name: Uso di credenziali persistenti
+        - name: Credenziali persistenti
           href: context-persistence.md
     - name: Query
       href: queries-azureps.md
-    - name: Formattazione
+    - name: Formattare l'output
       href: formatting-output.md
-    - name: Sottoscrizioni
+    - name: Gestisci sottoscrizioni
       href: manage-subscriptions-azureps.md
     - name: Distribuire
       items:
-        - name: Eseguire la distribuzione usando i modelli di Resource Manager
+        - name: Distribuire i modelli di Resource Manager
           href: /azure/azure-resource-manager/resource-group-template-deploy
         - name: Esportare i modelli di Resource Manager
           href: /azure/azure-resource-manager/resource-manager-export-template-powershell
-        - name: Distribuire un modello di Resource Manager privato con un token SAS
+        - name: Distribuire i modelli privati di Resource Manager
           href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
     - name: Concetti
       items:
-        - name: Uso di moduli sperimentali
+        - name: Moduli sperimentali
           href: using-experimental-modules.md
     - name: Note sulla versione
       href: release-notes-azureps.md

@@ -1,25 +1,32 @@
 ---
-title: Introduzione ad Azure PowerShell | Microsoft Docs
+title: guida introduttiva ad Azure PowerShell
 description: ''
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: d43323ca696ed115a86e7502a3bac829118028e4
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: cfb7ff30b442bb345931728dab131e1b80e58989
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821038"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323374"
 ---
-# <a name="getting-started-with-azure-powershell"></a>Introduzione ad Azure PowerShell
+# <a name="get-started-with-azure-powershell"></a>guida introduttiva ad Azure PowerShell
 
-Azure PowerShell è progettato per la gestione e l'amministrazione delle risorse di Azure dalla riga di comando e per la creazione di script di automazione che funzionano con Azure Resource Manager. È possibile usarlo nel browser con [Azure Cloud Shell](/azure/cloud-shell/overview) oppure installarlo nel computer locale e usarlo in una sessione di PowerShell. Questo articolo offre un'introduzione all'uso e ne illustra i concetti di base.
+Azure PowerShell è progettato per la gestione e l'amministrazione delle risorse di Azure dalla riga di comando e per la creazione di script di automazione che funzionano con Azure Resource Manager. È possibile usarlo nel browser con [Azure Cloud Shell](/azure/cloud-shell/overview) oppure installarlo nel computer locale. Questo articolo consente di iniziare a usare Azure PowerShell e ne illustra i concetti fondamentali.
 
-## <a name="connect"></a>Connettere
+## <a name="install-azure-powershell"></a>Installare Azure PowerShell
+
+Verificare di aver installato l'ultima versione di Azure PowerShell. Per informazioni sulla versione più recente, vedere le [note sulla versione](./release-notes-azureps.md).
+
+1. [Installare Azure PowerShell](install-azurerm-ps.md).
+
+2. Per verificare che l'installazione sia riuscita, eseguire `Get-Module AzureRM -ListAvailable` dalla riga di comando.
+
+## <a name="azure-cloud-shell"></a>Azure Cloud Shell 
 
 Il modo più semplice per iniziare è [avviare Cloud Shell](/azure/cloud-shell/quickstart).
 
@@ -37,15 +44,7 @@ Dopo aver creato lo spazio di archiviazione, Cloud Shell aprirà una sessione di
 
 È anche possibile installare Azure PowerShell e usarlo in locale in una sessione di PowerShell.
 
-## <a name="install-azure-powershell"></a>Installare Azure PowerShell
-
-Verificare di aver installato l'ultima versione di Azure PowerShell. Per informazioni sulla versione più recente, vedere le [note sulla versione](./release-notes-azureps.md).
-
-1. [Installare Azure PowerShell](install-azurerm-ps.md).
-
-2. Per verificare che l'installazione sia riuscita, eseguire `Get-Module AzureRM -ListAvailable` dalla riga di comando.
-
-## <a name="log-in-to-azure"></a>Accedere ad Azure
+## <a name="sign-in-to-azure"></a>Accedere ad Azure
 
 Accedere in modo interattivo:
 
@@ -63,11 +62,11 @@ Il cmdlet `New-AzureRmVM` offre una sintassi semplificata, per facilitare la cre
 
 Creare prima di tutto l'oggetto credenziali.
 
-```powershell
+```azurepowershell-interactive
 $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
 ```
 
-```Output
+```output
 Windows PowerShell credential request.
 Enter a username and password for the virtual machine.
 User: localAdmin
@@ -75,11 +74,11 @@ Password for user localAdmin: *********
 ```
 Creare quindi la macchina virtuale.
 
-```powershell
+```azurepowershell-interactive
 New-AzureRmVM -Name SampleVM -Credential $cred
 ```
 
-```Output
+```output
 ResourceGroupName        : SampleVM
 Id                       : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/SampleVM/providers/Microsoft.Compute/virtualMachines/SampleVM
 VmId                     : 43f6275d-ce50-49c8-a831-5d5974006e63
@@ -97,11 +96,11 @@ FullyQualifiedDomainName : samplevm-2c0867.eastus.cloudapp.azure.com
 
 La procedura è semplice. Ma è possibile che ci si domandi se vengono creati altri elementi e come viene configurata la macchina virtuale. È possibile esaminare prima di tutto il gruppo di risorse.
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmResourceGroup | Select-Object ResourceGroupName,Location
 ```
 
-```Output
+```output
 ResourceGroupName          Location
 -----------------          --------
 cloud-shell-storage-westus westus
@@ -112,13 +111,13 @@ Il gruppo di risorse **cloud-shell-storage-westus** viene creato quando si usa C
 
 Occorre verificare quali altre risorse vengono create nel nuovo gruppo di risorse.
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmResource |
   Where ResourceGroupName -eq SampleVM |
     Select-Object ResourceGroupName,Location,ResourceType,Name
 ```
 
-```Output
+```output
 ResourceGroupName          Location ResourceType                            Name
 -----------------          -------- ------------                            ----
 SAMPLEVM                   eastus   Microsoft.Compute/disks                 SampleVM_OsDisk_1_9b286c54b168457fa1f8c47...
@@ -131,13 +130,13 @@ SampleVM                   eastus   Microsoft.Network/virtualNetworks       Samp
 
 È possibile ottenere altri dettagli sulla macchina virtuale. Questo esempio mostra come recuperare informazioni sull'immagine del sistema operativo usata per creare la macchina virtuale.
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmVM -Name SampleVM -ResourceGroupName SampleVM |
   Select-Object -ExpandProperty StorageProfile |
     Select-Object -ExpandProperty ImageReference
 ```
 
-```Output
+```output
 Publisher : MicrosoftWindowsServer
 Offer     : WindowsServer
 Sku       : 2016-Datacenter
@@ -155,11 +154,11 @@ Per questo esempio si vuole creare un gruppo di risorse. I gruppi di risorse di 
 
 Creare un gruppo di risorse denominato "MyResourceGroup" nell'area westeurope di Azure. A questo scopo, usare il comando seguente:
 
-```powershell
+```azurepowershell-interactive
 New-AzureRmResourceGroup -Name 'myResourceGroup' -Location 'westeurope'
 ```
 
-```Output
+```output
 ResourceGroupName : myResourceGroup
 Location          : westeurope
 ProvisioningState : Succeeded
@@ -173,7 +172,7 @@ Il nuovo gruppo di risorse verrà usato per includere tutte le risorse necessari
 
 È prima necessario creare una configurazione di subnet da usare con il processo di creazione della rete virtuale. Si crea anche un indirizzo IP pubblico in modo che sia possibile connettersi a questa macchina virtuale. Si crea quindi un gruppo di sicurezza di rete per proteggere l'accesso all'indirizzo pubblico. Infine si crea la scheda di interfaccia di rete virtuale usando tutte le risorse precedenti.
 
-```powershell
+```azurepowershell-interactive
 # Variables for common values
 $resourceGroup = "myResourceGroup"
 $location = "westeurope"
@@ -213,7 +212,7 @@ $nic = New-AzureRmNetworkInterface -Name myNic2 -ResourceGroupName $resourceGrou
 
 Le risorse necessarie sono ora disponibili, quindi è possibile creare l'oggetto configurazione della macchina virtuale.
 
-```powershell
+```azurepowershell-interactive
 # Create a virtual machine configuration
 $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
   Set-AzureRmVMOperatingSystem -Linux -ComputerName $vmName -Credential $cred -DisablePasswordAuthentication |
@@ -221,7 +220,7 @@ $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
   Add-AzureRmVMNetworkInterface -Id $nic.Id
 
 # Configure SSH Keys
-$sshPublicKey = Get-Content "$env:USERPROFILE\.ssh\id_rsa.pub"
+$sshPublicKey = Get-Content -Raw "$env:USERPROFILE\.ssh\id_rsa.pub"
 Add-AzureRmVMSshPublicKey -VM $vmConfig -KeyData $sshPublicKey -Path "/home/azureuser/.ssh/authorized_keys"
 ```
 
@@ -229,7 +228,7 @@ Add-AzureRmVMSshPublicKey -VM $vmConfig -KeyData $sshPublicKey -Path "/home/azur
 
 È ora possibile creare la macchina virtuale usando l'oggetto configurazione della macchina virtuale.
 
-```powershell
+```azurepowershell-interactive
 New-AzureRmVM -ResourceGroupName $resourceGroup -Location $location -VM $vmConfig
 ```
 
@@ -239,7 +238,7 @@ Ora che la macchina virtuale è stata creata, è possibile accedere alla nuova m
 ssh xx.xxx.xxx.xxx
 ```
 
-```Output
+```output
 Welcome to Ubuntu 14.04.4 LTS (GNU/Linux 3.19.0-65-generic x86_64)
 
  * Documentation:  https://help.ubuntu.com/
@@ -276,13 +275,13 @@ my-login@MyLinuxVM:../../..$
 
 Ad esempio, per creare un bilanciamento del carico di rete di Azure da associare alle macchine virtuali appena create, si può usare il comando seguente:
 
-```powershell
+```azurepowershell-interactive
 New-AzureRmLoadBalancer -Name MyLoadBalancer -ResourceGroupName myResourceGroup -Location westeurope
 ```
 
 È anche possibile creare una nuova rete virtuale privata (nota come "VNet" all'interno di Azure) per l'infrastruttura usando il comando seguente:
 
-```powershell
+```azurepowershell-interactive
 $subnetConfig = New-AzureRmVirtualNetworkSubnetConfig -Name mySubnet2 -AddressPrefix 10.0.0.0/16
 $vnet = New-AzureRmVirtualNetwork -ResourceGroupName myResourceGroup -Location westeurope `
   -Name MYvNET3 -AddressPrefix 10.0.0.0/16 -Subnet $subnetConfig
@@ -292,7 +291,7 @@ Ciò che rende potenti Azure e Azure PowerShell è la possibilità di usarli non
 
 Ad esempio, è possibile usare Azure Powershell per creare un servizio app di Azure. Il servizio app di Azure è un servizio di piattaforma gestito che consente di eseguire l'hosting di app Web senza doversi preoccupare dell'infrastruttura. Dopo aver creato il servizio app di Azure, è possibile creare due nuove app Web di Azure all'interno del servizio app usando i comandi seguenti:
 
-```powershell
+```azurepowershell-interactive
 # Create an Azure AppService that we can host any number of web apps within
 New-AzureRmAppServicePlan -Name MyAppServicePlan -Tier Basic -NumberofWorkers 2 -WorkerSize Small -ResourceGroupName myResourceGroup -Location westeurope
 
@@ -305,13 +304,13 @@ New-AzureRmWebApp -Name MyWebApp43433 -AppServicePlan MyAppServicePlan -Resource
 
 È possibile usare il cmdlet `Get-AzureRmResource` per elencare le risorse in esecuzione in Azure. L'esempio seguente illustra le risorse appena create nel nuovo gruppo di risorse.
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmResource |
   Where-Object ResourceGroupName -eq myResourceGroup |
     Select-Object Name,Location,ResourceType
 ```
 
-```Output
+```output
 Name                                                  Location   ResourceType
 ----                                                  --------   ------------
 myLinuxVM_OsDisk_1_36ca038791f642ba91270879088c249a   westeurope Microsoft.Compute/disks
@@ -334,13 +333,13 @@ micromyresomywi032907510                              westeurope Microsoft.Stora
 
 Per eseguire la pulizia dell'account Azure, si dovranno rimuovere le risorse create in questo esempio. Per eliminare le risorse non più necessarie, si può usare il cmdlet `Remove-AzureRm*`. Per rimuovere la macchina virtuale Windows creata, usare il comando seguente:
 
-```powershell
+```azurepowershell-interactive
 Remove-AzureRmVM -Name myWindowsVM -ResourceGroupName myResourceGroup
 ```
 
 Verrà richiesto di confermare l'eliminazione delle risorse specificate.
 
-```Output
+```output
 Confirm
 Are you sure you want to remove resource group 'myResourceGroup'
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
@@ -348,11 +347,11 @@ Are you sure you want to remove resource group 'myResourceGroup'
 
 È anche possibile eliminare più risorse contemporaneamente. Ad esempio, il comando seguente elimina l'intero gruppo di risorse "MyResourceGroup" che abbiamo usato per tutti gli esempi di questa esercitazione introduttiva. Il comando elimina il gruppo di risorse e tutte le altre risorse in esso contenute.
 
-```powershell
+```azurepowershell-interactive
 Remove-AzureRmResourceGroup -Name myResourceGroup
 ```
 
-```Output
+```output
 Confirm
 Are you sure you want to remove resource group 'myResourceGroup'
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y

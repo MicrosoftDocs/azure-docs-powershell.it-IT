@@ -1,25 +1,24 @@
 ---
-title: Query per le risorse di Azure e formattazione dei risultati | Microsoft Docs
+title: Output delle query dei cmdlet di Azure PowerShell
 description: Come eseguire una query delle risorse in Azure e formattare i risultati.
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/30/2017
-ms.openlocfilehash: dde1702f512be70ece137059797e29c75926e231
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.date: 06/08/2018
+ms.openlocfilehash: daa39ada5b4e969264b6e8596dc7b090bb196fd5
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34820307"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323085"
 ---
-# <a name="querying-for-azure-resources"></a>Query per le risorse di Azure
+# <a name="query-output-of-azure-powershell-cmdlets"></a>Output delle query dei cmdlet di Azure PowerShell
 
 Usando i cmdlet incorporati è possibile eseguire una query in PowerShell. In PowerShell, i nomi dei cmdlet assumono la forma di **_verbo-sostantivo_**. I cmdlet che usano il verbo **_Get_**(ottenere) sono cmdlet di query. I sostantivi dei cmdlet sono i tipi di risorse di Azure che vengono ignorati per i verbi di cmdlet.
 
-## <a name="selecting-simple-properties"></a>Selezione di proprietà semplici
+## <a name="select-simple-properties"></a>Selezionare proprietà semplici
 
 Azure PowerShell include la formattazione predefinita definita per ciascun cmdlet. Le proprietà più comuni per ogni tipo di risorsa vengono visualizzate automaticamente in formato di tabella o elenco. Per altre informazioni sulla formattazione dell'output, vedere [Formattazione dei risultati delle query](formatting-output.md).
 
@@ -51,7 +50,7 @@ MyUnbuntu1610 MYWESTEURG        westeurope
 MyWin2016VM   MYWESTEURG        westeurope
 ```
 
-## <a name="selecting-complex-nested-properties"></a>Selezione di proprietà nidificate complesse
+## <a name="select-complex-nested-properties"></a>Selezionare proprietà annidate complesse
 
 Se la proprietà che si desidera selezionare è annidata nell'output JSON sarà necessario fornire il percorso completo di tale proprietà annidata. L'esempio seguente illustra come selezionare il nome della macchina virtuale e il tipo di sistema operativo dal cmdlet `Get-AzureRmVM`.
 
@@ -66,7 +65,7 @@ MyUnbuntu1610   Linux
 MyWin2016VM   Windows
 ```
 
-## <a name="filter-result-using-the-where-object-cmdlet"></a>Filtrare i risultati usando il cmdlet Where-Object
+## <a name="filter-results-with-the-where-object-cmdlet"></a>Filtrare i risultati con il cmdlet Where-Object
 
 Il cmdlet `Where-Object` consente di filtrare i risultati in base a qualsiasi valore della proprietà. Nell'esempio seguente, il filtro consente di selezionare solo le macchine virtuali con il testo "RGD" nel nome.
 
