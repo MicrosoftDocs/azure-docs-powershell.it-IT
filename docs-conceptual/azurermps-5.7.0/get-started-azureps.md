@@ -1,85 +1,84 @@
 ---
-title: Introduzione ad Azure PowerShell | Microsoft Docs
+title: guida introduttiva ad Azure PowerShell
 description: ''
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: d43323ca696ed115a86e7502a3bac829118028e4
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: cfb7ff30b442bb345931728dab131e1b80e58989
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821038"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323374"
 ---
-# <a name="getting-started-with-azure-powershell"></a><span data-ttu-id="89ec9-102">Introduzione ad Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="89ec9-102">Getting started with Azure PowerShell</span></span>
+# <a name="get-started-with-azure-powershell"></a><span data-ttu-id="20d11-102">guida introduttiva ad Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="20d11-102">Get started with Azure PowerShell</span></span>
 
-<span data-ttu-id="89ec9-103">Azure PowerShell è progettato per la gestione e l'amministrazione delle risorse di Azure dalla riga di comando e per la creazione di script di automazione che funzionano con Azure Resource Manager.</span><span class="sxs-lookup"><span data-stu-id="89ec9-103">Azure PowerShell is designed for managing and administering Azure resources from the command line, and for building automation scripts that work against the Azure Resource Manager.</span></span> <span data-ttu-id="89ec9-104">È possibile usarlo nel browser con [Azure Cloud Shell](/azure/cloud-shell/overview) oppure installarlo nel computer locale e usarlo in una sessione di PowerShell.</span><span class="sxs-lookup"><span data-stu-id="89ec9-104">You can use it in your browser with [Azure Cloud Shell](/azure/cloud-shell/overview), or you can install it on your local machine and use it in any PowerShell session.</span></span> <span data-ttu-id="89ec9-105">Questo articolo offre un'introduzione all'uso e ne illustra i concetti di base.</span><span class="sxs-lookup"><span data-stu-id="89ec9-105">This article helps get you started using it, and teaches you the core concepts behind it.</span></span>
+<span data-ttu-id="20d11-103">Azure PowerShell è progettato per la gestione e l'amministrazione delle risorse di Azure dalla riga di comando e per la creazione di script di automazione che funzionano con Azure Resource Manager.</span><span class="sxs-lookup"><span data-stu-id="20d11-103">Azure PowerShell is designed for managing and administering Azure resources from the command line, and for building automation scripts that work against the Azure Resource Manager.</span></span> <span data-ttu-id="20d11-104">È possibile usarlo nel browser con [Azure Cloud Shell](/azure/cloud-shell/overview) oppure installarlo nel computer locale.</span><span class="sxs-lookup"><span data-stu-id="20d11-104">You can use it in your browser with [Azure Cloud Shell](/azure/cloud-shell/overview) or you install it on your local machine.</span></span> <span data-ttu-id="20d11-105">Questo articolo consente di iniziare a usare Azure PowerShell e ne illustra i concetti fondamentali.</span><span class="sxs-lookup"><span data-stu-id="20d11-105">This article helps get you started with Azure PowerShell and teaches the core concepts behind it.</span></span>
 
-## <a name="connect"></a><span data-ttu-id="89ec9-106">Connettere</span><span class="sxs-lookup"><span data-stu-id="89ec9-106">Connect</span></span>
+## <a name="install-azure-powershell"></a><span data-ttu-id="20d11-106">Installare Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="20d11-106">Install Azure PowerShell</span></span>
 
-<span data-ttu-id="89ec9-107">Il modo più semplice per iniziare è [avviare Cloud Shell](/azure/cloud-shell/quickstart).</span><span class="sxs-lookup"><span data-stu-id="89ec9-107">The simplest way to get started is to [launch Cloud Shell](/azure/cloud-shell/quickstart).</span></span>
+<span data-ttu-id="20d11-107">Verificare di aver installato l'ultima versione di Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="20d11-107">The first step is to make sure you have the latest version of the Azure PowerShell installed.</span></span> <span data-ttu-id="20d11-108">Per informazioni sulla versione più recente, vedere le [note sulla versione](./release-notes-azureps.md).</span><span class="sxs-lookup"><span data-stu-id="20d11-108">For information about the latest release, see the [release notes](./release-notes-azureps.md).</span></span>
 
-1. <span data-ttu-id="89ec9-108">Avviare Cloud Shell dal riquadro di spostamento in alto nel portale di Azure.</span><span class="sxs-lookup"><span data-stu-id="89ec9-108">Launch Cloud Shell from the top navigation of the Azure portal.</span></span>
+1. <span data-ttu-id="20d11-109">[Installare Azure PowerShell](install-azurerm-ps.md).</span><span class="sxs-lookup"><span data-stu-id="20d11-109">[Install Azure PowerShell](install-azurerm-ps.md).</span></span>
+
+2. <span data-ttu-id="20d11-110">Per verificare che l'installazione sia riuscita, eseguire `Get-Module AzureRM -ListAvailable` dalla riga di comando.</span><span class="sxs-lookup"><span data-stu-id="20d11-110">To verify the installation was successful, run `Get-Module AzureRM -ListAvailable` from your command line.</span></span>
+
+## <a name="azure-cloud-shell"></a><span data-ttu-id="20d11-111">Azure Cloud Shell</span><span class="sxs-lookup"><span data-stu-id="20d11-111">Azure Cloud Shell</span></span> 
+
+<span data-ttu-id="20d11-112">Il modo più semplice per iniziare è [avviare Cloud Shell](/azure/cloud-shell/quickstart).</span><span class="sxs-lookup"><span data-stu-id="20d11-112">The simplest way to get started is to [launch Cloud Shell](/azure/cloud-shell/quickstart).</span></span>
+
+1. <span data-ttu-id="20d11-113">Avviare Cloud Shell dal riquadro di spostamento in alto nel portale di Azure.</span><span class="sxs-lookup"><span data-stu-id="20d11-113">Launch Cloud Shell from the top navigation of the Azure portal.</span></span>
 
    ![Icona di Shell](~/media/get-started-azureps/shell-icon.png)
 
-2. <span data-ttu-id="89ec9-110">Scegliere la sottoscrizione da usare e creare un account di archiviazione.</span><span class="sxs-lookup"><span data-stu-id="89ec9-110">Choose the subscription you want to use and create a storage account.</span></span>
+2. <span data-ttu-id="20d11-115">Scegliere la sottoscrizione da usare e creare un account di archiviazione.</span><span class="sxs-lookup"><span data-stu-id="20d11-115">Choose the subscription you want to use and create a storage account.</span></span>
 
    ![Creare un account di archiviazione](~/media/get-started-azureps/storage-prompt.png)
 
-<span data-ttu-id="89ec9-112">Dopo aver creato lo spazio di archiviazione, Cloud Shell aprirà una sessione di PowerShell nel browser.</span><span class="sxs-lookup"><span data-stu-id="89ec9-112">Once your storage has been created, the Cloud Shell will open a PowerShell session in the browser.</span></span>
+<span data-ttu-id="20d11-117">Dopo aver creato lo spazio di archiviazione, Cloud Shell aprirà una sessione di PowerShell nel browser.</span><span class="sxs-lookup"><span data-stu-id="20d11-117">Once your storage has been created, the Cloud Shell will open a PowerShell session in the browser.</span></span>
 
 ![Cloud Shell per PowerShell](~/media/get-started-azureps/cloud-powershell.png)
 
-<span data-ttu-id="89ec9-114">È anche possibile installare Azure PowerShell e usarlo in locale in una sessione di PowerShell.</span><span class="sxs-lookup"><span data-stu-id="89ec9-114">You can also install Azure PowerShell and use it locally in a PowerShell session.</span></span>
+<span data-ttu-id="20d11-119">È anche possibile installare Azure PowerShell e usarlo in locale in una sessione di PowerShell.</span><span class="sxs-lookup"><span data-stu-id="20d11-119">You can also install Azure PowerShell and use it locally in a PowerShell session.</span></span>
 
-## <a name="install-azure-powershell"></a><span data-ttu-id="89ec9-115">Installare Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="89ec9-115">Install Azure PowerShell</span></span>
+## <a name="sign-in-to-azure"></a><span data-ttu-id="20d11-120">Accedere ad Azure</span><span class="sxs-lookup"><span data-stu-id="20d11-120">Sign in to Azure</span></span>
 
-<span data-ttu-id="89ec9-116">Verificare di aver installato l'ultima versione di Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="89ec9-116">The first step is to make sure you have the latest version of the Azure PowerShell installed.</span></span> <span data-ttu-id="89ec9-117">Per informazioni sulla versione più recente, vedere le [note sulla versione](./release-notes-azureps.md).</span><span class="sxs-lookup"><span data-stu-id="89ec9-117">For information about the latest release, see the [release notes](./release-notes-azureps.md).</span></span>
+<span data-ttu-id="20d11-121">Accedere in modo interattivo:</span><span class="sxs-lookup"><span data-stu-id="20d11-121">Sign on interactively:</span></span>
 
-1. <span data-ttu-id="89ec9-118">[Installare Azure PowerShell](install-azurerm-ps.md).</span><span class="sxs-lookup"><span data-stu-id="89ec9-118">[Install Azure PowerShell](install-azurerm-ps.md).</span></span>
+1. <span data-ttu-id="20d11-122">Digitare `Connect-AzureRmAccount`.</span><span class="sxs-lookup"><span data-stu-id="20d11-122">Type `Connect-AzureRmAccount`.</span></span> <span data-ttu-id="20d11-123">Apparirà una finestra di dialogo che richiede le credenziali di Azure.</span><span class="sxs-lookup"><span data-stu-id="20d11-123">You will get dialog box asking for your Azure credentials.</span></span> <span data-ttu-id="20d11-124">L'opzione '-Environment' consente di accedere ad Azure per la Cina o Azure per la Germania.</span><span class="sxs-lookup"><span data-stu-id="20d11-124">Option '-Environment' can let you login in Azure China or Azure Germany.</span></span>
 
-2. <span data-ttu-id="89ec9-119">Per verificare che l'installazione sia riuscita, eseguire `Get-Module AzureRM -ListAvailable` dalla riga di comando.</span><span class="sxs-lookup"><span data-stu-id="89ec9-119">To verify the installation was successful, run `Get-Module AzureRM -ListAvailable` from your command line.</span></span>
+   <span data-ttu-id="20d11-125">Ad esempio, Connect-AzureRmAccount -Environment AzureChinaCloud</span><span class="sxs-lookup"><span data-stu-id="20d11-125">e.g. Connect-AzureRmAccount -Environment AzureChinaCloud</span></span>
 
-## <a name="log-in-to-azure"></a><span data-ttu-id="89ec9-120">Accedere ad Azure</span><span class="sxs-lookup"><span data-stu-id="89ec9-120">Log in to Azure</span></span>
+2. <span data-ttu-id="20d11-126">Digitare l'indirizzo di posta elettronica e la password associati all'account.</span><span class="sxs-lookup"><span data-stu-id="20d11-126">Type the email address and password associated with your account.</span></span> <span data-ttu-id="20d11-127">Le informazioni delle credenziali vengono autenticate e salvate in Azure, quindi la finestra viene chiusa.</span><span class="sxs-lookup"><span data-stu-id="20d11-127">Azure authenticates and saves the credential information, and then closes the window.</span></span>
 
-<span data-ttu-id="89ec9-121">Accedere in modo interattivo:</span><span class="sxs-lookup"><span data-stu-id="89ec9-121">Sign on interactively:</span></span>
+<span data-ttu-id="20d11-128">Dopo aver effettuato l'accesso a un account Azure, è possibile usare i cmdlet di Azure PowerShell per l'accesso e la gestione delle risorse nella sottoscrizione.</span><span class="sxs-lookup"><span data-stu-id="20d11-128">Once you have signed in to an Azure account, you can use the Azure PowerShell cmdlets to access and manager the resources in your subscription.</span></span>
 
-1. <span data-ttu-id="89ec9-122">Digitare `Connect-AzureRmAccount`.</span><span class="sxs-lookup"><span data-stu-id="89ec9-122">Type `Connect-AzureRmAccount`.</span></span> <span data-ttu-id="89ec9-123">Apparirà una finestra di dialogo che richiede le credenziali di Azure.</span><span class="sxs-lookup"><span data-stu-id="89ec9-123">You will get dialog box asking for your Azure credentials.</span></span> <span data-ttu-id="89ec9-124">L'opzione '-Environment' consente di accedere ad Azure per la Cina o Azure per la Germania.</span><span class="sxs-lookup"><span data-stu-id="89ec9-124">Option '-Environment' can let you login in Azure China or Azure Germany.</span></span>
+## <a name="create-a-windows-virtual-machine-using-simple-defaults"></a><span data-ttu-id="20d11-129">Creare una macchina virtuale Windows mediante semplici impostazioni predefinite</span><span class="sxs-lookup"><span data-stu-id="20d11-129">Create a Windows virtual machine using simple defaults</span></span>
 
-   <span data-ttu-id="89ec9-125">Ad esempio, Connect-AzureRmAccount -Environment AzureChinaCloud</span><span class="sxs-lookup"><span data-stu-id="89ec9-125">e.g. Connect-AzureRmAccount -Environment AzureChinaCloud</span></span>
+<span data-ttu-id="20d11-130">Il cmdlet `New-AzureRmVM` offre una sintassi semplificata, per facilitare la creazione di una nuova macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="20d11-130">The `New-AzureRmVM` cmdlet provides a simplified syntax making it easy to create a new virtual machine.</span></span> <span data-ttu-id="20d11-131">È necessario specificare solo due valori di parametri, ovvero il nome della macchina virtuale e il set di credenziali per l'account amministratore locale nella macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="20d11-131">There are only two parameter values you must provide: the name of the VM and a set of credentials for the local administrator account on the VM.</span></span>
 
-2. <span data-ttu-id="89ec9-126">Digitare l'indirizzo di posta elettronica e la password associati all'account.</span><span class="sxs-lookup"><span data-stu-id="89ec9-126">Type the email address and password associated with your account.</span></span> <span data-ttu-id="89ec9-127">Le informazioni delle credenziali vengono autenticate e salvate in Azure, quindi la finestra viene chiusa.</span><span class="sxs-lookup"><span data-stu-id="89ec9-127">Azure authenticates and saves the credential information, and then closes the window.</span></span>
+<span data-ttu-id="20d11-132">Creare prima di tutto l'oggetto credenziali.</span><span class="sxs-lookup"><span data-stu-id="20d11-132">First, create the credential object.</span></span>
 
-<span data-ttu-id="89ec9-128">Dopo aver effettuato l'accesso a un account Azure, è possibile usare i cmdlet di Azure PowerShell per l'accesso e la gestione delle risorse nella sottoscrizione.</span><span class="sxs-lookup"><span data-stu-id="89ec9-128">Once you have signed in to an Azure account, you can use the Azure PowerShell cmdlets to access and manager the resources in your subscription.</span></span>
-
-## <a name="create-a-windows-virtual-machine-using-simple-defaults"></a><span data-ttu-id="89ec9-129">Creare una macchina virtuale Windows mediante semplici impostazioni predefinite</span><span class="sxs-lookup"><span data-stu-id="89ec9-129">Create a Windows virtual machine using simple defaults</span></span>
-
-<span data-ttu-id="89ec9-130">Il cmdlet `New-AzureRmVM` offre una sintassi semplificata, per facilitare la creazione di una nuova macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="89ec9-130">The `New-AzureRmVM` cmdlet provides a simplified syntax making it easy to create a new virtual machine.</span></span> <span data-ttu-id="89ec9-131">È necessario specificare solo due valori di parametri, ovvero il nome della macchina virtuale e il set di credenziali per l'account amministratore locale nella macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="89ec9-131">There are only two parameter values you must provide: the name of the VM and a set of credentials for the local administrator account on the VM.</span></span>
-
-<span data-ttu-id="89ec9-132">Creare prima di tutto l'oggetto credenziali.</span><span class="sxs-lookup"><span data-stu-id="89ec9-132">First, create the credential object.</span></span>
-
-```powershell
+```azurepowershell-interactive
 $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
 ```
 
-```Output
+```output
 Windows PowerShell credential request.
 Enter a username and password for the virtual machine.
 User: localAdmin
 Password for user localAdmin: *********
 ```
-<span data-ttu-id="89ec9-133">Creare quindi la macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="89ec9-133">Next, create the VM.</span></span>
+<span data-ttu-id="20d11-133">Creare quindi la macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="20d11-133">Next, create the VM.</span></span>
 
-```powershell
+```azurepowershell-interactive
 New-AzureRmVM -Name SampleVM -Credential $cred
 ```
 
-```Output
+```output
 ResourceGroupName        : SampleVM
 Id                       : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/SampleVM/providers/Microsoft.Compute/virtualMachines/SampleVM
 VmId                     : 43f6275d-ce50-49c8-a831-5d5974006e63
@@ -95,30 +94,30 @@ StorageProfile           : {ImageReference, OsDisk, DataDisks}
 FullyQualifiedDomainName : samplevm-2c0867.eastus.cloudapp.azure.com
 ```
 
-<span data-ttu-id="89ec9-134">La procedura è semplice.</span><span class="sxs-lookup"><span data-stu-id="89ec9-134">That was easy.</span></span> <span data-ttu-id="89ec9-135">Ma è possibile che ci si domandi se vengono creati altri elementi e come viene configurata la macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="89ec9-135">But, you may wonder what else is created and how is the VM configured.</span></span> <span data-ttu-id="89ec9-136">È possibile esaminare prima di tutto il gruppo di risorse.</span><span class="sxs-lookup"><span data-stu-id="89ec9-136">First, let's look at our resource groups.</span></span>
+<span data-ttu-id="20d11-134">La procedura è semplice.</span><span class="sxs-lookup"><span data-stu-id="20d11-134">That was easy.</span></span> <span data-ttu-id="20d11-135">Ma è possibile che ci si domandi se vengono creati altri elementi e come viene configurata la macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="20d11-135">But, you may wonder what else is created and how is the VM configured.</span></span> <span data-ttu-id="20d11-136">È possibile esaminare prima di tutto il gruppo di risorse.</span><span class="sxs-lookup"><span data-stu-id="20d11-136">First, let's look at our resource groups.</span></span>
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmResourceGroup | Select-Object ResourceGroupName,Location
 ```
 
-```Output
+```output
 ResourceGroupName          Location
 -----------------          --------
 cloud-shell-storage-westus westus
 SampleVM                   eastus
 ```
 
-<span data-ttu-id="89ec9-137">Il gruppo di risorse **cloud-shell-storage-westus** viene creato quando si usa Cloud Shell per la prima volta.</span><span class="sxs-lookup"><span data-stu-id="89ec9-137">The **cloud-shell-storage-westus** resource group is created the first time you use the Cloud Shell.</span></span> <span data-ttu-id="89ec9-138">Il gruppo di risorse **SampleVM** è stato creato dal cmdlet `New-AzureRmVM`.</span><span class="sxs-lookup"><span data-stu-id="89ec9-138">The **SampleVM** resource group was created by the `New-AzureRmVM` cmdlet.</span></span>
+<span data-ttu-id="20d11-137">Il gruppo di risorse **cloud-shell-storage-westus** viene creato quando si usa Cloud Shell per la prima volta.</span><span class="sxs-lookup"><span data-stu-id="20d11-137">The **cloud-shell-storage-westus** resource group is created the first time you use the Cloud Shell.</span></span> <span data-ttu-id="20d11-138">Il gruppo di risorse **SampleVM** è stato creato dal cmdlet `New-AzureRmVM`.</span><span class="sxs-lookup"><span data-stu-id="20d11-138">The **SampleVM** resource group was created by the `New-AzureRmVM` cmdlet.</span></span>
 
-<span data-ttu-id="89ec9-139">Occorre verificare quali altre risorse vengono create nel nuovo gruppo di risorse.</span><span class="sxs-lookup"><span data-stu-id="89ec9-139">Now, what other resources were created in this new resource group?</span></span>
+<span data-ttu-id="20d11-139">Occorre verificare quali altre risorse vengono create nel nuovo gruppo di risorse.</span><span class="sxs-lookup"><span data-stu-id="20d11-139">Now, what other resources were created in this new resource group?</span></span>
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmResource |
   Where ResourceGroupName -eq SampleVM |
     Select-Object ResourceGroupName,Location,ResourceType,Name
 ```
 
-```Output
+```output
 ResourceGroupName          Location ResourceType                            Name
 -----------------          -------- ------------                            ----
 SAMPLEVM                   eastus   Microsoft.Compute/disks                 SampleVM_OsDisk_1_9b286c54b168457fa1f8c47...
@@ -129,15 +128,15 @@ SampleVM                   eastus   Microsoft.Network/publicIPAddresses     Samp
 SampleVM                   eastus   Microsoft.Network/virtualNetworks       SampleVM
 ```
 
-<span data-ttu-id="89ec9-140">È possibile ottenere altri dettagli sulla macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="89ec9-140">Let's get some more details about the VM.</span></span> <span data-ttu-id="89ec9-141">Questo esempio mostra come recuperare informazioni sull'immagine del sistema operativo usata per creare la macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="89ec9-141">This examples shows how to retrieve information about the OS Image used to create the VM.</span></span>
+<span data-ttu-id="20d11-140">È possibile ottenere altri dettagli sulla macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="20d11-140">Let's get some more details about the VM.</span></span> <span data-ttu-id="20d11-141">Questo esempio mostra come recuperare informazioni sull'immagine del sistema operativo usata per creare la macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="20d11-141">This examples shows how to retrieve information about the OS Image used to create the VM.</span></span>
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmVM -Name SampleVM -ResourceGroupName SampleVM |
   Select-Object -ExpandProperty StorageProfile |
     Select-Object -ExpandProperty ImageReference
 ```
 
-```Output
+```output
 Publisher : MicrosoftWindowsServer
 Offer     : WindowsServer
 Sku       : 2016-Datacenter
@@ -145,21 +144,21 @@ Version   : latest
 Id        :
 ```
 
-## <a name="create-a-fully-configured-linux-virtual-machine"></a><span data-ttu-id="89ec9-142">Creare una macchina virtuale Linux completamente configurata</span><span class="sxs-lookup"><span data-stu-id="89ec9-142">Create a fully configured Linux Virtual Machine</span></span>
+## <a name="create-a-fully-configured-linux-virtual-machine"></a><span data-ttu-id="20d11-142">Creare una macchina virtuale Linux completamente configurata</span><span class="sxs-lookup"><span data-stu-id="20d11-142">Create a fully configured Linux Virtual Machine</span></span>
 
-<span data-ttu-id="89ec9-143">L'esempio precedente usa la sintassi semplificata e i valori dei parametri predefiniti per creare una macchina virtuale Windows.</span><span class="sxs-lookup"><span data-stu-id="89ec9-143">The previous example used the simplified syntax and default parameter values to create a Windows virtual machine.</span></span> <span data-ttu-id="89ec9-144">In questo esempio vengono specificati valori per tutte le opzioni della macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="89ec9-144">In this example, we provide values for all options of the virtual machine.</span></span>
+<span data-ttu-id="20d11-143">L'esempio precedente usa la sintassi semplificata e i valori dei parametri predefiniti per creare una macchina virtuale Windows.</span><span class="sxs-lookup"><span data-stu-id="20d11-143">The previous example used the simplified syntax and default parameter values to create a Windows virtual machine.</span></span> <span data-ttu-id="20d11-144">In questo esempio vengono specificati valori per tutte le opzioni della macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="20d11-144">In this example, we provide values for all options of the virtual machine.</span></span>
 
-### <a name="create-a-resource-group"></a><span data-ttu-id="89ec9-145">Creare un gruppo di risorse</span><span class="sxs-lookup"><span data-stu-id="89ec9-145">Create a resource group</span></span>
+### <a name="create-a-resource-group"></a><span data-ttu-id="20d11-145">Creare un gruppo di risorse</span><span class="sxs-lookup"><span data-stu-id="20d11-145">Create a resource group</span></span>
 
-<span data-ttu-id="89ec9-146">Per questo esempio si vuole creare un gruppo di risorse.</span><span class="sxs-lookup"><span data-stu-id="89ec9-146">For this example we want to create a Resource Group.</span></span> <span data-ttu-id="89ec9-147">I gruppi di risorse di Azure consentono di gestire più risorse che si desidera raggruppare insieme in modo logico.</span><span class="sxs-lookup"><span data-stu-id="89ec9-147">Resource Groups in Azure provide a way to manage multiple resources that you want to logically group together.</span></span> <span data-ttu-id="89ec9-148">Ad esempio, è possibile creare un gruppo di risorse per un'applicazione o un progetto e aggiungere una macchina virtuale, un database e un servizio rete CDN al suo interno.</span><span class="sxs-lookup"><span data-stu-id="89ec9-148">For example, you might create a Resource Group for an application or project and add a virtual machine, a database and a CDN service within it.</span></span>
+<span data-ttu-id="20d11-146">Per questo esempio si vuole creare un gruppo di risorse.</span><span class="sxs-lookup"><span data-stu-id="20d11-146">For this example we want to create a Resource Group.</span></span> <span data-ttu-id="20d11-147">I gruppi di risorse di Azure consentono di gestire più risorse che si desidera raggruppare insieme in modo logico.</span><span class="sxs-lookup"><span data-stu-id="20d11-147">Resource Groups in Azure provide a way to manage multiple resources that you want to logically group together.</span></span> <span data-ttu-id="20d11-148">Ad esempio, è possibile creare un gruppo di risorse per un'applicazione o un progetto e aggiungere una macchina virtuale, un database e un servizio rete CDN al suo interno.</span><span class="sxs-lookup"><span data-stu-id="20d11-148">For example, you might create a Resource Group for an application or project and add a virtual machine, a database and a CDN service within it.</span></span>
 
-<span data-ttu-id="89ec9-149">Creare un gruppo di risorse denominato "MyResourceGroup" nell'area westeurope di Azure.</span><span class="sxs-lookup"><span data-stu-id="89ec9-149">Let's create a resource group named "MyResourceGroup" in the westeurope region of Azure.</span></span> <span data-ttu-id="89ec9-150">A questo scopo, usare il comando seguente:</span><span class="sxs-lookup"><span data-stu-id="89ec9-150">To do so type the following command:</span></span>
+<span data-ttu-id="20d11-149">Creare un gruppo di risorse denominato "MyResourceGroup" nell'area westeurope di Azure.</span><span class="sxs-lookup"><span data-stu-id="20d11-149">Let's create a resource group named "MyResourceGroup" in the westeurope region of Azure.</span></span> <span data-ttu-id="20d11-150">A questo scopo, usare il comando seguente:</span><span class="sxs-lookup"><span data-stu-id="20d11-150">To do so type the following command:</span></span>
 
-```powershell
+```azurepowershell-interactive
 New-AzureRmResourceGroup -Name 'myResourceGroup' -Location 'westeurope'
 ```
 
-```Output
+```output
 ResourceGroupName : myResourceGroup
 Location          : westeurope
 ProvisioningState : Succeeded
@@ -167,13 +166,13 @@ Tags              :
 ResourceId        : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/myResourceGroup
 ```
 
-<span data-ttu-id="89ec9-151">Il nuovo gruppo di risorse verrà usato per includere tutte le risorse necessarie per la nuova macchina virtuale creata.</span><span class="sxs-lookup"><span data-stu-id="89ec9-151">This new resource group will be used to contain all of the resources needed for the new VM we create.</span></span> <span data-ttu-id="89ec9-152">Per creare una nuova macchina virtuale occorre prima creare le altre risorse necessarie e assegnarle a una configurazione.</span><span class="sxs-lookup"><span data-stu-id="89ec9-152">To create a new Linux VM we must first create the other required resources and assign them to a configuration.</span></span> <span data-ttu-id="89ec9-153">Sarà quindi possibile usare tale configurazione per creare la macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="89ec9-153">Then we can use that configuration to create the VM.</span></span> <span data-ttu-id="89ec9-154">Sarà inoltre necessario disporre di una chiave pubblica SSH denominata `id_rsa.pub` nella directory .ssh del profilo utente.</span><span class="sxs-lookup"><span data-stu-id="89ec9-154">Also, you will need to have an SSH public key named `id_rsa.pub` in the .ssh directory of your user profile.</span></span>
+<span data-ttu-id="20d11-151">Il nuovo gruppo di risorse verrà usato per includere tutte le risorse necessarie per la nuova macchina virtuale creata.</span><span class="sxs-lookup"><span data-stu-id="20d11-151">This new resource group will be used to contain all of the resources needed for the new VM we create.</span></span> <span data-ttu-id="20d11-152">Per creare una nuova macchina virtuale occorre prima creare le altre risorse necessarie e assegnarle a una configurazione.</span><span class="sxs-lookup"><span data-stu-id="20d11-152">To create a new Linux VM we must first create the other required resources and assign them to a configuration.</span></span> <span data-ttu-id="20d11-153">Sarà quindi possibile usare tale configurazione per creare la macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="20d11-153">Then we can use that configuration to create the VM.</span></span> <span data-ttu-id="20d11-154">Sarà inoltre necessario disporre di una chiave pubblica SSH denominata `id_rsa.pub` nella directory .ssh del profilo utente.</span><span class="sxs-lookup"><span data-stu-id="20d11-154">Also, you will need to have an SSH public key named `id_rsa.pub` in the .ssh directory of your user profile.</span></span>
 
-#### <a name="create-the-required-network-resources"></a><span data-ttu-id="89ec9-155">Creare le risorse di rete necessarie</span><span class="sxs-lookup"><span data-stu-id="89ec9-155">Create the required network resources</span></span>
+#### <a name="create-the-required-network-resources"></a><span data-ttu-id="20d11-155">Creare le risorse di rete necessarie</span><span class="sxs-lookup"><span data-stu-id="20d11-155">Create the required network resources</span></span>
 
-<span data-ttu-id="89ec9-156">È prima necessario creare una configurazione di subnet da usare con il processo di creazione della rete virtuale.</span><span class="sxs-lookup"><span data-stu-id="89ec9-156">First we need to create a subnet configuration to be used with the virtual network creation process.</span></span> <span data-ttu-id="89ec9-157">Si crea anche un indirizzo IP pubblico in modo che sia possibile connettersi a questa macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="89ec9-157">We also create a public IP address so that we can connect to this VM.</span></span> <span data-ttu-id="89ec9-158">Si crea quindi un gruppo di sicurezza di rete per proteggere l'accesso all'indirizzo pubblico.</span><span class="sxs-lookup"><span data-stu-id="89ec9-158">We create a network security group to secure access to the public address.</span></span> <span data-ttu-id="89ec9-159">Infine si crea la scheda di interfaccia di rete virtuale usando tutte le risorse precedenti.</span><span class="sxs-lookup"><span data-stu-id="89ec9-159">Finally we create the virtual NIC using all of the previous resources.</span></span>
+<span data-ttu-id="20d11-156">È prima necessario creare una configurazione di subnet da usare con il processo di creazione della rete virtuale.</span><span class="sxs-lookup"><span data-stu-id="20d11-156">First we need to create a subnet configuration to be used with the virtual network creation process.</span></span> <span data-ttu-id="20d11-157">Si crea anche un indirizzo IP pubblico in modo che sia possibile connettersi a questa macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="20d11-157">We also create a public IP address so that we can connect to this VM.</span></span> <span data-ttu-id="20d11-158">Si crea quindi un gruppo di sicurezza di rete per proteggere l'accesso all'indirizzo pubblico.</span><span class="sxs-lookup"><span data-stu-id="20d11-158">We create a network security group to secure access to the public address.</span></span> <span data-ttu-id="20d11-159">Infine si crea la scheda di interfaccia di rete virtuale usando tutte le risorse precedenti.</span><span class="sxs-lookup"><span data-stu-id="20d11-159">Finally we create the virtual NIC using all of the previous resources.</span></span>
 
-```powershell
+```azurepowershell-interactive
 # Variables for common values
 $resourceGroup = "myResourceGroup"
 $location = "westeurope"
@@ -209,11 +208,11 @@ $nic = New-AzureRmNetworkInterface -Name myNic2 -ResourceGroupName $resourceGrou
   -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $publicIp.Id -NetworkSecurityGroupId $nsg.Id
 ```
 
-### <a name="create-the-vm-configuration"></a><span data-ttu-id="89ec9-160">Creare la configurazione della macchina virtuale</span><span class="sxs-lookup"><span data-stu-id="89ec9-160">Create the VM configuration</span></span>
+### <a name="create-the-vm-configuration"></a><span data-ttu-id="20d11-160">Creare la configurazione della macchina virtuale</span><span class="sxs-lookup"><span data-stu-id="20d11-160">Create the VM configuration</span></span>
 
-<span data-ttu-id="89ec9-161">Le risorse necessarie sono ora disponibili, quindi è possibile creare l'oggetto configurazione della macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="89ec9-161">Now that we have the required resources we can create the VM configuration object.</span></span>
+<span data-ttu-id="20d11-161">Le risorse necessarie sono ora disponibili, quindi è possibile creare l'oggetto configurazione della macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="20d11-161">Now that we have the required resources we can create the VM configuration object.</span></span>
 
-```powershell
+```azurepowershell-interactive
 # Create a virtual machine configuration
 $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
   Set-AzureRmVMOperatingSystem -Linux -ComputerName $vmName -Credential $cred -DisablePasswordAuthentication |
@@ -221,25 +220,25 @@ $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
   Add-AzureRmVMNetworkInterface -Id $nic.Id
 
 # Configure SSH Keys
-$sshPublicKey = Get-Content "$env:USERPROFILE\.ssh\id_rsa.pub"
+$sshPublicKey = Get-Content -Raw "$env:USERPROFILE\.ssh\id_rsa.pub"
 Add-AzureRmVMSshPublicKey -VM $vmConfig -KeyData $sshPublicKey -Path "/home/azureuser/.ssh/authorized_keys"
 ```
 
-### <a name="create-the-virtual-machine"></a><span data-ttu-id="89ec9-162">Creare la macchina virtuale</span><span class="sxs-lookup"><span data-stu-id="89ec9-162">Create the virtual machine</span></span>
+### <a name="create-the-virtual-machine"></a><span data-ttu-id="20d11-162">Creare la macchina virtuale</span><span class="sxs-lookup"><span data-stu-id="20d11-162">Create the virtual machine</span></span>
 
-<span data-ttu-id="89ec9-163">È ora possibile creare la macchina virtuale usando l'oggetto configurazione della macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="89ec9-163">Now we can create the VM using the VM configuration object.</span></span>
+<span data-ttu-id="20d11-163">È ora possibile creare la macchina virtuale usando l'oggetto configurazione della macchina virtuale.</span><span class="sxs-lookup"><span data-stu-id="20d11-163">Now we can create the VM using the VM configuration object.</span></span>
 
-```powershell
+```azurepowershell-interactive
 New-AzureRmVM -ResourceGroupName $resourceGroup -Location $location -VM $vmConfig
 ```
 
-<span data-ttu-id="89ec9-164">Ora che la macchina virtuale è stata creata, è possibile accedere alla nuova macchina virtuale Linux tramite SSH con l'indirizzo IP pubblico della macchina virtuale creata:</span><span class="sxs-lookup"><span data-stu-id="89ec9-164">Now that the VM has been created, you can log on to your new Linux VM using SSH with the public IP address of the VM you created:</span></span>
+<span data-ttu-id="20d11-164">Ora che la macchina virtuale è stata creata, è possibile accedere alla nuova macchina virtuale Linux tramite SSH con l'indirizzo IP pubblico della macchina virtuale creata:</span><span class="sxs-lookup"><span data-stu-id="20d11-164">Now that the VM has been created, you can log on to your new Linux VM using SSH with the public IP address of the VM you created:</span></span>
 
 ```bash
 ssh xx.xxx.xxx.xxx
 ```
 
-```Output
+```output
 Welcome to Ubuntu 14.04.4 LTS (GNU/Linux 3.19.0-65-generic x86_64)
 
  * Documentation:  https://help.ubuntu.com/
@@ -270,29 +269,29 @@ applicable law.
 my-login@MyLinuxVM:../../..$
 ```
 
-## <a name="creating-other-resources-in-azure"></a><span data-ttu-id="89ec9-165">Creazione di altre risorse in Azure</span><span class="sxs-lookup"><span data-stu-id="89ec9-165">Creating other resources in Azure</span></span>
+## <a name="creating-other-resources-in-azure"></a><span data-ttu-id="20d11-165">Creazione di altre risorse in Azure</span><span class="sxs-lookup"><span data-stu-id="20d11-165">Creating other resources in Azure</span></span>
 
-<span data-ttu-id="89ec9-166">È stato descritto come creare un gruppo di risorse, una macchina virtuale Linux e una macchina virtuale di Windows Server.</span><span class="sxs-lookup"><span data-stu-id="89ec9-166">We've now walked through how to create a Resource Group, a Linux VM, and a Windows Server VM.</span></span> <span data-ttu-id="89ec9-167">È possibile creare molti altri tipi di risorse di Azure.</span><span class="sxs-lookup"><span data-stu-id="89ec9-167">You can create many other types of Azure resources as well.</span></span>
+<span data-ttu-id="20d11-166">È stato descritto come creare un gruppo di risorse, una macchina virtuale Linux e una macchina virtuale di Windows Server.</span><span class="sxs-lookup"><span data-stu-id="20d11-166">We've now walked through how to create a Resource Group, a Linux VM, and a Windows Server VM.</span></span> <span data-ttu-id="20d11-167">È possibile creare molti altri tipi di risorse di Azure.</span><span class="sxs-lookup"><span data-stu-id="20d11-167">You can create many other types of Azure resources as well.</span></span>
 
-<span data-ttu-id="89ec9-168">Ad esempio, per creare un bilanciamento del carico di rete di Azure da associare alle macchine virtuali appena create, si può usare il comando seguente:</span><span class="sxs-lookup"><span data-stu-id="89ec9-168">For example, to create an Azure Network Load Balancer that we could then associate with our newly created VMs, we can use the following create command:</span></span>
+<span data-ttu-id="20d11-168">Ad esempio, per creare un bilanciamento del carico di rete di Azure da associare alle macchine virtuali appena create, si può usare il comando seguente:</span><span class="sxs-lookup"><span data-stu-id="20d11-168">For example, to create an Azure Network Load Balancer that we could then associate with our newly created VMs, we can use the following create command:</span></span>
 
-```powershell
+```azurepowershell-interactive
 New-AzureRmLoadBalancer -Name MyLoadBalancer -ResourceGroupName myResourceGroup -Location westeurope
 ```
 
-<span data-ttu-id="89ec9-169">È anche possibile creare una nuova rete virtuale privata (nota come "VNet" all'interno di Azure) per l'infrastruttura usando il comando seguente:</span><span class="sxs-lookup"><span data-stu-id="89ec9-169">We could also create a new private Virtual Network (commonly referred to as a "VNet" within Azure) for our infrastructure using the following command:</span></span>
+<span data-ttu-id="20d11-169">È anche possibile creare una nuova rete virtuale privata (nota come "VNet" all'interno di Azure) per l'infrastruttura usando il comando seguente:</span><span class="sxs-lookup"><span data-stu-id="20d11-169">We could also create a new private Virtual Network (commonly referred to as a "VNet" within Azure) for our infrastructure using the following command:</span></span>
 
-```powershell
+```azurepowershell-interactive
 $subnetConfig = New-AzureRmVirtualNetworkSubnetConfig -Name mySubnet2 -AddressPrefix 10.0.0.0/16
 $vnet = New-AzureRmVirtualNetwork -ResourceGroupName myResourceGroup -Location westeurope `
   -Name MYvNET3 -AddressPrefix 10.0.0.0/16 -Subnet $subnetConfig
 ```
 
-<span data-ttu-id="89ec9-170">Ciò che rende potenti Azure e Azure PowerShell è la possibilità di usarli non solo per ottenere un'infrastruttura basata su cloud, ma anche per creare servizi di piattaforma gestiti.</span><span class="sxs-lookup"><span data-stu-id="89ec9-170">What makes Azure and the Azure PowerShell powerful is that we can use it not just to get cloud-based infrastructure but also to create managed platform services.</span></span> <span data-ttu-id="89ec9-171">I servizi di piattaforma gestiti possono anche essere combinati con l'infrastruttura per creare soluzioni ancora più potenti.</span><span class="sxs-lookup"><span data-stu-id="89ec9-171">The managed platform services can also be combined with infrastructure to build even more powerful solutions.</span></span>
+<span data-ttu-id="20d11-170">Ciò che rende potenti Azure e Azure PowerShell è la possibilità di usarli non solo per ottenere un'infrastruttura basata su cloud, ma anche per creare servizi di piattaforma gestiti.</span><span class="sxs-lookup"><span data-stu-id="20d11-170">What makes Azure and the Azure PowerShell powerful is that we can use it not just to get cloud-based infrastructure but also to create managed platform services.</span></span> <span data-ttu-id="20d11-171">I servizi di piattaforma gestiti possono anche essere combinati con l'infrastruttura per creare soluzioni ancora più potenti.</span><span class="sxs-lookup"><span data-stu-id="20d11-171">The managed platform services can also be combined with infrastructure to build even more powerful solutions.</span></span>
 
-<span data-ttu-id="89ec9-172">Ad esempio, è possibile usare Azure Powershell per creare un servizio app di Azure.</span><span class="sxs-lookup"><span data-stu-id="89ec9-172">For example, you can use the Azure PowerShell to create an Azure AppService.</span></span> <span data-ttu-id="89ec9-173">Il servizio app di Azure è un servizio di piattaforma gestito che consente di eseguire l'hosting di app Web senza doversi preoccupare dell'infrastruttura.</span><span class="sxs-lookup"><span data-stu-id="89ec9-173">Azure AppService is a managed platform service that provides a great way to host web apps without having to worry about infrastructure.</span></span> <span data-ttu-id="89ec9-174">Dopo aver creato il servizio app di Azure, è possibile creare due nuove app Web di Azure all'interno del servizio app usando i comandi seguenti:</span><span class="sxs-lookup"><span data-stu-id="89ec9-174">After creating the Azure AppService, you can create two new Azure Web Apps within the AppService using the following commands:</span></span>
+<span data-ttu-id="20d11-172">Ad esempio, è possibile usare Azure Powershell per creare un servizio app di Azure.</span><span class="sxs-lookup"><span data-stu-id="20d11-172">For example, you can use the Azure PowerShell to create an Azure AppService.</span></span> <span data-ttu-id="20d11-173">Il servizio app di Azure è un servizio di piattaforma gestito che consente di eseguire l'hosting di app Web senza doversi preoccupare dell'infrastruttura.</span><span class="sxs-lookup"><span data-stu-id="20d11-173">Azure AppService is a managed platform service that provides a great way to host web apps without having to worry about infrastructure.</span></span> <span data-ttu-id="20d11-174">Dopo aver creato il servizio app di Azure, è possibile creare due nuove app Web di Azure all'interno del servizio app usando i comandi seguenti:</span><span class="sxs-lookup"><span data-stu-id="20d11-174">After creating the Azure AppService, you can create two new Azure Web Apps within the AppService using the following commands:</span></span>
 
-```powershell
+```azurepowershell-interactive
 # Create an Azure AppService that we can host any number of web apps within
 New-AzureRmAppServicePlan -Name MyAppServicePlan -Tier Basic -NumberofWorkers 2 -WorkerSize Small -ResourceGroupName myResourceGroup -Location westeurope
 
@@ -301,17 +300,17 @@ New-AzureRmWebApp -Name MyWebApp43432 -AppServicePlan MyAppServicePlan -Resource
 New-AzureRmWebApp -Name MyWebApp43433 -AppServicePlan MyAppServicePlan -ResourceGroupName myResourceGroup -Location westeurope
 ```
 
-## <a name="listing-deployed-resources"></a><span data-ttu-id="89ec9-175">Elenco delle risorse distribuite</span><span class="sxs-lookup"><span data-stu-id="89ec9-175">Listing deployed resources</span></span>
+## <a name="listing-deployed-resources"></a><span data-ttu-id="20d11-175">Elenco delle risorse distribuite</span><span class="sxs-lookup"><span data-stu-id="20d11-175">Listing deployed resources</span></span>
 
-<span data-ttu-id="89ec9-176">È possibile usare il cmdlet `Get-AzureRmResource` per elencare le risorse in esecuzione in Azure.</span><span class="sxs-lookup"><span data-stu-id="89ec9-176">You can use the `Get-AzureRmResource` cmdlet to list the resources running in Azure.</span></span> <span data-ttu-id="89ec9-177">L'esempio seguente illustra le risorse appena create nel nuovo gruppo di risorse.</span><span class="sxs-lookup"><span data-stu-id="89ec9-177">The following example shows the resources we just created in the new resource group.</span></span>
+<span data-ttu-id="20d11-176">È possibile usare il cmdlet `Get-AzureRmResource` per elencare le risorse in esecuzione in Azure.</span><span class="sxs-lookup"><span data-stu-id="20d11-176">You can use the `Get-AzureRmResource` cmdlet to list the resources running in Azure.</span></span> <span data-ttu-id="20d11-177">L'esempio seguente illustra le risorse appena create nel nuovo gruppo di risorse.</span><span class="sxs-lookup"><span data-stu-id="20d11-177">The following example shows the resources we just created in the new resource group.</span></span>
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmResource |
   Where-Object ResourceGroupName -eq myResourceGroup |
     Select-Object Name,Location,ResourceType
 ```
 
-```Output
+```output
 Name                                                  Location   ResourceType
 ----                                                  --------   ------------
 myLinuxVM_OsDisk_1_36ca038791f642ba91270879088c249a   westeurope Microsoft.Compute/disks
@@ -330,46 +329,46 @@ MYvNET2                                               westeurope Microsoft.Netwo
 micromyresomywi032907510                              westeurope Microsoft.Storage/storageAccounts
 ```
 
-## <a name="deleting-resources"></a><span data-ttu-id="89ec9-178">Eliminazione di risorse</span><span class="sxs-lookup"><span data-stu-id="89ec9-178">Deleting resources</span></span>
+## <a name="deleting-resources"></a><span data-ttu-id="20d11-178">Eliminazione di risorse</span><span class="sxs-lookup"><span data-stu-id="20d11-178">Deleting resources</span></span>
 
-<span data-ttu-id="89ec9-179">Per eseguire la pulizia dell'account Azure, si dovranno rimuovere le risorse create in questo esempio.</span><span class="sxs-lookup"><span data-stu-id="89ec9-179">To clean up your Azure account, you want to remove the resources we created in this example.</span></span> <span data-ttu-id="89ec9-180">Per eliminare le risorse non più necessarie, si può usare il cmdlet `Remove-AzureRm*`.</span><span class="sxs-lookup"><span data-stu-id="89ec9-180">You can use the `Remove-AzureRm*` cmdlets to delete the resources you no longer need.</span></span> <span data-ttu-id="89ec9-181">Per rimuovere la macchina virtuale Windows creata, usare il comando seguente:</span><span class="sxs-lookup"><span data-stu-id="89ec9-181">To remove the Windows VM we created, using the following command:</span></span>
+<span data-ttu-id="20d11-179">Per eseguire la pulizia dell'account Azure, si dovranno rimuovere le risorse create in questo esempio.</span><span class="sxs-lookup"><span data-stu-id="20d11-179">To clean up your Azure account, you want to remove the resources we created in this example.</span></span> <span data-ttu-id="20d11-180">Per eliminare le risorse non più necessarie, si può usare il cmdlet `Remove-AzureRm*`.</span><span class="sxs-lookup"><span data-stu-id="20d11-180">You can use the `Remove-AzureRm*` cmdlets to delete the resources you no longer need.</span></span> <span data-ttu-id="20d11-181">Per rimuovere la macchina virtuale Windows creata, usare il comando seguente:</span><span class="sxs-lookup"><span data-stu-id="20d11-181">To remove the Windows VM we created, using the following command:</span></span>
 
-```powershell
+```azurepowershell-interactive
 Remove-AzureRmVM -Name myWindowsVM -ResourceGroupName myResourceGroup
 ```
 
-<span data-ttu-id="89ec9-182">Verrà richiesto di confermare l'eliminazione delle risorse specificate.</span><span class="sxs-lookup"><span data-stu-id="89ec9-182">You will be prompted to confirm that you want to remove the resource.</span></span>
+<span data-ttu-id="20d11-182">Verrà richiesto di confermare l'eliminazione delle risorse specificate.</span><span class="sxs-lookup"><span data-stu-id="20d11-182">You will be prompted to confirm that you want to remove the resource.</span></span>
 
-```Output
+```output
 Confirm
 Are you sure you want to remove resource group 'myResourceGroup'
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 ```
 
-<span data-ttu-id="89ec9-183">È anche possibile eliminare più risorse contemporaneamente.</span><span class="sxs-lookup"><span data-stu-id="89ec9-183">You can also use the delete many resources at one time.</span></span> <span data-ttu-id="89ec9-184">Ad esempio, il comando seguente elimina l'intero gruppo di risorse "MyResourceGroup" che abbiamo usato per tutti gli esempi di questa esercitazione introduttiva.</span><span class="sxs-lookup"><span data-stu-id="89ec9-184">For example, the following command deletes all the resource group "MyResourceGroup" that we've used for all the samples in this Get Started tutorial.</span></span> <span data-ttu-id="89ec9-185">Il comando elimina il gruppo di risorse e tutte le altre risorse in esso contenute.</span><span class="sxs-lookup"><span data-stu-id="89ec9-185">This removes the resource group and all of the resources in it.</span></span>
+<span data-ttu-id="20d11-183">È anche possibile eliminare più risorse contemporaneamente.</span><span class="sxs-lookup"><span data-stu-id="20d11-183">You can also use the delete many resources at one time.</span></span> <span data-ttu-id="20d11-184">Ad esempio, il comando seguente elimina l'intero gruppo di risorse "MyResourceGroup" che abbiamo usato per tutti gli esempi di questa esercitazione introduttiva.</span><span class="sxs-lookup"><span data-stu-id="20d11-184">For example, the following command deletes all the resource group "MyResourceGroup" that we've used for all the samples in this Get Started tutorial.</span></span> <span data-ttu-id="20d11-185">Il comando elimina il gruppo di risorse e tutte le altre risorse in esso contenute.</span><span class="sxs-lookup"><span data-stu-id="20d11-185">This removes the resource group and all of the resources in it.</span></span>
 
-```powershell
+```azurepowershell-interactive
 Remove-AzureRmResourceGroup -Name myResourceGroup
 ```
 
-```Output
+```output
 Confirm
 Are you sure you want to remove resource group 'myResourceGroup'
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 ```
 
-<span data-ttu-id="89ec9-186">Questa operazione può richiedere alcuni minuti.</span><span class="sxs-lookup"><span data-stu-id="89ec9-186">This can take several minutes to complete.</span></span>
+<span data-ttu-id="20d11-186">Questa operazione può richiedere alcuni minuti.</span><span class="sxs-lookup"><span data-stu-id="20d11-186">This can take several minutes to complete.</span></span>
 
-## <a name="get-samples"></a><span data-ttu-id="89ec9-187">Ottenere gli esempi</span><span class="sxs-lookup"><span data-stu-id="89ec9-187">Get samples</span></span>
+## <a name="get-samples"></a><span data-ttu-id="20d11-187">Ottenere gli esempi</span><span class="sxs-lookup"><span data-stu-id="20d11-187">Get samples</span></span>
 
-<span data-ttu-id="89ec9-188">Per altre informazioni sull'uso di Azure PowerShell, vedere i nostri script più comuni per le [macchine virtuali Linux](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), le [macchine virtuali di Windows](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), le [app Web](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json) e i [database SQL](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json).</span><span class="sxs-lookup"><span data-stu-id="89ec9-188">To learn more about ways to use the Azure PowerShell, check out our most common scripts for [Linux VMs](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), [Windows VMs](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), and [SQL Databases](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json).</span></span>
+<span data-ttu-id="20d11-188">Per altre informazioni sull'uso di Azure PowerShell, vedere i nostri script più comuni per le [macchine virtuali Linux](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), le [macchine virtuali di Windows](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), le [app Web](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json) e i [database SQL](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json).</span><span class="sxs-lookup"><span data-stu-id="20d11-188">To learn more about ways to use the Azure PowerShell, check out our most common scripts for [Linux VMs](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), [Windows VMs](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), and [SQL Databases](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json).</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="89ec9-189">Passaggi successivi</span><span class="sxs-lookup"><span data-stu-id="89ec9-189">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="20d11-189">Passaggi successivi</span><span class="sxs-lookup"><span data-stu-id="20d11-189">Next steps</span></span>
 
-* [<span data-ttu-id="89ec9-190">Accedere ad Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="89ec9-190">Login with Azure PowerShell</span></span>](authenticate-azureps.md)
-* [<span data-ttu-id="89ec9-191">Gestire le sottoscrizioni di Azure con Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="89ec9-191">Manage Azure subscriptions with Azure PowerShell</span></span>](manage-subscriptions-azureps.md)
-* [<span data-ttu-id="89ec9-192">Creare entità servizio in Azure usando Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="89ec9-192">Create service principals in Azure using Azure PowerShell</span></span>](create-azure-service-principal-azureps.md)
-* <span data-ttu-id="89ec9-193">Vedere le note sulla migrazione da una versione precedente: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).</span><span class="sxs-lookup"><span data-stu-id="89ec9-193">Read the Release notes about migrating from an older release: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).</span></span>
-* <span data-ttu-id="89ec9-194">Ottenere informazioni dalla community:</span><span class="sxs-lookup"><span data-stu-id="89ec9-194">Get help from the community:</span></span>
-  * [<span data-ttu-id="89ec9-195">Forum Azure su MSDN</span><span class="sxs-lookup"><span data-stu-id="89ec9-195">Azure forum on MSDN</span></span>](http://go.microsoft.com/fwlink/p/?LinkId=320212)
-  * [<span data-ttu-id="89ec9-196">stackoverflow</span><span class="sxs-lookup"><span data-stu-id="89ec9-196">stackoverflow</span></span>](http://go.microsoft.com/fwlink/?LinkId=320213)
+* [<span data-ttu-id="20d11-190">Accedere ad Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="20d11-190">Login with Azure PowerShell</span></span>](authenticate-azureps.md)
+* [<span data-ttu-id="20d11-191">Gestire le sottoscrizioni di Azure con Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="20d11-191">Manage Azure subscriptions with Azure PowerShell</span></span>](manage-subscriptions-azureps.md)
+* [<span data-ttu-id="20d11-192">Creare entità servizio in Azure usando Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="20d11-192">Create service principals in Azure using Azure PowerShell</span></span>](create-azure-service-principal-azureps.md)
+* <span data-ttu-id="20d11-193">Vedere le note sulla migrazione da una versione precedente: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).</span><span class="sxs-lookup"><span data-stu-id="20d11-193">Read the Release notes about migrating from an older release: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).</span></span>
+* <span data-ttu-id="20d11-194">Ottenere informazioni dalla community:</span><span class="sxs-lookup"><span data-stu-id="20d11-194">Get help from the community:</span></span>
+  * [<span data-ttu-id="20d11-195">Forum Azure su MSDN</span><span class="sxs-lookup"><span data-stu-id="20d11-195">Azure forum on MSDN</span></span>](http://go.microsoft.com/fwlink/p/?LinkId=320212)
+  * [<span data-ttu-id="20d11-196">stackoverflow</span><span class="sxs-lookup"><span data-stu-id="20d11-196">stackoverflow</span></span>](http://go.microsoft.com/fwlink/?LinkId=320213)
