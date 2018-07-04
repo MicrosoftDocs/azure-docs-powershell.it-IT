@@ -6,7 +6,7 @@
       items:
         - name: Eseguire l'installazione in macOS o Linux
           href: install-azurermps-maclinux.md
-        - name: Eseguire l'installazione con il pacchetto MSI o l'Installazione guidata piattaforma Web
+        - name: Eseguire l'installazione con il pacchetto MSI
           href: other-install.md
         - name: Eseguire in Docker
           href: azurerm-ps-in-docker.md
@@ -46,8 +46,8 @@
     - name: Note sulla versione
       href: release-notes-azureps.md
       items:
-        - name: Modifiche di rilievo in Azure PowerShell 5.x
-          href: migration-guide.5.0.0.md
+        - name: Modifiche di rilievo in Azure PowerShell 6.x
+          href: migration-guide.6.0.0.md
 - name: Esercitazioni
   items:
     - name: Creare macchine virtuali
