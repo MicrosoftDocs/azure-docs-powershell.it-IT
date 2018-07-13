@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 5/1/2018
-ms.openlocfilehash: 830afb067ea22999c09c1b894b72097bb8ebfa3b
-ms.sourcegitcommit: de0e60800df1add9f3400166faacca202ef567d9
+ms.openlocfilehash: 4f9c99152fd6ddc23aec005c8e8957e545e65246
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37406430"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100206"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Modifiche di rilievo in Microsoft Azure PowerShell 6.0.0
 
@@ -47,7 +47,7 @@ In precedenza per eseguire qualsiasi cmdlet con Azure PowerShell era necessaria 
 
 Per salvataggio automatico del contesto si intende l'archiviazione delle informazioni di accesso di Azure che è possibile usare tra sessioni nuove e diverse di PowerShell. Per altre informazioni sul salvataggio automatico del contesto, vedere [questo documento](https://docs.microsoft.com/en-us/powershell/azure/context-persistence).
 
-In precedenza, il salvataggio automatico del contesto era disabilitato per impostazione predefinita, di conseguenza le informazioni di accesso di Azure dell'utente non venivano archiviate tra una sessione e l'altra finché non veniva eseguito il cmdlet `Enable-AzureRmContextAutosave` per attivare la persistenza del contesto. In futuro il salvataggio automatico del contesto verrà abilitato per impostazione predefinita, di conseguenza il contesto degli utenti per i quali _non sono disponibili impostazioni salvate per il salvataggio automatico del contesto_ verrà archiviato al successivo accesso. Gli utenti possono rifiutare esplicitamente questa funzionalità usando il cmdlet `Disable-AzureRmContextAutosave`.
+In precedenza, il salvataggio automatico del contesto era disabilitato per impostazione predefinita, di conseguenza le informazioni di autenticazione di Azure dell'utente non venivano archiviate tra una sessione e l'altra finché non veniva eseguito il cmdlet `Enable-AzureRmContextAutosave` per attivare la persistenza del contesto. In futuro il salvataggio automatico del contesto verrà abilitato per impostazione predefinita, di conseguenza il contesto degli utenti per i quali _non sono disponibili impostazioni salvate per il salvataggio automatico del contesto_ verrà archiviato al successivo accesso. Gli utenti possono rifiutare esplicitamente questa funzionalità usando il cmdlet `Disable-AzureRmContextAutosave`.
 
 _Nota_: questa modifica non riguarderà gli utenti che in precedenza avevano disabilitato il salvataggio automatico del contesto oppure gli utenti con salvataggio automatico del contesto abilitato e contesti esistenti
 
@@ -249,7 +249,7 @@ Remove-AzureRmDataLakeStoreItem -Account "ContosoADL" -path /myFolder -Recurse
 ## <a name="breaking-changes-to-azurermkeyvault-cmdlets"></a>Modifiche di rilievo ai cmdlet di AzureRM.KeyVault
 
 **Add-AzureKeyVaultCertificate**
-- Il parametro `Certificate` è diventato obbligatorio.
+- Il parametro `CertificatePolicy` è diventato obbligatorio.
 
 **Set-AzureKeyVaultManagedStorageSasDefinition**
 - Il cmdlet non accetta più parametri singoli che costituiscono il token di accesso, ma sostituisce i parametri di token espliciti, ad esempio `Service` oppure `Permissions`, con un parametro `TemplateUri` generico, che corrisponde a un token di accesso di esempio definito altrove, presumibilmente con i cmdlet PowerShell di Archiviazione o creato manualmente in base alla documentazione di Archiviazione. Il cmdlet mantiene il parametro `ValidityPeriod`.

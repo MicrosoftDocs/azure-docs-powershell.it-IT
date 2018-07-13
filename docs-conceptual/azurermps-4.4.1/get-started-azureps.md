@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: 2f37df114b620566a663eb12c7e739975bc1f8bf
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 0897e8fc3a50a58ac8945bd95722736526f63e19
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854580"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100155"
 ---
 # <a name="getting-started-with-azure-powershell"></a>Introduzione ad Azure PowerShell
 
@@ -44,11 +44,11 @@ Verificare di aver installato l'ultima versione di Azure PowerShell. Per informa
 
 2. Per verificare che l'installazione sia riuscita, eseguire `Get-Module AzureRM -ListAvailable` dalla riga di comando.
 
-## <a name="log-in-to-azure"></a>Accedere ad Azure
+## <a name="sign-in-to-azure"></a>Accedere ad Azure
 
 Accedere in modo interattivo:
 
-1. Digitare `Login-AzureRmAccount`. Apparirà una finestra di dialogo che richiede le credenziali di Azure. L'opzione '-EnvironmentName' consente di accedere ad Azure per la Cina o Azure per la Germania.
+1. Digitare `Login-AzureRmAccount`. Apparirà una finestra di dialogo che richiede le credenziali di Azure. L'opzione '-EnvironmentName' consente di eseguire l'autenticazione per Azure Cina o Azure Germania.
 
    Ad esempio: Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
@@ -362,7 +362,7 @@ Per altre informazioni sull'uso di Azure PowerShell, vedere i nostri script più
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-* [Accedere ad Azure PowerShell](authenticate-azureps.md)
+* [Accedere con Azure PowerShell](authenticate-azureps.md)
 * [Gestire le sottoscrizioni di Azure con Azure PowerShell](manage-subscriptions-azureps.md)
 * [Creare entità servizio in Azure usando Azure PowerShell](create-azure-service-principal-azureps.md)
 * Vedere le note sulla migrazione da una versione precedente: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).

@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: 102dfb7476a4964af541a29416b10bc880c53adb
-ms.sourcegitcommit: de0e60800df1add9f3400166faacca202ef567d9
+ms.openlocfilehash: 5aa3b3fdeff20ea4c6f830f834e61f37d81da07d
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37406505"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100376"
 ---
 # <a name="get-started-with-azure-powershell"></a>guida introduttiva ad Azure PowerShell
 
@@ -48,7 +48,7 @@ Dopo aver creato lo spazio di archiviazione, Cloud Shell aprirà una sessione di
 
 Accedere in modo interattivo:
 
-1. Digitare `Connect-AzureRmAccount`. Apparirà una finestra di dialogo che richiede le credenziali di Azure. L'opzione '-Environment' consente di accedere ad Azure per la Cina o Azure per la Germania.
+1. Digitare `Connect-AzureRmAccount`. Apparirà una finestra di dialogo che richiede le credenziali di Azure. L'opzione '-Environment' consente di eseguire l'autenticazione per Azure Cina o Azure Germania.
 
    Ad esempio, Connect-AzureRmAccount -Environment AzureChinaCloud
 
@@ -365,7 +365,7 @@ Per altre informazioni sull'uso di Azure PowerShell, vedere i nostri script più
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-* [Accedere ad Azure PowerShell](authenticate-azureps.md)
+* [Accedere con Azure PowerShell](authenticate-azureps.md)
 * [Gestire le sottoscrizioni di Azure con Azure PowerShell](manage-subscriptions-azureps.md)
 * [Creare entità servizio in Azure usando Azure PowerShell](create-azure-service-principal-azureps.md)
 * Vedere le note sulla migrazione da una versione precedente: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).

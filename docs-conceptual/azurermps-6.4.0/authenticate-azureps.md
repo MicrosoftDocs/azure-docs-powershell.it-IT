@@ -7,16 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: e2eb6767d16dd15529b35b7a4134f4dcdd257d60
-ms.sourcegitcommit: de0e60800df1add9f3400166faacca202ef567d9
+ms.openlocfilehash: 20194ac2282d602ba61bf130791edac9f4ffae6c
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37406458"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100223"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Accedere con Azure PowerShell
 
-Azure PowerShell supporta più metodi di accesso. Il modo più semplice per iniziare consiste nell'accedere in modo interattivo dalla riga di comando.
+Azure PowerShell supporta più metodi di autenticazione. Il modo più semplice per iniziare consiste nell'accedere in modo interattivo dalla riga di comando.
 
 ## <a name="sign-in-interactively"></a>Accedere in modo interattivo
 
@@ -29,7 +29,7 @@ Connect-AzureRmAccount
 Durante l'esecuzione, questo cmdlet aprirà una finestra di dialogo che chiederà l'indirizzo e-mail e la password associati all'account Azure. Quando si esegue l'autenticazione, queste informazioni vengono salvate per la sessione corrente di PowerShell, la finestra di dialogo viene chiusa e si ha accesso a tutti i cmdlet di Azure PowerShell.
 
 > [!IMPORTANT]
-> Questo accesso è valido _solo_ per la sessione corrente di PowerShell. Per mantenere l'accesso da una sessione all'altra, vedere l'articolo sulle [credenziali persistenti](context-persistence.md).
+> A partire dalla versione Azure PowerShell 6.3.0, le credenziali vengono condivise tra più sessioni di PowerShell, purché si rimanga connessi a Windows. Per altre informazioni, vedere l'articolo relativo alle [Credenziali persistenti](context-persistence.md).
 
 ## <a name="sign-in-with-a-service-principal"></a>Accedere con un'entità servizio
 
