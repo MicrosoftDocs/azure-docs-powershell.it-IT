@@ -1,5 +1,0 @@
-- name: Panoramica
-  href: overview.md
-  items:
-    - name: Installa
-      href: install-azure-ps.md
