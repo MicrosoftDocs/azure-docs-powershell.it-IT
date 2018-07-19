@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: 2809d8265af85a786b1b72ab9be3135f166a20e8
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 50b05e5f25b6e3e1c815f6b26f1b53b84cd0b7da
+ms.sourcegitcommit: 8b882d1c27d9e323447ff85f56d11bbf5e244d7f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39025328"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39110892"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Installare Azure PowerShell in Windows con PowerShellGet
 
@@ -24,40 +24,14 @@ Il modello di distribuzione classica di Azure non è supportato da questa versio
 
 ## <a name="requirements"></a>Requisiti
 
-Per installare Azure PowerShell è necessario PowerShellGet versione 1.1.2.0 o superiore. Per verificare se è disponibile nel sistema, eseguire questo comando:
+A partire da Azure PowerShell versione 6.0, Azure PowerShell richiede PowerShell versione 5.0. Per verificare la versione di PowerShell eseguita nel computer, eseguire questo comando:
 
 ```powershell
-Get-Module -Name PowerShellGet -ListAvailable | Select-Object -Property Name,Version,Path
+$PSVersionTable.PSVersion
 ```
 
-Verrà visualizzata una schermata simile all'output seguente:
+Se è presente una versione obsoleta, vedere [Aggiornamento di Windows PowerShell esistente](/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
 
-```output
-Name          Version Path
-----          ------- ----
-Name          Version Path
-----          ------- ----
-PowerShellGet 1.6.0   C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.6.0\PowerShellGet.psd1
-PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PowerShellGet.psd1
-```
-
-Se è necessario aggiornare l'installazione di PowerShellGet, eseguire questo comando:
-
-```powershell
-Install-Module PowerShellGet -Force
-```
-
-Se PowerShellGet non è installato, vedere le istruzioni nella tabella seguente per il proprio sistema.
-
-|Scenario|Istruzioni di installazione|
-|---|---|
-|Windows 10<br/>Windows Server 2016|Integrato in Windows Management Framework (WMF) 5.0 incluso nel sistema operativo|
-|Eseguire l'aggiornamento a PowerShell 5| <ol><li>[Installare la versione più recente di WMF](https://www.microsoft.com/en-us/download/details.aspx?id=54616)</li><li>Eseguire il comando seguente:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
-|Windows con PowerShell 3 o PowerShell 4|<ol><il>[Ottenere i moduli PackageManagement](http://go.microsoft.com/fwlink/?LinkID=746217)</il><li>Eseguire il comando seguente:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
-
-> [!NOTE]
-> L'uso di PowerShellGet richiede criteri di esecuzione che consentono di eseguire script. Per altre informazioni sui criteri di esecuzione di PowerShell, vedere [About Execution Policies](/powershell/module/microsoft.powershell.core/about/about_execution_policies) (Informazioni sui criteri di esecuzione).
->
 > [!IMPORTANT]
 > Il modulo illustrato in questo documento, AzureRM, usa .NET Framework. Non è quindi compatibile con PowerShell 6.0, che usa .NET Core. Se si usa PowerShell 6.0, seguire le [istruzioni di installazione per macOS e Linux](install-azurermps-maclinux.md).
 
