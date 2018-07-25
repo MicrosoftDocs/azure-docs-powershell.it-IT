@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 08/31/2017
-ms.openlocfilehash: d36952b38a36a5196ee5b38ed048366da5416f0b
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: ff5ee02b11b6f0649e20b056c14fc8a9b3ba6276
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34819984"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39025022"
 ---
 # <a name="overview-of-azure-powershell"></a>Panoramica di Azure PowerShell
 
@@ -31,8 +31,7 @@ Gli esempi seguenti aiutano a eseguire scenari comuni con Azure PowerShell:
 > [!NOTE]
 > In presenza di distribuzioni che usano il modello di distribuzione classico non convertibile, è possibile installare la versione di Gestione dei servizi di Azure PowerShell. Per altre informazioni, vedere [Install the Azure PowerShell Service Management module](/powershell/azure/servicemanagement/install-azure-ps) (Installare il modulo Gestione dei servizi di Azure PowerShell).
 
-
-### <a name="need-help-with-powershell"></a>Richiesta di assistenza con PowerShell
+## <a name="learn-powershell-basics"></a>Nozioni di base di PowerShell
 
 Se non si ha familiarità con PowerShell, un'introduzione a PowerShell può risultare utile.
 
