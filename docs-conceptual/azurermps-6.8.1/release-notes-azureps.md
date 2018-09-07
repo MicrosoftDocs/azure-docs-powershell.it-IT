@@ -7,19 +7,68 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
-ms.date: 5/1/2018
-ms.openlocfilehash: 6043d17df1b5e91521bad31e65372c10ee6a5c6a
-ms.sourcegitcommit: dca906e73e943aac207cee23b79915773419c673
+ms.date: 08/28/2018
+ms.openlocfilehash: f4f3141998be14f0b5b223aed1af283534bf061d
+ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43250062"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43383839"
 ---
 # <a name="release-notes"></a>Note sulla versione
 
 Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa versione.
 
 ---
+## <a name="681---august-2018"></a>6.8.1 - Agosto 2018
+#### <a name="general"></a>Generale
+* Risoluzione del problema relativo alla mancata configurazione dei gruppi di risorse predefiniti.
+* Assembly di runtime comuni aggiornati
+
+#### <a name="azurermapimanagement"></a>AzureRM.ApiManagement
+* Risoluzione del problema relativo alla mancata configurazione dei gruppi di risorse predefiniti.
+* Risoluzione del problema https://github.com/Azure/azure-powershell/issues/6603
+    - I cmdlet Import-AzureRmApiManagementApi e *-AzureRmApiManagementCertificate gestiscono ora i percorsi relativi
+* Risoluzione del problema https://github.com/Azure/azure-powershell/issues/6879
+    - CertificateInformation è una proprietà impostabile che consente il corretto funzionamento del cmdlet Set-AzureRmApiManagement. Risoluzione del problema tramite l'aggiornamento a NuGet 4.0.4-preview
+* Risoluzione del problema https://github.com/Azure/azure-powershell/issues/6853
+    - Correzione del filtro Odata per la ricerca del prodotto in base al nome
+* Risoluzione del problema https://github.com/Azure/azure-powershell/issues/6814
+    - Correzione del filtro Odata per la ricerca dell'API in base al nome
+* Aggiunta del supporto per logger AzureMonitor
+
+
+#### <a name="azurermcompute"></a>AzureRM.Compute
+* Risoluzione del problema relativo alla mancanza della destinazione nell'output dell'errore.
+* Risoluzione del problema relativo al tipo di account di archiviazione per una VM con disco gestito
+* Risoluzione del problema relativo alla mancata configurazione dei gruppi di risorse predefiniti.
+* Correzione dei cmdlet dell'estensione AEM per altri ambienti, ad esempio Azure Cina
+
+#### <a name="azurermnetwork"></a>AzureRM.Network
+* Modifica in visualizzazione tabella della presentazione predefinita dell'output del cmdlet
+
+#### <a name="azurermpowerbiembedded"></a>AzureRM.PowerBIEmbedded
+* Correzione dell'errore in Update-AzureRmPowerBIEmbeddedCapacity durante il tentativo di ridimensionamento della capacità in sospeso
+
+
+#### <a name="azurermresources"></a>AzureRM.Resources
+* Risoluzione del problema relativo alla creazione di applicazioni gestite dal Marketplace.
+
+#### <a name="azurermservicebus"></a>AzureRM.ServiceBus
+* Problemi risolti
+    - https://github.com/Azure/azure-powershell/issues/5058
+    - https://github.com/Azure/azure-powershell/issues/5055
+    - https://github.com/Azure/azure-powershell/issues/6891
+
+#### <a name="azurermtrafficmanager"></a>AzureRM.TrafficManager
+* Aggiunta del supporto per il metodo di routing MultiValue
+    - Nuovo parametro 'MaxReturn' per il routing MultiValue
+* Aggiunta del supporto per il metodo di routing Subnet
+    - Supporto per gli intervalli di indirizzi IP (subnet) negli endpoint
+* Aggiunta del supporto per le intestazioni personalizzate nei profili
+* Aggiunta del supporto per gli intervalli di codici di stato previsti nei profili
+* Aggiunta del supporto per le intestazioni personalizzate negli endpoint
+
 ## <a name="680---august-2018"></a>6.8.0 - Agosto 2018
 #### <a name="general"></a>Generale
 * Risoluzione del problema relativo alla mancata configurazione dei gruppi di risorse predefiniti.
