@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 72a0e9ca8562dc06a1fe2718658172ce9ee20f0e
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.openlocfilehash: 227bec0f7eb24b0941e9e21d37524b290c4b83a5
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43383941"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46304166"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Modifiche di rilievo in Microsoft Azure PowerShell 6.0.0
 
@@ -41,11 +41,11 @@ Questo documento funge sia da notifica delle modifiche di rilievo che da guida a
 
 ### <a name="minimum-powershell-version-required-bumped-to-50"></a>Versione minima richiesta di PowerShell innalzata alla 5.0
 
-In precedenza per eseguire qualsiasi cmdlet con Azure PowerShell era necessaria _almeno_ la versione 3.0 di PowerShell. In futuro, questo requisito verrà innalzato alla versione 5.0 di PowerShell. Per informazioni sull'aggiornamento a PowerShell 5.0, vedere [questa tabella](https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
+In precedenza per eseguire qualsiasi cmdlet con Azure PowerShell era necessaria _almeno_ la versione 3.0 di PowerShell. In futuro, questo requisito verrà innalzato alla versione 5.0 di PowerShell. Per informazioni sull'aggiornamento a PowerShell 5.0, vedere [questa tabella](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
 
 ### <a name="context-autosave-enabled-by-default"></a>Salvataggio automatico del contesto abilitato per impostazione predefinita
 
-Per salvataggio automatico del contesto si intende l'archiviazione delle informazioni di accesso di Azure che è possibile usare tra sessioni nuove e diverse di PowerShell. Per altre informazioni sul salvataggio automatico del contesto, vedere [questo documento](https://docs.microsoft.com/en-us/powershell/azure/context-persistence).
+Per salvataggio automatico del contesto si intende l'archiviazione delle informazioni di accesso di Azure che è possibile usare tra sessioni nuove e diverse di PowerShell. Per altre informazioni sul salvataggio automatico del contesto, vedere [questo documento](https://docs.microsoft.com/powershell/azure/context-persistence).
 
 In precedenza, il salvataggio automatico del contesto era disabilitato per impostazione predefinita, di conseguenza le informazioni di autenticazione di Azure dell'utente non venivano archiviate tra una sessione e l'altra finché non veniva eseguito il cmdlet `Enable-AzureRmContextAutosave` per attivare la persistenza del contesto. In futuro il salvataggio automatico del contesto verrà abilitato per impostazione predefinita, di conseguenza il contesto degli utenti per i quali _non sono disponibili impostazioni salvate per il salvataggio automatico del contesto_ verrà archiviato al successivo accesso. Gli utenti possono rifiutare esplicitamente questa funzionalità usando il cmdlet `Disable-AzureRmContextAutosave`.
 
@@ -255,8 +255,8 @@ Remove-AzureRmDataLakeStoreItem -Account "ContosoADL" -path /myFolder -Recurse
 - Il cmdlet non accetta più parametri singoli che costituiscono il token di accesso, ma sostituisce i parametri di token espliciti, ad esempio `Service` oppure `Permissions`, con un parametro `TemplateUri` generico, che corrisponde a un token di accesso di esempio definito altrove, presumibilmente con i cmdlet PowerShell di Archiviazione o creato manualmente in base alla documentazione di Archiviazione. Il cmdlet mantiene il parametro `ValidityPeriod`.
 
 Per altre informazioni sulla creazione di token di accesso condivisi per Archiviazione di Azure, vedere le pagine della documentazione e in particolare:
-- [Creazione di una firma di accesso condiviso del servizio] (https://docs.microsoft.com/en-us/rest/api/storageservices/Constructing-a-Service-SAS)
-- [Creazione di una firma di accesso condiviso dell'account] (https://docs.microsoft.com/en-us/rest/api/storageservices/constructing-an-account-sas)
+- [Creazione di una firma di accesso condiviso del servizio] (https://docs.microsoft.com/rest/api/storageservices/Constructing-a-Service-SAS)
+- [Creazione di una firma di accesso condiviso dell'account] (https://docs.microsoft.com/rest/api/storageservices/constructing-an-account-sas)
 
 ```powershell
 # Old
