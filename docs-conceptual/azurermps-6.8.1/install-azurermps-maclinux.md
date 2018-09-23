@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 06/06/2018
-ms.openlocfilehash: 6e7d447ea9672c174e3f1d103bc56c11a7f37192
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.date: 09/11/2018
+ms.openlocfilehash: 8347502df3c9cd6237a44293cfa3e5c051066940
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43384043"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46300664"
 ---
 # <a name="install-azure-powershell-on-macos-or-linux"></a>Installare Azure PowerShell in macOS o Linux
 
@@ -76,11 +76,11 @@ Connect-AzureRmAccount
 ```
 
 È necessario ripetere questi passaggi per ogni nuova sessione di PowerShell avviata. L'importazione automatica del modulo `AzureRM` richiede la configurazione di un profilo di PowerShell. Vedere [Informazioni sui profili](/powershell/module/microsoft.powershell.core/about/about_profiles).
-In macOS e Linux usare il proprio profilo tramite la variabile di ambiente `$Profile`. Per informazioni su come conservare l'accesso ad Azure da una sessione all'altra, vedere [Conservare le credenziali utente tra le sessioni di PowerShell](context-persistence.md).
+In macOS e Linux usare il proprio profilo tramite la variabile di ambiente `$Profile`. Per informazioni su come mantenere l'accesso ad Azure da una sessione all'altra, vedere [Conservare le credenziali utente tra le sessioni di PowerShell](context-persistence.md).
 
 ## <a name="available-cmdlets"></a>Cmdlet disponibili
 
-I moduli di Azure PowerShell per .NET Core sono ancora in fase di sviluppo. Questi moduli non offrono il set completo di cmdlet disponibili per la versione Windows dei moduli. Le funzioni seguenti sono implementate nei moduli AzureRM.Netcore:
+I moduli di Azure PowerShell per .NET Core sono ancora in fase di sviluppo. Questi moduli non offrono il set completo dei cmdlet disponibili per la versione Windows dei moduli. Le funzioni seguenti sono implementate nei moduli AzureRM.Netcore:
 
 * Gestione account
   * Accesso con account Microsoft, account dell'organizzazione o entità servizio tramite Microsoft Azure Active Directory
@@ -88,7 +88,7 @@ I moduli di Azure PowerShell per .NET Core sono ancora in fase di sviluppo. Ques
 * Environment
   * Recupero di ambienti predefiniti di Microsoft Azure diversi
   * Aggiunta/impostazione/rimozione di ambienti personalizzati, come gli ambienti Azure Stack o Windows Azure Pack
-* Cmdlet del piano di gestione per i servizi di Azure tramite le interfacce di Resource Manager e di gestione dei servizi.
+* Cmdlet del piano di gestione per i servizi di Azure con le interfacce del modello di distribuzione classica e Resource Manager.
   * Macchina virtuale
   * Servizio app (siti Web)
   * Database SQL

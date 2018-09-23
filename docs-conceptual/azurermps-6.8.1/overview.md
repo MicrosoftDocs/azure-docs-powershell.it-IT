@@ -7,13 +7,13 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
-ms.date: 08/31/2017
-ms.openlocfilehash: ef4f9b416454471f8c9476f0bbccbcca20a22000
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.date: 09/11/2018
+ms.openlocfilehash: fcb6213dab12f94796ab0ca9de4d5e391d570f4f
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43384179"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46304132"
 ---
 # <a name="overview-of-azure-powershell"></a>Panoramica di Azure PowerShell
 
@@ -33,10 +33,10 @@ Gli esempi seguenti aiutano a eseguire scenari comuni con Azure PowerShell:
 
 ## <a name="learn-powershell-basics"></a>Nozioni di base di PowerShell
 
-Se non si ha familiarità con PowerShell, un'introduzione a PowerShell può risultare utile.
+Se non si ha familiarità con PowerShell, potrebbe essere utile un'introduzione a PowerShell.
 
-* [Installazione di PowerShell](/powershell/scripting/installing-windows-powershell)
-* [Creazione di script con PowerShell](/powershell/scripting/scripting-with-windows-powershell)
+* [Installazione di PowerShell](/powershell/scripting/setup/installing-windows-powershell)
+* [Creazione di script con PowerShell](/powershell/scripting/powershell-scripting)
 
 È inoltre possibile guardare questo video: [PowerShell Basics: (Part 1) Getting Started with PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1) (Nozioni di base su PowerShell: Introduzione a PowerShell, parte 1).
 

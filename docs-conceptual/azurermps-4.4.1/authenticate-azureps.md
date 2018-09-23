@@ -1,18 +1,18 @@
 ---
 title: Accedere con Azure PowerShell
-description: Come effettuare l'accesso con Azure PowerShell come utente, entità servizio o con l'identità del servizio gestita.
+description: Come eseguire l'accesso con Azure PowerShell come utente, come entità servizio o con le identità gestite per le risorse di Azure.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: 6525e41be54c3f6b97812504c436e0ff3f5edf8e
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: c3131d3516e50123c48b13dc9e04c0b507a63a58
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100087"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46300868"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Accedere con Azure PowerShell
 
@@ -44,11 +44,11 @@ $pscredential = Get-Credential
 Connect-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
 ```
 
-## <a name="sign-in-using-an-azure-vm-managed-service-identity"></a>Accedere tramite un'identità del servizio gestita della macchina virtuale di Azure
+## <a name="sign-in-using-managed-identities-for-azure-resources"></a>Accedere con le identità gestite per le risorse di Azure
 
-Identità del servizio gestito è una funzionalità in anteprima di Azure Active Directory. È possibile usare un'entità servizio di Identità del servizio gestito per eseguire l'accesso e acquisire un token di accesso solo app per accedere ad altre risorse. L'identità del servizio gestita è disponibile solo in macchine virtuali in esecuzione in un cloud di Azure.
+Le identità gestite per le risorse di Azure sono una funzionalità di Azure Active Directory. È possibile usare l'entità servizio di un'identità gestita per eseguire l'accesso e acquisire un token di accesso solo app per accedere ad altre risorse. Le identità gestite sono disponibili solo nelle macchine virtuali in esecuzione in un cloud di Azure.
 
-Per altre informazioni su Identità del servizio gestito, vedere [How to use an Azure VM Managed Service Identity (MSI) for sign-in and token acquisition](/azure/active-directory/msi-how-to-get-access-token-using-msi) (Come usare un'Identità del servizio gestito della macchina virtuale di Azure per l'accesso e l'acquisizione di token).
+Per informazioni sulle identità gestite per le risorse di Azure, vedere [Come usare le identità gestite per le risorse di Azure in una macchina virtuale di Azure per acquisire un token di accesso](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token).
 
 ## <a name="sign-in-to-another-cloud"></a>Accedere a un altro cloud
 

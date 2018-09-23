@@ -6,17 +6,17 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 06/20/2018
-ms.openlocfilehash: 27ac176d8bd0b142b7740b2ba6793edb500a8af3
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.date: 09/09/2018
+ms.openlocfilehash: 0ed8f50abbcb2aa00192196f19004446dc696b5d
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43383567"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46304013"
 ---
 # <a name="run-azure-powershell-in-a-docker-container"></a>Eseguire Azure PowerShell in un contenitore Docker
 
-Per semplificare l'esecuzione di Azure PowerShell in ambienti portatili, Microsoft pubblica le immagini Docker con Azure PowerShell preinstallato. Queste immagini offrono un guest Linux con PowerShell Core o un guest Windows con PowerShell Core o PowerShell 5.
+Microsoft pubblica immagini Docker con Azure PowerShell preinstallato. Queste immagini consentono di provare a usare Azure PowerShell o di eseguirlo in un ambiente isolato. Sono disponibili immagini che eseguono sia PowerShell Core che PowerShell 5. 
 
 | Environment | Immagine Docker |
 |-------------|--------------|
@@ -24,7 +24,7 @@ Per semplificare l'esecuzione di Azure PowerShell in ambienti portatili, Microso
 | PowerShell Core in Windows | [azuresdk/azure-powershell-core:nanoserver](https://hub.docker.com/r/azuresdk/azure-powershell-core/) |
 | PowerShell Core in Linux | [azuresdk/azure-powershell-core:latest](https://hub.docker.com/r/azuresdk/azure-powershell-core/) |
 
-Per eseguire uno di questi contenitori, usare `docker run -it $ImageName` per ottenere un terminale interattivo. Ad esempio, per eseguire PowerShell Core in un contenitore Linux usare:
+Per eseguire uno di questi contenitori, usare `docker run -it $ImageName` per ottenere un terminale interattivo. Ad esempio, per eseguire un contenitore Linux con PowerShell Core:
 
 ```powershell
 docker run -it azuresdk/azure-powershell-core:latest

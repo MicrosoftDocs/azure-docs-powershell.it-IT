@@ -1,22 +1,22 @@
 ---
 title: Disinstallare Azure PowerShell
 description: Come eseguire una disinstallazione completa di Azure PowerShell
-ms.date: 06/20/2018
+ms.date: 09/11/2018
 author: sptramer
 ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 92af0fdd8db451e2f0f092d66a3e296ad8d6a09e
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.openlocfilehash: 385dd0281185cfb9e7bdd2c98e4c557659fff384
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43383669"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46300766"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Disinstallare il modulo Azure PowerShell
 
-Questo articolo spiega come disinstallare una versione precedente di Azure PowerShell o come rimuoverla completamente dal sistema. Se si è deciso di disinstallare completamente Azure PowerShell, inviare feedback tramite il cmdlet [Send-Feedback](/powershell/module/azurerm.profile/send-feedback).
+Questo articolo spiega come disinstallare una versione precedente di Azure PowerShell o come rimuoverla completamente dal sistema. Se si è deciso di disinstallare completamente Azure PowerShell, inviare commenti e suggerimenti tramite il cmdlet [Send-Feedback](/powershell/module/azurerm.profile/send-feedback).
 Se è stato rilevato un bug, [creare un problema di GitHub](https://github.com/azure/azure-powershell/issues).
 
 ## <a name="uninstall-msi"></a>Disinstallare il pacchetto MSI
@@ -32,9 +32,9 @@ L'elenco dei programmi visualizzato nella schermata mostrerà "Azure PowerShell"
 
 ## <a name="uninstall-from-powershell"></a>Eseguire la disinstallazione da PowerShell
 
-Se Azure PowerShell è stato installato con PowerShellGet, è possibile usare il cmdlet [Uninstall-Module](/powershell/module/powershellget/uninstall-module). Tuttavia `Uninstall-Module` disinstalla solo un modulo. Per rimuovere completamente Azure PowerShell, è necessario disinstallare ogni modulo singolarmente. La disinstallazione può essere complicata se sono installate più versioni di Azure PowerShell.
+Se Azure PowerShell è stato installato con PowerShellGet, è possibile usare il cmdlet [Uninstall-Module](/powershell/module/powershellget/uninstall-module). Tuttavia `Uninstall-Module` disinstalla solo un modulo. Per rimuovere completamente Azure PowerShell, è necessario disinstallare ogni modulo singolarmente. Se si sono installate più versioni di Azure PowerShell, la disinstallazione può essere complessa.
 
-Lo script può essere usato per rimuovere completamente una singola versione di Azure PowerShell. Lo script esegue una query su PowerShell Gallery per ottenere un elenco dei moduli secondari dipendenti, quindi disinstalla la versione corretta di ogni modulo secondario.
+Questo script esegue una query su PowerShell Gallery per ottenere un elenco dei moduli secondari dipendenti, quindi disinstalla la versione corretta di ogni modulo secondario.
 
 ```powershell
 function Uninstall-AllModules {

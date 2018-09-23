@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
-ms.date: 11/15/2017
-ms.openlocfilehash: 5354a75e969e084d6457d0566a516705f365476f
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.date: 09/11/2018
+ms.openlocfilehash: 9150089860f0934cb7344cac2cef38546cac28ad
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43384091"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46300817"
 ---
 # <a name="get-started-with-azure-powershell"></a>guida introduttiva ad Azure PowerShell
 
@@ -48,7 +48,7 @@ Dopo aver creato lo spazio di archiviazione, Cloud Shell aprirà una sessione di
 
 Accedere in modo interattivo:
 
-1. Digitare `Connect-AzureRmAccount`. Apparirà una finestra di dialogo che richiede le credenziali di Azure. L'opzione '-Environment' consente di eseguire l'autenticazione per Azure Cina o Azure Germania.
+1. Digitare `Connect-AzureRmAccount`. Verrà visualizzata una finestra di dialogo in cui vengono richieste le credenziali di Azure. L'opzione '-Environment' consente di eseguire l'autenticazione per Azure Cina o Azure Germania.
 
    Ad esempio, Connect-AzureRmAccount -Environment AzureChinaCloud
 
@@ -95,7 +95,7 @@ StorageProfile           : {ImageReference, OsDisk, DataDisks}
 FullyQualifiedDomainName : samplevm-2c0867.eastus.cloudapp.azure.com
 ```
 
-La procedura è semplice. Ma è possibile che ci si domandi se vengono creati altri elementi e come viene configurata la macchina virtuale. È possibile esaminare prima di tutto il gruppo di risorse.
+Per determinare quali altri elementi vengono creati e come viene configurata la VM, esaminare prima di tutto il gruppo di risorse.
 
 ```azurepowershell-interactive
 Get-AzureRmResourceGroup | Select-Object ResourceGroupName,Location
@@ -129,7 +129,7 @@ SampleVM                   eastus   Microsoft.Network/publicIPAddresses     Samp
 SampleVM                   eastus   Microsoft.Network/virtualNetworks       SampleVM
 ```
 
-È possibile ottenere altri dettagli sulla macchina virtuale. Questo esempio mostra come recuperare informazioni sull'immagine del sistema operativo usata per creare la macchina virtuale.
+È possibile ottenere altri dettagli sulla macchina virtuale. Questo esempio illustra come recuperare informazioni sull'immagine del sistema operativo usata per creare la VM.
 
 ```azurepowershell-interactive
 Get-AzureRmVM -Name SampleVM -ResourceGroupName SampleVM |
@@ -151,7 +151,7 @@ L'esempio precedente usa la sintassi semplificata e i valori dei parametri prede
 
 ### <a name="create-a-resource-group"></a>Creare un gruppo di risorse
 
-Per questo esempio si vuole creare un gruppo di risorse. I gruppi di risorse di Azure consentono di gestire più risorse che si desidera raggruppare insieme in modo logico. Ad esempio, è possibile creare un gruppo di risorse per un'applicazione o un progetto e aggiungere una macchina virtuale, un database e un servizio rete CDN al suo interno.
+In questo esempio si vuole creare un gruppo di risorse. I gruppi di risorse di Azure consentono di gestire più risorse che si desidera raggruppare insieme in modo logico. Ad esempio, è possibile creare un gruppo di risorse per un'applicazione o un progetto e aggiungere una macchina virtuale, un database e un servizio rete CDN al suo interno.
 
 Creare un gruppo di risorse denominato "MyResourceGroup" nell'area westeurope di Azure. A questo scopo, usare il comando seguente:
 
@@ -167,7 +167,7 @@ Tags              :
 ResourceId        : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/myResourceGroup
 ```
 
-Il nuovo gruppo di risorse verrà usato per includere tutte le risorse necessarie per la nuova macchina virtuale creata. Per creare una nuova macchina virtuale occorre prima creare le altre risorse necessarie e assegnarle a una configurazione. Sarà quindi possibile usare tale configurazione per creare la macchina virtuale. Sarà inoltre necessario disporre di una chiave pubblica SSH denominata `id_rsa.pub` nella directory .ssh del profilo utente.
+Il nuovo gruppo di risorse verrà usato per includere tutte le risorse necessarie per la nuova macchina virtuale creata. Per creare una nuova VM Linux, è prima di tutto necessario creare le altre risorse richieste e assegnarle a una configurazione. Sarà quindi possibile usare tale configurazione per creare la macchina virtuale. Sarà inoltre necessario disporre di una chiave pubblica SSH denominata `id_rsa.pub` nella directory .ssh del profilo utente.
 
 #### <a name="create-the-required-network-resources"></a>Creare le risorse di rete necessarie
 
@@ -233,7 +233,7 @@ Add-AzureRmVMSshPublicKey -VM $vmConfig -KeyData $sshPublicKey -Path "/home/azur
 New-AzureRmVM -ResourceGroupName $resourceGroup -Location $location -VM $vmConfig
 ```
 
-Ora che la macchina virtuale è stata creata, è possibile accedere alla nuova macchina virtuale Linux tramite SSH con l'indirizzo IP pubblico della macchina virtuale creata:
+Ora che la VM è stata creata, si può accedere alla nuova macchina virtuale Linux usando SSH con l'indirizzo IP pubblico della VM creata:
 
 ```bash
 ssh xx.xxx.xxx.xxx
@@ -303,7 +303,7 @@ New-AzureRmWebApp -Name MyWebApp43433 -AppServicePlan MyAppServicePlan -Resource
 
 ## <a name="listing-deployed-resources"></a>Elenco delle risorse distribuite
 
-È possibile usare il cmdlet `Get-AzureRmResource` per elencare le risorse in esecuzione in Azure. L'esempio seguente illustra le risorse appena create nel nuovo gruppo di risorse.
+È possibile usare il cmdlet `Get-AzureRmResource` per elencare le risorse in esecuzione in Azure. L'esempio seguente illustra le risorse create nel nuovo gruppo di risorse.
 
 ```azurepowershell-interactive
 Get-AzureRmResource |
@@ -338,7 +338,7 @@ Per eseguire la pulizia dell'account Azure, si dovranno rimuovere le risorse cre
 Remove-AzureRmVM -Name myWindowsVM -ResourceGroupName myResourceGroup
 ```
 
-Verrà richiesto di confermare l'eliminazione delle risorse specificate.
+Verrà richiesto di confermare che si vuole rimuovere la risorsa.
 
 ```output
 Confirm
@@ -346,7 +346,8 @@ Are you sure you want to remove resource group 'myResourceGroup'
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 ```
 
-È anche possibile eliminare più risorse contemporaneamente. Ad esempio, il comando seguente elimina l'intero gruppo di risorse "MyResourceGroup" che abbiamo usato per tutti gli esempi di questa esercitazione introduttiva. Il comando elimina il gruppo di risorse e tutte le altre risorse in esso contenute.
+È anche possibile eliminare più risorse contemporaneamente. Il comando seguente, ad esempio, elimina il gruppo di risorse "MyResourceGroup" finora usato per tutti gli esempi.
+Verranno eliminate anche tutte le risorse nel gruppo.
 
 ```azurepowershell-interactive
 Remove-AzureRmResourceGroup -Name myResourceGroup
@@ -358,7 +359,7 @@ Are you sure you want to remove resource group 'myResourceGroup'
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
 ```
 
-Questa operazione può richiedere alcuni minuti.
+A seconda del numero e del tipo di risorse, il completamento dell'attività può richiedere alcuni minuti.
 
 ## <a name="get-samples"></a>Ottenere gli esempi
 
@@ -369,7 +370,7 @@ Per altre informazioni sull'uso di Azure PowerShell, vedere i nostri script più
 * [Accedere con Azure PowerShell](authenticate-azureps.md)
 * [Gestire le sottoscrizioni di Azure con Azure PowerShell](manage-subscriptions-azureps.md)
 * [Creare entità servizio in Azure usando Azure PowerShell](create-azure-service-principal-azureps.md)
-* Vedere le note sulla migrazione da una versione precedente: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).
+* Vedere le note sulla versione in merito alla migrazione da una versione precedente: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes)
 * Ottenere informazioni dalla community:
   * [Forum Azure su MSDN](http://go.microsoft.com/fwlink/p/?LinkId=320212)
   * [stackoverflow](http://go.microsoft.com/fwlink/?LinkId=320213)

@@ -7,41 +7,41 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 05/15/2017
-ms.openlocfilehash: 76d690f3a7206857861e1ee26d8284de419dc70a
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.date: 09/09/2018
+ms.openlocfilehash: 4c1bf93d69e186699f434bb979af56fcb1d20e8a
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43383703"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46301140"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Creare un'entità servizio di Azure con Azure PowerShell
 
-Se si prevede di gestire un'app o un servizio con Azure PowerShell, è consigliabile eseguire tale app o servizio in un'entità servizio di Azure Active Directory (AAD), anziché con le proprie credenziali. Questo argomento illustra come creare un'entità di sicurezza con Azure PowerShell.
+Se si prevede di gestire un'app o un servizio con Azure PowerShell, è consigliabile eseguire tale app o servizio in un'entità servizio di Azure Active Directory (AAD), anziché con le proprie credenziali. Questo articolo illustra la creazione di un'entità di sicurezza con Azure PowerShell.
 
 > [!NOTE]
 > È inoltre possibile creare un'entità servizio tramite il portale di Azure. Per informazioni dettagliate, vedere [Usare il portale per creare un'applicazione Active Directory e un'entità servizio che accedono alle risorse](/azure/azure-resource-manager/resource-group-create-service-principal-portal).
 
 ## <a name="what-is-a-service-principal"></a>Che cos'è un'"entità servizio"?
 
-Un'entità servizio di Azure è un'identità di sicurezza usata da app, servizi e strumenti di automazione creati dall'utente per accedere a risorse di Azure specifiche. Può essere considerata come una "identità utente" (nome utente e password o certificato) con un ruolo specifico e autorizzazioni attentamente controllate. A differenza di un'identità utente generica, essa deve essere in grado di eseguire soltanto operazioni specifiche. Se le viene concesso solo il livello minimo di autorizzazioni necessarie per eseguire le attività di gestione, un'entità servizio migliora la sicurezza.
+Un'entità servizio di Azure è un'identità di sicurezza usata da app, servizi e strumenti di automazione creati dall'utente per accedere a risorse di Azure specifiche. Può essere considerata come una "identità utente" (nome utente e password o certificato) con un ruolo specifico e autorizzazioni attentamente controllate. A differenza di un'identità utente generica, un'entità servizio dovrà eseguire solo operazioni specifiche. Se le viene concesso solo il livello minimo di autorizzazioni necessarie per eseguire le attività di gestione, un'entità servizio migliora la sicurezza.
 
 ## <a name="verify-your-own-permission-level"></a>Verificare il proprio livello di autorizzazione
 
-Innanzitutto, è necessario avere autorizzazioni sufficienti sia nell'istanza di Azure Active Directory che nella sottoscrizione di Azure. In particolare, è necessario poter creare un'app in Active Directory e assegnare un ruolo all'entità servizio.
+Innanzitutto, è necessario avere autorizzazioni sufficienti sia nell'istanza di Azure Active Directory che nella sottoscrizione di Azure. È necessario poter creare un'app in Active Directory e assegnare un ruolo all'entità servizio.
 
-Il modo più semplice per verificare se l'account dispone delle autorizzazioni appropriate è tramite il portale. Vedere l'articolo su come [controllare le autorizzazioni necessarie nel portale](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions).
+Il modo più semplice per verificare se l'account ha le autorizzazioni corrette è tramite il portale. Vedere l'articolo su come [controllare le autorizzazioni necessarie nel portale](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions).
 
 ## <a name="create-a-service-principal-for-your-app"></a>Creare un'entità servizio per l'app
 
-Dopo avere eseguito l'accesso all'account Azure, è possibile creare l'entità servizio. È necessario disporre di uno dei modi seguenti per identificare l'app distribuita:
+Dopo aver eseguito l'accesso all'account Azure, è possibile creare l'entità servizio. È necessario disporre di uno dei modi seguenti per identificare l'app distribuita:
 
 * Nome univoco dell'app distribuita, ad esempio "MyDemoWebApp" negli esempi seguenti, oppure
 * ID dell'applicazione, GUID univoco associato all'app, al servizio o all'oggetto distribuito
 
 ### <a name="get-information-about-your-application"></a>Ottenere informazioni sull'applicazione
 
-Per individuare le informazioni sull'applicazione si può usare il cmdlet `Get-AzureRmADApplication`.
+Per ottenere informazioni sull'applicazione è possibile usare il cmdlet `Get-AzureRmADApplication`.
 
 ```azurepowershell-interactive
 Get-AzureRmADApplication -DisplayNameStartWith MyDemoWebApp
@@ -93,14 +93,14 @@ Type                  : ServicePrincipal
 
 ### <a name="sign-in-using-the-service-principal"></a>Accedere con l'entità servizio
 
-È ora possibile effettuare l'accesso come nuova entità servizio per l'app usando l'*appId* e la *password* specificati. È necessario fornire l'Id tenant per l'account. L'Id tenant viene visualizzato quando si accede ad Azure con le credenziali personali.
+È ora possibile effettuare l'accesso come nuova entità servizio per l'app usando l'*appId* e la *password* specificati. È anche necessario l'ID tenant per l'entità servizio. L'ID tenant viene visualizzato quando si accede ad Azure con le credenziali personali. Per accedere con un'entità servizio, usare i comandi seguenti:
 
 ```azurepowershell-interactive
 $cred = Get-Credential -UserName $svcprincipal.ApplicationId -Message "Enter Password"
 Connect-AzureRmAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 ```
 
-Eseguire questo comando da una nuova sessione di PowerShell. Dopo aver eseguito correttamente l'accesso, verrà visualizzato un output simile al seguente:
+Dopo che è stato completato l'accesso, verrà visualizzato un output simile al seguente:
 
 ```output
 Environment           : AzureCloud

@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 06/15/2018
-ms.openlocfilehash: 50b05e5f25b6e3e1c815f6b26f1b53b84cd0b7da
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.date: 09/11/2018
+ms.openlocfilehash: 970742c91b327a1310ef5097edef40287ebf9f9b
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43384009"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46304081"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Installare Azure PowerShell in Windows con PowerShellGet
 
@@ -74,7 +74,7 @@ Connect-AzureRmAccount
 ```
 
 È necessario ripetere questi passaggi per ogni nuova sessione di PowerShell avviata. L'importazione automatica del modulo `AzureRM` richiede la configurazione di un profilo di PowerShell. Vedere [Informazioni sui profili](/powershell/module/microsoft.powershell.core/about/about_profiles).
-Per informazioni su come conservare l'accesso ad Azure da una sessione all'altra, vedere [Conservare le credenziali utente tra le sessioni di PowerShell](context-persistence.md).
+Per informazioni su come mantenere l'accesso ad Azure da una sessione all'altra, vedere [Conservare le credenziali utente tra le sessioni di PowerShell](context-persistence.md).
 
 ## <a name="update-the-azure-powershell-module"></a>Aggiornare il modulo Azure PowerShell
 
@@ -88,7 +88,7 @@ Per rimuovere le versioni precedenti di Azure PowerShell dal sistema, vedere [Di
 
 ## <a name="use-multiple-versions-of-azure-powershell"></a>Usare più versioni di Azure PowerShell
 
-È possibile installare più versioni di Azure PowerShell. Potrebbero essere necessarie più versioni se si usano risorse di Azure Stack locali, si esegue una versione precedente di Windows che non può essere aggiornata a PowerShell 5.0 oppure si usa il modello di distribuzione classica di Azure. Per installare una versione precedente, specificare l'argomento `-RequiredVersion` durante l'installazione.
+È possibile installare più versioni di Azure PowerShell. Potrebbero essere necessarie più versioni se si usano risorse di Azure Stack locali, si esegue una versione meno recente di Windows oppure si usa il modello di distribuzione classica di Azure. Per installare una versione precedente, specificare l'argomento `-RequiredVersion` durante l'installazione.
 
 ```powershell
 # Install version 1.2.9 of Azure PowerShell
@@ -104,7 +104,7 @@ Import-Module -Name AzureRM -RequiredVersion 1.2.9
 
 ## <a name="provide-feedback"></a>Fornire commenti e suggerimenti
 
-Se si trova un bug quando si usa Azure Powershell, [registrare un problema su GitHub](https://github.com/Azure/azure-powershell/issues).
+Se si trova un bug quando si usa Azure Powershell, [segnalare un problema in GitHub](https://github.com/Azure/azure-powershell/issues).
 Per inviare feedback dalla riga di comando, usare il cmdlet [Send-Feedback](/powershell/module/azurerm.profile/send-feedback).
 
 ## <a name="next-steps"></a>Passaggi successivi

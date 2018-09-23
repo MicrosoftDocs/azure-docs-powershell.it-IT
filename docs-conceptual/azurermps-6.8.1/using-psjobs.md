@@ -6,22 +6,22 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 12/11/2017
-ms.openlocfilehash: a986824d952ccf6cd52dc86418899f3805a38973
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.date: 09/11/2018
+ms.openlocfilehash: a5dfcadf97dffcb8431d8480915b2bf4eda45923
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43383601"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46301021"
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>Esecuzione in parallelo dei cmdlet tramite processi di PowerShell
 
 PowerShell supporta l'azione asincrona con i [processi di PowerShell](/powershell/module/microsoft.powershell.core/about/about_jobs).
-Azure PowerShell dipende in modo significativo dall'effettuazione e dall'attesa di chiamate di rete in Azure. È possibile che gli sviluppatori provino spesso a effettuare più chiamate non bloccanti ad Azure in uno script oppure che vogliano creare risorse di Azure in REPL senza bloccare la sessione corrente. Per soddisfare queste esigenze, Azure PowerShell offre supporto di qualità elevata per [processi di PowerShell](/powershell/module/microsoft.powershell.core/about/about_jobs).
+Azure PowerShell dipende in modo significativo dall'effettuazione e dall'attesa di chiamate di rete in Azure. Potrebbe essere spesso necessario effettuare chiamate non bloccanti. Per soddisfare questa esigenza, Azure PowerShell offre supporto di qualità elevata per i [processi di PowerShell](/powershell/module/microsoft.powershell.core/about/about_jobs).
 
 ## <a name="context-persistence-and-psjobs"></a>Persistenza del contesto e processi di PowerShell
 
-I processi di PowerShell vengono eseguiti in processi separati. È quindi necessario che le informazioni sulla connessione di Azure siano condivise correttamente con i processi creati. Al momento della connessione dell'account Azure alla sessione di PowerShell con `Connect-AzureRmAccount`, è possibile passare il contesto a un processo.
+Dato che i processi di PowerShell vengono eseguiti come processi separati, la connessione ad Azure deve essere condivisa con tali processi. Dopo aver eseguito l'accesso all'account Azure con `Connect-AzureRmAccount`, passare il contesto a un processo.
 
 ```azurepowershell-interactive
 $creds = Get-Credential
@@ -63,7 +63,7 @@ ResourceGroupName    Name Location          VmSize  OsType     NIC ProvisioningS
 MyVm                 MyVm   eastus Standard_DS1_v2 Windows    MyVm          Creating
 ```
 
-Dopo il completamento, è possibile ottenere il risultato del processo con `Receive-Job`.
+Al termine del processo, recuperarne il risultato con `Receive-Job`.
 
 > [!NOTE]
 > `Receive-Job` restituisce il risultato dal cmdlet come se il flag `-AsJob` non fosse presente.
@@ -92,7 +92,7 @@ FullyQualifiedDomainName : myvmmyvm.eastus.cloudapp.azure.com
 
 ## <a name="example-scenarios"></a>Scenari di esempio
 
-Creare più VM contemporaneamente.
+Creare più VM contemporaneamente:
 
 ```azurepowershell-interactive
 $creds = Get-Credential
@@ -107,7 +107,7 @@ Get-Job | Wait-Job
 Get-AzureRmVM
 ```
 
-In questo esempio il cmdlet `Wait-Job` provoca la sospensione dello script durante l'esecuzione del processo. L'esecuzione dello script continua dopo il completamento di tutti i processi. Ciò permette di creare alcuni processi in esecuzione in parallelo e quindi di attendere il completamento prima di continuare.
+In questo esempio il cmdlet `Wait-Job` provoca la sospensione dello script durante l'esecuzione del processo. L'esecuzione dello script continua dopo il completamento di tutti i processi. Vengono eseguiti in parallelo diversi processi, quindi lo script attende il completamento prima di continuare.
 
 ```output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command

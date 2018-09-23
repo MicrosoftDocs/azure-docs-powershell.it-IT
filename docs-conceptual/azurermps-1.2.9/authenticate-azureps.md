@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: caacf32af78b98e8d9d455a8c4dd0bbb698d355f
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 71a2554052f5a25ea86fe44b6dcf5d9343c81f3e
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024580"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46301106"
 ---
 # <a name="log-in-with-azure-powershell"></a>Accedere ad Azure PowerShell
 
@@ -51,11 +51,11 @@ Le entità servizio consentono di creare account non interattivi da usare per la
     CurrentStorageAccount :
     ```
 
-### <a name="log-in-using-an-azure-vm-managed-service-identity"></a>Accedere tramite un'Identità del servizio gestito della macchina virtuale di Azure
+### <a name="log-in-using-managed-identities-for-azure-resources"></a>Accedere con le identità gestite per le risorse di Azure
 
-Identità del servizio gestito è una funzionalità in anteprima di Azure Active Directory. È possibile usare un'entità servizio di Identità del servizio gestito per eseguire l'accesso e acquisire un token di accesso solo app per accedere ad altre risorse.
+Le identità gestite per le risorse di Azure sono una funzionalità di Azure Active Directory. È possibile usare l'entità servizio di un'identità gestita per eseguire l'accesso e acquisire un token di accesso solo app per accedere ad altre risorse.
 
-Per altre informazioni su Identità del servizio gestito, vedere [How to use an Azure VM Managed Service Identity (MSI) for sign-in and token acquisition](/azure/active-directory/msi-how-to-get-access-token-using-msi) (Come usare un'Identità del servizio gestito della macchina virtuale di Azure per l'accesso e l'acquisizione di token).
+Per informazioni sulle identità gestite per le risorse di Azure, vedere [Come usare le identità gestite per le risorse di Azure in una macchina virtuale di Azure per acquisire un token di accesso](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token).
 
 ## <a name="log-in-to-another-cloud"></a>Accedere a un altro cloud
 

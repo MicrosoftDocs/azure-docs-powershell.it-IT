@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 06/08/2018
-ms.openlocfilehash: daa39ada5b4e969264b6e8596dc7b090bb196fd5
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.date: 09/11/2018
+ms.openlocfilehash: da8c8f37d8c60e9555b4627a7b5c3d1d6e7888fa
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43383737"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46300562"
 ---
 # <a name="query-output-of-azure-powershell-cmdlets"></a>Output delle query dei cmdlet di Azure PowerShell
 
@@ -52,7 +52,7 @@ MyWin2016VM   MYWESTEURG        westeurope
 
 ## <a name="select-complex-nested-properties"></a>Selezionare proprietà annidate complesse
 
-Se la proprietà che si desidera selezionare è annidata nell'output JSON sarà necessario fornire il percorso completo di tale proprietà annidata. L'esempio seguente illustra come selezionare il nome della macchina virtuale e il tipo di sistema operativo dal cmdlet `Get-AzureRmVM`.
+Se la proprietà desiderata è annidata nell'output JSON, è necessario specificare il percorso completo della proprietà. L'esempio seguente illustra come selezionare il nome della macchina virtuale e il tipo di sistema operativo dal cmdlet `Get-AzureRmVM`.
 
 ```azurepowershell-interactive
 Get-AzureRmVM | Select Name,@{Name='OSType'; Expression={$_.StorageProfile.OSDisk.OSType}}

@@ -6,17 +6,17 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/30/2017
-ms.openlocfilehash: e1606ddb02adf1de2cb5496917d61755ac3dad23
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.date: 09/11/2018
+ms.openlocfilehash: 3f1c1bab5f9903ee7df813bf1ef043c7107ebe79
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43384145"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46300936"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Gestire più sottoscrizioni di Azure
 
-Se si usa Azure da poco, probabilmente si avrà una singola sottoscrizione. Tuttavia, se si usa Azure già da tempo, probabilmente si saranno create più sottoscrizioni di Azure. È possibile configurare Azure PowerShell per eseguire comandi su una determinata sottoscrizione.
+Se si è un nuovo utente di Azure, probabilmente si avrà una sottoscrizione singola. Tuttavia, se si usa Azure già da tempo, probabilmente si saranno create più sottoscrizioni di Azure. È possibile configurare Azure PowerShell per eseguire comandi su una determinata sottoscrizione.
 
 1. Ottenere un elenco di tutte le sottoscrizioni dell'account.
 
@@ -68,4 +68,4 @@ Se si usa Azure da poco, probabilmente si avrà una singola sottoscrizione. Tutt
     CurrentStorageAccount :
     ```
 
-Dopo aver impostato la sottoscrizione predefinita, tutti i successivi comandi di Azure PowerShell verranno eseguiti con questa sottoscrizione.
+Dopo l'impostazione della sottoscrizione predefinita, tutti i comandi di Azure PowerShell verranno eseguiti con questa sottoscrizione.

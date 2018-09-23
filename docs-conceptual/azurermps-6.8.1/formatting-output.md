@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 06/07/2018
-ms.openlocfilehash: 833c82903305f99be5ad43f707e22644bb568abe
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.date: 09/09/2018
+ms.openlocfilehash: 99c635e7d94731d360b81c10b7f08086652ca81f
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43383907"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46301072"
 ---
 # <a name="format-azurepowershell-cmdlet-output"></a>Formattare l'output dei cmdlet di Azure PowerShell
 
@@ -27,7 +27,7 @@ Per impostazione predefinita, ogni cmdlet di Azure PowerShell genera un output c
 
 ## <a name="format-examples"></a>Esempi di formattazione
 
-L'esempio seguente mostra un elenco di macchine virtuali di Azure nella sottoscrizione predefinita.  Per impostazione predefinita, il comando `Get-AzureRmVM` genera l'output in formato tabella.
+In questo esempio si ottiene un elenco delle VM di Azure nella sottoscrizione predefinita.  Per impostazione predefinita, il comando `Get-AzureRmVM` genera l'output in formato tabella.
 
 ```azurepowershell-interactive
 Get-AzureRmVM
@@ -40,7 +40,7 @@ MYWESTEURG        MyUnbuntu1610 westeurope Standard_DS1_v2   Linux myunbuntu1610
 MYWESTEURG          MyWin2016VM westeurope Standard_DS1_v2 Windows   mywin2016vm880         Succeeded
 ```
 
-Se si desidera limitare le colonne restituite è possibile usare il cmdlet `Format-Table`. Nell'esempio seguente si ottiene lo stesso elenco di macchine virtuali, ma l'output è limitato al solo nome della macchina virtuale, al gruppo di risorse e al percorso della macchina virtuale.  Il parametro `-Autosize` ridimensiona le colonne in base alla dimensione dei dati.
+Se si desidera limitare le colonne restituite è possibile usare il cmdlet `Format-Table`. Nell'esempio seguente si ottiene lo stesso elenco di macchine virtuali, ma l'output è limitato al nome, al gruppo di risorse e alla località della VM.  Il parametro `-Autosize` ridimensiona le colonne in base alla dimensione dei dati.
 
 ```azurepowershell-interactive
 Get-AzureRmVM | Format-Table Name,ResourceGroupName,Location -AutoSize
