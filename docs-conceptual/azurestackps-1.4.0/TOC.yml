@@ -4,11 +4,13 @@ items:
   items:
   - name: Installa
     href: https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-powershell-install?toc=/powershell/azure/azure-stack/toc.json
-  - name: Configurare
+  - name: Connessione - operatore cloud
     href: https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-powershell-configure-admin
-ms.openlocfilehash: 2ae561b614867364d17e155c74784f03d6db8373
-ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
+  - name: Connessione - utente
+    href: https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-powershell-configure-user
+ms.openlocfilehash: 03d0281b03b4bd9a86773403ec9bddf91a682dbd
+ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46301038"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47178358"
