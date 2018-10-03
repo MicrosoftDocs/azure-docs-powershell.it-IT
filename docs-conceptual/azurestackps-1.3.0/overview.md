@@ -1,3 +1,20 @@
+---
+title: Panoramica di PowerShell per il modulo di amministrazione di Azure Stack | Microsoft Docs
+description: Panoramica di PowerShell per il modulo di amministrazione di Azure Stack con istruzioni per l'installazione e la configurazione.
+author: bganapa
+ms.author: bganapa
+manager: knithinc
+ms.devlang: powershell
+ms.topic: conceptual
+ms.manager: knithinc
+ms.date: 09/21/2018
+ms.openlocfilehash: fb892daeafb1365ea62324392ac806cf9f3d39cf
+ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47179140"
+---
 # <a name="azure-stack-module-130"></a>Modulo di Azure Stack 1.3.0
 
 ## <a name="requirements"></a>Requirements:

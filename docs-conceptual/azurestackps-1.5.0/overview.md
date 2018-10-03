@@ -8,28 +8,24 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: 72d147f5bc9c882083dda6b33b1c89663fd2eb34
+ms.openlocfilehash: 18861f0e5232e0b505767aa9609099afe88f9477
 ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 09/27/2018
-ms.locfileid: "47178800"
+ms.locfileid: "47178630"
 ---
-# <a name="azure-stack-module-140"></a>Modulo di Azure Stack 1.4.0
+# <a name="azure-stack-module-150"></a>Modulo di Azure Stack 1.5.0
 
 ## <a name="requirements"></a>Requirements:
-La versione minima supportata di Azure Stack è 1804.
+La versione minima supportata di Azure Stack è 1808.
 
-Nota: se si usa una versione precedente, installare la versione 1.2.11
+Nota: se si usa una versione precedente, installare la versione 1.4.0
 
 ## <a name="known-issues"></a>Problemi noti:
 
-- Chiudi avviso richiede Azure Stack versione 1803
 - New-AzsOffer non consente la creazione di un'offerta con stato pubblico. Il cmdlet Set-AzsOffer deve essere chiamato successivamente per modificare lo stato.
 - Non è possibile rimuovere un pool IP senza una ridistribuzione
-
-## <a name="breaking-changes"></a>Modifiche di rilievo
-Non sono presenti modifiche di rilievo rispetto alla versione 1.3.0. Tutte le modifiche che causano un'interruzione durante la migrazione da 1.2.11 sono documentate qui https://aka.ms/azspowershellmigration
 
 ## <a name="install"></a>Installa
 ```
@@ -44,39 +40,30 @@ Get-Module Azs.* -ListAvailable | Uninstall-Module -Force
 Install-Module -Name AzureRm.BootStrapper
 
 # Install and import the API Version Profile required by Azure Stack into the current PowerShell session.
-Use-AzureRmProfile -Profile 2017-03-09-profile -Force
+Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 
 # Install Azure Stack Admin Module
-Install-Module -Name AzureStack -RequiredVersion 1.4.0
+Install-Module -Name AzureStack -RequiredVersion 1.5.0
 ```
-## <a name="release-notes"></a>Note sulla versione
-    * AzureStack versione 1.4.0 non ha modifiche di rilievo rispetto alla versione 1.3.0 precedente
-    * Azs.AzureBridge.Admin
-        - Correzione del bug che restituiva una sola pagina nei risultati impaginati
-    * Azs.Backup.Admin
-        - Aggiunta di nuovi parametri BackupFrequencyInHours, IsBackupSchedulerEnabled, BackupRetentionPeriodInDays nel cmdlet Set-AzsBackupShare
-        - Aggiunta di un cmdlet New-EncyptionKeyBase64 per agevolare la creazione di una chiave di crittografia
-        - Correzione del bug che restituiva una sola pagina nei risultati impaginati
-    * Azs.Commerce.Admin
-        - Correzione del bug che restituiva una sola pagina nei risultati impaginati
-    * Azs.Fabric.Admin
-        - Correzione del bug che restituiva una sola pagina nei risultati impaginati
-        - Aggiunta di un cmdlet Add-AzsScaleUnitNode per consentire all'amministratore di aggiungere nuovi nodi di unità di scala allo stamp azurestack
-        - Aggiunta di cmdlet e New-AzsScaleUnitNodeObject per agevolare la creazione di oggetti dei parametri di unità di scala
-    * Azs.Gallery.Admin
-        - Correzione del bug che restituiva una sola pagina nei risultati impaginati
-    * Azs.InfrastructureInsights.Admin
-        - Correzione del bug che restituiva una sola pagina nei risultati impaginati
-    * Azs.Network.Admin
-        - Correzione del bug che restituiva una sola pagina nei risultati impaginati
-    * Azs.Update.Admin
-        - Correzione del bug che restituiva una sola pagina nei risultati impaginati
-    * Azs.Subscriptions
-        - Correzione del bug che restituiva una sola pagina nei risultati impaginati
-    * Azs.Subscriptions.Admin
-        - Aggiunta di un cmdlet Move-AzsSubscription per trasferire le sottoscrizioni tra offerte di provider delegati
-        - Aggiunta di un cmdlet Test-AzsMoveSubscription per convalidare che le sottoscrizioni utente possano essere trasferite tra offerte di provider delegati
-        - Correzione del bug che restituiva una sola pagina nei risultati impaginati
+
+##<a name="release-notes"></a>Note sulla versione
+* Tutti i moduli di amministrazione di Azure Stack sono stati aggiornati per la dipendenza "maggiore di" o "uguale a" nel modulo AzureRm.Profile
+* Supporto per la gestione di nomi di risorse annidati in tutti i moduli
+* Correzione di bug in tutti i moduli in cui si esegue l'override di ErrorActionPreference affinché sia Stop
+* Modulo Azs.Compute.Admin
+    * Aggiunta di nuove proprietà delle quote per il supporto del disco gestito
+    * Aggiunta di cmdlet per la migrazione dei dischi
+    * Proprietà aggiuntive negli oggetti di estensione delle immagini della piattaforma e delle VM
+* Azs.Fabric.Admin 
+    * Nuovo cmdlet per l'aggiunta di nodi di unità di scala
+* Azs.Backup.Admin
+    * Set-AzsBackupShare è ora un alias per il cmdlet Set-AzsBackupConfiguration
+    * Get-AzsBackupLocation è ora un alias per il cmdlet Get-AzsBackupConfiguration
+    * Set-AzsBackupConfiguration: il parametro BackupShare è ora un alias per il parametro path
+* Azs.Subscriptions
+    * Get-AzsDelegatedProviderOffer: il parametro OfferName è ora un alias per Offer
+* Azs.Subscriptions.Admin
+    * Get-AzsDelegatedProviderOffer: il parametro OfferName è ora un alias per Offer
 
 ## <a name="content"></a>Contenuto:
 ### <a name="azure-bridge"></a>Azure Bridge
@@ -92,7 +79,7 @@ Versione di anteprima del modulo amministratore di Backup che consente agli ammi
 Versione di anteprima del modulo amministratore E-commerce di Azure Stack che consente di visualizzare l'aggregazione dell'utilizzo dei dati nel sistema Azure Stack.
 
 ### <a name="compute"></a>Calcolo
-Versione di anteprima del modulo amministratore Calcolo di Azure Stack che fornisce le funzionalità per la gestione di quote di calcolo, immagini della piattaforma ed estensioni di macchine virtuali.
+Versione di anteprima del modulo amministratore Calcolo di Azure Stack che fornisce le funzionalità per la gestione di quote di calcolo, immagini della piattaforma, dischi gestiti ed estensioni di macchine virtuali.
 
 ### <a name="fabric"></a>Infrastruttura
 Versione di anteprima del modulo amministratore Infrastruttura di Azure Stack che consente agli amministratori di visualizzare e gestire i componenti dell'infrastruttura:
@@ -102,6 +89,7 @@ Versione di anteprima del modulo amministratore Infrastruttura di Azure Stack ch
 - Riavvio del ruolo Infrastruttura
 - Interruzione, avvio e arresto delle istanze del ruolo Infrastruttura
 - Creare nuovi pool IP
+
 
 ### <a name="gallery"></a>Gallery
 Versione di anteprima del modulo amministratore Raccolta di Azure Stack che fornisce le funzionalità per la gestione degli elementi della raccolta in Azure Stack Marketplace.
