@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 09/26/2018
 ms.openlocfilehash: 7e384fdf66fce1102b7723018175ba6cc276ccc5
-ms.sourcegitcommit: ff44dec6418a449757bded3c6ebe0a7d4c05ee6e
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50737765"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51212149"
 ---
-# <a name="release-notes"></a><span data-ttu-id="070ee-103">Note sulla versione</span><span class="sxs-lookup"><span data-stu-id="070ee-103">Release notes</span></span>
+# <a name="release-notes"></a><span data-ttu-id="8e4f8-103">Note sulla versione</span><span class="sxs-lookup"><span data-stu-id="8e4f8-103">Release notes</span></span>
 
-<span data-ttu-id="070ee-104">Questa è un elenco delle modifiche apportate a Azure Deployment Manager in questa versione.</span><span class="sxs-lookup"><span data-stu-id="070ee-104">This is a list of changes made to Azure Deployment Manager in this release.</span></span>
+<span data-ttu-id="8e4f8-104">Questa è un elenco delle modifiche apportate a Azure Deployment Manager in questa versione.</span><span class="sxs-lookup"><span data-stu-id="8e4f8-104">This is a list of changes made to Azure Deployment Manager in this release.</span></span>
 
 ---
-## <a name="090---september-2018"></a><span data-ttu-id="070ee-105">0.9.0 - Settembre 2018</span><span class="sxs-lookup"><span data-stu-id="070ee-105">0.9.0 - September 2018</span></span>
-* <span data-ttu-id="070ee-106">Prima versione- Aggiunta del supporto per la gestione delle implementazioni e delle risorse associate.</span><span class="sxs-lookup"><span data-stu-id="070ee-106">First release - add support to manage rollouts and associated resources.</span></span>
+## <a name="090---september-2018"></a><span data-ttu-id="8e4f8-105">0.9.0 - Settembre 2018</span><span class="sxs-lookup"><span data-stu-id="8e4f8-105">0.9.0 - September 2018</span></span>
+* <span data-ttu-id="8e4f8-106">Prima versione- Aggiunta del supporto per la gestione delle implementazioni e delle risorse associate.</span><span class="sxs-lookup"><span data-stu-id="8e4f8-106">First release - add support to manage rollouts and associated resources.</span></span>
