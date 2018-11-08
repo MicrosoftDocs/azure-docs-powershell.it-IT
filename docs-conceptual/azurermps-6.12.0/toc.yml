@@ -7,7 +7,7 @@ items:
     items:
     - name: Eseguire l'installazione in macOS o Linux
       href: install-azurermps-maclinux.md
-    - name: Eseguire l'installazione con il pacchetto MSI o l'Installazione guidata piattaforma Web
+    - name: Eseguire l'installazione con il pacchetto MSI
       href: other-install.md
   - name: Disinstallare
     href: uninstall-azurerm-ps.md
@@ -45,8 +45,8 @@ items:
   - name: Note sulla versione
     href: release-notes-azureps.md
     items:
-    - name: Modifiche di rilievo in Azure PowerShell 5.x
-      href: migration-guide.5.0.0.md
+    - name: Modifiche di rilievo in Azure PowerShell 6.x
+      href: migration-guide.6.0.0.md
 - name: Esercitazioni
   items:
   - name: Creare macchine virtuali
@@ -63,9 +63,9 @@ items:
     href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
   - name: Cosmos DB
     href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
-ms.openlocfilehash: 4023b5486cb6c3236295b36af11dae7f99e62c28
+ms.openlocfilehash: 44b6c7eaf75dfd1119ba6a0cc4888834a1fc698a
 ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 11/07/2018
-ms.locfileid: "51211571"
+ms.locfileid: "51212948"

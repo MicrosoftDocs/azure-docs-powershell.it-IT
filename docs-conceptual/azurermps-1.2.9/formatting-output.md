@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 37305943c272d61953c7c4765a72125088b2d805
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 37f240d371150928f10cb2811c4bb5f1b585c2f3
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024563"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51210925"
 ---
 # <a name="formatting-query-results"></a>Formattazione dei risultati delle query
 
@@ -29,7 +29,7 @@ Per impostazione predefinita, ogni cmdlet PowerShell genera un output con format
 
 L'esempio seguente mostra un elenco di macchine virtuali di Azure nella sottoscrizione predefinita.  Per impostazione predefinita, il comando Get-AzureRmVM esegue l'output in formato tabella.
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM
 ```
 
@@ -42,7 +42,7 @@ MYWESTEURG          MyWin2016VM westeurope Standard_DS1_v2 Windows   mywin2016vm
 
 Se si desidera limitare le colonne restituite è possibile usare il cmdlet `Format-Table`. Nell'esempio seguente si ottiene lo stesso elenco di macchine virtuali, ma l'output è limitato al solo nome della macchina virtuale, al gruppo di risorse e al percorso della macchina virtuale.  Il parametro `-Autosize` ridimensiona le colonne in base alla dimensione dei dati.
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM | Format-Table Name,ResourceGroupName,Location -AutoSize
 ```
 
@@ -55,7 +55,7 @@ MyWin2016VM   MYWESTEURG        westeurope
 
 Se lo si preferisce, è possibile visualizzare le informazioni in formato elenco. L'esempio seguente illustra questa opzione, con l'uso del cmdlet `Format-List`.
 
-```powershell
+```powershell-interactive
 Get-AzureVM | Format-List Name,VmId,Location,ResourceGroupName
 ```
 
@@ -75,7 +75,7 @@ ResourceGroupName : MYWESTEURG
 
 PowerShell offre inoltre più formati di output, da usare in base alle esigenze.  Nell'esempio seguente viene usato il cmdlet `Select-Object` per recuperare gli attributi delle macchine virtuali nella sottoscrizione e convertire l'output in formato CSV per importarlo facilmente in un database o un foglio di calcolo.
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Csv -NoTypeInformation
 ```
 
@@ -87,7 +87,7 @@ Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,Provisioni
 
 È inoltre possibile convertire l'output in formato JSON.  Nell'esempio seguente viene creato lo stesso elenco di macchine virtuali, ma il formato di output è modificato in JSON.
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Json
 ```
 

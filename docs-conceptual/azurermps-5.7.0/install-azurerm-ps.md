@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: 2809d8265af85a786b1b72ab9be3135f166a20e8
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: a868a62bd7bb2f39775a3b7878e2c8484c50438d
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39025328"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211095"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Installare Azure PowerShell in Windows con PowerShellGet
 
@@ -26,7 +26,7 @@ Il modello di distribuzione classica di Azure non è supportato da questa versio
 
 Per installare Azure PowerShell è necessario PowerShellGet versione 1.1.2.0 o superiore. Per verificare se è disponibile nel sistema, eseguire questo comando:
 
-```powershell
+```powershell-interactive
 Get-Module -Name PowerShellGet -ListAvailable | Select-Object -Property Name,Version,Path
 ```
 
@@ -43,7 +43,7 @@ PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1
 
 Se è necessario aggiornare l'installazione di PowerShellGet, eseguire questo comando:
 
-```powershell
+```powershell-interactive
 Install-Module PowerShellGet -Force
 ```
 
@@ -65,7 +65,7 @@ Se PowerShellGet non è installato, vedere le istruzioni nella tabella seguente 
 
 Sono necessari privilegi elevati per installare i moduli da PowerShell Gallery. Per installare Azure PowerShell, eseguire questo comando seguente in una sessione con privilegi elevati:
 
-```powershell
+```powershell-interactive
 Install-Module -Name AzureRM
 ```
 
@@ -81,7 +81,7 @@ You are installing the modules from an untrusted repository. If you trust this r
 its InstallationPolicy value by running the Set-PSRepository cmdlet.
 
 Are you sure you want to install the modules from 'PSGallery'?
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
 Rispondere `Yes` o `Yes to All` per continuare l'installazione.
@@ -92,7 +92,7 @@ Il modulo `AzureRM` è un modulo di rollup per i cmdlet di Azure PowerShell. Con
 
 Per iniziare a usare Azure PowerShell è necessario caricare `AzureRM` nella sessione corrente di PowerShell con il cmdlet [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module), quindi accedere con le credenziali di Azure.
 
-```powershell
+```powershell-interactive
 # Import the module into the PowerShell session
 Import-Module AzureRM
 # Connect to Azure with an interactive dialog for sign-in
@@ -106,7 +106,7 @@ Per informazioni su come conservare l'accesso ad Azure da una sessione all'altra
 
 È possibile aggiornare l'installazione di Azure PowerShell eseguendo [Update-Module](/powershell/module/powershellget/update-module). Questo comando __non__ disinstalla le versioni precedenti.
 
-```powershell
+```powershell-interactive
 Update-Module -Name AzureRM
 ```
 
@@ -116,14 +116,14 @@ Per rimuovere le versioni precedenti di Azure PowerShell dal sistema, vedere [Di
 
 È possibile installare più versioni di Azure PowerShell. Potrebbero essere necessarie più versioni se si usano risorse di Azure Stack locali, si esegue una versione precedente di Windows che non può essere aggiornata a PowerShell 5.0 oppure si usa il modello di distribuzione classica di Azure. Per installare una versione precedente, specificare l'argomento `-RequiredVersion` durante l'installazione.
 
-```powershell
+```powershell-interactive
 # Install version 1.2.9 of Azure PowerShell
 Install-Module -Name AzureRM -RequiredVersion 1.2.9
 ```
 
 Quando si carica il modulo Azure PowerShell, viene caricata la versione più recente per impostazione predefinita. Per caricare una versione diversa, specificare l'argomento `-RequiredVersion`.
 
-```powershell
+```powershell-interactive
 # Load version 1.2.9 of Azure PowerShell
 Import-Module -Name AzureRM -RequiredVersion 1.2.9
 ```

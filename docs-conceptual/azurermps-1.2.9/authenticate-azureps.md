@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: 71a2554052f5a25ea86fe44b6dcf5d9343c81f3e
-ms.sourcegitcommit: ff44dec6418a449757bded3c6ebe0a7d4c05ee6e
+ms.openlocfilehash: edbf17141cac4ea6e41282c8e1dd07c5b738351c
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50737935"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211605"
 ---
 # <a name="log-in-with-azure-powershell"></a>Accedere ad Azure PowerShell
 
@@ -32,13 +32,13 @@ Le entità servizio consentono di creare account non interattivi da usare per la
 
 2. Accedere con l'entità servizio.
 
-    ```powershell
+    ```powershell-interactive
     Login-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
     ```
 
     Per ottenere il TenantId, accedere in modo interattivo e quindi recuperare il TenantId dalla sottoscrizione.
 
-    ```powershell
+    ```powershell-interactive
     Get-AzureRmSubscription
     ```
 
@@ -61,13 +61,13 @@ Per informazioni sulle identità gestite per le risorse di Azure, vedere [Come u
 
 I servizi cloud di Azure offrono più ambienti conformi alle norme in materia di gestione dei dati vigenti in diversi paesi. Se l'account di Azure si trova in un cloud governativo è necessario specificare l'ambiente quando si accede. Ad esempio, se l'account si trova nel cloud della Cina, accedere usando il comando seguente:
 
-```powershell
+```powershell-interactive
 Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 ```
 
 Usare il comando seguente per visualizzare un elenco degli ambienti disponibili:
 
-```powershell
+```powershell-interactive
 Get-AzureRmEnvironment | Select-Object Name
 ```
 

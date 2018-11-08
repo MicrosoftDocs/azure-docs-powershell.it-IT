@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 12a57f9aaf445fe95f731e09a6dcd174b97aa3fe
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 85de158cd2a4c3a38f653a530db8e6fae50cb37f
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100189"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211129"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Conservare le credenziali utente tra le sessioni di PowerShell
 
@@ -55,7 +55,7 @@ La funzionalità di **salvataggio automatico del contesto Azure** consente anche
 
   La maggior parte dei cmdlet di AzureRM consente di passare il contesto come parametro al cmdlet. È possibile passare un contesto a un processo in background come illustrato nell'esempio seguente:
 
-  ```powershell
+  ```powershell-interactive
   PS C:\> $job = Start-Job { param ($ctx) New-AzureRmVm -AzureRmContext $ctx [... Additional parameters ...]} -ArgumentList (Get-AzureRmContext)
   ```
 
@@ -63,7 +63,7 @@ La funzionalità di **salvataggio automatico del contesto Azure** consente anche
 
   Se si è abilitato il **salvataggio automatico del contesto**, i processi in background usano automaticamente il contesto salvato predefinito.
 
-  ```powershell
+  ```powershell-interactive
   PS C:\> $job = Start-Job { New-AzureRmVm [... Additional parameters ...]}
   ```
 

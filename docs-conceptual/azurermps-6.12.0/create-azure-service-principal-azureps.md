@@ -7,43 +7,43 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 05/15/2017
-ms.openlocfilehash: 2333338a1c2de9dd2d1f3231918399190e249575
+ms.date: 09/09/2018
+ms.openlocfilehash: 433a638187f024883c177457e420a759968fed9a
 ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 11/07/2018
-ms.locfileid: "51211401"
+ms.locfileid: "51213026"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Creare un'entità servizio di Azure con Azure PowerShell
 
-Se si prevede di gestire un'app o un servizio con Azure PowerShell, è consigliabile eseguire tale app o servizio in un'entità servizio di Azure Active Directory (AAD), anziché con le proprie credenziali. Questo argomento illustra come creare un'entità di sicurezza con Azure PowerShell.
+Se si prevede di gestire un'app o un servizio con Azure PowerShell, è consigliabile eseguire tale app o servizio in un'entità servizio di Azure Active Directory (AAD), anziché con le proprie credenziali. Questo articolo illustra la creazione di un'entità di sicurezza con Azure PowerShell.
 
 > [!NOTE]
 > È inoltre possibile creare un'entità servizio tramite il portale di Azure. Per informazioni dettagliate, vedere [Usare il portale per creare un'applicazione Active Directory e un'entità servizio che accedono alle risorse](/azure/azure-resource-manager/resource-group-create-service-principal-portal).
 
 ## <a name="what-is-a-service-principal"></a>Che cos'è un'"entità servizio"?
 
-Un'entità servizio di Azure è un'identità di sicurezza usata da app, servizi e strumenti di automazione creati dall'utente per accedere a risorse di Azure specifiche. Può essere considerata come una "identità utente" (nome utente e password o certificato) con un ruolo specifico e autorizzazioni attentamente controllate. A differenza di un'identità utente generica, essa deve essere in grado di eseguire soltanto operazioni specifiche. Se le viene concesso solo il livello minimo di autorizzazioni necessarie per eseguire le attività di gestione, un'entità servizio migliora la sicurezza.
+Un'entità servizio di Azure è un'identità di sicurezza usata da app, servizi e strumenti di automazione creati dall'utente per accedere a risorse di Azure specifiche. Può essere considerata come una "identità utente" (nome utente e password o certificato) con un ruolo specifico e autorizzazioni attentamente controllate. A differenza di un'identità utente generica, un'entità servizio dovrà eseguire solo operazioni specifiche. Se le viene concesso solo il livello minimo di autorizzazioni necessarie per eseguire le attività di gestione, un'entità servizio migliora la sicurezza.
 
 ## <a name="verify-your-own-permission-level"></a>Verificare il proprio livello di autorizzazione
 
-Innanzitutto, è necessario avere autorizzazioni sufficienti sia nell'istanza di Azure Active Directory che nella sottoscrizione di Azure. In particolare, è necessario poter creare un'app in Active Directory e assegnare un ruolo all'entità servizio.
+Innanzitutto, è necessario avere autorizzazioni sufficienti sia nell'istanza di Azure Active Directory che nella sottoscrizione di Azure. È necessario poter creare un'app in Active Directory e assegnare un ruolo all'entità servizio.
 
-Il modo più semplice per verificare se l'account dispone delle autorizzazioni appropriate è tramite il portale. Vedere l'articolo su come [controllare le autorizzazioni necessarie nel portale](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions).
+Il modo più semplice per verificare se l'account ha le autorizzazioni corrette è tramite il portale. Vedere l'articolo su come [controllare le autorizzazioni necessarie nel portale](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions).
 
 ## <a name="create-a-service-principal-for-your-app"></a>Creare un'entità servizio per l'app
 
-Dopo avere eseguito l'accesso all'account Azure, è possibile creare l'entità servizio. È necessario disporre di uno dei modi seguenti per identificare l'app distribuita:
+Dopo aver eseguito l'accesso all'account Azure, è possibile creare l'entità servizio. È necessario disporre di uno dei modi seguenti per identificare l'app distribuita:
 
 * Nome univoco dell'app distribuita, ad esempio "MyDemoWebApp" negli esempi seguenti, oppure
 * ID dell'applicazione, GUID univoco associato all'app, al servizio o all'oggetto distribuito
 
 ### <a name="get-information-about-your-application"></a>Ottenere informazioni sull'applicazione
 
-Per individuare le informazioni sull'applicazione si può usare il cmdlet `Get-AzureRmADApplication`.
+Per ottenere informazioni sull'applicazione è possibile usare il cmdlet `Get-AzureRmADApplication`.
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmADApplication -DisplayNameStartWith MyDemoWebApp
 ```
 
@@ -63,10 +63,11 @@ ReplyUrls               : {}
 
 Per creare l'entità servizio si usa il cmdlet `New-AzureRmADServicePrincipal`.
 
-```powershell-interactive
+```azurepowershell-interactive
 Add-Type -Assembly System.Web
 $password = [System.Web.Security.Membership]::GeneratePassword(16,3)
-New-AzureRmADServicePrincipal -ApplicationId 00c01aaa-1603-49fc-b6df-b78c4e5138b4 -Password $password
+$securePassword = ConvertTo-SecureString -Force -AsPlainText -String $password
+New-AzureRmADServicePrincipal -ApplicationId 00c01aaa-1603-49fc-b6df-b78c4e5138b4 -Password $securePassword
 ```
 
 ```output
@@ -77,7 +78,7 @@ MyDemoWebApp                   ServicePrincipal               698138e7-d7b6-4738
 
 ### <a name="get-information-about-the-service-principal"></a>Ottenere informazioni sull'entità servizio
 
-```powershell-interactive
+```azurepowershell-interactive
 $svcprincipal = Get-AzureRmADServicePrincipal -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
 $svcprincipal | Select-Object *
 ```
@@ -92,14 +93,14 @@ Type                  : ServicePrincipal
 
 ### <a name="sign-in-using-the-service-principal"></a>Accedere con l'entità servizio
 
-È ora possibile effettuare l'accesso come nuova entità servizio per l'app usando l'*appId* e la *password* specificati. È necessario fornire l'Id tenant per l'account. L'Id tenant viene visualizzato quando si accede ad Azure con le credenziali personali.
+È ora possibile effettuare l'accesso come nuova entità servizio per l'app usando l'*appId* e la *password* specificati. È anche necessario l'ID tenant per l'entità servizio. L'ID tenant viene visualizzato quando si accede ad Azure con le credenziali personali. Per accedere con un'entità servizio, usare i comandi seguenti:
 
-```powershell-interactive
+```azurepowershell-interactive
 $cred = Get-Credential -UserName $svcprincipal.ApplicationId -Message "Enter Password"
-Login-AzureRmAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+Connect-AzureRmAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 ```
 
-Eseguire questo comando da una nuova sessione di PowerShell. Dopo aver eseguito correttamente l'accesso, verrà visualizzato un output simile al seguente:
+Dopo che è stato completato l'accesso, verrà visualizzato un output simile al seguente:
 
 ```output
 Environment           : AzureCloud
@@ -128,7 +129,7 @@ Il ruolo **Lettore** è più restrittivo e può essere una buona scelta per le a
 
 In questo esempio si aggiunge il ruolo**Lettore** all'esempio precedente e si elimina quello **Collaboratore**:
 
-```powershell-interactive
+```azurepowershell-interactive
 New-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Reader
 ```
 
@@ -143,13 +144,13 @@ ObjectId           : 698138e7-d7b6-4738-a866-b4e3081a69e4
 ObjectType         : ServicePrincipal
 ```
 
-```powershell-interactive
+```azurepowershell-interactive
 Remove-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Contributor
 ```
 
 Per visualizzare i ruoli correnti assegnati:
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
 ```
 
@@ -177,7 +178,7 @@ Altri cmdlet di Azure PowerShell per la gestione dei ruoli:
 
 ### <a name="add-a-new-password-for-the-service-principal"></a>Aggiungere una nuova password per l'entità servizio
 
-```powershell-interactive
+```azurepowershell-interactive
 $password = [System.Web.Security.Membership]::GeneratePassword(16,3)
 New-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp -Password $password
 ```
@@ -190,7 +191,7 @@ StartDate           EndDate             KeyId                                Typ
 
 ### <a name="get-a-list-of-credentials-for-the-service-principal"></a>Ottenere un elenco di credenziali per l'entità servizio
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
 ```
 
@@ -203,7 +204,7 @@ StartDate           EndDate             KeyId                                Typ
 
 ### <a name="remove-the-old-password-from-the-service-principal"></a>Rimuovere la vecchia password dall'entità servizio
 
-```powershell-interactive
+```azurepowershell-interactive
 Remove-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp -KeyId ca9d4846-4972-4c70-b6f5-a4effa60b9bc
 ```
 
@@ -216,7 +217,7 @@ service principal objectId '698138e7-d7b6-4738-a866-b4e3081a69e4'.
 
 ### <a name="verify-the-list-of-credentials-for-the-service-principal"></a>Verificare l'elenco di credenziali per l'entità servizio
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
 ```
 

@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/05/2018
-ms.openlocfilehash: e7d27c6f6d980c54e45620b179cf2e26ffed17f0
-ms.sourcegitcommit: 1f699b72bf544d92459da9d888cc0091f9415b65
+ms.openlocfilehash: f60ea1c608be4b1c8319d53303713ba039276abc
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "50972656"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51212892"
 ---
 # <a name="install-azure-powershell-on-macos-or-linux"></a>Installare Azure PowerShell in macOS o Linux
 
@@ -46,7 +46,7 @@ pwsh
 
 Per installare Azure PowerShell, eseguire questo comando:
 
-```powershell
+```powershell-interactive
 Install-Module Az
 ```
 
@@ -75,7 +75,7 @@ Rispondere `Yes` o `Yes to All` per continuare l'installazione.
 
 Per la compatibilità con il modulo `AzureRM` esistente, il nuovo modulo `Az` può creare alias compatibili con le versioni precedenti per i cmdlet `AzureRM`. Prima di usare il modulo per la prima volta, configurare questi alias con il comando seguente:
 
-```powershell
+```powershell-interactive
 # Import the module into the PowerShell session
 Import-Module Az
 # Enable AzureRM aliases for the user
@@ -95,7 +95,7 @@ Gli alias vengono configurati solo per l'utente corrente. Vedere la Guida dei cm
 
 Per iniziare a usare Azure PowerShell è necessario caricare `Az` nella sessione di PowerShell con il cmdlet [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module), quindi accedere con le credenziali di Azure. L'importazione di un modulo __non__ richiede privilegi elevati.
 
-```powershell
+```powershell-interactive
 # Import the module into the PowerShell session
 Import-Module Az
 # Connect to Azure with an interactive dialog for sign-in
