@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: a9cd0667e098e6b2c8577d11218b842548bee9d3
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.openlocfilehash: 39d9fa6e354c3c3448053c9cdc98fdc7f55b068d
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51212842"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274569"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Modifiche di rilievo in Microsoft Azure PowerShell 6.0.0
 
@@ -255,8 +255,8 @@ Remove-AzureRmDataLakeStoreItem -Account "ContosoADL" -path /myFolder -Recurse
 - Il cmdlet non accetta più parametri singoli che costituiscono il token di accesso, ma sostituisce i parametri di token espliciti, ad esempio `Service` oppure `Permissions`, con un parametro `TemplateUri` generico, che corrisponde a un token di accesso di esempio definito altrove, presumibilmente con i cmdlet PowerShell di Archiviazione o creato manualmente in base alla documentazione di Archiviazione. Il cmdlet mantiene il parametro `ValidityPeriod`.
 
 Per altre informazioni sulla creazione di token di accesso condivisi per Archiviazione di Azure, vedere le pagine della documentazione e in particolare:
-- [Creazione di una firma di accesso condiviso del servizio] (https://docs.microsoft.com/rest/api/storageservices/Constructing-a-Service-SAS)
-- [Creazione di una firma di accesso condiviso dell'account] (https://docs.microsoft.com/rest/api/storageservices/constructing-an-account-sas)
+- [Creazione di una firma di accesso condiviso del servizio](https://docs.microsoft.com/rest/api/storageservices/Constructing-a-Service-SAS)
+- [Creazione di una firma di accesso condiviso dell'account](https://docs.microsoft.com/rest/api/storageservices/constructing-an-account-sas)
 
 ```powershell-interactive
 # Old

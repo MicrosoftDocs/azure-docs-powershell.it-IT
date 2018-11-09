@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
-ms.openlocfilehash: 6f0e304c499fc8bf4909e2825d52cd63b1fcbf5d
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 563f84c3af98de066611dd80102e552b31f12883
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100492"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274926"
 ---
 # <a name="release-notes"></a>Note sulla versione
 
@@ -262,14 +262,15 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
       - Remove-AzureRMRoleDefinition
       - Set-AzureRMRoleDefinition
 * ServiceBus
-    * Aggiunta dei nuovi cmdlet seguenti per le regole di autorizzazione per spazio dei nomi, coda e argomento. Le operazioni relative alle regole di autorizzazione vengono eseguite in base al set di parametri.
-     - New-AzureRmServiceBusAuthorizationRule - Aggiunge una nuova regola di autorizzazione a spazio dei nomi/coda/argomento del bus di servizio esistente.
-     - Get-AzureRmServiceBusAuthorizationRule - Ottiene la regola di autorizzazione/l'elenco delle regole di autorizzazioni per spazio dei nomi/coda/argomento del bus di servizio esistente.
-     - Set-AzureRmServiceBusAuthorizationRule - Aggiorna le proprietà della regola di autorizzazione esistente di spazio dei nomi/coda/argomento del bus di servizio.
-     - New-AzureRmServiceBusKey - Genera una nuova chiave primaria/secondaria per la regola di autorizzazione di spazio dei nomi/coda/argomento del bus di servizio esistente.
-     - Get-AzureRmServiceBusKey - Ottiene la chiave primaria/secondaria per la regola di autorizzazione di spazio dei nomi/coda/argomento del bus di servizio esistente.
-     - Remove-AzureRmServiceBusAuthorizationRule - Elimina la regola di autorizzazione esistente di spazio dei nomi/coda/argomento del bus di servizio.
-    * Aggiunta della proprietà ResourceGroup a NamespaceAttributes
+  * Aggiunta dei nuovi cmdlet seguenti per le regole di autorizzazione per spazio dei nomi, coda e argomento. Le operazioni relative alle regole di autorizzazione vengono eseguite in base al set di parametri.
+    - New-AzureRmServiceBusAuthorizationRule - Aggiunge una nuova regola di autorizzazione a spazio dei nomi/coda/argomento del bus di servizio esistente.
+    - Get-AzureRmServiceBusAuthorizationRule - Ottiene la regola di autorizzazione/l'elenco delle regole di autorizzazioni per spazio dei nomi/coda/argomento del bus di servizio esistente.
+    - Set-AzureRmServiceBusAuthorizationRule - Aggiorna le proprietà della regola di autorizzazione esistente di spazio dei nomi/coda/argomento del bus di servizio.
+    - New-AzureRmServiceBusKey - Genera una nuova chiave primaria/secondaria per la regola di autorizzazione di spazio dei nomi/coda/argomento del bus di servizio esistente.
+    - Get-AzureRmServiceBusKey - Ottiene la chiave primaria/secondaria per la regola di autorizzazione di spazio dei nomi/coda/argomento del bus di servizio esistente.
+    - Remove-AzureRmServiceBusAuthorizationRule - Elimina la regola di autorizzazione esistente di spazio dei nomi/coda/argomento del bus di servizio.
+  * Aggiunta della proprietà ResourceGroup a NamespaceAttributes
+
 * Sql
     * Aggiornamento di Set-AzureRmSqlServerTransparentDataEncryptionProtector per visualizzare un avviso e richiedere conferma se il tipo di protezione della crittografia viene impostato su AzureKeyVault
     * Aggiunta di nuovi cmdlet aggiornati per le impostazioni di controllo
@@ -297,15 +298,16 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
 
 ## <a name="20170717---version-421"></a>17.07.2017 - Versione 4.2.1
 * Calcolo
-    - Correzione del problema relativo ai cmdlet per la creazione e l'aggiornamento di dischi della macchina virtuale e di snapshot di dischi della macchina virtuale, (collegamento)[https://github.com/azure/azure-powershell/issues/4309]
-      - New-AzureRmDisk
-      - New-AzureRmSnapshot
-      - Update-AzureRmDisk
-      - Update-AzureRmSnapshot
+  - Correzione del problema relativo ai cmdlet per la creazione e l'aggiornamento di dischi della macchina virtuale e di snapshot di dischi della macchina virtuale, (collegamento)[<https://github.com/azure/azure-powershell/issues/4309>]
+    - New-AzureRmDisk
+    - New-AzureRmSnapshot
+    - Update-AzureRmDisk
+    - Update-AzureRmSnapshot
 * Profilo
-    - Correzione del problema relativo all'autenticazione utente non interattiva in RDFE (collegamento)[https://github.com/Azure/azure-powershell/issues/4299]
+  - Correzione del problema relativo all'autenticazione utente non interattiva in RDFE (collegamento)[<https://github.com/Azure/azure-powershell/issues/4299>]
+
 * ServiceManagement
-    - Correzione del problema relativo all'autenticazione utente non interattiva (collegamento)[https://github.com/Azure/azure-powershell/issues/4299]
+  - Correzione del problema relativo all'autenticazione utente non interattiva (collegamento)[<https://github.com/Azure/azure-powershell/issues/4299>]
 
 ## <a name="2017711---version-420"></a>11.7.2017 - Versione 4.2.0
 * AnalysisServices
@@ -660,7 +662,7 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
 * ServiceBus
 
   - Correzione di bug: i valori della proprietà oggetto ServiceBus Queue erano impostati su Null. L'oggetto è usato come parametro di input nel cmdlet Set-AzureRmServiceBusQueue cmdlet per aggiornare Queue.
-   - Le proprietà interessate sono LockDuration, EntityAvailabilityStatus, DuplicateDetectionHistoryTimeWindow, MaxDeliveryCount e MessageCount
+    - Le proprietà interessate sono LockDuration, EntityAvailabilityStatus, DuplicateDetectionHistoryTimeWindow, MaxDeliveryCount e MessageCount
 * ServiceFabric
 
   - Aggiunta di cmdlet per Service Fabric
