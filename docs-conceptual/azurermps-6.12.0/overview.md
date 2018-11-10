@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 09/11/2018
-ms.openlocfilehash: bdd8e69a2ea9df8b4fff100e1f3cc4c82d2d9d9d
-ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
+ms.openlocfilehash: 32decf653a956d0b0b202b38a238f42fa831ecae
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51274977"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51212794"
 ---
 # <a name="overview-of-azure-powershell"></a>Panoramica di Azure PowerShell
 
@@ -28,7 +28,8 @@ Gli esempi seguenti aiutano a eseguire scenari comuni con Azure PowerShell:
 * [App Web](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
 * [Database SQL](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
 
-[!INCLUDE[az-replacing-azurerm](../includes/az-replacing-azurerm.md)]
+> [!NOTE]
+> In presenza di distribuzioni che usano il modello di distribuzione classico non convertibile, è possibile installare la versione di Gestione dei servizi di Azure PowerShell. Per altre informazioni, vedere [Install the Azure PowerShell Service Management module](/powershell/azure/servicemanagement/install-azure-ps) (Installare il modulo Gestione dei servizi di Azure PowerShell).
 
 ## <a name="learn-powershell-basics"></a>Nozioni di base di PowerShell
 
