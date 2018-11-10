@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
 ms.openlocfilehash: 85e4612146c07b963ca51a7203ea7782d058b93d
-ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51274314"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51212962"
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>Esecuzione in parallelo dei cmdlet tramite processi di PowerShell
 
