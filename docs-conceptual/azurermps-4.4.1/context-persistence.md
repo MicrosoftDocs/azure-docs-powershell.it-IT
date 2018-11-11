@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
 ms.openlocfilehash: 85de158cd2a4c3a38f653a530db8e6fae50cb37f
-ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51275164"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211129"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Conservare le credenziali utente tra le sessioni di PowerShell
 
