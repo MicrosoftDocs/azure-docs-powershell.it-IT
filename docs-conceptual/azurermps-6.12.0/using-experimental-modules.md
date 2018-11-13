@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.openlocfilehash: 245d69d3bcee3c502babe82395341efad2bc96d0
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.openlocfilehash: 77d0ce36ae3ab7c7bddd3febef4600fc9652850f
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51213014"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274518"
 ---
 # <a name="use-experimental-azure-powershell-modules"></a>Usare i moduli sperimentali di Azure PowerShell
 
@@ -63,7 +63,7 @@ L'interfaccia della riga di comando di Azure 2.0 usa diverse impostazioni predef
 
 I miglioramenti di base sono considerati "buon senso" e non è necessaria molta sperimentazione per procedere all'implementazione di questi aggiornamenti.
 
-- Cmdlet basati su scenari: i cmdlet **All*- dovranno essere progettati sulla base di scenari, non del servizio REST di Azure.
+- Cmdlet basati su scenari: i cmdlet <em>*All</em>- dovranno essere progettati sulla base di scenari, non del servizio REST di Azure.
 
 - Nomi più brevi: include i nomi dei cmdlet (ad esempio, `New-AzureRmVM` => `New-AzVm`) e dei parametri (ad esempio, `-ResourceGroupName` => `-Rg`). Usare alias per la compatibilità con i cmdlet "meno recenti" e specificare set di parametri _compatibili con le versioni precedenti_.
 
