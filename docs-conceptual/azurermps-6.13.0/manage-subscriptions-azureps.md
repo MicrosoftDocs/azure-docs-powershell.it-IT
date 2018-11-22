@@ -1,27 +1,26 @@
 ---
-title: Gestire le sottoscrizioni di Azure con Azure PowerShell | Microsoft Docs
+title: Gestire le sottoscrizioni di Azure con Azure PowerShell
 description: Gestire le sottoscrizioni di Azure con Azure PowerShell
-keywords: Azure PowerShell, sottoscrizione
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/30/2017
-ms.openlocfilehash: 12e304f32f585c1af40d20579cd46999e0a12395
+ms.date: 09/11/2018
+ms.openlocfilehash: a93461af1dafbf8f2c85ef127ecaefadf3be2f52
 ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 11/22/2018
-ms.locfileid: "52257959"
+ms.locfileid: "52259814"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Gestire più sottoscrizioni di Azure
 
-Se si usa Azure da poco, probabilmente si avrà una singola sottoscrizione. Tuttavia, se si usa Azure già da tempo, probabilmente si saranno create più sottoscrizioni di Azure. È possibile configurare Azure PowerShell per eseguire comandi su una determinata sottoscrizione.
+Se si è un nuovo utente di Azure, probabilmente si avrà una sottoscrizione singola. Tuttavia, se si usa Azure già da tempo, probabilmente si saranno create più sottoscrizioni di Azure. È possibile configurare Azure PowerShell per eseguire comandi su una determinata sottoscrizione.
 
 1. Ottenere un elenco di tutte le sottoscrizioni dell'account.
 
-    ```powershell-interactive
+    ```azurepowershell-interactive
     Get-AzureRmSubscription
     ```
 
@@ -50,13 +49,13 @@ Se si usa Azure da poco, probabilmente si avrà una singola sottoscrizione. Tutt
 
 2. Impostare il parametro predefinito.
 
-    ```powershell-interactive
-    Select-AzureRmSubscription -SubscriptionName "My Demos"
+    ```azurepowershell-interactive
+    Select-AzureRmSubscription -Subscription "My Demos"
     ```
 
 3. Verificare la modifica eseguendo il cmdlet `Get-AzureRmContext`.
 
-    ```powershell-interactive
+    ```azurepowershell-interactive
     Get-AzureRmContext
     ```
 
@@ -69,4 +68,4 @@ Se si usa Azure da poco, probabilmente si avrà una singola sottoscrizione. Tutt
     CurrentStorageAccount :
     ```
 
-Dopo aver impostato la sottoscrizione predefinita, tutti i successivi comandi di Azure PowerShell verranno eseguiti con questa sottoscrizione.
+Dopo l'impostazione della sottoscrizione predefinita, tutti i comandi di Azure PowerShell verranno eseguiti con questa sottoscrizione.

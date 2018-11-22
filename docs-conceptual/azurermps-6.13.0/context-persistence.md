@@ -6,15 +6,15 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 08/31/2017
-ms.openlocfilehash: 85de158cd2a4c3a38f653a530db8e6fae50cb37f
+ms.date: 09/09/2018
+ms.openlocfilehash: a07b5fe8cd532f99038d7f0ce10b3b891c896da1
 ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 11/22/2018
-ms.locfileid: "52258520"
+ms.locfileid: "52259723"
 ---
-# <a name="persisting-user-credentials-across-powershell-sessions"></a>Conservare le credenziali utente tra le sessioni di PowerShell
+# <a name="persist-user-credentials-across-powershell-sessions"></a>Conservare le credenziali utente tra le sessioni di PowerShell
 
 Azure PowerShell offre una funzionalità denominata **salvataggio automatico del contesto Azure**, che fornisce le funzionalità seguenti:
 
@@ -28,22 +28,20 @@ Azure PowerShell offre una funzionalità denominata **salvataggio automatico del
 Un *contesto Azure* è un set di informazioni che definisce la destinazione dei cmdlet di Azure PowerShell. Il contesto è costituito da cinque parti.
 
 - *Account*: entità servizio o nome utente usato per l'autenticazione delle comunicazioni con Azure.
-- *Sottoscrizione*: sottoscrizione di Azure contenente le risorse su cui vengono eseguire le operazioni.
+- *Sottoscrizione*: sottoscrizione di Azure con le risorse su cui vengono eseguite le operazioni.
 - *Tenant*: tenant di Azure Active Directory contenente la sottoscrizione. I tenant sono particolarmente importanti per l'autenticazione di entità servizio.
 - *Ambiente*: specifico cloud di Azure di destinazione, in genere il cloud globale di Azure.
   L'impostazione dell'ambiente consente tuttavia di specificare come destinazione anche cloud nazionali, per enti pubblici e locali (Azure Stack).
 - *Credenziali*: informazioni usate da Azure per verificare l'identità dell'utente e la relativa autorizzazione ad accedere alle risorse in Azure.
 
-Nelle versioni precedenti, il contesto Azure deve essere creato ogni volta che viene aperta una nuova sessione di PowerShell. A partire da Azure PowerShell v4.4.0, è possibile abilitare il salvataggio automatico dei contesti Azure e il relativo riutilizzo all'apertura di una nuova sessione di PowerShell.
+Nelle versioni precedenti deve essere creato un contesto Azure ogni volta che viene aperta una nuova sessione di PowerShell. A partire da Azure PowerShell v4.4.0, i contesti Azure possono essere salvati automaticamente all'apertura di una nuova sessione di PowerShell.
 
-## <a name="automatically-saving-the-context-for-the-next-sign-in"></a>Salvataggio automatico del contesto per l'accesso successivo
+## <a name="automatically-save-the-context-for-the-next-sign-in"></a>Salvare automaticamente il contesto per l'accesso successivo
 
-Per impostazione predefinita, Azure PowerShell rimuove le informazioni di contesto alla chiusura della sessione di PowerShell.
+Nella versione 6.3.0 e nelle successive, Azure PowerShell conserva automaticamente le informazioni del contesto tra le sessioni. Per annullare la memorizzazione del contesto e delle credenziali in PowerShell, usare `Disable-AzureRmContextAutoSave`. Sarà necessario eseguire l'accesso ad Azure ogni volta che si apre una sessione di PowerShell.
 
 Per consentire ad Azure PowerShell di mantenere il contesto memorizzato dopo la chiusura della sessione di PowerShell, usare `Enable-AzureRmContextAutosave`. Le informazioni relative al contesto e alle credenziali vengono salvate automaticamente in una speciale cartella nascosta nella directory dell'utente (`%AppData%\Roaming\Windows Azure PowerShell`).
-Successivamente, ogni nuova sessione di PowerShell avrà come destinazione il contesto usato nell'ultima sessione.
-
-Per annullare la memorizzazione del contesto e delle credenziali in PowerShell, usare `Disable-AzureRmContextAutoSave`. Sarà necessario eseguire l'accesso ad Azure ogni volta che si apre una sessione di PowerShell.
+Ogni nuova sessione di PowerShell avrà come destinazione il contesto usato nell'ultima sessione.
 
 I cmdlet che consentono di gestire i contesti Azure permettono anche un controllo con granularità fine. Se si vuole, è possibile applicare le modifiche solo alla sessione di PowerShell corrente (ambito `Process`) o a ogni sessione di PowerShell (ambito `CurrentUser`). Questo opzioni sono descritte più dettagliatamente in [Uso degli ambiti dei contesti](#Using-Context-Scopes).
 
@@ -71,7 +69,7 @@ Quando è necessario conoscere il risultato dell'attività in background, usare 
 
 ## <a name="creating-selecting-renaming-and-removing-contexts"></a>Creazione, selezione, ridenominazione e rimozione di contesti
 
-Per creare un contesto, è necessario eseguire l'accesso ad Azure. Il cmdlet `Add-AzureRmAccount` (o il relativo alias `Login-AzureRmAccount`) imposta il contesto predefinito usato dai cmdlet di Azure PowerShell successivi e consente di accedere a qualsiasi sottoscrizione o tenant consentito dalle credenziali.
+Per creare un contesto, è necessario eseguire l'accesso ad Azure. Il cmdlet `Connect-AzureRmAccount` (o il relativo alias `Login-AzureRmAccount`) imposta il contesto predefinito usato dai cmdlet di Azure PowerShell e consente di accedere a qualsiasi sottoscrizione o tenant consentito dalle credenziali.
 
 Per aggiungere un nuovo contesto dopo l'accesso, usare `Set-AzureRmContext` o il relativo alias `Select-AzureRmSubscription`.
 
@@ -79,7 +77,7 @@ Per aggiungere un nuovo contesto dopo l'accesso, usare `Set-AzureRmContext` o il
 PS C:\> Set-AzureRMContext -Subscription "Contoso Subscription 1" -Name "Contoso1"
 ```
 
-L'esempio precedente aggiunge un nuovo contesto specificando come destinazione "Contoso Subscription 1" con le credenziali correnti. Il nuovo contesto è denominato "Contoso1". Se non si specifica un nome per il contesto, verrà usato un nome predefinito contenente l'ID account e l'ID sottoscrizione.
+L'esempio precedente aggiunge un nuovo contesto specificando come destinazione "Contoso Subscription 1" con le credenziali correnti. Il nuovo contesto è denominato "Contoso1". Se non si specifica un nome per il contesto, verrà usato un nome predefinito basato su l'ID account e l'ID sottoscrizione.
 
 Per rinominare un contesto esistente, usare il cmdlet `Rename-AzureRmContext`, Ad esempio: 
 
@@ -95,14 +93,14 @@ Infine, per rimuovere un contesto usare il cmdlet `Remove-AzureRmContext`,  Ad e
 PS C:\> Remove-AzureRmContext Contoso2
 ```
 
-Questo esempio annulla la memorizzazione del contesto denominato "Contoso2". È possibile ricreare questo contesto in seguito usando `Set-AzureRmContext`
+Questo esempio annulla la memorizzazione del contesto denominato "Contoso2". È possibile ricreare questo contesto usando `Set-AzureRmContext`
 
 ## <a name="removing-credentials"></a>Rimozione delle credenziali
 
-È possibile rimuovere tutte le credenziali e i contesti associati per un utente o un'entità servizio usando `Remove-AzureRmAccount` (denominato anche `Logout-AzureRmAccount`). Se eseguito senza parametri, il cmdlet `Remove-AzureRmAccount` rimuove tutte le credenziali e i contesti associati all'utente o all'entità servizio nel contesto corrente. È possibile passare un nome utente, un nome di entità servizio o un contesto per specificare come destinazione una determinata entità di sicurezza.
+È possibile rimuovere tutte le credenziali e i contesti associati per un utente o un'entità servizio usando `Disconnect-AzureRmAccount` (denominato anche `Logout-AzureRmAccount`). Se eseguito senza parametri, il cmdlet `Disconnect-AzureRmAccount` rimuove tutte le credenziali e i contesti associati all'utente o all'entità servizio nel contesto corrente. È possibile passare un nome utente, un nome di entità servizio o un contesto per specificare come destinazione una determinata entità di sicurezza.
 
 ```azurepowershell-interactive
-Remove-AzureRmAccount user1@contoso.org
+Disconnect-AzureRmAccount user1@contoso.org
 ```
 
 ## <a name="using-context-scopes"></a>Uso degli ambiti dei contesti
@@ -123,7 +121,7 @@ L'impostazione di salvataggio automatico del contesto viene salvata nella direct
 $env:AzureRmContextAutoSave="true" | "false"
 ```
 
-Se è impostata su "true", il contesto viene salvato automaticamente. Se è impostata su "false", il contesto non viene salvato.
+Quando è impostata su "true", il contesto viene salvato automaticamente. Se è impostata su "false", il contesto non viene salvato.
 
 ## <a name="changes-to-the-azurermprofile-module"></a>Modifiche apportate al modulo AzureRM.Profile
 
@@ -132,8 +130,8 @@ Nuovi cmdlet per la gestione del contesto
 - [Enable-AzureRmContextAutosave][enable]: consente di salvare il contesto tra le sessioni di PowerShell.
   Qualsiasi modifica viene applicata al contesto globale.
 - [Disable-AzureRmContextAutosave][disable]: disattiva il salvataggio automatico del contesto. Per ogni nuova sessione di PowerShell è necessario ripetere l'accesso.
-- [Select-AzureRmContext][select]: seleziona un contesto come predefinito. Tutti i cmdlet successivi useranno le credenziali di questo contesto per l'autenticazione.
-- [Remove-AzureRmAccount][remove-cred]: rimuove tutte le credenziali e i contesti associati a un account.
+- [Select-AzureRmContext][select]: seleziona un contesto come predefinito. Tutti i cmdlet usano le credenziali in questo contesto per l'autenticazione.
+- [Disconnect-AzureRmAccount][remove-cred]: rimuove tutte le credenziali e i contesti associati a un account.
 - [Remove-AzureRmContext][remove-context]: rimuove un contesto denominato.
 - [Rename-AzureRmContext][rename]: rinomina un contesto esistente.
 
@@ -148,11 +146,11 @@ Modifiche apportate ai cmdlet per i profili esistenti
 [enable]: /powershell/module/azurerm.profile/Enable-AzureRmContextAutosave
 [disable]: /powershell/module/azurerm.profile/Disable-AzureRmContextAutosave
 [select]: /powershell/module/azurerm.profile/Select-AzureRmContext
-[remove-cred]: /powershell/module/azurerm.profile/Remove-AzureRmAccount
+[remove-cred]: /powershell/module/azurerm.profile/Disconnect-AzureRmAccount
 [remove-context]: /powershell/module/azurerm.profile/Remove-AzureRmContext
 [rename]: /powershell/module/azurerm.profile/Rename-AzureRmContext
 
 <!-- Updated cmdlets -->
-[login]: /powershell/module/azurerm.profile/Add-AzureRmAccount
-[import]: /powershell/module/azurerm.profile/Import-AzureRmAccount
-[set-context]: /powershell/module/azurerm.profile/Import-AzureRmContext
+[login]: /powershell/module/azurerm.profile/Connect-AzureRmAccount
+[import]:  /powershell/module/azurerm.profile/Import-AzureRmContext
+[set-context]: /powershell/module/azurerm.profile/Set-AzureRmContext

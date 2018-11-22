@@ -6,21 +6,21 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/05/2017
-ms.openlocfilehash: ff58693c8ec21b7e50e37bd85975a9ae3980a5e7
+ms.date: 09/11/2018
+ms.openlocfilehash: 77d0ce36ae3ab7c7bddd3febef4600fc9652850f
 ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 11/22/2018
-ms.locfileid: "52259132"
+ms.locfileid: "52259615"
 ---
-# <a name="using-experimental-azure-powershell-modules"></a>Uso dei moduli sperimentali di Azure PowerShell
+# <a name="use-experimental-azure-powershell-modules"></a>Usare i moduli sperimentali di Azure PowerShell
 
 In considerazione della particolare importanza attribuita agli strumenti di sviluppo e soprattutto alle interfacce della riga di comando in Azure, il team di Azure PowerShell sta sperimentando molti miglioramenti nell'esperienza di Azure PowerShell.
 
 ## <a name="experimentation-methodology"></a>Metodologia di sperimentazione
 
-Per facilitare la sperimentazione, vengono creati nuovi moduli di Azure PowerShell che implementano funzionalità esistenti di Azure SDK in nuovi modi più facili da usare. Nella maggior parte dei casi, i cmdlet rispecchiano esattamente cmdlet esistenti. I cmdlet sperimentali, tuttavia, offrono una notazione a sintassi abbreviata e valori predefiniti più intelligenti che semplificano la creazione e la gestione delle risorse di Azure.
+Per agevolare la sperimentazione, vengono creati nuovi moduli di Azure PowerShell che implementano funzionalità esistenti di Azure SDK in nuovi modi più facili da usare. Nella maggior parte dei casi, i cmdlet rispecchiano esattamente cmdlet esistenti. I cmdlet sperimentali, tuttavia, offrono una notazione a sintassi abbreviata e valori predefiniti più intelligenti che semplificano la creazione e la gestione delle risorse di Azure.
 
 Questi moduli possono essere installati side-by-side con i moduli di Azure PowerShell esistenti. I nomi dei cmdlet sono stati abbreviati per offrire nomi più corti ed evitare conflitti di nome con i cmdlet non sperimentali esistenti.
 
@@ -80,7 +80,7 @@ I miglioramenti sperimentali presentano un cambiamento significativo che il team
 
 - "Creazione intelligente": tutti gli scenari di creazione che implementano la "creazione intelligente" _non_ avranno parametro obbligatori. Tutte le informazioni necessarie verranno scelte autonomamente da Azure PowerShell.
 
-- Parametri "grigi": in molti casi, alcuni parametri potrebbero essere "grigi" o semifacoltativi. Se il parametro non viene specificato, all'utente viene richiesto se vuole che venga generato automaticamente. È anche opportuno che il valore per i parametri "grigi" venga dedotto in base al contesto con il consenso dell'utente,
+- Parametri "grigi": in molti casi, alcuni parametri potrebbero essere "grigi" o semifacoltativi. Se il parametro non viene specificato, all'utente viene chiesto se vuole che venga generato automaticamente. È anche opportuno che il valore per i parametri "grigi" venga dedotto in base al contesto con il consenso dell'utente,
   ad esempio suggerendo il valore usato di recente.
 
 - Opzione `-Auto`: l'opzione `-Auto` offrirà agli utenti la possibilità di "acconsentire esplicitamente" all'_impostazione predefinita di tutti i valori_ mantenendo al tempo stesso l'integrità dei parametri obbligatori nel percorso principale.
@@ -89,8 +89,8 @@ I miglioramenti sperimentali presentano un cambiamento significativo che il team
 
 Lo scenario di creazione di app Web, ad esempio, potrebbe avere un'opzione `-Git` o `-AddRemote` che aggiungerà automaticamente un'istanza remota di Azure a un repository Git esistente.
 
-- Valori predefiniti impostabili: gli utenti dovranno avere la possibilità di impostare valori predefiniti per determinati parametri comuni come `-ResourceGroupName` e `-Location`.
+- Valori predefiniti impostabili: gli utenti dovranno avere la possibilità di impostare valori predefiniti per parametri comuni come `-ResourceGroupName` e `-Location`.
 
-- Impostazioni predefinite per le dimensioni: le "dimensioni" delle risorse possono confondere gli utenti perché molti provider di risorse usano nomi diversi, ad esempio "Standard\_DS1\_v2" o "S1". La maggior parte degli utenti, tuttavia presta molta attenzione al costo. È quindi opportuno definire dimensioni "universali" in base alla pianificazione prezzi. Gli utenti possono scegliere dimensioni specifiche o lasciare che Azure PowerShell scelga l'_opzione migliore_ in base alla risorsa e al budget.
+- Impostazioni predefinite per le dimensioni: le "dimensioni" delle risorse possono confondere gli utenti perché molti provider di risorse usano nomi diversi, ad esempio "Standard\_DS1\_v2" o "S1". La maggior parte degli utenti, tuttavia presta molta attenzione al costo. È quindi opportuno definire dimensioni "universali" in base a una pianificazione prezzi. Gli utenti possono scegliere dimensioni specifiche o lasciare che Azure PowerShell scelga l'_opzione migliore_ in base alla risorsa e al budget.
 
-- Formato di output: Azure PowerShell attualmente restituisce oggetti `PSObject` e l'output della console è ridotto. Potrebbe essere necessario visualizzare all'utente in Azure PowerShell alcune informazioni relative alle impostazioni predefinite intelligenti usate.
+- Formato di output: Azure PowerShell attualmente restituisce oggetti `PSObject` e l'output della console è ridotto. Potrebbe essere necessario visualizzare all'utente in Azure PowerShell alcune informazioni sulle impostazioni predefinite intelligenti usate.
