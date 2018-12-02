@@ -8,12 +8,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
-ms.openlocfilehash: 433a638187f024883c177457e420a759968fed9a
-ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
+ms.openlocfilehash: 2db1ada32e5a9285c27ec3f569b622c9c33a06b0
+ms.sourcegitcommit: 558436c824d9b59731aa9b963cdc8df4dea932e7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52259694"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52587806"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Creare un'entità servizio di Azure con Azure PowerShell
 
@@ -64,39 +64,33 @@ ReplyUrls               : {}
 Per creare l'entità servizio si usa il cmdlet `New-AzureRmADServicePrincipal`.
 
 ```azurepowershell-interactive
-Add-Type -Assembly System.Web
-$password = [System.Web.Security.Membership]::GeneratePassword(16,3)
-$securePassword = ConvertTo-SecureString -Force -AsPlainText -String $password
-New-AzureRmADServicePrincipal -ApplicationId 00c01aaa-1603-49fc-b6df-b78c4e5138b4 -Password $securePassword
+$servicePrincipal = New-AzureRmADServicePrincipal -ApplicationId 00c01aaa-1603-49fc-b6df-b78c4e5138b4
 ```
 
 ```output
-DisplayName                    Type                           ObjectId
------------                    ----                           --------
-MyDemoWebApp                   ServicePrincipal               698138e7-d7b6-4738-a866-b4e3081a69e4
-```
-
-### <a name="get-information-about-the-service-principal"></a>Ottenere informazioni sull'entità servizio
-
-```azurepowershell-interactive
-$svcprincipal = Get-AzureRmADServicePrincipal -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
-$svcprincipal | Select-Object *
-```
-
-```output
-ServicePrincipalNames : {http://MyDemoWebApp, 00c01aaa-1603-49fc-b6df-b78c4e5138b4}
+Secret                : System.Security.SecureString
+ServicePrincipalNames : {00c01aaa-1603-49fc-b6df-b78c4e5138b4, http://MyDemoWebApp}
 ApplicationId         : 00c01aaa-1603-49fc-b6df-b78c4e5138b4
 DisplayName           : MyDemoWebApp
 Id                    : 698138e7-d7b6-4738-a866-b4e3081a69e4
+AdfsId                :
 Type                  : ServicePrincipal
+```
+
+A questo punto è possibile usare direttamente la proprietà $servicePrincipal.Secret in Connect-AzureRmAccount (vedere "Accedere con l'entità servizio" di seguito) oppure convertire SecureString in una stringa di testo normale per utilizzi successivi:
+
+```azurepowershell-interactive
+$BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($servicePrincipal.Secret)
+$password = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
+[Runtime.InteropServices.Marshal]::ZeroFreeBSTR($BSTR)
 ```
 
 ### <a name="sign-in-using-the-service-principal"></a>Accedere con l'entità servizio
 
-È ora possibile effettuare l'accesso come nuova entità servizio per l'app usando l'*appId* e la *password* specificati. È anche necessario l'ID tenant per l'entità servizio. L'ID tenant viene visualizzato quando si accede ad Azure con le credenziali personali. Per accedere con un'entità servizio, usare i comandi seguenti:
+È ora possibile eseguire l'accesso con la nuova entità servizio per l'app usando il valore di *appId* specificato e la *password* generata automaticamente. È anche necessario l'ID tenant per l'entità servizio. L'ID tenant viene visualizzato quando si accede ad Azure con le credenziali personali. Per accedere con un'entità servizio, usare i comandi seguenti:
 
 ```azurepowershell-interactive
-$cred = Get-Credential -UserName $svcprincipal.ApplicationId -Message "Enter Password"
+$cred = New-Object System.Management.Automation.PSCredential ("00c01aaa-1603-49fc-b6df-b78c4e5138b4", $servicePrincipal.Secret)
 Connect-AzureRmAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 ```
 
@@ -179,14 +173,15 @@ Altri cmdlet di Azure PowerShell per la gestione dei ruoli:
 ### <a name="add-a-new-password-for-the-service-principal"></a>Aggiungere una nuova password per l'entità servizio
 
 ```azurepowershell-interactive
-$password = [System.Web.Security.Membership]::GeneratePassword(16,3)
-New-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp -Password $password
+New-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
 ```
 
 ```output
-StartDate           EndDate             KeyId                                Type
----------           -------             -----                                ----
-3/8/2017 5:58:24 PM 3/8/2018 5:58:24 PM 6f801c3e-6fcd-42b9-be8e-320b17ba1d36 Password
+Secret    : System.Security.SecureString
+StartDate : 11/16/2018 12:38:23 AM
+EndDate   : 11/16/2019 12:38:23 AM
+KeyId     : 6f801c3e-6fcd-42b9-be8e-320b17ba1d36
+Type      : Password
 ```
 
 ### <a name="get-a-list-of-credentials-for-the-service-principal"></a>Ottenere un elenco di credenziali per l'entità servizio
@@ -225,4 +220,19 @@ Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
 StartDate           EndDate             KeyId                                Type
 ---------           -------             -----                                ----
 3/8/2017 5:58:24 PM 3/8/2018 5:58:24 PM 6f801c3e-6fcd-42b9-be8e-320b17ba1d36 Password
+```
+
+### <a name="get-information-about-the-service-principal"></a>Ottenere informazioni sull'entità servizio
+
+```azurepowershell-interactive
+$svcprincipal = Get-AzureRmADServicePrincipal -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
+$svcprincipal | Select-Object *
+```
+
+```output
+ServicePrincipalNames : {http://MyDemoWebApp, 00c01aaa-1603-49fc-b6df-b78c4e5138b4}
+ApplicationId         : 00c01aaa-1603-49fc-b6df-b78c4e5138b4
+DisplayName           : MyDemoWebApp
+Id                    : 698138e7-d7b6-4738-a866-b4e3081a69e4
+Type                  : ServicePrincipal
 ```
