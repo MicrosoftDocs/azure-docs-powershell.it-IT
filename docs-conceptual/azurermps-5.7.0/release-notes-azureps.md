@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
 ms.openlocfilehash: 1a9d38cd60ba596c085e5ee9f8d815e238362b1f
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52828077"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53218103"
 ---
 # <a name="release-notes"></a>Note sulla versione
 
@@ -182,8 +182,8 @@ Modifiche apportate dall'ultima versione: https://github.com/Azure/azure-powersh
 * 'New-AzureRmVMSS' stampa le stringhe di connessione in modalità dettagliata.
 * 'New-AzureRmVmss' supporta indirizzi IP pubblici, regole di bilanciamento del carico e regole NAT in ingresso.
 * Funzionalità WriteAccelerator
-    - Aggiunta del parametro opzionale WriteAccelerator ai cmdlet seguenti: Set-AzureRmVMOSDisk Set-AzureRmVMDataDisk Add-AzureRmVMDataDisk Add-AzureRmVmssDataDisk
-    - Aggiunta del parametro opzionale OsDiskWriteAccelerator al cmdlet seguente:     Set-AzureRmVmssStorageProfile.
+    - Aggiunta del parametro WriteAccelerator ai cmdlet seguenti: Set-AzureRmVMOSDisk Set-AzureRmVMDataDisk Add-AzureRmVMDataDisk Add-AzureRmVmssDataDisk
+    - Aggiunta del parametro OsDiskWriteAccelerator al cmdlet seguente:     Set-AzureRmVmssStorageProfile.
     - Aggiunta del parametro booleano OsDiskWriteAccelerator ai cmdlet seguenti:     Update-AzureRmVM     Update-AzureRmVmss
 
 #### <a name="azurermdatafactories"></a>AzureRM.DataFactories
@@ -273,15 +273,15 @@ Modifiche apportate dall'ultima versione: https://github.com/Azure/azure-powersh
     - Remove-AzureRmNetworkWatcherConnectionMonitor
 * Aggiornamento delle documentazione di Set-AzureRmApplicationGatewayBackendAddressPool per rimuovere un esempio obsoleto
 * Aggiunta del flag EnableHttp2 al gateway applicazione
-    - Aggiornamento di New-AzureRmApplicationGateway: aggiunta del parametro facoltativo -EnableHttp2
+    - Aggiornamento di New-AzureRmApplicationGateway: Aggiunta del parametro facoltativo -EnableHttp2
 * Aggiunta di IpTags a PublicIpAddress
-    - Aggiornamento di New-AzureRmPublicIpAddress: aggiunta di IpTags
+    - Aggiornamento di New-AzureRmPublicIpAddress: Aggiunta di IpTags
     - New-AzureRmPublicIpTag per l'aggiunta di Iptag
 * Aggiunta della proprietà DisableBgpRoutePropagation in RouteTable ed effectiveRoute.
 
 #### <a name="azurermresources"></a>AzureRM.Resources
-* Register-AzureRmProviderFeature: aggiunta di un esempio mancante nella documentazione
-* Register-AzureRmResourceProvider: aggiunta di un esempio mancante nella documentazione
+* Register-AzureRmProviderFeature: Aggiunta dell'esempio mancante nella documentazione
+* Register-AzureRmResourceProvider: Aggiunta dell'esempio mancante nella documentazione
 
 #### <a name="azurermstorage"></a>AzureRM.Storage
 * I parametri EnableEncryptionService e DisableEncryptionService sono ora obsoleti nei cmdlet "New" e "Set" degli account di archiviazione, dato che la crittografia dei dati inattivi è abilitata per impostazione predefinita e non può essere disabilitata.
@@ -349,7 +349,7 @@ Modifiche apportate dall'ultima versione: https://github.com/Azure/azure-powersh
 * Aggiunta del supporto per le query sull'API V2 tramite `Invoke-AzureRmOperationalInsightsQuery`. Vedere [https://dev.loganalytics.io/](https://dev.loganalytics.io/) per altre informazioni sulla nuova API.
 
 ### <a name="azurermresources"></a>AzureRM.Resources
-* `Get-AzureRmADServicePrincipal`: rimozione di `-ServicePrincipalName` dal set di parametri vuoto predefinito, in quanto ridondante nel set di parametri SPN
+* `Get-AzureRmADServicePrincipal`: Rimozione di `-ServicePrincipalName` dal set di parametri vuoto predefinito, in quanto ridondante nel set di parametri SPN
 
 ### <a name="azurermservicebus"></a>AzureRM.ServiceBus
 
@@ -491,7 +491,7 @@ Modifiche apportate dall'ultima versione: https://github.com/Azure/azure-powersh
 * Aggiunta dello strumento di completamento Location ai parametri -Location per consentire il completamento tramite tasto TAB con le località valide
 * Aggiunta dello strumento di completamento ResourceGroup ai parametri -ResourceGroup per consentire il completamento tramite tasto TAB con i gruppi di risorse nella sottoscrizione corrente
 * Aggiunta del supporto di -AsJob per i cmdlet KeyVault a esecuzione prolungata. I cmdlet selezionati possono essere eseguiti in background e restituire un processo per tenere traccia dello stato.
-  * Cmdlet interessato: Remove-AzureRmKeyVault
+  * Il cmdlet interessato è: Remove-AzureRmKeyVault
 * Correzione del bug in Set-AzureRmKeyVaultAccessPolicy per cui il filtro AAD impostava il nome dell'entità servizio sul nome dell'entità utente specificato, anziché impostare il nome dell'entità utente
   - Per altre informazioni, vedere il problema https://github.com/Azure/azure-powershell/issues/5201.
 
@@ -623,7 +623,7 @@ Modifiche apportate dall'ultima versione: https://github.com/Azure/azure-powersh
   - Get-AzureRmComputeResourceSku mostra le informazioni sulla zona.
   - Aggiornamento di Disable-AzureRmVmssDiskEncryption per risolvere il problema https://github.com/Azure/azure-powershell/issues/5038
   - Aggiunta del supporto -AsJob per i cmdlet di calcolo a esecuzione prolungata. I cmdlet selezionati possono essere eseguiti in background e restituire un processo per tenere traccia dello stato.
-    - I cmdlet interessati includono New-, Update-, Set-, Remove-, Start-, Restart-, Stop- per le macchine virtuali e i set di scalabilità di macchine virtuali
+    - I cmdlet interessati includono: New-, Update-, Set-, Remove-, Start-, Restart-, Stop- per le macchine virtuali e i set di scalabilità di macchine virtuali
     - Aggiunta di un parametro semplificato impostato su New-AzureRmVM che crea una macchina virtuale e tutte le risorse necessarie usando impostazioni predefinite intelligenti
 * ContainerInstance
   - Applicazione di Azure Container Instance SDK 2017-10-01
@@ -644,7 +644,7 @@ Modifiche apportate dall'ultima versione: https://github.com/Azure/azure-powersh
   - Per New-AzureRmDataLakeAnalyticsAccount, il parametro MaxDegreeOfParallelism è stato modificato in MaxAnalyticsUnits
     - Aggiunta di un alias per il parametro MaxAnalyticsUnits: MaxDegreeOfParallelism
   - Per New-AzureRmDataLakeAnalyticsComputePolicy, il parametro MaxDegreeOfParallelismPerJob è stato modificato in MaxAnalyticsUnitsPerJob
-    - Aggiunta di un alias al parametro MaxAnalyticsUnitsPerJob: MaxDegreeOfParallelismPerJob
+    - Aggiunta di un alias per il parametro MaxAnalyticsUnitsPerJob: MaxDegreeOfParallelismPerJob
   - Per Set-AzureRmDataLakeAnalyticsAccount, il parametro MaxDegreeOfParallelism è stato modificato in MaxAnalyticsUnits
     - Aggiunta di un alias per il parametro MaxAnalyticsUnits: MaxDegreeOfParallelism
   - Per Submit-AzureRmDataLakeAnalyticsJob, il parametro DegreeOfParallelism è stato modificato in AnalyticsUnits
@@ -721,7 +721,7 @@ Modifiche apportate dall'ultima versione: https://github.com/Azure/azure-powersh
   - AzureRM.StreamAnalytics
 
 ## <a name="2017118---version-500"></a>8.11.2017 - Versione 5.0.0
-* NOTA: questa è una versione con modifiche di rilievo. Per un elenco competo delle modifiche di rilievo introdotte, vedere la guida alla migrazione (https://aka.ms/azps-migration-guide)).
+* NOTA:  Questa è una versione con modifiche di rilievo. Per un elenco competo delle modifiche di rilievo introdotte, vedere la guida alla migrazione (https://aka.ms/azps-migration-guide)).
 * Tutti i cmdlet in AzureRM ora supportano la Guida
   - Eseguire Get-Help con il parametro -Online per aprire la Guida nel browser Internet predefinito
 * AnalysisServices
@@ -750,9 +750,9 @@ Modifiche apportate dall'ultima versione: https://github.com/Azure/azure-powersh
     - Remove-AzureRmApplicationInsightsApiKey
 * AzureBatch
   * Aggiunta di nuovo parametri a `New-AzureRmBatchAccount`.
-    - `PoolAllocationMode`: modalità di allocazione da usare per la creazione di pool nell'account Batch. Per creare un account Batch che alloca i nodi dei pool nella sottoscrizione dell'utente, impostarla su `UserSubscription`.
-    - `KeyVaultId`: ID risorsa dell'insieme di credenziali delle chiavi di Azure associato all'account Batch.
-    - `KeyVaultUrl`: URL dell'insieme di credenziali delle chiavi di Azure associato all'account Batch.
+    - `PoolAllocationMode`: Modalità di allocazione da usare per la creazione di pool nell'account Batch. Per creare un account Batch che alloca i nodi dei pool nella sottoscrizione dell'utente, impostarla su `UserSubscription`.
+    - `KeyVaultId`: ID risorsa dell'istanza di Azure Key Vault associata all'account Batch.
+    - `KeyVaultUrl`: URL dell'istanza di Azure Key Vault associata all'account Batch.
   * Aggiornamento dei parametri a `New-AzureBatchTask`.
     - Rimozione dell'opzione `RunElevated`. Il parametro `UserIdentity` è stato aggiunto per sostituire `RunElevated` e il comportamento equivalente può essere ottenuto costruendo un elemento `PSUserIdentity` come illustrato di seguito:
       - $autoUser = New-Object Microsoft.Azure.Commands.Batch.Models.PSAutoUserSpecification -ArgumentList @("Task", "Admin")
