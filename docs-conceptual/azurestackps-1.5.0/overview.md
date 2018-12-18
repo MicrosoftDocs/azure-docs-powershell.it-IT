@@ -9,18 +9,18 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: afa83a6258e57e961576b328e67fad634704dddf
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52827310"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53216620"
 ---
 # <a name="azure-stack-module-150"></a>Modulo di Azure Stack 1.5.0
 
 ## <a name="requirements"></a>Requirements:
 La versione minima supportata di Azure Stack è 1808.
 
-Nota: se si usa una versione precedente, installare la versione 1.4.0
+Note: Se si usa una versione precedente, installare la versione 1.4.0
 
 ## <a name="known-issues"></a>Problemi noti:
 

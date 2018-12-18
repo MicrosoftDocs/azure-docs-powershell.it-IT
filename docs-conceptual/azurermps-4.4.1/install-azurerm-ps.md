@@ -8,20 +8,20 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
 ms.openlocfilehash: ef796bcb81e24b1942c644aad2b4ec7705916b02
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52826545"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53217746"
 ---
 # <a name="install-and-configure-azure-powershell"></a>Installare e configurare Azure PowerShell
 
 Questo articolo illustra i passaggi per installare i moduli di Azure PowerShell in ambiente Windows.
-Se si intende usa Azure PowerShell in ambiente macOS o Linux, vedere l'articolo seguente: [Installare e configurare Azure PowerShell in macOS e Linux](install-azurermps-maclinux.md).
+Se si vuole usare Azure PowerShell su macOS o Linux, vedere gli articoli seguenti: [Installare e configurare Azure PowerShell in macOS e Linux](install-azurermps-maclinux.md).
 
 L'installazione di Azure PowerShell da PowerShell Gallery è il metodo preferito di installazione.
 
-## <a name="step-1-install-powershellget"></a>Passaggio 1: installare PowerShellGet
+## <a name="step-1-install-powershellget"></a>Passaggio 1: Installare PowerShellGet
 
 L'installazione degli elementi da PowerShell Gallery richiede il modulo PowerShellGet. Assicurarsi di avere la versione appropriata di PowerShellGet e di soddisfare gli altri requisiti di sistema. Eseguire il comando seguente per determinare se PowerShellGet è installato nel sistema.
 
@@ -84,7 +84,7 @@ Il modulo AzureRM è un modulo di rollup per i cmdlet di Azure Resource Manager.
 
 Se è installata una versione precedente di Azure PowerShell è probabile che venga visualizzato un errore. Per risolvere questo problema, vedere la sezione [Eseguire l'aggiornamento a una nuova versione di Azure PowerShell](#update-azps) di questo articolo.
 
-## <a name="step-3-load-the-azurerm-module"></a>Passaggio 3: caricare il modulo AzureRM
+## <a name="step-3-load-the-azurerm-module"></a>Passaggio 3: Caricare il modulo AzureRM
 
 Dopo aver installato il modulo, è necessario caricarlo nella sessione di PowerShell. Eseguire questa operazione in una normale sessione di PowerShell, senza privilegi elevati. I moduli vengono caricati usando il cmdlet `Import-Module`, come indicato di seguito:
 
