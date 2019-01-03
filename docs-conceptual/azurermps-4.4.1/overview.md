@@ -8,14 +8,16 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 08/31/2017
-ms.openlocfilehash: ff5ee02b11b6f0649e20b056c14fc8a9b3ba6276
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 5ee8572ccb8e9fc2de11c2253a1815a666e038a7
+ms.sourcegitcommit: 4acddc7026522c4fe39de2c4424917d88ee01b7e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024699"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53736496"
 ---
 # <a name="overview-of-azure-powershell"></a>Panoramica di Azure PowerShell
+
+[!INCLUDE[az-replacing-azurerm.md](../includes/az-replacing-azurerm.md)]
 
 Azure PowerShell offre un set di cmdlet che usano il modello [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) per la gestione delle risorse di Azure. È possibile usarlo nel browser con [Azure Cloud Shell](/azure/cloud-shell/overview) oppure installarlo nel computer locale e usarlo in una sessione di PowerShell.
 
@@ -28,9 +30,6 @@ Gli esempi seguenti aiutano a eseguire scenari comuni con Azure PowerShell:
 * [App Web](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
 * [Database SQL](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
 
-> [!NOTE]
-> In presenza di distribuzioni che usano il modello di distribuzione classico non convertibile, è possibile installare la versione di Gestione dei servizi di Azure PowerShell. Per altre informazioni, vedere [Install the Azure PowerShell Service Management module](/powershell/azure/servicemanagement/install-azure-ps) (Installare il modulo Gestione dei servizi di Azure PowerShell).
-
 ## <a name="learn-powershell-basics"></a>Nozioni di base di PowerShell
 
 Se non si ha familiarità con PowerShell, un'introduzione a PowerShell può risultare utile.
@@ -38,7 +37,7 @@ Se non si ha familiarità con PowerShell, un'introduzione a PowerShell può risu
 * [Installazione di PowerShell](/powershell/scripting/installing-windows-powershell)
 * [Creazione di script con PowerShell](/powershell/scripting/scripting-with-windows-powershell)
 
-È inoltre possibile guardare questo video: [PowerShell Basics: (Part 1) Getting Started with PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1) (Nozioni di base su PowerShell: Introduzione a PowerShell, parte 1).
+È anche possibile guardare questo video: [PowerShell Basics: (Part 1) Getting Started with PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1).
 
 Oppure partecipare al corso [Introduzione a PowerShell](https://mva.microsoft.com/liveevents/powershell-jumpstart) di Microsoft Virtual Academy.
 

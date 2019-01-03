@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/06/2017
-ms.openlocfilehash: 6cc6d9984e49c0cbc23c7ef3a77b98c0b7f3a8e0
-ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
+ms.openlocfilehash: b7283e4a54cd423282141c07750630050799d59c
+ms.sourcegitcommit: 6685809f054203bd733c84f68acc69e53e5cca8c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53217780"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53982791"
 ---
 # <a name="installing-the-azure-powershell-service-management-module"></a>Installare il modulo Gestione dei servizi di Azure PowerShell
 
@@ -23,7 +23,7 @@ L'installazione di Azure PowerShell da [PowerShell Gallery](https://www.powershe
 L'installazione degli elementi da PowerShell Gallery richiede il modulo PowerShellGet. Assicurarsi di avere la versione appropriata di PowerShellGet e di soddisfare gli altri requisiti di sistema. Eseguire il comando seguente per determinare se PowerShellGet è installato nel sistema.
 
 ```powershell
-Get-Module PowerShellGet -list | Select-Object Name,Version,Path
+Get-InstalledModule PowerShellGet -AllVersions | Select-Object Name,Version,Path
 ```
 
 Verrà visualizzata una schermata simile all'output seguente:
@@ -70,7 +70,7 @@ Dopo l'accesso ad Azure, Azure PowerShell crea un contesto per la sessione speci
 
 ## <a name="azure-service-management-cmdlets"></a>Cmdlet di Gestione dei servizi di Azure
 
-I moduli di Azure PowerShell vengono aggiornati di frequente. Se si nota che la guida dei cmdlet online include cmdlet o parametri non presenti nel modulo, scaricare e installare la versione più recente del modulo. Per conoscere la versione del modulo, digitare: `(Get-Module Azure).Version`.
+I moduli di Azure PowerShell vengono aggiornati di frequente. Se si nota che la guida dei cmdlet online include cmdlet o parametri non presenti nel modulo, scaricare e installare la versione più recente del modulo. Per conoscere la versione del modulo, digitare: `(Get-InstalledModule Azure).Version`.
 
 Per gli script di esempio che consentono di automatizzare alcune delle attività comuni in Azure, vedere lo [Script Center di Windows Azure](http://www.windowsazure.com/documentation/scripts/).
 
@@ -88,8 +88,8 @@ Per informazioni generali sull'installazione, la formazione, l'uso e la personal
 
 ### <a name="checking-the-version-of-azure-powershell"></a>Controllo della versione di Azure PowerShell
 
-Anche se si consiglia di eseguire l'aggiornamento alla versione più recente il prima possibile, alcune versioni di Azure PowerShell sono di supporto. Per determinare la versione di Azure PowerShell installata, eseguire `Get-Module AzureRM` dalla riga di comando.
+Anche se si consiglia di eseguire l'aggiornamento alla versione più recente il prima possibile, alcune versioni di Azure PowerShell sono di supporto. Per determinare la versione di Azure PowerShell installata, eseguire `Get-InstalledModule Azure` dalla riga di comando.
 
 ```powershell
-Get-Module AzureRM -list | Select-Object Name,Version,Path
+Get-InstalledModule Azure -AllVersions | Select-Object Name,Version,Path
 ```

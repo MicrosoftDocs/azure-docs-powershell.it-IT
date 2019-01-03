@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/15/2017
-ms.openlocfilehash: edba82ef095079e24700a47eeb7747b3b28b7643
-ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
+ms.openlocfilehash: a64bc4f07a5dc7d3f42e13877ed3bca53c4987d3
+ms.sourcegitcommit: 6685809f054203bd733c84f68acc69e53e5cca8c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53216688"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53982876"
 ---
 # <a name="get-started-with-azure-powershell"></a>guida introduttiva ad Azure PowerShell
 
@@ -24,7 +24,7 @@ Verificare di aver installato l'ultima versione di Azure PowerShell. Per informa
 
 1. [Installare Azure PowerShell](install-azurerm-ps.md).
 
-2. Per verificare che l'installazione sia riuscita, eseguire `Get-Module AzureRM -ListAvailable` dalla riga di comando.
+2. Per verificare che l'installazione sia riuscita, eseguire `Get-InstalledModule AzureRM -AllVersions` dalla riga di comando.
 
 ## <a name="azure-cloud-shell"></a>Azure Cloud Shell
 
