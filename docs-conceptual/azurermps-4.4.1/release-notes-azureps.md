@@ -562,7 +562,7 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
   - Nuovo cmdlet Get-AzureRmConsumptionUsageDetail
     + cmdlet per recuperare i dettagli d'uso della sottoscrizione.
 * ContainerRegistry
-  - Aggiunta di cmdlet PowerShell per il Registro contenitori di Azure
+  - Aggiunta di cmdlet PowerShell per Registro Azure Container
     + New-AzureRmContainerRegistry
     + Get-AzureRmContainerRegistry
     + Update-AzureRmContainerRegistry
