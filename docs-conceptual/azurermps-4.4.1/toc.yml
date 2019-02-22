@@ -1,56 +1,63 @@
+items:
 - name: Azure PowerShell
   href: overview.md
   items:
-    - name: Installa
-      href: install-azurerm-ps.md
-      items:
-        - name: Eseguire l'installazione in macOS e Linux
-          href: install-azurermps-maclinux.md
-        - name: Altri metodi di installazione
-          href: other-install.md
-    - name: Attività iniziali
-      href: get-started-azureps.md
-    - name: Cloud Shell
-      href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
-    - name: Accesso
-      href: authenticate-azureps.md
-      items:
-        - name: Creare un'entità servizio
-          href: create-azure-service-principal-azureps.md
-        - name: Credenziali persistenti
-          href: context-persistence.md
-    - name: Query
-      href: queries-azureps.md
-    - name: Formattare l'output
-      href: formatting-output.md
-    - name: Gestisci sottoscrizioni
-      href: manage-subscriptions-azureps.md
-    - name: Distribuire
-      items:
-        - name: Distribuire i modelli di Resource Manager
-          href: /azure/azure-resource-manager/resource-group-template-deploy
-        - name: Esportare i modelli di Resource Manager
-          href: /azure/azure-resource-manager/resource-manager-export-template-powershell
-        - name: Distribuire i modelli privati di Resource Manager
-          href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
-    - name: Concetti
-      items:
-        - name: Moduli sperimentali
-          href: using-experimental-modules.md
-    - name: Note sulla versione
-      href: release-notes-azureps.md
-      items:
-        - name: Modifiche di rilievo in Azure PowerShell 4.x
-          href: migration-guide.4.0.0.md
+  - name: Installa
+    href: install-azurerm-ps.md
+    items:
+    - name: Eseguire l'installazione in macOS e Linux
+      href: install-azurermps-maclinux.md
+    - name: Altri metodi di installazione
+      href: other-install.md
+  - name: Attività iniziali
+    href: get-started-azureps.md
+  - name: Cloud Shell
+    href: https://docs.microsoft.com/azure/cloud-shell/overview
+  - name: Accesso
+    href: authenticate-azureps.md
+    items:
+    - name: Creare un'entità servizio
+      href: create-azure-service-principal-azureps.md
+    - name: Credenziali persistenti
+      href: context-persistence.md
+  - name: Query
+    href: queries-azureps.md
+  - name: Formattare l'output
+    href: formatting-output.md
+  - name: Gestire le sottoscrizioni
+    href: manage-subscriptions-azureps.md
+  - name: Distribuire
+    items:
+    - name: Distribuire i modelli di Resource Manager
+      href: /azure/azure-resource-manager/resource-group-template-deploy
+    - name: Esportare i modelli di Resource Manager
+      href: /azure/azure-resource-manager/resource-manager-export-template-powershell
+    - name: Distribuire i modelli privati di Resource Manager
+      href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
+  - name: Concetti
+    items:
+    - name: Moduli sperimentali
+      href: using-experimental-modules.md
+  - name: Note sulla versione
+    href: release-notes-azureps.md
+    items:
+    - name: Modifiche di rilievo in Azure PowerShell 4.x
+      href: migration-guide.4.0.0.md
 - name: Script di esempio
   items:
-    - name: Macchine virtuali Linux
-      href: /azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
-    - name: Macchine virtuali Windows
-      href: /azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
-    - name: App Web
-      href: /azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
-    - name: DATABASE SQL
-      href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
-    - name: Cosmos DB
-      href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
+  - name: Macchine virtuali Linux
+    href: /azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+  - name: Macchine virtuali Windows
+    href: /azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+  - name: App Web
+    href: /azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+  - name: DATABASE SQL
+    href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+  - name: Cosmos DB
+    href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
+ms.openlocfilehash: a4e5e00066372f461b831e17c60aab32ce7f2b61
+ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56153511"
