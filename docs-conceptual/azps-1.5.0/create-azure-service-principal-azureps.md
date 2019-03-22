@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/20/2019
-ms.openlocfilehash: ae8bb8341209fedc3fadf8137f4faaf1ad3fe686
-ms.sourcegitcommit: 447276d46ffeeb37f0c07a570536665e36c5ddb8
+ms.openlocfilehash: 3ce1135cc81d11ce6faa62c790cb4358b5fceda4
+ms.sourcegitcommit: 32dad89878c7e728f740936f5f338b8ae878a6a1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57882403"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58192923"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Creare un'entità servizio di Azure con Azure PowerShell
 
@@ -88,7 +88,7 @@ L'oggetto restituito da `New-AzADServicePrincipal` contiene i membri `Id` e `Dis
 
 ## <a name="get-an-existing-service-principal"></a>Ottenere un'entità servizio esistente
 
-L'elenco delle entità servizio per il tenant attualmente attivo può essere recuperato con [Get-AzADServicePrincipal](/module/az.resources/get-azadserviceprincipal). Per impostazione predefinita, questo comando restituisce __tutte__ le entità servizio di un tenant, quindi per le organizzazioni più grandi la restituzione di risultati può richiedere tempi lunghi. In alternativa, è consigliabile usare gli argomenti di filtro facoltativi sul lato server:
+L'elenco delle entità servizio per il tenant attualmente attivo può essere recuperato con [Get-AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal). Per impostazione predefinita, questo comando restituisce __tutte__ le entità servizio di un tenant, quindi per le organizzazioni più grandi la restituzione di risultati può richiedere tempi lunghi. In alternativa, è consigliabile usare gli argomenti di filtro facoltativi sul lato server:
 
 * `-DisplayNameBeginsWith` richiede entità di servizio che abbiano un _prefisso_ corrispondente al valore specificato. Il nome visualizzato di un'entità servizio è il valore impostato con `-DisplayName` durante la creazione.
 * `-DisplayName` richiede una _corrispondenza esatta_ del nome di un'entità servizio.
@@ -121,7 +121,7 @@ L'aggiunta di un ruolo _non_ limita le autorizzazioni assegnate in precedenza. Q
 È possibile verificare le modifiche visualizzando l'elenco dei ruoli assegnati:
 
 ```azurepowershell-interactive
-Get-AzRoleAssignment -ServicePrinicpalName ServicePrincipalName
+Get-AzRoleAssignment -ServicePrincipalName ServicePrincipalName
 ```
 
 ## <a name="sign-in-using-a-service-principal"></a>Accedere con un'entità servizio
