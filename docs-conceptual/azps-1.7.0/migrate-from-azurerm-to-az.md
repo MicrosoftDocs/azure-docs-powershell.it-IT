@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.openlocfilehash: 28122ca953d62b405f19effbbc680f2dc6202cca
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59364187"
 ---
 # <a name="migrate-from-azurerm-to-azure-powershell-az"></a>Eseguire la migrazione da AzureRM ad Az di Azure PowerShell
@@ -43,7 +43,7 @@ Per installare il modulo Az di Azure PowerShell, seguire questa procedura:
 
 * __CONSIGLIATO__: [Disinstallare il modulo AzureRM](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module).
   Assicurarsi di rimuovere _tutte_ le versioni installate di AzureRM, non solo quella più recente.
-* [Installare il modulo Az](install-az-ps.md)
+* [Installare il modulo Az](install-az-ps.md).
 
 ## <a name="a-namealiasesenable-azurerm-compatibility-aliases"></a><a name="aliases"/>Abilitare gli alias per la compatibilità di AzureRM 
 

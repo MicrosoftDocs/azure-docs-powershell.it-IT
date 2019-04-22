@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/14/2018
 ms.openlocfilehash: be3e19dc4b689adbc63b933dd9f3454122d5344a
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59364149"
 ---
 # <a name="migration-guide-for-az-100"></a>Guida alla migrazione per Az 1.0.0
@@ -187,9 +187,9 @@ Gli strumenti per questi servizi non sono più supportati attivamente.  I client
 
 ### <a name="azcompute-previously-azurermcompute"></a>Az.Compute (in precedenza AzureRM.Compute)
 - `IdentityIds` è stato rimosso dalla proprietà `Identity` negli oggetti `PSVirtualMachine` e `PSVirtualMachineScaleSet`. Gli script non devono più usare il valore di questo campo per le decisioni di elaborazione.
-- Il tipo della proprietà `InstanceView` dell'oggetto `PSVirtualMachineScaleSetVM` è cambiato da `VirtualMachineInstanceView` a `VirtualMachineScaleSetVMInstanceView`
-- `AutoOSUpgradePolicy` e `AutomaticOSUpgrade` sono state rimosse dalla proprietà `UpgradePolicy`
-- Il tipo della proprietà `Sku` nell'oggetto `PSSnapshotUpdate` è cambiato da `DiskSku` a `SnapshotSku`
+- Il tipo della proprietà `InstanceView` dell'oggetto `PSVirtualMachineScaleSetVM` è stato modificato da `VirtualMachineInstanceView` a `VirtualMachineScaleSetVMInstanceView`
+- Le proprietà `AutoOSUpgradePolicy` e `AutomaticOSUpgrade` sono state rimosse dalla proprietà `UpgradePolicy`
+- Il tipo della proprietà `Sku` nell'oggetto `PSSnapshotUpdate` è stato modificato da `DiskSku` a `SnapshotSku`
 - `VmScaleSetVMParameterSet` è stato rimosso dal cmdlet `Add-AzVMDataDisk`. Non è più possibile aggiungere singolarmente un disco dati a una macchina virtuale del set di scalabilità.
 
 ### <a name="azdatafactory-previously-azurermdatafactories-and-azurermdatafactoryv2"></a>Az.DataFactory (in precedenza AzureRM.DataFactories e AzureRM.DataFactoryV2)
@@ -264,7 +264,7 @@ Gli script non devono più prendere decisioni di elaborazione in base ai valori 
 
 ### <a name="azrecoveryservices-previously-azurermrecoveryservices-azurermrecoveryservicesbackup-and-azurermrecoveryservicessiterecovery"></a>Az.RecoveryServices (in precedenza AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup e AzureRM.RecoveryServices.SiteRecovery)
 - È stato rimosso il parametro `Encryption` dal cmdlet `New/Set-AzRecoveryServicesAsrPolicy`
-- `TargetStorageAccountName` è ora un parametro obbligatorio per il ripristino dei dischi gestiti nel cmdlet `Restore-AzRecoveryServicesBackupItem`
+- Il parametro `TargetStorageAccountName` è ora obbligatorio per il ripristino dei dischi gestiti nel cmdlet `Restore-AzRecoveryServicesBackupItem`
 - Sono stati rimossi i parametri `StorageAccountName` e `StorageAccountResourceGroupName` nel cmdlet `Restore-AzRecoveryServicesBackupItem`
 - È stato rimosso il parametro `Name` nel cmdlet `Get-AzRecoveryServicesBackupContainer`
 
@@ -310,7 +310,7 @@ Gli script non devono più prendere decisioni di elaborazione in base ai valori 
 - È stato rimosso il parametro `PrivilegedLogin` deprecato dal cmdlet `Set-AzSqlDatabaseDataMaskingPolicy`
 
 ### <a name="azstorage-previously-azurestorage-and-azurermstorage"></a>Az.Storage (in precedenza Azure.Storage e AzureRM.Storage)
-- Per supportare la creazione di un contesto di archiviazione Oauth solo con il nome dell'account di archiviazione, il set di parametri predefinito è stato cambiato in `OAuthParameterSet`
+- Per supportare la creazione di un contesto di archiviazione Oauth con solo il nome dell'account di archiviazione, il set di parametri predefinito è stato modificato in `OAuthParameterSet`
   - Esempio: `$ctx = New-AzureStorageContext -StorageAccountName $accountName`
 - Il parametro `Location` è diventato obbligatorio nel cmdlet `Get-AzStorageUsage`
 - I metodi dell'API di archiviazione usano ora il Modello asincrono basato su attività (TAP), invece delle chiamate API sincrone.
