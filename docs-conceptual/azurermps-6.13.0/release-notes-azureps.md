@@ -165,7 +165,7 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
 * Aggiunta dello strumento di completamento per l'argomento ResourceName a tutti i cmdlet.
 
 #### <a name="azurermdatalakestore"></a>AzureRM.DataLakeStore
-* Aggiunta del supporto per le regole della rete virtuale
+* Aggiunta del supporto per le regole di rete virtuale
     - Get-AzureRmDataLakeStoreVirtualNetworkRule: Ottiene o elenca la regola di rete virtuale di Azure Data Lake Store.
     - Add-AzureRmDataLakeStoreVirtualNetworkRule: Aggiunge una regola di rete virtuale all'account Data Lake Store specificato.
     - Set-AzureRmDataLakeStoreVirtualNetworkRule: Modifica la regola di rete virtuale nell'account Data Lake Store specificato.

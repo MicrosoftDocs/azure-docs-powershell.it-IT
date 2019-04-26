@@ -183,11 +183,11 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
     - Cmdlet Remove-AzureRmManagedApplicationDefinition per l'eliminazione di una definizione di applicazione gestita
     - Cmdlet Set-AzureRmManagedApplicationDefinition per l'aggiornamento di una definizione di applicazione gestita esistente
 * Sql
-  * Aggiunta del supporto per le regole della rete virtuale
-    - Aggiunta del cmdlet Get-AzureRmSqlServerVirtualNetworkRule per ottenere le regole della rete virtuale in base a un nome regola specifico oppure un elenco di regole della rete virtuale in un server di Azure SQL.
+  * Aggiunta del supporto per le regole di rete virtuale
+    - Aggiunta del cmdlet Get-AzureRmSqlServerVirtualNetworkRule per ottenere le regole di rete virtuale in base a un nome regola specifico oppure un elenco di regole di rete virtuale in un server di Azure SQL.
     - Aggiunta del cmdlet Set-AzureRmSqlServerVirtualNetworkRule per modificare la rete virtuale alla quale punta la regola.
-    - Aggiunta del cmdlet Remove-AzureRmSqlServerVirtualNetworkRule per rimuovere una regola della rete virtuale per un server di Azure SQL.
-    - Aggiunta del cmdlet New-AzureRmSqlServerVirtualNetworkRule per creare una nuova regola della rete virtuale per un server di Azure SQL.
+    - Aggiunta del cmdlet Remove-AzureRmSqlServerVirtualNetworkRule per rimuovere una regola di rete virtuale per un server di Azure SQL.
+    - Aggiunta del cmdlet New-AzureRmSqlServerVirtualNetworkRule per creare una nuova regola di rete virtuale per un server di Azure SQL.
 * Siti Web
   * Aggiunta del livello PremiumV2 per i piani di servizio app
 * Azure.Storage
