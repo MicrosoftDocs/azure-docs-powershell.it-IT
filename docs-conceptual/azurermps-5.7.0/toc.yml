@@ -1,51 +1,45 @@
 - name: Azure PowerShell
   href: overview.md
+- name: Installa
   items:
-    - name: Installa
+    - name: Eseguire l'installazione con PowerShellGet
       href: install-azurerm-ps.md
-      items:
-        - name: Eseguire l'installazione in macOS o Linux
-          href: install-azurermps-maclinux.md
-        - name: Eseguire l'installazione con il pacchetto MSI o l'Installazione guidata piattaforma Web
-          href: other-install.md
-    - name: Disinstallare
-      href: uninstall-azurerm-ps.md
-    - name: Attività iniziali
-      href: get-started-azureps.md
-    - name: Cloud Shell
-      href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
-    - name: Accesso
+    - name: Eseguire l'installazione con il pacchetto MSI o l'Installazione guidata piattaforma Web
+      href: other-install.md
+- name: Disinstallare
+  href: uninstall-azurerm-ps.md
+- name: Attività iniziali
+  href: get-started-azureps.md
+- name: Cloud Shell
+  href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
+- name: Accesso
+  items:
+    - name: Metodi di autenticazione
       href: authenticate-azureps.md
-      items:
-        - name: Creare un'entità servizio
-          href: create-azure-service-principal-azureps.md
-        - name: Credenziali persistenti
-          href: context-persistence.md
-    - name: Query
-      href: queries-azureps.md
-    - name: Formattare l'output
-      href: formatting-output.md
-    - name: Gestire le sottoscrizioni
-      href: manage-subscriptions-azureps.md
-    - name: Distribuire
-      items:
-        - name: Distribuire i modelli di Resource Manager
-          href: /azure/azure-resource-manager/resource-group-template-deploy
-        - name: Esportare i modelli di Resource Manager
-          href: /azure/azure-resource-manager/resource-manager-export-template-powershell
-        - name: Distribuire i modelli privati di Resource Manager
-          href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
-    - name: Concetti
-      items:
-        - name: Moduli sperimentali
-          href: using-experimental-modules.md
-        - name: Processi di PowerShell
-          href: using-psjobs.md
-    - name: Note sulla versione
-      href: release-notes-azureps.md
-      items:
-        - name: Modifiche di rilievo in Azure PowerShell 5.x
-          href: migration-guide.5.0.0.md
+    - name: Creare un'entità servizio
+      href: create-azure-service-principal-azureps.md
+    - name: Credenziali persistenti
+      href: context-persistence.md
+- name: Query
+  href: queries-azureps.md
+- name: Formattare l'output
+  href: formatting-output.md
+- name: Gestire le sottoscrizioni
+  href: manage-subscriptions-azureps.md
+- name: Distribuire
+  items:
+    - name: Distribuire i modelli di Resource Manager
+      href: /azure/azure-resource-manager/resource-group-template-deploy
+    - name: Esportare i modelli di Resource Manager
+      href: /azure/azure-resource-manager/resource-manager-export-template-powershell
+    - name: Distribuire i modelli privati di Resource Manager
+      href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
+- name: Concetti
+  items:
+    - name: Moduli sperimentali
+      href: using-experimental-modules.md
+    - name: Processi di PowerShell
+      href: using-psjobs.md
 - name: Esercitazioni
   items:
     - name: Creare macchine virtuali
@@ -62,3 +56,7 @@
       href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
     - name: Cosmos DB
       href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
+- name: Note sulla versione
+  href: release-notes-azureps.md
+- name: Modifiche di rilievo in Azure PowerShell 5.x
+  href: migration-guide.5.0.0.md
