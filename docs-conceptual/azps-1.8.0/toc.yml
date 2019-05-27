@@ -8,7 +8,7 @@
   href: uninstall-az-ps.md
 - name: Eseguire la migrazione da AzureRM
   items:
-    - name: Avviare la migrazione
+    - name: Passaggi della migrazione
       href: migrate-from-azurerm-to-az.md
     - name: Modifiche tra AzureRM e il modulo Az
       href: migrate-az-1.0.0.md
