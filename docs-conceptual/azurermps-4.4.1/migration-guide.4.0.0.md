@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 379bbc788e530598f51e893a2bad71f09b059193
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: b966025532a3bb4d4423ac1a7a6d398988758043
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153439"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534614"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-400"></a>Modifiche di rilievo in Microsoft Azure PowerShell 4.0.0
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Questo documento funge sia da notifica delle modifiche di rilievo che da guida alla migrazione per gli utenti dei cmdlet di Microsoft Azure PowerShell. Ogni sezione descrive sia l'impulso alla base della modifica di rilievo che il percorso di migrazione più semplice. Per un approfondimento del contesto, vedere la richiesta pull associata a ogni modifica.
 

@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
-ms.openlocfilehash: ff58693c8ec21b7e50e37bd85975a9ae3980a5e7
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 9cd88919b51f24d19579b865d9f3d5cc779b62d9
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153604"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534793"
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>Uso dei moduli sperimentali di Azure PowerShell
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 In considerazione della particolare importanza attribuita agli strumenti di sviluppo e soprattutto alle interfacce della riga di comando in Azure, il team di Azure PowerShell sta sperimentando molti miglioramenti nell'esperienza di Azure PowerShell.
 
@@ -67,7 +69,7 @@ I miglioramenti di base sono considerati "buon senso" e non è necessaria molta 
 
 - Nomi più brevi: include i nomi dei cmdlet (ad esempio, `New-AzureRmVM` => `New-AzVm`) e dei parametri (ad esempio, `-ResourceGroupName` => `-Rg`). Usare alias per la compatibilità con i cmdlet "meno recenti" e specificare set di parametri _compatibili con le versioni precedenti_.
 
-- Impostazioni predefinite intelligenti: creare impostazioni predefinite intelligenti per immettere le informazioni "necessarie", Ad esempio: 
+- Impostazioni predefinite intelligenti: creare impostazioni predefinite intelligenti per immettere le informazioni "necessarie", Ad esempio:
   - Gruppo di risorse
   - Località
   - Risorse dipendenti

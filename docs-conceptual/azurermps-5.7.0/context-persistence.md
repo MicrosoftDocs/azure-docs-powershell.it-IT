@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 164444b7bacbef202513bfafe2f75bdcd6d027c4
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: c89df2e3d04a97ebe31d62cd448ea662301b74b4
+ms.sourcegitcommit: 0fdccb57a356b6e7c35a77b1f76e01fb96ef582b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56144943"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854120"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Conservare le credenziali utente tra le sessioni di PowerShell
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Azure PowerShell offre una funzionalità denominata **salvataggio automatico del contesto Azure**, che fornisce le funzionalità seguenti:
 
@@ -45,7 +47,7 @@ Successivamente, ogni nuova sessione di PowerShell avrà come destinazione il co
 
 Per annullare la memorizzazione del contesto e delle credenziali in PowerShell, usare `Disable-AzureRmContextAutoSave`. Sarà necessario eseguire l'accesso ad Azure ogni volta che si apre una sessione di PowerShell.
 
-I cmdlet che consentono di gestire i contesti Azure permettono anche un controllo con granularità fine. Se si vuole, è possibile applicare le modifiche solo alla sessione di PowerShell corrente (ambito `Process`) o a ogni sessione di PowerShell (ambito `CurrentUser`). Questo opzioni sono descritte più dettagliatamente in [Uso degli ambiti dei contesti](#Using-Context-Scopes).
+I cmdlet che consentono di gestire i contesti Azure permettono anche un controllo con granularità fine. Se si vuole, è possibile applicare le modifiche solo alla sessione di PowerShell corrente (ambito `Process`) o a ogni sessione di PowerShell (ambito `CurrentUser`). Questo opzioni sono descritte più dettagliatamente in [Uso degli ambiti dei contesti](#using-context-scopes).
 
 ## <a name="running-azure-powershell-cmdlets-as-background-jobs"></a>Esecuzione dei cmdlet di Azure PowerShell come processi in background
 
@@ -81,7 +83,7 @@ PS C:\> Set-AzureRMContext -Subscription "Contoso Subscription 1" -Name "Contoso
 
 L'esempio precedente aggiunge un nuovo contesto specificando come destinazione "Contoso Subscription 1" con le credenziali correnti. Il nuovo contesto è denominato "Contoso1". Se non si specifica un nome per il contesto, verrà usato un nome predefinito contenente l'ID account e l'ID sottoscrizione.
 
-Per rinominare un contesto esistente, usare il cmdlet `Rename-AzureRmContext`, Ad esempio: 
+Per rinominare un contesto esistente, usare il cmdlet `Rename-AzureRmContext`, Ad esempio:
 
 ```azurepowershell-interactive
 PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Contoso2'
@@ -89,7 +91,7 @@ PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Co
 
 Questo esempio rinomina il contesto denominato automaticamente `[user1@contoso.org; 123456-7890-1234-564321]` con il semplice nome "Contoso2". I cmdlet che gestiscono i contesti usano anche il completamento tramite tasto TAB, consentendo così di selezionare rapidamente il contesto.
 
-Infine, per rimuovere un contesto usare il cmdlet `Remove-AzureRmContext`,  Ad esempio: 
+Infine, per rimuovere un contesto usare il cmdlet `Remove-AzureRmContext`,  Ad esempio:
 
 ```azurepowershell-interactive
 PS C:\> Remove-AzureRmContext Contoso2

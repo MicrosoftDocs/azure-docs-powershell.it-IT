@@ -8,30 +8,23 @@ metadata:
   displayType: two-column
   interactive: azurepowershell
   ms.date: 02/08/2018
-  ms.author: sewhee
-  author: sdwheeler
+  ms.author: sttramer
+  author: sptramer
   manager: carmonm
   ms.devlang: azure-powershell
   ms.prod: powershell
   ms.technology: azure-powershell
-  ms.service: virtual-machines
+  ms.topic: tutorial
   clicktale: true
-  ms.openlocfilehash: 34ee404e432562e4ebfda58e47235d4597ac5b5c
-  ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+  ms.openlocfilehash: 099418c1fe481ec6ab6262ebb164616612fb18c9
+  ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 02/12/2019
-  ms.locfileid: "56144842"
+  ms.lasthandoff: 05/11/2019
+  ms.locfileid: "65534571"
 items:
 - durationInMinutes: 1
-  content: >-
-    In questa esercitazione si apprenderanno tutti i passaggi necessari per la configurazione di una macchina virtuale con Azure PowerShell. L'esercitazione illustra anche le query di output, il riutilizzo delle risorse di Azure e la pulizia delle risorse.
-
-
-    Questa esercitazione può essere completata con l'esperienza interattiva disponibile tramite Azure Cloud Shell oppure è possibile [installare Azure PowerShell](install-azurerm-ps.md) in locale.
-
-
-    Usare __CTRL+MAIUSC+V__ (__CMD+MAIUSC+V__ in macOS) per incollare il testo dell'esercitazione in Azure Cloud Shell.
+  content: "\n[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]\n\nIn questa esercitazione si apprenderanno tutti i passaggi necessari per la configurazione di una macchina virtuale con Azure PowerShell. L'esercitazione illustra anche le query di output, il riutilizzo delle risorse di Azure e la pulizia delle risorse.\n\nQuesta esercitazione può essere completata con l'esperienza interattiva disponibile tramite Azure Cloud Shell oppure è possibile [installare Azure PowerShell](install-azurerm-ps.md) in locale.\n\nUsare __CTRL+MAIUSC+V__ (__CMD+MAIUSC+V__ in macOS) per incollare il testo dell'esercitazione in Azure Cloud Shell."
 - durationInMinutes: 1
   title: Accesso
   content: >-
