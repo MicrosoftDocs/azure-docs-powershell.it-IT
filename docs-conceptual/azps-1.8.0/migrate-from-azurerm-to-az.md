@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/10/2019
 ms.openlocfilehash: 02b39653ebb4aa0f74d2340a7be7b35e08d5e44d
-ms.sourcegitcommit: 7275a988f5283edd4721f6bc18a98f2b4e3ad9f9
+ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66223372"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67345215"
 ---
 # <a name="migrate-azure-powershell-from-azurerm-to-az"></a>Eseguire la migrazione di Azure PowerShell da AzureRM ad Az
 
