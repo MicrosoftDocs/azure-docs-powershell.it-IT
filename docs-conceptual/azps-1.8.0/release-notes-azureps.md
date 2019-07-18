@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 10d8d50131b3c55ae19c5142c42cb47f37c68c92
-ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
+ms.openlocfilehash: ffeba2cff2e157e7ec0fb7639f9d4075c359c85e
+ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67345224"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67863829"
 ---
 ## <a name="180---april-2019"></a>1.8.0 - Aprile 2019
 ### <a name="highlights-since-the-last-major-release"></a>Novità rispetto all'ultima versione principale
