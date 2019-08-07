@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: abb85d3d3f6a20697510447cda2c02b2703ef921
-ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
+ms.openlocfilehash: 6d9df4a62238f1e3b9cc9a62864f5d4d9337d6a7
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67345370"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807389"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Creare un'entità servizio di Azure con Azure PowerShell
 
@@ -40,7 +40,14 @@ Senza altri parametri di autenticazione, viene usata l'autenticazione basata su 
 $sp = New-AzADServicePrincipal -DisplayName ServicePrincipalName
 ```
 
-L'oggetto restituito contiene il membro `Secret`, ovvero un oggetto `SecureString` contenente la password generata. Assicurarsi di conservare questo valore in un posto sicuro per eseguire l'autenticazione con l'entità servizio. Il valore __non__ verrà visualizzato nell'output della console. Se si perde la password, [reimpostare le credenziali dell'entità servizio](#reset-credentials). 
+L'oggetto restituito contiene il membro `Secret`, ovvero un oggetto `SecureString` contenente la password generata. Assicurarsi di conservare questo valore in un posto sicuro per eseguire l'autenticazione con l'entità servizio. Il valore __non__ verrà visualizzato nell'output della console. Se si perde la password, [reimpostare le credenziali dell'entità servizio](#reset-credentials).
+
+Il codice seguente consentirà di esportare il segreto:
+
+```azurepowershell-interactive
+$BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($sp.Secret)
+$UnsecureSecret = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
+```
 
 Per le password definite dall'utente, l'argomento `-PasswordCredential` accetta oggetti `Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential`. Questi oggetti devono avere valori validi di `StartDate` e `EndDate` e accettano `Password` in testo non crittografato. Quando si crea una password, assicurarsi di seguire le [regole e limitazioni per le password di Azure Active Directory](/azure/active-directory/active-directory-passwords-policy). Non usare password vulnerabili o già usate in precedenza.
 

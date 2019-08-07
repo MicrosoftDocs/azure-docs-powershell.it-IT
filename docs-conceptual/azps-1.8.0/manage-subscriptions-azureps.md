@@ -7,16 +7,18 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/04/2019
-ms.openlocfilehash: 29d7c84d0ca9ae8d3e4e22f407b007d2d582f8bc
-ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
+ms.openlocfilehash: 778fdb463a42b609d3a94c910a2c0f9553ef4eb9
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67346561"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807530"
 ---
 # <a name="use-multiple-azure-subscriptions"></a>Usare più sottoscrizioni di Azure
 
 La maggior parte degli utenti di Azure non avrà mai più di una sottoscrizione. Si possono tuttavia avere più sottoscrizioni in Azure se si fa parte di più organizzazioni o se l'organizzazione ha suddiviso l'accesso a determinate risorse tra vari gruppi. L'interfaccia della riga di comando supporta la selezione di una sottoscrizione sia a livello globale che per ogni comando.
+
+Per informazioni dettagliate su sottoscrizioni, fatturazione e gestione dei cosi, vedere la [documentazione su fatturazione e gestione dei costi](/azure/billing/).
 
 ## <a name="tenants-users-and-subscriptions"></a>Tenant, utenti e sottoscrizioni
 
