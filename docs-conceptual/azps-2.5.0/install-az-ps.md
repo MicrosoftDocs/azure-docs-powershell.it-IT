@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
-ms.openlocfilehash: ead6c48496c646b5184f88aeac64fbe650be17c4
-ms.sourcegitcommit: 6c0d296bfec7c1c35a1d15074ca5eacda6684ea4
+ms.openlocfilehash: 8e63e3efb2671eef435498063010d5704c793060
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657978"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807470"
 ---
 # <a name="install-the-azure-powershell-module"></a>Installare il modulo Azure PowerShell
 
@@ -40,16 +40,16 @@ Quando si usa PowerShell Core, non sono previsti requisiti aggiuntivi per Azure 
 > [!WARNING]
 > __Non è possibile__ installare contemporaneamente i moduli AzureRM e Az per PowerShell 5.1 per Windows. Se è necessario mantenere AzureRM nel sistema, installare il modulo Az per PowerShell Core 6.x o versioni successive. A questo scopo, [installare PowerShell Core 6.x or versioni successive](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows) e quindi seguire queste istruzioni in un terminale di PowerShell Core.
 
-Per installare i moduli in un ambito globale, sono necessari privilegi elevati per l'installazione di moduli da PowerShell Gallery. Per installare Azure PowerShell, eseguire questo comando in una sessione con privilegi elevati ("Esegui come amministratore" in Windows o con diritti di utente con privilegi avanzati in macOS o Linux):
-
-```powershell-interactive
-Install-Module -Name Az -AllowClobber
-```
-
-Se non si ha accesso a privilegi di amministratore, è possibile eseguire l'installazione per l'utente corrente aggiungendo l'argomento `-Scope`.
+Il metodo consigliato consiste nell'eseguire l'installazione solo per l'utente attivo:
 
 ```powershell-interactive
 Install-Module -Name Az -AllowClobber -Scope CurrentUser
+```
+
+Se si vuole eseguire l'installazione per tutti gli utenti di un sistema, sono necessari privilegi di amministratore. Da una sessione di PowerShell con privilegi elevati eseguita come amministratore oppure con il comando `sudo` in MacOS o Linux:
+
+```powershell-interactive
+Install-Module -Name Az -AllowClobber -Scope AllUsers
 ```
 
 Per impostazione predefinita, PowerShell Gallery non è configurata come archivio attendibile per PowerShellGet. La prima volta che si usa PSGallery verrà visualizzato il messaggio seguente:
