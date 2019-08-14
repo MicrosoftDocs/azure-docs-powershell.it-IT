@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
-ms.openlocfilehash: ee9fb7e777d06f50514c6b4ba39805936b867045
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: 61ab0f91c3d6fffdbffd336fa0d6ed9b0ab8f6ec
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65535059"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863285"
 ---
 # <a name="release-notes"></a>Note sulla versione
 
@@ -669,7 +669,7 @@ Modifiche apportate dall'ultima versione: https://github.com/Azure/azure-powersh
   - Nuovo cmdlet Update-AzureRmPowerBIEmbeddedCapacity: modifica un'istanza della capacità di PowerBI Embedded
 * Profilo
   - Aggiornamento di USGovernmentActiveDirectoryEndpoint con https://login.microsoftonline.us/
-    - Per altre informazioni sui mapping dell'endpoint di Azure per enti pubblici, vedere: https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-developer-guide#endpoint-mapping
+    - Per altre informazioni sui mapping dell'endpoint di Azure per enti pubblici, vedere: https://docs.microsoft.com/azure/azure-government/documentation-government-developer-guide#endpoint-mapping
     - Aggiunta del supporto di -AsJob per i cmdlet. I cmdlet selezionati possono essere eseguiti in background e restituire un processo per tenere traccia dello stato
     - Aggiunta del parametro -AsJob al cmdlet Get-AzureRmSubscription
 * RecoveryServices.Backup
@@ -722,8 +722,8 @@ Modifiche apportate dall'ultima versione: https://github.com/Azure/azure-powersh
   - AzureRM.Storage
   - AzureRM.StreamAnalytics
 
-## <a name="2017118---version-500"></a>8.11.2017 - Versione 5.0.0
-* NOTA:  Questa è una versione con modifiche di rilievo. Per un elenco competo delle modifiche di rilievo introdotte, vedere la guida alla migrazione (https://aka.ms/azps-migration-guide)).
+## <a name="2017118---version-500"></a>8\.11.2017 - Versione 5.0.0
+* NOTA:  Questa è una versione con modifiche di rilievo. Per un elenco competo delle modifiche di rilievo introdotte, vedere la guida alla migrazione (https://aka.ms/azps-migration-guide) ).
 * Tutti i cmdlet in AzureRM ora supportano la Guida
   - Eseguire Get-Help con il parametro -Online per aprire la Guida nel browser Internet predefinito
 * AnalysisServices

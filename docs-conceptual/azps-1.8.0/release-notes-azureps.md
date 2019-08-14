@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: ffeba2cff2e157e7ec0fb7639f9d4075c359c85e
-ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
+ms.openlocfilehash: faf9313d642a3ca45731f4527aafdfd7f5096a78
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67863829"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861276"
 ---
 ## <a name="180---april-2019"></a>1.8.0 - Aprile 2019
 ### <a name="highlights-since-the-last-major-release"></a>Novità rispetto all'ultima versione principale
 * Disponibilità generale del modulo `Az`
 * Per altre informazioni sul modulo `Az`, vedere https://aka.ms/azps-announce
-* Aggiunta degli oggetti di completamento Location, ResourceGroup e ResourceName: https://azure.microsoft.com/en-us/blog/completers-in-azure-powershell/
+* Aggiunta degli oggetti di completamento Location, ResourceGroup e ResourceName: https://azure.microsoft.com/blog/completers-in-azure-powershell/
 * Aggiunta del supporto dei caratteri jolly ai cmdlet Get per Az.Compute e Az.Network
 * Aggiunta dell'autenticazione interattiva e nome utente/password solo per Windows PowerShell 5.1
 * Aggiunta del supporto per i runbook Python 2 in Az.Automation
@@ -114,7 +114,7 @@ ms.locfileid: "67863829"
 ### <a name="highlights-since-the-last-major-release"></a>Novità rispetto all'ultima versione principale
 * Disponibilità generale del modulo `Az`
 * Per altre informazioni sul modulo `Az`, vedere https://aka.ms/azps-announce
-* Aggiunta degli oggetti di completamento Location, ResourceGroup e ResourceName: https://azure.microsoft.com/en-us/blog/completers-in-azure-powershell/
+* Aggiunta degli oggetti di completamento Location, ResourceGroup e ResourceName: https://azure.microsoft.com/blog/completers-in-azure-powershell/
 * Aggiunta del supporto dei caratteri jolly ai cmdlet Get per Az.Compute e Az.Network
 * Aggiunta dell'autenticazione interattiva e nome utente/password solo per Windows PowerShell 5.1
 * Aggiunta del supporto per i runbook Python 2 in Az.Automation
@@ -171,7 +171,7 @@ ms.locfileid: "67863829"
 ### <a name="highlights-since-the-last-major-release"></a>Novità rispetto all'ultima versione principale
 * Disponibilità generale del modulo `Az`
 * Per altre informazioni sul modulo `Az`, vedere https://aka.ms/azps-announce
-* Aggiunta degli oggetti di completamento Location, ResourceGroup e ResourceName: https://azure.microsoft.com/en-us/blog/completers-in-azure-powershell/
+* Aggiunta degli oggetti di completamento Location, ResourceGroup e ResourceName: https://azure.microsoft.com/blog/completers-in-azure-powershell/
 * Aggiunta del supporto dei caratteri jolly ai cmdlet Get per Az.Compute e Az.Network
 * Aggiunta dell'autenticazione interattiva e nome utente/password solo per Windows PowerShell 5.1
 * Aggiunta del supporto per i runbook Python 2 in Az.Automation
