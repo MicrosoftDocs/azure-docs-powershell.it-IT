@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 01/14/2019
-ms.openlocfilehash: c60036ba8be6282007aa34a0bb9c0d9e33197072
-ms.sourcegitcommit: abca342d8687ca638679c049792d0cef6045837d
+ms.openlocfilehash: a4c8792f2ff27e1b6d3cee97144c26455356b7fd
+ms.sourcegitcommit: e5b029312d17e12257b2b5351b808fdab0b4634c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70052924"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386748"
 ---
 # <a name="get-started-with-azure-powershell"></a>guida introduttiva ad Azure PowerShell
 
@@ -43,7 +43,8 @@ Se si risiede in un'area non degli Stati Uniti, usare il parametro `-Environment
 Connect-AzAccount -Environment AzureChinaCloud
 ```
 
-Si otterrà un token da usare in https://microsoft.com/devicelogin. Aprire questa pagina nel browser e immettere il token, quindi accedere con le credenziali dell'account Azure e autorizzare Azure PowerShell. 
+Negli ambienti di PowerShell 5.1 verrà visualizzata una finestra di dialogo di accesso in cui specificare un nome utente e una password per l'account Azure. In tutte le altre versioni di PowerShell si otterrà un token da usare in [https://microsoft.com/devicelogin ].
+Aprire questa pagina nel browser e immettere il token, quindi accedere con le credenziali dell'account Azure e autorizzare Azure PowerShell.
 
 Dopo aver effettuato l'accesso, verrà visualizzato un messaggio indicante quale sottoscrizione di Azure è attiva. Se l'account include più sottoscrizioni di Azure e se ne vuole selezionare una diversa, recuperare le sottoscrizioni disponibili con [Get-AzSubscription](/powershell/module/az.accounts/get-azsubscription) e usare il cmdlet [Set-AzContext](/powershell/module/az.accounts/set-azcontext) con l'ID sottoscrizione.
 Per altre informazioni sulla gestione delle sottoscrizioni di Azure in Azure PowerShell, vedere [Usare più sottoscrizioni di Azure](manage-subscriptions-azureps.md).
