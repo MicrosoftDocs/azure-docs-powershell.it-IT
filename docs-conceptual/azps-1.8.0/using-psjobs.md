@@ -1,150 +1,76 @@
 ---
-title: Eseguire i cmdlet in parallelo tramite processi di PowerShell
-description: Come eseguire i cmdlet in parallelo tramite il parametro -AsJob.
+title: Eseguire i cmdlet di Azure PowerShell nei processi di PowerShell
+description: Informazioni su come eseguire i cmdlet di Azure PowerShell in parallelo o come attività in background con -AsJob e Start-Job.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/11/2018
-ms.openlocfilehash: 825a07e01194a07b747712a62384c7f162e63d7d
-ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
+ms.date: 10/21/2019
+ms.openlocfilehash: d74d3681794398534fe2c75a0c8fc314767ffa85
+ms.sourcegitcommit: 1cdff856d1d559b978aac6bc034dd2f99ac04afe
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67346680"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72791476"
 ---
-# <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>Esecuzione in parallelo dei cmdlet tramite processi di PowerShell
+# <a name="run-azure-powershell-cmdlets-in-powershell-jobs"></a>Eseguire i cmdlet di Azure PowerShell nei processi di PowerShell
 
-PowerShell supporta l'azione asincrona con i [processi di PowerShell](/powershell/module/microsoft.powershell.core/about/about_jobs).
-Azure PowerShell dipende in modo significativo dall'effettuazione e dall'attesa di chiamate di rete in Azure. Potrebbe essere spesso necessario effettuare chiamate non bloccanti. Per soddisfare questa esigenza, Azure PowerShell offre supporto di qualità elevata per i [processi di PowerShell](/powershell/module/microsoft.powershell.core/about/about_jobs).
+Il funzionamento di Azure PowerShell dipende dalla connessione a un cloud di Azure e dall'attesa di risposte, per cui molti cmdlet bloccano la sessione di PowerShell finché non ottengono una risposta dal cloud.
+I processi di PowerShell consentono di eseguire i cmdlet in background o di svolgere più attività contemporaneamente all'interno di una singola sessione di PowerShell.
 
-## <a name="context-persistence-and-psjobs"></a>Persistenza del contesto e processi di PowerShell
+Questo articolo include una breve panoramica sull'uso dei cmdlet di Azure PowerShell come processi di PowerShell e su come controllarne il completamento. L'esecuzione di comandi in Azure PowerShell richiede l'uso di contesti di Azure PowerShell, che vengono descritti in dettaglio nell'articolo [Contesti e credenziali di accesso di Azure](context-persistence.md).
+Per altre informazioni sui processi di PowerShell, vedere [Informazioni sui processi di PowerShell](/powershell/module/microsoft.powershell.core/about/about_jobs).
 
-Dato che i processi di PowerShell vengono eseguiti come processi separati, la connessione ad Azure deve essere condivisa con tali processi. Dopo aver eseguito l'accesso all'account Azure con `Connect-AzAccount`, passare il contesto a un processo.
+## <a name="azure-contexts-with-powershell-jobs"></a>Contesti di Azure con processi di PowerShell
+
+I processi di PowerShell vengono eseguiti come processi separati, senza una sessione di PowerShell collegata, quindi è necessario condividere con essi le credenziali di Azure. Le credenziali vengono passate come oggetti contesto di Azure, usando uno di questi metodi:
+
+* Persistenza automatica del contesto. La persistenza del contesto è abilitata per impostazione predefinita e mantiene le informazioni di accesso tra più sessioni. Con la persistenza del contesto abilitata, il contesto di Azure corrente viene passato al nuovo processo:
+
+  ```azurepowershell-interactive
+  Enable-AzContextAutosave # Enables context autosave if not already on
+  $creds = Get-Credential
+  $job = Start-Job { param($vmadmin) New-AzVM -Name MyVm -Credential $vmadmin } -ArgumentList $creds
+  ```
+
+* Usare il parametro `-AzContext` con qualsiasi cmdlet di Azure PowerShell per specificare un oggetto contesto di Azure:
+
+  ```azurepowershell-interactive
+  $context = Get-AzContext -Name 'mycontext' # Get an Azure context object
+  $creds = Get-Credential
+  $job = Start-Job { param($context, $vmadmin) New-AzVM -Name MyVm -AzContext $context -Credential $vmadmin} -ArgumentList $context,$creds }
+  ```
+
+  Se la persistenza del contesto è disabilitata, è necessario l'argomento `-AzContext`.
+
+* Usare l'opzione `-AsJob` disponibile in alcuni cmdlet di Azure PowerShell. Questa opzione avvia automaticamente il cmdlet come processo di PowerShell, usando il contesto di Azure attivo:
+
+  ```azurepowershell-interactive
+  $creds = Get-Credential
+  $job = New-AzVM -Name MyVm -Credential $creds -AsJob
+  ```
+
+  Per verificare se un cmdlet supporta `-AsJob`, vedere la relativa documentazione di riferimento. L'opzione `-AsJob` non richiede che il salvataggio automatico dei contesti sia abilitato.
+
+È possibile controllare lo stato di un processo in esecuzione con il cmdlet [Get-Job](/powershell/module/microsoft.powershell.core/get-job). Per ottenere l'output immediato di un processo, usare il cmdlet [Receive-Job](/powershell/module/microsoft.powershell.core/receive-job).
+
+Per controllare lo stato di avanzamento di un'operazione in remoto in Azure, usare i cmdlet `Get-` associati al tipo di risorsa modificato dal processo:
 
 ```azurepowershell-interactive
 $creds = Get-Credential
-$job = Start-Job { param($context,$vmadmin) New-AzVM -Name MyVm -AzContext $context -Credential $vmadmin} -ArgumentList (Get-AzContext),$creds
-```
+$context = Get-AzContext -Name 'mycontext'
+$vmName = "MyVm"
 
-Se tuttavia si ha scelto di salvare automaticamente il contesto con `Enable-AzContextAutosave`, il contesto viene condiviso automaticamente con qualsiasi processo creato.
+$job = Start-Job { param($context, $vmName, $vmadmin) New-AzVM -Name $vmName -AzContext $context -Credential $vmadmin} -ArgumentList $context,$vmName,$creds }
 
-```azurepowershell-interactive
-Enable-AzContextAutosave
-$creds = Get-Credential
-$job = Start-Job { param($vmadmin) New-AzVM -Name MyVm -Credential $vmadmin} -ArgumentList $creds
-```
-
-## <a name="automatic-jobs-with--asjob"></a>Processi automatici con `-AsJob`
-
-Per comodità, Azure PowerShell fornisce anche un'opzione `-AsJob` per alcuni cmdlet a esecuzione prolungata.
-L'opzione `-AsJob` semplifica la creazione di processi di PowerShell.
-
-```azurepowershell-interactive
-$creds = Get-Credential
-$job = New-AzVM -Name MyVm -Credential $creds -AsJob
-```
-
-È possibile esaminare il processo e il rispettivo stato in qualsiasi momento con `Get-Job` e `Get-AzVM`.
-
-```azurepowershell-interactive
 Get-Job $job
-Get-AzVM MyVm
+Get-AzVM -Name $vmName
 ```
 
-```output
-Id Name                                       PSJobTypeName         State   HasMoreData Location  Command
--- ----                                       -------------         -----   ----------- --------  -------
-1  Long Running Operation for 'New-AzVM' AzureLongRunningJob`1 Running True        localhost New-AzVM
+## <a name="see-also"></a>Vedere anche
 
-ResourceGroupName    Name Location          VmSize  OsType     NIC ProvisioningState Zone
------------------    ---- --------          ------  ------     --- ----------------- ----
-MyVm                 MyVm   eastus Standard_DS1_v2 Windows    MyVm          Creating
-```
-
-Al termine del processo, recuperarne il risultato con `Receive-Job`.
-
-> [!NOTE]
-> `Receive-Job` restituisce il risultato dal cmdlet come se il flag `-AsJob` non fosse presente.
-> Ad esempio, il risultato `Receive-Job` di `Do-Action -AsJob` è dello stesso tipo del risultato di `Do-Action`.
-
-```azurepowershell-interactive
-$vm = Receive-Job $job
-$vm
-```
-
-```output
-ResourceGroupName        : MyVm
-Id                       : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/MyVm/providers/Microsoft.Compute/virtualMachines/MyVm
-VmId                     : dff1f79e-a8f7-4664-ab72-0ec28b9fbb5b
-Name                     : MyVm
-Type                     : Microsoft.Compute/virtualMachines
-Location                 : eastus
-Tags                     : {}
-HardwareProfile          : {VmSize}
-NetworkProfile           : {NetworkInterfaces}
-OSProfile                : {ComputerName, AdminUsername, WindowsConfiguration, Secrets}
-ProvisioningState        : Succeeded
-StorageProfile           : {ImageReference, OsDisk, DataDisks}
-FullyQualifiedDomainName : myvmmyvm.eastus.cloudapp.azure.com
-```
-
-## <a name="example-scenarios"></a>Scenari di esempio
-
-Creare più VM contemporaneamente:
-
-```azurepowershell-interactive
-$creds = Get-Credential
-# Create 10 jobs.
-for($k = 0; $k -lt 10; $k++) {
-    New-AzVm -Name MyVm$k  -Credential $creds -AsJob
-}
-
-# Get all jobs and wait on them.
-Get-Job | Wait-Job
-"All jobs completed"
-Get-AzVM
-```
-
-In questo esempio il cmdlet `Wait-Job` provoca la sospensione dello script durante l'esecuzione del processo. L'esecuzione dello script continua dopo il completamento di tutti i processi. Vengono eseguiti in parallelo diversi processi, quindi lo script attende il completamento prima di continuare.
-
-```output
-Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
---     ----            -------------   -----         -----------     --------             -------
-2      Long Running... AzureLongRun... Running       True            localhost            New-AzVM
-3      Long Running... AzureLongRun... Running       True            localhost            New-AzVM
-4      Long Running... AzureLongRun... Running       True            localhost            New-AzVM
-5      Long Running... AzureLongRun... Running       True            localhost            New-AzVM
-6      Long Running... AzureLongRun... Running       True            localhost            New-AzVM
-7      Long Running... AzureLongRun... Running       True            localhost            New-AzVM
-8      Long Running... AzureLongRun... Running       True            localhost            New-AzVM
-9      Long Running... AzureLongRun... Running       True            localhost            New-AzVM
-10     Long Running... AzureLongRun... Running       True            localhost            New-AzVM
-11     Long Running... AzureLongRun... Running       True            localhost            New-AzVM
-2      Long Running... AzureLongRun... Completed     True            localhost            New-AzVM
-3      Long Running... AzureLongRun... Completed     True            localhost            New-AzVM
-4      Long Running... AzureLongRun... Completed     True            localhost            New-AzVM
-5      Long Running... AzureLongRun... Completed     True            localhost            New-AzVM
-6      Long Running... AzureLongRun... Completed     True            localhost            New-AzVM
-7      Long Running... AzureLongRun... Completed     True            localhost            New-AzVM
-8      Long Running... AzureLongRun... Completed     True            localhost            New-AzVM
-9      Long Running... AzureLongRun... Completed     True            localhost            New-AzVM
-10     Long Running... AzureLongRun... Completed     True            localhost            New-AzVM
-11     Long Running... AzureLongRun... Completed     True            localhost            New-AzVM
-All Jobs completed.
-
-ResourceGroupName        Name   Location          VmSize  OsType           NIC ProvisioningState Zone
------------------        ----   --------          ------  ------           --- ----------------- ----
-MYVM                     MyVm     eastus Standard_DS1_v2 Windows          MyVm         Succeeded
-MYVM0                   MyVm0     eastus Standard_DS1_v2 Windows         MyVm0         Succeeded
-MYVM1                   MyVm1     eastus Standard_DS1_v2 Windows         MyVm1         Succeeded
-MYVM2                   MyVm2     eastus Standard_DS1_v2 Windows         MyVm2         Succeeded
-MYVM3                   MyVm3     eastus Standard_DS1_v2 Windows         MyVm3         Succeeded
-MYVM4                   MyVm4     eastus Standard_DS1_v2 Windows         MyVm4         Succeeded
-MYVM5                   MyVm5     eastus Standard_DS1_v2 Windows         MyVm5         Succeeded
-MYVM6                   MyVm6     eastus Standard_DS1_v2 Windows         MyVm6         Succeeded
-MYVM7                   MyVm7     eastus Standard_DS1_v2 Windows         MyVm7         Succeeded
-MYVM8                   MyVm8     eastus Standard_DS1_v2 Windows         MyVm8         Succeeded
-MYVM9                   MyVm9     eastus Standard_DS1_v2 Windows         MyVm9         Succeeded
-```
+* [Contesti di Azure PowerShell](context-persistence.md)
+* [Informazioni sui processi di PowerShell](/powershell/module/microsoft.powershell.core/about/about_jobs)
+* [Informazioni di riferimento su Get-Job](/powershell/module/microsoft.powershell.core/get-job)
+* [Informazioni di riferimento su Receive-Job](/powershell/module/microsoft.powershell.core/receive-job)
