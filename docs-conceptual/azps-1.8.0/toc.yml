@@ -4,7 +4,11 @@
   href: new-azureps-module-az.md
   displayName: 'intro, introduction, azurerm'
 - name: Installa
-  href: install-az-ps.md
+  items:
+    - name: Eseguire l'installazione con PowerShell Get
+      href: install-az-ps.md
+    - name: Eseguire l'installazione con il pacchetto MSI
+      href: install-az-ps-msi.md
 - name: Disinstallare
   href: uninstall-az-ps.md
 - name: Eseguire la migrazione da AzureRM
