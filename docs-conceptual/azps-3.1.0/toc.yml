@@ -82,3 +82,5 @@
       href: release-notes-azureps.md
     - name: Modifiche che causano un'interruzione di Az 2.0.0
       href: migrate-az-2.0.0.md
+    - name: Modifiche di rilievo in Az 3.0.0
+      href: migrate-az-3.0.0.md
