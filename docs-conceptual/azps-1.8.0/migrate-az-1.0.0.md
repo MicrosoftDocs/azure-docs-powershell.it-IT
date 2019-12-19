@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: 04c520a3171d0b06ceaaa96f1c77bda6b03952ae
-ms.sourcegitcommit: 020c69430358b13cbd99fedd5d56607c9b10047b
+ms.openlocfilehash: ea7593cf2b753b210ff2955b7bd450030ad83596
+ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365723"
+ms.lasthandoff: 12/16/2019
+ms.locfileid: "75035830"
 ---
 # <a name="breaking-changes-for-az-100"></a>Modifiche che causano un'interruzione per Az 1.0.0
 
@@ -272,7 +272,7 @@ Questa sezione illustra in dettaglio le modifiche di rilievo per singoli cmdlet 
 
   Deve essere modificato in
   ```azurepowershell-interactive
-  New-AzMMediaService -Tag @{TagName="TagValue"}
+  New-AzMediaService -Tag @{TagName="TagValue"}
   ```
 
 ### <a name="azmonitor-previously-azurerminsights"></a>Az.Monitor (in precedenza AzureRM.Insights)
@@ -292,7 +292,7 @@ Questa sezione illustra in dettaglio le modifiche di rilievo per singoli cmdlet 
 - È stato rimosso il parametro `ResourceId` deprecato dal cmdlet `Get-AzServiceEndpointPolicyDefinition`
 - È stata rimossa la proprietà `EnableVmProtection` deprecata dall'oggetto `PSVirtualNetwork`
 - È stato rimosso il cmdlet `Set-AzVirtualNetworkGatewayVpnClientConfig` deprecato
-  
+
 Gli script non devono più prendere decisioni di elaborazione in base ai valori di questi campi.
 
 ### <a name="azoperationalinsights-previously-azurermoperationalinsights"></a>Az.OperationalInsights (in precedenza AzureRM.OperationalInsights)
