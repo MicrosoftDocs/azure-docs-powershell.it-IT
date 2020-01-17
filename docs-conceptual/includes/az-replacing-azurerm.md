@@ -3,18 +3,16 @@ author: sptramer
 ms.author: sttramer
 ms.date: 12/20/2018
 ms.topic: include
-ms.openlocfilehash: 0ed886744a95e9f5a9c251c1dfd40d537d31812d
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 2d28ca4239ee775280bea24944f1f3c514984658
+ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153787"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75752166"
 ---
 > [!NOTE]
 > 
-> A partire da dicembre 2018, non verranno aggiunte nuove funzionalità al modulo AzureRM. AzureRM continuerà a essere supportato e ricevere correzioni di bug fino a dicembre 2020. Le nuove funzionalità si trovano nel modulo Az di Azure PowerShell. Per altre informazioni sul modulo Az, incluse le procedure per eseguire l'aggiornamento da AzureRM, vedere [la documentazione principale di Azure PowerShell](/powershell/azure).
->
-> Gli utenti di Azure Stack devono continuare a usare AzureRM per il momento. L'ultima versione di AzureRM che supporta Azure Stack è [AzureRM 2.3.0](/powershell/azure/azurerm?view=azurermps-2.3.0).
+> A partire da dicembre 2018, non verranno aggiunte nuove funzionalità al modulo AzureRM. AzureRM continuerà a essere supportato e a ricevere correzioni per i bug fino a dicembre 2020. Le nuove funzionalità si trovano nel modulo Az di Azure PowerShell. Per altre informazioni sul modulo Az, incluse le procedure per eseguire l'aggiornamento da AzureRM, vedere [la documentazione principale di Azure PowerShell](/powershell/azure).
 >
 > Se si usa il modello di distribuzione classica, installare la versione di Gestione dei servizi di Azure PowerShell.
-> Per altre informazioni, vedere [Install the Azure PowerShell Service Management module](/powershell/azure/servicemanagement/install-azure-ps) (Installare il modulo Gestione dei servizi di Azure PowerShell).
+> Per altre informazioni, vedere [Installare il modulo Gestione dei servizi di Azure PowerShell](/powershell/azure/servicemanagement/install-azure-ps).

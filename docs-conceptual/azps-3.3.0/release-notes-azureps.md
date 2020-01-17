@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 10/15/2019
-ms.openlocfilehash: fb934ed0f8bef5e2aff715debe5d406d54abf24f
-ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
+ms.date: 01/09/2020
+ms.openlocfilehash: 3806a1c609a71c53c0bddc5bafd51d845c0c296e
+ms.sourcegitcommit: 16904e0a72c55fb81248e0252769defb86c50f36
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75718985"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75831645"
 ---
 # <a name="azure-powershell-release-notes"></a>Note sulla versione di Azure PowerShell
 
@@ -33,9 +33,9 @@ ms.locfileid: "75718985"
 * Aggiunta del cmdlet 'Get-AzDataBoxEdgeStorageContainer'
   - Ottiene il contenitore di archiviazione Edge
 * Aggiunta del cmdlet 'New-AzDataBoxEdgeStorageContainer'
-  - Crea un nuovo contenitore di storage Edge
+  - Crea un nuovo contenitore di archiviazione Edge
 * Aggiunta del cmdlet 'Remove-AzDataBoxEdgeStorageContainer'
-  - Rimuove il nuovo contenitore di storage Edge
+  - Rimuove il contenitore di archiviazione Edge
 * Aggiunta del cmdlet 'Invoke-AzDataBoxEdgeStorageContainer'
   - Richiama l'azione per aggiornare i dati nel contenitore di archiviazione Edge
 * Aggiunta del cmdlet 'Get-AzDataBoxEdgeStorageAccount'
@@ -74,7 +74,7 @@ ms.locfileid: "75718985"
   - Update-AzMlOpClusterSystemService
 
 #### <a name="aznetwork"></a>Az.Network
-* Aggiornamento della dipendenza di Microsoft.Azure.Management.Sql da 1.36-preivew a 1.37-preivew
+* Aggiornamento della dipendenza di Microsoft.Azure.Management.Sql da 1.36-preview a 1.37-preview
 
 #### <a name="azrecoveryservices"></a>Az.RecoveryServices
 * Modifica del supporto di Azure Site Recovery per le VM con dischi gestiti crittografati quando inattivi con le chiavi gestite dal cliente per il provider da Azure ad Azure.
