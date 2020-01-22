@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
-ms.date: 01/14/2019
-ms.openlocfilehash: c515fcbbe4dcb0b6578a56da137a77e3f843a2e6
-ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
+ms.date: 01/17/2020
+ms.openlocfilehash: 718f0dc0f1ef9b0c2aa3d0630ca099fa5cec7ec0
+ms.sourcegitcommit: 30eeeec0985f8623b1bc03f461124446b04297c2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75722041"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256825"
 ---
 # <a name="get-started-with-azure-powershell"></a>guida introduttiva ad Azure PowerShell
 
@@ -53,7 +53,7 @@ Dopo aver effettuato l'accesso è possibile usare i cmdlet di Azure PowerShell p
 
 ## <a name="find-commands"></a>Trovare i comandi
 
-I cmdlet di Azure PowerShell seguono una convenzione di denominazione standard per PowerShell, `VERB-NOUN`. Il verbo descrive l'azione (alcuni esempi includono `New`, `Get`, `Set`, `Remove`) e il nome descrive il tipo di risorsa (alcuni esempi includono `AzVM`, `AzKeyVaultCertificate`, `AzFirewall`, `AzVirtualNetworkGateway`). I nomi in Azure PowerShell iniziano sempre con il prefisso `Az`. Per l'elenco completo dei verbi standard, vedere [Verbi approvati per i comandi di PowerShell](/powershell/developer/cmdlet/approved-verbs-for-windows-powershell-commands).
+I cmdlet di Azure PowerShell seguono una convenzione di denominazione standard per PowerShell, `VERB-NOUN`. Il verbo descrive l'azione (alcuni esempi includono `New`, `Get`, `Set`, `Remove`) e il nome descrive il tipo di risorsa (alcuni esempi includono `AzVM`, `AzKeyVaultCertificate`, `AzFirewall`, `AzVirtualNetworkGateway`). I nomi in Azure PowerShell iniziano sempre con il prefisso `Az`. Per l'elenco completo dei verbi standard, vedere [Verbi approvati per i comandi di PowerShell](/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands).
 
 Conoscere i nomi, i verbi e i moduli di Azure PowerShell disponibili consente di trovare i comandi con il cmdlet [Get-Command](/powershell/module/microsoft.powershell.core/get-command). Ad esempio, per trovare tutti i comandi correlati alla macchina virtuale che usano il verbo `Get`:
 
