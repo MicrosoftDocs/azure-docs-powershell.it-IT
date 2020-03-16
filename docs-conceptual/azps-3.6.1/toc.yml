@@ -5,7 +5,7 @@
   displayName: 'intro, introduction, azurerm'
 - name: Installazione
   items:
-    - name: Eseguire l'installazione con PowerShell Get
+    - name: Eseguire l'installazione con PowerShellGet
       href: install-az-ps.md
     - name: Eseguire l'installazione con il pacchetto MSI
       href: install-az-ps-msi.md
@@ -24,6 +24,8 @@
   displayName: 'sign in, signin, log in, login, find, feedback, intro, introduction'
 - name: Cloud Shell
   href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
+- name: Azure PowerShell in Docker
+  href: azureps-in-docker.md
 - name: Accesso
   items:
     - name: Metodi di autenticazione
@@ -71,7 +73,7 @@
       displayName: vms
     - name: App Web
       href: /azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
-    - name: DATABASE SQL
+    - name: Database SQL
       href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
     - name: Cosmos DB
       href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
@@ -80,7 +82,7 @@
   items:
     - name: Note sulla versione
       href: release-notes-azureps.md
-    - name: Modifiche che causano un'interruzione di Az 2.0.0
+    - name: Modifiche di rilievo in Az 2.0.0
       href: migrate-az-2.0.0.md
     - name: Modifiche di rilievo in Az 3.0.0
       href: migrate-az-3.0.0.md
