@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.openlocfilehash: 44f5d5b44788a52db297a0d73697161eec2eedc2
-ms.sourcegitcommit: 0b94b9566124331d0b15eb7f5a811305c254172e
+ms.sourcegitcommit: fb95591c45bb5f12b98e0690938d18f2ec611897
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72370470"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402817"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Accedere con Azure PowerShell
 
@@ -117,7 +117,7 @@ Per altre informazioni sulle identità gestite per le risorse di Azure, vedere [
 
 Se l'account è associato a più di un tenant, l'accesso richiede l'uso del parametro `-Tenant` per la connessione. Questo parametro funziona con qualsiasi metodo di accesso. Quando si accede, il valore del parametro può essere l'ID oggetto di Azure del tenant (ID Tenant) o il nome di dominio completo del tenant.
 
-Per gli utenti [Cloud Solution Provider (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/), il valore `-Tenant` **deve** essere un ID tenant.
+Per gli utenti [Cloud Solution Provider (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/), il valore `-Tenant`**deve** essere un ID tenant.
 
 ```azurepowershell-interactive
 Connect-AzAccount -Tenant 'xxxx-xxxx-xxxx-xxxx'

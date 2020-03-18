@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/04/2019
-ms.openlocfilehash: 21d87bd35da74f09b70976e7b395e7b987fbd3f5
+ms.openlocfilehash: 0de487cc34593ceac05aa2077358d692470dc23e
 ms.sourcegitcommit: fb95591c45bb5f12b98e0690938d18f2ec611897
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402783"
+ms.locfileid: "79402749"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Accedere con Azure PowerShell
 
@@ -70,11 +70,12 @@ Assicurarsi di adottare procedure valide per l'archiviazione delle password quan
 ### <a name="certificate-based-authentication"></a>Autenticazione basata su certificati
 
 Per l'autenticazione basata su certificato, è necessario che Azure PowerShell sia in grado di recuperare informazioni da un archivio certificati locale in base a un'identificazione personale del certificato.
+
 ```azurepowershell-interactive
 Connect-AzAccount -ApplicationId $appId -Tenant $tenantId -CertificateThumbprint <thumbprint>
 ```
 
-Quando si usa un'entità servizio invece di un'applicazione registrata, aggiungere l'argomento `-ServicePrincipal` e specificare l'ID dell'entità servizio come valore del parametro `-ApplicationId`.
+Quando si usa un'entità servizio invece di un'applicazione registrata, aggiungere l'argomento `-ServicePrincipal` e specificare l'ID applicazione dell'entità servizio come valore del parametro `-ApplicationId`.
 
 ```azurepowershell-interactive
 Connect-AzAccount -ServicePrincipal -ApplicationId $servicePrincipalId -Tenant $tenantId -CertificateThumbprint <thumbprint>
@@ -110,7 +111,11 @@ $store.Close()
 
 Le identità gestite sono una funzionalità di Azure Active Directory. Le identità gestite sono entità servizio assegnate alle risorse che vengono eseguite in Azure. È possibile usare l'entità servizio di un'identità gestita per eseguire l'accesso e acquisire un token di accesso solo app per accedere ad altre risorse. Le identità gestite sono disponibili solo nelle risorse in esecuzione in un cloud di Azure.
 
-Per altre informazioni sulle identità gestite per le risorse di Azure, vedere [Come usare le identità gestite per le risorse di Azure in una macchina virtuale di Azure per acquisire un token di accesso](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token).
+Questo comando si connette usando l'identità gestita dell'ambiente host. Se, ad esempio, viene eseguito in una macchina virtuale con un'identità del servizio gestita assegnata, il codice può accedere usando tale identità assegnata.
+
+```azurepowershell-interactive
+ Connect-AzAccount -Identity 
+```
 
 ## <a name="sign-in-with-a-non-default-tenant-or-as-a-cloud-solution-provider-csp"></a>Accedere con un tenant non predefinito o come Cloud Solution Provider (CSP)
 
