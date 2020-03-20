@@ -1,26 +1,25 @@
 ---
 title: Installare Azure PowerShell con PowerShellGet
 description: Come installare Azure PowerShell con PowerShellGet
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 10/22/2019
-ms.openlocfilehash: 66d755384e532d434811f3e6122dcba97d5c48b5
+ms.date: 02/26/2020
+ms.openlocfilehash: 7a25270566f5e856ee44c4c191a47a3e7334508b
 ms.sourcegitcommit: f6fa6543be1e0f6330b1598f01528b2928cc426c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79035788"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79110989"
 ---
-# <a name="install-the-azure-powershell-module"></a>Installare il modulo Azure PowerShell
+# <a name="install-azure-powershell"></a>Installare Azure PowerShell
 
-Questo articolo illustra come installare i moduli di Azure PowerShell con PowerShellGet. Queste istruzioni sono applicabili alle piattaforme Windows, macOS e Linux. Per il modulo Az non sono attualmente supportati altri metodi di installazione.
+Questo articolo illustra come installare i moduli di Azure PowerShell con PowerShellGet. Queste istruzioni sono applicabili alle piattaforme Windows, macOS e Linux.
+
+Azure PowerShell è disponibile anche in Azure [Cloud Shell](/azure/cloud-shell/overview) ed è ora preinstallato nelle [immagini Docker](azureps-in-docker.md).
 
 ## <a name="requirements"></a>Requisiti
 
-Azure PowerShell è compatibile con PowerShell 5.1 o versione successiva in Windows oppure con PowerShell Core 6.x e versioni successive in qualsiasi piattaforma. Se non si è sicuri di avere PowerShell o se si usa macOS o Linux, [installare la versione più recente di PowerShell Core](/powershell/scripting/install/installing-powershell#powershell-core).
+Azure PowerShell è compatibile con PowerShell 5.1 o versione successiva in Windows oppure con PowerShell Core 6.x e versioni successive in qualsiasi piattaforma. È necessario installare la [versione più recente di PowerShell Core](/powershell/scripting/install/installing-powershell#powershell-core) disponibile per il sistema operativo in uso. Azure PowerShell non prevede requisiti aggiuntivi quando viene eseguito in PowerShell Core.
 
 Per controllare la versione di PowerShell, eseguire il comando:
 
@@ -28,37 +27,27 @@ Per controllare la versione di PowerShell, eseguire il comando:
 $PSVersionTable.PSVersion
 ```
 
-Per eseguire Azure PowerShell in PowerShell 5.1 in Windows:
+Per usare Azure PowerShell in PowerShell 5.1 in Windows:
 
 1. Se necessario, eseguire l'aggiornamento a [Windows PowerShell 5.1](/powershell/scripting/install/installing-windows-powershell#upgrading-existing-windows-powershell). Se si usa Windows 10, PowerShell 5.1 è già installato.
 2. Installare [.NET Framework 4.7.2 o versioni successive](/dotnet/framework/install).
-
-Quando si usa PowerShell Core, non sono previsti requisiti aggiuntivi per Azure PowerShell.
+3. Assicurarsi di avere la versione più recente di PowerShellGet. Eseguire `Update-Module PowerShellGet -Force`.
 
 ## <a name="install-the-azure-powershell-module"></a>Installare il modulo Azure PowerShell
 
-> [!WARNING]
-> __Non è possibile__ installare contemporaneamente i moduli AzureRM e Az per PowerShell 5.1 per Windows. Se è necessario mantenere AzureRM nel sistema, installare il modulo Az per PowerShell Core 6.x o versioni successive. A questo scopo, [installare PowerShell Core 6.x or versioni successive](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows) e quindi seguire queste istruzioni in un terminale di PowerShell Core.
-
-Il metodo consigliato consiste nell'eseguire l'installazione solo per l'utente attivo:
+Il metodo di installazione preferito prevede l'uso dei cmdlet PowerShellGet. Questo metodo è applicabile anche alle piattaforme Windows, macOS e Linux. Eseguire il comando seguente da una sessione di PowerShell:
 
 ```powershell-interactive
-Install-Module -Name Az -AllowClobber -Scope CurrentUser
-```
-
-Se si vuole eseguire l'installazione per tutti gli utenti di un sistema, sono necessari privilegi di amministratore. Da una sessione di PowerShell con privilegi elevati eseguita come amministratore oppure con il comando `sudo` in MacOS o Linux:
-
-```powershell-interactive
-Install-Module -Name Az -AllowClobber -Scope AllUsers
+Install-Module -Name Az -AllowClobber
 ```
 
 Per impostazione predefinita, PowerShell Gallery non è configurata come archivio attendibile per PowerShellGet. La prima volta che si usa PSGallery verrà visualizzato il messaggio seguente:
 
-```output
+```Output
 Untrusted repository
 
 You are installing the modules from an untrusted repository. If you trust this repository, change
-its InstallationPolicy value by running the Set-PSRepository cmdlet.
+its InstallationPolicy value by running the `Set-PSRepository` cmdlet.
 
 Are you sure you want to install the modules from 'PSGallery'?
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
@@ -68,16 +57,34 @@ Rispondere `Yes` o `Yes to All` per continuare l'installazione.
 
 Il modulo Az è un modulo di rollup per i cmdlet di Azure PowerShell. Con la sua installazione vengono scaricati tutti i moduli di Azure Resource Manager disponibili e vengono messi a disposizione i relativi cmdlet.
 
+> [!WARNING]
+> L'installazione simultanea dei moduli AzureRM e Az per PowerShell 5.1 per Windows non è supportata. Se è necessario mantenere AzureRM nel sistema, installare il modulo Az per PowerShell Core 6.x o versioni successive.
+
+In primo luogo, [installare PowerShell Core 6.x o versioni successive](/powershell/scripting/install/installing-powershell-core-on-windows)
+
+Da una sessione di PowerShell Core, installare quindi il modulo Az solo per l'utente corrente. Questo è l'ambito di installazione consigliato.
+
+```powershell-interactive
+Install-Module -Name Az -AllowClobber -Scope CurrentUser
+```
+
+Per installare il modulo per tutti gli utenti di un sistema, sono necessari privilegi elevati. Per avviare la sessione di PowerShell, usare **Esegui come amministratore** in Windows oppure il comando `sudo` in macOS o Linux:
+
+```powershell-interactive
+Install-Module -Name Az -AllowClobber -Scope AllUsers
+```
+
 ## <a name="install-offline"></a>Eseguire l'installazione offline
 
 In alcuni ambienti non è possibile connettersi a PowerShell Gallery. In questi casi è comunque possibile eseguire l'installazione offline usando uno dei metodi seguenti:
 
-* Scaricare i moduli in un altro percorso e usarli come origine dell'installazione in rete. Questo processo può essere complicato, ma consente di memorizzare i moduli di PowerShell nella cache di un singolo server o condivisione file da distribuire con PowerShellGet in qualsiasi sistema disconnesso. Per informazioni su come configurare un repository locale ed eseguire l'installazione in sistemi disconnessi, vedere [Uso dei repository PowerShellGet locali](/powershell/scripting/gallery/how-to/working-with-local-psrepositories).
+* Scaricare i moduli in un altro percorso di rete e usare tale percorso come origine dell'installazione.
+  In questo modo, sarà possibile memorizzare i moduli di PowerShell nella cache di un singolo server o condivisione file da distribuire con PowerShellGet in qualsiasi sistema disconnesso. Per informazioni su come configurare un repository locale ed eseguire l'installazione in sistemi disconnessi, vedere [Uso dei repository PowerShellGet locali](/powershell/scripting/gallery/how-to/working-with-local-psrepositories).
 * [Scaricare il file MSI di Azure PowerShell](install-az-ps-msi.md) in un computer connesso alla rete e quindi copiare il programma di installazione nei sistemi senza accesso a PowerShell Gallery. Tenere presente che il programma di installazione MSI funziona solo per PowerShell 5.1 in Windows.
 * Salvare il modulo con [Save-Module](/powershell/module/PowershellGet/Save-Module) in una condivisione file oppure salvarlo in un'altra origine e copiarlo manualmente in altri computer:
-  
+
   ```powershell-interactive
-  Save-Module -Name Az -Path '\\someshare\PowerShell\modules' -Force
+  Save-Module -Name Az -Path '\\server\share\PowerShell\modules' -Force
   ```
 
 ## <a name="troubleshooting"></a>Risoluzione dei problemi
@@ -86,17 +93,16 @@ Ecco alcuni problemi comuni che possono verificarsi durante l'installazione del 
 
 ### <a name="proxy-blocks-connection"></a>Il proxy blocca la connessione
 
-Se `Install-Module` restituisce errori che indicano che PowerShell Gallery non è raggiungibile, è possibile che si sia protetti da un proxy. I requisiti per configurare un proxy a livello di sistema variano a seconda del sistema operativo e non vengono illustrati in dettaglio in questo articolo. Per conoscere le impostazioni del proxy e sapere come configurarlo per il sistema operativo corrente, contattare l'amministratore di sistema.
+Se `Install-Module` restituisce errori che indicano che PowerShell Gallery non è raggiungibile, è possibile che si sia protetti da un proxy. I requisiti per configurare un proxy a livello di sistema variano a seconda del sistema operativo e dell'ambiente di rete. Per conoscere le impostazioni del proxy e sapere come configurarlo per l'ambiente corrente, contattare l'amministratore di sistema.
 
-PowerShell stesso potrebbe non essere configurato per l'uso automatico di questo proxy. Con PowerShell 5.1 e versioni successive configurare il proxy per l'uso di una sessione di PowerShell con il comando seguente:
+PowerShell stesso potrebbe non essere configurato per l'uso automatico di questo proxy. Con PowerShell 5.1 e versioni successive usare i comandi seguenti per configurare la sessione di PowerShell per l'uso di un proxy:
 
 ```powershell
-(New-Object System.Net.WebClient).Proxy.Credentials = `
-  [System.Net.CredentialCache]::DefaultNetworkCredentials
+$webClient = New-Object System.Net.WebClient
+$webClient.Proxy.Credentials = [System.Net.CredentialCache]::DefaultNetworkCredentials
 ```
 
-Se le credenziali del sistema operativo sono configurate correttamente, le richieste di PowerShell verranno instradate tramite il proxy.
-Per rendere persistente questa impostazione tra una sessione e l'altra, aggiungere il comando a un [profilo PowerShell](/powershell/module/microsoft.powershell.core/about/about_profiles).
+Se le credenziali del sistema operativo sono configurate correttamente, questa configurazione consentirà di reindirizzare le richieste di PowerShell tramite il proxy. Per rendere persistente questa impostazione tra una sessione e l'altra, aggiungere i comandi al proprio [profilo PowerShell](/powershell/module/microsoft.powershell.core/about/about_profiles).
 
 Per installare il pacchetto, il proxy deve consentire le connessioni HTTPS all'indirizzo seguente:
 
@@ -112,21 +118,21 @@ Connect-AzAccount
 ```
 
 > [!NOTE]
->
 > Se il caricamento automatico dei moduli è stato disabilitato, importare manualmente il modulo con `Import-Module Az`. L'operazione potrebbe richiedere qualche secondo a causa del modo in cui è strutturato il modulo.
 
 È necessario ripetere questi passaggi per ogni nuova sessione di PowerShell avviata. Per informazioni su come mantenere l'accesso ad Azure da una sessione di PowerShell all'altra, vedere [Conservare le credenziali utente tra le sessioni di PowerShell](context-persistence.md).
 
 ## <a name="update-the-azure-powershell-module"></a>Aggiornare il modulo Azure PowerShell
 
-Se in origine è stato usato Install-Module, è necessario usare [Update-Module](/powershell/module/powershellget/update-module) per ottenere l'ultima versione. Se in origine è stato usato il pacchetto MSI, è necessario scaricare e installare la nuova versione di MSI per eseguire l'aggiornamento. Se si verificano problemi durante l'aggiornamento usando il pacchetto di PowershellGet, è necessario procedere alla__reinstallazione__ invece che al semplice __aggiornamento__. L'operazione è analoga all'installazione, ma può essere necessario aggiungere l'argomento `-Force`:
+Per aggiornare qualsiasi modulo di PowerShell, è necessario usare lo stesso metodo adottato per installare il modulo. Se, ad esempio, in origine è stato usato `Install-Module`, è necessario usare [Update-Module](/powershell/module/powershellget/update-module) per scaricare l'ultima versione. Se in origine è stato usato il pacchetto MSI, è necessario scaricare e installare la nuova versione del pacchetto MSI.
+
+I cmdlet PowerShellGet non possono aggiornare moduli installati da un pacchetto MSI. I pacchetti MSI non consentono di aggiornare moduli installati con PowerShellGet. Se si verificano problemi durante l'aggiornamento con PowershellGet, è necessario procedere alla**reinstallazione** invece che al semplice **aggiornamento**. La reinstallazione è un'operazione analoga all'installazione, ma richiede l'aggiunta del parametro `-Force`:
 
 ```powershell
 Install-Module -Name Az -AllowClobber -Force
 ```
 
-Anche se questa operazione può comportare la sovrascrittura di moduli installati, è comunque possibile che nel sistema siano ancora presenti versioni meno recenti.
-Per informazioni su come rimuovere le versioni precedenti di Azure PowerShell dal sistema, vedere [Disinstallare il modulo Azure PowerShell](uninstall-az-ps.md).
+Diversamente dalle installazioni basate su MSI, l'installazione o l'aggiornamento con PowerShellGet non comporta la rimozione delle versioni precedenti che possono esistere nel sistema. Per rimuovere le versioni precedenti di Azure PowerShell dal sistema, vedere [Disinstallare il modulo Azure PowerShell](uninstall-az-ps.md). Per altre informazioni sulle installazioni basate su MSI, vedere [Installare Azure PowerShell con un file MSI](install-az-ps-msi.md).
 
 ## <a name="use-multiple-versions-of-azure-powershell"></a>Usare più versioni di Azure PowerShell
 
@@ -138,23 +144,21 @@ Get-InstalledModule -Name Az -AllVersions | select Name,Version
 
 Per rimuovere una versione di Azure PowerShell, vedere [Disinstallare il modulo Azure PowerShell](uninstall-az-ps.md).
 
-È possibile installare o caricare una versione specifica del modulo `Az` usando l'argomento `-RequiredVersion`:
+Se sono installate più versioni del modulo, il modulo viene caricato automaticamente e `Import-Module` carica per impostazione predefinita l'ultima versione.
+
+È possibile installare o caricare una versione specifica del modulo `Az` usando il parametro `-RequiredVersion`:
 
 ```powershell-interactive
-# Install Az version 0.7.0
-Install-Module -Name Az -RequiredVersion 0.7.0 
-# Load Az version 0.7.0
-Import-Module -Name Az -RequiredVersion 0.7.0
+# Install Az version 3.6.1
+Install-Module -Name Az -RequiredVersion 3.6.1
+# Load Az version 3.6.1
+Import-Module -Name Az -RequiredVersion 3.6.1
 ```
-
-Se sono installate più versioni del modulo, il modulo viene caricato automaticamente e `Import-Module` carica per impostazione predefinita l'ultima versione.
 
 ## <a name="provide-feedback"></a>Fornire commenti e suggerimenti
 
-Se si trova un bug in Azure Powershell, [segnalare un problema in GitHub](https://github.com/Azure/azure-powershell/issues).
-Per inviare feedback dalla riga di comando, usare il cmdlet [Send-Feedback](/powershell/module/az.accounts/send-feedback).
+Se si trova un bug in Azure PowerShell, [segnalare un problema in GitHub](https://github.com/Azure/azure-powershell/issues). Per inviare feedback dalla riga di comando, usare il cmdlet [Send-Feedback](/powershell/module/az.accounts/send-feedback).
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-Per altre informazioni sui moduli di Azure PowerShell e sulle relative funzionalità, vedere [Introduzione ad Azure PowerShell](get-started-azureps.md).
-Se si ha familiarità con Azure PowerShell ed è necessario eseguire la migrazione da AzureRM, vedere [Eseguire la migrazione da AzureRM ad Az](migrate-from-azurerm-to-az.md).
+Per altre informazioni sui moduli di Azure PowerShell e sulle relative funzionalità, vedere [Introduzione ad Azure PowerShell](get-started-azureps.md). Se si ha familiarità con Azure PowerShell ed è necessario eseguire la migrazione da AzureRM, vedere [Eseguire la migrazione da AzureRM ad Az](migrate-from-azurerm-to-az.md).
