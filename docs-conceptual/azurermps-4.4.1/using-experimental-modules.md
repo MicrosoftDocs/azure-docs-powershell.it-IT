@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
 ms.openlocfilehash: 7867adeac41444c81c31b7ee44b910ab40d873f8
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "65534769"
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>Uso dei moduli sperimentali di Azure PowerShell
@@ -32,11 +32,11 @@ I moduli sperimentali adottano la convenzione di denominazione seguente: `AzureR
 
 I moduli sperimentali vengono pubblicati in PowerShell Gallery così come i moduli di Azure PowerShell esistenti. Per visualizzare un elenco di moduli sperimentali, eseguire questo comando:
 
-```azurepowershell-interactive
+```powershell-interactive
 Find-Module AzureRM.*.Experiments
 ```
 
-```output
+```Output
 Version Name                         Repository Description
 ------- ----                         ---------- -----------
 1.0.25  AzureRM.Compute.Experiments  PSGallery  Azure Compute experiments for VM creation
@@ -45,7 +45,7 @@ Version Name                         Repository Description
 
 Per installare il modulo sperimentale, usare i comandi seguenti in una sessione di PowerShell con privilegi elevati:
 
-```azurepowershell-interactive
+```powershell-interactive
 Install-Module AzureRM.Compute.Experiments
 Install-Module AzureRM.Websites.Experiments
 ```
@@ -71,7 +71,7 @@ I miglioramenti di base sono considerati "buon senso" e non è necessaria molta 
 
 - Impostazioni predefinite intelligenti: creare impostazioni predefinite intelligenti per immettere le informazioni "necessarie", Ad esempio:
   - Gruppo di risorse
-  - Località
+  - Location
   - Risorse dipendenti
 
 ### <a name="experimental-improvements"></a>Miglioramenti sperimentali
