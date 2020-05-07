@@ -3,7 +3,7 @@
 - name: Introduzione del nuovo modulo Az
   href: new-azureps-module-az.md
   displayName: 'intro, introduction, azurerm'
-- name: Installa
+- name: Installazione
   items:
     - name: Eseguire l'installazione con PowerShell Get
       href: install-az-ps.md
@@ -19,7 +19,7 @@
     - name: Modifiche tra AzureRM e il modulo Az
       href: migrate-az-1.0.0.md
       displayName: 'breaking, cmdlet, module, names'
-- name: Attività iniziali
+- name: Introduzione
   href: get-started-azureps.md
   displayName: 'sign in, signin, log in, login, find, feedback, intro, introduction'
 - name: Cloud Shell

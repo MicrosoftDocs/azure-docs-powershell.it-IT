@@ -1,6 +1,6 @@
 - name: Azure PowerShell
   href: overview.md
-- name: Installa
+- name: Installazione
   items:
     - name: Eseguire l'installazione con PowerShellGet
       href: install-azurerm-ps.md
@@ -8,7 +8,7 @@
       href: other-install.md
 - name: Disinstallare
   href: uninstall-azurerm-ps.md
-- name: Attività iniziali
+- name: Introduzione
   href: get-started-azureps.md
 - name: Cloud Shell
   href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
