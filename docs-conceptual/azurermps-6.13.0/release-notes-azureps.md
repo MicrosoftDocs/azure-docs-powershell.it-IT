@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
 ms.openlocfilehash: eecd66ddf433cc2543ceeaef1519d69179f2f099
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "65534463"
 ---
 # <a name="release-notes"></a>Note sulla versione
@@ -168,10 +168,10 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
 
 #### <a name="azurermdatalakestore"></a>AzureRM.DataLakeStore
 * Aggiunta del supporto per le regole di rete virtuale
-    - Get-AzureRmDataLakeStoreVirtualNetworkRule: Ottiene o elenca la regola di rete virtuale di Azure Data Lake Store.
-    - Add-AzureRmDataLakeStoreVirtualNetworkRule: Aggiunge una regola di rete virtuale all'account Data Lake Store specificato.
-    - Set-AzureRmDataLakeStoreVirtualNetworkRule: Modifica la regola di rete virtuale nell'account Data Lake Store specificato.
-    - Remove-AzureRmDataLakeStoreVirtualNetworkRule: Elimina una regola di rete virtuale di Azure Data Lake Store.
+    - Get-AzureRmDataLakeStoreVirtualNetworkRule: ottiene o elenca le regole di rete virtuale di Azure Data Lake Store.
+    - Add-AzureRmDataLakeStoreVirtualNetworkRule: aggiunge una regola di rete virtuale all'account Data Lake Store specificato.
+    - Set-AzureRmDataLakeStoreVirtualNetworkRule: modifica la regola di rete virtuale specificata nell'account Data Lake Store indicato.
+    - Remove-AzureRmDataLakeStoreVirtualNetworkRule: elimina una regola di rete virtuale di Azure Data Lake Store.
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Aggiornamento del cmdlet Test-AzureRmNetworkWatcherConnectivity per passare il valore del protocollo al back-end.
@@ -273,7 +273,7 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
   - Set-AzureRmLoadBalancerOutboundRuleConfig
   - Remove-AzureRmLoadBalancerOutboundRuleConfig
 * Aggiunta della nuova proprietà HostedWorkloads per PSNetworkInterface
-* Aggiunta di nuovi cmdlet per la funzionalità: Firewall di Azure tramite Azure Resource Manager
+* Aggiunta di nuovi cmdlet per la funzionalità Firewall di Azure tramite ARM
   - Aggiunta di Get-AzureRmFirewall
   - Aggiunta di Set-AzureRmFirewall
   - Aggiunta di New-AzureRmFirewall
@@ -325,9 +325,9 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
   - New-AzureRmLoadBalancerFrontendIpConfig
   - New-AzureRmNetworkInterface
 * Aggiunta di cmdlet per la delega di subnet.
-  - New-AzureRmDelegation: Crea una nuova delega che può essere aggiunta a una subnet
-  - Remove-AzureRmDelegation: Acquisisce una subnet e rimuove il nome di delega fornito da tale subnet
-  - Add-AzureRmDelegation: Acquisisce una subnet e aggiunge il nome servizio specificato come delega a tale subnet
+  - New-AzureRmDelegation: crea una nuova delega che può essere aggiunta a una subnet
+  - Remove-AzureRmDelegation: acquisisce una subnet e rimuove il nome di delega fornito da tale subnet
+  - Add-AzureRmDelegation: acquisisce una subnet e aggiunge il nome servizio specificato come delega a tale subnet
   - Get-AzureRmDelegation
   - Get-AzureRmAvailableServiceDelegations
 
@@ -778,9 +778,9 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Abilitazione del peering di reti virtuali in più tenant per Set/Add-AzureRmVirtualNetworkPeering
 * Aggiornamento dei cmdlet seguenti per il gateway applicazione
-    - New-AzureRmApplicationGateway: Aggiunta del flag EnableFIPS e del supporto per le zone
-    - New-AzureRmApplicationGatewaySku: Aggiunta dei nuovi SKU Standard_v2 e WAF_v2
-    - Set-AzureRmApplicationGatewaySku : Aggiunta dei nuovi SKU Standard_v2 e WAF_v2
+    - New-AzureRmApplicationGateway: aggiunta del flag EnableFIPS e del supporto delle zone
+    - New-AzureRmApplicationGatewaySku: aggiunta dei nuovi SKU Standard_v2 e WAF_v2
+    - Set-AzureRmApplicationGatewaySku: aggiunta dei nuovi SKU Standard_v2 e WAF_v2
 * Rigenerazione del cmdlet RouteTable con la versione più recente del generatore
 
 #### <a name="azurermrelay"></a>AzureRM.Relay
@@ -854,7 +854,7 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Esposizione di nuovi SKU per VirtualNetworkGateways con ridondanza della zona
-* Aggiunta di nuovi comandi per la funzione: API Partner ExpressRoute tramite Azure Resource Manager
+* Aggiunta di nuovi comandi per la funzionalità delle API partner di ExpressRoute tramite ARM
     - Aggiunta di Get-AzureRmExpressRouteCrossConnection
     - Aggiunta di Set-AzureRmExpressRouteCrossConnection
     - Aggiunta di Add-AzureRmExpressRouteCrossConnectionPeering
@@ -1008,7 +1008,7 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
 * Aggiunta di supporto per l'installazione di certificati rilasciati da un'autorità di certificazione privata come radice o CA
 * Aggiunta di supporto per l'accettazione di certificati SSL personalizzati tramite KeyVault e più nomi host proxy
 * Aggiunta di supporto per identità di MSI
-* Aggiunta del supporto per l'accettazione di criteri tramite URL. NOTA: i cmdlet seguenti saranno deprecati nella versione futura
+* Aggiunta di supporto per l'accettazione di criteri tramite URL. NOTA: i cmdlet seguenti verranno deprecati nelle versioni future
    - Import-AzureRmApiManagementHostnameCertificate
    - New-AzureRmApiManagementHostnameConfiguration
    - Set-AzureRmApiManagementHostnames

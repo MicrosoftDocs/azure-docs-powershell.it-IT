@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
 ms.openlocfilehash: 1491f3f23deb767b754a98b3fab616356daa71f3
-ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/12/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "67863775"
 ---
 # <a name="release-notes"></a>Note sulla versione
@@ -39,23 +39,23 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
   * Get-AzureRmCognitiveServicesAccount supporta ora correttamente il paging.
 * Calcolo
   * Funzionalità dei comandi di esecuzione:
-    - Nuovo cmdlet: 'Invoke-AzureRmVMRunCommand' per richiamare un comando di esecuzione in una macchina virtuale
-    - Nuovo cmdlet: 'Get-AzureRmVMRunCommandDocument' per visualizzare i documenti disponibili per i comandi di esecuzione
+    - Il nuovo cmdlet: 'Invoke-AzureRmVMRunCommand' richiama un comando di esecuzione in una macchina virtuale
+    - Il nuovo cmdlet: 'Get-AzureRmVMRunCommandDocument' visualizza i documenti disponibili per i comandi di esecuzione
   * Aggiunta del parametro 'StorageAccountType' a Set-AzureRmDataDisk
   * Supporto delle zone di disponibilità per macchine virtuali, set di scalabilità di macchine virtuali e dischi
     - Aggiunta del nuovo parametro: 'Zone' a New-AzureRmVM, New-AzureRmVMConfig, New-AzureRmVmssConfig, New-AzureRmDiskConfig
   * Funzionalità di aggiornamento in sequenza dei set di scalabilità di macchine virtuali:
-    - Nuovo cmdlet: 'Start-AzureRmVmssRollingOSUpgrade' per richiamare l'aggiornamento in sequenza del sistema operativo del set di scalabilità di macchine virtuali
-    - Nuovo cmdlet: 'Set-AzureRmVmssRollingUpgradePolicy' per impostare i criteri di aggiornamento in sequenza del set di scalabilità di macchine virtuali.
-    - Nuovo cmdlet: 'Stop-AzureRmVmssRollingUpgrade' per annullare l'aggiornamento in sequenza del set di scalabilità di macchine virtuali
-    - Nuovo cmdlet: 'Get-AzureRmVmssRollingUpgrade' per visualizzare lo stato dell'aggiornamento in sequenza del set di scalabilità di macchine virtuali.
+    - Il nuovo cmdlet: 'Start-AzureRmVmssRollingOSUpgrade' richiama l'aggiornamento in sequenza del sistema operativo del set di scalabilità di macchine virtuali
+    - Il nuovo cmdlet: 'Set-AzureRmVmssRollingUpgradePolicy' imposta i criteri di aggiornamento in sequenza del set di scalabilità di macchine virtuali.
+    - Il nuovo cmdlet: 'Stop-AzureRmVmssRollingUpgrade' annulla l'aggiornamento in sequenza del set di scalabilità di macchine virtuali
+    - Il nuovo cmdlet: 'Get-AzureRmVmssRollingUpgrade' visualizza lo stato dell'aggiornamento in sequenza del set di scalabilità di macchine virtuali.
   * È stato introdotto il parametro opzionale AssignIdentity per l'identità assegnata dal sistema.
     - Aggiunta del nuovo parametro: 'AssignIdentity' a New-AzureRmVMConfig, New-AzureRmVmssConfig e Update-AzureRmVM
   * Funzionalità di crittografia dei dischi di set di scalabilità di macchine virtuali:
-    - Nuovo cmdlet: 'Set-AzureRmVmssDiskEncryptionExtension' per abilitare la crittografia del disco nel set di scalabilità di macchine virtuali
-    - Nuovo cmdlet: 'Disable-AzureRmVmssDiskEncryption' per disabilitare la crittografia del disco nel set di scalabilità di macchine virtuali
-    - Nuovo cmdlet: 'Get-AzureRmVmssDiskEncryptionStatus' per visualizzare lo stato di crittografia del disco di un set di scalabilità di macchine virtuali
-    - Nuovo cmdlet: 'Get-AzureRmVmssVMDiskEncryptionStatus' per visualizzare lo stato di crittografia del disco di una VM in un set di scalabilità di macchine virtuali
+    - Il nuovo cmdlet: 'Set-AzureRmVmssDiskEncryptionExtension' abilita la crittografia del disco nel set di scalabilità di macchine virtuali
+    - Il nuovo cmdlet: 'Disable-AzureRmVmssDiskEncryption' disabilita la crittografia del disco nel set di scalabilità di macchine virtuali
+    - Il nuovo cmdlet: 'Get-AzureRmVmssDiskEncryptionStatus' visualizza lo stato di crittografia del disco di un set di scalabilità di macchine virtuali
+    - Il nuovo cmdlet: 'Get-AzureRmVmssVMDiskEncryptionStatus' visualizza lo stato di crittografia del disco di una VM in un set di scalabilità di macchine virtuali
 * ContainerInstance
   * Aggiunta di cmdlet PowerShell per Istanze di contenitore di Azure
     - New-AzureRmContainerGroup
@@ -96,9 +96,9 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
     * Undo-AzureKeyVaultCertificateRemoval
 * Rete
   * Aggiunta del supporto per i servizi di endpoint alle subnet di rete virtuale
-    - Aggiornamento di Add-AzureRmVirtualSubnetConfig: Aggiunta del parametro facoltativo -ServiceEndpoint
-    - Aggiornamento di New-AzureRmVirtualSubnetConfig: Aggiunta del parametro facoltativo -ServiceEndpoint
-    - Aggiornamento di Set-AzureRmVirtualSubnetConfig: Aggiunta del parametro facoltativo -ServiceEndpoint
+    - Aggiornamento di Add-AzureRmVirtualSubnetConfig: aggiunta del parametro facoltativo -ServiceEndpoint
+    - Aggiornamento di New-AzureRmVirtualSubnetConfig: aggiunta del parametro facoltativo -ServiceEndpoint
+    - Aggiornamento di Set-AzureRmVirtualSubnetConfig: aggiunta del parametro facoltativo -ServiceEndpoint
   * Aggiunta di un cmdlet per elencare i servizi di endpoint disponibili nella posizione
     - Get-AzureRmVirtualNetworkAvailableEndpointService
   * Aggiunta della possibilità di configurare l'autenticazione da punto a sito basata su server RADIUS esterno ai cmdlet seguenti
@@ -109,41 +109,41 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
     - New-AzureRmVpnClientConfiguration
     - Get-AzureRmVpnClientConfiguration
   * Aggiunta del supporto per il parametro SKU agli indirizzi IP pubblici e ai servizi di bilanciamento del carico
-    - Aggiornamento di New-AzureRMLoadBalancer: Aggiunta del parametro facoltativo -Sku
-    - Aggiornamento di New-AzureRMPublicIpAddress: Aggiunta del parametro facoltativo -Sku
+    - Aggiornamento di New-AzureRMLoadBalancer: aggiunta del parametro facoltativo -Sku
+    - Aggiornamento di New-AzureRMPublicIpAddress: aggiunta del parametro facoltativo -Sku
   * Aggiunta del supporto per DisableOutboundSNAT alle regole del servizio di bilanciamento del carico
-    - Aggiornamento di New-AzureRMLoadBalancerRuleConfig: Aggiunta del parametro facoltativo DisableOutboundSNAT
-    - Aggiornamento di Add-AzureRMLoadBalancerRuleConfig: Aggiunta del parametro facoltativo DisableOutboundSNAT
-    - Aggiornamento di Set-AzureRMLoadBalancerRuleConfig: Aggiunta del parametro facoltativo DisableOutboundSNAT
+    - Aggiornamento di New-AzureRMLoadBalancerRuleConfig: aggiunta del parametro facoltativo DisableOutboundSNAT
+    - Aggiornamento di Add-AzureRMLoadBalancerRuleConfig: aggiunta del parametro facoltativo DisableOutboundSNAT
+    - Aggiornamento di Set-AzureRMLoadBalancerRuleConfig: aggiunta del parametro facoltativo DisableOutboundSNAT
   * Aggiunta del supporto di IkeV2 da punto a sito
-    - Aggiornamento di New-AzureRmVirtualNetworkGateway: Aggiunta del parametro facoltativo -VpnClientProtocol, con valore predefinito [ "SSTP", "IkeV2" ]
-    - Aggiornamento di Set-AzureRmVirtualNetworkGateway: Aggiunta del parametro facoltativo -VpnClientProtocol
+    - Aggiornamento di New-AzureRmVirtualNetworkGateway: aggiunta del parametro facoltativo -VpnClientProtocol, con valore predefinito [ "SSTP", "IkeV2" ]
+    - Aggiornamento di Set-AzureRmVirtualNetworkGateway: aggiunta del parametro facoltativo -VpnClientProtocol
   * Aggiunta del supporto per le regole multivalore nelle regole di sicurezza di rete e nelle regole di sicurezza di rete effettive
-    - Aggiornamento di Add-AzureRmNetworkSecurityRuleConfig: Aggiornamento dei parametri SourcePortRange, DestinationPortRange, SourceAddressPrefix per l'accettazione di un elenco di stringhe
-    - Aggiornamento di New-AzureRmNetworkSecurityRuleConfig: Aggiornamento dei parametri SourcePortRange, DestinationPortRange, SourceAddressPrefix per l'accettazione di un elenco di stringhe
-    - Aggiornamento di Set-AzureRmNetworkSecurityRuleConfig: Aggiornamento dei parametri SourcePortRange, DestinationPortRange, SourceAddressPrefix per l'accettazione di un elenco di stringhe
-    - Aggiornamento di Add-AzureRmNetworkSecurityRuleConfig: Aggiornamento dei parametri SourcePortRange, DestinationPortRange, SourceAddressPrefix per l'accettazione di un elenco di stringhe
-    - Aggiornamento di New-AzureRmNetworkSecurityGroup: Aggiornamento del parametro SecurityRules per l'accettazione dei parametri SourcePortRange, DestinationPortRange, SourceAddressPrefix che rappresentano elenchi di stringhe nell'oggetto PSSecurityRule
-    - Aggiornamento di Get-AzureRmEffectiveNetworkSecurityGroup: Aggiunta del parametro TagMap
-    - Aggiornamento di Get-AzureRmEffectiveNetworkSecurityGroup: Aggiornamento dell'oggetto PSEffectiveSecurityRule restituito con i parametri SourcePortRange, DestinationPortRange, SourceAddressPrefix che rappresentano elenchi di stringhe.
+    - Aggiornamento di Add-AzureRmNetworkSecurityRuleConfig: aggiornamento dei parametri SourcePortRange, DestinationPortRange, SourceAddressPrefix per l'accettazione di un elenco di stringhe
+    - Aggiornamento di New-AzureRmNetworkSecurityRuleConfig: aggiornamento dei parametri SourcePortRange, DestinationPortRange, SourceAddressPrefix per l'accettazione di un elenco di stringhe
+    - Aggiornamento di Set-AzureRmNetworkSecurityRuleConfig: aggiornamento dei parametri SourcePortRange, DestinationPortRange, SourceAddressPrefix per l'accettazione di un elenco di stringhe
+    - Aggiornamento di Add-AzureRmNetworkSecurityRuleConfig: aggiornamento dei parametri SourcePortRange, DestinationPortRange, SourceAddressPrefix per l'accettazione di un elenco di stringhe
+    - Aggiornamento di New-AzureRmNetworkSecurityGroup: aggiornamento dei parametri SecurityRules per l'accettazione dei parametri SourcePortRange, DestinationPortRange, SourceAddressPrefix che rappresentano elenchi di stringhe nell'oggetto PSSecurityRule
+    - Aggiornamento di Get-AzureRmEffectiveNetworkSecurityGroup: aggiunta del parametro TagMap
+    - Aggiornamento di Get-AzureRmEffectiveNetworkSecurityGroup: aggiornamento dell'oggetto PSEffectiveSecurityRule restituito con i parametri SourcePortRange, DestinationPortRange, SourceAddressPrefix che rappresentano elenchi di stringhe.
   * Aggiunta del supporto per la protezione DDoS per le reti virtuali
-    - Aggiornamento di New-AzureRmVirtualNetwork: Aggiunta dei parametri opzionali EnableDDoSProtection e EnableVmProtection
+    - Aggiornamento di New-AzureRmVirtualNetwork: aggiunta dei parametri opzionali EnableDDoSProtection e EnableVmProtection
     - Aggiunta delle proprietà EnableDDoSProtection e EnableVmProtection nell'oggetto PSVirtualNetwork
   * Aggiunta del supporto per bilanciamento del carico interno a disponibilità elevata
-    - Aggiornamento di Add-AzureRmLoadBalancerRuleConfig: Aggiunta di All come valore accettabile per il parametro Protocol
-    - Aggiornamento di New-AzureRmLoadBalancerRuleConfig: Aggiunta di All come valore accettabile per il parametro Protocol
-    - Aggiornamento di Set-AzureRmLoadBalancerRuleConfig: Aggiunta di All come valore accettabile per il parametro Protocol
+    - Aggiornamento di Add-AzureRmLoadBalancerRuleConfig: aggiunta di All come valore accettabile per il parametro Protocol
+    - Aggiornamento di New-AzureRmLoadBalancerRuleConfig: aggiunta di All come valore accettabile per il parametro Protocol
+    - Aggiornamento di Set-AzureRmLoadBalancerRuleConfig: aggiunta di All come valore accettabile per il parametro Protocol
   * Aggiunta del supporto per gruppi di sicurezza delle applicazioni
     - Aggiunta di New-AzureRmApplicationSecurityGroup
     - Aggiunta di Get-AzureRmApplicationSecurityGroup
     - Aggiunta di Remove-AzureRmApplicationSecurityGroup
-    - Aggiornamento di New-AzureRmNetworkInterface: Aggiunta dei parametri facoltativi ApplicationSecurityGroup e ApplicationSecurityGroupId
-    - Aggiornamento di New-AzureRmNetworkInterfaceIpConfig: Aggiunta dei parametri facoltativi ApplicationSecurityGroup e ApplicationSecurityGroupId
-    - Aggiornamento di Add-AzureRmNetworkInterfaceIpConfig: Aggiunta dei parametri facoltativi ApplicationSecurityGroup e ApplicationSecurityGroupId
-    - Aggiornamento di Set-AzureRmNetworkInterfaceIpConfig: Aggiunta dei parametri facoltativi ApplicationSecurityGroup e ApplicationSecurityGroupId
-    - Aggiornamento di New-AzureRmNetworkSecurityRuleConfig: Aggiunta dei parametri facoltativi SourceApplicationSecurityGroup, SourceApplicationSecurityGroupId, DestinationApplicationSecurityGroup e DestinationApplicationSecurityGroupId
-    - Aggiornamento di Add-AzureRmNetworkSecurityRuleConfig: Aggiunta dei parametri facoltativi SourceApplicationSecurityGroup, SourceApplicationSecurityGroupId, DestinationApplicationSecurityGroup e DestinationApplicationSecurityGroupId
-    - Aggiornamento di Set-AzureRmNetworkSecurityRuleConfig: Aggiunta dei parametri facoltativi SourceApplicationSecurityGroup, SourceApplicationSecurityGroupId, DestinationApplicationSecurityGroup e DestinationApplicationSecurityGroupId
+    - Aggiornamento di New-AzureRmNetworkInterface: aggiunta dei parametri facoltativi ApplicationSecurityGroup e ApplicationSecurityGroupId
+    - Aggiornamento di New-AzureRmNetworkInterfaceIpConfig: aggiunta dei parametri facoltativi ApplicationSecurityGroup e ApplicationSecurityGroupId
+    - Aggiornamento di Add-AzureRmNetworkInterfaceIpConfig: aggiunta dei parametri facoltativi ApplicationSecurityGroup e ApplicationSecurityGroupId
+    - Aggiornamento di Set-AzureRmNetworkInterfaceIpConfig: aggiunta dei parametri facoltativi ApplicationSecurityGroup e ApplicationSecurityGroupId
+    - Aggiornamento di New-AzureRmNetworkSecurityRuleConfig: aggiunta dei parametri facoltativi SourceApplicationSecurityGroup, SourceApplicationSecurityGroupId, DestinationApplicationSecurityGroup e DestinationApplicationSecurityGroupId
+    - Aggiornamento di Add-AzureRmNetworkSecurityRuleConfig: aggiunta dei parametri facoltativi SourceApplicationSecurityGroup, SourceApplicationSecurityGroupId, DestinationApplicationSecurityGroup e DestinationApplicationSecurityGroupId
+    - Aggiornamento di Set-AzureRmNetworkSecurityRuleConfig: aggiunta dei parametri facoltativi SourceApplicationSecurityGroup, SourceApplicationSecurityGroupId, DestinationApplicationSecurityGroup e DestinationApplicationSecurityGroupId
   * Aggiunta di nuovi comandi per gli script VpnDeviceConfiguration
     - Get-AzureRmVirtualNetworkGatewaySupportedVpnDevices
     - Get-AzureRmVirtualNetworkGatewayConnectionVpnDeviceConfigScript
@@ -221,8 +221,8 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
   * Aggiunta del supporto del controllo delle versioni delle compilazioni di NodeConfiguration in StartAzureAutomationDscCompilationJob e ImportAzureAutomationDscNodeConfiguration
   * Correzioni di bug per problemi esistenti - Correzioni del problema di alias n. 3775 e dell'alias runOn e il supporto per HybridWorkers.
 * Calcolo
-  * Set-AzureRmVMAEMExtension: Aggiunta del supporto per le nuove dimensioni del disco Premium
-  * Set-AzureRmVMAEMExtension: Aggiunta del supporto per la serie M
+  * Set-AzureRmVMAEMExtension: aggiunta del supporto per nuove dimensioni dei dischi Premium
+  * Set-AzureRmVMAEMExtension: aggiunta del supporto per la serie M
   * Aggiunta del parametro ForceUpdateTag ad Add-AzureRmVmssExtension
   * Aggiunta del parametro Primary a New-AzureRmVmssIpConfig
   * Aggiunta del parametro EnableAcceleratedNetworking ad Add-AzureRmVmssNetworkInterfaceConfig
@@ -244,8 +244,8 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
 * Rete
     * Aggiunta del supporto per IPv6 e di un nuovo parametro facoltativo - PeerAddressType
       * New-AzureRmExpressRouteCircuitPeeringConfig:
-      * Set-AzureRmExpressRouteCircuitPeeringConfig: Aggiunta del supporto IPv6. Aggiunta di un nuovo parametro facoltativo
-      * Remove-AzureRmExpressRouteCircuitPeeringConfig: Aggiunta del supporto IPv6. Aggiunta di un nuovo parametro facoltativo
+      * Set-AzureRmExpressRouteCircuitPeeringConfig: aggiunta del supporto per IPv6. Aggiunta di un nuovo parametro facoltativo
+      * Remove-AzureRmExpressRouteCircuitPeeringConfig: aggiunta del supporto per IPv6. Aggiunta di un nuovo parametro facoltativo
     * Parametro contrassegnato come obsoleto - ProbeEnabled
       - Add-AzureRmApplicationGatewayBackendHttpSettings
       - New-AzureRmApplicationGatewayBackendHttpSettings
@@ -385,15 +385,15 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
 * Informazioni dettagliate
     * Problema n. 4215 (richiesta di modifica) rimuovere il limite di 15 giorni nell'intervallo di tempo per il cmdlet Get-AzureRmLog. Inoltre, modifiche di minore entità ai nomi degli unit test.
     * Problema n. 3957 risolto per Get-AzureRmLog
-        - Problema n. 1: Il back-end restituisce i record in pagine di 200 record ognuna, collegate con il token di continuazione alla pagina successiva. I clienti vedevano restituiti solo 200 record, anche se sapevano che dovevano essercene di più. Il problema si verificava indipendentemente dal valore impostato per MaxEvents, a meno che il valore non fosse minore di 200.
-        - Problema n. 2: La documentazione conteneva dati errati su questo cmdlet, ad esempio il valore predefinito per l'intervallo di tempo era di 1 ora.
-        - Correzione n. 1: Il cmdlet segue ora il token di continuazione restituito dal back-end fino a raggiungere MaxEvents o la fine del set.<br>Il valore predefinito per MaxEvents è 1000 e il valore massimo è 100000. Qualsiasi valore per MaxEvents minore di 1 viene ignorato e viene invece usato il valore predefinito. Questi valori e il comportamento non sono cambiati, ma ora sono documentati in modo corretto.<br>È stato aggiunto l'alias MaxRecords per MaxEvents, dato che il nome del cmdlet non indica più gli eventi, ma solo i log.
-        - Correzione n. 2: La documentazione contiene informazioni corrette e più dettagliate: nuovo alias, intervallo di tempo corretto, impostazione predefinita corretta, valori minimo e massimo.
+        - Problema n. 1: il back-end restituisce i record in pagine di 200 record ognuna, collegate con il token di continuazione alla pagina successiva. I clienti vedevano restituiti solo 200 record, anche se sapevano che dovevano essercene di più. Il problema si verificava indipendentemente dal valore impostato per MaxEvents, a meno che il valore non fosse minore di 200.
+        - Problema n. 2: la documentazione conteneva dati errati su questo cmdlet, ad esempio il valore predefinito per l'intervallo di tempo era di 1 ora.
+        - Correzione n. 1: il cmdlet segue ora il token di continuazione restituito dal back-end fino a raggiungere MaxEvents o la fine del set.<br>Il valore predefinito per MaxEvents è 1000 e il valore massimo è 100000. Qualsiasi valore per MaxEvents minore di 1 viene ignorato e viene invece usato il valore predefinito. Questi valori e il comportamento non sono cambiati, ma ora sono documentati in modo corretto.<br>È stato aggiunto l'alias MaxRecords per MaxEvents, dato che il nome del cmdlet non indica più gli eventi, ma solo i log.
+        - Correzione n. 2: la documentazione contiene informazioni corrette e più dettagliate: nuovo alias, intervallo di tempo corretto, impostazione predefinita corretta, valori minimo e massimo.
 * Insieme di credenziali delle chiavi
     * Rimozione dell'indirizzo di posta elettronica dalla query sulla directory quando si specifica -UserPrincipalName per i cmdlet Set-AzureRMKeyVaultAccessPolicy e Remove-AzureRMKeyVaultAccessPolicy.
       - Entrambi i cmdlet includono ora il parametro -EmailAddress che può essere usato al posto del parametro -UserPrincipalName quando è appropriato eseguire query per ottenere l'indirizzo di posta elettronica.  Se sono presenti più indirizzi di posta elettronica corrispondenti nella directory, l'esecuzione del cmdlet avrà esito negativo.
 * Rete
-    * New-AzureRmIpsecPolicy: I parametri SALifeTimeSeconds e SADataSizeKilobytes non sono più obbligatori
+    * New-AzureRmIpsecPolicy: i parametri SALifeTimeSeconds e SADataSizeKilobytes non sono più obbligatori
         - Il valore predefinito per SALifeTimeSeconds è 27000 secondi
         - Il valore predefinito per SADataSizeKilobytes è 102400000 KB
     * Aggiunto il supporto per la configurazione di un pacchetto di crittografia personalizzato con criteri SSL e per elencare tutte le API per opzioni SSL nel gateway applicazione
@@ -401,8 +401,8 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
             - Add-AzureRmApplicationGatewaySslPolicy
             - New-AzureRmApplicationGatewaySslPolicy
             - Set-AzureRmApplicationGatewaySslPolicy
-        - Aggiunta di Get-AzureRmApplicationGatewayAvailableSslOptions (alias: List-AzureRmApplicationGatewayAvailableSslOptions)
-        - Aggiunta di Get-AzureRmApplicationGatewaySslPredefinedPolicy (alias: List-AzureRmApplicationGatewaySslPredefinedPolicy)
+        - Aggiunta di Get-AzureRmApplicationGatewayAvailableSslOptions (Alias: List-AzureRmApplicationGatewayAvailableSslOptions)
+        - Aggiunta di Get-AzureRmApplicationGatewaySslPredefinedPolicy (Alias: List-AzureRmApplicationGatewaySslPredefinedPolicy)
     * Aggiunta del supporto del reindirizzamento nel gateway applicazione
         - Aggiunta di Add-AzureRmApplicationGatewayRedirectConfiguration
         - Aggiunta di Get-AzureRmApplicationGatewayRedirectConfiguration
@@ -452,29 +452,29 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
         - Per altre informazioni, vedere il problema seguente: https://github.com/Azure/azure-powershell/issues/635
 * ServiceManagement per ExpressRoute:
     * Aggiornamento del cmdlet New-AzureBgpPeering per aggiungere le nuove opzioni seguenti:
-        - PeerAddressType: È possibile specificare i valori "IPv4" o "IPv6" per creare un peering BGP con il tipo di famiglia di indirizzi corrispondente
+        - PeerAddressType: è possibile specificare i valori "IPv4" o "IPv6" per creare un peering BGP con il tipo di famiglia di indirizzi corrispondente
     * Aggiornamento del cmdlet Set-AzureBgpPeering per aggiungere le nuove opzioni seguenti:
-        - PeerAddressType: È possibile specificare i valori "IPv4" o "IPv6" per aggiornare un peering BGP con il tipo di famiglia di indirizzi corrispondente
+        - PeerAddressType: è possibile specificare i valori "IPv4" o "IPv6" per aggiornare un peering BGP con il tipo di famiglia di indirizzi corrispondente
     * Aggiornamento del cmdlet Remove-AzureBgpPeering per aggiungere le nuove opzioni seguenti:
-        - PeerAddressType: È possibile specificare i valori "IPv4", "IPv6"o "All" per rimuovere un peering BGP con il tipo di famiglia di indirizzi corrispondente oppure per rimuoverli tutti
+        - PeerAddressType: è possibile specificare i valori "IPv4", "IPv6"o "All" per rimuovere un peering BGP con il tipo di famiglia di indirizzi corrispondente oppure per rimuoverli tutti
 
 ## <a name="20170607---version-410"></a>07.06.2017 - Versione 4.1.0
 * AnalysisServices
-    * Nuovi SKU aggiunti: B1, B2, S0
+    * Nuove SKU aggiunte: B1, B2, S0
     * Aggiunto il supporto per la scalabilità orizzontale/verticale
 * CognitiveServices
     * Aggiornamento della visualizzazione dettagliata dei contratti di licenza durante la creazione di risorse di Servizi cognitivi
 * Calcolo
     * Correzione di Fix Test-AzureRmVMAEMExtension per le macchine virtuali con più dischi gestiti
-    * Aggiornamento di Set-AzureRmVMAEMExtension: Aggiunta delle informazioni di caching per i dischi gestiti Premium
-    * Add-AzureRmVhd: Aumento del limite di dimensioni per il disco rigido virtuale a 4 TB.
-    * Stop-AzureRmVM: Chiarimenti nella documentazione per il parametro STayProvisioned
+    * Aggiornamento di Set-AzureRmVMAEMExtension: aggiunta delle informazioni per la memorizzazione nella cache per i dischi gestiti Premium
+    * Add-AzureRmVhd: aumento del limite di dimensioni per il disco rigido virtuale a 4 TB.
+    * Stop-AzureRmVM: chiarimenti nella documentazione per il parametro STayProvisioned
     * New-AzureRmDiskUpdateConfig
       * Parametri CreateOption, StorageAccountId, ImageReference, SourceUri, SourceResourceId deprecati
-    * Set-AzureRmDiskUpdateImageReference: Cmdlet deprecato
+    * Set-AzureRmDiskUpdateImageReference: cmdlet deprecato
     * New-AzureRmSnapshotUpdateConfig
       * Parametri CreateOption, StorageAccountId, ImageReference, SourceUri, SourceResourceId deprecati
-    * Set-AzureRmSnapshotUpdateImageReference: Cmdlet deprecato
+    * Set-AzureRmSnapshotUpdateImageReference: cmdlet deprecato
 * DataLakeStore
     * Enable-AzureRmDataLakeStoreKeyVault (Enable-AdlStoreKeyVault)
       * Abilitazione della crittografia gestita KeyVault per un archivio Data Lake
@@ -493,7 +493,7 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
     * Set-AzureKeyVaultManagedStorageSasDefinition
     * Remove-AzureKeyVaultManagedStorageSasDefinition
 * Rete
-    * Get-AzureRmNetworkUsage: Nuovo cmdlet per visualizzare dettagli sull'utilizzo e la capacità della rete
+    * Get-AzureRmNetworkUsage: nuovo cmdlet per visualizzare dettagli sull'utilizzo e la capacità della rete
     * Aggiunta di nuove opzioni GatewaySku per VirtualNetworkGateways
         * VpnGw1, VpnGw2, VpnGw3 sono le nuove SKU aggiunte per i gateway VPN
     * Set-AzureRmNetworkWatcherConfigFlowLog
@@ -511,7 +511,7 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
     * Risoluzione di un problema a causa del quale Get-AzureRMRoleAssignment genera un errore di richiesta non valida se il numero di assegnazioni di ruolo è maggiore di 1000
         * Gli utenti possono ora usare Get-AzureRMRoleAssignment, anche se le assegnazioni di ruolo da restituire sono più di 1000
 * Sql
-    * Restore-AzureRmSqlDatabase: Aggiornamento della documentazione di esempio
+    * Restore-AzureRmSqlDatabase: aggiornamento di un esempio nella documentazione
 * Archiviazione
     * Aggiunta del supporto dell'impostazione AssignIdentity ai cmdlet per l'account di archiviazione in modalità risorsa
         * New-AzureRmStorageAccount
@@ -524,8 +524,8 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
     * Nuove impostazioni di monitoraggio 'MonitorIntervalInSeconds', 'MonitorTimeoutInSeconds', 'MonitorToleratedNumberOfFailures'
     * Nuovo protocollo per il monitoraggio 'TCP'
 * ServiceManagement
-    * Add-AzureVhd: Aumento del limite di dimensioni per il disco rigido virtuale a 4 TB.
-    * New-AzureBGPPeering: Supporto di LegacyMode
+    * Add-AzureVhd: aumento del limite di dimensioni per il disco rigido virtuale a 4 TB.
+    * New-AzureBGPPeering: supporto di LegacyMode
 * Azure.Storage
     * Aggiornamento della Guida per i parametri che accettano caratteri jolly e aggiornamento del tipo StorageContext
 
@@ -609,14 +609,14 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
   - Get-AzureRmMetricDefinition
     + L'output è ancora un elenco, ma la struttura dell'elenco è stata modificata.
   - Get-AzureRmMetric
-    + La chiamata è stata modificata. La nuova sintassi è la seguente: Get-AzureRmMetric ResourceId [MetricNames [TimeGrain] [AggregationType] [StartTime] [EndTime]] [DetailedOutput]
+    + La chiamata è stata modificata. Questa è la nuova sintassi: Get-AzureRmMetric ResourceId [MetricNames [TimeGrain] [AggregationType] [StartTime] [EndTime]] [DetailedOutput]
     + L'output è un elenco e la struttura dei suoi elementi è stata modificata.
 * Insieme di credenziali delle chiavi
   - Aggiunta del supporto per il backup/ripristino dei segreti KeyVault
     + È possibile eseguire il backup e il ripristino dei segreti come con la funzionalità attualmente supportata per Chiavi
 
   - I cmdlet di backup per Chiavi e Segreti accettano ora un oggetto corrispondente come parametro di input
-    + Il chiamante può concatenare operazioni di recupero e backup: Get-AzureKeyVaultKey -VaultName myVault -Name myKey | Backup-AzureKeyVaultKey
+    + Il chiamante può concatenare le operazioni di recupero e backup: Get-AzureKeyVaultKey -VaultName myVault -Name myKey | Backup-AzureKeyVaultKey
 
   - I cmdlet di backup supportano ora un'opzione -Force per la sovrascrittura di un file esistente
     + Si noti che il tentativo di sovrascrivere un file esistente non genera più un'istruzione Throw ma richiede invece all'utente di scegliere come procedere.
@@ -663,7 +663,7 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
     + Gli utenti possono ora usare le distribuzioni nidificate per distribuire gruppi di risorse diversi.
 * ServiceBus
 
-  - Correzione di bug: I valori della proprietà oggetto ServiceBus Queue erano impostati su Null. L'oggetto è usato come parametro di input nel cmdlet Set-AzureRmServiceBusQueue cmdlet per aggiornare Queue.
+  - Correzione di bug: i valori della proprietà oggetto ServiceBus Queue erano impostati su Null. L'oggetto è usato come parametro di input nel cmdlet Set-AzureRmServiceBusQueue cmdlet per aggiornare Queue.
     - Le proprietà interessate sono LockDuration, EntityAvailabilityStatus, DuplicateDetectionHistoryTimeWindow, MaxDeliveryCount e MessageCount
 * ServiceFabric
 
@@ -700,7 +700,7 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
 * Archiviazione
   - Aggiornamento di SRP SDK alla versione 6.3.0
   - New/Set-AzureRmStorageAccount: aggiunta di un nuovo parametro per supportare EnableHttpsTrafficOnly
-  - New/Set/Get-AzureRmStorageAccount: L'account di archiviazione restituito contiene un nuovo attributo EnableHttpsTrafficOnly
+  - New/Set/Get-AzureRmStorageAccount: l'account di archiviazione restituito contiene un nuovo attributo EnableHttpsTrafficOnly
 * Azure.Storage
   - Aggiornamento ad Azure Storage Client Library 8.1.1 e Azure Storage DataMovement Library 0.5.1
   - Aggiunta di un nuovo cmdlet per supportare la funzionalità blob Incremental Copy (Copia incrementale)

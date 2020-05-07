@@ -9,21 +9,21 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: 55f19ac5e6767df1312e0b531184e8621b60a011
-ms.sourcegitcommit: febbbd3f75c8dd1a296281d265289f015b6cb537
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "67038194"
 ---
 # <a name="azurerm-module-250"></a>Modulo AzureRM 2.5.0
 
-## <a name="requirements"></a>Requirements:
+## <a name="requirements"></a>Requisiti:
 La versione minima supportata di Azure Stack è la 1904.
 
-Note: Se si usa una versione precedente, installare la versione 1.2.11
+Nota: se si usa una versione precedente, installare la versione 1.2.11
 
 
-## <a name="install"></a>Installa
+## <a name="install"></a>Installazione
 ```powershell-interactive
 # Remove previous versions of AzureStack modules
 Uninstall-Module -Name AzureStack -Force 
@@ -119,7 +119,7 @@ Versione di anteprima del modulo Amministratore della sottoscrizione di Azure St
 - Visualizzare informazioni sull'utilizzo e sulle prestazioni
 - Gestire il controllo degli accessi in base al ruolo
 
-### <a name="subscription"></a>Sottoscrizione
+### <a name="subscription"></a>Subscription
 Versione di anteprima del modulo Sottoscrizione di Azure Stack.  Questo modulo consente agli utenti di:
 - Creare, eliminare e aggiornare le sottoscrizioni
 

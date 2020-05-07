@@ -8,10 +8,10 @@ ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.openlocfilehash: 772667032d421e32c6cd63abbcb686b4eab308e2
-ms.sourcegitcommit: ad7677d703a8512d371d3123dc7e541156b95cb8
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "72814353"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Disinstallare il modulo Azure PowerShell
@@ -26,7 +26,7 @@ Se Azure PowerShell è stato installato con il pacchetto MSI, la disinstallazion
 | Piattaforma | Istruzioni |
 |----------|--------------|
 | Windows 10 | Start > Impostazioni > App |
-| Windows 7 </br>Windows 8 | Start > Pannello di controllo > Programmi > Disinstalla un programma |
+| Windows 7 </br>Windows 8 | Start > Pannello di controllo -> Programmi -> Disinstalla un programma |
 
 L'elenco dei programmi visualizzato nella schermata mostrerà __Azure PowerShell__. Si tratta dell'app da disinstallare. Se questo programma non è elencato, l'installazione è stata eseguita tramite PowerShellGet ed è necessario seguire la prossima serie di istruzioni.
 
@@ -139,7 +139,7 @@ Se i moduli AzureRM di Azure PowerShell sono stati installati con il pacchetto M
 | Piattaforma | Istruzioni |
 |----------|--------------|
 | Windows 10 | Start > Impostazioni > App |
-| Windows 7 </br>Windows 8 | Start > Pannello di controllo > Programmi > Disinstalla un programma |
+| Windows 7 </br>Windows 8 | Start > Pannello di controllo -> Programmi -> Disinstalla un programma |
 
 L'elenco dei programmi visualizzato nella schermata mostrerà __Azure PowerShell__. Si tratta dell'app da disinstallare. Se questo programma non è elencato, l'installazione è stata eseguita tramite PowerShellGet ed è necessario seguire la prossima serie di istruzioni.
 

@@ -9,25 +9,25 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: afa83a6258e57e961576b328e67fad634704dddf
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153906"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "63053359"
 ---
 # <a name="azure-stack-module-150"></a>Modulo di Azure Stack 1.5.0
 
-## <a name="requirements"></a>Requirements:
+## <a name="requirements"></a>Requisiti:
 La versione minima supportata di Azure Stack è 1808.
 
-Note: Se si usa una versione precedente, installare la versione 1.4.0
+Nota: se si usa una versione precedente, installare la versione 1.4.0
 
 ## <a name="known-issues"></a>Problemi noti:
 
 - New-AzsOffer non consente la creazione di un'offerta con stato pubblico. Il cmdlet Set-AzsOffer deve essere chiamato successivamente per modificare lo stato.
 - Non è possibile rimuovere un pool IP senza una ridistribuzione
 
-## <a name="install"></a>Installa
+## <a name="install"></a>Installazione
 ```
 # Remove previous versions of AzureStack modules
 Uninstall-Module -Name AzureStack -Force 
@@ -123,7 +123,7 @@ Versione di anteprima del modulo Amministratore della sottoscrizione di Azure St
 - Visualizzare informazioni sull'utilizzo e sulle prestazioni
 - Gestire il controllo degli accessi in base al ruolo
 
-### <a name="subscription"></a>Sottoscrizione
+### <a name="subscription"></a>Subscription
 Versione di anteprima del modulo Sottoscrizione di Azure Stack.  Questo modulo consente agli utenti di:
 - Creare, eliminare e aggiornare le sottoscrizioni
 

@@ -1,12 +1,12 @@
 - name: Azure PowerShell
   href: overview.md
-- name: Installa
+- name: Installazione
   items:
     - name: Eseguire l'installazione con PowerShellGet
       href: install-azurerm-ps.md
     - name: Eseguire l'installazione con il pacchetto MSI o l'Installazione guidata piattaforma Web
       href: other-install.md
-- name: Attività iniziali
+- name: Introduzione
   href: get-started-azureps.md
 - name: Cloud Shell
   href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
