@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
 ms.openlocfilehash: 1fbd24996da2fbc7d4e95c2a63f828aea6cb3145
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "65534933"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Modifiche di rilievo in Microsoft Azure PowerShell 6.0.0
@@ -340,7 +340,7 @@ $sas=Set-AzureKeyVaultManagedStorageSasDefinition -AccountName $sa.StorageAccoun
     - `Stop-AzureKeyVaultCertificateOperation`
     - `Update-AzureKeyVaultManagedStorageAccountKey`
 
-- Il cmdlet `IKeyVaultDataServiceClient` è stato aggiornato in modo che tutte le operazioni relative ai certificati restituiscano PSTypes invece di tipi SDK. Sono inclusi:
+- Il cmdlet `IKeyVaultDataServiceClient` è stato aggiornato in modo che tutte le operazioni relative ai certificati restituiscano PSTypes invece di tipi SDK. ad esempio:
     - `SetCertificateContacts`
     - `GetCertificateContacts`
     - `GetCertificate`

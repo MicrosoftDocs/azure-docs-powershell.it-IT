@@ -9,20 +9,20 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: b0e85bec82b9b7c876b2bbf337b603c8d68cf6a3
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153403"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "63053316"
 ---
 # <a name="azure-stack-module-160"></a>Modulo di Azure Stack 1.6.0
 
-## <a name="requirements"></a>Requirements:
+## <a name="requirements"></a>Requisiti:
 La versione minima supportata di Azure Stack è 1811.
 
-Note: Se si usa una versione precedente, installare la versione 1.6.0
+Nota: Se si usa una versione precedente, installare la versione 1.6.0
 
-## <a name="install"></a>Installa
+## <a name="install"></a>Installazione
 ```
 # Remove previous versions of AzureStack and AzureRM modules
 Uninstall-Module -Name AzureRM -Force

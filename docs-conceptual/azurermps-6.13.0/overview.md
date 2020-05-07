@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 12/20/2018
 ms.openlocfilehash: a5c5504aa4c2932582df9e4a40b4950d5f999cbd
-ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/16/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "75035847"
 ---
 # <a name="overview-of-azure-powershell"></a>Panoramica di Azure PowerShell
@@ -37,7 +37,7 @@ Se non si ha familiarità con PowerShell, potrebbe essere utile un'introduzione 
 * [Installazione di PowerShell](/powershell/scripting/install/installing-windows-powershell)
 * [Creazione di script con PowerShell](/powershell/scripting/powershell-scripting)
 
-È anche possibile guardare questo video: [PowerShell Basics: (Part 1) Getting Started with PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1).
+È inoltre possibile guardare questo video: [PowerShell Basics: (Part 1) Getting Started with PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1) (Nozioni di base su PowerShell: Introduzione a PowerShell, parte 1).
 
 ## <a name="build-your-skills-with-microsoft-learn"></a>Sviluppare le proprie competenze con Microsoft Learn
 
