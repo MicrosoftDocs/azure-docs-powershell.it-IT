@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
 ms.openlocfilehash: f8dc413a91876e53e62d25cc38ac3b3ef6afda8e
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "65534597"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-500"></a>Modifiche di rilievo in Microsoft Azure PowerShell 5.0.0
@@ -679,7 +679,7 @@ $queue = Get-AzureRmServiceBusQueue <parameters>
    
 ### <a name="type-topicattribute"></a>**Tipo TopicAttribute**
 - Le proprietà seguenti sono state contrassegnate come obsolete:
-    - Località
+    - Location
     - IsExpress
     - IsAnonymousAccessible
     - FilteringMessagesBeforePublishing
@@ -707,7 +707,7 @@ $topic = Get-AzureRmServiceBusTopic <parameters>
     - DeadLetteringOnFilterEvaluationExceptions
     - EntityAvailabilityStatus
     - IsReadOnly
-    - Località
+    - Location
    
 ```powershell-interactive
 # Old
