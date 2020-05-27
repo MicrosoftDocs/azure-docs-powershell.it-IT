@@ -2,18 +2,15 @@
 title: Gestire le sottoscrizioni di Azure con Azure PowerShell | Microsoft Docs
 description: Gestire le sottoscrizioni di Azure con Azure PowerShell
 keywords: Azure PowerShell, sottoscrizione
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 99a2d9c9c1d233a6468e904e322e8d846d7d78aa
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 921da316b1e8a57f0879c87820297de662b2cfd0
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534820"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83386732"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Gestire più sottoscrizioni di Azure
 

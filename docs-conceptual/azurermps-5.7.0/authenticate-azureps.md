@@ -1,18 +1,15 @@
 ---
 title: Accedere con Azure PowerShell
 description: Come eseguire l'accesso con Azure PowerShell come utente, come entità servizio o con le identità gestite per le risorse di Azure.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: f54e982cd65513de4f64634f535cd70a9ec7b8a3
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 44a34a3d7e7aaaade38a4aa0bb0a88394542976a
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534554"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387344"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Accedere con Azure PowerShell
 

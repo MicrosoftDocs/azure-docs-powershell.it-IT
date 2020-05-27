@@ -1,18 +1,15 @@
 ---
 title: Installare e configurare il modulo Gestione dei servizi di Azure PowerShell | Documenti di Microsoft
 description: Come installare e configurare Azure PowerShell per il primo uso.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/06/2017
-ms.openlocfilehash: a4911e72f687c07b31805c07fd23263a6b7f33b4
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 8a04684e644fedf12613341bec99ab3a27900d7e
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "75718798"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83384760"
 ---
 # <a name="installing-the-azure-powershell-service-management-module"></a>Installare il modulo Gestione dei servizi di Azure PowerShell
 

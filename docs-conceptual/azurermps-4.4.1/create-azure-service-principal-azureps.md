@@ -2,18 +2,15 @@
 title: Creare un'entità servizio di Azure con Azure PowerShell
 description: Informazioni su come creare un'entità servizio per un'app o un servizio con Azure PowerShell.
 keywords: Azure PowerShell, Azure Active Directory, Azure AD, AD, Controllo degli accessi in base al ruolo
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: a596e321d19cf157510418c150f51eb2532adb3c
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 8fc73b6268c01f9dbf76888e291843e035fae587
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65535099"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83386783"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Creare un'entità servizio di Azure con Azure PowerShell
 
@@ -117,7 +114,7 @@ Congratulazioni! È possibile usare queste credenziali per eseguire l'app. Sarà
 ## <a name="managing-roles"></a>Gestione dei ruoli
 
 > [!NOTE]
-> Il controllo di accesso in base al ruolo di Azure (Role-Based Access Control - RBAC) è un modello per la definizione e gestione dei ruoli per le entità utente e servizio. I ruoli dispongono di set di autorizzazioni associate a essi, che determinano le risorse che un'entità può leggere scrivere o gestire e a cui può accedere. Per altre informazioni sui ruoli e sul controllo degli accessi in base al ruolo, vedere [Controllo degli accessi in base al ruoli: ruoli predefiniti](/azure/active-directory/role-based-access-built-in-roles).
+> Il controllo di accesso in base al ruolo di Azure (Role-Based Access Control - RBAC) è un modello per la definizione e gestione dei ruoli per le entità utente e servizio. I ruoli dispongono di set di autorizzazioni associate a essi, che determinano le risorse che un'entità può leggere scrivere o gestire e a cui può accedere. Per altre informazioni sui ruoli e sul controllo degli accessi in base al ruolo, vedere [Controllo degli accessi in base al ruolo: ruoli predefiniti](/azure/active-directory/role-based-access-built-in-roles).
 
 Azure PowerShell fornisce i cmdlet seguenti per gestire le assegnazioni dei ruoli:
 

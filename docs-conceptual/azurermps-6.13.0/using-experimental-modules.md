@@ -1,18 +1,15 @@
 ---
 title: Uso dei moduli sperimentali di Azure PowerShell
 description: Informazioni sulla filosofia e sull'utilizzo dei moduli sperimentali di Azure PowerShell.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.openlocfilehash: 11847ca2fe09ebeb48f962eab6dac2be06bd8805
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 2c52dec39bdc656c7a2b17c547ec5f87ac659fa1
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534358"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387293"
 ---
 # <a name="use-experimental-azure-powershell-modules"></a>Usare i moduli sperimentali di Azure PowerShell
 

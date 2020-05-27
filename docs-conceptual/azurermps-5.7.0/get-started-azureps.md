@@ -1,18 +1,15 @@
 ---
 title: guida introduttiva ad Azure PowerShell
 description: ''
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/15/2017
-ms.openlocfilehash: fde36bd3b4e2d5780f74f7bc74267ff611116400
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 92739e830e932df3919f60a14f12f127d357f5dd
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "75722476"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387922"
 ---
 # <a name="get-started-with-azure-powershell"></a>guida introduttiva ad Azure PowerShell
 

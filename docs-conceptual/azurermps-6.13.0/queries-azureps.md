@@ -1,24 +1,21 @@
 ---
 title: Output delle query dei cmdlet di Azure PowerShell
 description: Come eseguire una query delle risorse in Azure e formattare i risultati.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.openlocfilehash: b6f0b01fa38ae4484fe9706e739b12b229b57661
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 0900b060bc83392c538b0a5d1a8949c51925d66a
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534509"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387259"
 ---
 # <a name="query-output-of-azure-powershell-cmdlets"></a>Output delle query dei cmdlet di Azure PowerShell
 
 [!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
-Usando i cmdlet incorporati è possibile eseguire una query in PowerShell. In PowerShell, i nomi dei cmdlet assumono la forma di **_verbo-sostantivo_** . I cmdlet che usano il verbo **_Get_** (ottenere) sono cmdlet di query. I sostantivi dei cmdlet sono i tipi di risorse di Azure che vengono ignorati per i verbi di cmdlet.
+Usando i cmdlet incorporati è possibile eseguire una query in PowerShell. In PowerShell, i nomi dei cmdlet assumono la forma di **_verbo-sostantivo_**. I cmdlet che usano il verbo **_Get_**(ottenere) sono cmdlet di query. I sostantivi dei cmdlet sono i tipi di risorse di Azure che vengono ignorati per i verbi di cmdlet.
 
 ## <a name="select-simple-properties"></a>Selezionare proprietà semplici
 

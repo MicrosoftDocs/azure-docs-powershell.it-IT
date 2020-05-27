@@ -1,18 +1,15 @@
 ---
 title: Usare le entità servizio di Azure con Azure PowerShell
 description: Informazioni su come creare e usare entità servizio con Azure PowerShell.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: 4c47d2bac2c63f13ac0ebbccda3e2eed12cd658f
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 2da3d55c8afce97722b68d0753dd2bcac38b00d9
+ms.sourcegitcommit: 80c3188500fd174f5c5484302360ad87ace0fb9b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81740015"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83554575"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Creare un'entità servizio di Azure con Azure PowerShell
 
@@ -45,8 +42,7 @@ L'oggetto restituito contiene il membro `Secret`, ovvero un oggetto `SecureStrin
 Il codice seguente consentirà di esportare il segreto:
 
 ```azurepowershell-interactive
-$BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($sp.Secret)
-$UnsecureSecret = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
+$UnsecureSecret = ConvertFrom-SecureString -SecureString $sp.Secret -AsPlainText
 ```
 
 Per le password definite dall'utente, l'argomento `-PasswordCredential` accetta oggetti `Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential`. Questi oggetti devono avere valori validi di `StartDate` e `EndDate` e accettano `Password` in testo non crittografato. Quando si crea una password, assicurarsi di seguire le [regole e limitazioni per le password di Azure Active Directory](/azure/active-directory/active-directory-passwords-policy). Non usare password vulnerabili o già usate in precedenza.

@@ -1,18 +1,15 @@
 ---
 title: Modifiche di rilievo in Microsoft Azure PowerShell 6.0.0
 description: Questa guida alla migrazione contiene un elenco di modifiche di rilievo apportate ad Azure PowerShell nella versione 6.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 1fbd24996da2fbc7d4e95c2a63f828aea6cb3145
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 629cbb31f086c569d2b8961497d0255663602f54
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534933"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387208"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Modifiche di rilievo in Microsoft Azure PowerShell 6.0.0
 

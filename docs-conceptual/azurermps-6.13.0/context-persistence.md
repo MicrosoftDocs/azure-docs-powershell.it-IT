@@ -1,18 +1,15 @@
 ---
 title: Conservare le credenziali utente tra le sessioni di PowerShell
 description: Informazioni su come riutilizzare le credenziali di Azure e altre informazioni in più sessioni di PowerShell.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
-ms.openlocfilehash: 1e5c89a43886343bfc0a1affb5133a7cb6af0bcc
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 946920c22d7f6faeae8d3192e9f37a276a34d11f
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65854156"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83388024"
 ---
 # <a name="persist-user-credentials-across-powershell-sessions"></a>Conservare le credenziali utente tra le sessioni di PowerShell
 

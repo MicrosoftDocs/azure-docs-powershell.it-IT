@@ -1,18 +1,15 @@
 ---
 title: Contesti e credenziali di accesso di Azure
 description: Informazioni su come riutilizzare le credenziali di Azure e altre informazioni in più sessioni di PowerShell.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/21/2019
-ms.openlocfilehash: f14583e7c24d0355d778607bab52c81ae22598b8
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: c79d1d634d5b76b2c6ab6b6ab309c2d49f9f7678
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81740032"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83386086"
 ---
 # <a name="azure-powershell-context-objects"></a>Oggetti contesto di Azure PowerShell
 
