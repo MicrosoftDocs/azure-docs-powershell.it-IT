@@ -2,17 +2,14 @@
 title: Introduzione del modulo Az di Azure PowerShell
 description: Introduzione del nuovo modulo Az di Azure PowerShell, in sostituzione del modulo AzureRM.
 ms.date: 05/10/2019
-author: sptramer
-ms.author: sttramer
-ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 21d41b6e14d1b39a78e40daee74b80de3a80c2a0
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: f593f89c99d3605f9bcd33df90b3977c72daa75f
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "68861275"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83386987"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Introduzione del nuovo modulo Az di Azure PowerShell
 
