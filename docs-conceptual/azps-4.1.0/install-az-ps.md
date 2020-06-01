@@ -4,12 +4,12 @@ description: Come installare Azure PowerShell con PowerShellGet
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/14/2020
-ms.openlocfilehash: 9cc681a56270c0894348a0eb6789ded3fa294f54
-ms.sourcegitcommit: 80c3188500fd174f5c5484302360ad87ace0fb9b
+ms.openlocfilehash: d3bed5a96af6bed16cda971a1a40b8416a1b115b
+ms.sourcegitcommit: 10ec909100a70acec94d42f6084e7bf0342c6854
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 05/19/2020
-ms.locfileid: "83554592"
+ms.locfileid: "83630759"
 ---
 # <a name="install-azure-powershell"></a>Installare Azure PowerShell
 
@@ -22,7 +22,7 @@ Azure PowerShell è disponibile anche in Azure [Cloud Shell](/azure/cloud-shell/
 > [!NOTE]
 > PowerShell 7.x e versioni successive è la versione consigliata di PowerShell per l'uso con Azure PowerShell in tutte le piattaforme.
 
-Azure PowerShell funziona con PowerShell 6.2.4 e versioni successive in tutte le piattaforme. È supportato anche con PowerShell 5.1 in Windows. È consigliabile installare la [versione più recente di PowerShell](/powershell/scripting/install/installing-powershell) disponibile per il sistema operativo in uso. Azure PowerShell non prevede requisiti aggiuntivi quando viene eseguito in PowerShell 6.2.4 e versioni successive.
+Azure PowerShell funziona con PowerShell 6.2.4 e versioni successive in tutte le piattaforme. È supportato anche con PowerShell 5.1 in Windows. Installare la [versione più recente di PowerShell](/powershell/scripting/install/installing-powershell) disponibile per il sistema operativo in uso. Azure PowerShell non prevede requisiti aggiuntivi quando viene eseguito in PowerShell 6.2.4 e versioni successive.
 
 Per controllare la versione di PowerShell, eseguire il comando:
 
@@ -35,7 +35,7 @@ Per usare Azure PowerShell in PowerShell 5.1 in Windows:
 1. Eseguire l'aggiornamento a [Windows PowerShell 5.1](/powershell/scripting/install/installing-windows-powershell#upgrading-existing-windows-powershell).
    Se si usa Windows 10 versione 1607 o successiva, PowerShell 5.1 è già installato.
 2. Installare [.NET Framework 4.7.2 o versioni successive](/dotnet/framework/install).
-3. Assicurarsi di avere la versione più recente di PowerShellGet. Avviare una sessione di PowerShell 5.1 con **Esegui come amministratore** ed eseguire `Install-Module -Name PowerShellGet -AllowClobber -Force`.
+3. Assicurarsi di avere la versione più recente di PowerShellGet. Eseguire `Install-Module -Name PowerShellGet -Force`.
 
 ## <a name="install-the-azure-powershell-module"></a>Installare il modulo Azure PowerShell
 
@@ -45,7 +45,7 @@ Per usare Azure PowerShell in PowerShell 5.1 in Windows:
 Il metodo di installazione preferito prevede l'uso dei cmdlet PowerShellGet. Installare il modulo Az solo per l'utente corrente. Questo è l'ambito di installazione consigliato. Questo metodo è applicabile anche alle piattaforme Windows, macOS e Linux. Eseguire il comando seguente da una sessione di PowerShell:
 
 ```powershell-interactive
-if ($PSVersionTable.PSEdition -eq 'Desktop' -and (Get-Module -Name AzureRM -ListAvailable)) {
+if (Get-Module -Name AzureRM -ListAvailable) {
     Write-Warning -Message 'Az module not installed. Having both the AzureRM and Az modules installed at the same time is not supported.'
 } else {
     Install-Module -Name Az -AllowClobber -Scope CurrentUser
@@ -69,7 +69,7 @@ Rispondere `Yes` o `Yes to All` per continuare l'installazione.
 Per installare il modulo per tutti gli utenti di un sistema, sono necessari privilegi elevati. Per avviare la sessione di PowerShell, usare **Esegui come amministratore** in Windows oppure il comando `sudo` in macOS o Linux:
 
 ```powershell-interactive
-if ($PSVersionTable.PSEdition -eq 'Desktop' -and (Get-Module -Name AzureRM -ListAvailable)) {
+if (Get-Module -Name AzureRM -ListAvailable) {
     Write-Warning -Message 'Az module not installed. Having both the AzureRM and Az modules installed at the same time is not supported.'
 } else {
     Install-Module -Name Az -AllowClobber -Scope AllUsers
@@ -134,7 +134,7 @@ Per aggiornare qualsiasi modulo di PowerShell, è necessario usare lo stesso met
 I cmdlet PowerShellGet non possono aggiornare moduli installati da un pacchetto MSI. I pacchetti MSI non consentono di aggiornare moduli installati con PowerShellGet. Se si verificano problemi durante l'aggiornamento con PowershellGet, è necessario procedere alla**reinstallazione** invece che al semplice **aggiornamento**. La reinstallazione è un'operazione analoga all'installazione, ma richiede l'aggiunta del parametro `-Force`:
 
 ```powershell
-if ($PSVersionTable.PSEdition -eq 'Desktop' -and (Get-Module -Name AzureRM -ListAvailable)) {
+if (Get-Module -Name AzureRM -ListAvailable) {
     Write-Warning -Message 'Az module not installed. Having both the AzureRM and Az modules installed at the same time is not supported.'
 } else {
     Install-Module -Name Az -AllowClobber -Force
@@ -162,18 +162,6 @@ Se sono installate più versioni del modulo, il modulo viene caricato automatica
 Install-Module -Name Az -RequiredVersion 3.6.1
 # Load Az version 3.6.1
 Import-Module -Name Az -RequiredVersion 3.6.1
-```
-
-## <a name="use-multiple-repositories-with-powershellget"></a>Usare più repository con PowerShellGet
-
-Il parametro **Repository** è obbligatorio se sono stati aggiunti altri repository a PowerShellGet nel sistema e il modulo Az è presente in più repository.
-
-```powershell-interactive
-if ($PSVersionTable.PSEdition -eq 'Desktop' -and (Get-Module -Name AzureRM -ListAvailable)) {
-    Write-Warning -Message 'Az module not installed. Having both the AzureRM and Az modules installed at the same time is not supported.'
-} else {
-    Install-Module -Name Az -Repository PSGallery -AllowClobber -Force
-}
 ```
 
 ## <a name="provide-feedback"></a>Fornire commenti e suggerimenti
