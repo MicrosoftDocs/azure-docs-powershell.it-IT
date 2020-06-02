@@ -3,13 +3,13 @@ title: Installare Azure PowerShell con un file MSI
 description: Come installare Azure PowerShell senza PowerShellGet usando un programma di installazione MSI
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 10/22/2019
-ms.openlocfilehash: 1bae6879dcf3cd56f9a8d6400bcd516e0cbf6a19
-ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
+ms.date: 03/10/2020
+ms.openlocfilehash: 07abfc9a4277c0d658830c397ad5c1abfbe95abe
+ms.sourcegitcommit: cef87acc9f2a0d296bef74f526afd2e067e8146b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84121656"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84299214"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>Installare Azure PowerShell in Windows con un programma di installazione MSI
 
@@ -30,7 +30,7 @@ Per usare Azure PowerShell in PowerShell 5.1, è necessario:
 
 ## <a name="install-or-update-on-windows-using-the-msi-package"></a>Eseguire l'installazione o l'aggiornamento in Windows tramite il pacchetto MSI
 
-Il pacchetto MSI per Azure PowerShell è disponibile su [GitHub](https://github.com/Azure/azure-powershell/releases/tag/v1.8.0-April2019). Se le versioni precedenti dei moduli di Azure PowerShell sono state installate con il pacchetto MSI, il programma di installazione le rimuove automaticamente. Il pacchetto MSI installa i moduli in `${env:ProgramFiles}\WindowsPowerShell\Modules`.
+Il pacchetto MSI per Azure PowerShell è disponibile su [GitHub](https://github.com/Azure/azure-powershell/releases/latest). Se le versioni precedenti dei moduli di Azure PowerShell sono state installate con il pacchetto MSI, il programma di installazione le rimuove automaticamente. Il pacchetto MSI installa i moduli in `${env:ProgramFiles}\WindowsPowerShell\Modules`.
 
 Per iniziare a usare Azure PowerShell, accedere con le credenziali di Azure.
 

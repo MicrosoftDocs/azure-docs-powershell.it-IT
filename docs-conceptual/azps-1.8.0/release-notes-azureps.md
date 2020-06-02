@@ -4,13 +4,14 @@ description: Informazioni su tutti gli aggiornamenti più recenti per i moduli d
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/30/2019
-ms.openlocfilehash: 287e9e1f066d0768e7f572ca7f5f2ee2b78931d9
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: 34b21292ccc47bb53b6609cd637ef18338a45cd3
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83386970"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84121466"
 ---
+# <a name="azure-powershell-release-notes"></a>Note sulla versione di Azure PowerShell
 ## <a name="180---april-2019"></a>1.8.0 - Aprile 2019
 ### <a name="highlights-since-the-last-major-release"></a>Novità rispetto all'ultima versione principale
 * Disponibilità generale del modulo `Az`
@@ -48,7 +49,7 @@ ms.locfileid: "83386970"
 * Aggiornamento del testo della guida dell'endpoint per indicare che è necessario creare risorse prima di usare i cmdlet di sottoscrizione per eventi di creazione/aggiornamento.
 
 #### <a name="azeventhub"></a>Az.EventHub
-* Aggiunta di nuovi cmdlet per NetworkRuleSet dello spazio dei nomi 
+* Aggiunta di nuovi cmdlet per NetworkRuleSet dello spazio dei nomi
 
 #### <a name="azhdinsight"></a>Az.HDInsight
 * Cmdlet aggiornati da nomi plurali a nomi singolari e nomi plurali deprecati.
@@ -138,7 +139,7 @@ ms.locfileid: "83386970"
 
 #### <a name="azcompute"></a>Az.Compute
 * Aggiunta del parametro HyperVGeneration a New-AzDiskConfig e New-AzSnapshotConfig
-* Creazione di VM consentita con l'immagine della raccolta di altri tenant. 
+* Creazione di VM consentita con l'immagine della raccolta di altri tenant.
 
 #### <a name="azcontainerinstance"></a>Az.ContainerInstance
 * Correzione del problema del parametro -Command di New-AzContainerGroup che ha aggiunto un argomento finale vuoto
@@ -220,7 +221,7 @@ ms.locfileid: "83386970"
     - New-AzStorageAccountManagementPolicyRule
 
 #### <a name="azwebsites"></a>Az.Websites
-* Correzione del bug del modello ARM che interrompe la clonazione di tutti gli slot con "New-AzWebApp -IncludeSourceWebAppSlots" 
+* Correzione del bug del modello ARM che interrompe la clonazione di tutti gli slot con "New-AzWebApp -IncludeSourceWebAppSlots"
 
 ## <a name="150---march-2019"></a>1.5.0 - Marzo 2019
 #### <a name="azaccounts"></a>Az.Accounts
@@ -289,7 +290,7 @@ ms.locfileid: "83386970"
 * Aggiunta di cmdlet per l'enumerazione e il ripristino di elementi ADL eliminati
 
 #### <a name="azeventhub"></a>Az.EventHub
-* Aggiunta della nuova proprietà booleana SkipEmptyArchives per ignorare gli archivi vuoti nella classe CaptureDescription di Eventhub 
+* Aggiunta della nuova proprietà booleana SkipEmptyArchives per ignorare gli archivi vuoti nella classe CaptureDescription di Eventhub
 
 #### <a name="azkeyvault"></a>Az.KeyVault
 * Correzione dell'assegnazione di tag in Set-AzKeyVaultSecret
@@ -317,8 +318,8 @@ ms.locfileid: "83386970"
 
 #### <a name="azoperationalinsights"></a>Az.OperationalInsights
 * Supporto aggiuntivo per la creazione e il recupero di origini dati di ApplicationInsights.
-    - Aggiunta del nuovo tipo 'ApplicationInsights' per supportare il recupero di tutte o di specifiche origini dati di ApplicationInsights per una specifica area di lavoro. 
-    - Aggiunta del cmdlet New-AzOperationalInsightsApplicationInsightsDataSource per la creazione di un'origine dati in base a specifici parametri della risorsa Application-Insights: ID sottoscrizione, nome del gruppo di risorse e nome. 
+    - Aggiunta del nuovo tipo 'ApplicationInsights' per supportare il recupero di tutte o di specifiche origini dati di ApplicationInsights per una specifica area di lavoro.
+    - Aggiunta del cmdlet New-AzOperationalInsightsApplicationInsightsDataSource per la creazione di un'origine dati in base a specifici parametri della risorsa Application-Insights: ID sottoscrizione, nome del gruppo di risorse e nome.
 
 #### <a name="azresources"></a>Az.Resources
 * correzione del problema https://github.com/Azure/azure-powershell/issues/8166
@@ -349,9 +350,9 @@ Disponibilità generale del modulo Az.AnalysisServices.
 Disponibilità generale del modulo Az.RecoveryServices.
 
 #### <a name="azresources"></a>Az.Resources
-* Correzione dei contrassegni per i gruppi di risorse 
+* Correzione dei contrassegni per i gruppi di risorse
     - Altre informazioni sono disponibili qui: https://github.com/Azure/azure-powershell/issues/8166
-* Correzione del problema in cui `Get-AzureRmRoleAssignment` non rispetta -ErrorAction 
+* Correzione del problema in cui `Get-AzureRmRoleAssignment` non rispetta -ErrorAction
     - Altre informazioni sono disponibili qui: https://github.com/Azure/azure-powershell/issues/8235
 
 #### <a name="azsql"></a>Az.Sql
@@ -656,7 +657,7 @@ Aggiunta del supporto per la configurazione di RewriteRuleSets nel gateway appli
 
 ### <a name="azwebsites"></a>Az.Websites
 
-* Set-AzureRmWebApp e Set-AzureRmWebAppSlot 
+* Set-AzureRmWebApp e Set-AzureRmWebAppSlot
     - È stato aggiunto il nuovo parametro (-AzureStoragePath) per specificare i percorsi di Archiviazione di Azure da montare nelle app contenitore di Windows e Linux. Usare l'output del nuovo cmdlet New-AzureRmWebAppAzureStoragePath come parametro per impostare i percorsi di Archiviazione di Azure.
 
 ## <a name="061---november-2018"></a>0.6.1 - Novembre 2018
@@ -684,7 +685,7 @@ Aggiunta del supporto per la configurazione di RewriteRuleSets nel gateway appli
 ### <a name="aznetwork"></a>Az.Network
 * Aggiunta dei cmdlet New-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayCustomError, Get-AzureRmApplicationGatewayCustomError, Set-AzureRmApplicationGatewayCustomError, Remove-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayHttpListenerCustomError, Get-AzureRmApplicationGatewayHttpListenerCustomError, Set-AzureRmApplicationGatewayHttpListenerCustomError, Remove-AzureRmApplicationGatewayHttpListenerCustomError
 * Aggiunta di ICMP nei protocolli di rete di AzureFirewall supportati
-* Aggiornamento del cmdlet Test-AzureRmNetworkWatcherConnectivity e aggiunta della convalida su ID, indirizzo e porta di destinazione. 
+* Aggiornamento del cmdlet Test-AzureRmNetworkWatcherConnectivity e aggiunta della convalida su ID, indirizzo e porta di destinazione.
 * Risoluzione dei problemi relativi all'utilizzo della memoria nel mapping di VirtualNetwork
 
 ### <a name="azrecoveryservicesbackup"></a>Az.RecoveryServices.Backup
@@ -816,7 +817,7 @@ Aggiunta del supporto per la configurazione di RewriteRuleSets nel gateway appli
     - Start-AzureStorageFileCopy
 * Supporto del recupero dell'utilizzo delle risorse di archiviazione per una località specifica e aggiunta di un messaggio di avviso che informa che il recupero dell'utilizzo delle risorse di archiviazione a livello globale è obsoleto
     - Get-AzStorageUsage
-    
+
 #### <a name="azcognitiveservices"></a>Az.CognitiveServices
 * Supporto di Get-AzCognitiveServicesAccountSkus senza un account esistente.
 

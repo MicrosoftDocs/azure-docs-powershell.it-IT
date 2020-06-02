@@ -4,12 +4,12 @@ description: Informazioni su tutti gli aggiornamenti più recenti per i moduli d
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: c02cfaa7f7f39393f21cec31c5115f009381b19c
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 9dd733865ba8235eed6dcef4637a63ad93999338
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81446054"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84121922"
 ---
 # <a name="azure-powershell-release-notes"></a>Note sulla versione di Azure PowerShell
 ## <a name="0100-preview---april-2020"></a>0.10.0-preview - Aprile 2020
@@ -29,7 +29,7 @@ ms.locfileid: "81446054"
   - Az.Websites
 * Sono stati introdotti tre nuovi moduli di PowerShell per az compatibili con l'hub di Azure Stack, ovvero Az.Databox, Az.IotHub e Az.EventHub
 * I comandi rimangono relativamente invariati, con modifiche minime come la sostituzione di AzureRM con Az
-* Il collegamento aggiornato alla documentazione di PowerShell per l'hub di Azure Stack è reperibile [qui](aka.ms/InstallASHPowerShell)
+* Il collegamento aggiornato alla documentazione di PowerShell per l'hub di Azure Stack è reperibile [qui](https://aka.ms/InstallASHPowerShell)
 
 #### <a name="azaccounts"></a>Az.Accounts
 * Aggiornamento da ADAL a MSAL
@@ -40,7 +40,7 @@ ms.locfileid: "81446054"
 * Correzione dell'eccezione NullReferenceException generata da 'Get-AzTenant'/'Get-AzDefault'/'Set-AzDefault' in caso di mancato accesso [#10292]
 
 #### <a name="azcompute"></a>Az.Compute
-* Aggiunta dei parametri seguenti al cmdlet 'New-AzDiskConfig': 
+* Aggiunta dei parametri seguenti al cmdlet 'New-AzDiskConfig':
     - DiskIOPSReadOnly, DiskMBpsReadOnly, MaxSharesCount, GalleryImageReference
 * Proprietà Encryption consentita per il parametro Target del cmdlet 'New-AzGalleryImageVersion'.
 * Correzione del problema tempDisk per i cmdlet 'Set-AzVmss' -Reimage e 'Invoke-AzVMReimage'. [#11354]
