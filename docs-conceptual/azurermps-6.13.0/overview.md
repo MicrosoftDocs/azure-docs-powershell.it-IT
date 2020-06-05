@@ -4,12 +4,12 @@ description: Panoramica di Azure PowerShell con collegamenti a installazione e c
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/20/2018
-ms.openlocfilehash: 91607252c33deb05efebb2d02608084a4b9c7b35
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: 9d1b9c35829facc34cd7c252cb450fcce18685b2
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83385559"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84122233"
 ---
 # <a name="overview-of-azure-powershell"></a>Panoramica di Azure PowerShell
 
@@ -21,17 +21,17 @@ Usare [Cloud Shell](/azure/cloud-shell/overview) per eseguire Azure PowerShell n
 
 Gli esempi seguenti aiutano a eseguire scenari comuni con Azure PowerShell:
 
-* [Macchine virtuali Linux](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=/powershell/azure/toc.json)
-* [Macchine virtuali Windows](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=/powershell/azure/toc.json)
-* [App Web](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
-* [Database SQL](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
+- [Macchine virtuali Linux](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=/powershell/azure/toc.json)
+- [Macchine virtuali Windows](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=/powershell/azure/toc.json)
+- [App Web](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
+- [Database SQL](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
 
 ## <a name="learn-powershell-basics"></a>Nozioni di base di PowerShell
 
-Se non si ha familiarità con PowerShell, potrebbe essere utile un'introduzione a PowerShell.
+Se non si ha familiarità con PowerShell, un'introduzione a PowerShell può risultare utile.
 
-* [Installazione di PowerShell](/powershell/scripting/install/installing-windows-powershell)
-* [Creazione di script con PowerShell](/powershell/scripting/powershell-scripting)
+- [Installazione di PowerShell](/powershell/scripting/install/installing-powershell)
+- [Risorse di formazione per PowerShell](/powershell/scripting/learn/more-powershell-learning)
 
 È anche possibile guardare questo video: [PowerShell Basics: (Part 1) Getting Started with PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1).
 
@@ -42,7 +42,7 @@ Se non si ha familiarità con PowerShell, potrebbe essere utile un'introduzione 
 
 ## <a name="other-azure-powershell-modules"></a>Altri moduli di Azure PowerShell
 
-* [Azure Active Directory](/powershell/azure/active-directory/)
-* [Azure Information Protection](/powershell/azure/aip/)
-* [Azure Service Fabric](/powershell/azure/service-fabric/)
-* [Azure ElasticDB](/powershell/azure/elasticdbjobs/)
+- [Azure Active Directory](/powershell/azure/active-directory/)
+- [Azure Information Protection](/powershell/azure/aip/)
+- [Azure Service Fabric](/powershell/azure/service-fabric/)
+- [Azure ElasticDB](/powershell/azure/elasticdbjobs/)

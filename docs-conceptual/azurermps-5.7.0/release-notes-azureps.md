@@ -1,18 +1,18 @@
 ---
-title: Log delle modifiche di Azure PowerShell | Microsoft Docs
+title: Log delle modifiche di Azure PowerShell
 description: Questa è una cronologia delle modifiche apportate ad Azure PowerShell nella versione più recente.
 ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
-ms.openlocfilehash: 795aa938ec179bb6d845774cf25778bd2b7c1442
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: cf8d1fc76feb07e075339255de63e09f59187dc6
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387757"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84122062"
 ---
-# <a name="release-notes"></a>Note sulla versione
+# <a name="azure-powershell-release-notes"></a>Note sulla versione di Azure PowerShell
 
 [!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
@@ -20,7 +20,7 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
 
 ---
 
-# <a name="azure-powershell-570"></a>Azure PowerShell 5.7.0
+## <a name="azure-powershell-570"></a>Azure PowerShell 5.7.0
 
 Programma di installazione di Azure PowerShell 5.7.0: [collegamento](https://github.com/Azure/azure-powershell/releases/download/v5.7.0-April2018/azure-powershell.5.7.0.msi)
 
@@ -38,7 +38,7 @@ Per eseguire l'aggiornamento da una versione precedente di `AzureRM`, usare ques
 Update-Module -Name AzureRM
 ```
 
-## <a name="changes-since-last-release"></a>Modifiche apportate dall'ultima versione
+### <a name="changes-since-last-release"></a>Modifiche apportate dall'ultima versione
 
 #### <a name="general"></a>Generale
 * Aggiornamento alla versione più recente del runtime del client di Azure
