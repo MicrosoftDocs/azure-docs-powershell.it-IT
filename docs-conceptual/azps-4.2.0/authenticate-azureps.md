@@ -3,19 +3,19 @@ title: Accedere con Azure PowerShell
 description: Come eseguire l'accesso con Azure PowerShell come utente, come entità servizio o con le identità gestite per le risorse di Azure.
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 06/18/2020
-ms.openlocfilehash: f82a9e373806f2f071ae59f6aee7e0a0bd4ea13d
-ms.sourcegitcommit: 5523170e571fbd1dc93bd0fa4223aba3b324d3b0
+ms.date: 7/7/2020
+ms.openlocfilehash: 7ac723202ca9e81c8ef4cba5e844d46b98ba4b67
+ms.sourcegitcommit: 7b368a9be1cea2ac4e7d269e1a51529271269a42
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85363332"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86098807"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Accedere con Azure PowerShell
 
 Azure PowerShell supporta diversi metodi di autenticazione. Il modo più semplice per iniziare è con [Azure Cloud Shell](/azure/cloud-shell/overview), che esegue automaticamente l'accesso. Con un'installazione locale è possibile accedere in modo interattivo tramite il browser. Quando si scrivono script per l'automazione, l'approccio consigliato è quello di usare un'[entità servizio](create-azure-service-principal-azureps.md) con le autorizzazioni necessarie. Quando si limitano il più possibile le autorizzazioni di accesso per il proprio caso d'uso, si contribuisce a proteggere le risorse di Azure.
 
-Dopo l'accesso, i comandi vengono eseguiti sulla sottoscrizione predefinita. Per modificare la sottoscrizione attiva per una sessione, usare il cmdlet [Set-AzContext](/powershell/module/az.accounts/set-azcontext). Per modificare la sottoscrizione predefinita usata per l'accesso con Azure PowerShell, usare [Set-AzDefault](/powershell/module/az.accounts/set-azdefault).
+Inizialmente viene effettuato l'eccesso alla prima sottoscrizione restituita da Azure, se si ha accesso a più sottoscrizioni. Per impostazione predefinita, i comandi vengono eseguiti su questa sottoscrizione. Per modificare la sottoscrizione attiva per una sessione, usare il cmdlet [Set-AzContext](/powershell/module/az.accounts/set-azcontext). Per cambiare la sottoscrizione attiva e renderla permanente tra sessioni nello stesso sistema, usare il cmdlet [Select-AzContext](/powershell/module/az.accounts/select-azcontext).
 
 > [!IMPORTANT]
 > Le credenziali vengono condivise tra più sessioni di PowerShell, purché si rimanga connessi.
