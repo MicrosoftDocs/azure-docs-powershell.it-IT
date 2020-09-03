@@ -16,15 +16,15 @@ metadata:
   ms.technology: azure-powershell
   ms.topic: tutorial
   clicktale: true
-  ms.openlocfilehash: d161f0467c2371ce004a895eb12ebd8d257399a5
-  ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+  ms.openlocfilehash: a1fccfce668c6730f0b01487fa727658c1b8590f
+  ms.sourcegitcommit: c10563f2c4753ee6e1481e52768b05d19c812b8c
   ms.translationtype: HT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 05/05/2020
-  ms.locfileid: "67863876"
+  ms.lasthandoff: 08/29/2020
+  ms.locfileid: "89098895"
 items:
 - durationInMinutes: 1
-  content: "\n[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]\n\nIn questa esercitazione si apprenderanno tutti i passaggi necessari per la configurazione di una macchina virtuale con Azure PowerShell. L'esercitazione illustra anche le query di output, il riutilizzo delle risorse di Azure e la pulizia delle risorse.\n\nQuesta esercitazione può essere completata con l'esperienza interattiva disponibile tramite Azure Cloud Shell oppure è possibile [installare Azure PowerShell](install-azurerm-ps.md) in locale.\n\nUsare __CTRL+MAIUSC+V__ (__CMD+MAIUSC+V__ in macOS) per incollare il testo dell'esercitazione in Azure Cloud Shell."
+  content: "\n[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]\n\nIn questa esercitazione si apprenderanno tutti i passaggi necessari per la configurazione di una macchina virtuale con Azure PowerShell. L'esercitazione illustra anche le query di output, il riutilizzo delle risorse di Azure e la pulizia delle risorse.\n\nQuesta esercitazione può essere completata con l'esperienza interattiva disponibile tramite Azure Cloud Shell oppure è possibile [installare Azure PowerShell](install-azurerm-ps.md) in locale.\n\nUsare __CTRL+MAIUSC+V__ (__CMD+MAIUSC+V__ in macOS) per incollare il testo dell'esercitazione in Azure Cloud Shell."
 - durationInMinutes: 1
   title: Accesso
   content: >-
