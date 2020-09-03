@@ -10,7 +10,7 @@ ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 09/01/2020
-ms.locfileid: "89239622"
+ms.locfileid: "89240302"
 ---
 # <a name="manage-azure-resources-with-invoke-azrestmethod"></a>Gestire le risorse di Azure con Invoke-AzRestMethod
 

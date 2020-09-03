@@ -4,16 +4,17 @@ description: Come eseguire una disinstallazione completa di Azure PowerShell
 ms.date: 06/10/2019
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 7bd53a9bceaee8ce50a62b3e99a861229c50bc22
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 58d861f09eef04638cfa7e784ef0e28e9f4751d4
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387582"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244263"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Disinstallare il modulo Azure PowerShell
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 Questo articolo spiega come disinstallare una versione precedente di Azure PowerShell o come rimuoverla completamente dal sistema. Se si è deciso di disinstallare completamente Azure PowerShell, inviare commenti e suggerimenti tramite il cmdlet [Send-Feedback](/powershell/module/azurerm.profile/send-feedback).
 Se si rileva un bug, [creare un problema GitHub](https://github.com/azure/azure-powershell/issues).
@@ -62,9 +63,9 @@ function Uninstall-AllModules {
 
     [switch]$WhatIf
   )
-  
+
   $AllModules = @()
-  
+
   'Creating list of dependencies...'
   $target = Find-Module $TargetModule -RequiredVersion $version
   $target.Dependencies | ForEach-Object {

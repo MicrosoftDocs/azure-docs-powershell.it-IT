@@ -8,12 +8,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: 55f19ac5e6767df1312e0b531184e8621b60a011
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 4b72bbd1bda93767251e0ba3d488f798575d9115
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "67038194"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244314"
 ---
 # <a name="azurerm-module-250"></a>Modulo AzureRM 2.5.0
 
@@ -71,7 +72,7 @@ Versione di anteprima del modulo amministratore di Backup che consente agli ammi
 - Eseguire backup
 - Elencare e ripristinare i backup completati
 
-### <a name="commerce"></a>E-commerce
+### <a name="commerce"></a>Commercio
 Versione di anteprima del modulo amministratore E-commerce di Azure Stack che consente di visualizzare l'aggregazione dell'utilizzo dei dati nel sistema Azure Stack.
 
 ### <a name="compute"></a>Calcolo
@@ -87,7 +88,7 @@ Versione di anteprima del modulo amministratore Infrastruttura di Azure Stack ch
 - Creare nuovi pool IP
 
 
-### <a name="gallery"></a>Gallery
+### <a name="gallery"></a>Raccolta
 Versione di anteprima del modulo amministratore Raccolta di Azure Stack che fornisce le funzionalità per la gestione degli elementi della raccolta in Azure Stack Marketplace.
 
 ### <a name="infrastructure-insights"></a>Informazioni dettagliate sull'infrastruttura
@@ -119,7 +120,7 @@ Versione di anteprima del modulo Amministratore della sottoscrizione di Azure St
 - Visualizzare informazioni sull'utilizzo e sulle prestazioni
 - Gestire il controllo degli accessi in base al ruolo
 
-### <a name="subscription"></a>Subscription
+### <a name="subscription"></a>Sottoscrizione
 Versione di anteprima del modulo Sottoscrizione di Azure Stack.  Questo modulo consente agli utenti di:
 - Creare, eliminare e aggiornare le sottoscrizioni
 

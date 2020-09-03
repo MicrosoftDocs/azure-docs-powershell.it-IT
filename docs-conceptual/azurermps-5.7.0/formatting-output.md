@@ -4,16 +4,17 @@ description: Come formattare l'output dei cmdlet per Azure PowerShell.
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/07/2018
-ms.openlocfilehash: 9f35bb95d56c6c0fc070d6b291fbb95d369c789b
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 6333546ec0d57b6dedab6e26721dfab459a0fe44
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83384985"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89243821"
 ---
 # <a name="format-azurepowershell-cmdlet-output"></a>Formattare l'output dei cmdlet di Azure PowerShell
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 Per impostazione predefinita, ogni cmdlet di Azure PowerShell genera un output con formattazione predefinita, per semplificarne la lettura.  PowerShell offre inoltre la flessibilità necessaria per modificare l'output o convertire l'output del cmdlet in un formato diverso con i cmdlet seguenti:
 
