@@ -4,18 +4,19 @@ description: Come installare Azure PowerShell senza PowerShellGet usando un prog
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/16/2018
-ms.openlocfilehash: e1d8877c185b4537c476128e279eda563f2575d1
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 41edefe96ecebf0a7276cdc3b4510acd7e8098f4
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83385865"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89241596"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>Installare Azure PowerShell in Windows con un programma di installazione MSI
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
-Questo articolo illustra come installare Azure PowerShell in Windows con un programma di installazione MSI.  
+Questo articolo illustra come installare Azure PowerShell in Windows con un programma di installazione MSI.
 Usare questi metodi di installazione solo se sono necessari per il sistema. È consigliabile installare Azure PowerShell in Windows con PowerShellGet. Per istruzioni sull'uso di PowerShellGet per installare Azure PowerShell, vedere [Installare Azure PowerShell con PowerShellGet ](install-azurerm-ps.md).
 
 > [!NOTE]

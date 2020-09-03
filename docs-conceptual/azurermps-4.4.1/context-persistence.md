@@ -4,16 +4,17 @@ description: Informazioni su come riutilizzare le credenziali di Azure e altre i
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 28f125b76686096d157ef243c9217a4a2c4e019e
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 9c9d6a028d3a28f99320aef5a574d868b2fd9bc1
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83386817"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244603"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Conservare le credenziali utente tra le sessioni di PowerShell
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 Azure PowerShell offre una funzionalità denominata **salvataggio automatico del contesto Azure**, che fornisce le funzionalità seguenti:
 

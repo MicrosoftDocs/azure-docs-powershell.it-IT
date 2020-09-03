@@ -4,16 +4,17 @@ description: Panoramica di Azure PowerShell con collegamenti a installazione e c
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/20/2018
-ms.openlocfilehash: 0ebbb504111c54fb42415f4084ba6828d47958d2
-ms.sourcegitcommit: 7546b8bcca0a6381248ecbb9d9bd6b2ef34b70e6
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 5b5d3a9ff1ebdd5b170d83510300b310e2061887
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88584408"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89242223"
 ---
 # <a name="overview-of-azure-powershell"></a>Panoramica di Azure PowerShell
 
-[!INCLUDE[az-replacing-azurerm](../includes/az-replacing-azurerm.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 Azure PowerShell offre un set di cmdlet che usano il modello [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) per la gestione delle risorse di Azure. È possibile usarlo nel browser con [Azure Cloud Shell](/azure/cloud-shell/overview) oppure installarlo nel computer locale e usarlo in una sessione di PowerShell.
 

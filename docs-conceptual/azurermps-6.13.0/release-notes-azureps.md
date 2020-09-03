@@ -5,16 +5,17 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
-ms.openlocfilehash: 8aa0462af97877e0d20fe898ddd927a6d2850dea
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 189b360f8825b7de93b67b0b2cbe670d00187327
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387327"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89241356"
 ---
 # <a name="release-notes"></a>Note sulla versione
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa versione.
 
@@ -46,7 +47,7 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Aggiunta dei cmdlet New-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayCustomError, Get-AzureRmApplicationGatewayCustomError, Set-AzureRmApplicationGatewayCustomError, Remove-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayHttpListenerCustomError, Get-AzureRmApplicationGatewayHttpListenerCustomError, Set-AzureRmApplicationGatewayHttpListenerCustomError, Remove-AzureRmApplicationGatewayHttpListenerCustomError
 * Aggiunta di ICMP nei protocolli di rete di AzureFirewall supportati
-* Aggiornamento del cmdlet Test-AzureRmNetworkWatcherConnectivity e aggiunta della convalida su ID, indirizzo e porta di destinazione. 
+* Aggiornamento del cmdlet Test-AzureRmNetworkWatcherConnectivity e aggiunta della convalida su ID, indirizzo e porta di destinazione.
 * Risoluzione dei problemi relativi all'utilizzo della memoria nel mapping di VirtualNetwork
 
 #### <a name="azurermrecoveryservicesbackup"></a>AzureRM.RecoveryServices.Backup
@@ -231,14 +232,14 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
 #### <a name="azurermprofile"></a>AzureRM.Profile
 * Modifiche minori al codice comune di archiviazione
 * Aggiornamento dei file della Guida per includere tipi di parametri completi.
-* Modifica di -ServicePrincipal in non obbligatorio nel set di parametri ServicePrincipalCertificateWithSubscriptionId 
+* Modifica di -ServicePrincipal in non obbligatorio nel set di parametri ServicePrincipalCertificateWithSubscriptionId
 
 #### <a name="azurestorage"></a>Azure.Storage
-* Supporto della creazione del contesto di archiviazione con OAuth. 
+* Supporto della creazione del contesto di archiviazione con OAuth.
     - New-AzureStorageContext
 
 #### <a name="azurermcdn"></a>AzureRM.Cdn
-* Aggiunta di Standard_Microsoft nello SKU del piano tariffario per la rete CDN. 
+* Aggiunta di Standard_Microsoft nello SKU del piano tariffario per la rete CDN.
 
 #### <a name="azurermcompute"></a>AzureRM.Compute
 * Trasferimento delle dipendenze da Key Vault e Archiviazione a dipendenze comuni
@@ -349,7 +350,7 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
 * Aggiunta del campo di versione all'oggetto PSSignalRResource e della stringa di connessione all'oggetto PSSignalRKeys.
 
 #### <a name="azurermstorage"></a>AzureRM.Storage
-* Supporto dei criteri di immutabilità in AzureRm.Storage 
+* Supporto dei criteri di immutabilità in AzureRm.Storage
     - Remove-AzureRmStorageAccountNetworkRule
     - Get-AzureRmStorageContainer
     - Update-AzureRmStorageContainer
@@ -685,7 +686,7 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
 * Aggiornamento dell'esempio per New-AzureRmDisk
 * Aggiunta dell'esempio per 'New-AzureRmVM'
 * Aggiornamento della descrizione per Set-AzureRmVMOSDisk
-* Aggiornamento dell'esempio 1 per Set-AzureRmVMBginfoExtension in modo da correggere l'ortografia e il prefisso. 
+* Aggiornamento dell'esempio 1 per Set-AzureRmVMBginfoExtension in modo da correggere l'ortografia e il prefisso.
 
 #### <a name="azurermdatafactoryv2"></a>AzureRM.DataFactoryV2
 * Aggiornamento della versione di ADF .Net SDK a 1.1.0.
@@ -897,7 +898,7 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
 * Aggiunta di altre informazioni sul parametro -Permissions nei file della Guida.
 
 #### <a name="azurermcompute"></a>AzureRM.Compute
-* 'Get-AzureRmVmDiskEncryptionStatus' risolve un problema riscontrato per le VM senza dischi dati 
+* 'Get-AzureRmVmDiskEncryptionStatus' risolve un problema riscontrato per le VM senza dischi dati
 * Aggiornamento della versione della libreria del client di calcolo per la correzione dei cmdlet seguenti
     - Grant-AzureRmDiskAccess
     - Grant-AzureRmSnapshotAccess
@@ -1020,8 +1021,8 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
 
 #### <a name="azurermdatalakestore"></a>AzureRM.DataLakeStore
 * Correzione dell'esempio per Export-AzureRmDataLakeStoreChildItemProperties
-* Correzione dell'eccezione del parametro Null in caso di ricorsione in Set-AzureRmDataLakeStoreItemAclEntry 
-* Correzione dei file della Guida per Set-AzureRmDataLakeStoreItemAclEntry, Set-AzureRmDataLakeStoreItemAcl, Remove-AzureRmDataLakeStoreItemAclEntry 
+* Correzione dell'eccezione del parametro Null in caso di ricorsione in Set-AzureRmDataLakeStoreItemAclEntry
+* Correzione dei file della Guida per Set-AzureRmDataLakeStoreItemAclEntry, Set-AzureRmDataLakeStoreItemAcl, Remove-AzureRmDataLakeStoreItemAclEntry
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Incremento della versione di Network SDK da 18.0.0-preview a 19.0.0-preview
@@ -1041,7 +1042,7 @@ Questo è un elenco delle modifiche apportate ad Azure PowerShell in questa vers
 * Aggiornamento dei cmdlet di controllo per consentire la rimozione di AuditActions o AuditActionGroups
 * Correzione del problema relativo a Set-AzureRmSqlDatabaseBackupLongTermRetentionPolicy durante l'impostazione di un nuovo criterio di conservazione flessibile che provocava l'errore del comando con un messaggio analogo al seguente: 'La configurazione dei criteri di conservazione a lungo termine con l'insieme di credenziali del servizio di ripristino di Azure e i criteri non è più supportata. Inviare la richiesta con i nuovi criteri di conservazione flessibili'.
 * Aggiornamento di tutti i cmdlet correlati a database SQL di Azure/creazione di pool elastici/aggiornamento in modo che venga usata la nuova API del database che supporta la proprietà SKU per il ridimensionamento e le proprietà correlate ai livelli.
-* I cmdlet aggiornati includono: 
+* I cmdlet aggiornati includono:
     - New-AzureRmSqlDatabase; Set-AzureRmSqlDatabase
     - New-AzureRmSqlElasticPool; Set-AzureRmSqlElasticPool
     - New-AzureRmSqlDatabaseCopy
