@@ -4,12 +4,13 @@ description: Come eseguire l'accesso con Azure PowerShell come utente, come enti
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/04/2019
-ms.openlocfilehash: b28510da68723b294565cef7dca0bcc87a989eab
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: e9f0cdf7a5add44958bc2510a2ff3d2207b2729a
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387157"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89242988"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Accedere con Azure PowerShell
 

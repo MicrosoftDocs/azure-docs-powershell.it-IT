@@ -4,16 +4,17 @@ description: Come eseguire i cmdlet in parallelo tramite il parametro -AsJob.
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/11/2017
-ms.openlocfilehash: 3f8617ade3afbf6a283f3696f6d688ba9529173a
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: b5385a9fa3da508e6f0841baea2e4bcd20503b9f
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387990"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89243549"
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>Esecuzione in parallelo dei cmdlet tramite processi di PowerShell
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 PowerShell supporta l'azione asincrona con i [processi di PowerShell](/powershell/module/microsoft.powershell.core/about/about_jobs).
 Azure PowerShell dipende in modo significativo dall'effettuazione e dall'attesa di chiamate di rete in Azure. È possibile che gli sviluppatori provino spesso a effettuare più chiamate non bloccanti ad Azure in uno script oppure che vogliano creare risorse di Azure in REPL senza bloccare la sessione corrente. Per soddisfare queste esigenze, Azure PowerShell offre supporto di qualità elevata per [processi di PowerShell](/powershell/module/microsoft.powershell.core/about/about_jobs).

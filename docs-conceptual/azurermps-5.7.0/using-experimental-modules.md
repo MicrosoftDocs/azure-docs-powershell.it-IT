@@ -4,16 +4,17 @@ description: Informazioni sulla filosofia e sull'utilizzo dei moduli sperimental
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
-ms.openlocfilehash: e3becd414b339eed46f97cf04854a4d019542fe1
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: aab6ad57d3f687ad0724781664695d2a0ece11a8
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387242"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89243566"
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>Uso dei moduli sperimentali di Azure PowerShell
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 In considerazione della particolare importanza attribuita agli strumenti di sviluppo e soprattutto alle interfacce della riga di comando in Azure, il team di Azure PowerShell sta sperimentando molti miglioramenti nell'esperienza di Azure PowerShell.
 

@@ -10,7 +10,7 @@ ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 09/01/2020
-ms.locfileid: "89243158"
+ms.locfileid: "89242920"
 ---
 # <a name="run-azure-powershell-cmdlets-in-powershell-jobs"></a>Eseguire i cmdlet di Azure PowerShell nei processi di PowerShell
 
