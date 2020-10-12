@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 33d9214544ddb126b717685f9e7986bed926b149
-ms.sourcegitcommit: 15f21c40dcb7610e2fbaaabf264ad925e4224500
+ms.openlocfilehash: 193e8c5d14f1bf2fe9c84a9da2defac50be97ec7
+ms.sourcegitcommit: 3d16496984a0b9fd7631aa043726060ddae3624d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90928249"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91833262"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>Installare Azure PowerShell in Windows con un programma di installazione MSI
 
@@ -31,7 +31,14 @@ Per usare Azure PowerShell in PowerShell 5.1, è necessario:
 
 ## <a name="install-or-update-on-windows-using-the-msi-package"></a>Eseguire l'installazione o l'aggiornamento in Windows tramite il pacchetto MSI
 
-Il pacchetto MSI per Azure PowerShell è disponibile su [GitHub](https://github.com/Azure/azure-powershell/releases/latest). Se le versioni precedenti dei moduli di Azure PowerShell sono state installate con il pacchetto MSI, il programma di installazione le rimuove automaticamente. Il pacchetto MSI installa i moduli in `${env:ProgramFiles}\WindowsPowerShell\Modules`.
+Il pacchetto MSI per Azure PowerShell è disponibile in [GitHub](https://github.com/Azure/azure-powershell/releases):
+
+1. Passare a https://github.com/Azure/azure-powershell/releases.
+2. Cercare il modulo della raccolta più recente per Azure PowerShell. Tali versioni sono elencate in ordine cronologico e sono in genere solo una versione di rilascio senza nome, ad esempio "4.7.0".
+3. Scorrere fino alla fine delle note sulla patch e fare clic sulla freccia accanto ad "Asset" per visualizzare le opzioni del pacchetto MSI.
+4. Fare clic sul pacchetto MSI Az-Cmdlets scelto per avviare il download.
+
+Se le versioni precedenti dei moduli di Azure PowerShell sono state installate con il pacchetto MSI, il programma di installazione le rimuove automaticamente. Il pacchetto MSI installa i moduli in `${env:ProgramFiles}\WindowsPowerShell\Modules`.
 
 Per iniziare a usare Azure PowerShell, accedere con le credenziali di Azure.
 
