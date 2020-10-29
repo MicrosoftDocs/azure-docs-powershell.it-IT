@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/20/2018
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 5b5d3a9ff1ebdd5b170d83510300b310e2061887
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: 4827b9be1dddb3cefcbbadbd0aed4298f45452e1
+ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89242223"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92523228"
 ---
 # <a name="overview-of-azure-powershell"></a>Panoramica di Azure PowerShell
 
@@ -22,8 +22,8 @@ Usare [Cloud Shell](/azure/cloud-shell/overview) per eseguire Azure PowerShell n
 
 Gli esempi seguenti aiutano a eseguire scenari comuni con Azure PowerShell:
 
-- [Macchine virtuali Linux](https://docs.microsoft.com/azure/virtual-machines/linux/powershell-samples)
-- [Macchine virtuali Windows](https://docs.microsoft.com/azure/virtual-machines/windows/powershell-samples)
+- [Macchine virtuali Linux](/azure/virtual-machines/linux/powershell-samples?toc=/powershell/azure/toc.json)
+- [Macchine virtuali Windows](/azure/virtual-machines/windows/powershell-samples?toc=/powershell/azure/toc.json)
 - [App Web](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
 - [Database SQL](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
 
@@ -43,7 +43,5 @@ Se non si ha familiarità con PowerShell, un'introduzione a PowerShell può risu
 
 ## <a name="other-azure-powershell-modules"></a>Altri moduli di Azure PowerShell
 
-- [Azure Active Directory](/powershell/azure/active-directory/)
-- [Azure Information Protection](/powershell/azure/aip/)
-- [Azure Service Fabric](/powershell/azure/service-fabric/)
-- [Azure ElasticDB](/powershell/azure/elasticdbjobs/)
+- [Azure Active Directory](/powershell/module/activedirectory/)
+- [Azure Service Fabric](/powershell/module/AzureRM.ServiceFabric/)

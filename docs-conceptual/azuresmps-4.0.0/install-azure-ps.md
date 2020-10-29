@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/06/2017
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 286288f83a0ad0b486cccb3543858c173a8eb087
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: 2860d5c7642b137c1cb14a38fa13d59ec2a4123c
+ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89241322"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92523207"
 ---
 # <a name="installing-the-azure-powershell-service-management-module"></a>Installare il modulo Gestione dei servizi di Azure PowerShell
 
@@ -72,7 +72,7 @@ I moduli di Azure PowerShell vengono aggiornati di frequente. Se si nota che la 
 
 Per gli script di esempio che consentono di automatizzare alcune delle attività comuni in Azure, vedere lo [Script Center di Windows Azure](http://www.windowsazure.com/documentation/scripts/).
 
-Per informazioni generali sull'installazione, la formazione, l'uso e la personalizzazione di Windows PowerShell, vedere [Scripting con Windows PowerShell](https://go.microsoft.com/fwlink/p/?linkid=320210).
+Per informazioni generali sull'installazione, la formazione, l'uso e la personalizzazione di Windows PowerShell, vedere [Scripting con Windows PowerShell](/powershell/scripting/learn/ps101/00-introduction).
 
 ### <a name="how-to-get-powershellget"></a>Come ottenere PowerShellGet
 
@@ -80,7 +80,6 @@ Per informazioni generali sull'installazione, la formazione, l'uso e la personal
 |---|---|
 |Il sistema operativo è Windows 10 o Windows Server 2016|Integrato in Windows Management Framework (WMF) 5.0 incluso nel sistema operativo|
 |Si vuole eseguire l'aggiornamento a PowerShell 5|[Installare la versione più recente di WMF](https://www.microsoft.com/download/details.aspx?id=54616)|
-|È in esecuzione una versione di Windows con PowerShell 3 o 4|[Ottenere i moduli PackageManagement](https://go.microsoft.com/fwlink/?LinkID=746217)|
 
 <div id="helpmechoose"/>
 
