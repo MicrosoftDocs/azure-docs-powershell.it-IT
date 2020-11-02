@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/15/2017
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 44cca63bbea555f754d2625b13187c294647eef2
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: f38988139898c1023f018d9616a107cbc50adf57
+ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89238655"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92523360"
 ---
 # <a name="getting-started-with-azure-powershell"></a>Introduzione ad Azure PowerShell
 
@@ -358,14 +358,14 @@ Questa operazione può richiedere alcuni minuti.
 
 ## <a name="get-samples"></a>Ottenere gli esempi
 
-Per altre informazioni sull'uso di Azure PowerShell, vedere i nostri script più comuni per le [macchine virtuali Linux](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), le [macchine virtuali di Windows](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), le [app Web](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json) e i [database SQL](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json).
+Per altre informazioni sull'uso di Azure PowerShell, vedere i nostri script più comuni per le [macchine virtuali Linux](/azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), le [macchine virtuali di Windows](/azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json), le [app Web](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json) e i [database SQL](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fazure%%2ftoc.json).
 
 ## <a name="next-steps"></a>Passaggi successivi
 
 * [Accedere con Azure PowerShell](authenticate-azureps.md)
 * [Gestire le sottoscrizioni di Azure con Azure PowerShell](manage-subscriptions-azureps.md)
 * [Creare entità servizio in Azure usando Azure PowerShell](create-azure-service-principal-azureps.md)
-* Vedere le note sulla migrazione da una versione precedente: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).
+* Vedere le [note sulla versione](./release-notes-azureps.md) per informazioni sulla migrazione da una versione precedente.
 * Ottenere informazioni dalla community:
   * [Forum Azure su MSDN](https://go.microsoft.com/fwlink/p/?LinkId=320212)
   * [stackoverflow](https://go.microsoft.com/fwlink/?LinkId=320213)

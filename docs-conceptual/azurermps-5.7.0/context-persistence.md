@@ -5,18 +5,18 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 73f8401fa3fe405d21b654bf8e7df628af9773e9
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: 2427e26700e975bfb6ce3d677a1af1a6130f10a9
+ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89243855"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92523394"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Conservare le credenziali utente tra le sessioni di PowerShell
 
 [!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
-Azure PowerShell offre una funzionalità denominata **salvataggio automatico del contesto Azure**, che fornisce le funzionalità seguenti:
+Azure PowerShell offre una funzionalità denominata **salvataggio automatico del contesto Azure** , che fornisce le funzionalità seguenti:
 
 - Conservazione delle informazioni di accesso per il riutilizzo in nuove sessioni di PowerShell.
 - Uso semplificato di attività in background per eseguire cmdlet con esecuzione prolungata.
@@ -27,12 +27,12 @@ Azure PowerShell offre una funzionalità denominata **salvataggio automatico del
 
 Un *contesto Azure* è un set di informazioni che definisce la destinazione dei cmdlet di Azure PowerShell. Il contesto è costituito da cinque parti.
 
-- *Account*: entità servizio o nome utente usato per l'autenticazione delle comunicazioni con Azure.
-- *Sottoscrizione*: sottoscrizione di Azure contenente le risorse su cui vengono eseguire le operazioni.
-- *Tenant*: tenant di Azure Active Directory contenente la sottoscrizione. I tenant sono particolarmente importanti per l'autenticazione di entità servizio.
-- *Ambiente*: specifico cloud di Azure di destinazione, in genere il cloud globale di Azure.
+- *Account* : entità servizio o nome utente usato per l'autenticazione delle comunicazioni con Azure.
+- *Sottoscrizione* : sottoscrizione di Azure contenente le risorse su cui vengono eseguire le operazioni.
+- *Tenant* : tenant di Azure Active Directory contenente la sottoscrizione. I tenant sono particolarmente importanti per l'autenticazione di entità servizio.
+- *Ambiente* : specifico cloud di Azure di destinazione, in genere il cloud globale di Azure.
   L'impostazione dell'ambiente consente tuttavia di specificare come destinazione anche cloud nazionali, per enti pubblici e locali (Azure Stack).
-- *Credenziali*: informazioni usate da Azure per verificare l'identità dell'utente e la relativa autorizzazione ad accedere alle risorse in Azure.
+- *Credenziali* : informazioni usate da Azure per verificare l'identità dell'utente e la relativa autorizzazione ad accedere alle risorse in Azure.
 
 Nelle versioni precedenti, il contesto Azure deve essere creato ogni volta che viene aperta una nuova sessione di PowerShell. A partire da Azure PowerShell v4.4.0, è possibile abilitare il salvataggio automatico dei contesti Azure e il relativo riutilizzo all'apertura di una nuova sessione di PowerShell.
 
@@ -61,7 +61,7 @@ La funzionalità di **salvataggio automatico del contesto Azure** consente anche
 
 - Uso del contesto predefinito con il salvataggio automatico abilitato
 
-  Se si è abilitato il **salvataggio automatico del contesto**, i processi in background usano automaticamente il contesto salvato predefinito.
+  Se si è abilitato il **salvataggio automatico del contesto** , i processi in background usano automaticamente il contesto salvato predefinito.
 
   ```powershell-interactive
   PS C:\> $job = Start-Job { New-AzureRmVm [... Additional parameters ...]}
@@ -154,5 +154,4 @@ Modifiche apportate ai cmdlet per i profili esistenti
 
 <!-- Updated cmdlets -->
 [login]: /powershell/module/azurerm.profile/Connect-AzureRmAccount
-[import]: /powershell/module/azurerm.profile/Import-AzureRmAccount
 [set-context]: /powershell/module/azurerm.profile/Import-AzureRmContext
