@@ -1,0 +1,201 @@
+---
+external help file: Microsoft.WindowsAzure.Commands.Storage.dll-Help.xml
+ms.assetid: E2CCDA8F-2D45-4F25-B297-337B7AB021E0
+online version: ''
+schema: 2.0.0
+ms.openlocfilehash: 24a61f071e806588976f601df69aa66dbbafc164
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93506951"
+---
+# Remove-AzureStorageShareStoredAccessPolicy
+
+## Sinossi
+Rimuove un criterio di accesso archiviato da una condivisione di archiviazione.
+
+## SINTASSI
+
+```
+Remove-AzureStorageShareStoredAccessPolicy [-ShareName] <String> [-Policy] <String> [-PassThru]
+ [-Context <IStorageContext>] [-ServerTimeoutPerRequest <Int32>] [-ClientTimeoutPerRequest <Int32>]
+ [-ConcurrentTaskCount <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## Descrizione
+Il cmdlet **Remove-AzureStorageShareStoredAccessPolicy** rimuove un criterio di accesso archiviato da una condivisione di archiviazione di Azure.
+
+## ESEMPI
+
+### Esempio 1: rimuovere un criterio di accesso archiviato da una condivisione di archiviazione di Azure
+```
+PS C:\>Remove-AzureStorageShareStoredAccessPolicy -ShareName "ContosoShare" -Policy "GeneralPolicy"
+```
+
+Questo comando rimuove un criterio di accesso archiviato denominato GeneralPolicy da ContosoShare.
+
+## PARAMETRI
+
+### -ClientTimeoutPerRequest
+Specifica l'intervallo di timeout lato client, in secondi, per una richiesta di servizio.
+Se la chiamata precedente non riesce nell'intervallo specificato, questo cmdlet ritenta la richiesta.
+Se questo cmdlet non riceve una risposta corretta prima che l'intervallo venga trascorso, questo cmdlet restituisce un errore.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ConcurrentTaskCount
+Specifica le chiamate di rete simultanee massime.
+Puoi usare questo parametro per limitare la concorrenza per accelerare l'uso della CPU locale e della larghezza di banda specificando il numero massimo di chiamate di rete simultanee.
+Il valore specificato è un conteggio assoluto e non viene moltiplicato per il numero di base.
+Questo parametro può aiutare a ridurre i problemi di connessione di rete in ambienti con larghezza di banda ridotta, ad esempio 100 kilobit al secondo.
+Il valore predefinito è 10.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Contesto
+Specifica un contesto di archiviazione di Azure.
+Per ottenere un contesto di archiviazione, usare il cmdlet [New-AzureStorageContext](./New-AzureStorageContext.md) .
+
+```yaml
+Type: IStorageContext
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -PassThru
+Indica che questo cmdlet restituisce un **valore booleano** che riflette l'esito positivo dell'operazione.
+Per impostazione predefinita, questo cmdlet non restituisce un valore.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Policy
+Specifica il nome dei criteri di accesso archiviati rimossi dal cmdlet.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ServerTimeoutPerRequest
+Specifica la lunghezza del periodo di timeout per la parte server di una richiesta.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ShareName
+Specifica il nome della condivisione di archiviazione per cui questo cmdlet rimuove un criterio.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: N, Name
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Confermare
+Richiede la conferma prima di eseguire il cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Mostra cosa succede se il cmdlet viene eseguito.
+Il cmdlet non viene eseguito.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## INGRESSI
+
+## OUTPUT
+
+## Note
+
+## COLLEGAMENTI CORRELATI
+
+[Get-AzureStorageShareStoredAccessPolicy](./Get-AzureStorageShareStoredAccessPolicy.md)
+
+[New-AzureStorageShareStoredAccessPolicy](./New-AzureStorageShareStoredAccessPolicy.md)
+
+[New-AzureStorageContext](./New-AzureStorageContext.md)
+
+[Set-AzureStorageShareStoredAccessPolicy](./Set-AzureStorageShareStoredAccessPolicy.md)
