@@ -1,0 +1,166 @@
+---
+external help file: Microsoft.Azure.Commands.ApiManagement.dll-Help.xml
+Module Name: AzureRM.ApiManagement
+ms.assetid: 5B7B285A-6418-44D7-BD78-E14AFFAA7765
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.apimanagement/update-azurermapimanagementregion
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/ApiManagement/Commands.ApiManagement/help/Update-AzureRmApiManagementRegion.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/ApiManagement/Commands.ApiManagement/help/Update-AzureRmApiManagementRegion.md
+ms.openlocfilehash: ed26538e54cef189837bd36bf9e6f561df3541f4
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93509395"
+---
+# <span data-ttu-id="8970a-101">Update-AzureRmApiManagementRegion</span><span class="sxs-lookup"><span data-stu-id="8970a-101">Update-AzureRmApiManagementRegion</span></span>
+
+## <span data-ttu-id="8970a-102">Sinossi</span><span class="sxs-lookup"><span data-stu-id="8970a-102">SYNOPSIS</span></span>
+<span data-ttu-id="8970a-103">Aggiorna l'area di distribuzione esistente nell'istanza di PsApiManagement.</span><span class="sxs-lookup"><span data-stu-id="8970a-103">Updates existing deployment region in PsApiManagement instance.</span></span>
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## <span data-ttu-id="8970a-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="8970a-104">SYNTAX</span></span>
+
+```
+Update-AzureRmApiManagementRegion -ApiManagement <PsApiManagement> -Location <String> -Sku <PsApiManagementSku>
+ -Capacity <Int32> [-VirtualNetwork <PsApiManagementVirtualNetwork>] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="8970a-105">Descrizione</span><span class="sxs-lookup"><span data-stu-id="8970a-105">DESCRIPTION</span></span>
+<span data-ttu-id="8970a-106">Il cmdlet **Update-AzureRmApiManagementRegion** aggiorna un'istanza esistente di tipo **Microsoft. Azure. Commands. ApiManagement. Models. PsApiManagementRegion** in una raccolta di oggetti **AdditionalRegions** di un'istanza specificata di tipo **Microsoft. Azure. Commands. ApiManagement. Models. PsApiManagement**.</span><span class="sxs-lookup"><span data-stu-id="8970a-106">The **Update-AzureRmApiManagementRegion** cmdlet updates an existing instance of type **Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementRegion** in a collection of **AdditionalRegions** objects of a provided instance of type **Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement**.</span></span>
+<span data-ttu-id="8970a-107">Questo cmdlet non distribuisce nulla, ma aggiorna un'istanza di **PsApiManagement** in memoria.</span><span class="sxs-lookup"><span data-stu-id="8970a-107">This cmdlet does not deploy anything but updates an instance of **PsApiManagement** in-memory.</span></span>
+<span data-ttu-id="8970a-108">Per aggiornare una distribuzione di una gestione API, usare il **PsApiManagementInstance** modificato per il cmdlet Update-AzureRmApiManagementDeployment.</span><span class="sxs-lookup"><span data-stu-id="8970a-108">To update a deployment of an API Management use the modified **PsApiManagementInstance** to the Update-AzureRmApiManagementDeployment cmdlet.</span></span>
+
+## <span data-ttu-id="8970a-109">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="8970a-109">EXAMPLES</span></span>
+
+## <span data-ttu-id="8970a-110">PARAMETRI</span><span class="sxs-lookup"><span data-stu-id="8970a-110">PARAMETERS</span></span>
+
+### <span data-ttu-id="8970a-111">-ApiManagement</span><span class="sxs-lookup"><span data-stu-id="8970a-111">-ApiManagement</span></span>
+<span data-ttu-id="8970a-112">Specifica l'istanza di **PsApiManagement** per l'aggiornamento di un'area di distribuzione esistente.</span><span class="sxs-lookup"><span data-stu-id="8970a-112">Specifies the **PsApiManagement** instance to update an existing deployment region in.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8970a-113">-Capacità</span><span class="sxs-lookup"><span data-stu-id="8970a-113">-Capacity</span></span>
+<span data-ttu-id="8970a-114">Specifica il nuovo valore della capacità SKU per l'area di distribuzione.</span><span class="sxs-lookup"><span data-stu-id="8970a-114">Specifies the new SKU capacity value for the deployment region.</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8970a-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="8970a-115">-DefaultProfile</span></span>
+<span data-ttu-id="8970a-116">Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.</span><span class="sxs-lookup"><span data-stu-id="8970a-116">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8970a-117">-Posizione</span><span class="sxs-lookup"><span data-stu-id="8970a-117">-Location</span></span>
+<span data-ttu-id="8970a-118">Specifica la posizione dell'area di distribuzione da aggiornare.</span><span class="sxs-lookup"><span data-stu-id="8970a-118">Specifies the location of the deployment region to update.</span></span>
+<span data-ttu-id="8970a-119">Specifica la posizione della nuova area di distribuzione tra l'area supportata per il servizio di gestione API.</span><span class="sxs-lookup"><span data-stu-id="8970a-119">Specifies the location of the new deployment region amongst the supported region for Api Management service.</span></span>
+<span data-ttu-id="8970a-120">Per ottenere posizioni valide, usare il cmdlet Get-AzureRmResourceProvider-ProviderNamespace "Microsoft. ApiManagement" | dove {$ _. ResourceTypes [0]. ResourceTypeName-EQ "servizio"} | Posizioni Select-Object</span><span class="sxs-lookup"><span data-stu-id="8970a-120">To obtain valid locations, use the cmdlet Get-AzureRmResourceProvider -ProviderNamespace "Microsoft.ApiManagement" | where {$_.ResourceTypes[0].ResourceTypeName -eq "service"} | Select-Object Locations</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8970a-121">-SKU</span><span class="sxs-lookup"><span data-stu-id="8970a-121">-Sku</span></span>
+<span data-ttu-id="8970a-122">Specifica il nuovo valore di livello per l'area di distribuzione.</span><span class="sxs-lookup"><span data-stu-id="8970a-122">Specifies the new tier value for the deployment region.</span></span>
+<span data-ttu-id="8970a-123">I valori validi sono:</span><span class="sxs-lookup"><span data-stu-id="8970a-123">Valid values are:</span></span>
+- <span data-ttu-id="8970a-124">Sviluppo</span><span class="sxs-lookup"><span data-stu-id="8970a-124">Developer</span></span>
+- <span data-ttu-id="8970a-125">Standard</span><span class="sxs-lookup"><span data-stu-id="8970a-125">Standard</span></span>
+- <span data-ttu-id="8970a-126">Premium</span><span class="sxs-lookup"><span data-stu-id="8970a-126">Premium</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementSku
+Parameter Sets: (All)
+Aliases:
+Accepted values: Developer, Standard, Premium, Basic
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8970a-127">-VirtualNetwork</span><span class="sxs-lookup"><span data-stu-id="8970a-127">-VirtualNetwork</span></span>
+<span data-ttu-id="8970a-128">Specifica una configurazione di rete virtuale per l'area di distribuzione.</span><span class="sxs-lookup"><span data-stu-id="8970a-128">Specifies a virtual network configuration for the deployment region.</span></span>
+<span data-ttu-id="8970a-129">Passando $null verrà rimossa la configurazione della rete virtuale per l'area geografica.</span><span class="sxs-lookup"><span data-stu-id="8970a-129">Passing $null will remove virtual network configuration for the region.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementVirtualNetwork
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8970a-130">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="8970a-130">CommonParameters</span></span>
+<span data-ttu-id="8970a-131">Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="8970a-131">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="8970a-132">Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="8970a-132">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="8970a-133">INGRESSI</span><span class="sxs-lookup"><span data-stu-id="8970a-133">INPUTS</span></span>
+
+### <span data-ttu-id="8970a-134">Microsoft. Azure. Commands. ApiManagement. Models. PsApiManagement</span><span class="sxs-lookup"><span data-stu-id="8970a-134">Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement</span></span>
+<span data-ttu-id="8970a-135">Parametri: ApiManagement (ByValue)</span><span class="sxs-lookup"><span data-stu-id="8970a-135">Parameters: ApiManagement (ByValue)</span></span>
+
+### <span data-ttu-id="8970a-136">System. String</span><span class="sxs-lookup"><span data-stu-id="8970a-136">System.String</span></span>
+
+### <span data-ttu-id="8970a-137">Microsoft. Azure. Commands. ApiManagement. Models. PsApiManagementSku</span><span class="sxs-lookup"><span data-stu-id="8970a-137">Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementSku</span></span>
+
+### <span data-ttu-id="8970a-138">System. Int32</span><span class="sxs-lookup"><span data-stu-id="8970a-138">System.Int32</span></span>
+
+### <span data-ttu-id="8970a-139">Microsoft. Azure. Commands. ApiManagement. Models. PsApiManagementVirtualNetwork</span><span class="sxs-lookup"><span data-stu-id="8970a-139">Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementVirtualNetwork</span></span>
+
+## <span data-ttu-id="8970a-140">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="8970a-140">OUTPUTS</span></span>
+
+### <span data-ttu-id="8970a-141">Microsoft. Azure. Commands. ApiManagement. Models. PsApiManagement</span><span class="sxs-lookup"><span data-stu-id="8970a-141">Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement</span></span>
+
+## <span data-ttu-id="8970a-142">Note</span><span class="sxs-lookup"><span data-stu-id="8970a-142">NOTES</span></span>
+
+## <span data-ttu-id="8970a-143">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="8970a-143">RELATED LINKS</span></span>
+
+[<span data-ttu-id="8970a-144">Add-AzureRmApiManagementRegion</span><span class="sxs-lookup"><span data-stu-id="8970a-144">Add-AzureRmApiManagementRegion</span></span>](./Add-AzureRmApiManagementRegion.md)
+
+[<span data-ttu-id="8970a-145">Remove-AzureRmApiManagementRegion</span><span class="sxs-lookup"><span data-stu-id="8970a-145">Remove-AzureRmApiManagementRegion</span></span>](./Remove-AzureRmApiManagementRegion.md)
+
+[<span data-ttu-id="8970a-146">Update-AzureRmApiManagementDeployment</span><span class="sxs-lookup"><span data-stu-id="8970a-146">Update-AzureRmApiManagementDeployment</span></span>](./Update-AzureRmApiManagementDeployment.md)
