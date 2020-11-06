@@ -1,0 +1,173 @@
+---
+external help file: Microsoft.Azure.Commands.Batch.dll-Help.xml
+Module Name: AzureRM.Batch
+ms.assetid: 7D0D8B46-4BF0-47D5-9261-3306AEB9E7DD
+online version: ''
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/AzureBatch/Commands.Batch/help/Get-AzureBatchSubtask.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/AzureBatch/Commands.Batch/help/Get-AzureBatchSubtask.md
+ms.openlocfilehash: 58bed6fda4040c1af48469f4aa85f717c26c898c
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93521987"
+---
+# <span data-ttu-id="8f60b-101">Get-AzureBatchSubtask</span><span class="sxs-lookup"><span data-stu-id="8f60b-101">Get-AzureBatchSubtask</span></span>
+
+## <span data-ttu-id="8f60b-102">Sinossi</span><span class="sxs-lookup"><span data-stu-id="8f60b-102">SYNOPSIS</span></span>
+<span data-ttu-id="8f60b-103">Ottiene le informazioni sulla sottoattività dell'attività specificata.</span><span class="sxs-lookup"><span data-stu-id="8f60b-103">Gets the subtask information of the specified task.</span></span>
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## <span data-ttu-id="8f60b-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="8f60b-104">SYNTAX</span></span>
+
+### <span data-ttu-id="8f60b-105">ODataFilter (impostazione predefinita)</span><span class="sxs-lookup"><span data-stu-id="8f60b-105">ODataFilter (Default)</span></span>
+```
+Get-AzureBatchSubtask [-JobId] <String> [-TaskId] <String> [-MaxCount <Int32>]
+ -BatchContext <BatchAccountContext> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="8f60b-106">ParentObject</span><span class="sxs-lookup"><span data-stu-id="8f60b-106">ParentObject</span></span>
+```
+Get-AzureBatchSubtask [[-Task] <PSCloudTask>] [-MaxCount <Int32>] -BatchContext <BatchAccountContext>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="8f60b-107">Descrizione</span><span class="sxs-lookup"><span data-stu-id="8f60b-107">DESCRIPTION</span></span>
+<span data-ttu-id="8f60b-108">Il cmdlet **Get-AzureBatchSubtask** recupera le informazioni sulla sottoattività relative all'attività specificata.</span><span class="sxs-lookup"><span data-stu-id="8f60b-108">The **Get-AzureBatchSubtask** cmdlet retrieves the subtask information about the specified task.</span></span>
+<span data-ttu-id="8f60b-109">Le sottoattività offrono l'elaborazione parallela per singole attività e consentono un monitoraggio preciso dell'esecuzione e dello stato di avanzamento delle attività.</span><span class="sxs-lookup"><span data-stu-id="8f60b-109">Subtasks provide parallel processing for individual tasks, and enable precise monitoring of task execution and progress.</span></span>
+
+## <span data-ttu-id="8f60b-110">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="8f60b-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="8f60b-111">Esempio 1: restituire tutte le sottoattività per un'attività specificata</span><span class="sxs-lookup"><span data-stu-id="8f60b-111">Example 1: Return all subtasks for a specified task</span></span>
+```
+PS C:\>$Context = Get-AzureRmBatchAccountKeys -AccountName "contosobatchaccount"
+PS C:\> Get-AzureBatchSubtask -JobId "Job-01" -TaskID "myTask" -BatchContext $Context
+```
+
+<span data-ttu-id="8f60b-112">Questi comandi restituiscono tutte le sottoattività dell'attività con l'ID attività.</span><span class="sxs-lookup"><span data-stu-id="8f60b-112">These commands return all the subtasks for the task with the ID myTask.</span></span>
+<span data-ttu-id="8f60b-113">A questo scopo, il primo comando nell'esempio crea un riferimento a un oggetto alle chiavi dell'account per l'account batch contosobatchaccount.</span><span class="sxs-lookup"><span data-stu-id="8f60b-113">To do this, the first command in the example creates an object reference to the account keys for the batch account contosobatchaccount.</span></span>
+<span data-ttu-id="8f60b-114">Questo riferimento oggetto è archiviato in una variabile denominata $context.</span><span class="sxs-lookup"><span data-stu-id="8f60b-114">This object reference is stored in a variable named $context.</span></span>
+
+<span data-ttu-id="8f60b-115">Il secondo comando usa quindi il riferimento oggetto e il cmdlet **Get-AzureBatchSubtask** per restituire tutte le sottoattività per la mia attività, un'attività che viene eseguita come parte del processo di job-01.</span><span class="sxs-lookup"><span data-stu-id="8f60b-115">The second command then uses that object reference and the **Get-AzureBatchSubtask** cmdlet to return all the subtasks for myTask, a task that runs as part of job Job-01.</span></span>
+
+## <span data-ttu-id="8f60b-116">PARAMETRI</span><span class="sxs-lookup"><span data-stu-id="8f60b-116">PARAMETERS</span></span>
+
+### <span data-ttu-id="8f60b-117">-BatchContext</span><span class="sxs-lookup"><span data-stu-id="8f60b-117">-BatchContext</span></span>
+<span data-ttu-id="8f60b-118">Specifica l'istanza di **BatchAccountContext** utilizzata dal cmdlet per interagire con il servizio batch.</span><span class="sxs-lookup"><span data-stu-id="8f60b-118">Specifies the **BatchAccountContext** instance that this cmdlet uses to interact with the Batch service.</span></span>
+<span data-ttu-id="8f60b-119">Per ottenere un oggetto **BatchAccountContext** che contiene i tasti di scelta per l'abbonamento, usare il cmdlet Get-AzureRmBatchAccountKeys.</span><span class="sxs-lookup"><span data-stu-id="8f60b-119">To obtain a **BatchAccountContext** object that contains access keys for your subscription, use the Get-AzureRmBatchAccountKeys cmdlet.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Batch.BatchAccountContext
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8f60b-120">-JobId</span><span class="sxs-lookup"><span data-stu-id="8f60b-120">-JobId</span></span>
+<span data-ttu-id="8f60b-121">Specifica l'ID del processo che contiene l'attività con le sottoattività ottenute da questo cmdlet.</span><span class="sxs-lookup"><span data-stu-id="8f60b-121">Specifies the ID of the job that contains the task whose subtasks this cmdlet gets.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ODataFilter
+Aliases: 
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8f60b-122">-MaxCount</span><span class="sxs-lookup"><span data-stu-id="8f60b-122">-MaxCount</span></span>
+<span data-ttu-id="8f60b-123">Specifica il numero massimo di sottoattività da restituire.</span><span class="sxs-lookup"><span data-stu-id="8f60b-123">Specifies the maximum number of subtasks to return.</span></span>
+<span data-ttu-id="8f60b-124">Se specifichi un valore pari a zero (0) o meno, il cmdlet non usa un limite superiore.</span><span class="sxs-lookup"><span data-stu-id="8f60b-124">If you specify a value of zero (0) or less, the cmdlet does not use an upper limit.</span></span>
+<span data-ttu-id="8f60b-125">Il valore predefinito è 1000.</span><span class="sxs-lookup"><span data-stu-id="8f60b-125">The default value is 1000.</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8f60b-126">-Attività</span><span class="sxs-lookup"><span data-stu-id="8f60b-126">-Task</span></span>
+<span data-ttu-id="8f60b-127">Specifica un riferimento a un oggetto all'attività che contiene le sottoattività restituite dal cmdlet.</span><span class="sxs-lookup"><span data-stu-id="8f60b-127">Specifies an object reference to the task that contain the subtasks that this cmdlet returns.</span></span>
+<span data-ttu-id="8f60b-128">Questo riferimento all'oggetto viene creato usando il cmdlet Get-AzureBatchTask e archiviando l'oggetto restituito in una variabile.</span><span class="sxs-lookup"><span data-stu-id="8f60b-128">This object reference is created by using the Get-AzureBatchTask cmdlet and storing the returned object in a variable.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Batch.Models.PSCloudTask
+Parameter Sets: ParentObject
+Aliases: 
+
+Required: False
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8f60b-129">-TaskId</span><span class="sxs-lookup"><span data-stu-id="8f60b-129">-TaskId</span></span>
+<span data-ttu-id="8f60b-130">Specifica l'ID dell'attività di cui viene restituito il cmdlet.</span><span class="sxs-lookup"><span data-stu-id="8f60b-130">Specifies the ID of the task whose subtasks this cmdlet returns.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ODataFilter
+Aliases: 
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8f60b-131">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="8f60b-131">-DefaultProfile</span></span>
+<span data-ttu-id="8f60b-132">Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.</span><span class="sxs-lookup"><span data-stu-id="8f60b-132">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8f60b-133">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="8f60b-133">CommonParameters</span></span>
+<span data-ttu-id="8f60b-134">Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="8f60b-134">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="8f60b-135">Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="8f60b-135">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="8f60b-136">INGRESSI</span><span class="sxs-lookup"><span data-stu-id="8f60b-136">INPUTS</span></span>
+
+### <span data-ttu-id="8f60b-137">BatchAccountContext</span><span class="sxs-lookup"><span data-stu-id="8f60b-137">BatchAccountContext</span></span>
+<span data-ttu-id="8f60b-138">Il parametro ' BatchContext ' accetta il valore di tipo ' BatchAccountContext ' dalla pipeline</span><span class="sxs-lookup"><span data-stu-id="8f60b-138">Parameter 'BatchContext' accepts value of type 'BatchAccountContext' from the pipeline</span></span>
+
+### <span data-ttu-id="8f60b-139">PSCloudTask</span><span class="sxs-lookup"><span data-stu-id="8f60b-139">PSCloudTask</span></span>
+<span data-ttu-id="8f60b-140">Il parametro ' Task ' accetta il valore di tipo ' PSCloudTask ' dalla pipeline</span><span class="sxs-lookup"><span data-stu-id="8f60b-140">Parameter 'Task' accepts value of type 'PSCloudTask' from the pipeline</span></span>
+
+## <span data-ttu-id="8f60b-141">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="8f60b-141">OUTPUTS</span></span>
+
+###  
+<span data-ttu-id="8f60b-142">Questo cmdlet restituisce istanze dell'oggetto **PSSubtaskInformation** .</span><span class="sxs-lookup"><span data-stu-id="8f60b-142">This cmdlet returns instances of the **PSSubtaskInformation** object.</span></span>
+
+## <span data-ttu-id="8f60b-143">Note</span><span class="sxs-lookup"><span data-stu-id="8f60b-143">NOTES</span></span>
+
+## <span data-ttu-id="8f60b-144">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="8f60b-144">RELATED LINKS</span></span>
+
+[<span data-ttu-id="8f60b-145">Get-AzureBatchTask</span><span class="sxs-lookup"><span data-stu-id="8f60b-145">Get-AzureBatchTask</span></span>](./Get-AzureBatchTask.md)
+
+
