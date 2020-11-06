@@ -1,0 +1,137 @@
+---
+external help file: Microsoft.Azure.Commands.KeyVault.dll-Help.xml
+Module Name: AzureRM.KeyVault
+online version: https://msdn.microsoft.com/en-us/library/dn868052.aspx
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/KeyVault/Commands.KeyVault/help/Get-AzureKeyVaultManagedStorageSasDefinition.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/KeyVault/Commands.KeyVault/help/Get-AzureKeyVaultManagedStorageSasDefinition.md
+ms.openlocfilehash: 63187859a4296f37e5af28880f42a487c018288f
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93510596"
+---
+# Get-AzureKeyVaultManagedStorageSasDefinition
+
+## Sinossi
+Ottiene le definizioni SAS di archiviazione Managed Key Vault.
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## SINTASSI
+
+### ByAccountName (impostazione predefinita)
+```
+Get-AzureKeyVaultManagedStorageSasDefinition [-VaultName] <String> [-AccountName] <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### ByDefinitionName
+```
+Get-AzureKeyVaultManagedStorageSasDefinition [-VaultName] <String> [-AccountName] <String> [-Name] <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## Descrizione
+Ottiene una definizione della chiave di archiviazione gestita di SAS se il nome della definizione è specificato. Se il nome della definizione non viene specificato, verranno elencate tutte le definizioni SAS associate all'account di archiviazione gestita Key Vault specificato nel Vault.
+
+## ESEMPI
+
+### Esempio 1: elencare tutte le definizioni di archiviazione SAS Key Vault Managed
+```
+PS C:\> Get-AzureKeyVaultManagedStorageSasDefinition -VaultName 'myvault' -AccountName 'mystorageaccount'
+```
+
+Elenca tutte le definizioni SAS associate all'account di archiviazione gestita Key Vault ' mystorageaccount ' gestito dal Vault ' Vault '
+
+### Esempio 2: ottenere un account di archiviazione gestito Key Vault
+```
+PS C:\> Get-AzureKeyVaultManagedStorageSasDefinition -VaultName 'myvault' -AccountName 'mystorageaccount' -Name 'mysasDef'
+```
+
+Ottiene i dettagli della definizione SAS "mysasDef" associata all'account di archiviazione gestita Key Vault "mystorageaccount" gestito dal Vault "archivio dati".
+
+## PARAMETRI
+
+### -AccountName
+Nome del Vault.
+Cmdlet costruisce il nome di dominio completo di un Vault in base all'ambiente Name e attualmente selezionato.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: StorageAccountName
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Nome
+Nome della definizione di archiviazione SAS.
+Cmdlet costruisce il nome di dominio completo di una definizione SAS di archiviazione dal nome della volta, dall'ambiente attualmente selezionato, dal nome dell'account di archiviazione e dalla definizione SAS.
+
+```yaml
+Type: System.String
+Parameter Sets: ByDefinitionName
+Aliases: SasDefinitionName
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -VAULTNAME
+Nome del Vault.
+Cmdlet costruisce il nome di dominio completo di un Vault in base all'ambiente Name e attualmente selezionato.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## INGRESSI
+
+### System. String
+
+## OUTPUT
+
+### System. Collections. Generic. list ' 1 [[Microsoft. Azure. Commands. Vault. Models. ManagedStorageSasDefinitionListItem, Microsoft. Azure. Commands. Vault, Version = 2.5.0.0, Culture = neutral, PublicKeyToken = null]]
+Microsoft. Azure. Commands. Vault. Models. ManagedStorageSasDefinition
+
+## Note
+
+## COLLEGAMENTI CORRELATI
+
+[https://msdn.microsoft.com/en-us/library/dn868052.aspx](https://msdn.microsoft.com/en-us/library/dn868052.aspx)
+
