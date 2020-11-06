@@ -1,0 +1,113 @@
+---
+external help file: Microsoft.Azure.Commands.Batch.dll-Help.xml
+Module Name: AzureRM.Batch
+ms.assetid: 9C755BE8-0624-4CF7-AE7C-34DAF44678E8
+online version: ''
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/AzureBatch/Commands.Batch/help/Disable-AzureBatchAutoScale.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/AzureBatch/Commands.Batch/help/Disable-AzureBatchAutoScale.md
+ms.openlocfilehash: 124000fdf11b3fa5b90253fc3b9a75c040725ba8
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93518375"
+---
+# Disable-AzureBatchAutoScale
+
+## Sinossi
+Disabilita la scala automatica di un pool.
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## SINTASSI
+
+```
+Disable-AzureBatchAutoScale [-Id] <String> -BatchContext <BatchAccountContext>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## Descrizione
+Il cmdlet **Disable-AzureBatchAutoScale Disabilita** la scala automatica del pool specificato.
+
+## ESEMPI
+
+### Esempio 1: disabilitare la scala automatica di un pool
+```
+PS C:\>Disable-AzureBatchAutoScale -Id "MyPool" -BatchContext $Context
+```
+
+Questo comando Disabilita la scala automatica per il pool denominato pool.
+
+## PARAMETRI
+
+### -BatchContext
+Specifica l'istanza di **BatchAccountContext** utilizzata dal cmdlet per interagire con il servizio batch.
+Per ottenere un oggetto **BatchAccountContext** che contiene i tasti di scelta per l'abbonamento, usare il cmdlet Get-AzureRmBatchAccountKeys.
+
+```yaml
+Type: Microsoft.Azure.Commands.Batch.BatchAccountContext
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ID
+Specifica l'ID oggetto del pool.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## INGRESSI
+
+### BatchAccountContext
+Il parametro ' BatchContext ' accetta il valore di tipo ' BatchAccountContext ' dalla pipeline
+
+### Stringa
+Il parametro "ID" accetta il valore di tipo "String" dalla pipeline
+
+## OUTPUT
+
+## Note
+
+## COLLEGAMENTI CORRELATI
+
+[Enable-AzureBatchAutoScale](./Enable-AzureBatchAutoScale.md)
+
+[Test-AzureBatchAutoScale](./Test-AzureBatchAutoScale.md)
+
+[Cmdlet batch di Azure](./AzureRM.Batch.md)
+
+

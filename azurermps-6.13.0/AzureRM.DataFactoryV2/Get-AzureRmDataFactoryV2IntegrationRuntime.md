@@ -1,0 +1,257 @@
+---
+external help file: Microsoft.Azure.Commands.DataFactoryV2.dll-Help.xml
+Module Name: AzureRM.DataFactoryV2
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.datafactories/get-azurermdatafactoryv2integrationruntime
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/DataFactoryV2/Commands.DataFactoryV2/help/Get-AzureRmDataFactoryV2IntegrationRuntime.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/DataFactoryV2/Commands.DataFactoryV2/help/Get-AzureRmDataFactoryV2IntegrationRuntime.md
+ms.openlocfilehash: 83e6de07f7796e49732a35cfea4573002e6208df
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93518787"
+---
+# Get-AzureRmDataFactoryV2IntegrationRuntime
+
+## Sinossi
+Ottiene informazioni sulle risorse di Integration Runtime.
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## SINTASSI
+
+### ByIntegrationRuntimeName (impostazione predefinita)
+```
+Get-AzureRmDataFactoryV2IntegrationRuntime [[-Name] <String>] [-Status] [-ResourceGroupName] <String>
+ [-DataFactoryName] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### ByResourceId
+```
+Get-AzureRmDataFactoryV2IntegrationRuntime [-Status] [-ResourceId] <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### ByIntegrationRuntimeObject
+```
+Get-AzureRmDataFactoryV2IntegrationRuntime [-Status] [-InputObject] <PSIntegrationRuntime>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## Descrizione
+Il cmdlet Get-AzureRmDataFactoryV2IntegrationRuntime ottiene informazioni sui runtime di integrazione in una data factory.
+Se specifichi il nome di un runtime di integrazione, questo cmdlet ottiene le informazioni su tale runtime di integrazione.
+Se non specifichi un nome, questo cmdlet recupera informazioni su tutti i runtime di integrazione in una data factory.
+
+## ESEMPI
+
+### Esempio 1: elencare tutti i runtime di integrazione in una data factory
+```
+PS C:\> Get-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName rg-test-dfv2 -DataFactoryName test-df-eu2
+
+    ResourceGroupName DataFactoryName Name                   Description
+    ----------------- --------------- ----                   -----------
+    rg-test-dfv2      test-df-eu2     test-reserved-ir       Reserved IR
+    rg-test-dfv2      test-df-eu2     test-dedicated-ir      Reserved IR
+    rg-test-dfv2      test-df-eu2     test-selfhost-ir       selfhost IR
+```
+
+Elenca tutti i runtime di integrazione nella data factory denominata ' test-DF-EU2'.
+
+### Esempio 2: get Managed Integration Runtime dedicato
+```
+PS C:\> Get-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName rg-test-dfv2 -DataFactoryName test-df-eu2 -Name test-dedicated-ir
+
+    Location                     : West US
+    NodeSize                     : Standard_D1_v2
+    NodeCount                    : 1
+    MaxParallelExecutionsPerNode : 1
+    CatalogServerEndpoint        : test.database.windows.net
+    CatalogAdminUserName         : test
+    CatalogAdminPassword         : **********
+    CatalogPricingTier           : S1
+    VNetId                       : 
+    Subnet                       : 
+    State                        : Starting
+    ResourceGroupName            : rg-test-dfv2
+    DataFactoryName              : test-df-eu2
+    Name                         : test-dedicated-ir
+    Description                  : Reserved IR
+```
+
+Questo comando Visualizza le informazioni sul runtime di integrazione denominato ' test-Dedicated-IR ' nell'abbonamento per il gruppo di risorse denominato ' RG-test-dfv2' e data factory denominato ' test-DF-EU2'.
+
+### Esempio 3: get Managed Integration Runtime dedicato con lo stato dei dettagli
+```
+PS C:\> Get-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName rg-test-dfv2 -DataFactoryName test-df-eu2 -Name test-dedicated-ir -Status
+
+    CreateTime                   : 
+    Nodes                        : 
+    OtherErrors                  : 
+    LastOperation                : 
+    State                        : Initial
+    Location                     : West US
+    NodeSize                     : Standard_D1_v2
+    NodeCount                    : 1
+    MaxParallelExecutionsPerNode : 1
+    CatalogServerEndpoint        : test.database.windows.net
+    CatalogAdminUserName         : test
+    CatalogAdminPassword         : **********
+    CatalogPricingTier           : S1
+    VNetId                       : 
+    Subnet                       : 
+    ResourceGroupName            : rg-test-dfv2
+    DataFactoryName              : test-df-eu2
+    Name                         : test-dedicated-ir
+    Description                  : Reserved IR
+```
+
+Questo comando Visualizza le informazioni sul runtime di integrazione denominato ' test-Dedicated-IR ' nell'abbonamento per il gruppo di risorse denominato ' RG-test-dfv2' e data factory denominato ' test-DF-EU2'.
+
+### Esempio 4: Get self-hosted Integration Runtime
+```
+PS C:\> Get-AzureRmDataFactoryV2IntegrationRuntime -ResourceGroupName rg-test-dfv2 -DataFactoryName test-df-eu2 -Name test-selfhost-ir
+
+    ResourceGroupName DataFactoryName Name                 Description
+    ----------------- --------------- ----                 -----------
+    rg-test-dfv2      test-df-eu2     test-selfhost-ir     selfhost IR
+```
+
+Questo comando Visualizza le informazioni sul runtime di integrazione denominato ' test-Dedicated-IR ' nell'abbonamento per il gruppo di risorse denominato ' RG-test-dfv2' e data factory denominato ' test-DF-EU2'.
+
+## PARAMETRI
+
+### -Datafactoryname
+Nome della factory di dati.
+
+```yaml
+Type: System.String
+Parameter Sets: ByIntegrationRuntimeName
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+Oggetto runtime di Integration.
+
+```yaml
+Type: Microsoft.Azure.Commands.DataFactoryV2.Models.PSIntegrationRuntime
+Parameter Sets: ByIntegrationRuntimeObject
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Nome
+Nome del runtime di integrazione.
+
+```yaml
+Type: System.String
+Parameter Sets: ByIntegrationRuntimeName
+Aliases: IntegrationRuntimeName
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Nome del gruppo di risorse.
+
+```yaml
+Type: System.String
+Parameter Sets: ByIntegrationRuntimeName
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ResourceId
+ID risorsa di Azure.
+
+```yaml
+Type: System.String
+Parameter Sets: ByResourceId
+Aliases: Id
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Stato
+Stato di dettaglio di Integration Runtime.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## INGRESSI
+
+### System. String
+
+### Microsoft. Azure. Commands. DataFactoryV2. Models. PSIntegrationRuntime
+Parametri: InputObject (ByValue)
+
+## OUTPUT
+
+### Microsoft. Azure. Commands. DataFactoryV2. Models. PSIntegrationRuntime
+
+### Microsoft. Azure. Commands. DataFactoryV2. Models. PSManagedIntegrationRuntime
+
+### Microsoft. Azure. Commands. DataFactoryV2. Models. PSSelfHostedIntegrationRuntime
+
+### Microsoft. Azure. Commands. DataFactoryV2. Models. PSLinkedIntegrationRuntime
+
+## Note
+Parole chiave: Azure, azurerm, ARM, Resource, Management, Manager, data, Factory, copy, Activities, Integration Runtime
+
+## COLLEGAMENTI CORRELATI
+
+[Set-AzureRmDataFactoryV2IntegrationRuntime]()
+
+[Remove-AzureRmDataFactoryV2IntegrationRuntime]()
