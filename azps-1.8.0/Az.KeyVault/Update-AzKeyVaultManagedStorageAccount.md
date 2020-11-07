@@ -1,0 +1,263 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.KeyVault.dll-Help.xml
+Module Name: Az.KeyVault
+online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/update-azkeyvaultmanagedstorageaccount
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Update-AzKeyVaultManagedStorageAccount.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Update-AzKeyVaultManagedStorageAccount.md
+ms.openlocfilehash: 183618058d6400798dc2af74975fd45a0a397b16
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93835599"
+---
+# Update-AzKeyVaultManagedStorageAccount
+
+## Sinossi
+Aggiornare gli attributi modificabili di un account di archiviazione di Azure Key Vault gestito.
+
+## SINTASSI
+
+### ByDefinitionName (impostazione predefinita)
+```
+Update-AzKeyVaultManagedStorageAccount [-VaultName] <String> [-AccountName] <String> [-ActiveKeyName <String>]
+ [-AutoRegenerateKey <Boolean>] [-RegenerationPeriod <TimeSpan>] [-Enable <Boolean>] [-Tag <Hashtable>]
+ [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### ByInputObject
+```
+Update-AzKeyVaultManagedStorageAccount [-InputObject] <PSKeyVaultManagedStorageAccountIdentityItem>
+ [-ActiveKeyName <String>] [-AutoRegenerateKey <Boolean>] [-RegenerationPeriod <TimeSpan>] [-Enable <Boolean>]
+ [-Tag <Hashtable>] [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+## Descrizione
+Aggiornare gli attributi modificabili di un account di archiviazione di Azure Key Vault gestito.
+
+## ESEMPI
+
+### Esempio 1: aggiornare la chiave attiva in "key2" in un account di archiviazione di Azure con chiave archiviata Key.
+```powershell
+PS C:\> Update-AzKeyVaultManagedStorageAccount -VaultName 'myvault' -AccountName 'mystorageaccount' -ActiveKeyName 'key2'
+
+Id                  : https://myvault.vault.azure.net:443/storage/mystorageaccount
+Vault Name          : myvault
+AccountName         : mystorageaccount
+Account Resource Id : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx/resourceGroups/myrg/providers/Microsoft.St
+                      orage/storageAccounts/mystorageaccount
+Active Key Name     : key2
+Auto Regenerate Key : True
+Regeneration Period : 90.00:00:00
+Enabled             : True
+Created             : 5/21/2018 11:55:58 PM
+Updated             : 5/21/2018 11:55:58 PM
+Tags                :
+```
+
+Aggiorna la chiave attiva dell'account di archiviazione di Azure Key Vault in "key2". "key2" verrà usato per generare token SAS dopo questo aggiornamento.
+
+## PARAMETRI
+
+### -AccountName
+Nome dell'account di archiviazione gestito Key Vault. Cmdlet crea l'FQDN di un nome di account di archiviazione gestito dal nome del Vault, dall'ambiente selezionato e dal nome dell'account di archiviazione modificato.
+
+```yaml
+Type: System.String
+Parameter Sets: ByDefinitionName
+Aliases: StorageAccountName, Name
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ActiveKeyName
+Nome chiave attiva.
+Se non specificato, il valore esistente del nome della chiave attiva dell'account di archiviazione gestito rimane invariato
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AutoRegenerateKey
+Chiave di rigenerazione automatica.
+Se non specificato, il valore esistente della chiave di rigenerazione automatica dell'account di archiviazione gestita rimane invariato
+
+```yaml
+Type: System.Nullable`1[System.Boolean]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Enable
+Se presente, Abilita l'uso di una chiave dell'account di archiviazione gestita per la generazione di token SAS se value è true. Disabilita l'uso di una chiave dell'account di archiviazione gestita per la generazione di token SAS se value è false. Se non specificato, il valore esistente dello stato abilitato/disabilitato dell'account di archiviazione rimane invariato.
+
+```yaml
+Type: System.Nullable`1[System.Boolean]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+Oggetto ManagedStorageAccount.
+
+```yaml
+Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultManagedStorageAccountIdentityItem
+Parameter Sets: ByInputObject
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -PassThru
+Cmdlet non restituisce Object per impostazione predefinita. Se questa opzione è specificata, restituire l'oggetto account di archiviazione gestita.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RegenerationPeriod
+Periodo di rigenerazione. Se la chiave di rigenerazione automatica è abilitata, questo valore specifica l'intervallo di valori TimeSpan dopo il quale il tasto inattivo dell'account di archiviazione gestito viene rigenerato automaticamente e diventa la chiave attiva. Se non specificato, il valore esistente del periodo di rigenerazione delle chiavi dell'account di archiviazione gestita rimane invariato
+
+```yaml
+Type: System.Nullable`1[System.TimeSpan]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tag
+Coppie chiave-valore in forma di tabella hash. Ad esempio: @ {Key0 = "value0"; Key1 = $null; key2 = "value2"}
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases: Tags
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VAULTNAME
+Nome del Vault.
+Cmdlet costruisce il nome di dominio completo di un Vault in base all'ambiente Name e attualmente selezionato.
+
+```yaml
+Type: System.String
+Parameter Sets: ByDefinitionName
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confermare
+Richiede la conferma prima di eseguire il cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Mostra cosa succede se il cmdlet viene eseguito.
+Il cmdlet non viene eseguito.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## INGRESSI
+
+### Microsoft. Azure. Commands. Vault. Models. PSKeyVaultManagedStorageAccountIdentityItem
+
+## OUTPUT
+
+### Microsoft. Azure. Commands. Vault. Models. PSKeyVaultManagedStorageAccount
+
+## Note
+
+## COLLEGAMENTI CORRELATI
+
+[AZ. Vault](/powershell/module/az.keyvault)
