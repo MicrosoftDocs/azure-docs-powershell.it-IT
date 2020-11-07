@@ -1,0 +1,98 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.DevTestLabs.dll-Help.xml
+Module Name: Az.DevTestLabs
+ms.assetid: 5029179A-99A5-4350-A8E5-D15ABA59CC93
+online version: https://docs.microsoft.com/en-us/powershell/module/az.devtestlabs/get-azdtlvmsperuserpolicy
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DevTestLabs/DevTestLabs/help/Get-AzDtlVMsPerUserPolicy.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DevTestLabs/DevTestLabs/help/Get-AzDtlVMsPerUserPolicy.md
+ms.openlocfilehash: 3a3106dc400345b3debddc54cc9a9f8fdfd8f816
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93674565"
+---
+# Get-AzDtlVMsPerUserPolicy
+
+## Sinossi
+Ottiene i criteri per gli utenti delle macchine virtuali di un Lab in DevTest Labs.
+
+## SINTASSI
+
+```
+Get-AzDtlVMsPerUserPolicy [-LabName] <String> [-ResourceGroupName] <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## Descrizione
+Il cmdlet **Get-AzDtlVMsPerUserPolicy** ottiene le macchine virtuali per i criteri utente di un Lab, che consente di impostare il numero massimo di macchine virtuali consentite per ogni utente.
+Il cmdlet restituisce lo stato abilitato o disabilitato del criterio e il numero massimo di macchine virtuali consentite per ogni utente impostato nel criterio.
+
+## ESEMPI
+
+## PARAMETRI
+
+### -DefaultProfile
+Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LabName
+Specifica il nome del Lab per cui questo cmdlet ottiene il criterio per utente della macchina virtuale.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Specifica il nome del gruppo di risorse a cui appartiene il Lab.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## INGRESSI
+
+### System. String
+
+## OUTPUT
+
+### Microsoft. Azure. Commands. DevTestLabs. Models. PSPolicy
+
+## Note
+
+## COLLEGAMENTI CORRELATI
+
+[Set-AzDtlVMsPerUserPolicy](./Set-AzDtlVMsPerUserPolicy.md)
+
+

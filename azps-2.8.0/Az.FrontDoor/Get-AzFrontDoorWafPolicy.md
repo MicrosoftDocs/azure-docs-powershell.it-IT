@@ -1,0 +1,120 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.FrontDoor.dll-Help.xml
+Module Name: Az.FrontDoor
+online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/get-azfrontdoorwafpolicy
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/Get-AzFrontDoorWafPolicy.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/Get-AzFrontDoorWafPolicy.md
+ms.openlocfilehash: 60d6263d3fb074cf4795379ae28f1824dc81a4c0
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93674389"
+---
+# Get-AzFrontDoorWafPolicy
+
+## Sinossi
+Ottenere i criteri di WAF
+
+## SINTASSI
+
+```
+Get-AzFrontDoorWafPolicy -ResourceGroupName <String> [-Name <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## Descrizione
+Il **Get-AzFrontDoorWafPolicy** cmdletGet ottiene i criteri di WAF in un gruppo di risorse sotto l'abbonamento corrente
+
+## ESEMPI
+
+### Esempio 1
+```powershell
+PS C:\> Get-AzFrontDoorWafPolicy -Name $policyName -ResourceGroupName $resourceGroupName
+
+Name         PolicyMode PolicyEnabledState CustomBlockResponseStatusCode RedirectUrl
+----         ---------- ------------------ ----------------------------- -----------
+{policyName} Prevention            Enabled                           403 https://www.bing.com/
+```
+
+Ottenere un criterio WAF denominato $policyName in $resourceGroupName
+
+### Esempio 2
+```powershell
+PS C:\> Get-AzFrontDoorWafPolicy -ResourceGroupName $resourceGroupName
+
+Name         PolicyMode PolicyEnabledState CustomBlockResponseStatusCode RedirectUrl
+----         ---------- ------------------ ----------------------------- -----------
+{policyName} Prevention           Disabled
+{policyName} Detection             Enabled                           403 https://www.bing.com/
+{policyName} Detection             Enabled                           404
+```
+
+Ottenere tutti i criteri di WAF in $resourceGroupName
+
+## PARAMETRI
+
+### -DefaultProfile
+Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Nome
+Nome FireWallPolicy.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Nome del gruppo di risorse.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INGRESSI
+
+### Nessuno
+
+## OUTPUT
+
+### Microsoft. Azure. Commands. FrontDoor. Models. PSPolicy
+
+## Note
+
+## COLLEGAMENTI CORRELATI
+
+[New-AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md) 
+ [Set-AzFrontDoorWafPolicy](./Set-AzFrontDoorWafPolicy.md) 
+ [Remove-AzFrontDoorWafPolicy](./Remove-AzFrontDoorWafPolicy.md)

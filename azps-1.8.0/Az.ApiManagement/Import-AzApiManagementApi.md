@@ -1,0 +1,273 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ApiManagement.ServiceManagement.dll-Help.xml
+Module Name: Az.ApiManagement
+ms.assetid: 48C143BE-3BF6-43E3-99B0-1A1D12A0A3F3
+online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagement/import-azapimanagementapi
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Import-AzApiManagementApi.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Import-AzApiManagementApi.md
+ms.openlocfilehash: 690ebbfb1bb3cca6de8feb1f199068510e41f1d5
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93673616"
+---
+# Import-AzApiManagementApi
+
+## Sinossi
+Importa un'API da un file o da un URL.
+
+## SINTASSI
+
+### ImportFromLocalFile (impostazione predefinita)
+```
+Import-AzApiManagementApi -Context <PsApiManagementContext> [-ApiId <String>] [-ApiRevision <String>]
+ -SpecificationFormat <PsApiManagementApiFormat> -SpecificationPath <String> [-Path <String>]
+ [-WsdlServiceName <String>] [-WsdlEndpointName <String>] [-ApiType <PsApiManagementApiType>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### ImportFromUrl
+```
+Import-AzApiManagementApi -Context <PsApiManagementContext> [-ApiId <String>] [-ApiRevision <String>]
+ -SpecificationFormat <PsApiManagementApiFormat> -SpecificationUrl <String> [-Path <String>]
+ [-WsdlServiceName <String>] [-WsdlEndpointName <String>] [-ApiType <PsApiManagementApiType>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## Descrizione
+Il cmdlet **Import-AzApiManagementApi** importa un'API di gestione delle API di Azure da un file o un URL nel linguaggio Wadl (Web Application Description Language), WSDL (Web Services Description Language) o in formato spavalderia.
+
+## ESEMPI
+
+### Esempio 1 importare un'API da un file WADL
+```powershell
+PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Import-AzApiManagementApi -Context $ApiMgmtContext -SpecificationFormat "Wadl" -SpecificationPath "C:\contoso\specifications\echoapi.wadl" -Path "apis"
+```
+
+Questo comando importa un'API dal file WADL specificato.
+
+### Esempio 2 importare un'API da un file di spavalderia
+```powershell
+PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Import-AzApiManagementApi -Context $ApiMgmtContext -SpecificationFormat "Swagger" -SpecificationPath "C:\contoso\specifications\echoapi.swagger" -Path "apis"
+```
+
+Questo comando importa un'API dal file di spavalderia specificato.
+
+### Esempio 3: importare un'API da un collegamento a WADL
+```powershell
+PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Import-AzApiManagementApi -Context $ApiMgmtContext -SpecificationFormat "Wadl" -SpecificationUrl "http://contoso.com/specifications/wadl/echoapi" -Path "apis"
+```
+
+Questo comando importa un'API dal collegamento WADL specificato.
+
+## PARAMETRI
+
+### -ApiId
+Specifica un ID per l'API da importare.
+Se non specifichi questo parametro, viene generato un ID.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ApiRevision
+Identificatore della revisione API. Questo parametro è facoltativo. Se non specificato, l'importazione verrà eseguita nella revisione attualmente attiva o in una nuova API.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ApiType
+Questo parametro è facoltativo con un valore predefinito di http. L'opzione SOAP è applicabile solo quando si importano WSDL e si crea un'API passthrough SOAP.
+
+```yaml
+Type: System.Nullable`1[Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiType]
+Parameter Sets: (All)
+Aliases:
+Accepted values: Http, Soap
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Contesto
+Specifica un oggetto **PsApiManagementContext** .
+
+```yaml
+Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Path
+Specifica un percorso dell'API Web come ultima parte dell'URL pubblico dell'API.
+Questo URL viene usato dagli utenti dell'API per l'invio di richieste al servizio Web.
+Deve essere lunga da 1 a 400 caratteri.
+Il valore predefinito è $Null.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -SpecificationFormat
+Specifica il formato della specifica.
+psdx_paramvalues Wadl, WSDL e spavalderia.
+
+```yaml
+Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiFormat
+Parameter Sets: (All)
+Aliases:
+Accepted values: Wadl, Swagger, Wsdl
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -SpecificationPath
+Specifica il percorso del file delle specifiche.
+
+```yaml
+Type: System.String
+Parameter Sets: ImportFromLocalFile
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -SpecificationUrl
+Specifica l'URL della specifica.
+
+```yaml
+Type: System.String
+Parameter Sets: ImportFromUrl
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -WsdlEndpointName
+Nome locale dell'endpoint WSDL (porta) da importare. Deve essere lunga da 1 a 400 caratteri. Questo parametro è facoltativo e necessario solo per l'importazione di WSDL. Il valore predefinito è $null.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -WsdlServiceName
+Nome locale del servizio WSDL da importare. Deve essere lunga da 1 a 400 caratteri. Questo parametro è facoltativo e necessario solo per l'importazione di WSDL. Il valore predefinito è $null.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## INGRESSI
+
+### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementContext
+
+### System. String
+
+### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementApiFormat
+
+### System. Nullable ' 1 [[Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementApiType, Microsoft. Azure. PowerShell. Cmdlets. ApiManagement. ServiceManagement, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null]]
+
+## OUTPUT
+
+### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementApi
+
+## Note
+
+## COLLEGAMENTI CORRELATI
+
+[Export-AzApiManagementApi](./Export-AzApiManagementApi.md)
+
+[Get-AzApiManagementApi](./Get-AzApiManagementApi.md)
+
+[New-AzApiManagementApi](./New-AzApiManagementApi.md)
+
+[Remove-AzApiManagementApi](./Remove-AzApiManagementApi.md)
+
+[Set-AzApiManagementApi](./Set-AzApiManagementApi.md)
+
+
