@@ -1,0 +1,205 @@
+---
+external help file: Azs.Fabric.Admin-help.xml
+Module Name: Azs.Fabric.Admin
+online version: ''
+schema: 2.0.0
+ms.openlocfilehash: deaefa8e98e27572fb3faa9443c296e5a15accb0
+ms.sourcegitcommit: fb95591c45bb5f12b98e0690938d18f2ec611897
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "93859650"
+---
+# <span data-ttu-id="e5a3d-101">Get-AzsInfrastructureVolume</span><span class="sxs-lookup"><span data-stu-id="e5a3d-101">Get-AzsInfrastructureVolume</span></span>
+
+## <span data-ttu-id="e5a3d-102">Sinossi</span><span class="sxs-lookup"><span data-stu-id="e5a3d-102">SYNOPSIS</span></span>
+<span data-ttu-id="e5a3d-103">Restituisce un elenco di tutti i volumi di archiviazione in una posizione.</span><span class="sxs-lookup"><span data-stu-id="e5a3d-103">Returns a list of all storage volumes at a location.</span></span>
+
+## <span data-ttu-id="e5a3d-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="e5a3d-104">SYNTAX</span></span>
+
+### <span data-ttu-id="e5a3d-105">Elenco (impostazione predefinita)</span><span class="sxs-lookup"><span data-stu-id="e5a3d-105">List (Default)</span></span>
+```
+Get-AzsInfrastructureVolume -StoragePool <String> -StorageSystem <String> [-Location <String>]
+ [-ResourceGroupName <String>] [-Filter <String>] [-Skip <Int32>] [-Top <Int32>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="e5a3d-106">Ottieni</span><span class="sxs-lookup"><span data-stu-id="e5a3d-106">Get</span></span>
+```
+Get-AzsInfrastructureVolume -Name <String> -StoragePool <String> -StorageSystem <String> [-Location <String>]
+ [-ResourceGroupName <String>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="e5a3d-107">ResourceId</span><span class="sxs-lookup"><span data-stu-id="e5a3d-107">ResourceId</span></span>
+```
+Get-AzsInfrastructureVolume -ResourceId <String> [<CommonParameters>]
+```
+
+## <span data-ttu-id="e5a3d-108">Descrizione</span><span class="sxs-lookup"><span data-stu-id="e5a3d-108">DESCRIPTION</span></span>
+<span data-ttu-id="e5a3d-109">Restituisce un elenco di tutti i volumi di archiviazione in una posizione.</span><span class="sxs-lookup"><span data-stu-id="e5a3d-109">Returns a list of all storage volumes at a location.</span></span>
+
+## <span data-ttu-id="e5a3d-110">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="e5a3d-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="e5a3d-111">ESEMPIO 1</span><span class="sxs-lookup"><span data-stu-id="e5a3d-111">EXAMPLE 1</span></span>
+```
+Get-AzsInfrastructureVolume -StoragePool SU1_Pool -StorageSystem S-Cluster.azurestack.local
+```
+
+<span data-ttu-id="e5a3d-112">Ottenere un elenco di tutti i volumi di archiviazione in una determinata posizione.</span><span class="sxs-lookup"><span data-stu-id="e5a3d-112">Get a list of all storage volumes at a given location.</span></span>
+
+### <span data-ttu-id="e5a3d-113">ESEMPIO 2</span><span class="sxs-lookup"><span data-stu-id="e5a3d-113">EXAMPLE 2</span></span>
+```
+Get-AzsInfrastructureVolume -StoragePool SU1_Pool -StorageSystem S-Cluster.azurestack.local -Name a42d219b
+```
+
+<span data-ttu-id="e5a3d-114">Ottenere un volume di archiviazione per nome in una determinata posizione.</span><span class="sxs-lookup"><span data-stu-id="e5a3d-114">Get a storage volume by name at a given location.</span></span>
+
+## <span data-ttu-id="e5a3d-115">PARAMETRI</span><span class="sxs-lookup"><span data-stu-id="e5a3d-115">PARAMETERS</span></span>
+
+### <span data-ttu-id="e5a3d-116">-Nome</span><span class="sxs-lookup"><span data-stu-id="e5a3d-116">-Name</span></span>
+<span data-ttu-id="e5a3d-117">Nome del volume di archiviazione.</span><span class="sxs-lookup"><span data-stu-id="e5a3d-117">Name of the storage volume.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: Get
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e5a3d-118">-StoragePool</span><span class="sxs-lookup"><span data-stu-id="e5a3d-118">-StoragePool</span></span>
+<span data-ttu-id="e5a3d-119">Nome del pool di archiviazione.</span><span class="sxs-lookup"><span data-stu-id="e5a3d-119">Storage pool name.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: List, Get
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e5a3d-120">-StorageSystem</span><span class="sxs-lookup"><span data-stu-id="e5a3d-120">-StorageSystem</span></span>
+<span data-ttu-id="e5a3d-121">Rappresentazione di una risorsa di sistema di archiviazione.</span><span class="sxs-lookup"><span data-stu-id="e5a3d-121">Representation of a storage system resource.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: List, Get
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e5a3d-122">-Posizione</span><span class="sxs-lookup"><span data-stu-id="e5a3d-122">-Location</span></span>
+<span data-ttu-id="e5a3d-123">Posizione della risorsa.</span><span class="sxs-lookup"><span data-stu-id="e5a3d-123">Location of the resource.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: List, Get
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e5a3d-124">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="e5a3d-124">-ResourceGroupName</span></span>
+<span data-ttu-id="e5a3d-125">Gruppo di risorse in cui è stato registrato il provider di risorse.</span><span class="sxs-lookup"><span data-stu-id="e5a3d-125">Resource group in which the resource provider has been registered.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: List, Get
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e5a3d-126">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="e5a3d-126">-ResourceId</span></span>
+<span data-ttu-id="e5a3d-127">ID risorsa.</span><span class="sxs-lookup"><span data-stu-id="e5a3d-127">The resource id.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: ResourceId
+Aliases: id
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e5a3d-128">-Filtro</span><span class="sxs-lookup"><span data-stu-id="e5a3d-128">-Filter</span></span>
+<span data-ttu-id="e5a3d-129">Parametro di filtro OData.</span><span class="sxs-lookup"><span data-stu-id="e5a3d-129">OData filter parameter.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e5a3d-130">-Skip</span><span class="sxs-lookup"><span data-stu-id="e5a3d-130">-Skip</span></span>
+<span data-ttu-id="e5a3d-131">Ignorare i primi elementi N specificati dal valore del parametro.</span><span class="sxs-lookup"><span data-stu-id="e5a3d-131">Skip the first N items as specified by the parameter value.</span></span>
+
+```yaml
+Type: Int32
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: -1
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e5a3d-132">-Inizio pagina</span><span class="sxs-lookup"><span data-stu-id="e5a3d-132">-Top</span></span>
+<span data-ttu-id="e5a3d-133">Restituisce i primi N elementi come specificato dal valore del parametro.</span><span class="sxs-lookup"><span data-stu-id="e5a3d-133">Return the top N items as specified by the parameter value.</span></span>
+<span data-ttu-id="e5a3d-134">Si applica dopo il parametro-Skip.</span><span class="sxs-lookup"><span data-stu-id="e5a3d-134">Applies after the -Skip parameter.</span></span>
+
+```yaml
+Type: Int32
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: -1
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e5a3d-135">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="e5a3d-135">CommonParameters</span></span>
+<span data-ttu-id="e5a3d-136">Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="e5a3d-136">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="e5a3d-137">Per altre informazioni, Vedi about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="e5a3d-137">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="e5a3d-138">INGRESSI</span><span class="sxs-lookup"><span data-stu-id="e5a3d-138">INPUTS</span></span>
+
+## <span data-ttu-id="e5a3d-139">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="e5a3d-139">OUTPUTS</span></span>
+
+### <span data-ttu-id="e5a3d-140">Microsoft. AzureStack. Management. Fabric. admin. Models. volume</span><span class="sxs-lookup"><span data-stu-id="e5a3d-140">Microsoft.AzureStack.Management.Fabric.Admin.Models.Volume</span></span>
+
+## <span data-ttu-id="e5a3d-141">Note</span><span class="sxs-lookup"><span data-stu-id="e5a3d-141">NOTES</span></span>
+
+## <span data-ttu-id="e5a3d-142">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="e5a3d-142">RELATED LINKS</span></span>
