@@ -1,0 +1,242 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/new-azapplicationgatewayprobeconfig
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Network/Network/help/New-AzApplicationGatewayProbeConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Network/Network/help/New-AzApplicationGatewayProbeConfig.md
+ms.openlocfilehash: 43c74d2edd2cfd07f65b7d5437bf1cf5c0dfca9f
+ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "93860561"
+---
+# New-AzApplicationGatewayProbeConfig
+
+## Sinossi
+Crea una sonda di integrità.
+
+## SINTASSI
+
+```
+New-AzApplicationGatewayProbeConfig -Name <String> -Protocol <String> [-HostName <String>] -Path <String>
+ -Interval <Int32> -Timeout <Int32> -UnhealthyThreshold <Int32> [-PickHostNameFromBackendHttpSettings]
+ [-MinServers <Int32>] [-Match <PSApplicationGatewayProbeHealthResponseMatch>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## Descrizione
+Il cmdlet New-AzApplicationGatewayProbeConfig crea una sonda di integrità.
+
+## ESEMPI
+
+### Esempio1: creare una sonda di integrità
+```
+PS C:\>New-AzApplicationGatewayProbeConfig -Name "Probe03" -Protocol Http -HostName "contoso.com" -Path "/path/custompath.htm" -Interval 30 -Timeout 120 -UnhealthyThreshold 8
+```
+
+Questo comando crea una sonda di integrità denominata Probe03, con protocollo HTTP, un intervallo di 30 secondi, un timeout di 120 secondi e una soglia non sana di 8 tentativi.
+
+## PARAMETRI
+
+### -DefaultProfile
+Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HostName
+Specifica il nome host che questo cmdlet invia al Probe.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Intervallo
+Specifica l'intervallo di probe in secondi.
+Questo è l'intervallo di tempo tra due sonde consecutive.
+Questo valore è compreso tra 1 secondo e 86400 secondi.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Match
+Corpo che deve essere contenuto nella risposta di integrità.
+Il valore predefinito è Empty
+
+```yaml
+Type: PSApplicationGatewayProbeHealthResponseMatch
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MinServers
+Numero minimo di server sempre contrassegnati come integri.
+Il valore predefinito è 0
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Nome
+Specifica il nome del probe.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Path
+Specifica il percorso relativo di probe.
+I percorsi validi iniziano con il carattere barra (/).
+Il probe viene inviato al \< protocollo \> :// \< host \> : Path della \< porta \> \< \> .
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PickHostNameFromBackendHttpSettings
+Se l'intestazione host deve essere selezionata dalle impostazioni http di backend.
+Il valore predefinito è false
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Protocollo
+Specifica il protocollo usato per inviare Probe.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+Accepted values: Http, Https
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Timeout
+Specifica il timeout del probe in secondi.
+Questo cmdlet contrassegna la sonda come non riuscita se non viene ricevuta una risposta valida con questo periodo di timeout.
+I valori validi sono compresi tra 1 secondo e 86400 secondi.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UnhealthyThreshold
+Specifica il numero di tentativi di probe.
+Il server back-end viene contrassegnato in basso dopo il conteggio errori consecutivi Probe raggiunge la soglia non sana.
+I valori validi sono compresi tra 1 secondo e 20 secondi.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## INGRESSI
+
+## OUTPUT
+
+### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayProbe
+
+## Note
+
+## COLLEGAMENTI CORRELATI
+
+[Creare una Probe personalizzata per il gateway applicazione usando PowerShell per gestione risorse di Azure](https://azure.microsoft.com/en-us/documentation/articles/application-gateway-create-probe-ps/#)
+
+[Add-AzApplicationGatewayProbeConfig]()
+
+[Get-AzApplicationGatewayProbeConfig]()
+
+[Remove-AzApplicationGatewayProbeConfig]()
+
+[Set-AzApplicationGatewayProbeConfig]()
+
