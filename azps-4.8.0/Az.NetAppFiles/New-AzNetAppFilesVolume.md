@@ -1,0 +1,369 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.NetAppFiles.dll-Help.xml
+Module Name: Az.NetAppFiles
+online version: https://docs.microsoft.com/en-us/powershell/module/az.netappfiles/new-aznetappfilesvolume
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NetAppFiles/NetAppFiles/help/New-AzNetAppFilesVolume.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NetAppFiles/NetAppFiles/help/New-AzNetAppFilesVolume.md
+ms.openlocfilehash: dce91ee25cac4a716dc604e38f1ac38e5a3f3f1d
+ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "94032424"
+---
+# <span data-ttu-id="e158a-101">New-AzNetAppFilesVolume</span><span class="sxs-lookup"><span data-stu-id="e158a-101">New-AzNetAppFilesVolume</span></span>
+
+## <span data-ttu-id="e158a-102">Sinossi</span><span class="sxs-lookup"><span data-stu-id="e158a-102">SYNOPSIS</span></span>
+<span data-ttu-id="e158a-103">Crea un nuovo volume di file NetApp (ANF) di Azure.</span><span class="sxs-lookup"><span data-stu-id="e158a-103">Creates a new Azure NetApp Files (ANF) volume.</span></span>
+
+## <span data-ttu-id="e158a-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="e158a-104">SYNTAX</span></span>
+
+### <span data-ttu-id="e158a-105">ByFieldsParameterSet (impostazione predefinita)</span><span class="sxs-lookup"><span data-stu-id="e158a-105">ByFieldsParameterSet (Default)</span></span>
+```
+New-AzNetAppFilesVolume -ResourceGroupName <String> -Location <String> -AccountName <String> -PoolName <String>
+ -Name <String> -UsageThreshold <Int64> -SubnetId <String> -CreationToken <String> [-VolumeType <String>]
+ -ServiceLevel <String> [-SnapshotId <String>] [-ExportPolicy <PSNetAppFilesVolumeExportPolicy>]
+ [-ReplicationObject <PSNetAppFilesReplicationObject>] [-ProtocolType <String[]>] [-Tag <Hashtable>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="e158a-106">ByParentObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="e158a-106">ByParentObjectParameterSet</span></span>
+```
+New-AzNetAppFilesVolume -Name <String> -UsageThreshold <Int64> -SubnetId <String> -CreationToken <String>
+ -ServiceLevel <String> [-ExportPolicy <PSNetAppFilesVolumeExportPolicy>]
+ [-ReplicationObject <PSNetAppFilesReplicationObject>] [-ProtocolType <String[]>] [-Tag <Hashtable>]
+ -PoolObject <PSNetAppFilesPool> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="e158a-107">Descrizione</span><span class="sxs-lookup"><span data-stu-id="e158a-107">DESCRIPTION</span></span>
+<span data-ttu-id="e158a-108">Il cmdlet **New-AzNetAppFilesVolume** crea un volume di ANF.</span><span class="sxs-lookup"><span data-stu-id="e158a-108">The **New-AzNetAppFilesVolume** cmdlet creates an ANF volume.</span></span>
+
+## <span data-ttu-id="e158a-109">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="e158a-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="e158a-110">Esempio 1: creare un volume ANF</span><span class="sxs-lookup"><span data-stu-id="e158a-110">Example 1: Create an ANF volume</span></span>
+```
+PS C:\>New-AzNetAppFilesVolume -ResourceGroupName "MyRG" -AccountName "MyAnfAccount" -PoolName "MyAnfPool" -Name "MyAnfVolume" -l "westus2" -CreationToken "MyAnfVolume" -UsageThreshold 1099511627776 -ServiceLevel "Premium" -SubnetId "/subscriptions/subsId/resourceGroups/MyRG/providers/Microsoft.Network/virtualNetworks/MyVnetName/subnets/MySubNetName"
+
+Output:
+
+Location          : westus2
+Id                : /subscriptions/subsId/resourceGroups/MyRG/providers/Microsoft.NetApp/netAppAccounts/MyAnfAccount/capacityPools/MyAnfPool/volumes/MyAnfVolume
+Name              : MyAnfAccount/MyAnfPool/MyAnfVolume
+Type              : Microsoft.NetApp/netAppAccounts/capacityPools/volumes
+Tags              :
+FileSystemId      : 3e2773a7-2a72-d003-0637-1a8b1fa3eaaf
+CreationToken     : MyAnfVolume
+ServiceLevel      : Premium
+UsageThreshold    : 1099511627776
+ProvisioningState : Succeeded
+SubnetId          : /subscriptions/f557b96d-2308-4a18-aae1-b8f7e7e70cc7/resourceGroups/MyRG/providers/Microsoft.Network/virtualNetworks/MyVnetName/subnets/default
+```
+
+<span data-ttu-id="e158a-111">Questo comando crea il nuovo volume ANF "MyAnfVolume" nel pool "MyAnfPool".</span><span class="sxs-lookup"><span data-stu-id="e158a-111">This command creates the new ANF volume "MyAnfVolume" within the pool "MyAnfPool".</span></span>
+
+## <span data-ttu-id="e158a-112">PARAMETRI</span><span class="sxs-lookup"><span data-stu-id="e158a-112">PARAMETERS</span></span>
+
+### <span data-ttu-id="e158a-113">-AccountName</span><span class="sxs-lookup"><span data-stu-id="e158a-113">-AccountName</span></span>
+<span data-ttu-id="e158a-114">Nome dell'account di ANF</span><span class="sxs-lookup"><span data-stu-id="e158a-114">The name of the ANF account</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e158a-115">-CreationToken</span><span class="sxs-lookup"><span data-stu-id="e158a-115">-CreationToken</span></span>
+<span data-ttu-id="e158a-116">Percorso file univoco per il volume</span><span class="sxs-lookup"><span data-stu-id="e158a-116">A unique file path for the volume</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e158a-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="e158a-117">-DefaultProfile</span></span>
+<span data-ttu-id="e158a-118">Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.</span><span class="sxs-lookup"><span data-stu-id="e158a-118">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e158a-119">-ExportPolicy</span><span class="sxs-lookup"><span data-stu-id="e158a-119">-ExportPolicy</span></span>
+<span data-ttu-id="e158a-120">Matrice Hashtable che rappresenta i criteri di esportazione</span><span class="sxs-lookup"><span data-stu-id="e158a-120">A hashtable array which represents the export policy</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.NetAppFiles.Models.PSNetAppFilesVolumeExportPolicy
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e158a-121">-Posizione</span><span class="sxs-lookup"><span data-stu-id="e158a-121">-Location</span></span>
+<span data-ttu-id="e158a-122">Posizione della risorsa</span><span class="sxs-lookup"><span data-stu-id="e158a-122">The location of the resource</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e158a-123">-Nome</span><span class="sxs-lookup"><span data-stu-id="e158a-123">-Name</span></span>
+<span data-ttu-id="e158a-124">Nome del volume di ANF</span><span class="sxs-lookup"><span data-stu-id="e158a-124">The name of the ANF volume</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: VolumeName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e158a-125">-PoolName</span><span class="sxs-lookup"><span data-stu-id="e158a-125">-PoolName</span></span>
+<span data-ttu-id="e158a-126">Nome del pool di ANF</span><span class="sxs-lookup"><span data-stu-id="e158a-126">The name of the ANF pool</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e158a-127">-PoolObject</span><span class="sxs-lookup"><span data-stu-id="e158a-127">-PoolObject</span></span>
+<span data-ttu-id="e158a-128">Pool per il nuovo oggetto volume</span><span class="sxs-lookup"><span data-stu-id="e158a-128">The pool for the new volume object</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.NetAppFiles.Models.PSNetAppFilesPool
+Parameter Sets: ByParentObjectParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e158a-129">-ProtocolType</span><span class="sxs-lookup"><span data-stu-id="e158a-129">-ProtocolType</span></span>
+<span data-ttu-id="e158a-130">Matrice Hashtable che rappresenta i criteri di esportazione</span><span class="sxs-lookup"><span data-stu-id="e158a-130">A hashtable array which represents the export policy</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e158a-131">-ReplicationObject</span><span class="sxs-lookup"><span data-stu-id="e158a-131">-ReplicationObject</span></span>
+<span data-ttu-id="e158a-132">Matrice Hashtable che rappresenta l'oggetto Replication</span><span class="sxs-lookup"><span data-stu-id="e158a-132">A hashtable array which represents the replication object</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.NetAppFiles.Models.PSNetAppFilesReplicationObject
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e158a-133">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="e158a-133">-ResourceGroupName</span></span>
+<span data-ttu-id="e158a-134">Gruppo risorse dell'account ANF</span><span class="sxs-lookup"><span data-stu-id="e158a-134">The resource group of the ANF account</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e158a-135">-ServiceLevel</span><span class="sxs-lookup"><span data-stu-id="e158a-135">-ServiceLevel</span></span>
+<span data-ttu-id="e158a-136">Livello di servizio del volume ANF</span><span class="sxs-lookup"><span data-stu-id="e158a-136">The service level of the ANF volume</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e158a-137">-SnapshotId</span><span class="sxs-lookup"><span data-stu-id="e158a-137">-SnapshotId</span></span>
+<span data-ttu-id="e158a-138">Creare un volume da uno snapshot.</span><span class="sxs-lookup"><span data-stu-id="e158a-138">Create volume from a snapshot.</span></span> <span data-ttu-id="e158a-139">UUID V4 o identificatore delle risorse usato per identificare lo snapshot</span><span class="sxs-lookup"><span data-stu-id="e158a-139">UUID v4 or resource identifier used to identify the Snapshot</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e158a-140">-SubnetId</span><span class="sxs-lookup"><span data-stu-id="e158a-140">-SubnetId</span></span>
+<span data-ttu-id="e158a-141">URI di risorsa di Azure per una subnet delegata</span><span class="sxs-lookup"><span data-stu-id="e158a-141">The Azure Resource URI for a delegated subnet</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e158a-142">-Tag</span><span class="sxs-lookup"><span data-stu-id="e158a-142">-Tag</span></span>
+<span data-ttu-id="e158a-143">Hashtable che rappresenta i tag delle risorse</span><span class="sxs-lookup"><span data-stu-id="e158a-143">A hashtable which represents resource tags</span></span>
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases: Tags
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e158a-144">-UsageThreshold</span><span class="sxs-lookup"><span data-stu-id="e158a-144">-UsageThreshold</span></span>
+<span data-ttu-id="e158a-145">La quota di archiviazione massima consentita per un file System in byte</span><span class="sxs-lookup"><span data-stu-id="e158a-145">The maximum storage quota allowed for a file system in bytes</span></span>
+
+```yaml
+Type: System.Int64
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e158a-146">-VolumeType</span><span class="sxs-lookup"><span data-stu-id="e158a-146">-VolumeType</span></span>
+<span data-ttu-id="e158a-147">Tipo di volume ANF</span><span class="sxs-lookup"><span data-stu-id="e158a-147">The type of the ANF volume</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e158a-148">-Confermare</span><span class="sxs-lookup"><span data-stu-id="e158a-148">-Confirm</span></span>
+<span data-ttu-id="e158a-149">Richiede la conferma prima di eseguire il cmdlet.</span><span class="sxs-lookup"><span data-stu-id="e158a-149">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e158a-150">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="e158a-150">-WhatIf</span></span>
+<span data-ttu-id="e158a-151">Mostra cosa succede se il cmdlet viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="e158a-151">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="e158a-152">Il cmdlet non viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="e158a-152">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e158a-153">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="e158a-153">CommonParameters</span></span>
+<span data-ttu-id="e158a-154">Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="e158a-154">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="e158a-155">Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="e158a-155">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="e158a-156">INGRESSI</span><span class="sxs-lookup"><span data-stu-id="e158a-156">INPUTS</span></span>
+
+### <span data-ttu-id="e158a-157">System. String</span><span class="sxs-lookup"><span data-stu-id="e158a-157">System.String</span></span>
+
+### <span data-ttu-id="e158a-158">Microsoft. Azure. Commands. NetAppFiles. Models. PSNetAppFilesPool</span><span class="sxs-lookup"><span data-stu-id="e158a-158">Microsoft.Azure.Commands.NetAppFiles.Models.PSNetAppFilesPool</span></span>
+
+## <span data-ttu-id="e158a-159">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="e158a-159">OUTPUTS</span></span>
+
+### <span data-ttu-id="e158a-160">Microsoft. Azure. Commands. NetAppFiles. Models. PSNetAppFilesVolume</span><span class="sxs-lookup"><span data-stu-id="e158a-160">Microsoft.Azure.Commands.NetAppFiles.Models.PSNetAppFilesVolume</span></span>
+
+## <span data-ttu-id="e158a-161">Note</span><span class="sxs-lookup"><span data-stu-id="e158a-161">NOTES</span></span>
+
+## <span data-ttu-id="e158a-162">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="e158a-162">RELATED LINKS</span></span>
