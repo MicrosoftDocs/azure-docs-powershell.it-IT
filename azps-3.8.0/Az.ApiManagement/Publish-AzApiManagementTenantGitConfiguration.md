@@ -1,0 +1,197 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ApiManagement.ServiceManagement.dll-Help.xml
+Module Name: Az.ApiManagement
+ms.assetid: 4783305F-5619-446A-A6DF-BD1E56739A2F
+online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagement/publish-azapimanagementtenantgitconfiguration
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Publish-AzApiManagementTenantGitConfiguration.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Publish-AzApiManagementTenantGitConfiguration.md
+ms.openlocfilehash: 288bb02ffad3669615df3535aec7f691162daa2a
+ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "94020162"
+---
+# Publish-AzApiManagementTenantGitConfiguration
+
+## Sinossi
+Pubblica le modifiche da una filiale git al database di configurazione.
+
+## SINTASSI
+
+```
+Publish-AzApiManagementTenantGitConfiguration -Context <PsApiManagementContext> -Branch <String> [-Force]
+ [-ValidateOnly] [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+## Descrizione
+Il cmdlet **Publish-AzApiManagementTenantGitConfiguration** pubblica le modifiche da una filiale git al database di configurazione.
+In alternativa, è possibile convalidare le modifiche in un ramo git senza pubblicare.
+
+## ESEMPI
+
+### Esempio 1: distribuire le modifiche git
+```
+PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Publish-AzApiManagementTenantGitConfiguration -Context $apimContext -Branch 'master' -PassThru
+```
+
+Questo comando pubblica le modifiche dal ramo specificato al database di configurazione.
+
+### Esempio 2: convalidare le modifiche git
+```
+PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Publish-AzApiManagementTenantGitConfiguration -Context $apimContext -Branch 'master' -ValidateOnly -PassThru
+```
+
+Questo comando Convalida le modifiche nel ramo git rispetto al database di configurazione.
+Le modifiche non vengono pubblicate.
+
+## PARAMETRI
+
+### -Branch
+Specifica il nome del ramo git da cui questo cmdlet distribuisce la configurazione al database di configurazione.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Contesto
+Specifica un oggetto **PsApiManagementContext** .
+
+```yaml
+Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Force
+Indica che questo cmdlet elimina le sottoscrizioni ai prodotti eliminati in questo aggiornamento.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -PassThru
+Indica che questo cmdlet restituisce un oggetto **PsApiManagementOperationResult** .
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ValidateOnly
+Indica che questo cmdlet convalida le modifiche nel ramo git specificato.
+Non viene pubblicata nel database di configurazione.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Confermare
+Richiede la conferma prima di eseguire il cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Mostra cosa succede se il cmdlet viene eseguito.
+Il cmdlet non viene eseguito.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INGRESSI
+
+### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementContext
+
+### System. String
+
+### System. Management. Automation. SwitchParameter
+
+## OUTPUT
+
+### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementOperationResult
+
+## Note
+
+## COLLEGAMENTI CORRELATI
+
+[Salva-AzApiManagementTenantGitConfiguration](./Save-AzApiManagementTenantGitConfiguration.md)
+
+
