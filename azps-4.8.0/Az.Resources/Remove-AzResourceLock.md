@@ -1,0 +1,288 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ResourceManager.dll-Help.xml
+Module Name: Az.Resources
+ms.assetid: 42EEAAA8-F13B-486B-82BD-F646EF0DCDBA
+online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/remove-azresourcelock
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzResourceLock.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzResourceLock.md
+ms.openlocfilehash: 8ad1a2ace4978b12210e568fb944568f5a2fec77
+ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "94188901"
+---
+# <span data-ttu-id="9db44-101">Remove-AzResourceLock</span><span class="sxs-lookup"><span data-stu-id="9db44-101">Remove-AzResourceLock</span></span>
+
+## <span data-ttu-id="9db44-102">Sinossi</span><span class="sxs-lookup"><span data-stu-id="9db44-102">SYNOPSIS</span></span>
+<span data-ttu-id="9db44-103">Rimuove un blocco di risorse.</span><span class="sxs-lookup"><span data-stu-id="9db44-103">Removes a resource lock.</span></span>
+
+## <span data-ttu-id="9db44-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="9db44-104">SYNTAX</span></span>
+
+### <span data-ttu-id="9db44-105">ByLockId (impostazione predefinita)</span><span class="sxs-lookup"><span data-stu-id="9db44-105">ByLockId (Default)</span></span>
+```
+Remove-AzResourceLock [-Force] -LockId <String> [-ApiVersion <String>] [-Pre]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="9db44-106">ByResourceGroup</span><span class="sxs-lookup"><span data-stu-id="9db44-106">ByResourceGroup</span></span>
+```
+Remove-AzResourceLock -LockName <String> [-Force] -ResourceGroupName <String> [-ApiVersion <String>] [-Pre]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="9db44-107">ByResourceGroupLevel</span><span class="sxs-lookup"><span data-stu-id="9db44-107">ByResourceGroupLevel</span></span>
+```
+Remove-AzResourceLock -LockName <String> [-Force] -ResourceName <String> -ResourceType <String>
+ -ResourceGroupName <String> [-ApiVersion <String>] [-Pre] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="9db44-108">BySpecifiedScope</span><span class="sxs-lookup"><span data-stu-id="9db44-108">BySpecifiedScope</span></span>
+```
+Remove-AzResourceLock -LockName <String> [-Force] -Scope <String> [-ApiVersion <String>] [-Pre]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="9db44-109">BySubscription</span><span class="sxs-lookup"><span data-stu-id="9db44-109">BySubscription</span></span>
+```
+Remove-AzResourceLock -LockName <String> [-Force] [-ApiVersion <String>] [-Pre]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="9db44-110">BySubscriptionLevel</span><span class="sxs-lookup"><span data-stu-id="9db44-110">BySubscriptionLevel</span></span>
+```
+Remove-AzResourceLock -LockName <String> [-Force] -ResourceName <String> -ResourceType <String>
+ [-ApiVersion <String>] [-Pre] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="9db44-111">Descrizione</span><span class="sxs-lookup"><span data-stu-id="9db44-111">DESCRIPTION</span></span>
+<span data-ttu-id="9db44-112">Il cmdlet **Remove-AzResourceLock** rimuove un blocco di risorse Azure.</span><span class="sxs-lookup"><span data-stu-id="9db44-112">The **Remove-AzResourceLock** cmdlet removes an Azure resource lock.</span></span>
+
+## <span data-ttu-id="9db44-113">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="9db44-113">EXAMPLES</span></span>
+
+### <span data-ttu-id="9db44-114">Esempio 1: rimuovere un blocco</span><span class="sxs-lookup"><span data-stu-id="9db44-114">Example 1: Remove a lock</span></span>
+```powershell
+PS C:\>Remove-AzResourceLock -LockName "ContosoSiteLock" -ResourceName "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/Default-Storage-SouthCentralUS/providers/Microsoft.ClassicStorage/storageAccounts/mystorageaccount/providers/Microsoft.Authorization/locks/test"
+```
+
+<span data-ttu-id="9db44-115">Questo comando rimuove il blocco denominato ContosoSiteLock.</span><span class="sxs-lookup"><span data-stu-id="9db44-115">This command removes the lock named ContosoSiteLock.</span></span>
+
+### <span data-ttu-id="9db44-116">Esempio 2</span><span class="sxs-lookup"><span data-stu-id="9db44-116">Example 2</span></span>
+
+<span data-ttu-id="9db44-117">Rimuove un blocco di risorse.</span><span class="sxs-lookup"><span data-stu-id="9db44-117">Removes a resource lock.</span></span> <span data-ttu-id="9db44-118">AutoGenerated</span><span class="sxs-lookup"><span data-stu-id="9db44-118">(autogenerated)</span></span>
+
+<!-- Aladdin Generated Example -->
+```powershell
+Remove-AzResourceLock -LockName 'ContosoSiteLock' -ResourceGroupName myresourcegroup -ResourceName '/subscriptions/00000000-0000-0000-0000-00000000000000000/resourceGroups/Default-Storage-SouthCentralUS/providers/Microsoft.ClassicStorage/storageAccounts/mystorageaccount/providers/Microsoft.Authorization/locks/test' -ResourceType 'Microsoft.ClassicCompute/storageAccounts'
+```
+
+## <span data-ttu-id="9db44-119">PARAMETRI</span><span class="sxs-lookup"><span data-stu-id="9db44-119">PARAMETERS</span></span>
+
+### <span data-ttu-id="9db44-120">-ApiVersion</span><span class="sxs-lookup"><span data-stu-id="9db44-120">-ApiVersion</span></span>
+<span data-ttu-id="9db44-121">Specifica la versione dell'API del provider di risorse da usare.</span><span class="sxs-lookup"><span data-stu-id="9db44-121">Specifies the version of the resource provider API to use.</span></span>
+<span data-ttu-id="9db44-122">Se non specifichi una versione, questo cmdlet usa la versione più recente disponibile.</span><span class="sxs-lookup"><span data-stu-id="9db44-122">If you do not specify a version, this cmdlet uses the latest available version.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9db44-123">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="9db44-123">-DefaultProfile</span></span>
+<span data-ttu-id="9db44-124">Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure</span><span class="sxs-lookup"><span data-stu-id="9db44-124">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9db44-125">-Force</span><span class="sxs-lookup"><span data-stu-id="9db44-125">-Force</span></span>
+<span data-ttu-id="9db44-126">Impone l'esecuzione del comando senza richiedere la conferma dell'utente.</span><span class="sxs-lookup"><span data-stu-id="9db44-126">Forces the command to run without asking for user confirmation.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9db44-127">-LockId</span><span class="sxs-lookup"><span data-stu-id="9db44-127">-LockId</span></span>
+<span data-ttu-id="9db44-128">Specifica l'ID del blocco rimosso da questo cmdlet.</span><span class="sxs-lookup"><span data-stu-id="9db44-128">Specifies the ID of the lock that this cmdlet removes.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByLockId
+Aliases: Id, ResourceId
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9db44-129">-LockName</span><span class="sxs-lookup"><span data-stu-id="9db44-129">-LockName</span></span>
+<span data-ttu-id="9db44-130">Specifica il nome del blocco rimosso da questo cmdlet.</span><span class="sxs-lookup"><span data-stu-id="9db44-130">Specifies the name of the lock that this cmdlet removes.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByResourceGroup, ByResourceGroupLevel, BySpecifiedScope, BySubscription, BySubscriptionLevel
+Aliases: ExtensionResourceName, Name
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9db44-131">-Pre</span><span class="sxs-lookup"><span data-stu-id="9db44-131">-Pre</span></span>
+<span data-ttu-id="9db44-132">Indica che questo cmdlet considera le versioni dell'API di pre-rilascio quando determina automaticamente la versione da usare.</span><span class="sxs-lookup"><span data-stu-id="9db44-132">Indicates that this cmdlet considers pre-release API versions when it automatically determines which version to use.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9db44-133">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="9db44-133">-ResourceGroupName</span></span>
+<span data-ttu-id="9db44-134">Specifica il nome del gruppo di risorse per cui si applica il blocco.</span><span class="sxs-lookup"><span data-stu-id="9db44-134">Specifies the name of the resource group for which the lock applies.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByResourceGroup, ByResourceGroupLevel
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9db44-135">-ResourceName</span><span class="sxs-lookup"><span data-stu-id="9db44-135">-ResourceName</span></span>
+<span data-ttu-id="9db44-136">Specifica il nome della risorsa per cui si applica il blocco.</span><span class="sxs-lookup"><span data-stu-id="9db44-136">Specifies the name of the resource for which the lock applies.</span></span>
+<span data-ttu-id="9db44-137">Ad esempio, per specificare un database, usa il formato seguente: `/` database server</span><span class="sxs-lookup"><span data-stu-id="9db44-137">For instance, to specify a database, use the following format: Server`/`Database</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByResourceGroupLevel, BySubscriptionLevel
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9db44-138">-ResourceType</span><span class="sxs-lookup"><span data-stu-id="9db44-138">-ResourceType</span></span>
+<span data-ttu-id="9db44-139">Specifica il tipo di risorsa della risorsa per cui si applica il blocco.</span><span class="sxs-lookup"><span data-stu-id="9db44-139">Specifies the resource type of the resource for which the lock applies.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByResourceGroupLevel, BySubscriptionLevel
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9db44-140">-Ambito</span><span class="sxs-lookup"><span data-stu-id="9db44-140">-Scope</span></span>
+<span data-ttu-id="9db44-141">Specifica l'ambito a cui si applica il blocco.</span><span class="sxs-lookup"><span data-stu-id="9db44-141">Specifies the scope to which the lock applies.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: BySpecifiedScope
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9db44-142">-Confermare</span><span class="sxs-lookup"><span data-stu-id="9db44-142">-Confirm</span></span>
+<span data-ttu-id="9db44-143">Richiede la conferma prima di eseguire il cmdlet.</span><span class="sxs-lookup"><span data-stu-id="9db44-143">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9db44-144">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="9db44-144">-WhatIf</span></span>
+<span data-ttu-id="9db44-145">Mostra cosa succede se il cmdlet viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="9db44-145">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="9db44-146">Il cmdlet non viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="9db44-146">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9db44-147">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="9db44-147">CommonParameters</span></span>
+<span data-ttu-id="9db44-148">Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="9db44-148">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="9db44-149">Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="9db44-149">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="9db44-150">INGRESSI</span><span class="sxs-lookup"><span data-stu-id="9db44-150">INPUTS</span></span>
+
+### <span data-ttu-id="9db44-151">System. String</span><span class="sxs-lookup"><span data-stu-id="9db44-151">System.String</span></span>
+
+## <span data-ttu-id="9db44-152">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="9db44-152">OUTPUTS</span></span>
+
+### <span data-ttu-id="9db44-153">System. Management. Automation. PSObject</span><span class="sxs-lookup"><span data-stu-id="9db44-153">System.Management.Automation.PSObject</span></span>
+
+## <span data-ttu-id="9db44-154">Note</span><span class="sxs-lookup"><span data-stu-id="9db44-154">NOTES</span></span>
+
+## <span data-ttu-id="9db44-155">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="9db44-155">RELATED LINKS</span></span>
+
+[<span data-ttu-id="9db44-156">Get-AzResourceLock</span><span class="sxs-lookup"><span data-stu-id="9db44-156">Get-AzResourceLock</span></span>](./Get-AzResourceLock.md)
+
+[<span data-ttu-id="9db44-157">New-AzResourceLock</span><span class="sxs-lookup"><span data-stu-id="9db44-157">New-AzResourceLock</span></span>](./New-AzResourceLock.md)
+
+[<span data-ttu-id="9db44-158">Set-AzResourceLock</span><span class="sxs-lookup"><span data-stu-id="9db44-158">Set-AzResourceLock</span></span>](./Set-AzResourceLock.md)
+
+
