@@ -1,0 +1,246 @@
+---
+external help file: ''
+Module Name: Azs.Compute.Admin
+online version: https://docs.microsoft.com/powershell/module/azs.compute.admin/remove-azsvmextension
+schema: 2.0.0
+ms.openlocfilehash: 0b2bca9555b14a391df69acc4abdb2fc8c95017c
+ms.sourcegitcommit: 199e9c800e58e88c4cbfd3f221bafe02b3e8294d
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "94023324"
+---
+# Remove-AzsVMExtension
+
+## Sinossi
+Elimina l'immagine dell'estensione della macchina virtuale specificata.
+
+## SINTASSI
+
+### Elimina (impostazione predefinita)
+```
+Remove-AzsVMExtension -Publisher <String> -Type <String> -Version <String> [-Location <String>]
+ [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### DeleteViaIdentity
+```
+Remove-AzsVMExtension -InputObject <IComputeAdminIdentity> [-DefaultProfile <PSObject>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
+```
+
+## Descrizione
+Elimina l'immagine dell'estensione della macchina virtuale specificata.
+
+## ESEMPI
+
+### Esempio 1: rimuovere un'estensione VM esistente 
+```powershell
+PS C:\> Remove-AzsVMExtension -Location local -Publisher Microsoft -Type MicroExtension -Version 0.1.0
+```
+
+Una chiamata corretta per rimuovere una quota di calcolo non restituirà alcun output
+
+### Esempio 2: rimuovere un'estensione VM che non esiste
+```powershell
+PS C:\> Remove-AzsVMExtension -Location local -Publisher Microsoft -Type DoesntExist -Version 9.8.7
+```
+
+Una chiamata corretta per rimuovere un'immagine della piattaforma che non esiste non restituirà alcun output
+
+## PARAMETRI
+
+### -DefaultProfile
+Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+
+```yaml
+Type: System.Management.Automation.PSObject
+Parameter Sets: (All)
+Aliases: AzureRMContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### -InputObject
+Parametro Identity da costruire, vedere la sezione Note per le proprietà di INPUTOBJECT e creare una tabella hash.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.ComputeAdmin.Models.IComputeAdminIdentity
+Parameter Sets: DeleteViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+
+```
+
+### -Posizione
+Posizione della risorsa.
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzLocation)[0].Location
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### -PassThru
+Restituisce vero quando il comando riesce
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### -Publisher
+Nome dell'autore.
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### -SubscriptionId
+Credenziali di sottoscrizione che identificano in modo univoco l'abbonamento a Microsoft Azure.
+L'ID sottoscrizione fa parte dell'URI per ogni chiamata di servizio.
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### -Digitare
+Tipo di estensione.
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### -Versione
+La versione della risorsa.
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### -Confermare
+Richiede la conferma prima di eseguire il cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### -WhatIf
+Mostra cosa succede se il cmdlet viene eseguito.
+Il cmdlet non viene eseguito.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### CommonParameters
+Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INGRESSI
+
+### Microsoft. Azure. PowerShell. Cmdlets. ComputeAdmin. Models. IComputeAdminIdentity
+
+## OUTPUT
+
+### System. Boolean
+
+
+
+## Note
+
+Proprietà complesse dei parametri per creare i parametri descritti di seguito, Costruisci una tabella hash contenente le proprietà appropriate. Per informazioni sulle tabelle hash, eseguire Get-Help about_Hash_Tables.
+
+INPUTOBJECT <IComputeAdminIdentity> : parametro Identity
+  - `[DiskId <String>]`: GUID del disco come identità.
+  - `[Id <String>]`: Percorso identità risorse
+  - `[Location <String>]`: Posizione della risorsa.
+  - `[MigrationId <String>]`: Nome GUID processo di migrazione.
+  - `[Offer <String>]`: Nome dell'offerta.
+  - `[Publisher <String>]`: Nome del server di pubblicazione.
+  - `[QuotaName <String>]`: Nome della quota.
+  - `[Sku <String>]`: Nome dell'USK.
+  - `[SubscriptionId <String>]`: Credenziali di sottoscrizione che identificano in modo univoco l'abbonamento a Microsoft Azure. L'ID sottoscrizione fa parte dell'URI per ogni chiamata di servizio.
+  - `[Type <String>]`: Tipo di estensione.
+  - `[Version <String>]`: La versione della risorsa.
+
+## COLLEGAMENTI CORRELATI
+
