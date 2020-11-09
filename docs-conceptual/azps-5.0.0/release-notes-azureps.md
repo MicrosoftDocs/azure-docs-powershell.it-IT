@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 913532fa5a8937f7ba4cc1ce21c5879f3920fc7f
-ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.openlocfilehash: 4ab5639cfb997c5f9ee1286e6eacb97ef775239a
+ms.sourcegitcommit: 63181e0af0e4468b0530fdb0495ed4d44bdfd1c8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92753589"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93134863"
 ---
 # <a name="azure-powershell-release-notes"></a>Note sulla versione di Azure PowerShell
 
@@ -46,7 +46,7 @@ ms.locfileid: "92753589"
 * Aggiunti i parametri facoltativi 'Tier', 'MaxSharesCount', 'DiskIOPSReadOnly' e 'DiskMBpsReadOnly' al cmdlet 'New-AzDiskUpdateConfig'. 
 
 #### <a name="azcontainerregistry"></a>Az.ContainerRegistry
-* [Modifica di rilievo] Aggiornata l'API alla versione 2020-05-01
+* [Modifica di rilievo] Aggiornata l'API alla versione 2019-05-01
 * [Modifica di rilievo] Rimossi lo SKU 'Classic' e il parametro 'StorageAccountName' da 'New-AzContainerRegistry'
 * Aggiunti nuovi cmdlet: 'Connect-AzContainerRegistry', 'Import-AzContainerRegistry', 'Get-AzContainerRegistryUsage', 'New-AzContainerRegistryNetworkRule', 'Set-AzContainerRegistryNetworkRule'
 * Aggiunto il nuovo parametro 'NetworkRuleSet' a 'Update-AzContainerRegistry'
@@ -1762,28 +1762,28 @@ Correzione del cmdlet New-AzSqlDatabaseSecondary per verificare l'esistenza di P
 
 #### <a name="azbatch"></a>Az.Batch
 * Ridenominazione di `CoreQuota` in `DedicatedCoreQuota` per `BatchAccountContext`. È disponibile anche un nuovo metodo `LowPriorityCoreQuota`.
-  - Questa modifica influisce su **Get-AzBatchAccount** .
-* Il parametro `-ResourceFile` di **New-AzBatchTask** ora accetta una raccolta di oggetti `PSResourceFile`, che può essere creata con il nuovo cmdlet **New-AzBatchResourceFile** .
+  - Questa modifica influisce su **Get-AzBatchAccount**.
+* Il parametro `-ResourceFile` di **New-AzBatchTask** ora accetta una raccolta di oggetti `PSResourceFile`, che può essere creata con il nuovo cmdlet **New-AzBatchResourceFile**.
 * Nuovo cmdlet **New-AzBatchResourceFile** per semplificare la creazione di oggetti `PSResourceFile`. Possono essere specificati in **New-AzBatchTask** nel parametro `-ResourceFile`.
   - Sono quindi supportati due nuovi tipi di file di risorse in aggiunta all'attuale `HttpUrl`:
     - I file di risorse basati su `AutoStorageContainerName` scaricano un intero contenitore di archiviazione automatica nel nodo Batch.
     - I file di risorse basati su `StorageContainerUrl` scaricano il contenitore specificato nell'URL del nodo Batch.
-* Rimozione della proprietà `ApplicationPackages` di `PSApplication` restituita da **Get-AzBatchApplication** .
-  - È ora possibile recuperare i pacchetti specifici all'interno di un'applicazione usando **Get-AzBatchApplicationPackage** . Ad esempio: `Get-AzBatchApplication -AccountName myaccount -ResourceGroupName myresourcegroup -ApplicationId myapplication`.
-* Ridenominazione di `ApplicationId` in `ApplicationName` per **Get-AzBatchApplicationPackage** , **New-AzBatchApplicationPackage** , **Remove-AzBatchApplicationPackage** , **Get-AzBatchApplication** , **New-AzBatchApplication** , **Remove-AzBatchApplication** e **set-AzBatchApplication** .
+* Rimozione della proprietà `ApplicationPackages` di `PSApplication` restituita da **Get-AzBatchApplication**.
+  - È ora possibile recuperare i pacchetti specifici all'interno di un'applicazione usando **Get-AzBatchApplicationPackage**. Ad esempio: `Get-AzBatchApplication -AccountName myaccount -ResourceGroupName myresourcegroup -ApplicationId myapplication`.
+* Ridenominazione di `ApplicationId` in `ApplicationName` per **Get-AzBatchApplicationPackage** , **New-AzBatchApplicationPackage** , **Remove-AzBatchApplicationPackage** , **Get-AzBatchApplication** , **New-AzBatchApplication** , **Remove-AzBatchApplication** e **set-AzBatchApplication**.
   - `ApplicationId` è ora un alias di `ApplicationName`.
 * Aggiunta della nuova proprietà `PSWindowsUserConfiguration` a `PSUserAccount`.
 * Ridenominazione di `Version` in `Name` per `PSApplicationPackage`.
 * Ridenominazione di `BlobSource` in `HttpUrl` per `PSResourceFile`.
 * Rimozione della proprietà `OSDisk` da `PSVirtualMachineConfiguration`.
-* Rimozione di **set-AzBatchPoolOSVersion** . Questa operazione non è più supportata.
+* Rimozione di **set-AzBatchPoolOSVersion**. Questa operazione non è più supportata.
 * Rimozione di `TargetOSVersion` da `PSCloudServiceConfiguration`.
 * Ridenominazione di `CurrentOSVersion` in `OSVersion` per `PSCloudServiceConfiguration`.
 * Rimozione di `DataEgressGiB` e `DataIngressGiB` da `PSPoolUsageMetrics`.
-* Rimozione di **Get-AzBatchNodeAgentSku** e sostituzione con **Get-AzBatchSupportedImage** .
+* Rimozione di **Get-AzBatchNodeAgentSku** e sostituzione con **Get-AzBatchSupportedImage**.
   - **Get-AzBatchSupportedImage** restituisce gli stessi dati di **Get-AzBatchNodeAgentSku** ma in un formato più intuitivo.
   - Vengono inoltre restituite nuove immagini non verificate. Sono incluse anche informazioni aggiuntive su `Capabilities` e `BatchSupportEndOfLife` per ogni immagine.
-* Aggiunta della possibilità di montare file system remoti in ogni nodo di un pool tramite il nuovo parametro `MountConfiguration` di **New-AzBatchPool** .
+* Aggiunta della possibilità di montare file system remoti in ogni nodo di un pool tramite il nuovo parametro `MountConfiguration` di **New-AzBatchPool**.
 * Sono ora supportate regole di sicurezza di rete che bloccano l'accesso di rete a un pool in base alla porta di origine del traffico. Questa operazione viene eseguita tramite la proprietà `SourcePortRanges` in `PSNetworkSecurityGroupRule`.
 * Quando si esegue un contenitore, Batch supporta ora l'esecuzione dell'attività nella directory di lavoro del contenitore o in quella dell'attività Batch. Questa operazione è controllata dalla proprietà `WorkingDirectory` in `PSTaskContainerSettings`.
 * Aggiunta della possibilità di specificare una raccolta di indirizzi IP pubblici in `PSNetworkConfiguration` tramite la nuova proprietà `PublicIPs`. Ciò garantisce che i nodi del pool avranno un indirizzo IP incluso nell'elenco di quelli specificati dall'utente.
@@ -2079,8 +2079,8 @@ Correzione del cmdlet New-AzSqlDatabaseSecondary per verificare l'esistenza di P
 #### <a name="azmonitor"></a>Az.Monitor
 * Puntamento alla versione più recente di Monitor SKD, ossia 0.24.1 (anteprima)
    - Aggiunta di modifiche non di rilievo ai cmdlet Metrics, ossia supporto di numerosi nuovi valori nell'enumerazione Unit. Questi cmdlet sono di sola lettura, quindi il relativo input non cambia.
-   - La versione API delle richieste **ActionGroups** è ora **2019-06-01** , prima era **2018-03-01** . I test dello scenario sono stati aggiornati per riflettere questa modifica.
-   - Nei costruttori per le classi **EmailReceiver** e **WebhookReceiver** è stato aggiunto un nuovo argomento obbligatorio, ossia un valore booleano denominato **useCommonAlertSchema** . Attualmente il valore è fisso su **false** per nascondere questa modifica di rilievo ai cmdlet. **NOTA** : questa è una modifica temporanea che deve essere convalidata dal team degli avvisi.
+   - La versione API delle richieste **ActionGroups** è ora **2019-06-01** , prima era **2018-03-01**. I test dello scenario sono stati aggiornati per riflettere questa modifica.
+   - Nei costruttori per le classi **EmailReceiver** e **WebhookReceiver** è stato aggiunto un nuovo argomento obbligatorio, ossia un valore booleano denominato **useCommonAlertSchema**. Attualmente il valore è fisso su **false** per nascondere questa modifica di rilievo ai cmdlet. **NOTA** : questa è una modifica temporanea che deve essere convalidata dal team degli avvisi.
    - L'ordine degli argomenti per il costruttore della classe **Source** (correlata alla classe **ScheduledQueryRuleSource** ) è cambiato rispetto all'SDK precedente. Questa modifica ha richiesto la correzione di due unit test: venivano compilati, ma non superavano i test.
    - L'ordine degli argomenti per il costruttore della classe **AlertingAction** (correlata alla classe **ScheduledQueryRuleSource** ) è cambiato rispetto all'SDK precedente. Questa modifica ha richiesto la correzione di due unit test: venivano compilati, ma non superavano i test.
 * Supporto dei criteri di soglia dinamica per l'avviso della metrica V2
