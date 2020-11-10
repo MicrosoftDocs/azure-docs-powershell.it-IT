@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ad
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/Add-AzVMSecret.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/Add-AzVMSecret.md
-ms.openlocfilehash: 281b74aa14431a0bcfe0d138a78db73e28bcfeb4
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: f17da705ed65484e789a803308bcaddb60e409f3
+ms.sourcegitcommit: 7aaa37edc9681b643946505bcbc3cc6435f1d7ca
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93863897"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94395136"
 ---
 # Add-AzVMSecret
 
@@ -30,7 +30,7 @@ Il cmdlet **Add-AzVMSecret** aggiunge un segreto a una macchina virtuale.
 Questo valore consente di aggiungere un certificato alla macchina virtuale.
 Il segreto deve essere archiviato in un caveau chiave.
 Per altre informazioni su Key Vault, vedere [cos'è Azure Key Vault?](https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/).
-Per altre informazioni sui cmdlet, vedere cmdlet di [Key Vault di Azure](https://msdn.microsoft.com/library/azure/dn868052.aspx) nella raccolta di reti Microsoft Developer o nel cmdlet [set-AzureKeyVaultSecret](/powershell/module/azurerm.keyvault/set-azurekeyvaultsecret) .
+Per altre informazioni sui cmdlet, vedere cmdlet di [Key Vault di Azure](/powershell/module/az.keyvault) o cmdlet [set-AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) .
 
 ## ESEMPI
 
@@ -90,7 +90,7 @@ Specifica l'URL che punta a un segreto del Vault chiave che contiene un certific
 
 Il certificato è la codifica Base64 dell'oggetto JSON (JavaScript Object Notation) seguente, codificato in UTF-8:
 
-{"dati": " \< Codifica Base64-file \> "," DataType ":" \< File-Format \> "," password ":" \< pfx-file-password \> "}
+{"data": " \<Base64-encoded-file\> ", "tipo di dati": " \<file-format\> ", "password": " \<pfx-file-password\> "}
 
 
 Attualmente, il tipo di dati accetta solo i file PFX.
