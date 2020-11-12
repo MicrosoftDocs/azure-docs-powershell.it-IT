@@ -5,12 +5,13 @@ ms.date: 09/15/2020
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 7f831bdf6d6144640e036d72900958847283acf1
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.service: azure-powershell
+ms.openlocfilehash: ec4ecc9902f700e12ce6b22c32b4e07b13b4d4dc
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92002123"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93407783"
 ---
 # <a name="how-to-uninstall-azure-powershell-modules"></a>Come disinstallare i moduli di Azure PowerShell
 
@@ -48,7 +49,7 @@ Version             Name                           Repository           Descript
 4.1.0               Az                             PSGallery            Microsoft Azure PowerShell
 ```
 
-Questo script esegue una query su PowerShell Gallery per ottenere un elenco dei moduli secondari dipendenti, quindi disinstalla la versione corretta di ogni modulo secondario. Per eseguire lo script in un ambito diverso da **Process** o **CurrentUser**, è necessario l'accesso come amministratore.
+Questo script esegue una query su PowerShell Gallery per ottenere un elenco dei moduli secondari dipendenti, quindi disinstalla la versione corretta di ogni modulo secondario. Per eseguire lo script in un ambito diverso da **Process** o **CurrentUser** , è necessario l'accesso come amministratore.
 
 ```powershell-interactive
 function Uninstall-AzModule {
@@ -150,7 +151,7 @@ Per usare questa funzione, copiare e incollare il codice nella sessione di Power
 Uninstall-AzModule -Name Az -Version 1.8.0
 ```
 
-Durante l'esecuzione, lo script visualizzerà il **nome**, la **versione** e lo **stato** di ogni modulo secondario disinstallato. Per eseguire lo script in modo da vedere soltanto gli elementi che verranno eliminati senza rimuoverli, specificare il parametro `-WhatIf`.
+Durante l'esecuzione, lo script visualizzerà il **nome** , la **versione** e lo **stato** di ogni modulo secondario disinstallato. Per eseguire lo script in modo da vedere soltanto gli elementi che verranno eliminati senza rimuoverli, specificare il parametro `-WhatIf`.
 
 ```output
 ModuleName              Version  State

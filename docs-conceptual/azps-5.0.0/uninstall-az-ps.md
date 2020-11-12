@@ -5,12 +5,13 @@ ms.date: 09/15/2020
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 7f831bdf6d6144640e036d72900958847283acf1
-ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.service: azure-powershell
+ms.openlocfilehash: ec4ecc9902f700e12ce6b22c32b4e07b13b4d4dc
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92753584"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93407069"
 ---
 # <a name="how-to-uninstall-azure-powershell-modules"></a>Come disinstallare i moduli di Azure PowerShell
 
@@ -29,7 +30,7 @@ Se il modulo Az PowerShell è stato installato con il pacchetto MSI, la disinsta
 | Windows 10               | Start > Impostazioni > App                                |
 | Windows 7 </br>Windows 8 | Start > Pannello di controllo -> Programmi -> Disinstalla un programma |
 
-L'elenco dei programmi visualizzato nella schermata conterrà **Azure PowerShell** . Si tratta dell'app da disinstallare. Se questo programma non è elencato, l'installazione è stata eseguita tramite PowerShellGet ed è necessario seguire la prossima serie di istruzioni.
+L'elenco dei programmi visualizzato nella schermata conterrà **Azure PowerShell**. Si tratta dell'app da disinstallare. Se questo programma non è elencato, l'installazione è stata eseguita tramite PowerShellGet ed è necessario seguire la prossima serie di istruzioni.
 
 ### <a name="option-2-uninstall-the-az-powershell-module-from-powershellget"></a>Opzione 2: Disinstallare il modulo Az PowerShell da PowerShellGet
 
@@ -189,7 +190,7 @@ Se il modulo AzureRM PowerShell è stato installato con il pacchetto MSI, la dis
 | Windows 10               | Start > Impostazioni > App                                |
 | Windows 7 </br>Windows 8 | Start > Pannello di controllo -> Programmi -> Disinstalla un programma |
 
-L'elenco di programmi visualizzato in questa schermata dovrebbe contenere **Azure PowerShell** o **Microsoft Azure PowerShell - Mese/anno** . Si tratta dell'app da disinstallare. Se questo programma non è elencato, l'installazione è stata eseguita tramite PowerShellGet ed è necessario seguire la prossima serie di istruzioni.
+L'elenco di programmi visualizzato in questa schermata dovrebbe contenere **Azure PowerShell** o **Microsoft Azure PowerShell - Mese/anno**. Si tratta dell'app da disinstallare. Se questo programma non è elencato, l'installazione è stata eseguita tramite PowerShellGet ed è necessario seguire la prossima serie di istruzioni.
 
 ### <a name="option-2-uninstall-the-azurerm-powershell-module-from-powershellget"></a>Opzione 2: Disinstallare il modulo AzureRM PowerShell da PowerShellGet
 
