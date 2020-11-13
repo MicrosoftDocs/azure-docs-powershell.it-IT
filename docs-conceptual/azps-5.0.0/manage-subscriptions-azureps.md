@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/04/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 96b94ffcb5075764eb5d2dcaec7b13c5933b83da
-ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.service: azure-powershell
+ms.openlocfilehash: 4f48e009d9769cba671ea54e8f619a9ad40603d1
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92753691"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93410214"
 ---
 # <a name="use-multiple-azure-subscriptions"></a>Usare più sottoscrizioni di Azure
 
@@ -20,7 +21,7 @@ Per informazioni dettagliate su sottoscrizioni, fatturazione e gestione dei cosi
 
 ## <a name="tenants-users-and-subscriptions"></a>Tenant, utenti e sottoscrizioni
 
-La differenza tra tenant, utenti e sottoscrizioni in Azure potrebbe non essere del tutto chiara. Un _tenant_ è l'entità di Azure Active Directory che include un'intera organizzazione. Il tenant ha almeno una _sottoscrizione_ e un _utente_ . Un utente è una persona ed è associato a un solo tenant, corrispondente all'organizzazione a cui appartiene. Gli utenti sono gli account che accedono ad Azure per creare, gestire e usare le risorse.
+La differenza tra tenant, utenti e sottoscrizioni in Azure potrebbe non essere del tutto chiara. Un _tenant_ è l'entità di Azure Active Directory che include un'intera organizzazione. Il tenant ha almeno una _sottoscrizione_ e un _utente_. Un utente è una persona ed è associato a un solo tenant, corrispondente all'organizzazione a cui appartiene. Gli utenti sono gli account che accedono ad Azure per creare, gestire e usare le risorse.
 Un utente può avere accesso a più _sottoscrizioni_ , che sono contratti con Microsoft per l'uso dei servizi cloud, incluso Azure. Ogni risorsa è associata a una sottoscrizione.
 
 Per altre informazioni sulle differenze tra tenant, utenti e sottoscrizioni, vedere il [dizionario della terminologia cloud di Azure](/azure/azure-glossary-cloud-terminology).  Per informazioni su come aggiungere una sottoscrizione al tenant di Azure Active Directory, vedere [Associare o aggiungere una sottoscrizione di Azure al tenant di Azure Active Directory](/azure/active-directory/active-directory-how-subscriptions-associated-directory).

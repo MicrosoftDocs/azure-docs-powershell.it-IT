@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/04/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: cfe5833bd8bbfac53f65695f8bdfbd7b946a8852
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.service: azure-powershell
+ms.openlocfilehash: a8fa4e04d316b48a6d7c6f6c496504727fd2aaf3
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89240659"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93409126"
 ---
 # <a name="use-multiple-azure-subscriptions"></a>Usare più sottoscrizioni di Azure
 
@@ -21,7 +22,7 @@ Per informazioni dettagliate su sottoscrizioni, fatturazione e gestione dei cosi
 ## <a name="tenants-users-and-subscriptions"></a>Tenant, utenti e sottoscrizioni
 
 La differenza tra tenant, utenti e sottoscrizioni in Azure potrebbe non essere del tutto chiara. Un _tenant_ è l'entità di Azure Active Directory che include un'intera organizzazione. Il tenant ha almeno una _sottoscrizione_ e un _utente_. Un utente è una persona ed è associato a un solo tenant, corrispondente all'organizzazione a cui appartiene. Gli utenti sono gli account che accedono ad Azure per creare, gestire e usare le risorse.
-Un utente può avere accesso a più _sottoscrizioni_, che sono contratti con Microsoft per l'uso dei servizi cloud, incluso Azure. Ogni risorsa è associata a una sottoscrizione.
+Un utente può avere accesso a più _sottoscrizioni_ , che sono contratti con Microsoft per l'uso dei servizi cloud, incluso Azure. Ogni risorsa è associata a una sottoscrizione.
 
 Per altre informazioni sulle differenze tra tenant, utenti e sottoscrizioni, vedere il [dizionario della terminologia cloud di Azure](/azure/azure-glossary-cloud-terminology).  Per informazioni su come aggiungere una sottoscrizione al tenant di Azure Active Directory, vedere [Come aggiungere una sottoscrizione di Azure ad Azure Active Directory](/azure/active-directory/active-directory-how-subscriptions-associated-directory).
 Per informazioni su come eseguire l'accesso a un tenant specifico, vedere [Accedere con Azure PowerShell](/powershell/azure/authenticate-azureps).

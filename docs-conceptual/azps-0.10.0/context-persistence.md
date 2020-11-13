@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/21/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: b6ac8b821f2d88431be67fd5fe1d50fc640d2b8f
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.service: azure-powershell
+ms.openlocfilehash: be9113ab1ad6a359832634ae2c21fd177b09318f
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89242002"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93410469"
 ---
 # <a name="azure-powershell-context-objects"></a>Oggetti contesto di Azure PowerShell
 
@@ -22,11 +23,11 @@ Questo articolo riguarda i contesti di Azure, non la gestione di sottoscrizioni 
 
 I contesti di Azure sono oggetti di PowerShell che rappresentano la sottoscrizione attiva in cui eseguire i comandi e le informazioni di autenticazione necessarie per connettere Azure al cloud. Con i contesti di Azure, non è necessario ripetere l'autenticazione dell'account in Azure PowerShell ogni volta che si cambia sottoscrizione. Un contesto di Azure è costituito da:
 
-* L'_account_ usato per accedere ad Azure con [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). I contesti di Azure considerano gli utenti, gli ID applicazione e le entità servizio allo stesso modo dal punto di vista di un account.
+* L' _account_ usato per accedere ad Azure con [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). I contesti di Azure considerano gli utenti, gli ID applicazione e le entità servizio allo stesso modo dal punto di vista di un account.
 * La _sottoscrizione_ attiva, un contratto di servizi stipulato con Microsoft per la creazione e l'esecuzione delle risorse di Azure, che sono associate a un _tenant_. I tenant vengono spesso citati come _organizzazioni_ nella documentazione e durante l'uso di Active Directory.
-* Un riferimento a una _cache del token_, un token di autenticazione archiviato per l'accesso al cloud di Azure. La posizione di archiviazione e la durata del periodo di conservazione di tale token vengono definite dalle [impostazioni di salvataggio automatico dei contesti](#save-azure-contexts-across-powershell-sessions).
+* Un riferimento a una _cache del token_ , un token di autenticazione archiviato per l'accesso al cloud di Azure. La posizione di archiviazione e la durata del periodo di conservazione di tale token vengono definite dalle [impostazioni di salvataggio automatico dei contesti](#save-azure-contexts-across-powershell-sessions).
 
-Per altre informazioni, vedere [Terminologia di Azure Active Directory](/azure/active-directory/fundamentals/active-directory-whatis#terminology). I token di autenticazione usati dai contesti di Azure sono uguali ad altri token archiviati che fanno parte di una sessione persistente. 
+Per altre informazioni, vedere [Terminologia di Azure Active Directory](/azure/active-directory/fundamentals/active-directory-whatis#terminology). I token di autenticazione usati dai contesti di Azure sono uguali ad altri token archiviati che fanno parte di una sessione persistente.
 
 Quando si accede con `Connect-AzAccount`, viene creato almeno un contesto di Azure per la sottoscrizione predefinita. L'oggetto restituito da `Connect-AzAccount` è il contesto di Azure predefinito usato per il resto della sessione di PowerShell.
 
@@ -47,7 +48,7 @@ $context = Get-AzContext -Name "mycontext"
 I nomi dei contesti possono essere diversi dal nome della sottoscrizione associata.
 
 > [!IMPORTANT]
-> I contesti di Azure disponibili __non__ corrispondono sempre alle sottoscrizioni disponibili, ma rappresentano solo informazioni archiviate in locale. Per ottenere le sottoscrizioni, usare il cmdlet [Get-AzSubscription](/powershell/module/Az.Accounts/Get-AzSubscription?view=azps-1.8.0).
+> I contesti di Azure disponibili __non__ corrispondono sempre alle sottoscrizioni disponibili, ma rappresentano solo informazioni archiviate in locale. Per ottenere le sottoscrizioni, usare il cmdlet [Get-AzSubscription](/powershell/module/Az.Accounts/Get-AzSubscription).
 
 ## <a name="create-a-new-azure-context-from-subscription-information"></a>Creare un nuovo contesto di Azure dalle informazioni della sottoscrizione
 
@@ -134,7 +135,7 @@ Per cancellare contesti e credenziali di Azure:
   È possibile disconnettersi da qualsiasi account in base ad account o contesto:
 
   ```azurepowershell-interactive
-  Disconnect-AzAccount # Disconnect active account 
+  Disconnect-AzAccount # Disconnect active account
   Disconnect-AzAccount -Username "user@contoso.com" # Disconnect by account name
 
   Disconnect-AzAccount -ContextName "subscription2" # Disconnect by context name
@@ -144,7 +145,7 @@ Per cancellare contesti e credenziali di Azure:
   Con la disconnessione vengono sempre rimossi i token di autenticazione e vengono cancellati i contesti salvati associati all'utente o al contesto disconnesso.
 * Usare [Clear-AzContext](/powershell/module/az.accounts/Clear-AzContext). Questo cmdlet è garantito per rimuovere sempre i contesti e i token di autenticazione archiviati e consente anche di disconnettersi.
 * Rimuovere un contesto con [Remove-AzContext](/powershell/module/az.accounts/remove-azcontext):
-  
+
   ```azurepowershell-interactive
   Remove-AzContext -Name "mycontext" # Remove by name
   Get-AzContext -Name "mycontext" | Remove-AzContext # Remove by piping Azure context object
