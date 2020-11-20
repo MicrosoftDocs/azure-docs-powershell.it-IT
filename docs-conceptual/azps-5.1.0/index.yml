@@ -73,7 +73,7 @@ landingContent:
       - linkListType: reference
         links:
           - text: Informazioni di riferimento sui cmdlet
-            url: /powershell/module/?view=azps-5.0.0
+            url: /powershell/module/?view=azps-4.8.0
           - text: Note sulla versione
             url: release-notes-azureps.md
           - text: Modifiche di rilievo in Az 2.0.0
@@ -82,8 +82,6 @@ landingContent:
             url: migrate-az-3.0.0.md
           - text: Modifiche di rilievo in Az 4.1.0
             url: migrate-az-4.1.0.md
-          - text: Modifiche di rilievo in Az 4.0.0
-            url: migrate-az-5.0.0.md
   - title: Altri moduli di Azure PowerShell
     linkLists:
       - linkListType: overview
@@ -92,5 +90,5 @@ landingContent:
             url: /powershell/module/azuread/
           - text: Azure Service Fabric per PowerShell
             url: /powershell/module/servicefabric/
-          - text: Cmdlet del database SQL di Azure
+          - text: Cmdlet di Database SQL di Azure
             url: /powershell/module/az.sql/
