@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 280486e45dad73c935f03cedc619c0de762deb12
-ms.sourcegitcommit: d81c3b0f0f7289104be03869eb675128b61db7d3
+ms.openlocfilehash: b37d25f8efb6c0a5e590617a5ba84a5a5bf18660
+ms.sourcegitcommit: ec731e58b7de3eb14df6d3bf308df92154125bbb
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94715394"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95005824"
 ---
 # <a name="azure-powershell-release-notes"></a>Note sulla versione di Azure PowerShell
 
@@ -795,7 +795,7 @@ ms.locfileid: "94715394"
 * Risolto un problema che potrebbe causare la non riuscita di "Connect-AzAccount" nell'esecuzione multithread [#11201]
 
 #### <a name="azaks"></a>Az.Aks
-* Sostituzione dell'utilizzo dell'[API AccessProfile](https://docs.microsoft.com/rest/api/aks/managedclusters/getaccessprofile) obsoleta con le chiamate alle API [ListClusterAdmin](https://docs.microsoft.com/rest/api/aks/managedclusters/listclusteradmincredentials) e [ListClusterUser](https://docs.microsoft.com/rest/api/aks/managedclusters/listclusterusercredentials)
+* Sostituzione dell'utilizzo dell'[API AccessProfile](/rest/api/aks/managedclusters/getaccessprofile) obsoleta con le chiamate alle API [ListClusterAdmin](/rest/api/aks/managedclusters/listclusteradmincredentials) e [ListClusterUser](/rest/api/aks/managedclusters/listclusterusercredentials)
 
 #### <a name="azbatch"></a>Az.Batch
 * Aggiornamento di Az.Batch per l'uso di "Microsoft.Azure.Management.Batch" SDK versione 11.0.0
@@ -1313,7 +1313,7 @@ ms.locfileid: "94715394"
 
 ## <a name="0100-preview---april-2020"></a>0.10.0-preview - Aprile 2020
 ### <a name="general"></a>Generale
-* Disponibilità di moduli Az in anteprima nell'hub di Azure Stack. Consentono la compatibilità multipiattaforma con Linux e macOS. L'hub di Azure Stack ora supporta PowerShell core con i moduli Az. Per altre informazioni, vedere [qui](https://aka.ms/az4AzureStack)
+* Disponibilità di moduli Az in anteprima nell'hub di Azure Stack. Consentono la compatibilità multipiattaforma con Linux e macOS. L'hub di Azure Stack ora supporta PowerShell core con i moduli Az. Per altre informazioni, vedere [qui](/azure-stack/operator/powershell-install-az-module)
 * I moduli Az supportano il profilo 2019-03-01-ibrido:
   - Az.Billing
   - Az.Compute
@@ -1328,7 +1328,7 @@ ms.locfileid: "94715394"
   - Az.Websites
 * Sono stati introdotti tre nuovi moduli di PowerShell per az compatibili con l'hub di Azure Stack, ovvero Az.Databox, Az.IotHub e Az.EventHub
 * I comandi rimangono relativamente invariati, con modifiche minime come la sostituzione di AzureRM con Az
-* Il collegamento aggiornato alla documentazione di PowerShell per l'hub di Azure Stack è reperibile [qui](https://aka.ms/InstallASHPowerShell)
+* Il collegamento aggiornato alla documentazione di PowerShell per l'hub di Azure Stack è reperibile [qui](/azure-stack/operator/powershell-install-az-module)
 
 ## <a name="370---march-2020"></a>3.7.0 - Marzo 2020
 #### <a name="azaccounts"></a>Az.Accounts
@@ -2911,7 +2911,7 @@ Correzione del cmdlet New-AzSqlDatabaseSecondary per verificare l'esistenza di P
     - Set-AzScheduledQueryRule
     - Update-AzScheduledQueryRule
     - Remove-AzScheduledQueryRule
-    - [Altre](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) informazioni sull'API SQR
+    - [Altre](/rest/api/monitor/scheduledqueryrules) informazioni sull'API SQR
     - Aggiornamento di Az.Monitor.md per includere i cmdlet per la regola di avviso basata su metriche GenV2 (non classica)
 
 #### <a name="aznetwork"></a>Az.Network
