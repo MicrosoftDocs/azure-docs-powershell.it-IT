@@ -3,15 +3,15 @@ title: Accedere con Azure PowerShell
 description: Come eseguire l'accesso con Azure PowerShell come utente, come entità servizio o con le identità gestite per le risorse di Azure.
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 7/7/2020
+ms.date: 11/23/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 2ec432ae2823bb59f32ca7801a44a9da48db9fac
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
+ms.openlocfilehash: a5bff1a5c22d5cd93cc3548a470e123daf5e129e
+ms.sourcegitcommit: 25eca7b5f5480758aa2cd830458900cf91cf673c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93407664"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95515076"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Accedere con Azure PowerShell
 
@@ -31,7 +31,7 @@ Per accedere in modo interattivo, usare il cmdlet [Connect-AzAccount](/powershel
 Connect-AzAccount
 ```
 
-Quando si usa PowerShell versione 6 e successive, questo cmdlet presenta una stringa di token. Per eseguire l'accesso, copiare questa stringa e incollarla in [microsoft.com/devicelogin](https://microsoft.com/devicelogin) in un web browser. La sessione di PowerShell verrà autenticata per connettersi ad Azure. È possibile specificare il parametro `UseDeviceAuthentication` per ricevere una stringa di token in Windows PowerShell.
+A partire dalla versione 5.0.0 del modulo Az di PowerShell, questo cmdlet presenta per impostazione predefinita una richiesta di accesso interattiva basata su browser. È possibile specificare il parametro `UseDeviceAuthentication` per ricevere un token in formato stringa che in precedenza era l'impostazione predefinita per la versione 6 e successive di PowerShell.
 
 > [!IMPORTANT]
 > L'autorizzazione tramite le credenziali nome utente/password è stata rimossa in Azure PowerShell a causa delle modifiche apportate nelle implementazioni delle autorizzazioni di Active Directory e per motivi di sicurezza. Se si usa l'autorizzazione tramite credenziali per motivi di automazione, [creare invece un'entità servizio](create-azure-service-principal-azureps.md).
