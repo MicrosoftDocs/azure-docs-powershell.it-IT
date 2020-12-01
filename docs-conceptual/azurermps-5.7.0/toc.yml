@@ -6,12 +6,12 @@
       href: install-azurerm-ps.md
     - name: Eseguire l'installazione con il pacchetto MSI o l'Installazione guidata piattaforma Web
       href: other-install.md
-- name: Disinstallare
+- name: Uninstall
   href: uninstall-azurerm-ps.md
 - name: Introduzione
   href: get-started-azureps.md
 - name: Cloud Shell
-  href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
+  href: /azure/cloud-shell/overview
 - name: Accesso
   items:
     - name: Metodi di autenticazione
