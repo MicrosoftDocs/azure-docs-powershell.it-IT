@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 04/16/2020
-ms.openlocfilehash: fd1f2a3778e348ba41b46acb4bdce19e18a7f4ec
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 166c5339c95507b8a9ef1a32d46f589b8d792794
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81524966"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427956"
 ---
 # <a name="azure-stack-hub-module-200"></a>Modulo hub di Azure Stack 2.0.0
 
@@ -21,7 +21,7 @@ ms.locfileid: "81524966"
 
 La versione minima supportata dell'hub di Azure Stack è la 2002.
 
-Nota: Per le versioni precedenti di Azure Stack, vedere [Installare PowerShell per Azure Stack](https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)
+Nota: Per le versioni precedenti di Azure Stack, vedere [Installare PowerShell per Azure Stack](/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)
 
 ## <a name="install"></a>Installazione
 
@@ -45,4 +45,4 @@ Install-Module -Name AzureStack -RequiredVersion 2.0.0-preview -AllowPrerelease
 
 * Supportato con l'aggiornamento 2002.  
 
-  L'hub di Azure Stack 2.0.0 rappresenta una modifica di rilievo. Il modulo usa il modulo Az invece di AzureRM. È possibile trovare una guida alla migrazione e un elenco di modifiche di rilievo in [Eseguire la migrazione da AzureRM ad Azure PowerShell Az nell'hub di Azure Stack](https://aka.ms/AA7qsji).
+  L'hub di Azure Stack 2.0.0 rappresenta una modifica di rilievo. Il modulo usa il modulo Az invece di AzureRM. È possibile trovare una guida alla migrazione e un elenco di modifiche di rilievo in [Eseguire la migrazione da AzureRM ad Azure PowerShell Az nell'hub di Azure Stack](/azure-stack/operator/azure-stack-powershell-install).

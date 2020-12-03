@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 02/24/2020
-ms.openlocfilehash: ec406c80de6b457f7e340a23fe8caf2ab83be46a
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: e19fea440025e7a00a037e360ac95ff8e0e62129
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "78264411"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96428011"
 ---
 # <a name="azure-stack-module-180"></a>Modulo di Azure Stack 1.8.0
 
@@ -21,7 +21,7 @@ ms.locfileid: "78264411"
 
 La versione minima supportata di Azure Stack è la 1910.
 
-Nota: Per le versioni precedenti di Azure Stack, vedere [Installare PowerShell per Azure Stack](https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)
+Nota: Per le versioni precedenti di Azure Stack, vedere [Installare PowerShell per Azure Stack](/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)
 
 ## <a name="install"></a>Installazione
 
