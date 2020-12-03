@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: ea374b23e85c16393e5de16b043ae0c28545cb61
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
+ms.openlocfilehash: 805928a0ecae0982826d961435744c29691d191b
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93408072"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427939"
 ---
 # <a name="azure-powershell-release-notes"></a>Note sulla versione di Azure PowerShell
 
@@ -515,7 +515,7 @@ ms.locfileid: "93408072"
 * Risolto un problema che potrebbe causare la non riuscita di "Connect-AzAccount" nell'esecuzione multithread [#11201]
 
 #### <a name="azaks"></a>Az.Aks
-* Sostituzione dell'utilizzo dell'[API AccessProfile](https://docs.microsoft.com/rest/api/aks/managedclusters/getaccessprofile) obsoleta con le chiamate alle API [ListClusterAdmin](https://docs.microsoft.com/rest/api/aks/managedclusters/listclusteradmincredentials) e [ListClusterUser](https://docs.microsoft.com/rest/api/aks/managedclusters/listclusterusercredentials)
+* Sostituzione dell'utilizzo dell'[API AccessProfile](/rest/api/aks/managedclusters/getaccessprofile) obsoleta con le chiamate alle API [ListClusterAdmin](/rest/api/aks/managedclusters/listclusteradmincredentials) e [ListClusterUser](/rest/api/aks/managedclusters/listclusterusercredentials)
 
 #### <a name="azbatch"></a>Az.Batch
 * Aggiornamento di Az.Batch per l'uso di "Microsoft.Azure.Management.Batch" SDK versione 11.0.0
@@ -1033,7 +1033,7 @@ ms.locfileid: "93408072"
 
 ## <a name="0100-preview---april-2020"></a>0.10.0-preview - Aprile 2020
 ### <a name="general"></a>Generale
-* Disponibilità di moduli Az in anteprima nell'hub di Azure Stack. Consentono la compatibilità multipiattaforma con Linux e macOS. L'hub di Azure Stack ora supporta PowerShell core con i moduli Az. Per altre informazioni, vedere [qui](https://aka.ms/az4AzureStack)
+* Disponibilità di moduli Az in anteprima nell'hub di Azure Stack. Consentono la compatibilità multipiattaforma con Linux e macOS. L'hub di Azure Stack ora supporta PowerShell core con i moduli Az. Per altre informazioni, vedere [qui](/azure-stack/operator/powershell-install-az-module)
 * I moduli Az supportano il profilo 2019-03-01-ibrido:
   - Az.Billing
   - Az.Compute
@@ -1048,7 +1048,7 @@ ms.locfileid: "93408072"
   - Az.Websites
 * Sono stati introdotti tre nuovi moduli di PowerShell per az compatibili con l'hub di Azure Stack, ovvero Az.Databox, Az.IotHub e Az.EventHub
 * I comandi rimangono relativamente invariati, con modifiche minime come la sostituzione di AzureRM con Az
-* Il collegamento aggiornato alla documentazione di PowerShell per l'hub di Azure Stack è reperibile [qui](https://aka.ms/InstallASHPowerShell)
+* Il collegamento aggiornato alla documentazione di PowerShell per l'hub di Azure Stack è reperibile [qui](/azure-stack/operator/powershell-install-az-module)
 
 ## <a name="370---march-2020"></a>3.7.0 - Marzo 2020
 #### <a name="azaccounts"></a>Az.Accounts
@@ -1596,7 +1596,7 @@ Correzione del cmdlet New-AzSqlDatabaseSecondary per verificare l'esistenza di P
     - I file di risorse basati su `StorageContainerUrl` scaricano il contenitore specificato nell'URL del nodo Batch.
 * Rimozione della proprietà `ApplicationPackages` di `PSApplication` restituita da **Get-AzBatchApplication**.
   - È ora possibile recuperare i pacchetti specifici all'interno di un'applicazione usando **Get-AzBatchApplicationPackage**. Ad esempio: `Get-AzBatchApplication -AccountName myaccount -ResourceGroupName myresourcegroup -ApplicationId myapplication`.
-* Ridenominazione di `ApplicationId` in `ApplicationName` per **Get-AzBatchApplicationPackage** , **New-AzBatchApplicationPackage** , **Remove-AzBatchApplicationPackage** , **Get-AzBatchApplication** , **New-AzBatchApplication** , **Remove-AzBatchApplication** e **set-AzBatchApplication**.
+* Ridenominazione di `ApplicationId` in `ApplicationName` per **Get-AzBatchApplicationPackage**, **New-AzBatchApplicationPackage**, **Remove-AzBatchApplicationPackage**, **Get-AzBatchApplication**, **New-AzBatchApplication**, **Remove-AzBatchApplication** e **set-AzBatchApplication**.
   - `ApplicationId` è ora un alias di `ApplicationName`.
 * Aggiunta della nuova proprietà `PSWindowsUserConfiguration` a `PSUserAccount`.
 * Ridenominazione di `Version` in `Name` per `PSApplicationPackage`.
@@ -1793,7 +1793,7 @@ Correzione del cmdlet New-AzSqlDatabaseSecondary per verificare l'esistenza di P
 * Aggiornamento dei dati di telemetria e riscrittura degli URL per i moduli generati, correzione degli unit test di Windows.
 
 #### <a name="azapimanagement"></a>Az.ApiManagement
-* **Set-AzApiManagementApi** : aggiunta del supporto per l'aggiornamento API in ApiVersionSet
+* **Set-AzApiManagementApi**: aggiunta del supporto per l'aggiornamento API in ApiVersionSet
     - correzione del problema https://github.com/Azure/azure-powershell/issues/10068
 
 #### <a name="azautomation"></a>Az.Automation
@@ -1905,10 +1905,10 @@ Correzione del cmdlet New-AzSqlDatabaseSecondary per verificare l'esistenza di P
 #### <a name="azmonitor"></a>Az.Monitor
 * Puntamento alla versione più recente di Monitor SKD, ossia 0.24.1 (anteprima)
    - Aggiunta di modifiche non di rilievo ai cmdlet Metrics, ossia supporto di numerosi nuovi valori nell'enumerazione Unit. Questi cmdlet sono di sola lettura, quindi il relativo input non cambia.
-   - La versione API delle richieste **ActionGroups** è ora **2019-06-01** , prima era **2018-03-01**. I test dello scenario sono stati aggiornati per riflettere questa modifica.
-   - Nei costruttori per le classi **EmailReceiver** e **WebhookReceiver** è stato aggiunto un nuovo argomento obbligatorio, ossia un valore booleano denominato **useCommonAlertSchema**. Attualmente il valore è fisso su **false** per nascondere questa modifica di rilievo ai cmdlet. **NOTA** : questa è una modifica temporanea che deve essere convalidata dal team degli avvisi.
-   - L'ordine degli argomenti per il costruttore della classe **Source** (correlata alla classe **ScheduledQueryRuleSource** ) è cambiato rispetto all'SDK precedente. Questa modifica ha richiesto la correzione di due unit test: venivano compilati, ma non superavano i test.
-   - L'ordine degli argomenti per il costruttore della classe **AlertingAction** (correlata alla classe **ScheduledQueryRuleSource** ) è cambiato rispetto all'SDK precedente. Questa modifica ha richiesto la correzione di due unit test: venivano compilati, ma non superavano i test.
+   - La versione API delle richieste **ActionGroups** è ora **2019-06-01**, prima era **2018-03-01**. I test dello scenario sono stati aggiornati per riflettere questa modifica.
+   - Nei costruttori per le classi **EmailReceiver** e **WebhookReceiver** è stato aggiunto un nuovo argomento obbligatorio, ossia un valore booleano denominato **useCommonAlertSchema**. Attualmente il valore è fisso su **false** per nascondere questa modifica di rilievo ai cmdlet. **NOTA**: questa è una modifica temporanea che deve essere convalidata dal team degli avvisi.
+   - L'ordine degli argomenti per il costruttore della classe **Source** (correlata alla classe **ScheduledQueryRuleSource**) è cambiato rispetto all'SDK precedente. Questa modifica ha richiesto la correzione di due unit test: venivano compilati, ma non superavano i test.
+   - L'ordine degli argomenti per il costruttore della classe **AlertingAction** (correlata alla classe **ScheduledQueryRuleSource**) è cambiato rispetto all'SDK precedente. Questa modifica ha richiesto la correzione di due unit test: venivano compilati, ma non superavano i test.
 * Supporto dei criteri di soglia dinamica per l'avviso della metrica V2
     - New-AzMetricAlertRuleV2Criteria: ora crea anche criteri di soglia dinamica
     - Add-AzMetricAlertRuleV2: ora accetta anche criteri di soglia dinamica
@@ -2009,9 +2009,9 @@ Correzione del cmdlet New-AzSqlDatabaseSecondary per verificare l'esistenza di P
 #### <a name="azapimanagement"></a>Az.ApiManagement
 * correzione del problema https://github.com/Azure/azure-powershell/issues/9351
     - Aggiornamento della versione NuGet .NET, che non impone restrizioni su productId, apiId, groupId e userId
-* **Get-AzApiManagementProduct** : aggiunta del supporto per l'esecuzione di query su prodotti con l'API.
+* **Get-AzApiManagementProduct**: aggiunta del supporto per l'esecuzione di query su prodotti con l'API.
   https://github.com/Azure/azure-powershell/issues/9482
-* **New-AzApiManagementApiRevision** : correzione per il problema che impediva l'impostazione di ApiRevisionDescription durante la creazione della nuova revisione dell'API https://github.com/Azure/azure-powershell/issues/9752
+* **New-AzApiManagementApiRevision**: correzione per il problema che impediva l'impostazione di ApiRevisionDescription durante la creazione della nuova revisione dell'API https://github.com/Azure/azure-powershell/issues/9752
 * Correzione dell'errore di ortografia nel nome del modello 'PsApiManagementOAuth2AuthrozationServer' corretto in 'PsApiManagementOAuth2AuthorizationServer'
 
 #### <a name="azbatch"></a>Az.Batch
@@ -2466,27 +2466,27 @@ Correzione del cmdlet New-AzSqlDatabaseSecondary per verificare l'esistenza di P
 ## <a name="210---may-2019"></a>2.1.0 - maggio 2019
 #### <a name="azapimanagement"></a>Az.ApiManagement
 * Creazione di nuovi cmdlet per la gestione della diagnostica nell'ambito globale e API
-    - **Get-AzApiManagementDiagnostic** : ottiene diagnostiche configurate come ambito globale o dell'API
-    - **New-AzApiManagementDiagnostic** : crea nuove diagnostiche a livello di ambito globale o dell'API
-    - **New-AzApiManagementHttpMessageDiagnostic** : crea l'impostazione di diagnostica per le intestazioni da registrare e le dimensioni dei byte del corpo
-    - **New-AzApiManagementPipelineDiagnosticSetting** : crea le impostazioni di diagnostica per i messaggi HTTP in ingresso/uscita verso il gateway.
-    - **New-AzApiManagementSamplingSetting** : crea l'impostazione di campionamento per le richieste/risposte di una diagnostica
-    - **Remove-AzApiManagementDiagnostic** : rimuove un'entità diagnostica a livello di ambito globale o dell'API
-    - **Set-AzApiManagementDiagnostic** : aggiorna un'entità diagnostica a livello di ambito globale o dell'API
+    - **Get-AzApiManagementDiagnostic**: ottiene diagnostiche configurate come ambito globale o dell'API
+    - **New-AzApiManagementDiagnostic**: crea nuove diagnostiche a livello di ambito globale o dell'API
+    - **New-AzApiManagementHttpMessageDiagnostic**: crea l'impostazione di diagnostica per le intestazioni da registrare e le dimensioni dei byte del corpo
+    - **New-AzApiManagementPipelineDiagnosticSetting**: crea le impostazioni di diagnostica per i messaggi HTTP in ingresso/uscita verso il gateway.
+    - **New-AzApiManagementSamplingSetting**: crea l'impostazione di campionamento per le richieste/risposte di una diagnostica
+    - **Remove-AzApiManagementDiagnostic**: rimuove un'entità diagnostica a livello di ambito globale o dell'API
+    - **Set-AzApiManagementDiagnostic**: aggiorna un'entità diagnostica a livello di ambito globale o dell'API
 * Creazione di nuovi cmdlet per la gestione della cache nel servizio ApiManagement
-    - **Get-AzApiManagementCache** : ottiene i dettagli della cache specificata dall'identificatore o di tutte le cache
-    - **New-AzApiManagementCache** : crea una nuova cache predefinita o una cache in una particolare area di Azure
-    - **Remove-AzApiManagementCache** : rimuove una cache
-    - **Update-AzApiManagementCache** : aggiorna una cache
+    - **Get-AzApiManagementCache**: ottiene i dettagli della cache specificata dall'identificatore o di tutte le cache
+    - **New-AzApiManagementCache**: crea una nuova cache predefinita o una cache in una particolare area di Azure
+    - **Remove-AzApiManagementCache**: rimuove una cache
+    - **Update-AzApiManagementCache**: aggiorna una cache
 * Creazione di nuovi cmdlet per la gestione dello schema dell'API
-    - **New-AzApiManagementSchema** : crea un nuovo schema per un'API
-    - **Get-AzApiManagementSchema** : ottiene gli schemi configurati nell'API
-    - **Remove-AzApiManagementSchema** : rimuove lo schema configurato nell'API
-    - **Set-AzApiManagementSchema** : aggiorna lo schema configurato nell'API
+    - **New-AzApiManagementSchema**: crea un nuovo schema per un'API
+    - **Get-AzApiManagementSchema**: ottiene gli schemi configurati nell'API
+    - **Remove-AzApiManagementSchema**: rimuove lo schema configurato nell'API
+    - **Set-AzApiManagementSchema**: aggiorna lo schema configurato nell'API
 * Creazione di un nuovo cmdlet per la generazione di un token utente.
-    - **New-AzApiManagementUserToken** : genera un nuovo token utente valido otto ore per impostazione predefinita. È possibile usare questo cmdlet anche per generare il token per l'utente 'GIT'.
+    - **New-AzApiManagementUserToken**: genera un nuovo token utente valido otto ore per impostazione predefinita. È possibile usare questo cmdlet anche per generare il token per l'utente 'GIT'.
 * Creazione di un nuovo cmdlet per il recupero dello stato della rete
-    - **Get-AzApiManagementNetworkStatus** : ottiene informazioni sulla connettività di rete delle risorse da cui dipende il servizio ApiManagement. È utile quando si distribuisce il servizio ApiManagement in una rete virtuale e si intende verificare eventuali interruzioni delle dipendenze.
+    - **Get-AzApiManagementNetworkStatus**: ottiene informazioni sulla connettività di rete delle risorse da cui dipende il servizio ApiManagement. È utile quando si distribuisce il servizio ApiManagement in una rete virtuale e si intende verificare eventuali interruzioni delle dipendenze.
 * Aggiornamento del cmdlet **New-AzApiManagement** per la gestione del servizio ApiManagement
     - Aggiunta del supporto per il nuovo SKU 'Consumption'
     - Aggiunta del supporto per attivare il flag 'EnableClientCertificate' per lo SKU 'Consumption'
@@ -2631,7 +2631,7 @@ Correzione del cmdlet New-AzSqlDatabaseSecondary per verificare l'esistenza di P
     - Set-AzScheduledQueryRule
     - Update-AzScheduledQueryRule
     - Remove-AzScheduledQueryRule
-    - [Altre](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) informazioni sull'API SQR
+    - [Altre](/rest/api/monitor/scheduledqueryrules) informazioni sull'API SQR
     - Aggiornamento di Az.Monitor.md per includere i cmdlet per la regola di avviso basata su metriche GenV2 (non classica)
 
 #### <a name="aznetwork"></a>Az.Network
