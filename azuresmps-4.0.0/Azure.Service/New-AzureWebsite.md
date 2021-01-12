@@ -3,12 +3,12 @@ external help file: Microsoft.WindowsAzure.Commands.dll-Help.xml
 ms.assetid: FBB55071-454D-4473-93BA-D97F33067785
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: 0f83489d21fba97bb50145de1fedc1ac9a7195a1
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 768eff2dda32c6dfa0bad14f028338d3c5fa1abd
+ms.sourcegitcommit: 87730c7ea4f98f628d3fe1b40aa4a9d2885e1c75
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94029646"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98110479"
 ---
 # New-AzureWebsite
 
@@ -19,7 +19,7 @@ Creare un nuovo sito Web per l'esecuzione in Azure.
 
 ```
 New-AzureWebsite [-Location <String>] [-Hostname <String>] [-PublishingUsername <String>] [-Git] [-GitHub]
- [-GithubCredentials <PSCredential>] [-GithubRepository <String>] [-Name <String>] [-Slot <String>]
+ [-GitHubCredentials <PSCredential>] [-GitHubRepository <String>] [-Name <String>] [-Slot <String>]
  [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
@@ -40,7 +40,7 @@ Questo esempio crea un nuovo sito Web in Azure e un repository git locale da usa
 
 ### Esempio 2: creare un sito Web integrato con GitHub
 ```
-PS C:\> New-AzureWebsite mysite -Github -GithubRepository myaccount/myrepo
+PS C:\> New-AzureWebsite mysite -GitHub -GitHubRepository myaccount/myrepo
 ```
 
 Questo esempio crea un nuovo sito Web collegato a un repository di GitHub denominato account/repo.
@@ -80,8 +80,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -GithubCredentials
-Specifica le credenziali di nome utente e password per la connessione a github.
+### -GitHubCredentials
+Specifica le credenziali di nome utente e password per la connessione a GitHub.
 
 ```yaml
 Type: PSCredential
@@ -95,7 +95,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -GithubRepository
+### -GitHubRepository
 Specifica il nome completo del repository GitHub da collegare a questo sito Web.
 Ad esempio, `myaccount/myrepo` .
 
