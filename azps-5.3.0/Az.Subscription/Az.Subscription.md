@@ -1,0 +1,32 @@
+---
+Module Name: Az.Subscription
+Module Guid: 8074e741-0979-4b4e-8f9b-7243f213d98a
+Download Help Link: https://docs.microsoft.com/en-us/powershell/module/az.subscription
+Help Version: 1.0.0.0
+Locale: en-US
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Subscription/Subscription/help/Az.Subscription.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Subscription/Subscription/help/Az.Subscription.md
+ms.openlocfilehash: 8faac69dcfc6a6d285d3f789d57baac9c9594711
+ms.sourcegitcommit: 68451baa389791703e666d95469602c5652609ee
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "98384229"
+---
+# <span data-ttu-id="8953b-101">Modulo AZ. Subscription</span><span class="sxs-lookup"><span data-stu-id="8953b-101">Az.Subscription Module</span></span>
+## <span data-ttu-id="8953b-102">Descrizione</span><span class="sxs-lookup"><span data-stu-id="8953b-102">Description</span></span>
+<span data-ttu-id="8953b-103">Gli argomenti di questa sezione documentano i cmdlet di PowerShell di Azure per l'abbonamento a Azure in Azure Resource Manager (ARM) Framework.</span><span class="sxs-lookup"><span data-stu-id="8953b-103">The topics in this section document the Azure PowerShell cmdlets for Azure Subscription in the Azure Resource Manager (ARM) framework.</span></span> <span data-ttu-id="8953b-104">I cmdlet sono presenti nello spazio dei nomi Microsoft. Azure. Commands. Subscription.</span><span class="sxs-lookup"><span data-stu-id="8953b-104">The cmdlets exist in the Microsoft.Azure.Commands.Subscription namespace.</span></span>
+
+## <span data-ttu-id="8953b-105">Cmdlet AZ. Subscription</span><span class="sxs-lookup"><span data-stu-id="8953b-105">Az.Subscription Cmdlets</span></span>
+### [<span data-ttu-id="8953b-106">Get-AzSubscriptionAlias</span><span class="sxs-lookup"><span data-stu-id="8953b-106">Get-AzSubscriptionAlias</span></span>](Get-AzSubscriptionAlias.md)
+<span data-ttu-id="8953b-107">Ottiene i dettagli degli alias di sottoscrizione</span><span class="sxs-lookup"><span data-stu-id="8953b-107">Gets subscription alias details</span></span>
+
+### [<span data-ttu-id="8953b-108">New-AzSubscriptionAlias</span><span class="sxs-lookup"><span data-stu-id="8953b-108">New-AzSubscriptionAlias</span></span>](New-AzSubscriptionAlias.md)
+<span data-ttu-id="8953b-109">Crea un nuovo alias e un abbonamento</span><span class="sxs-lookup"><span data-stu-id="8953b-109">Creates new alias and subscription</span></span>
+
+### [<span data-ttu-id="8953b-110">Remove-AzSubscriptionAlias</span><span class="sxs-lookup"><span data-stu-id="8953b-110">Remove-AzSubscriptionAlias</span></span>](Remove-AzSubscriptionAlias.md)
+<span data-ttu-id="8953b-111">Elimina l'alias della sottoscrizione</span><span class="sxs-lookup"><span data-stu-id="8953b-111">Deletes the subscription alias</span></span>
+
+### [<span data-ttu-id="8953b-112">Update-AzSubscription</span><span class="sxs-lookup"><span data-stu-id="8953b-112">Update-AzSubscription</span></span>](Update-AzSubscription.md)
+<span data-ttu-id="8953b-113">Aggiorna un abbonamento a Azure</span><span class="sxs-lookup"><span data-stu-id="8953b-113">Updates an Azure Subscription</span></span>
+
