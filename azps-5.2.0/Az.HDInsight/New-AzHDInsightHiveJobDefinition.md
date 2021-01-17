@@ -1,0 +1,212 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.HDInsight.dll-Help.xml
+Module Name: Az.HDInsight
+ms.assetid: 580D3388-4E18-4E67-866F-1FCF5E54AB3A
+online version: https://docs.microsoft.com/en-us/powershell/module/az.hdinsight/new-azhdinsighthivejobdefinition
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HDInsight/HDInsight/help/New-AzHDInsightHiveJobDefinition.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/HDInsight/HDInsight/help/New-AzHDInsightHiveJobDefinition.md
+ms.openlocfilehash: 242161a7a02cf3767ecd87dfc6e91a7ffba97eb3
+ms.sourcegitcommit: 04221336bc9eed46c05ed1e828a6811534d4b4ab
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "98322988"
+---
+# <span data-ttu-id="5afe3-101">New-AzHDInsightHiveJobDefinition</span><span class="sxs-lookup"><span data-stu-id="5afe3-101">New-AzHDInsightHiveJobDefinition</span></span>
+
+## <span data-ttu-id="5afe3-102">Sinossi</span><span class="sxs-lookup"><span data-stu-id="5afe3-102">SYNOPSIS</span></span>
+<span data-ttu-id="5afe3-103">Crea un oggetto processo hive.</span><span class="sxs-lookup"><span data-stu-id="5afe3-103">Creates a Hive job object.</span></span>
+
+## <span data-ttu-id="5afe3-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="5afe3-104">SYNTAX</span></span>
+
+```
+New-AzHDInsightHiveJobDefinition [-Arguments <String[]>] [-Files <String[]>] [-StatusFolder <String>]
+ [-Defines <Hashtable>] [-File <String>] [-JobName <String>] [-Query <String>] [-RunAsFileJob]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="5afe3-105">Descrizione</span><span class="sxs-lookup"><span data-stu-id="5afe3-105">DESCRIPTION</span></span>
+<span data-ttu-id="5afe3-106">Il cmdlet **New-AzHDInsightHiveJobDefinition** definisce un oggetto processo hive da usare con un cluster HDInsight di Azure.</span><span class="sxs-lookup"><span data-stu-id="5afe3-106">The **New-AzHDInsightHiveJobDefinition** cmdlet defines a Hive job object for use with an Azure HDInsight cluster.</span></span>
+
+## <span data-ttu-id="5afe3-107">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="5afe3-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="5afe3-108">Esempio 1: creare una definizione di processo hive</span><span class="sxs-lookup"><span data-stu-id="5afe3-108">Example 1: Create a Hive job definition</span></span>
+```
+PS C:\># Cluster info
+PS C:\>$clusterName = "your-hadoop-001"
+PS C:\>$clusterCreds = Get-Credential
+
+# Hive job details
+PS C:\>$statusFolder = "<status folder>"        
+PS C:\>$query = "SHOW TABLES"
+
+PS C:\>New-AzHDInsightHiveJobDefinition -StatusFolder $statusFolder `
+            -Query $query `
+        | Start-AzHDInsightJob `
+            -ClusterName $clusterName `
+            -ClusterCredential $clusterCreds
+```
+
+<span data-ttu-id="5afe3-109">Questo comando crea una definizione di processo hive.</span><span class="sxs-lookup"><span data-stu-id="5afe3-109">This command creates a Hive job definition.</span></span>
+
+## <span data-ttu-id="5afe3-110">PARAMETRI</span><span class="sxs-lookup"><span data-stu-id="5afe3-110">PARAMETERS</span></span>
+
+### <span data-ttu-id="5afe3-111">-Argomenti</span><span class="sxs-lookup"><span data-stu-id="5afe3-111">-Arguments</span></span>
+<span data-ttu-id="5afe3-112">Specifica una matrice di argomenti per il processo.</span><span class="sxs-lookup"><span data-stu-id="5afe3-112">Specifies an array of arguments for the job.</span></span>
+<span data-ttu-id="5afe3-113">Gli argomenti vengono passati come argomenti della riga di comando per ogni attività.</span><span class="sxs-lookup"><span data-stu-id="5afe3-113">The arguments are passed as command-line arguments to each task.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5afe3-114">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="5afe3-114">-DefaultProfile</span></span>
+<span data-ttu-id="5afe3-115">Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure</span><span class="sxs-lookup"><span data-stu-id="5afe3-115">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5afe3-116">-Definisce</span><span class="sxs-lookup"><span data-stu-id="5afe3-116">-Defines</span></span>
+<span data-ttu-id="5afe3-117">Specifica i valori di configurazione di Hadoop da impostare per l'esecuzione del processo.</span><span class="sxs-lookup"><span data-stu-id="5afe3-117">Specifies Hadoop configuration values to set for when the job runs.</span></span>
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5afe3-118">-File</span><span class="sxs-lookup"><span data-stu-id="5afe3-118">-File</span></span>
+<span data-ttu-id="5afe3-119">Specifica il percorso di un file che contiene la query da eseguire.</span><span class="sxs-lookup"><span data-stu-id="5afe3-119">Specifies the path to a file that contains the query to run.</span></span>
+<span data-ttu-id="5afe3-120">Il file deve essere disponibile nell'account di archiviazione associato al cluster.</span><span class="sxs-lookup"><span data-stu-id="5afe3-120">The file must be available on the storage account associated with the cluster.</span></span>
+<span data-ttu-id="5afe3-121">Puoi usare questo parametro invece del parametro di *query* .</span><span class="sxs-lookup"><span data-stu-id="5afe3-121">You can use this parameter instead of the *Query* parameter.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5afe3-122">-File</span><span class="sxs-lookup"><span data-stu-id="5afe3-122">-Files</span></span>
+<span data-ttu-id="5afe3-123">Specifica una raccolta di file associati a un processo hive.</span><span class="sxs-lookup"><span data-stu-id="5afe3-123">Specifies a collection of files that are associated with a Hive job.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5afe3-124">-JobName</span><span class="sxs-lookup"><span data-stu-id="5afe3-124">-JobName</span></span>
+<span data-ttu-id="5afe3-125">Specifica il nome del processo.</span><span class="sxs-lookup"><span data-stu-id="5afe3-125">Specifies the name of the job.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5afe3-126">-Query</span><span class="sxs-lookup"><span data-stu-id="5afe3-126">-Query</span></span>
+<span data-ttu-id="5afe3-127">Specifica la query hive.</span><span class="sxs-lookup"><span data-stu-id="5afe3-127">Specifies the Hive query.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5afe3-128">-RunAsFileJob</span><span class="sxs-lookup"><span data-stu-id="5afe3-128">-RunAsFileJob</span></span>
+<span data-ttu-id="5afe3-129">Indica che questo cmdlet crea un file nell'account di archiviazione di Azure predefinito in cui archiviare una query.</span><span class="sxs-lookup"><span data-stu-id="5afe3-129">Indicates that this cmdlet creates a file in the default Azure storage account in which to store a query.</span></span>
+<span data-ttu-id="5afe3-130">Questo cmdlet invia il processo che fa riferimento a questo file come script da eseguire.</span><span class="sxs-lookup"><span data-stu-id="5afe3-130">This cmdlet submits the job that references this file as a script to run.</span></span>
+<span data-ttu-id="5afe3-131">Puoi usare questa funzionalità per gestire caratteri speciali come il segno di percentuale (%) l'invio di un processo non viene eseguito tramite Templeton, perché Templeton interpreta una query con un segno di percentuale come parametro URL.</span><span class="sxs-lookup"><span data-stu-id="5afe3-131">You can use this functionality to handle special characters such as percent sign (%) that would fail on a job submission through Templeton, because Templeton interprets a query with a percent sign as a URL parameter.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5afe3-132">-StatusFolder</span><span class="sxs-lookup"><span data-stu-id="5afe3-132">-StatusFolder</span></span>
+<span data-ttu-id="5afe3-133">Specifica la posizione della cartella che contiene gli output standard e gli output degli errori per un processo.</span><span class="sxs-lookup"><span data-stu-id="5afe3-133">Specifies the location of the folder that contains standard outputs and error outputs for a job.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5afe3-134">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="5afe3-134">CommonParameters</span></span>
+<span data-ttu-id="5afe3-135">Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="5afe3-135">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="5afe3-136">Per altre informazioni, Vedi about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="5afe3-136">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="5afe3-137">INGRESSI</span><span class="sxs-lookup"><span data-stu-id="5afe3-137">INPUTS</span></span>
+
+### <span data-ttu-id="5afe3-138">Nessuno</span><span class="sxs-lookup"><span data-stu-id="5afe3-138">None</span></span>
+
+## <span data-ttu-id="5afe3-139">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="5afe3-139">OUTPUTS</span></span>
+
+### <span data-ttu-id="5afe3-140">Microsoft. Azure. Commands. HDInsight. Models. AzureHDInsightHiveJobDefinition</span><span class="sxs-lookup"><span data-stu-id="5afe3-140">Microsoft.Azure.Commands.HDInsight.Models.AzureHDInsightHiveJobDefinition</span></span>
+
+## <span data-ttu-id="5afe3-141">Note</span><span class="sxs-lookup"><span data-stu-id="5afe3-141">NOTES</span></span>
+
+## <span data-ttu-id="5afe3-142">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="5afe3-142">RELATED LINKS</span></span>
+
+[<span data-ttu-id="5afe3-143">Start-AzHDInsightJob</span><span class="sxs-lookup"><span data-stu-id="5afe3-143">Start-AzHDInsightJob</span></span>](./Start-AzHDInsightJob.md)
+
+
