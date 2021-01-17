@@ -1,0 +1,317 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+ms.assetid: 622FE9AC-1CC4-489C-BB17-9D6B9D1C151D
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/new-azapplicationgatewayrequestroutingrule
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGatewayRequestRoutingRule.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGatewayRequestRoutingRule.md
+ms.openlocfilehash: 95f3e4b11d9253a232fc119faf39a4fa51fab60a
+ms.sourcegitcommit: 68451baa389791703e666d95469602c5652609ee
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "98379382"
+---
+# <span data-ttu-id="35b32-101">New-AzApplicationGatewayRequestRoutingRule</span><span class="sxs-lookup"><span data-stu-id="35b32-101">New-AzApplicationGatewayRequestRoutingRule</span></span>
+
+## <span data-ttu-id="35b32-102">Sinossi</span><span class="sxs-lookup"><span data-stu-id="35b32-102">SYNOPSIS</span></span>
+<span data-ttu-id="35b32-103">Crea una regola di routing delle richieste per un gateway dell'applicazione.</span><span class="sxs-lookup"><span data-stu-id="35b32-103">Creates a request routing rule for an application gateway.</span></span>
+
+## <span data-ttu-id="35b32-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="35b32-104">SYNTAX</span></span>
+
+### <span data-ttu-id="35b32-105">SetByResourceId</span><span class="sxs-lookup"><span data-stu-id="35b32-105">SetByResourceId</span></span>
+```
+New-AzApplicationGatewayRequestRoutingRule -Name <String> -RuleType <String> [-Priority <Int32>]
+ [-BackendHttpSettingsId <String>] [-HttpListenerId <String>] [-BackendAddressPoolId <String>]
+ [-UrlPathMapId <String>] [-RewriteRuleSetId <String>] [-RedirectConfigurationId <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="35b32-106">SetByResource</span><span class="sxs-lookup"><span data-stu-id="35b32-106">SetByResource</span></span>
+```
+New-AzApplicationGatewayRequestRoutingRule -Name <String> -RuleType <String> [-Priority <Int32>]
+ [-BackendHttpSettings <PSApplicationGatewayBackendHttpSettings>]
+ [-HttpListener <PSApplicationGatewayHttpListener>]
+ [-BackendAddressPool <PSApplicationGatewayBackendAddressPool>] [-UrlPathMap <PSApplicationGatewayUrlPathMap>]
+ [-RewriteRuleSet <PSApplicationGatewayRewriteRuleSet>]
+ [-RedirectConfiguration <PSApplicationGatewayRedirectConfiguration>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="35b32-107">Descrizione</span><span class="sxs-lookup"><span data-stu-id="35b32-107">DESCRIPTION</span></span>
+<span data-ttu-id="35b32-108">**Il cmdlet Add-AzApplicationGatewayRequestRoutingRule** crea una regola di routing delle richieste per un gateway dell'applicazione Azure.</span><span class="sxs-lookup"><span data-stu-id="35b32-108">**The Add-AzApplicationGatewayRequestRoutingRule** cmdlet creates a request routing rule for an Azure application gateway.</span></span>
+
+## <span data-ttu-id="35b32-109">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="35b32-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="35b32-110">Esempio 1: creare una regola di routing delle richieste per un gateway applicazione</span><span class="sxs-lookup"><span data-stu-id="35b32-110">Example 1: Create a request routing rule for an application gateway</span></span>
+```
+PS C:\>$Rule = New-AzApplicationGatewayRequestRoutingRule -Name "Rule01" -RuleType Basic -Priority 100 -BackendHttpSettings $Setting -HttpListener $Listener -BackendAddressPool $Pool
+```
+
+<span data-ttu-id="35b32-111">Questo comando crea una regola di routing delle richieste di base denominata Rule01 e archivia il risultato nella variabile denominata $Rule.</span><span class="sxs-lookup"><span data-stu-id="35b32-111">This command creates a basic request routing rule named Rule01 and stores the result in the variable named $Rule.</span></span>
+
+## <span data-ttu-id="35b32-112">PARAMETRI</span><span class="sxs-lookup"><span data-stu-id="35b32-112">PARAMETERS</span></span>
+
+### <span data-ttu-id="35b32-113">-BackendAddressPool</span><span class="sxs-lookup"><span data-stu-id="35b32-113">-BackendAddressPool</span></span>
+<span data-ttu-id="35b32-114">Specifica il pool di indirizzi back-end, come oggetto, per la regola di routing delle richieste da creare.</span><span class="sxs-lookup"><span data-stu-id="35b32-114">Specifies the back-end address pool, as an object, for the request routing rule to create.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendAddressPool
+Parameter Sets: SetByResource
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="35b32-115">-BackendAddressPoolId</span><span class="sxs-lookup"><span data-stu-id="35b32-115">-BackendAddressPoolId</span></span>
+<span data-ttu-id="35b32-116">Specifica l'ID del pool di indirizzi back-end della regola di routing delle richieste da creare.</span><span class="sxs-lookup"><span data-stu-id="35b32-116">Specifies the back-end address pool ID of the request routing rule to create.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SetByResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="35b32-117">-BackendHttpSettings</span><span class="sxs-lookup"><span data-stu-id="35b32-117">-BackendHttpSettings</span></span>
+<span data-ttu-id="35b32-118">Specifica le impostazioni HTTP di back-end, come oggetto, per la regola di routing delle richieste da creare.</span><span class="sxs-lookup"><span data-stu-id="35b32-118">Specifies the back-end HTTP settings, as an object, for the request routing rule to create.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings
+Parameter Sets: SetByResource
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="35b32-119">-BackendHttpSettingsId</span><span class="sxs-lookup"><span data-stu-id="35b32-119">-BackendHttpSettingsId</span></span>
+<span data-ttu-id="35b32-120">Specifica l'ID delle impostazioni HTTP back-end della regola di routing delle richieste da creare.</span><span class="sxs-lookup"><span data-stu-id="35b32-120">Specifies the back-end HTTP settings ID of the request routing rule to create.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SetByResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="35b32-121">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="35b32-121">-DefaultProfile</span></span>
+<span data-ttu-id="35b32-122">Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.</span><span class="sxs-lookup"><span data-stu-id="35b32-122">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="35b32-123">-HttpListener</span><span class="sxs-lookup"><span data-stu-id="35b32-123">-HttpListener</span></span>
+<span data-ttu-id="35b32-124">Specifica il listener HTTP back-end per la regola di routing delle richieste da creare.</span><span class="sxs-lookup"><span data-stu-id="35b32-124">Specifies the back-end HTTP listener for the request routing rule to create.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayHttpListener
+Parameter Sets: SetByResource
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="35b32-125">-HttpListenerId</span><span class="sxs-lookup"><span data-stu-id="35b32-125">-HttpListenerId</span></span>
+<span data-ttu-id="35b32-126">Specifica l'ID del listener HTTP di backend per la regola di routing delle richieste da creare.</span><span class="sxs-lookup"><span data-stu-id="35b32-126">Specifies the backend HTTP listener ID for the request routing rule to create.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SetByResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="35b32-127">-Nome</span><span class="sxs-lookup"><span data-stu-id="35b32-127">-Name</span></span>
+<span data-ttu-id="35b32-128">Specifica il nome della regola di routing delle richieste creata da questo cmdlet.</span><span class="sxs-lookup"><span data-stu-id="35b32-128">Specifies the name of the request routing rule that this cmdlet creates.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="35b32-129">-Priorità</span><span class="sxs-lookup"><span data-stu-id="35b32-129">-Priority</span></span>
+<span data-ttu-id="35b32-130">Priorità della regola</span><span class="sxs-lookup"><span data-stu-id="35b32-130">The priority of the rule</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
+Aliases:
+Accepted Values: 1-20000
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="35b32-131">-RedirectConfiguration</span><span class="sxs-lookup"><span data-stu-id="35b32-131">-RedirectConfiguration</span></span>
+<span data-ttu-id="35b32-132">App gateway RedirectConfiguration</span><span class="sxs-lookup"><span data-stu-id="35b32-132">Application gateway RedirectConfiguration</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRedirectConfiguration
+Parameter Sets: SetByResource
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="35b32-133">-RedirectConfigurationId</span><span class="sxs-lookup"><span data-stu-id="35b32-133">-RedirectConfigurationId</span></span>
+<span data-ttu-id="35b32-134">ID dell'applicazione gateway RedirectConfiguration</span><span class="sxs-lookup"><span data-stu-id="35b32-134">ID of the application gateway RedirectConfiguration</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SetByResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="35b32-135">-RewriteRuleSet</span><span class="sxs-lookup"><span data-stu-id="35b32-135">-RewriteRuleSet</span></span>
+<span data-ttu-id="35b32-136">App gateway RewriteRuleSet</span><span class="sxs-lookup"><span data-stu-id="35b32-136">Application gateway RewriteRuleSet</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRewriteRuleSet
+Parameter Sets: SetByResource
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="35b32-137">-RewriteRuleSetId</span><span class="sxs-lookup"><span data-stu-id="35b32-137">-RewriteRuleSetId</span></span>
+<span data-ttu-id="35b32-138">ID dell'applicazione gateway RewriteRuleSet</span><span class="sxs-lookup"><span data-stu-id="35b32-138">ID of the application gateway RewriteRuleSet</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: SetByResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="35b32-139">-RuleType</span><span class="sxs-lookup"><span data-stu-id="35b32-139">-RuleType</span></span>
+<span data-ttu-id="35b32-140">Specifica il tipo della regola di routing delle richieste.</span><span class="sxs-lookup"><span data-stu-id="35b32-140">Specifies type of the request routing rule.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+Accepted values: Basic, PathBasedRouting
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="35b32-141">-UrlPathMap</span><span class="sxs-lookup"><span data-stu-id="35b32-141">-UrlPathMap</span></span>
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayUrlPathMap
+Parameter Sets: SetByResource
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="35b32-142">-UrlPathMapId</span><span class="sxs-lookup"><span data-stu-id="35b32-142">-UrlPathMapId</span></span>
+```yaml
+Type: System.String
+Parameter Sets: SetByResourceId
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="35b32-143">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="35b32-143">CommonParameters</span></span>
+<span data-ttu-id="35b32-144">Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="35b32-144">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="35b32-145">Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="35b32-145">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="35b32-146">INGRESSI</span><span class="sxs-lookup"><span data-stu-id="35b32-146">INPUTS</span></span>
+
+### <span data-ttu-id="35b32-147">Nessuno</span><span class="sxs-lookup"><span data-stu-id="35b32-147">None</span></span>
+
+## <span data-ttu-id="35b32-148">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="35b32-148">OUTPUTS</span></span>
+
+### <span data-ttu-id="35b32-149">Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayRequestRoutingRule</span><span class="sxs-lookup"><span data-stu-id="35b32-149">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRequestRoutingRule</span></span>
+
+## <span data-ttu-id="35b32-150">Note</span><span class="sxs-lookup"><span data-stu-id="35b32-150">NOTES</span></span>
+
+## <span data-ttu-id="35b32-151">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="35b32-151">RELATED LINKS</span></span>
+
+[<span data-ttu-id="35b32-152">Add-AzApplicationGatewayRequestRoutingRule</span><span class="sxs-lookup"><span data-stu-id="35b32-152">Add-AzApplicationGatewayRequestRoutingRule</span></span>](./Add-AzApplicationGatewayRequestRoutingRule.md)
+
+[<span data-ttu-id="35b32-153">Get-AzApplicationGatewayRequestRoutingRule</span><span class="sxs-lookup"><span data-stu-id="35b32-153">Get-AzApplicationGatewayRequestRoutingRule</span></span>](./Get-AzApplicationGatewayRequestRoutingRule.md)
+
+[<span data-ttu-id="35b32-154">Remove-AzApplicationGatewayRequestRoutingRule</span><span class="sxs-lookup"><span data-stu-id="35b32-154">Remove-AzApplicationGatewayRequestRoutingRule</span></span>](./Remove-AzApplicationGatewayRequestRoutingRule.md)
+
+[<span data-ttu-id="35b32-155">Set-AzApplicationGatewayRequestRoutingRule</span><span class="sxs-lookup"><span data-stu-id="35b32-155">Set-AzApplicationGatewayRequestRoutingRule</span></span>](./Set-AzApplicationGatewayRequestRoutingRule.md)
+
+
