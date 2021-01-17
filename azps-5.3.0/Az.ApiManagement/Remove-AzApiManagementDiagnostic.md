@@ -1,0 +1,219 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ApiManagement.ServiceManagement.dll-Help.xml
+Module Name: Az.ApiManagement
+online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagement/remove-azapimanagementdiagnostic
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementDiagnostic.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementDiagnostic.md
+ms.openlocfilehash: 488f4082007c96a111483d7efac6a8b9a74dba8f
+ms.sourcegitcommit: 68451baa389791703e666d95469602c5652609ee
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "98382129"
+---
+# <span data-ttu-id="da295-101">Remove-AzApiManagementDiagnostic</span><span class="sxs-lookup"><span data-stu-id="da295-101">Remove-AzApiManagementDiagnostic</span></span>
+
+## <span data-ttu-id="da295-102">Sinossi</span><span class="sxs-lookup"><span data-stu-id="da295-102">SYNOPSIS</span></span>
+<span data-ttu-id="da295-103">Rimuovere l'entità di diagnostica dall'ambito del livello globale o dell'API.</span><span class="sxs-lookup"><span data-stu-id="da295-103">Remove the Diagnostic entity from Global or API level scope.</span></span>
+
+## <span data-ttu-id="da295-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="da295-104">SYNTAX</span></span>
+
+### <span data-ttu-id="da295-105">ByResourceIdParameterSet (impostazione predefinita)</span><span class="sxs-lookup"><span data-stu-id="da295-105">ByResourceIdParameterSet (Default)</span></span>
+```
+Remove-AzApiManagementDiagnostic -ResourceId <String> [-PassThru] [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="da295-106">ExpandParameterSetName</span><span class="sxs-lookup"><span data-stu-id="da295-106">ExpandParameterSetName</span></span>
+```
+Remove-AzApiManagementDiagnostic -Context <PsApiManagementContext> [-ApiId <String>] -DiagnosticId <String>
+ [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="da295-107">ByInputObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="da295-107">ByInputObjectParameterSet</span></span>
+```
+Remove-AzApiManagementDiagnostic -InputObject <PsApiManagementDiagnostic> [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="da295-108">Descrizione</span><span class="sxs-lookup"><span data-stu-id="da295-108">DESCRIPTION</span></span>
+<span data-ttu-id="da295-109">Il cmdlet **Remove-AzApiManagementDiagnostic** rimuove l'entità di diagnostica specificata dall' `DiagnosticId` ambito globale o da un `ApiId` ambito</span><span class="sxs-lookup"><span data-stu-id="da295-109">The cmdlet **Remove-AzApiManagementDiagnostic** removes the diagnostic entity specified by `DiagnosticId` from global scope or an `ApiId` scope</span></span>
+
+## <span data-ttu-id="da295-110">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="da295-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="da295-111">Esempio 1: rimuovere l'entità di diagnostica</span><span class="sxs-lookup"><span data-stu-id="da295-111">Example 1: Remove the Diagnostic entity</span></span>
+```powershell
+PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Remove-AzApiManagementDiagnostic -Context $apimContext -DiagnosticId "applicationinsights"
+```
+
+<span data-ttu-id="da295-112">In questo esempio viene rimosso il `applicationinsights` controllo Diagnostic dal servizio di gestione API.</span><span class="sxs-lookup"><span data-stu-id="da295-112">This example remove the diagnostic `applicationinsights` from the Api Management service.</span></span>
+
+## <span data-ttu-id="da295-113">PARAMETRI</span><span class="sxs-lookup"><span data-stu-id="da295-113">PARAMETERS</span></span>
+
+### <span data-ttu-id="da295-114">-ApiId</span><span class="sxs-lookup"><span data-stu-id="da295-114">-ApiId</span></span>
+<span data-ttu-id="da295-115">Identificatore dell'API.</span><span class="sxs-lookup"><span data-stu-id="da295-115">Identifier of the API.</span></span>
+<span data-ttu-id="da295-116">Questo parametro è obbligatorio.</span><span class="sxs-lookup"><span data-stu-id="da295-116">This parameter is required.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ExpandParameterSetName
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="da295-117">-Contesto</span><span class="sxs-lookup"><span data-stu-id="da295-117">-Context</span></span>
+<span data-ttu-id="da295-118">Istanza di PsApiManagementContext.</span><span class="sxs-lookup"><span data-stu-id="da295-118">Instance of PsApiManagementContext.</span></span>
+<span data-ttu-id="da295-119">Questo parametro è obbligatorio.</span><span class="sxs-lookup"><span data-stu-id="da295-119">This parameter is required.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
+Parameter Sets: ExpandParameterSetName
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="da295-120">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="da295-120">-DefaultProfile</span></span>
+<span data-ttu-id="da295-121">Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.</span><span class="sxs-lookup"><span data-stu-id="da295-121">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="da295-122">-DiagnosticId</span><span class="sxs-lookup"><span data-stu-id="da295-122">-DiagnosticId</span></span>
+<span data-ttu-id="da295-123">Identificatore del prodotto esistente.</span><span class="sxs-lookup"><span data-stu-id="da295-123">Identifier of existing product.</span></span>
+<span data-ttu-id="da295-124">Se specificato restituirà criteri per l'ambito prodotto.</span><span class="sxs-lookup"><span data-stu-id="da295-124">If specified will return product-scope policy.</span></span>
+<span data-ttu-id="da295-125">Questo parametro è facoltativo.</span><span class="sxs-lookup"><span data-stu-id="da295-125">This parameters is optional.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ExpandParameterSetName
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="da295-126">-InputObject</span><span class="sxs-lookup"><span data-stu-id="da295-126">-InputObject</span></span>
+<span data-ttu-id="da295-127">Istanza di PsApiManagementDiagnostic.</span><span class="sxs-lookup"><span data-stu-id="da295-127">Instance of PsApiManagementDiagnostic.</span></span> <span data-ttu-id="da295-128">Questo parametro è obbligatorio.</span><span class="sxs-lookup"><span data-stu-id="da295-128">This parameter is required.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementDiagnostic
+Parameter Sets: ByInputObjectParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="da295-129">-PassThru</span><span class="sxs-lookup"><span data-stu-id="da295-129">-PassThru</span></span>
+<span data-ttu-id="da295-130">Se specificato scriverà true nel caso in cui l'operazione venga eseguita correttamente.</span><span class="sxs-lookup"><span data-stu-id="da295-130">If specified will write true in case operation succeeds.</span></span>
+<span data-ttu-id="da295-131">Questo parametro è facoltativo.</span><span class="sxs-lookup"><span data-stu-id="da295-131">This parameter is optional.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="da295-132">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="da295-132">-ResourceId</span></span>
+<span data-ttu-id="da295-133">ResourceId ARM di diagnostica.</span><span class="sxs-lookup"><span data-stu-id="da295-133">Arm ResourceId of Diagnostic.</span></span> <span data-ttu-id="da295-134">Questo parametro è obbligatorio.</span><span class="sxs-lookup"><span data-stu-id="da295-134">This parameter is required.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByResourceIdParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="da295-135">-Confermare</span><span class="sxs-lookup"><span data-stu-id="da295-135">-Confirm</span></span>
+<span data-ttu-id="da295-136">Richiede la conferma prima di eseguire il cmdlet.</span><span class="sxs-lookup"><span data-stu-id="da295-136">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="da295-137">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="da295-137">-WhatIf</span></span>
+<span data-ttu-id="da295-138">Mostra cosa succede se il cmdlet viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="da295-138">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="da295-139">Il cmdlet non viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="da295-139">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="da295-140">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="da295-140">CommonParameters</span></span>
+<span data-ttu-id="da295-141">Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="da295-141">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="da295-142">Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="da295-142">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="da295-143">INGRESSI</span><span class="sxs-lookup"><span data-stu-id="da295-143">INPUTS</span></span>
+
+### <span data-ttu-id="da295-144">Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementContext</span><span class="sxs-lookup"><span data-stu-id="da295-144">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span></span>
+
+### <span data-ttu-id="da295-145">System. String</span><span class="sxs-lookup"><span data-stu-id="da295-145">System.String</span></span>
+
+### <span data-ttu-id="da295-146">System. Management. Automation. SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="da295-146">System.Management.Automation.SwitchParameter</span></span>
+
+## <span data-ttu-id="da295-147">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="da295-147">OUTPUTS</span></span>
+
+### <span data-ttu-id="da295-148">System. Boolean</span><span class="sxs-lookup"><span data-stu-id="da295-148">System.Boolean</span></span>
+
+## <span data-ttu-id="da295-149">Note</span><span class="sxs-lookup"><span data-stu-id="da295-149">NOTES</span></span>
+
+## <span data-ttu-id="da295-150">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="da295-150">RELATED LINKS</span></span>
+
+[<span data-ttu-id="da295-151">Get-AzApiManagementDiagnostic</span><span class="sxs-lookup"><span data-stu-id="da295-151">Get-AzApiManagementDiagnostic</span></span>](./Get-AzApiManagementDiagnostic.md)
+
+[<span data-ttu-id="da295-152">New-AzApiManagementDiagnostic</span><span class="sxs-lookup"><span data-stu-id="da295-152">New-AzApiManagementDiagnostic</span></span>](./New-AzApiManagementDiagnostic.md)
+
+[<span data-ttu-id="da295-153">Set-AzApiManagementDiagnostic</span><span class="sxs-lookup"><span data-stu-id="da295-153">Set-AzApiManagementDiagnostic</span></span>](./Set-AzApiManagementDiagnostic.md)
