@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.service: azure-powershell
 ms.date: 06/17/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: a5640ded6fc8c6478084374f7808450f6a99d6e5
-ms.sourcegitcommit: 12bb1a6d1f89789bf2a78992f9b8ca848691a4d7
+ms.openlocfilehash: 1879fea883c796dae26e353adeab908c8acdb967
+ms.sourcegitcommit: e680033f216d86cd91a1dfdb8328d32f4c99d21a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98573695"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99251846"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Creare un'entità servizio di Azure con Azure PowerShell
 
@@ -22,7 +22,7 @@ Un'entità servizio di Azure è un'identità creata per l'uso con applicazioni, 
 Questo articolo illustra i passaggi per la creazione, l'acquisizione di informazioni correlate e il ripristino di un'entità servizio con Azure PowerShell.
 
 > [!WARNING]
-> Quando si crea un'entità servizio con il comando [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal), l'output include credenziali che è necessario proteggere. Assicurarsi di non includere tali credenziali nel codice oppure archiviarle nel controllo del codice sorgente. In alternativa, è consigliabile usare [identità gestite](/azure/active-directory/managed-identities-azure-resources/overview) per evitare la necessità di usare le credenziali.
+> Quando si crea un'entità servizio con il comando [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal), l'output include credenziali che è necessario proteggere. In alternativa, è consigliabile usare [identità gestite](/azure/active-directory/managed-identities-azure-resources/overview) per evitare la necessità di usare le credenziali.
 >
 > Per impostazione predefinita, [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) assegna il ruolo di [Collaboratore](/azure/role-based-access-control/built-in-roles#contributor) all'entità servizio nell'ambito della sottoscrizione. Per ridurre il rischio di un'entità servizio compromessa, assegnare un ruolo più specifico e limitare l'ambito a una risorsa o a un gruppo di risorse. Per altre informazioni, vedere [Procedura per aggiungere un'assegnazione di ruolo](/azure/role-based-access-control/role-assignments-steps).
 

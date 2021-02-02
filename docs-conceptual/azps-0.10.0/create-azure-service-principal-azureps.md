@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 04/23/2019
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 79fcd846fc4bbe5aa3b13df41b38097184ac5228
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
-ms.translationtype: HT
+ms.openlocfilehash: adc4ab0f374cecd3ccca85cfb16aac5d77f69f41
+ms.sourcegitcommit: e680033f216d86cd91a1dfdb8328d32f4c99d21a
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93410299"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99251717"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Creare un'entità servizio di Azure con Azure PowerShell
 
@@ -24,7 +24,7 @@ Questo articolo illustra i passaggi per la creazione, l'acquisizione di informaz
 ## <a name="create-a-service-principal"></a>Creare un'entità servizio
 
 > [!WARNING]
-> Quando si crea un'entità servizio con il comando [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal), l'output include credenziali che è necessario proteggere. Assicurarsi di non includere tali credenziali nel codice oppure archiviarle nel controllo del codice sorgente. In alternativa, è consigliabile usare [identità gestite](/azure/active-directory/managed-identities-azure-resources/overview) per evitare la necessità di usare le credenziali.
+> Quando si crea un'entità servizio con il comando [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal), l'output include credenziali che è necessario proteggere. In alternativa, è consigliabile usare [identità gestite](/azure/active-directory/managed-identities-azure-resources/overview) per evitare la necessità di usare le credenziali.
 >
 > Per impostazione predefinita, [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) assegna il ruolo di [Collaboratore](/azure/role-based-access-control/built-in-roles#contributor) all'entità servizio nell'ambito della sottoscrizione. Per ridurre il rischio di un'entità servizio compromessa, assegnare un ruolo più specifico e limitare l'ambito a una risorsa o a un gruppo di risorse. Per altre informazioni, vedere [Procedura per aggiungere un'assegnazione di ruolo](/azure/role-based-access-control/role-assignments-steps).
 
@@ -115,7 +115,7 @@ Azure PowerShell include i cmdlet seguenti per gestire le assegnazioni dei ruoli
 
 Il ruolo predefinito per un'entità servizio è quello **Collaboratore**. Questo ruolo ha autorizzazioni complete per la lettura e la scrittura in un account di Azure. Il ruolo **Lettore** è più restrittivo e offre l'accesso in sola lettura.  Per altre informazioni sul controllo degli accessi in base al ruolo e i ruoli, vedere [Controllo degli accessi in base al ruolo: ruoli predefiniti](/azure/active-directory/role-based-access-built-in-roles).
 
-Questo esempio aggiunge il ruolo **Lettore** e rimuove il ruolo **Collaboratore** :
+Questo esempio aggiunge il ruolo **Lettore** e rimuove il ruolo **Collaboratore**:
 
 ```azurepowershell-interactive
 New-AzRoleAssignment -ApplicationId <service principal application ID> -RoleDefinitionName "Reader"

@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzADServicePrincipal.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzADServicePrincipal.md
-ms.openlocfilehash: f921cceb3692032f61f99db825efeea074773faa
-ms.sourcegitcommit: 375232b84336ef5e13052504deaa43f5bd4b7f65
+ms.openlocfilehash: 3a410dfb43cc767b0a73086147042425d42764d1
+ms.sourcegitcommit: e680033f216d86cd91a1dfdb8328d32f4c99d21a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "94311718"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99251625"
 ---
 # New-AzADServicePrincipal
 
-## Sinossi
-Crea una nuova entità servizio di Azure Active Directory.
+## SYNOPSIS
+Crea una nuova entità servizio Azure Active Directory.
 
 ## SINTASSI
 
-### SimpleParameterSet (impostazione predefinita)
+### SimpleParameterSet (Impostazione predefinita)
 ```
 New-AzADServicePrincipal [-ApplicationId <Guid>] [-DisplayName <String>] [-StartDate <DateTime>]
  [-EndDate <DateTime>] [-Scope <String>] [-Role <String>] [-SkipAssignment]
@@ -33,7 +33,7 @@ New-AzADServicePrincipal -ApplicationId <Guid> [-DefaultProfile <IAzureContextCo
  [<CommonParameters>]
 ```
 
-### ApplicationWithPasswordPlainParameterSet
+### ApplicationWithPasswordPparamParameterSet
 ```
 New-AzADServicePrincipal -ApplicationId <Guid> [-StartDate <DateTime>] [-EndDate <DateTime>]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -45,7 +45,7 @@ New-AzADServicePrincipal -ApplicationId <Guid> -PasswordCredential <PSADPassword
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### ApplicationWithKeyPlainParameterSet
+### ApplicationWithKeyPparamParameterSet
 ```
 New-AzADServicePrincipal -ApplicationId <Guid> -CertValue <String> [-StartDate <DateTime>]
  [-EndDate <DateTime>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -63,7 +63,7 @@ New-AzADServicePrincipal -DisplayName <String> [-DefaultProfile <IAzureContextCo
  [<CommonParameters>]
 ```
 
-### DisplayNameWithPasswordPlainParameterSet
+### DisplayNameWithPasswordPparamSet
 ```
 New-AzADServicePrincipal -DisplayName <String> [-StartDate <DateTime>] [-EndDate <DateTime>]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -75,7 +75,7 @@ New-AzADServicePrincipal -DisplayName <String> -PasswordCredential <PSADPassword
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### DisplayNameWithKeyPlainParameterSet
+### DisplayNameWithKeyPparameterSet
 ```
 New-AzADServicePrincipal -DisplayName <String> -CertValue <String> [-StartDate <DateTime>]
  [-EndDate <DateTime>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -87,7 +87,7 @@ New-AzADServicePrincipal -DisplayName <String> -KeyCredential <PSADKeyCredential
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### ApplicationObjectWithPasswordPlainParameterSet
+### ApplicationObjectWithPasswordPparameterSet
 ```
 New-AzADServicePrincipal -ApplicationObject <PSADApplication> [-StartDate <DateTime>] [-EndDate <DateTime>]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -99,7 +99,7 @@ New-AzADServicePrincipal -ApplicationObject <PSADApplication> -PasswordCredentia
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### ApplicationObjectWithKeyPlainParameterSet
+### ApplicationObjectWithKeyPparamParameterSet
 ```
 New-AzADServicePrincipal -ApplicationObject <PSADApplication> -CertValue <String> [-StartDate <DateTime>]
  [-EndDate <DateTime>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -111,19 +111,19 @@ New-AzADServicePrincipal -ApplicationObject <PSADApplication> -KeyCredential <PS
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Descrizione
-Crea una nuova entità servizio di Azure Active Directory. Il set di parametri predefinito usa i valori predefiniti per i parametri se l'utente non ne offre uno. Per altre informazioni sui valori predefiniti usati, vedere la descrizione per i parametri specificati di seguito.
-Questo cmdlet offre la possibilità di assegnare un ruolo all'entità servizio con i `Role` parametri e, `Scope` se nessuno di questi parametri viene fornito, nessun ruolo verrà assegnato all'entità servizio. I valori predefiniti per i `Role` `Scope` parametri e sono rispettivamente "collaboratore" e l'abbonamento corrente ( _Nota_ : le impostazioni predefinite vengono usate solo quando l'utente fornisce un valore per uno dei due parametri, ma non per l'altro).
-Il cmdlet crea inoltre in modo implicito un'applicazione e ne imposta le proprietà (se ApplicationId non è disponibile). Per aggiornare i parametri specifici dell'applicazione, usare Set-AzADApplication cmdlet.
+## DESCRIZIONE
+Crea una nuova entità servizio Azure Active Directory. Se l'utente non ne fornisce uno, il set di parametri predefinito usa i valori predefiniti per i parametri. Per altre informazioni sui valori predefiniti usati, vedere la descrizione dei parametri specificati di seguito.
+Questo cmdlet ha la possibilità di assegnare un ruolo all'entità servizio con i parametri e. Se nessuno di questi parametri viene fornito, non verrà assegnato alcun ruolo `Role` `Scope` all'entità servizio. I valori predefiniti per i parametri e sono rispettivamente "Collaboratore" e la sottoscrizione corrente (nota: i valori predefiniti vengono utilizzati solo quando l'utente fornisce un valore per uno dei due parametri, ma non `Role` `Scope` l'altro).
+Il cmdlet crea anche un'applicazione in modo implicito e ne imposta le proprietà, se non viene fornito il valore ApplicationId. Per aggiornare i parametri specifici dell'applicazione, usare Set-AzADApplication cmdlet.
 
 > [!WARNING]
-> Quando si crea un'entità di servizio usando il comando **New-AzADServicePrincipal** , l'output include le credenziali che è necessario proteggere. Assicurati di non includere queste credenziali nel codice o di controllare le credenziali nel controllo di origine. In alternativa, è consigliabile usare le [identità gestite](/azure/active-directory/managed-identities-azure-resources/overview) per evitare la necessità di usare le credenziali.
+> Quando si crea un'entità servizio con il comando **New-AzADServicePrincipal,** l'output include le credenziali che è necessario proteggere. In alternativa, è consigliabile usare le identità [gestite](/azure/active-directory/managed-identities-azure-resources/overview) per evitare l'uso delle credenziali.
 >
-> Per impostazione predefinita, **New-AzADServicePrincipal** assegna il ruolo di [collaboratore](/azure/role-based-access-control/built-in-roles#contributor) all'entità del servizio nell'ambito dell'abbonamento. Per ridurre il rischio di un'entità di servizio compromessa, assegnare un ruolo più specifico e limitare l'ambito a una risorsa o a un gruppo di risorse. Per altre informazioni, vedere [procedura per aggiungere un'assegnazione di ruolo](/azure/role-based-access-control/role-assignments-steps) .
+> Per impostazione predefinita, **New-AzADServicePrincipal** assegna il ruolo [Collaboratore](/azure/role-based-access-control/built-in-roles#contributor) all'entità servizio nell'ambito della sottoscrizione. Per ridurre il rischio di un'entità servizio compromessa, assegnare un ruolo più specifico e restringere l'ambito a una risorsa o a un gruppo di risorse. Per [altre informazioni, vedere La procedura per aggiungere un'assegnazione](/azure/role-based-access-control/role-assignments-steps) di ruolo.
 
 ## ESEMPI
 
-### Esempio 1-creazione di un servizio di Active Directory semplice
+### Esempio 1 - Creazione di entità servizio Active Directory semplice
 
 ```
 PS C:\> New-AzADServicePrincipal
@@ -136,9 +136,9 @@ Id                    : yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy
 Type                  : ServicePrincipal
 ```
 
-Il comando precedente crea un'entità del servizio Active Directory usando i valori predefiniti per i parametri non forniti. Dato che non è stato fornito un ID applicazione, è stata creata un'applicazione per l'entità servizio. Dato che non sono stati forniti valori `Role` o `Scope` , l'entità servizio creata non ha le autorizzazioni necessarie.
+Il comando precedente crea un'entità servizio Active Directory usando i valori predefiniti per i parametri non forniti. Poiché non è stato fornito un ID applicazione, è stata creata un'applicazione per l'entità servizio. Poiché non sono stati forniti valori per `Role` o `Scope` , l'entità servizio creata non ha autorizzazioni.
 
-### Esempio 2-Creazione di un servizio di Active Directory semplice con un ruolo specificato e un ambito predefinito
+### Esempio 2 - Creazione semplice di un'entità servizio Active Directory con un ruolo specificato e un ambito predefinito
 
 ```
 PS C:\> New-AzADServicePrincipal -Role Reader
@@ -153,9 +153,9 @@ Type                  : ServicePrincipal
 WARNING: Assigning role 'Reader' over scope '/subscriptions/zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz' to the new service principal.
 ```
 
-Il comando precedente crea un'entità del servizio Active Directory usando i valori predefiniti per i parametri non forniti. Dato che l'ID applicazione non è stato fornito, è stata creata un'applicazione per l'entità servizio. L'entità servizio è stata creata con le autorizzazioni "Reader" per l'abbonamento corrente (dato che non è stato specificato alcun valore per il `Scope` parametro).
+Il comando precedente crea un'entità servizio Active Directory usando i valori predefiniti per i parametri non forniti. Poiché l'ID applicazione non è stato fornito, è stata creata un'applicazione per l'entità servizio. L'entità servizio è stata creata con le autorizzazioni "Lettore" per la sottoscrizione corrente, poiché non è stato fornito alcun valore per il `Scope` parametro.
 
-### Esempio 3-creazione di un servizio di Active Directory semplice con un ambito specificato e un ruolo predefinito
+### Esempio 3 - Creazione semplice di un'entità servizio Active Directory con un ambito e un ruolo predefiniti specificati
 
 ```
 PS C:\> New-AzADServicePrincipal -Scope /subscriptions/zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz/resourceGroups/myResourceGroup
@@ -170,9 +170,9 @@ Type                  : ServicePrincipal
 WARNING: Assigning role 'Contributor' over scope '/subscriptions/zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz/resourceGroups/myResourceGroup' to the new service principal.
 ```
 
-Il comando precedente crea un'entità del servizio Active Directory usando i valori predefiniti per i parametri non forniti. Dato che l'ID applicazione non è stato fornito, è stata creata un'applicazione per l'entità servizio. L'entità servizio è stata creata con le autorizzazioni "collaboratore" (poiché non è stato specificato alcun valore per il `Role` parametro) nell'ambito del gruppo di risorse specificato.
+Il comando precedente crea un'entità servizio Active Directory usando i valori predefiniti per i parametri non forniti. Poiché l'ID applicazione non è stato fornito, è stata creata un'applicazione per l'entità servizio. L'entità servizio è stata creata con autorizzazioni "Collaboratore" (poiché per il parametro non è stato fornito alcun `Role` valore) sull'ambito del gruppo di risorse fornito.
 
-### Esempio 4-creazione di un servizio di Active Directory semplice con un ambito e un ruolo specificati
+### Esempio 4 - Creazione semplice di un'entità servizio Active Directory con un ambito e un ruolo specificati
 
 ```
 PS C:\> New-AzADServicePrincipal -Role Reader -Scope /subscriptions/zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz/resourceGroups/myResourceGroup
@@ -187,9 +187,9 @@ Type                  : ServicePrincipal
 WARNING: Assigning role 'Reader' over scope '/subscriptions/zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz/resourceGroups/myResourceGroup' to the new service principal.
 ```
 
-Il comando precedente crea un'entità del servizio Active Directory usando i valori predefiniti per i parametri non forniti. Dato che l'ID applicazione non è stato fornito, è stata creata un'applicazione per l'entità servizio. L'entità servizio è stata creata con le autorizzazioni "Reader" nell'ambito del gruppo di risorse specificato.
+Il comando precedente crea un'entità servizio Active Directory usando i valori predefiniti per i parametri non forniti. Poiché l'ID applicazione non è stato fornito, è stata creata un'applicazione per l'entità servizio. L'entità servizio è stata creata con autorizzazioni "Lettore" sull'ambito del gruppo di risorse fornito.
 
-### Esempio 5-creare una nuova entità servizio annunci usando l'ID applicazione con assegnazione ruolo
+### Esempio 5 - Creare una nuova entità servizio Active Directory usando l'ID applicazione con l'assegnazione di ruoli
 
 ```
 PS C:\> New-AzADServicePrincipal -ApplicationId 34a28ad2-dec4-4a41-bc3b-d22ddf90000e
@@ -201,17 +201,17 @@ Id                    : yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy
 Type                  : ServicePrincipal
 ```
 
-Crea una nuova entità servizio annunci per l'applicazione con l'ID applicazione "34a28ad2-DEC4-4A41-bc3b-d22ddf90000e". Dato che non sono stati forniti valori `Role` o `Scope` , l'entità servizio creata non ha le autorizzazioni necessarie.
+Crea una nuova entità servizio Active Directory per l'applicazione con ID applicazione '34a28ad2-dec4-4a41-bc3b-d22ddf900000e'. Poiché non sono stati forniti valori per `Role` o `Scope` , l'entità servizio creata non ha autorizzazioni.
 
-### Esempio 6-creare una nuova entità del servizio PUBBLICITARIo usando piping
+### Esempio 6 - Creare una nuova entità servizio Active Directory tramite piping
 
 ```
 PS C:\> Get-AzADApplication -ObjectId 3ede3c26-b443-4e0b-9efc-b05e68338dc3 | New-AzADServicePrincipal
 ```
 
-Ottiene l'applicazione con l'ID oggetto "3ede3c26-B443-4e0b-9efc-b05e68338dc3" e le pipe al cmdlet New-AzADServicePrincipal per creare una nuova entità del servizio Active Directory per tale applicazione.
+Ottiene l'applicazione con ID oggetto '3ede3c26-b443-4e0b-9efc-b05e68338dc3' e pipe al cmdlet di New-AzADServicePrincipal per creare una nuova entità servizio Active Directory per l'applicazione.
 
-### Esempio 7-creare una nuova entità servizio annunci usando le credenziali DisplayName e password
+### Esempio 7 - Creare una nuova entità servizio Active Directory usando DisplayName e le credenziali della password
 
 ```
 PS C:\> $credentials = New-Object -TypeName Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential -Property @{ StartDate=Get-Date; EndDate=Get-Date -Year 2024; Password="StrongPassworld!23"}
@@ -225,9 +225,9 @@ Id                    : 6xxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxb
 Type                  :
 ```
 
-Crea una nuova applicazione con il nome "ServicePrincipalName" e la password "StrongPassworld! 23" e crea l'entità servizio in base all'applicazione appena creata. La data di inizio e di fine vengono aggiunte alle credenziali delle password.
+Crea una nuova applicazione con il nome "ServicePrincipalName" e la password "StrongPassworld!23" e crea l'entità servizio in base all'applicazione appena creata. La data di inizio e la data di fine vengono aggiunte alle credenziali della password.
 
-### Esempio 8: creare una nuova entità del servizio Active Directory usando DisplayName e le credenziali con chiave normale
+### Esempio 8 - Creare una nuova entità servizio Active Directory usando DisplayName e le credenziali della chiave normale
 
 ```
 PS C:\> $cert = <public certificate as base64-encoded string>
@@ -241,14 +241,14 @@ Id                    : cxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxc
 Type                  :
 ```
 
-Crea una nuova applicazione con il nome "ServicePrincipalName" e certificato "$cert" e crea l'entità servizio in base all'applicazione appena creata. La data di fine viene aggiunta alle credenziali chiave.
+Crea una nuova applicazione con il nome "ServicePrincipalName" e certifica "$cert" e crea l'entità servizio in base all'applicazione appena creata. La data di fine viene aggiunta alle credenziali della chiave.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -ApplicationId
-ID applicazione univoco per un'entità di servizio in un tenant.
-Una volta creata questa proprietà non può essere modificata.
-Se non viene specificato un ID applicazione, verrà generato uno.
+ID applicazione univoco per un'entità servizio in un tenant.
+Una volta creata, questa proprietà non può essere modificata.
+Se non si specifica un ID applicazione, ne viene generato uno.
 
 ```yaml
 Type: System.Guid
@@ -275,7 +275,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationObject
-Oggetto che rappresenta l'applicazione per cui viene creata l'entità di servizio.
+Oggetto che rappresenta l'applicazione per cui viene creata l'entità servizio.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADApplication
@@ -290,8 +290,8 @@ Accept wildcard characters: False
 ```
 
 ### -CertValue
-Il valore del tipo di credenziale "asimmetrico".
-Rappresenta il certificato codificato 64 di base.
+Valore del tipo di credenziali "asimmetrico".
+Rappresenta il certificato codificato base 64.
 
 ```yaml
 Type: System.String
@@ -333,7 +333,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Nome descrittivo dell'entità servizio. Se non viene specificato un nome visualizzato, il valore predefinito sarà "Azure-PowerShell-MM-DD-AAAA-HH-mm-SS", in cui il suffisso è il momento della creazione dell'applicazione.
+Nome descrittivo dell'entità servizio. Se non viene fornito un nome visualizzato, questo valore predefinito sarà "azure-powershell-MM-dd-yyyy-HH-mm-ss", dove il suffisso è l'ora di creazione dell'applicazione.
 
 ```yaml
 Type: System.String
@@ -361,7 +361,7 @@ Accept wildcard characters: False
 
 ### -EndDate
 Data di fine effettiva dell'utilizzo delle credenziali.
-Il valore di data di fine predefinito è di un anno da oggi. Per le credenziali di tipo "asimmetrico", deve essere impostato su attivato o prima della data in cui il certificato X509 è valido.
+Il valore predefinito per la data di fine è a un anno dalla data odierna. Per le credenziali di tipo "asimmetrico", questa deve essere impostata su o prima della data in cui il certificato X509 è valido.
 
 ```yaml
 Type: System.DateTime
@@ -387,8 +387,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Credenziale
-Raccolta di credenziali chiave associata all'applicazione.
+### -KeyCredential
+Raccolta delle credenziali chiave associate all'applicazione.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADKeyCredential[]
@@ -415,7 +415,7 @@ Accept wildcard characters: False
 ```
 
 ### -PasswordCredential
-Raccolta di credenziali password associata all'applicazione.
+Raccolta delle credenziali password associate all'applicazione.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential[]
@@ -441,8 +441,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Ruolo
-Il ruolo che l'entità servizio ha sull'ambito. Se viene specificato un valore per, `Scope` ma non viene specificato alcun valore `Role` , `Role` il ruolo "collaboratore" verrà impostato come predefinito.
+### -Role
+Ruolo dell'entità servizio nell'ambito. Se viene fornito un valore per, ma per questo non viene fornito alcun valore, per impostazione predefinita viene utilizzato il `Scope` `Role` ruolo `Role` "Collaboratore".
 
 ```yaml
 Type: System.String
@@ -456,8 +456,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Ambito
-Ambito per cui l'entità del servizio dispone delle autorizzazioni. Se viene specificato un valore per, `Role` ma non viene specificato alcun valore `Scope` , `Scope` verrà impostato come predefinito per l'abbonamento corrente.
+### -Scope
+Ambito per cui l'entità servizio ha le autorizzazioni. Se viene fornito un valore per, ma non per , verrà utilizzato per impostazione predefinita `Role` `Scope` la sottoscrizione `Scope` corrente.
 
 ```yaml
 Type: System.String
@@ -472,7 +472,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipAssignment
-Se impostato, salterà la creazione dell'assegnazione di ruolo predefinita per l'entità servizio.
+Se è impostata, non verrà creata l'assegnazione di ruolo predefinita per l'entità servizio.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -487,8 +487,8 @@ Accept wildcard characters: False
 ```
 
 ### -StartDate
-Data di inizio effettiva dell'utilizzo delle credenziali.
-Il valore predefinito della data di inizio è oggi. Per le credenziali di tipo "asimmetrico", deve essere impostato su attivato o successivo alla data di validità del certificato X509.
+Data di inizio effettivo dell'utilizzo delle credenziali.
+Il valore predefinito per la data di inizio è oggi. Per le credenziali di tipo "asimmetrico", questa deve essere impostata su o dopo la data da cui il certificato X509 è valido.
 
 ```yaml
 Type: System.DateTime
@@ -514,8 +514,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confermare
-Richiede la conferma prima di eseguire il cmdlet.
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -530,7 +530,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra cosa succede se il cmdlet viene eseguito.
+Mostra cosa accadrebbe se il cmdlet viene eseguito.
 Il cmdlet non viene eseguito.
 
 ```yaml
@@ -546,30 +546,30 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### System. Guid
+### System.Guid
 
-### System. String
+### System.String
 
-### Microsoft. Azure. Commands. ActiveDirectory. PSADApplication
+### Microsoft.Azure.Commands.ActiveDirectory.PSADApplication
 
-### Microsoft. Azure. Commands. ActiveDirectory. PSADPasswordCredential []
+### Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential[]
 
-### Microsoft. Azure. Commands. ActiveDirectory. PSADKeyCredential []
+### Microsoft.Azure.Commands.ActiveDirectory.PSADKeyCredential[]
 
-### System. DateTime
+### System.DateTime
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. ActiveDirectory. PSADServicePrincipal
+### Microsoft.Azure.Commands.ActiveDirectory.PSADServicePrincipal
 
-### Microsoft. Azure. Commands. resources. Models. Authorization. PSADServicePrincipalWrapper
+### Microsoft.Azure.Commands.Resources.Models.Authorization.PSADServicePrincipalWrapper
 
-## Note
-Parole chiave: Azure, azurerm, ARM, Resource, Management, Manager, Resource, Group, template, Deployment
+## NOTE
+Parole chiave: azure, azurerm, arm, risorsa, gestione, manager, risorsa, gruppo, modello, distribuzione
 
 ## COLLEGAMENTI CORRELATI
 
