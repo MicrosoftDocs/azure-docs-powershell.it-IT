@@ -3,17 +3,16 @@ external help file: Microsoft.Azure.Commands.DeploymentManager.dll-Help.xml
 Module Name: AzureRM.DeploymentManager
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.deploymentmanager/get-azurermdeploymentmanagerservice
 schema: 2.0.0
-content_git_url: ''
-ms.openlocfilehash: 655cfeeae35d1b48bbfe2149fd4262dffe72ae09
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 4a91c2f8fdda1d2cda7c75f0cf7cfab165701f3d
+ms.sourcegitcommit: e57be0da5162efeb0a01f396e2343dd137920063
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93507131"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99572106"
 ---
 # Get-AzureRmDeploymentManagerService
 
-## Sinossi
+## SYNOPSIS
 Ottiene un servizio in una topologia di servizio.
 
 ## SINTASSI
@@ -48,11 +47,11 @@ Get-AzureRmDeploymentManagerService [-Service] <PSServiceResource> [-DefaultProf
  [<CommonParameters>]
 ```
 
-## Descrizione
+## DESCRIZIONE
 Il cmdlet **Get-AzureRmDeploymentManagerService** ottiene un servizio in una topologia di servizio e restituisce un oggetto che rappresenta tale servizio.
-Specificare il servizio in base al nome, alla topologia del servizio e al nome del gruppo di risorse. In alternativa, puoi specificare l'oggetto servizio o il ResourceId.
+Specificare il servizio in base al nome, alla topologia di servizio in cui si trova e al nome del gruppo di risorse. In alternativa, è possibile specificare l'oggetto Servizio o l'ID Risorsa.
 
-Puoi modificare l'oggetto localmente e quindi applicare le modifiche al servizio usando il cmdlet Set-AzureRmDeploymentManagerService.
+È possibile modificare l'oggetto in locale e quindi applicarvi le modifiche usando il cmdlet Set-AzureRmDeploymentManagerService servizio.
 
 ## ESEMPI
 
@@ -61,26 +60,26 @@ Puoi modificare l'oggetto localmente e quindi applicare le modifiche al servizio
 PS C:\> Get-AzureRmDeploymentManagerService -ResourceGroupName ContosoResourceGroup -ServiceTopologyName ContosoServiceTopology -Name ContosoService1
 ```
 
-Questo comando ottiene un servizio denominato ContosoService1 in una topologia di servizio denominata ContosoServiceTopology nel ContosoResourceGroup.
+Questo comando ottiene un servizio denominato ContosoService1 in una topologia di servizio denominata ContosoServiceTopology in ContosoResourceGroup.
 
-### Esempio 2: ottenere un servizio usando l'identificatore delle risorse.
+### Esempio 2: Ottenere un servizio con l'identificatore di risorsa.
 ```powershell
 PS C:\> Get-AzureRmDeploymentManagerService -ResourceId "/subscriptions/subscriptionId/resourcegroups/ContosoResourceGroup/providers/Microsoft.DeploymentManager/serviceTopologies/ContosoServiceTopology/services/ContosoService1"
 ```
 
-Questo comando ottiene un servizio denominato ContosoService1 in una topologia di servizio denominata ContosoServiceTopology nel ContosoResourceGroup.
+Questo comando ottiene un servizio denominato ContosoService1 in una topologia di servizio denominata ContosoServiceTopology in ContosoResourceGroup.
 
-### Esempio 3: ottenere un servizio usando l'oggetto servizio.
+### Esempio 3: Ottenere un servizio con l'oggetto servizio.
 ```powershell
 PS C:\> Get-AzureRmDeploymentManagerService -Service $serviceObject
 ```
 
-Questo comando ottiene un servizio il cui nome, nome della topologia del servizio e ResourceGroup corrispondono rispettivamente alle proprietà Name, ServiceTopologyName e ResourceGroupName della $serviceObject.
+Questo comando ottiene un servizio il cui nome, il cui nome della topologia di servizio e ResourceGroup corrispondono rispettivamente alle proprietà Name, ServiceTopologyName e ResourceGroupName del $serviceObject.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
@@ -94,7 +93,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Nome
+### -Name
 Nome del servizio.
 
 ```yaml
@@ -110,7 +109,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Gruppo risorse.
+Gruppo di risorse.
 
 ```yaml
 Type: System.String
@@ -125,7 +124,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Identificatore della risorsa.
+L'identificatore di risorsa.
 
 ```yaml
 Type: System.String
@@ -139,7 +138,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Servizio
+### -Service
 Oggetto servizio.
 
 ```yaml
@@ -155,7 +154,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceTopology
-Oggetto topologia del servizio in cui deve essere creato il servizio.
+Oggetto topologia di servizio in cui deve essere creato il servizio.
 
 ```yaml
 Type: Microsoft.Azure.Commands.DeploymentManager.Models.PSServiceTopologyResource
@@ -170,7 +169,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceTopologyName
-Nome della topologia del servizio.
+Nome della topologia di servizio.
 
 ```yaml
 Type: System.String
@@ -185,7 +184,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceTopologyResourceId
-Identificatore della risorsa della topologia del servizio in cui deve essere creato il servizio.
+Identificatore di risorsa della topologia del servizio in cui deve essere creato il servizio.
 
 ```yaml
 Type: System.String
@@ -200,17 +199,17 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
 ### Nessuno
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. DeploymentManager. Models. PSServiceResource
+### Microsoft.Azure.Commands.DeploymentManager.Models.PSServiceResource
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
