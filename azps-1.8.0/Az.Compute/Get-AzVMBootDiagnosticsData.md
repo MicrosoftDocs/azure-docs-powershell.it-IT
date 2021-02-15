@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMBootDiagnosticsData.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMBootDiagnosticsData.md
-ms.openlocfilehash: 94e5a1087f870f8dbbe099962e69d83b64f52ed3
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: ee210b5b9408f3de2b9e92213fafe4846ea8c3e1
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93852137"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400655"
 ---
 # Get-AzVMBootDiagnosticsData
 
-## Sinossi
-Ottiene i dati di diagnostica di avvio per una macchina virtuale.
+## SYNOPSIS
+Recupera i dati di diagnostica di avvio per una macchina virtuale.
 
 ## SINTASSI
 
@@ -32,24 +32,24 @@ Get-AzVMBootDiagnosticsData [-ResourceGroupName] <String> [-Name] <String> [-Lin
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
+## DESCRIZIONE
 Il cmdlet **Get-AzVMBootDiagnosticsData** ottiene i dati di diagnostica di avvio per una macchina virtuale.
 
 ## ESEMPI
 
-### Esempio 1: ottenere i dati di diagnostica di avvio
+### Esempio 1: Ottenere i dati di diagnostica di avvio
 ```
 PS C:\> Get-AzVMBootDiagnosticsData -ResourceGroupName "ResourceGroup11" -Name "ContosoVM07" -Windows -LocalPath "C:\Contoso\BootDiagnostics"
 ```
 
-Questo comando consente di ottenere i dati di diagnostica di avvio per la macchina virtuale denominata ContosoVM07.
+Questo comando recupera i dati di diagnostica di avvio per la macchina virtuale ContosoVM07.
 Questa macchina virtuale esegue il sistema operativo Windows.
-Il comando Archivia i dati in un percorso locale specificato.
+Il comando archivia i dati nel percorso locale specificato.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -105,8 +105,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Nome
-Specifica il nome della macchina virtuale per cui questo cmdlet ottiene i dati di diagnostica.
+### -Name
+Specifica il nome della macchina virtuale per cui il cmdlet riceve i dati di diagnostica.
 
 ```yaml
 Type: System.String
@@ -151,22 +151,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](https://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Compute. Models. PSVirtualMachine
+### Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine
 
-### Microsoft. Azure. Commands. Compute. Models. PSVirtualMachineInstanceView
+### Microsoft.Azure.Commands.Compute.Models.PSVirtualMachineInstanceView
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Set-AzVMBootDiagnostics](./Set-AzVMBootDiagnostics.md)
+[Set-AzVMBootDiagnostic](./Set-AzVMBootDiagnostic.md)
 
 
