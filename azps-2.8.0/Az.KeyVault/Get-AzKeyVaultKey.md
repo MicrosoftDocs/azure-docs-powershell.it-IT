@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/g
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultKey.md
-ms.openlocfilehash: 21d2f6efa039dbd9b229562fcefd53c715f400fe
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: a934b1d96b260a6615acfbe02b15c80e6d3bfae5
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93674154"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411450"
 ---
 # Get-AzKeyVaultKey
 
-## Sinossi
-Ottiene le chiavi di volta chiave.
+## SYNOPSIS
+Recupera le chiavi del Vault chiave.
 
 ## SINTASSI
 
@@ -74,13 +74,13 @@ Get-AzKeyVaultKey [-ResourceId] <String> [-Name] <String> [-IncludeVersions]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Get-AzKeyVaultKey** ottiene le chiavi di volta di Azure Key.
-Questo cmdlet consente di ottenere uno specifico **Microsoft. Azure. Commands. Key Vault. Models. bundle** o un elenco di tutti gli oggetti del **pacchetto** di chiavi in un Vault chiave o in base alla versione.
+## DESCRIZIONE
+Il **cmdlet Get-AzKeyVaultKey** ottiene le chiavi del Vault della chiave di Azure.
+Questo cmdlet ottiene uno specifico **oggetto Microsoft.Azure.Commands.KeyVault.Models.KeyBundle** o un elenco di tutti gli oggetti **KeyBundle** in un vault delle chiavi o in base alla versione.
 
 ## ESEMPI
 
-### Esempio 1: ottenere tutte le chiavi in un Vault chiave
+### Esempio 1: Ottenere tutte le chiavi in un vault delle chiavi
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso'
 
@@ -109,9 +109,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-Questo comando consente di ottenere tutte le chiavi nel caveau della chiave denominato contoso.
+Questo comando recupera tutte le chiavi nel vault delle chiavi denominato Contoso.
 
-### Esempio 2: ottenere la versione corrente di una chiave
+### Esempio 2: Ottenere la versione corrente di un codice
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1'
 
@@ -128,9 +128,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-Questo comando ottiene la versione corrente della chiave denominata Test1 nel caveau della chiave denominata Contoso.
+Questo comando ottiene la versione corrente della chiave denominata test1 nella chiave vault denominata Contoso.
 
-### Esempio 3: ottenere tutte le versioni di una chiave
+### Esempio 3: Ottenere tutte le versioni di un codice
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1' -IncludeVersions
 
@@ -159,9 +159,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-Questo comando consente di ottenere tutte le versioni della chiave denominata ITPfx nella chiave vaultnamed contoso.
+Questo comando recupera tutte le versioni della chiave denominata ITPfx nella chiave vaultnamed Contoso.
 
-### Esempio 4: ottenere una versione specifica di una chiave
+### Esempio 4: Ottenere una versione specifica di una chiave
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1' -Version 'e4e95940e669407fbdb4298bc21a3e1d'
 
@@ -178,10 +178,10 @@ Purge Disabled : False
 Tags           :
 ```
 
-Questo comando ottiene una versione specifica della chiave denominata Test1 nel caveau della chiave denominata Contoso.
-Dopo aver eseguito questo comando, è possibile esaminare varie proprietà della chiave spostando l'oggetto $Key.
+Questo comando ottiene una versione specifica della chiave denominata test1 nella chiave vault denominata Contoso.
+Dopo aver eseguito questo comando, è possibile esaminare le varie proprietà della chiave esplorando l$Key o object.
 
-### Esempio 5: ottenere tutte le chiavi eliminate ma non eliminate per questo Vault chiave.
+### Esempio 5: Ottenere tutte le chiavi eliminate ma non eliminate per il vault delle chiavi.
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -InRemovedState
 
@@ -199,9 +199,9 @@ Purge Disabled       : False
 Tags                 :
 ```
 
-Questo comando consente di ottenere tutte le chiavi eliminate in precedenza, ma non eliminate, nel caveau della chiave denominato contoso.
+Questo comando recupera tutte le chiavi eliminate in precedenza, ma non eliminate, nella chiave vault denominata Contoso.
 
-### Esempio 6: ottiene la chiave ITPfx che è stata eliminata ma non eliminata per il Vault chiave.
+### Esempio 6: ottiene la chiave ITPfx che è stata eliminata ma non eliminata per il vault delle chiavi.
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test3' -InRemovedState
 
@@ -219,10 +219,10 @@ Purge Disabled       : False
 Tags                 :
 ```
 
-Questo comando ottiene la chiave test3 che è stata eliminata, ma non eliminata, nel caveau della chiave denominata Contoso.
-Questo comando restituirà metadati, ad esempio la data di eliminazione, e la data di eliminazione pianificata di questa chiave eliminata.
+Questo comando ottiene il test chiave3 eliminato in precedenza, ma non ripulito, nella chiave vault denominata Contoso.
+Questo comando restituisce metadati come la data di eliminazione e la data di eliminazione pianificata della chiave eliminata.
 
-### Esempio 7: ottenere tutte le chiavi in un Vault chiave usando il filtro
+### Esempio 7: Ottenere tutte le chiavi in un vault delle chiavi usando i filtri
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName "test*"
 
@@ -251,9 +251,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-Questo comando ottiene tutte le chiavi nel Vault chiave denominato Contoso che iniziano con "test".
+Questo comando recupera tutte le chiavi nel vault delle chiavi denominate Contoso che iniziano con "test".
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
 Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
@@ -272,9 +272,9 @@ Accept wildcard characters: False
 
 ### -IncludeVersions
 Indica che questo cmdlet ottiene tutte le versioni di una chiave.
-La versione corrente di una chiave è la prima nell'elenco.
-Se specifichi questo parametro devi anche specificare i parametri *Name* e *VAULTNAME* .
-Se non specifichi il parametro *includeVersions* , questo cmdlet ottiene la versione corrente della chiave con il *nome* specificato.
+La versione corrente di un codice è la prima nell'elenco.
+Se si specifica questo parametro, è necessario specificare anche i *parametri Name* e *VaultName.*
+Se non si specifica il *parametro IncludeVersions,* questo cmdlet ottiene la versione corrente della chiave con il nome *specificato.*
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -289,7 +289,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Oggetto di Vault.
+Oggetto KeyVault.
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
@@ -318,8 +318,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Nome
-Specifica il nome del bundle della chiave da ottenere.
+### -Name
+Specifica il nome del bundle di chiavi da ottenere.
 
 ```yaml
 Type: System.String
@@ -346,7 +346,7 @@ Accept wildcard characters: True
 ```
 
 ### -ResourceId
-ID risorsa di un Vault.
+ID risorsa KeyVault.
 
 ```yaml
 Type: System.String
@@ -360,9 +360,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -VAULTNAME
-Specifica il nome del Vault chiave da cui questo cmdlet ottiene le chiavi.
-Questo cmdlet costruisce il nome di dominio completo (FQDN) di un Vault chiave in base al nome specificato da questo parametro e dall'ambiente selezionato.
+### -VaultName
+Specifica il nome del vault delle chiavi da cui il cmdlet recupera le chiavi.
+Questo cmdlet crea il nome di dominio completo (FQDN) di un vault delle chiavi in base al nome specificato da questo parametro e all'ambiente selezionato.
 
 ```yaml
 Type: System.String
@@ -376,9 +376,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Versione
+### -Version
 Specifica la versione chiave.
-Questo cmdlet crea l'FQDN di una chiave in base al nome del Vault chiave, all'ambiente attualmente selezionato, al nome della chiave e alla versione chiave.
+Questo cmdlet crea l'FQDN di una chiave in base al nome del vault della chiave, all'ambiente attualmente selezionato, al nome della chiave e alla versione della chiave.
 
 ```yaml
 Type: System.String
@@ -393,25 +393,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](https://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### Microsoft. Azure. Commands. Vault. Models. PSKeyVault
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Vault. Models. PSKeyVaultKeyIdentityItem
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem
 
-### Microsoft. Azure. Commands. Vault. Models. PSKeyVaultKey
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKey
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKeyIdentityItem
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKey
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
@@ -421,5 +421,4 @@ Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-In
 
 [Undo-AzKeyVaultKeyRemoval](./Undo-AzKeyVaultKeyRemoval.md)
 
-[Set-AzKeyVaultKeyAttribute](./Set-AzKeyVaultKeyAttribute.md)
 
