@@ -6,48 +6,48 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.media/set-
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Media/Media/help/Set-AzMediaServiceKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Media/Media/help/Set-AzMediaServiceKey.md
-ms.openlocfilehash: e9d117e9e81ee1189031b9e1f2f0a4094e9b9fcf
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: c80c9b411d360de0b46cd051a3f786bb740b26f2
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93673851"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411807"
 ---
-# <span data-ttu-id="b3250-101">Set-AzMediaServiceKey</span><span class="sxs-lookup"><span data-stu-id="b3250-101">Set-AzMediaServiceKey</span></span>
+# <span data-ttu-id="e2075-101">Set-AzMediaServiceKey</span><span class="sxs-lookup"><span data-stu-id="e2075-101">Set-AzMediaServiceKey</span></span>
 
-## <span data-ttu-id="b3250-102">Sinossi</span><span class="sxs-lookup"><span data-stu-id="b3250-102">SYNOPSIS</span></span>
-<span data-ttu-id="b3250-103">Rigenera una chiave usata per accedere all'endpoint REST associato al servizio multimediale.</span><span class="sxs-lookup"><span data-stu-id="b3250-103">Regenerates a key used for accessing the REST endpoint associated with the media service.</span></span>
+## <span data-ttu-id="e2075-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="e2075-102">SYNOPSIS</span></span>
+<span data-ttu-id="e2075-103">Rigenera una chiave usata per accedere all'endpoint REST associato al servizio multimediale.</span><span class="sxs-lookup"><span data-stu-id="e2075-103">Regenerates a key used for accessing the REST endpoint associated with the media service.</span></span>
 
-## <span data-ttu-id="b3250-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="b3250-104">SYNTAX</span></span>
+## <span data-ttu-id="e2075-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="e2075-104">SYNTAX</span></span>
 
 ```
 Set-AzMediaServiceKey [-ResourceGroupName] <String> [-AccountName] <String> [-KeyType] <KeyType>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="b3250-105">Descrizione</span><span class="sxs-lookup"><span data-stu-id="b3250-105">DESCRIPTION</span></span>
-<span data-ttu-id="b3250-106">Il cmdlet **set-AzMediaServiceKey** rigenera una chiave usata per accedere all'endpoint REST (Representational State Transfer) associato al servizio multimediale.</span><span class="sxs-lookup"><span data-stu-id="b3250-106">The **Set-AzMediaServiceKey** cmdlet regenerates a key used for accessing the Representational State Transfer (REST) endpoint associated with the media service.</span></span>
+## <span data-ttu-id="e2075-105">DESCRIZIONE</span><span class="sxs-lookup"><span data-stu-id="e2075-105">DESCRIPTION</span></span>
+<span data-ttu-id="e2075-106">Il cmdlet **Set-AzMediaServiceKey** rigenera una chiave usata per accedere all'endpoint Representational State Transfer (REST) associato al servizio multimediale.</span><span class="sxs-lookup"><span data-stu-id="e2075-106">The **Set-AzMediaServiceKey** cmdlet regenerates a key used for accessing the Representational State Transfer (REST) endpoint associated with the media service.</span></span>
 
-## <span data-ttu-id="b3250-107">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="b3250-107">EXAMPLES</span></span>
+## <span data-ttu-id="e2075-107">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="e2075-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="b3250-108">Esempio 1: rigenerare la chiave primaria usata per l'accesso al servizio multimediale</span><span class="sxs-lookup"><span data-stu-id="b3250-108">Example 1: Regenerate the primary key used for accessing the Media Service</span></span>
+### <span data-ttu-id="e2075-108">Esempio 1: Rigenerare la chiave primaria usata per accedere al servizio multimediale</span><span class="sxs-lookup"><span data-stu-id="e2075-108">Example 1: Regenerate the primary key used for accessing the Media Service</span></span>
 ```
 PS C:\>Set-AzMediaServiceKey -ResourceGroupName "ResourceGroup004" -AccountName "MediaService001" -KeyType Primary
 ```
 
-<span data-ttu-id="b3250-109">Questo comando rigenera la chiave primaria per il servizio multimediale denominato MediaService001 che appartiene al gruppo di risorse denominato ResourceGroup004.</span><span class="sxs-lookup"><span data-stu-id="b3250-109">This command regenerates the primary key for the media service named MediaService001 that belongs to the resource group named ResourceGroup004.</span></span>
+<span data-ttu-id="e2075-109">Questo comando rigenera la chiave primaria per il servizio multimediale denominato MediaService001 che appartiene al gruppo di risorse denominato ResourceGroup004.</span><span class="sxs-lookup"><span data-stu-id="e2075-109">This command regenerates the primary key for the media service named MediaService001 that belongs to the resource group named ResourceGroup004.</span></span>
 
-### <span data-ttu-id="b3250-110">Esempio 2: rigenera la chiave secondaria usata per accedere al servizio multimediale</span><span class="sxs-lookup"><span data-stu-id="b3250-110">Example 2: Regenerates the secondary key used for accessing the Media Service</span></span>
+### <span data-ttu-id="e2075-110">Esempio 2: rigenera la chiave secondaria usata per accedere al servizio multimediale</span><span class="sxs-lookup"><span data-stu-id="e2075-110">Example 2: Regenerates the secondary key used for accessing the Media Service</span></span>
 ```
 PS C:\>Set-AzMediaServiceKey -ResourceGroupName "Resourcegroup123" -AccountName "MediaService002" -KeyType Secondary
 ```
 
-<span data-ttu-id="b3250-111">Questo comando rigenera la chiave secondaria per il servizio multimediale denominato MediaService002 che appartiene al gruppo di risorse denominato Resourcegroup123.</span><span class="sxs-lookup"><span data-stu-id="b3250-111">This command regenerates the secondary key for the media service named MediaService002 that belongs to the resource group named Resourcegroup123.</span></span>
+<span data-ttu-id="e2075-111">Questo comando rigenera la chiave secondaria per il servizio multimediale denominato MediaService002 che appartiene al gruppo di risorse denominato Resourcegroup123.</span><span class="sxs-lookup"><span data-stu-id="e2075-111">This command regenerates the secondary key for the media service named MediaService002 that belongs to the resource group named Resourcegroup123.</span></span>
 
-## <span data-ttu-id="b3250-112">PARAMETRI</span><span class="sxs-lookup"><span data-stu-id="b3250-112">PARAMETERS</span></span>
+## <span data-ttu-id="e2075-112">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="e2075-112">PARAMETERS</span></span>
 
-### <span data-ttu-id="b3250-113">-AccountName</span><span class="sxs-lookup"><span data-stu-id="b3250-113">-AccountName</span></span>
-<span data-ttu-id="b3250-114">Specifica il nome del servizio multimediale che questo cmdlet rigenera.</span><span class="sxs-lookup"><span data-stu-id="b3250-114">Specifies the name of the media service that this cmdlet regenerates.</span></span>
+### <span data-ttu-id="e2075-113">-AccountName</span><span class="sxs-lookup"><span data-stu-id="e2075-113">-AccountName</span></span>
+<span data-ttu-id="e2075-114">Specifica il nome del servizio multimediale rigenerato dal cmdlet.</span><span class="sxs-lookup"><span data-stu-id="e2075-114">Specifies the name of the media service that this cmdlet regenerates.</span></span>
 
 ```yaml
 Type: System.String
@@ -61,8 +61,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b3250-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="b3250-115">-DefaultProfile</span></span>
-<span data-ttu-id="b3250-116">Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure</span><span class="sxs-lookup"><span data-stu-id="b3250-116">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="e2075-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="e2075-115">-DefaultProfile</span></span>
+<span data-ttu-id="e2075-116">Le credenziali, l'account, il tenant e la sottoscrizione usati per le comunicazioni con Azure</span><span class="sxs-lookup"><span data-stu-id="e2075-116">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -76,9 +76,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b3250-117">-Tipo di digitare</span><span class="sxs-lookup"><span data-stu-id="b3250-117">-KeyType</span></span>
-<span data-ttu-id="b3250-118">Specifica il tipo di chiave del servizio multimediale.</span><span class="sxs-lookup"><span data-stu-id="b3250-118">Specifies the key type of the media service.</span></span>
-<span data-ttu-id="b3250-119">I valori accettabili per questo parametro sono: primario o secondario.</span><span class="sxs-lookup"><span data-stu-id="b3250-119">The acceptable values for this parameter are: Primary or Secondary.</span></span>
+### <span data-ttu-id="e2075-117">-KeyType</span><span class="sxs-lookup"><span data-stu-id="e2075-117">-KeyType</span></span>
+<span data-ttu-id="e2075-118">Specifica il tipo di chiave del servizio multimediale.</span><span class="sxs-lookup"><span data-stu-id="e2075-118">Specifies the key type of the media service.</span></span>
+<span data-ttu-id="e2075-119">I valori accettabili per questo parametro sono: Primario o Secondario.</span><span class="sxs-lookup"><span data-stu-id="e2075-119">The acceptable values for this parameter are: Primary or Secondary.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Management.Media.Models.KeyType
@@ -93,8 +93,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b3250-120">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="b3250-120">-ResourceGroupName</span></span>
-<span data-ttu-id="b3250-121">Specifica il nome del gruppo di risorse che contiene il servizio multimediale.</span><span class="sxs-lookup"><span data-stu-id="b3250-121">Specifies the name of the resource group that contains the media service.</span></span>
+### <span data-ttu-id="e2075-120">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="e2075-120">-ResourceGroupName</span></span>
+<span data-ttu-id="e2075-121">Specifica il nome del gruppo di risorse che contiene il servizio multimediale.</span><span class="sxs-lookup"><span data-stu-id="e2075-121">Specifies the name of the resource group that contains the media service.</span></span>
 
 ```yaml
 Type: System.String
@@ -108,8 +108,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b3250-122">-Confermare</span><span class="sxs-lookup"><span data-stu-id="b3250-122">-Confirm</span></span>
-<span data-ttu-id="b3250-123">Richiede la conferma prima di eseguire il cmdlet.</span><span class="sxs-lookup"><span data-stu-id="b3250-123">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="e2075-122">-Confirm</span><span class="sxs-lookup"><span data-stu-id="e2075-122">-Confirm</span></span>
+<span data-ttu-id="e2075-123">Chiede conferma prima di eseguire il cmdlet.</span><span class="sxs-lookup"><span data-stu-id="e2075-123">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -123,9 +123,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b3250-124">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="b3250-124">-WhatIf</span></span>
-<span data-ttu-id="b3250-125">Mostra cosa succede se il cmdlet viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="b3250-125">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="b3250-126">Il cmdlet non viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="b3250-126">The cmdlet is not run.</span></span>
+### <span data-ttu-id="e2075-124">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="e2075-124">-WhatIf</span></span>
+<span data-ttu-id="e2075-125">Mostra cosa accadrebbe se il cmdlet viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="e2075-125">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="e2075-126">Il cmdlet non viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="e2075-126">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -139,21 +139,20 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b3250-127">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="b3250-127">CommonParameters</span></span>
-<span data-ttu-id="b3250-128">Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="b3250-128">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="b3250-129">Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="b3250-129">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="e2075-127">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="e2075-127">CommonParameters</span></span>
+<span data-ttu-id="e2075-128">Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="e2075-128">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="e2075-129">Per altre informazioni, vedere about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="e2075-129">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="b3250-130">INGRESSI</span><span class="sxs-lookup"><span data-stu-id="b3250-130">INPUTS</span></span>
+## <span data-ttu-id="e2075-130">INPUT</span><span class="sxs-lookup"><span data-stu-id="e2075-130">INPUTS</span></span>
 
-### <span data-ttu-id="b3250-131">System. String</span><span class="sxs-lookup"><span data-stu-id="b3250-131">System.String</span></span>
+### <span data-ttu-id="e2075-131">System.String</span><span class="sxs-lookup"><span data-stu-id="e2075-131">System.String</span></span>
 
-## <span data-ttu-id="b3250-132">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="b3250-132">OUTPUTS</span></span>
+## <span data-ttu-id="e2075-132">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="e2075-132">OUTPUTS</span></span>
 
-### <span data-ttu-id="b3250-133">Microsoft. Azure. Commands. Media. Models. PSServiceKey</span><span class="sxs-lookup"><span data-stu-id="b3250-133">Microsoft.Azure.Commands.Media.Models.PSServiceKey</span></span>
+### <span data-ttu-id="e2075-133">Microsoft.Azure.Commands.Media.Models.PSServiceKey</span><span class="sxs-lookup"><span data-stu-id="e2075-133">Microsoft.Azure.Commands.Media.Models.PSServiceKey</span></span>
 
-## <span data-ttu-id="b3250-134">Note</span><span class="sxs-lookup"><span data-stu-id="b3250-134">NOTES</span></span>
+## <span data-ttu-id="e2075-134">NOTE</span><span class="sxs-lookup"><span data-stu-id="e2075-134">NOTES</span></span>
 
-## <span data-ttu-id="b3250-135">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="b3250-135">RELATED LINKS</span></span>
+## <span data-ttu-id="e2075-135">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="e2075-135">RELATED LINKS</span></span>
 
-[<span data-ttu-id="b3250-136">Get-AzMediaServiceKeys</span><span class="sxs-lookup"><span data-stu-id="b3250-136">Get-AzMediaServiceKeys</span></span>](./Get-AzMediaServiceKeys.md)
 
 
