@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/Re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCrossConnectionPeering.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCrossConnectionPeering.md
-ms.openlocfilehash: eb90b668bf0466c44e3fde0ef0a8d6777074fb37
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 44a7dd8c0fbb3193ac514f9c1b447394b29574f3
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94022013"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400060"
 ---
 # Remove-AzExpressRouteCrossConnectionPeering
 
-## Sinossi
-Rimuove una configurazione di peering di ExpressRoute Cross Connection.
+## SYNOPSIS
+Rimuove una configurazione peering tra connessioni ExpressRoute.
 
 ## SINTASSI
 
@@ -26,22 +26,22 @@ Remove-AzExpressRouteCrossConnectionPeering -ExpressRouteCrossConnection <PSExpr
  [-Confirm] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Remove-AzExpressRouteCrossConnectionPeering** rimuove una configurazione di peering di ExpressRoute Cross Connection.
+## DESCRIZIONE
+Il cmdlet **Remove-AzExpressRouteCrossConnectionEndoing** rimuove una configurazione di peering tra connessioni incrociate ExpressRoute.
 
 ## ESEMPI
 
-### Esempio 1: rimuovere una configurazione peer da una connessione ExpressRoute incrociata
+### Esempio 1: Rimuovere una configurazione di peering da una connessione incrociata ExpressRoute
 ```
 $cc = Get-AzExpressRouteCrossConnection -Name $CrossConnectionName -ResourceGroupName $rg
 Remove-AzExpressRouteCrossConnectionPeering -Name 'AzurePrivatePeering' -ExpressRouteCrossConnection $cc
 Set-AzExpressRouteCrossConnection -ExpressRouteCrossConnection $cc
 ```
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -56,7 +56,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpressRouteCrossConnection
-La connessione ExpressRoute Cross contenente la configurazione peer da rimuovere.
+Connessione incrociata ExpressRoute contenente la configurazione di peering da rimuovere.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSExpressRouteCrossConnection
@@ -85,8 +85,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Nome
-Nome della configurazione peer da rimuovere.
+### -Name
+Nome della configurazione di peering da rimuovere.
 
 ```yaml
 Type: System.String
@@ -116,8 +116,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confermare
-Richiede la conferma prima di eseguire il cmdlet.
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra cosa succede se il cmdlet viene eseguito. Il cmdlet non viene eseguito.
+Mostra cosa accadrebbe se il cmdlet viene eseguito. Il cmdlet non viene eseguito.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -147,24 +147,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
 ### PSExpressRouteCrossConnection
-Il parametro ' ExpressRouteCrossConnection ' accetta il valore di tipo ' PSExpressRouteCrossConnection ' dalla pipeline
+Il parametro 'ExpressRouteCrossConnection' accetta il valore di tipo 'PSExpressRouteCrossConnection' dalla pipeline
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Network. Models. PSExpressRouteCrossConnection
+### Microsoft.Azure.Commands.Network.Models.PSExpressRouteCrossConnection
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Add-AzExpressRouteCrossConnectionPeering](Add-AzExpressRouteCrossConnectionPeering.md)
+[Add-AzExpressRouteCrossConnectionEndoing](Add-AzExpressRouteCrossConnectionPeering.md)
 
-[Get-AzExpressRouteCrossConnectionPeering](New-AzExpressRouteCrossConnectionPeering.md)
+
 
 [Get-AzExpressRouteCrossConnection](Get-AzExpressRouteCrossConnection.md)
 
