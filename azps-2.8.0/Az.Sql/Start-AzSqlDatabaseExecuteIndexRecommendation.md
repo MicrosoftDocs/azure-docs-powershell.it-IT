@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/start-
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Start-AzSqlDatabaseExecuteIndexRecommendation.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Start-AzSqlDatabaseExecuteIndexRecommendation.md
-ms.openlocfilehash: c432b3a23c4495abebda013b5dd3943132827a30
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 1ab1e223ec173cf5727011956f52979026159594
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93857713"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402253"
 ---
 # Start-AzSqlDatabaseExecuteIndexRecommendation
 
-## Sinossi
-Avvia il flusso di lavoro che esegue un'operazione di indice consigliata.
+## SYNOPSIS
+Avvia il flusso di lavoro che esegue un'operazione di indicizzazione consigliata.
 
 ## SINTASSI
 
@@ -26,19 +26,19 @@ Start-AzSqlDatabaseExecuteIndexRecommendation -ServerName <String> -DatabaseName
  [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Start-AzSqlDatabaseExecuteIndexRecommendation** avvia il flusso di lavoro che esegue un'operazione di indice consigliata per un database SQL di Azure.
+## DESCRIZIONE
+Il cmdlet **Start-AzSqlDatabaseExecuteIndexRecommendation** avvia il flusso di lavoro che esegue un'operazione di indice consigliata per un database SQL Azure.
 
 ## ESEMPI
 
-### Esempio 1: eseguire una raccomandazione indice
+### Esempio 1: Eseguire un suggerimento per l'indice
 ```
 PS C:\>Start-AzSqlDatabaseExecuteIndexRecommendation -ResourceGroup "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -IndexRecommendationName "INDEX_NAME"
 ```
 
-Questo comando esegue una raccomandazione indice.
+Questo comando esegue un suggerimento per l'indice.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DatabaseName
 Specifica il nome del database per cui questo cmdlet avvia il flusso di lavoro.
@@ -56,7 +56,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
+Le credenziali, l'account, il tenant e la sottoscrizione usati per le comunicazioni con Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 ```
 
 ### -IndexRecommendationName
-Specifica il nome dell'indice consigliato per l'esecuzione di questo cmdlet.
+Specifica il nome dell'consiglio per l'indice eseguito da questo cmdlet.
 
 ```yaml
 Type: System.String
@@ -100,7 +100,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Nomeserver
+### -ServerName
 Specifica il server che ospita il database per cui questo cmdlet avvia un flusso di lavoro.
 
 ```yaml
@@ -116,24 +116,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](https://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. SQL. Model. IndexRecommendation
+### Microsoft.Azure.Commands.Sql.Model.IndexRecommendation
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Get-AzSqlDatabaseIndexRecommendations](./Get-AzSqlDatabaseIndexRecommendations.md)
 
 [Stop-AzSqlDatabaseExecuteIndexRecommendation](./Stop-AzSqlDatabaseExecuteIndexRecommendation.md)
 
-[Documentazione di database SQL](https://docs.microsoft.com/azure/sql-database/)
+[SQL documentazione del database](https://docs.microsoft.com/azure/sql-database/)
 
 
