@@ -5,17 +5,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/Get-AzFrontDoorWafPolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/Get-AzFrontDoorWafPolicy.md
-ms.openlocfilehash: 60d6263d3fb074cf4795379ae28f1824dc81a4c0
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 5cc2a2e480044aa00c51a18dd116d33bd4c2f72a
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93674389"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398462"
 ---
 # Get-AzFrontDoorWafPolicy
 
-## Sinossi
-Ottenere i criteri di WAF
+## SYNOPSIS
+Ottenere i criteri WAF
 
 ## SINTASSI
 
@@ -24,8 +24,8 @@ Get-AzFrontDoorWafPolicy -ResourceGroupName <String> [-Name <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il **Get-AzFrontDoorWafPolicy** cmdletGet ottiene i criteri di WAF in un gruppo di risorse sotto l'abbonamento corrente
+## DESCRIZIONE
+Il **cmdlet Get-AzFrontDoorWafPolicyGet** ottiene i criteri WAF in un gruppo di risorse nella sottoscrizione corrente
 
 ## ESEMPI
 
@@ -51,12 +51,12 @@ Name         PolicyMode PolicyEnabledState CustomBlockResponseStatusCode Redirec
 {policyName} Detection             Enabled                           404
 ```
 
-Ottenere tutti i criteri di WAF in $resourceGroupName
+Ottenere tutti i criteri WAF in $resourceGroupName
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -70,7 +70,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Nome
+### -Name
 Nome FireWallPolicy.
 
 ```yaml
@@ -101,20 +101,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](https://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
 ### Nessuno
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. FrontDoor. Models. PSPolicy
+### Microsoft.Azure.Commands.FrontDoor.Models.PSPolicy
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
 [New-AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md) 
- [Set-AzFrontDoorWafPolicy](./Set-AzFrontDoorWafPolicy.md) 
- [Remove-AzFrontDoorWafPolicy](./Remove-AzFrontDoorWafPolicy.md)
+ [Remove-AzFrontDoorWafPolicy](./Remove-AzFrontDoorWafPolicy.md) 
+ [Update-AzFrontDoorWafPolicy](./Update-AzFrontDoorWafPolicy.md)
