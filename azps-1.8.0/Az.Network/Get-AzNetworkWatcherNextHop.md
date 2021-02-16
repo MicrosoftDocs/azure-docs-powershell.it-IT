@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherNextHop.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherNextHop.md
-ms.openlocfilehash: 51fea717c352f00b4f356e6bb07b730cdeb60966
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 8da7165a9bb9e67076d9ba68f59ffd3208d1f391
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93678479"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400417"
 ---
 # Get-AzNetworkWatcherNextHop
 
-## Sinossi
-Ottiene l'hop successivo da una VM.
+## SYNOPSIS
+Ottiene l'hop successivo da una macchina virtuale.
 
 ## SINTASSI
 
-### SetByResource (impostazione predefinita)
+### SetByResource (Default)
 ```
 Get-AzNetworkWatcherNextHop -NetworkWatcher <PSNetworkWatcher> -TargetVirtualMachineId <String>
  -DestinationIPAddress <String> -SourceIPAddress <String> [-TargetNetworkInterfaceId <String>] [-AsJob]
@@ -40,15 +40,16 @@ Get-AzNetworkWatcherNextHop -Location <String> -TargetVirtualMachineId <String> 
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet Get-AzNetworkWatcherNextHop Ottiene l'hop successivo da una VM. L'hop successivo consente di visualizzare il tipo di risorsa Azure, l'indirizzo IP associato della risorsa e la regola della tabella di routing responsabile della route.
+## DESCRIZIONE
+Il Get-AzNetworkWatcherNextHop cmdlet ottiene l'hop successivo da una macchina virtuale.
+L'hop successivo consente di visualizzare il tipo di risorsa azure, l'indirizzo IP associato della risorsa e la regola della tabella di routing responsabile della route.
 
 ## ESEMPI
 
-### Esempio 1: ottenere l'hop successivo quando si comunica con un IP Internet
+### Esempio 1: Ottenere l'hop successivo durante la comunicazione con un IP Internet
 ```
-$nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" } 
-$networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName 
+$nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" }
+$networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName
 $VM = Get-AzVM -ResourceGroupName ContosoResourceGroup -Name VM0
 $Nics = Get-AzNetworkInterface | Where {$_.Id -eq $vm.NetworkInterfaceIDs.ForEach({$_})}
 Get-AzNetworkWatcherNextHop -NetworkWatcher $networkWatcher -TargetVirtualMachineId $VM.Id -SourceIPAddress $nics[0].IpConfigurations[0].PrivateIpAddress  -DestinationIPAddress 204.79.197.200
@@ -59,12 +60,12 @@ NextHopIpAddress NextHopType RouteTableId
                  Internet    System Route
 ```
 
-Ottenere l'hop successivo per le comunicazioni in uscita dall'interfaccia di rete principale nel Vachine virtuale specificato a 204.79.197.200 (www.bing.com)
+Ottenere l'hop successivo per le comunicazioni in uscita dall'interfaccia di rete primaria nell'intervallo virtuale specificato per la porta 204.79.197.200 (www.bing.com)
 
-## PARAMETRI
+## PARAMETERS
 
 ### -AsJob
-Esegui cmdlet in background
+Eseguire il cmdlet in background
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -79,7 +80,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -108,8 +109,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Posizione
-Posizione del monitoraggio della rete.
+### -Location
+Posizione del network watcher.
 
 ```yaml
 Type: System.String
@@ -124,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcher
-Risorsa Watcher di rete.
+Risorsa Network Watcher.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -154,7 +155,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Nome del gruppo di risorse di Watcher di rete.
+Nome del gruppo di risorse Network Watcher.
 
 ```yaml
 Type: System.String
@@ -199,7 +200,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetVirtualMachineId
-ID macchina virtuale di destinazione.
+ID della macchina virtuale di destinazione.
 
 ```yaml
 Type: System.String
@@ -214,20 +215,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](https://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### Microsoft. Azure. Commands. Network. Models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Network. Models. PSNextHopResult
+### Microsoft.Azure.Commands.Network.Models.PSNextHopResult
 
-## Note
-Parole chiave: Azure, azurerm, ARM, Resource, Management, Manager, Network, networking, Network Watcher, Next, hop 
+## NOTE
+Parole chiave: azure, azurerm, arm, risorsa, gestione, manager, rete, rete, network watcher, next, hop
 
 ## COLLEGAMENTI CORRELATI
 
@@ -281,6 +282,6 @@ Parole chiave: Azure, azurerm, ARM, Resource, Management, Manager, Network, netw
 
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)

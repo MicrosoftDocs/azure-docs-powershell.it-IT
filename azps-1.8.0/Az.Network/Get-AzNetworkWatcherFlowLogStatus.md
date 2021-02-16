@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherFlowLogStatus.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherFlowLogStatus.md
-ms.openlocfilehash: cdc97ff5e528e58aa088950f5272e7689f35b10e
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 8a2bde41d0e7e09acc1ad10a9901f0cf26334d02
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93678481"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400502"
 ---
 # Get-AzNetworkWatcherFlowLogStatus
 
-## Sinossi
-Ottiene lo stato della registrazione del flusso in una risorsa.
+## SYNOPSIS
+Ottiene lo stato della registrazione del flusso su una risorsa.
 
 ## SINTASSI
 
-### SetByResource (impostazione predefinita)
+### SetByResource (Default)
 ```
 Get-AzNetworkWatcherFlowLogStatus -NetworkWatcher <PSNetworkWatcher> -TargetResourceId <String> [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -37,12 +37,14 @@ Get-AzNetworkWatcherFlowLogStatus -Location <String> -TargetResourceId <String> 
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet Get-AzNetworkWatcherFlowLogStatus ottiene lo stato della registrazione del flusso in una risorsa. Lo stato include se è abilitata o meno la registrazione del flusso per la risorsa fornita, l'account di archiviazione configurato per l'invio dei log e i criteri di conservazione per i registri. Attualmente i gruppi di sicurezza di rete sono supportati per la registrazione del flusso. 
+## DESCRIZIONE
+Il Get-AzNetworkWatcherFlowLogStatus cmdlet cmdlet ottiene lo stato della registrazione del flusso su una risorsa.
+Lo stato include se la registrazione del flusso è abilitata o meno per la risorsa fornita, l'account di archiviazione configurato per l'invio dei log e i criteri di conservazione per i log.
+Attualmente sono supportati i gruppi di sicurezza di rete per la registrazione del flusso.
 
 ## ESEMPI
 
-### Esempio 1: ottenere lo stato di registrazione del flusso per un determinato NSG
+### Esempio 1: Ottenere lo stato della registrazione del flusso per un gruppo di rete specificato
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -64,9 +66,9 @@ Properties       : {
                    }
 ```
 
-In questo esempio viene visualizzato lo stato registrazione flusso per un gruppo di sicurezza di rete. L'oggetto NSG specificato include la registrazione del flusso abilitata, il formato predefinito e nessun set di criteri di conservazione.
+In questo esempio viene visualizzato lo stato della registrazione del flusso per un gruppo di sicurezza di rete. Per il gruppo di sicurezza NSG specificato è abilitata la registrazione del flusso, il formato predefinito e non sono impostati criteri di conservazione.
 
-### Esempio 2: ottenere lo stato di registrazione del flusso e analisi del traffico per un determinato NSG
+### Esempio 2: Ottenere lo stato di registrazione del flusso e analisi del traffico per un NSG specificato
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -95,12 +97,12 @@ FlowAnalyticsConfiguration : {
           }
 ```
 
-In questo esempio viene visualizzato lo stato di registrazione del flusso e analisi del traffico per un gruppo di sicurezza di rete. Il NSG specificato include la registrazione del flusso e l'analisi del traffico abilitata, il formato predefinito e nessun set di criteri di conservazione.
+In questo esempio vengono mostrati la registrazione del flusso e lo stato di Analisi del traffico per un gruppo di sicurezza di rete. Per il gruppo NSG specificato sono abilitati la registrazione del flusso e Analisi del traffico, il formato predefinito e nessun criterio di conservazione impostato.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -AsJob
-Esegui cmdlet in background
+Eseguire il cmdlet in background
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -115,7 +117,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -129,8 +131,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Posizione
-Posizione del monitoraggio della rete.
+### -Location
+Posizione del network watcher.
 
 ```yaml
 Type: System.String
@@ -145,7 +147,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcher
-Risorsa Watcher di rete.
+Risorsa Network Watcher.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -175,7 +177,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Nome del gruppo di risorse di Watcher di rete.
+Nome del gruppo di risorse Network Watcher.
 
 ```yaml
 Type: System.String
@@ -205,20 +207,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](https://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### Microsoft. Azure. Commands. Network. Models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Network. Models. PSFlowLog
+### Microsoft.Azure.Commands.Network.Models.PSFlowLog
 
-## Note
-Parole chiave: Azure, azurerm, ARM, Resource, Management, Manager, Network, networking, Watcher, Flow, logs, flowlog, logging
+## NOTE
+Parole chiave: azure, azurerm, arm, risorsa, gestione, manager, rete, rete, watcher, flusso, log, flowlog, registrazione
 
 ## COLLEGAMENTI CORRELATI
 
@@ -272,6 +274,6 @@ Parole chiave: Azure, azurerm, ARM, Resource, Management, Manager, Network, netw
 
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)

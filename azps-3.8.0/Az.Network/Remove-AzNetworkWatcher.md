@@ -5,17 +5,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzNetworkWatcher.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzNetworkWatcher.md
-ms.openlocfilehash: 7723d717a35f4c5e3e693bc5ff115b484df5fa2c
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: fb2dfd74e4807aab76fb48a4593a8a46c4fe6f3f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94022022"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398632"
 ---
 # Remove-AzNetworkWatcher
 
-## Sinossi
-Rimuove un Watcher di rete.
+## SYNOPSIS
+Rimuove un Network Watcher.
 
 ## SINTASSI
 
@@ -37,25 +37,25 @@ Remove-AzNetworkWatcher -Location <String> [-PassThru] [-AsJob] [-DefaultProfile
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet Remove-AzNetworkWatcher consente di rimuovere una risorsa Watcher di rete.
+## DESCRIZIONE
+Il cmdlet Remove-AzNetworkWatcher rimuove una risorsa Network Watcher.
 
 ## ESEMPI
 
-### Esempio 1: creare ed eliminare un Watcher di rete
+### Esempio 1: Creare ed eliminare un Network Watcher
 ```
 New-AzResourceGroup -Name NetworkWatcherRG -Location westcentralus
 New-AzNetworkWatcher -Name NetworkWatcher_westcentralus -ResourceGroup NetworkWatcherRG -Location westcentralus
 Remove-AzNetworkWatcher -Name NetworkWatcher_westcentralus -ResourceGroup NetworkWatcherRG
 ```
 
-Questo esempio crea un Watcher di rete in un gruppo di risorse e quindi lo elimina immediatamente. Tieni presente che è possibile creare un solo Watcher di rete per ogni area di abbonamento.
-Per eliminare la richiesta quando si elimina la rete virtuale, usare il contrassegno-forza.
+Questo esempio crea un Network Watcher in un gruppo di risorse e quindi lo elimina immediatamente. Si noti che per ogni abbonamento è possibile creare un solo Network Watcher per ogni area geografica.
+Per eliminare la richiesta quando si elimina la rete virtuale, usare il contrassegno -Force.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -AsJob
-Esegui cmdlet in background
+Eseguire il cmdlet in background
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -84,8 +84,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Posizione
-Posizione del monitoraggio della rete.
+### -Location
+Posizione del network watcher.
 
 ```yaml
 Type: System.String
@@ -99,8 +99,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Nome
-Il nome della risorsa.
+### -Name
+Nome della risorsa.
 
 ```yaml
 Type: System.String
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcher
-Risorsa Watcher di rete.
+Risorsa Network Watcher.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Restituisce un oggetto che rappresenta l'elemento con cui si sta lavorando.
+Restituisce un oggetto che rappresenta l'elemento su cui si sta lavorando.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -159,8 +159,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confermare
-Richiede la conferma prima di eseguire il cmdlet.
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -175,7 +175,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra cosa succede se il cmdlet viene eseguito.
+Mostra cosa accadrebbe se il cmdlet viene eseguito.
 Il cmdlet non viene eseguito.
 
 ```yaml
@@ -191,20 +191,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### Microsoft. Azure. Commands. Network. Models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### System. Boolean
+### System.Boolean
 
-## Note
-Parole chiave: Azure, azurerm, ARM, Resource, Management, Manager, Network, networking, Network Watcher
+## NOTE
+Parole chiave: azure, azurerm, arm, risorsa, gestione, manager, rete, rete, network watcher
 
 ## COLLEGAMENTI CORRELATI
 
@@ -258,6 +258,6 @@ Parole chiave: Azure, azurerm, ARM, Resource, Management, Manager, Network, netw
 
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
