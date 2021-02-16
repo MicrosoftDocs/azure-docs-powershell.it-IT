@@ -6,16 +6,16 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.media/set-
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Media/Media/help/Set-AzMediaServiceKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Media/Media/help/Set-AzMediaServiceKey.md
-ms.openlocfilehash: e9d117e9e81ee1189031b9e1f2f0a4094e9b9fcf
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: c80c9b411d360de0b46cd051a3f786bb740b26f2
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93835167"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402355"
 ---
 # Set-AzMediaServiceKey
 
-## Sinossi
+## SYNOPSIS
 Rigenera una chiave usata per accedere all'endpoint REST associato al servizio multimediale.
 
 ## SINTASSI
@@ -25,12 +25,12 @@ Set-AzMediaServiceKey [-ResourceGroupName] <String> [-AccountName] <String> [-Ke
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **set-AzMediaServiceKey** rigenera una chiave usata per accedere all'endpoint REST (Representational State Transfer) associato al servizio multimediale.
+## DESCRIZIONE
+Il cmdlet **Set-AzMediaServiceKey** rigenera una chiave usata per accedere all'endpoint Representational State Transfer (REST) associato al servizio multimediale.
 
 ## ESEMPI
 
-### Esempio 1: rigenerare la chiave primaria usata per l'accesso al servizio multimediale
+### Esempio 1: Rigenerare la chiave primaria usata per accedere al servizio multimediale
 ```
 PS C:\>Set-AzMediaServiceKey -ResourceGroupName "ResourceGroup004" -AccountName "MediaService001" -KeyType Primary
 ```
@@ -44,10 +44,10 @@ PS C:\>Set-AzMediaServiceKey -ResourceGroupName "Resourcegroup123" -AccountName 
 
 Questo comando rigenera la chiave secondaria per il servizio multimediale denominato MediaService002 che appartiene al gruppo di risorse denominato Resourcegroup123.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -AccountName
-Specifica il nome del servizio multimediale che questo cmdlet rigenera.
+Specifica il nome del servizio multimediale rigenerato dal cmdlet.
 
 ```yaml
 Type: System.String
@@ -76,9 +76,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Tipo di digitare
+### -KeyType
 Specifica il tipo di chiave del servizio multimediale.
-I valori accettabili per questo parametro sono: primario o secondario.
+I valori accettabili per questo parametro sono: Primario o Secondario.
 
 ```yaml
 Type: Microsoft.Azure.Management.Media.Models.KeyType
@@ -108,8 +108,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confermare
-Richiede la conferma prima di eseguire il cmdlet.
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -124,7 +124,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra cosa succede se il cmdlet viene eseguito.
+Mostra cosa accadrebbe se il cmdlet viene eseguito.
 Il cmdlet non viene eseguito.
 
 ```yaml
@@ -140,20 +140,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Media. Models. PSServiceKey
+### Microsoft.Azure.Commands.Media.Models.PSServiceKey
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Get-AzMediaServiceKeys](./Get-AzMediaServiceKeys.md)
 
 

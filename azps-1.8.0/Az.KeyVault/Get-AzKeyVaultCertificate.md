@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/g
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultCertificate.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultCertificate.md
-ms.openlocfilehash: 5935706c341fac5f0b26d3e4965f226342c3dfc8
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: ccd2762449e24f881a3308c0d11476a1e4626fed
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93835772"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402406"
 ---
 # Get-AzKeyVaultCertificate
 
-## Sinossi
-Ottiene un certificato da un Vault chiave.
+## SYNOPSIS
+Recupera un certificato da un vault delle chiavi.
 
 ## SINTASSI
 
-### ByName (impostazione predefinita)
+### ByName (Impostazione predefinita)
 ```
 Get-AzKeyVaultCertificate [-VaultName] <String> [[-Name] <String>] [-InRemovedState] [-IncludePending]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -74,12 +74,12 @@ Get-AzKeyVaultCertificate [-ResourceId] <String> [-Name] <String> [-IncludeVersi
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Get-AzKeyVaultCertificate** ottiene il certificato specificato o le versioni di un certificato da un Vault chiave in Azure Key Vault.
+## DESCRIZIONE
+Il cmdlet **Get-AzKeyVaultCertificate** ottiene il certificato specificato o le versioni di un certificato da un vault delle chiavi nel Vault delle chiavi di Azure.
 
 ## ESEMPI
 
-### Esempio 1: ottenere un certificato
+### Esempio 1: Ottenere un certificato
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "TestCert01"
 Name        : testCert01
@@ -108,9 +108,9 @@ Created     : 2/8/2016 11:21:45 PM
 Updated     : 2/8/2016 11:21:45 PM
 ```
 
-Questo comando ottiene il certificato denominato TestCert01 dal Vault chiave denominato ContosoKV01.
+Questo comando recupera il certificato denominato TestCert01 dalla chiave vault denominata ContosoKV01.
 
-### Esempio 2: ottenere tutti i certificati eliminati ma non eliminati per il Vault chiave.
+### Esempio 2: Ottenere tutti i certificati che sono stati eliminati ma non eliminati per il vault delle chiavi.
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName 'contoso' -InRemovedState
 
@@ -140,9 +140,9 @@ Version            :
 Id                 : https://contoso.vault.azure.net:443/certificates/test2
 ```
 
-Questo comando ottiene tutti i certificati eliminati in precedenza, ma non eliminati, nel caveau della chiave denominato contoso.
+Questo comando recupera tutti i certificati che sono stati eliminati in precedenza, ma non eliminati, nella chiave vault denominata Contoso.
 
-### Esempio 3: Ottiene il certificato Cert che è stato eliminato ma non eliminato per il Vault chiave.
+### Esempio 3: recupera il certificato MyCert eliminato ma non ripulito per questo vault chiave.
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName 'contoso' -Name 'test1' -InRemovedState
 
@@ -182,10 +182,10 @@ Version            : 7fe415d5518240c1a6fce89986b8d334
 Id                 : https://contoso.vault.azure.net:443/certificates/test1/7fe415d5518240c1a6fce89986b8d334
 ```
 
-Questo comando ottiene il certificato denominato "CERT" eliminato in precedenza, ma non eliminato, nel caveau della chiave denominato contoso.
-Questo comando restituirà metadati come la data di eliminazione e la data di eliminazione pianificata del certificato eliminato.
+Questo comando recupera il certificato denominato "MyCert" eliminato in precedenza, ma non ripulito, nella chiave vault denominata Contoso.
+Questo comando restituisce metadati come la data di eliminazione e la data di eliminazione pianificata del certificato eliminato.
 
-### Esempio 4: elencare i certificati tramite filtro
+### Esempio 4: Elencare i certificati usando il filtro
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "test*"
 
@@ -214,7 +214,7 @@ Id        : https://ContosoKV01.vault.azure.net:443/certificates/test2
 This command gets all certificates starting with "test" from the key vault named ContosoKV01.
 ```
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
 Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
@@ -232,7 +232,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludePending
-Specifica se includere i certificati in sospeso nell'output
+Specifica se includere certificati in sospeso nell'output
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -262,7 +262,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Oggetto di Vault.
+Oggetto KeyVault.
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
@@ -277,7 +277,7 @@ Accept wildcard characters: False
 ```
 
 ### -InRemovedState
-Specifica se includere i certificati eliminati in precedenza nell'output
+Specifica se includere certificati eliminati in precedenza nell'output
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -291,7 +291,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Nome
+### -Name
 Specifica il nome del certificato da ottenere.
 
 ```yaml
@@ -319,7 +319,7 @@ Accept wildcard characters: True
 ```
 
 ### -ResourceId
-ID risorsa di un Vault.
+ID risorsa KeyVault.
 
 ```yaml
 Type: System.String
@@ -333,8 +333,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -VAULTNAME
-Specifica il nome di un Vault chiave.
+### -VaultName
+Specifica il nome di un vault delle chiavi.
 
 ```yaml
 Type: System.String
@@ -348,7 +348,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Versione
+### -Version
 Specifica la versione di un certificato.
 
 ```yaml
@@ -364,25 +364,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](https://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### Microsoft. Azure. Commands. Vault. Models. PSKeyVault
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Vault. Models. PSKeyVaultCertificateIdentityItem
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificateIdentityItem
 
-### Microsoft. Azure. Commands. Vault. Models. PSKeyVaultCertificate
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificate
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificate
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificateIdentityItem
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
@@ -392,4 +392,3 @@ Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-In
 
 [Remove-AzKeyVaultCertificate](./Remove-AzKeyVaultCertificate.md)
 
-[Undo-AzKeyVaultSecretCertificate](./Undo-AzKeyVaultSecretCertificate.md)

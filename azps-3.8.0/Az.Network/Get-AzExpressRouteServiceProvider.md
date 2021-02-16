@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteServiceProvider.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteServiceProvider.md
-ms.openlocfilehash: 639e438a2ff3eb63282ba4f79aa984581128a082
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 7871625f9313179523fd4fad146107690f68a826
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94021310"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100412521"
 ---
 # Get-AzExpressRouteServiceProvider
 
-## Sinossi
-Ottiene un elenco dei provider di servizi ExpressRoute e i relativi attributi.
+## SYNOPSIS
+Ottiene un elenco di provider di servizi ExpressRoute e i relativi attributi.
 
 ## SINTASSI
 
@@ -24,22 +24,22 @@ Ottiene un elenco dei provider di servizi ExpressRoute e i relativi attributi.
 Get-AzExpressRouteServiceProvider [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Get-AzExpressRouteServiceProvider** recupera un elenco dei provider di servizi di ExpressRoute e i relativi attributi. Gli attributi includono le opzioni di posizione e larghezza di banda.
+## DESCRIZIONE
+Il cmdlet **Get-AzExpressRouteServiceProvider** recupera un elenco di provider di servizi ExpressRoute e i relativi attributi. L'attributo include opzioni per la posizione e la larghezza di banda.
 
 ## ESEMPI
 
-### Esempio 1: ottenere un elenco di provider di servizi con posizioni in "Silicon Valley"
+### Esempio 1: Ottenere un elenco di provider di servizi con posizioni nella "Silicon Valley"
 ```
 Get-AzExpressRouteServiceProvider |
    Where-Object PeeringLocations -Contains "Silicon Valley" |
    Select-Object Name
 ```
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -54,17 +54,17 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
 ### Nessuno
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Network. Models. PSExpressRouteServiceProvider
+### Microsoft.Azure.Commands.Network.Models.PSExpressRouteServiceProvider
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
@@ -74,4 +74,4 @@ Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-In
 
 [Get-AzExpressRouteCircuitRouteTableSummary](Get-AzExpressRouteCircuitRouteTableSummary.md)
 
-[Get-AzExpressRouteCircuitStats](Get-AzExpressRouteCircuitStats.md)
+[Get-AzExpressRouteCircuitStat](Get-AzExpressRouteCircuitStat.md)
