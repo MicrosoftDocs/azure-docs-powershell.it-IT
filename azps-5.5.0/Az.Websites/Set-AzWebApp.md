@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.websites/s
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Set-AzWebApp.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Set-AzWebApp.md
-ms.openlocfilehash: 2028132e427bdba3fd49c20b9e7944eff90a9aa5
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 5594e43b2e6c67e9df5b526f753557edd8a4d5ea
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100197230"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100414731"
 ---
 # Set-AzWebApp
 
@@ -186,7 +186,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionStrings
-Tabella HashTable stringhe di connessione
+Tabella HashTable delle stringhe di connessione
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -261,7 +261,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultDocuments
-Matrice stringa documenti predefinita
+Matrice di stringhe di documenti predefinite
 
 ```yaml
 Type: System.String[]
@@ -291,7 +291,7 @@ Accept wildcard characters: False
 ```
 
 ### -DetailedErrorLoggingEnabled
-Booleano di registrazione degli errori dettagliato abilitato
+Booleano registrazione errori dettagliato abilitato
 
 ```yaml
 Type: System.Boolean
@@ -306,7 +306,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableContainerContinuousDeployment
-Abilita/disabilita il webhook della distribuzione continua del contenitore
+Webhook di distribuzione continua contenitore/disabilita
 
 ```yaml
 Type: System.Boolean
@@ -412,7 +412,7 @@ Accept wildcard characters: False
 ```
 
 ### -MinTlsVersion
-La versione minima di TLS richiesta per le richieste SSL. Valori consentiti [1,0 | 1.1 | 1.2].
+Versione minima di TLS richiesta per le richieste SSL. Valori consentiti [1,0 | 1.1 | 1.2].
 
 ```yaml
 Type: System.String
@@ -597,4 +597,3 @@ Sostituire i valori di Default-Web-WestUS con il nome del gruppo di risorse dell
 
 [Stop-AzWebApp](./Stop-AzWebApp.md)
 
-[New-AzResource](./New-AzResource.md)

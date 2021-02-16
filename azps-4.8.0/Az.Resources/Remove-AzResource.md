@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzResource.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzResource.md
-ms.openlocfilehash: ecd70916f1ddb6e365fb9f880db9974f6c9ae771
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 9e8eea48238bd177f3a8556691db48686a57dd99
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94188904"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100414867"
 ---
 # Remove-AzResource
 
-## Sinossi
+## SYNOPSIS
 Rimuove una risorsa.
 
 ## SINTASSI
 
-### ByResourceId (impostazione predefinita)
+### ByResourceId (Impostazione predefinita)
 ```
 Remove-AzResource [-AsJob] -ResourceId <String> [-ODataQuery <String>] [-Force] [-ApiVersion <String>] [-Pre]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -41,26 +41,26 @@ Remove-AzResource [-AsJob] -ResourceName <String> -ResourceType <String> [-Exten
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Descrizione
+## DESCRIZIONE
 Il cmdlet **Remove-AzResource** rimuove una risorsa Azure.
 
 ## ESEMPI
 
-### Esempio 1: rimuovere una risorsa sito Web
+### Esempio 1: Rimuovere una risorsa del sito Web
 ```
 PS C:\>Remove-AzResource -ResourceId "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/ResourceGroup11/providers/Microsoft.Web/sites/ContosoSite" -Force
 ```
 
-Questo comando rimuove la risorsa sito Web denominata ContosoSite.
+Questo comando rimuove la risorsa del sito Web denominata ContosoSite.
 L'esempio usa un valore segnaposto per l'ID sottoscrizione.
-Il comando specifica il parametro *Force* .
-Pertanto, non chiede conferma.
+Il comando specifica il *parametro Force.*
+Di conseguenza, non richiede conferma.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -ApiVersion
 Specifica la versione dell'API del provider di risorse da usare.
-Se non specifichi una versione, questo cmdlet usa la versione più recente disponibile.
+Se non si specifica una versione, questo cmdlet usa l'ultima versione disponibile.
 
 ```yaml
 Type: System.String
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -AsJob
-Esegui cmdlet in background
+Eseguire il cmdlet in background
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -105,8 +105,8 @@ Accept wildcard characters: False
 ```
 
 ### -ExtensionResourceName
-Specifica il nome di una risorsa di estensione della risorsa rimossa da questo cmdlet.
-Ad esempio, per specificare un database, usare il formato seguente: nome del database del nome del server `/`
+Specifica il nome di una risorsa di estensione della risorsa rimossa dal cmdlet.
+Ad esempio, per specificare un database, usare il formato seguente: nome database nome `/` server
 
 ```yaml
 Type: System.String
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 
 ### -ExtensionResourceType
 Specifica il tipo di risorsa per una risorsa di estensione.
-Specifica il tipo di risorsa estensione per la risorsa.
+Specifica il tipo di risorsa di estensione per la risorsa.
 Ad esempio: `Microsoft.Sql/Servers/Databases`
 
 ```yaml
@@ -138,7 +138,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Impone l'esecuzione del comando senza richiedere la conferma dell'utente.
+Forza l'esecuzione del comando senza chiedere conferma all'utente.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -154,7 +154,7 @@ Accept wildcard characters: False
 
 ### -ODataQuery
 Specifica un filtro di stile OData (Open Data Protocol).
-Questo cmdlet aggiunge questo valore alla richiesta oltre ad altri filtri.
+Questo cmdlet aggiunge questo valore alla richiesta in aggiunta ad altri filtri.
 
 ```yaml
 Type: System.String
@@ -169,7 +169,7 @@ Accept wildcard characters: False
 ```
 
 ### -Pre
-Indica che questo cmdlet considera le versioni dell'API di pre-rilascio quando determina automaticamente la versione da usare.
+Indica che questo cmdlet considera le versioni delle API non ancora rilasciate quando determina automaticamente la versione da usare.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -199,8 +199,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Specifica l'ID di risorsa completo della risorsa rimossa da questo cmdlet.
-L'ID include l'abbonamento, come nell'esempio seguente: `/subscriptions/` ID abbonamento`/providers/Microsoft.Sql/servers/ContosoServer/databases/ContosoDatabase`
+Specifica l'ID risorsa completo della risorsa che questo cmdlet rimuove.
+L'ID include la sottoscrizione, come nell'esempio seguente: `/subscriptions/` ID sottoscrizione`/providers/Microsoft.Sql/servers/ContosoServer/databases/ContosoDatabase`
 
 ```yaml
 Type: System.String
@@ -215,8 +215,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceName
-Specifica il nome della risorsa rimossa da questo cmdlet.
-Ad esempio, per specificare un database, usa il formato seguente: `ContosoServer/ContosoDatabase`
+Specifica il nome della risorsa rimossa dal cmdlet.
+Ad esempio, per specificare un database, usare il formato seguente: `ContosoServer/ContosoDatabase`
 
 ```yaml
 Type: System.String
@@ -231,7 +231,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceType
-Specifica il tipo della risorsa rimossa da questo cmdlet.
+Specifica il tipo di risorsa che il cmdlet rimuove.
 Per un database, ad esempio, il tipo di risorsa è il seguente: `Microsoft.Sql/Servers/Databases`
 
 ```yaml
@@ -247,7 +247,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantLevel
-Indica che il cmdlet funziona a livello di tenant.
+Indica che questo cmdlet opera a livello di tenant.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -261,8 +261,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confermare
-Richiede la conferma prima di eseguire il cmdlet.
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -277,7 +277,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra cosa succede se il cmdlet viene eseguito.
+Mostra cosa accadrebbe se il cmdlet viene eseguito.
 Il cmdlet non viene eseguito.
 
 ```yaml
@@ -293,21 +293,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### System. Boolean
+### System.Boolean
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Trova-AzResource](./Find-AzResource.md)
 
 [Get-AzResource](./Get-AzResource.md)
 

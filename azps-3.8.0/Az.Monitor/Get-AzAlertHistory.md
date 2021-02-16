@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertHistory.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertHistory.md
-ms.openlocfilehash: 5d4b3be80602377a7eae378939e4bb10221de324
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 42f407235238cec0b7e298bce344e71c075cecfd
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94022962"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406095"
 ---
 # Get-AzAlertHistory
 
-## Sinossi
-Ottiene la cronologia degli avvisi.
+## SYNOPSIS
+Recupera la cronologia degli avvisi.
 
 ## SINTASSI
 
@@ -25,12 +25,12 @@ Get-AzAlertHistory [-ResourceId <String>] [-StartTime <DateTime>] [-EndTime <Dat
  [-Caller <String>] [-DetailedOutput] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Get-AzAlertHistory** ottiene la cronologia degli avvisi Man mano che vengono abilitati, disabilitati, licenziati, risolti e così via.
+## DESCRIZIONE
+Il cmdlet **Get-AzAlertHistory** recupera la cronologia degli avvisi quando vengono abilitati, disabilitati, non risolti, risolti e così via.
 
 ## ESEMPI
 
-### Esempio 1: ottenere la cronologia degli avvisi
+### Esempio 1: Ottenere la cronologia degli avvisi
 ```
 PS C:\>Get-AzAlertHistory -StartTime 2015-02-11T11:00:00 -EndTime 2015-02-11T12:00:00 -DetailedOutput
 Authorization        : 
@@ -170,9 +170,9 @@ SubscriptionId       : b93fb07a-6f93-30be-bf3e-4f0deca15f4f
 SubStatus            :
 ```
 
-Questo comando consente di ottenere la cronologia degli avvisi per l'intervallo di tempo specificato per l'abbonamento corrente.
+Questo comando recupera la cronologia degli avvisi per l'intervallo di tempo specificato per la sottoscrizione corrente.
 
-### Esempio 2: ottenere la cronologia degli avvisi per una risorsa specificata
+### Esempio 2: Ottenere la cronologia degli avvisi per una risorsa specificata
 ```
 PS C:\>Get-AzAlertHistory -StartTime 2015-02-11T11:00:00 -EndTime 2015-02-11T12:00:00 -ResourceId "/subscriptions/b93fb07a-6f93-30be-bf3e-4f0deca15f4f/resourceGroups/Default-Web-EastUS/providers/microsoft.insights/alertrules/checkrule3-4b135401-a30c-4224-ae21-fa53a5bd253d" -DetailedOutput
 
@@ -268,11 +268,11 @@ SubscriptionId       : b93fb07a-6f93-30be-bf3e-4f0deca15f4f
 SubStatus            :
 ```
 
-Questo comando ottiene gli eventi correlati alle regole di avviso per una risorsa specificata.
+Questo comando recupera gli eventi correlati alle regole di avviso per una risorsa specificata.
 
-## PARAMETRI
+## PARAMETERS
 
-### -Chiamante
+### -Caller
 Specifica il chiamante.
 
 ```yaml
@@ -318,7 +318,7 @@ Accept wildcard characters: False
 ```
 
 ### -EndTime
-Specifica l'ora di fine della query in ora locale.
+Specifica l'ora di fine della query nell'ora locale.
 L'impostazione predefinita è l'ora corrente.
 
 ```yaml
@@ -349,7 +349,7 @@ Accept wildcard characters: False
 ```
 
 ### -StartTime
-Specifica l'ora di inizio della query in ora locale.
+Specifica l'ora di inizio della query nell'ora locale.
 L'impostazione predefinita è l'ora locale corrente meno un'ora.
 
 ```yaml
@@ -380,25 +380,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
-### System. Nullable ' 1 [[System. DateTime, System. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.DateTime, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameter
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSEventData
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSEventData
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Add-AzLogAlertRule](./Add-AzLogAlertRule.md)
 
 [Add-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
 
