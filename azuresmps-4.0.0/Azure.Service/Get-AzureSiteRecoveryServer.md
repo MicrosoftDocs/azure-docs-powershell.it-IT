@@ -3,17 +3,17 @@ external help file: Microsoft.Azure.Commands.RecoveryServicesRdfe.dll-Help.xml
 ms.assetid: 3EC274C9-9BF6-4B39-BC70-C7F9D780805D
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: a4081d6d072aadd6a4ae7d09ff57748a8f2cb697
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 79b61501a56913fedb2a003d7aea1a041bfab4d5
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94023538"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100412283"
 ---
 # Get-AzureSiteRecoveryServer
 
-## Sinossi
-Recupera i server di ripristino del sito registrato un Vault di ripristino del sito.
+## SYNOPSIS
+Recupera i server di ripristino del sito registrati in un vault di ripristino del sito.
 
 ## SINTASSI
 
@@ -32,12 +32,12 @@ Get-AzureSiteRecoveryServer -Id <String> [-Profile <AzureSMProfile>] [<CommonPar
 Get-AzureSiteRecoveryServer -Name <String> [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Get-AzureSiteRecoveryServer** ottiene informazioni sui server di ripristino dei siti di Azure registrati nell'attuale archivio di ripristino del sito.
+## DESCRIZIONE
+Il cmdlet **Get-AzureSiteRecoveryServer** ottiene informazioni sui server di Azure Site Recovery registrati nel vault di Ripristino siti corrente.
 
 ## ESEMPI
 
-### Esempio 1: ottenere informazioni su un server di ripristino del sito
+### Esempio 1: Ottenere informazioni su un server Ripristino siti
 ```
 PS C:\> Get-AzureSiteRecoveryServer
 ID              : cd7dec80-1144-4531-9ab3-888b8ab39bee
@@ -53,11 +53,11 @@ ProviderVersion : 3.5
 ServerVersion   : 3.2.7510.0
 ```
 
-Questo comando consente di ottenere informazioni su un server di ripristino del sito Azure.
+Questo comando ottiene informazioni su un server Azure Site Recovery.
 
-## PARAMETRI
+## PARAMETERS
 
-### -ID
+### -Id
 Specifica l'ID di un server.
 
 ```yaml
@@ -72,7 +72,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Nome
+### -Name
 Specifica il nome di un server.
 
 ```yaml
@@ -88,8 +88,8 @@ Accept wildcard characters: False
 ```
 
 ### -Profile
-Specifica il profilo Azure da cui viene letto il cmdlet.
-Se non specifichi un profilo, questo cmdlet viene letto dal profilo predefinito locale.
+Specifica il profilo di Azure da cui viene letto questo cmdlet.
+Se non si specifica un profilo, questo cmdlet legge dal profilo predefinito locale.
 
 ```yaml
 Type: AzureSMProfile
@@ -104,16 +104,16 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
 ## OUTPUT
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Cmdlet di servizi di ripristino siti di Azure](./Azure.SiteRecoveryServices.md)
+
 
 
