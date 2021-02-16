@@ -3,16 +3,16 @@ external help file: Microsoft.WindowsAzure.Commands.SqlDatabase.dll-Help.xml
 ms.assetid: B7B29875-D2E5-4E96-AD4B-83032AB18D02
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: cdcd4788e3eefdce858cb88c0bf1885353f8a673
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 5312556cb49d02ea901b4cb2526a36f7237f66d1
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94023928"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100404174"
 ---
 # New-AzureSqlDatabaseServerContext
 
-## Sinossi
+## SYNOPSIS
 Crea un contesto di connessione al server.
 
 ## SINTASSI
@@ -47,35 +47,35 @@ New-AzureSqlDatabaseServerContext -FullyQualifiedServerName <String> [-UseSubscr
  [-SubscriptionName <String>] [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **New-AzureSqlDatabaseServerContext** crea un contesto di connessione del server di database SQL di Azure.
-Usare l'autenticazione di SQL Server per creare un contesto di connessione a un server di database SQL utilizzando le credenziali specificate.
-È possibile specificare il server di database SQL per nome, per nome completo o per URL.
-Per ottenere una credenziale, usare il cmdlet Get-Credential che chiede di specificare il nome utente e la password.
+## DESCRIZIONE
+Il cmdlet **New-AzureSqlDatabaseServerContext** crea un contesto di connessione del server SQL database di Azure.
+Usare SQL Server di autenticazione per creare un contesto di connessione a un server SQL database usando le credenziali specificate.
+È possibile specificare il SQL server di database in base al nome, al nome completo o all'URL.
+Per ottenere le credenziali, usare Get-Credential cmdlet di configurazione che richiede di specificare il nome utente e la password.
 
-Usa il cmdlet **New-AzureSqlDatabaseServerContext** con l'autenticazione basata su certificati per creare un contesto di connessione al server di database SQL specificato usando i dati di abbonamento di Azure specificati.
-È possibile specificare il server di database SQL per nome o per il nome completo.
-Puoi specificare i dati dell'abbonamento come parametro oppure può essere recuperato dall'abbonamento Azure corrente.
-Usare il cmdlet Select-AzureSubscription https://msdn.microsoft.com/library/windowsazure/jj152833.aspx per selezionare l'abbonamento Azure corrente.
+Usare il cmdlet **New-AzureSqlDatabaseServerContext** con l'autenticazione basata su certificato per creare un contesto di connessione al server di database SQL specificato usando i dati di sottoscrizione di Azure specificati.
+È possibile specificare SQL server di database in base al nome o al nome completo.
+È possibile specificare i dati della sottoscrizione come parametro oppure possono essere recuperati dalla sottoscrizione di Azure corrente.
+Usare il cmdlet Select-AzureSubscription https://msdn.microsoft.com/library/windowsazure/jj152833.aspx per selezionare la sottoscrizione di Azure corrente.
 
 ## ESEMPI
 
-### Esempio 1: creare un contesto usando l'autenticazione di SQL Server
+### Esempio 1: Creare un contesto usando l'SQL Server autenticazione
 ```
 PS C:\> $Credential = Get-Credential
 PS C:\> $Context = New-AzureSqlDatabaseServerContext -ServerName "lpqd0zbr8y" -Credential $Credential
 PS C:\> $Database17 = New-AzureSqlDatabase -ConnectionContext $Context -DatabaseName "Database17" -MaxSizeGB 50 -Collation "SQL_Latin1_General_CP1_CI_AS"
 ```
 
-Questo esempio usa l'autenticazione di SQL Server.
+Questo esempio usa l'SQL Server autenticazione a più fattori.
 
-Il primo comando richiede le credenziali di amministratore del server e archivia le credenziali nella variabile $Credential.
+Il primo comando richiede le credenziali di amministratore del server e le archivia nella variabile $Credential locale.
 
-Il secondo comando si connette al server di database SQL denominato lpqd0zbr8y tramite $Credential.
+Il secondo comando si connette al server SQL database denominato lpqd0zbr8y usando $Credential.
 
 Il comando finale crea un database denominato Database17 nel server che fa parte del contesto in $Context.
 
-### Esempio 2: creare un contesto usando l'autenticazione basata su certificati
+### Esempio 2: Creare un contesto usando l'autenticazione basata su certificato
 ```
 PS C:\> $SubscriptionId = <Subscription ID>
 PS C:\> $Thumbprint = <Certificate Thumbprint>
@@ -85,20 +85,20 @@ PS C:\> Select-AzureSubscription -SubscriptionName "Subscription07"
 PS C:\> $Context = New-AzureSqlDatabaseServerContext -ServerName "lpqd0zbr8y" -UseSubscription
 ```
 
-Questo esempio usa l'autenticazione basata su certificati.
+Questo esempio usa l'autenticazione basata su certificato.
 
-I primi due comandi assegnano valori alle variabili $SubscriptionId e $Thumbprint.
+I primi due comandi assegnano valori alle variabili $SubscriptionId e $Thumbprint variabili.
 
-Il terzo comando ottiene il certificato identificato dall'identificazione personale in $Thumbprint e lo archivia in $Certificate.
+Il terzo comando recupera il certificato identificato dall'impronta digitale in $Thumbprint e lo archivia in $Certificate.
 
-Il quarto comando imposta la sottoscrizione come Subscription07 e il quinto comando Seleziona l'abbonamento.
+Il quarto comando imposta la sottoscrizione su Subscription07 e il quinto comando seleziona la sottoscrizione.
 
-Il comando finale crea un contesto nell'abbonamento corrente per il server denominato lpqd0zbr8y.
+Il comando finale crea un contesto nella sottoscrizione corrente per il server denominato lpqd0zbr8y.
 
-## PARAMETRI
+## PARAMETERS
 
-### -Credenziale
-Specifica un oggetto Credential che fornisce l'autenticazione di SQL Server per l'accesso al server.
+### -Credential
+Specifica un oggetto credenziali che fornisce SQL Server'autenticazione per l'accesso al server.
 
 ```yaml
 Type: PSCredential
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -FullyQualifiedServerName
-Specifica il nome di dominio completo (FQDN) per il server di database SQL di Azure.
+Specifica il nome di dominio completo (FQDN) per il server di SQL database di Azure.
 Ad esempio, Server02.database.windows.net.
 
 ```yaml
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -ManageUrl
-Specifica l'URL usato da questo cmdlet per accedere al portale di Azure SQL DatabaseManagement per il server.
+Specifica l'URL che questo cmdlet usa per accedere al portale DatabaseManagement di Azure SQL per il server.
 
 ```yaml
 Type: Uri
@@ -144,8 +144,8 @@ Accept wildcard characters: False
 ```
 
 ### -Profile
-Specifica il profilo Azure da cui viene letto il cmdlet.
-Se non specifichi un profilo, questo cmdlet viene letto dal profilo predefinito locale.
+Specifica il profilo di Azure da cui viene letto questo cmdlet.
+Se non si specifica un profilo, questo cmdlet legge dal profilo predefinito locale.
 
 ```yaml
 Type: AzureSMProfile
@@ -159,7 +159,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Nomeserver
+### -ServerName
 Specifica il nome del server di database.
 
 ```yaml
@@ -186,10 +186,10 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Subscriptionname
-Specifica il nome dell'abbonamento Azure usato da questo cmdlet per creare il contesto di connessione.
-Se non specifichi un valore per questo parametro, il cmdlet usa l'abbonamento corrente.
-Eseguire il cmdlet Select-AzureSubscription per cambiare l'abbonamento corrente.
+### -SubscriptionName
+Specifica il nome della sottoscrizione di Azure che questo cmdlet usa per creare il contesto di connessione.
+Se non si specifica alcun valore per questo parametro, il cmdlet usa la sottoscrizione corrente.
+Eseguire il cmdlet Select-AzureSubscription per modificare l'abbonamento corrente.
 
 ```yaml
 Type: String
@@ -204,7 +204,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseSubscription
-Indica che questo cmdlet usa l'abbonamento Azure per creare il contesto di connessione.
+Indica che questo cmdlet usa la sottoscrizione di Azure per creare il contesto di connessione.
 
 ```yaml
 Type: SwitchParameter
@@ -219,23 +219,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
 ## OUTPUT
 
-### Microsoft. WindowsAzure. Commands. SqlDatabase. Services. Server. IServerDataServiceContext
+### Microsoft.WindowsAzure.Commands.SqlDatabase.Services.Server.IServerDataServiceContext
 
-## Note
-* Se si effettua l'autenticazione senza specificare un dominio e se si usa Windows PowerShell 2,0, il cmdlet Get-Credential restituisce una barra rovesciata ( \\ ) anteposto al nome utente, ad esempio \User. Windows PowerShell 3,0 non aggiunge la barra rovesciata. Questa barra rovesciata non viene riconosciuta dal parametro *Credential* del cmdlet **New-AzureSqlDatabaseServerContext** . Per rimuoverlo, usare comandi simili ai seguenti:
+## NOTE
+* Se si esegue l'autenticazione senza specificare un dominio e si usa Windows PowerShell 2.0, il cmdlet Get-Credential restituisce una barra rovesciata ( ) anteposta al nome utente, ad esempio \\ \utente. Windows PowerShell 3.0 non aggiunge la barra rovesciata. Questa barra rovesciata non viene riconosciuta dal parametro *Credential* del cmdlet **New-AzureSqlDatabaseServerContext.** Per rimuoverla, usare comandi simili ai seguenti:
 
   `PS C:\\\> $Credential = Get-Credential`
 `PS C:\\\> $Credential = New-Object -TypeName 'System.Management.Automation.PSCredential' -ArgumentList $Credential.Username.Replace("\",""),$Credential.Password`
 
 ## COLLEGAMENTI CORRELATI
 
-[Cmdlet di database SQL di Azure](./Azure.SQLDatabase.md)
+
 
 [Get-AzureSqlDatabase](./Get-AzureSqlDatabase.md)
 
