@@ -6,16 +6,16 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzADUser.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzADUser.md
-ms.openlocfilehash: ac2dfb864733d7bcb2b46e17d557fca57c7bb4b4
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: cd8834dd329ab82e98316cb0d94b554eb3bb6c13
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93856402"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100408322"
 ---
 # New-AzADUser
 
-## Sinossi
+## SYNOPSIS
 Crea un nuovo utente di Active Directory.
 
 ## SINTASSI
@@ -26,21 +26,21 @@ New-AzADUser -DisplayName <String> -UserPrincipalName <String> -Password <Secure
  [-Confirm] [<CommonParameters>]
 ```
 
-## Descrizione
-Crea un nuovo utente di Active Directory (account aziendale o dell'Istituto di istruzione noto anche come org-ID).
+## DESCRIZIONE
+Crea un nuovo utente di Active Directory (account aziendale o dell'istituto di istruzione noto anche come org-id).
 Per altre informazioni: https://msdn.microsoft.com/en-us/library/azure/ad/graph/api/users-operations#CreateUser
 
 ## ESEMPI
 
-### Esempio 1-creare un nuovo utente di Active Directory
+### Esempio 1 - Creare un nuovo utente di Active Directory
 ```
 PS C:\> $SecureStringPassword = ConvertTo-SecureString -String "password" -AsPlainText -Force
 PS C:\> New-AzADUser -DisplayName "MyDisplayName" -UserPrincipalName "myemail@domain.com" -Password $SecureStringPassword -MailNickname "MyMailNickName"
 ```
 
-Crea un nuovo utente di Active Directory con il nome "DisplayName" e il nome dell'entità utente " myemail@domain.com " in un tenant.
+Crea un nuovo utente Active Directory con il nome "MyDisplayName" e il nome dell'entità utente myemail@domain.com " " in un tenant.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
 Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
@@ -58,7 +58,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Nome da visualizzare nella rubrica per l'utente.
+Nome da visualizzare nella rubrica dell'utente.
 esempio "Alex Wu".
 
 ```yaml
@@ -74,8 +74,8 @@ Accept wildcard characters: False
 ```
 
 ### -ForceChangePasswordNextLogin
-Deve essere specificato se l'utente deve cambiare la password nel successivo accesso riuscito (vero).
-Il comportamento predefinito è (false) per non modificare la password nell'accesso successivo riuscito.
+Deve essere specificato se l'utente deve cambiare la password al successivo accesso riuscito (true).
+Il comportamento predefinito è (false) per non cambiare la password al successivo accesso riuscito.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -ImmutableId
-Deve essere specificato solo se si usa un dominio federato per la proprietà nome dell'entità utente (UPN) dell'utente.
+Deve essere specificato solo se si usa un dominio federato per la proprietà del nome dell'entità utente (upn) dell'utente.
 
 ```yaml
 Type: System.String
@@ -105,7 +105,7 @@ Accept wildcard characters: False
 ```
 
 ### -MailNickname
-Alias di posta per l'utente.
+Alias di posta elettronica per l'utente.
 
 ```yaml
 Type: System.String
@@ -120,7 +120,7 @@ Accept wildcard characters: False
 ```
 
 ### -Password
-Password per l'utente.
+Password dell'utente.
 Deve soddisfare i requisiti di complessità della password del tenant.
 È consigliabile impostare una password complessa.
 
@@ -137,8 +137,8 @@ Accept wildcard characters: False
 ```
 
 ### -UserPrincipalName
-Nome dell'entità utente.
-Esempio:' someuser@contoso.com '.
+Il nome dell'entità utente.
+Example-' someuser@contoso.com '.
 
 ```yaml
 Type: System.String
@@ -152,8 +152,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confermare
-Richiede la conferma prima di eseguire il cmdlet.
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -168,7 +168,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra cosa succede se il cmdlet viene eseguito.
+Mostra cosa accadrebbe se il cmdlet viene eseguito.
 Il cmdlet non viene eseguito.
 
 ```yaml
@@ -184,26 +184,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
-### System. Security. SecureString
+### System.Security.SecureString
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameter
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. ActiveDirectory. PSADUser
+### Microsoft.Azure.Commands.ActiveDirectory.PSADUser
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
 [Get-AzADUser](./Get-AzADUser.md)
 
-[Set-AzADUser](./Set-AzADUser.md)
 
 [Remove-AzADUser](./Remove-AzADUser.md)
