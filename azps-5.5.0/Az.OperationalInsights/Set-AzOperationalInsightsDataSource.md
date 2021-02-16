@@ -1,0 +1,85 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.OperationalInsights.dll-Help.xml
+Module Name: Az.OperationalInsights
+ms.assetid: 3992E6B5-F794-4C7A-BB59-C8D60E2CD7BC
+online version: https://docs.microsoft.com/en-us/powershell/module/az.operationalinsights/set-azoperationalinsightsdatasource
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/OperationalInsights/OperationalInsights/help/Set-AzOperationalInsightsDataSource.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/OperationalInsights/OperationalInsights/help/Set-AzOperationalInsightsDataSource.md
+ms.openlocfilehash: ef90211ccca53a94db2651f17b3a666a725ce8b1
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100184055"
+---
+# <span data-ttu-id="e4bfc-101">Set-AzOperationalInsightsDataSource</span><span class="sxs-lookup"><span data-stu-id="e4bfc-101">Set-AzOperationalInsightsDataSource</span></span>
+
+## <span data-ttu-id="e4bfc-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="e4bfc-102">SYNOPSIS</span></span>
+<span data-ttu-id="e4bfc-103">Aggiorna un'origine dati.</span><span class="sxs-lookup"><span data-stu-id="e4bfc-103">Updates a data source.</span></span>
+
+## <span data-ttu-id="e4bfc-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="e4bfc-104">SYNTAX</span></span>
+
+```
+Set-AzOperationalInsightsDataSource [-DataSource] <PSDataSource> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="e4bfc-105">DESCRIZIONE</span><span class="sxs-lookup"><span data-stu-id="e4bfc-105">DESCRIPTION</span></span>
+<span data-ttu-id="e4bfc-106">Il cmdlet **Set-AzOperationalInsightsDataSource** aggiorna un'origine dati.</span><span class="sxs-lookup"><span data-stu-id="e4bfc-106">The **Set-AzOperationalInsightsDataSource** cmdlet updates a data source.</span></span>
+
+## <span data-ttu-id="e4bfc-107">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="e4bfc-107">EXAMPLES</span></span>
+
+## <span data-ttu-id="e4bfc-108">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="e4bfc-108">PARAMETERS</span></span>
+
+### <span data-ttu-id="e4bfc-109">-DataSource</span><span class="sxs-lookup"><span data-stu-id="e4bfc-109">-DataSource</span></span>
+<span data-ttu-id="e4bfc-110">Specifica l'origine dati aggiornata dal cmdlet.</span><span class="sxs-lookup"><span data-stu-id="e4bfc-110">Specifies the data source that this cmdlet updates.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.OperationalInsights.Models.PSDataSource
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e4bfc-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="e4bfc-111">-DefaultProfile</span></span>
+<span data-ttu-id="e4bfc-112">Le credenziali, l'account, il tenant e la sottoscrizione usati per le comunicazioni con Azure</span><span class="sxs-lookup"><span data-stu-id="e4bfc-112">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e4bfc-113">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="e4bfc-113">CommonParameters</span></span>
+<span data-ttu-id="e4bfc-114">Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="e4bfc-114">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="e4bfc-115">Per altre informazioni, vedere about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="e4bfc-115">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="e4bfc-116">INPUT</span><span class="sxs-lookup"><span data-stu-id="e4bfc-116">INPUTS</span></span>
+
+### <span data-ttu-id="e4bfc-117">Microsoft.Azure.Commands.OperationalInsights.Models.PSDataSource</span><span class="sxs-lookup"><span data-stu-id="e4bfc-117">Microsoft.Azure.Commands.OperationalInsights.Models.PSDataSource</span></span>
+
+## <span data-ttu-id="e4bfc-118">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="e4bfc-118">OUTPUTS</span></span>
+
+### <span data-ttu-id="e4bfc-119">Microsoft.Azure.Commands.OperationalInsights.Models.PSDataSource</span><span class="sxs-lookup"><span data-stu-id="e4bfc-119">Microsoft.Azure.Commands.OperationalInsights.Models.PSDataSource</span></span>
+
+## <span data-ttu-id="e4bfc-120">NOTE</span><span class="sxs-lookup"><span data-stu-id="e4bfc-120">NOTES</span></span>
+* <span data-ttu-id="e4bfc-121">Parole chiave: azure, azurerm, arm, risorsa, gestione, responsabile, operativo, approfondimenti</span><span class="sxs-lookup"><span data-stu-id="e4bfc-121">Keywords: azure, azurerm, arm, resource, management, manager, operational, insights</span></span>
+
+## <span data-ttu-id="e4bfc-122">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="e4bfc-122">RELATED LINKS</span></span>
+
+[<span data-ttu-id="e4bfc-123">Get-AzOperationalInsightsDataSource</span><span class="sxs-lookup"><span data-stu-id="e4bfc-123">Get-AzOperationalInsightsDataSource</span></span>](./Get-AzOperationalInsightsDataSource.md)
+
+[<span data-ttu-id="e4bfc-124">Remove-AzOperationalInsightsDataSource</span><span class="sxs-lookup"><span data-stu-id="e4bfc-124">Remove-AzOperationalInsightsDataSource</span></span>](./Remove-AzOperationalInsightsDataSource.md)
+
+
