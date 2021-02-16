@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADServicePrincipal.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADServicePrincipal.md
-ms.openlocfilehash: 0dc49732a6e6ad614a0330c3fe24b412be898a54
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 1b8a1c5c0a8161993be4d1e8c5f8d4bf9119d4b0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93854921"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100404276"
 ---
 # Get-AzADServicePrincipal
 
-## Sinossi
-Filtra le entità del servizio Active Directory.
+## SYNOPSIS
+Filtra le entità servizio Active Directory.
 
 ## SINTASSI
 
-### EmptyParameterSet (impostazione predefinita)
+### EmptyParameterSet (Impostazione predefinita)
 ```
 Get-AzADServicePrincipal [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount] [-Skip <UInt64>]
  [-First <UInt64>] [<CommonParameters>]
@@ -62,52 +62,52 @@ Get-AzADServicePrincipal -ServicePrincipalName <String> [-DefaultProfile <IAzure
  [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-## Descrizione
-Filtra le entità del servizio Active Directory.
+## DESCRIZIONE
+Filtra le entità servizio Active Directory.
 
 ## ESEMPI
 
-### Esempio 1-elenco delle entità di servizio degli annunci pubblicitari
+### Esempio 1 - Elencare le entità servizio Active Directory
 
 ```
 PS C:\> Get-AzADServicePrincipal
 ```
 
-Elenca tutte le entità del servizio Active Directory in un tenant.
+Elenca tutte le entità servizio Active Directory in un tenant.
 
-### Esempio 2-elenco delle entità di servizio degli annunci pubblicitari tramite paging
+### Esempio 2 - Elencare le entità servizio Active Directory tramite la suddivisione in pagine
 
 ```
 PS C:\> Get-AzADServicePrincipal -First 100
 ```
 
-Elenca le prime entità di servizio degli annunci di 100 in un tenant.
+Elenca le prime 100 entità servizio Active Directory in un tenant.
 
-### Esempio 3-elenco entità servizio per SPN
+### Esempio 3 - Elencare le entità servizio per SPN
 
 ```
 PS C:\> Get-AzADServicePrincipal -ServicePrincipalName 36f81fc3-b00f-48cd-8218-3879f51ff39f
 ```
 
-Elenca le entità di servizio con l'SPN "36f81fc3-b00f-48CD-8218-3879f51ff39f".
+Elenca le entità servizio con il nome SPN '36f81fc3-b00f-48cd-8218-3879f51ff39f'.
 
-### Esempio 4-elenco delle entità di servizio tramite la stringa di ricerca
+### Esempio 4 - Elencare le entità servizio per stringa di ricerca
 
 ```
 PS C:\> Get-AzADServicePrincipal -SearchString "Web"
 ```
 
-Elenca tutte le entità del servizio Active Directory il cui nome visualizzato inizia con "Web".
+Elenca tutte le entità servizio Active Directory il cui nome visualizzato inizia con "Web".
 
-### Esempio 5-elenco delle entità di servizio tramite piping
+### Esempio 5 - Elencare le entità servizio tramite piping
 
 ```
 PS C:\> Get-AzADApplication -ObjectId 39e64ec6-569b-4030-8e1c-c3c519a05d69 | Get-AzADServicePrincipal
 ```
 
-Ottiene l'applicazione di annunci con l'ID oggetto "39e64ec6-569B-4030-8e1c-c3c519a05d69" e la convoglia al cmdlet Get-AzADServicePrincipal per elencare tutte le entità di servizio per tale applicazione.
+Ottiene l'applicazione Active Directory con ID oggetto '39e64ec6-569b-4030-8e1c-c3c519a05d69' e la pipe al cmdlet di Get-AzADServicePrincipal per elencare tutte le entità servizio per l'applicazione.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -ApplicationId
 ID applicazione dell'entità servizio.
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationObject
-Oggetto Application di cui viene recuperato l'entità di servizio.
+Oggetto applicazione di cui è in corso il recupero dell'entità servizio.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADApplication
@@ -140,7 +140,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
+Le credenziali, l'account, il tenant e la sottoscrizione usati per le comunicazioni con Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -200,7 +200,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServicePrincipalName
-SPN del servizio.
+Nome dell'entità servizio.
 
 ```yaml
 Type: System.String
@@ -230,7 +230,7 @@ Accept wildcard characters: False
 ```
 
 ### -Skip
-Ignora i primi oggetti N e quindi recupera gli oggetti rimanenti.
+Ignora i primi N oggetti e quindi ottiene gli oggetti rimanenti.
 
 ```yaml
 Type: System.UInt64
@@ -244,7 +244,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Primo
+### -First
 Numero massimo di oggetti da restituire.
 
 ```yaml
@@ -260,27 +260,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
-### System. Guid
+### System.Guid
 
-### Microsoft. Azure. Commands. ActiveDirectory. PSADApplication
+### Microsoft.Azure.Commands.ActiveDirectory.PSADApplication
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. ActiveDirectory. PSADServicePrincipal
+### Microsoft.Azure.Commands.ActiveDirectory.PSADServicePrincipal
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
 [New-AzADServicePrincipal](./New-AzADServicePrincipal.md)
 
-[Set-AzADServicePrincipal](./Set-AzADServicePrincipal.md)
 
 [Remove-AzADServicePrincipal](./Remove-AzADServicePrincipal.md)
 
