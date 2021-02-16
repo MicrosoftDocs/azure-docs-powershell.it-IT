@@ -6,16 +6,16 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Resize-AzVirtualNetworkGateway.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Resize-AzVirtualNetworkGateway.md
-ms.openlocfilehash: dd48af6a0f20cafea5911adb629a83323faa94a6
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 31ec0453b0ce64c27d1bb37d4bf6c0f100a8c760
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94021891"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411756"
 ---
 # Resize-AzVirtualNetworkGateway
 
-## Sinossi
+## SYNOPSIS
 Ridimensiona un gateway di rete virtuale esistente.
 
 ## SINTASSI
@@ -25,30 +25,30 @@ Resize-AzVirtualNetworkGateway -VirtualNetworkGateway <PSVirtualNetworkGateway> 
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Resize-AzVirtualNetworkGateway** consente di modificare l'unità di stoccaggio (SKU) per un gateway di rete virtuale.
-Gli SKU determinano le funzionalità di un gateway, inclusi elementi come la velocità effettiva e il numero massimo di tunnel IP consentiti.
-Azure supporta le SKU di base, standard, ad alte prestazioni, VpnGw1, VpnGw2, VpnGw3, VpnGw1AZ, VpnGw2AZ, VpnGw3AZ, ErGw1AZ, ErGw2AZ, ErGw3AZ, in alcuni casi indicati come SKU di piccole, medie e grandi dimensioni.
+## DESCRIZIONE
+Il cmdlet **Resize-AzVirtualNetworkGateway** consente di modificare l'unità di conservazione delle azioni per un gateway di rete virtuale.
+Gli SKU determinano le funzionalità di un gateway, tra cui la velocità effettiva e il numero massimo di tunnel IP consentiti.
+Azure supporta SKU di base, standard, ad alte prestazioni, VpnGw1, VpnGw2, VpnGw3, VpnGw1AZ, VpnGw2AZ, VpnGw3AZ, ErGw1AZ, ErGw2AZ, ErGw3AZ (noto anche come SKU piccole, medie e grandi).
 Per informazioni dettagliate sulle funzionalità di ogni tipo di SKU, vedere https://azure.microsoft.com/en-us/documentation/articles/vpn-gateway-about-vpngateways/ .
-Tieni presente che le SKU si differenziano per i prezzi e le funzionalità.
+Tenere presente che gli SKU variano in base ai prezzi e alle funzionalità.
 Per altre informazioni, vedere https://azure.microsoft.com/en-us/pricing/details/vpn-gateway/ .
 
 ## ESEMPI
 
-### Esempio 1: modificare le dimensioni di un gateway di rete virtuale
+### Esempio 1: Modificare le dimensioni di un gateway di rete virtuale
 ```
 PS C:\>$Gateway = Get-AzVirtualNetworkGateway -Name "ContosoVirtualGateway"
 PS C:\> Resize-AzVirtualNetworkGateway -VirtualNetworkGateway $Gateway -GatewaySku "Basic"
 ```
 
 Questo esempio modifica le dimensioni di un gateway di rete virtuale denominato ContosoVirtualGateway.
-Il primo comando crea un riferimento all'oggetto a ContosoVirtualGateway; Questo riferimento oggetto è archiviato in una variabile denominata $Gateway.
+Il primo comando crea un riferimento a un oggetto a ContosoVirtualGateway; questo riferimento all'oggetto è archiviato in una variabile denominata $Gateway.
 Il secondo comando usa quindi il cmdlet **Resize-AzVirtualNetworkGateway** per impostare la proprietà *GatewaySku* su Basic.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -63,9 +63,9 @@ Accept wildcard characters: False
 ```
 
 ### -GatewaySku
-Specifica il nuovo tipo di SKU gateway.
-I valori accettabili per questo parametro sono i seguenti:
-- Base
+Specifica il nuovo tipo di SKU del gateway.
+I valori accettabili per questo parametro sono:
+- Di base
 - Standard
 - Prestazioni elevate
 - VpnGw1
@@ -93,7 +93,7 @@ Accept wildcard characters: False
 
 ### -VirtualNetworkGateway
 Specifica un riferimento a un oggetto al gateway di rete virtuale da ridimensionare.
-Puoi creare questo riferimento di oggetto usando la Get-AzVirtualNetworkGateway e specificando il nome del gateway.
+È possibile creare questo riferimento all'oggetto usando Get-AzVirtualNetworkGateway e specificando il nome del gateway.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway
@@ -108,20 +108,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### Microsoft. Azure. Commands. Network. Models. PSVirtualNetworkGateway
+### Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Network. Models. PSVirtualNetworkGateway
+### Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway
 
-## Note
-Non è possibile eseguire il ridimensionamento dagli SKU Basic/standard/HighPerformance alle nuove SKU VpnGw1/VpnGw2/VpnGw3. Il ridimensionamento ulteriore non è consentito da/a VpnGw1AZ/VpnGw2AZ/VpnGw3AZ o ErGw1AZ/ErGw2AZ/ErGw3AZ. Il ridimensionamento è consentito solo all'interno della serie SKU, ad esempio VpnGw1AZ può essere ridimensionato in/da VpnGw2AZ/VpnGw3AZ e ErGw1AZ può essere ridimensionato in/da ErGw2AZ/ErGw3AZ. Vedere https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways per istruzioni.
+## NOTE
+Non è possibile eseguire il ridimensionamento dagli SKU Di base/Standard/HighPerformance alle nuove SKU VpnGw1/VpnGw2/VpnGw3. Ulteriori ridimensionamento non sono consentiti da/a VpnGw1AZ/VpnGw2AZ/VpnGw3AZ o ErGw1AZ/ErGw2AZ/ErGw3AZ. Il ridimensionamento è consentito solo all'interno della "serie" SKU, ad esempio VpnGw1AZ può essere ridimensionato in/da VpnGw2AZ/VpnGw3AZ e ErGw1AZ possono essere ridimensionati in/da ErGw2AZ/ErGw3AZ. Per https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways istruzioni, vedere.
 
 ## COLLEGAMENTI CORRELATI
 
@@ -137,4 +137,3 @@ Non è possibile eseguire il ridimensionamento dagli SKU Basic/standard/HighPerf
 
 [Get-AzVpnClientPackage](./Get-AzVpnClientPackage.md)
 
-[Set-AzVirtualNetworkGatewayVpnClientConfig](./Set-AzVirtualNetworkGatewayVpnClientConfig.md)

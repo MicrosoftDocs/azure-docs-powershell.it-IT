@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkWatcherPacketCapture.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkWatcherPacketCapture.md
-ms.openlocfilehash: f6762b074c9b185d12666fb8ea92fcaf15a46b05
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 9825562ad5f0bec36da0efd14f2e06b93a3ad588
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100193622"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398054"
 ---
 # New-AzNetworkWatcherPacketCapture
 
@@ -19,7 +19,7 @@ Crea una nuova risorsa di acquisizione pacchetti e avvia una sessione di acquisi
 
 ## SINTASSI
 
-### SetByResource (Impostazione predefinita)
+### SetByResource (Default)
 ```
 New-AzNetworkWatcherPacketCapture -NetworkWatcher <PSNetworkWatcher> -PacketCaptureName <String>
  -TargetVirtualMachineId <String> [-StorageAccountId <String>] [-StoragePath <String>]
@@ -48,7 +48,7 @@ New-AzNetworkWatcherPacketCapture -Location <String> -PacketCaptureName <String>
 
 ## DESCRIZIONE
 Il cmdlet New-AzNetworkWatcherPacketCapture crea una nuova risorsa di acquisizione pacchetti e avvia una sessione di acquisizione pacchetti in una macchina virtuale.
-La lunghezza delle sessioni di acquisizione pacchetti può essere configurata con un vincolo temporale o di dimensioni. Può anche essere configurata la quantità di dati acquisiti per ogni pacchetto.
+La lunghezza delle sessioni di acquisizione pacchetti può essere configurata con un vincolo temporale o di dimensioni. Può essere configurata anche la quantità di dati acquisiti per ogni pacchetto.
 I filtri possono essere applicati a una determinata sessione di acquisizione pacchetti, consentendo di personalizzare il tipo di pacchetti acquisiti. I filtri possono limitare i pacchetti in indirizzi IP locali e remoti & intervalli di indirizzi, porte locali e remote & intervalli di porte e il protocollo a livello di sessione da acquisire. I filtri sono componibili e possono essere applicati più filtri per fornire la granularità di acquisizione.
 
 ## ESEMPI
@@ -397,6 +397,6 @@ Parole chiave: azure, azurerm, arm, risorsa, gestione, manager, rete, rete, netw
 
 [Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
 
 
