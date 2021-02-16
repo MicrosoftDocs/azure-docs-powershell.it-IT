@@ -5,45 +5,45 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzApplicationGatewayConnectionDraining.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzApplicationGatewayConnectionDraining.md
-ms.openlocfilehash: e50917224ef791dbc85c24ceb79cfc7ce05f7d29
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 1630b0177efbccbf4d1cba674f0cf11ab457307e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93853325"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100397918"
 ---
-# <span data-ttu-id="48093-101">Get-AzApplicationGatewayConnectionDraining</span><span class="sxs-lookup"><span data-stu-id="48093-101">Get-AzApplicationGatewayConnectionDraining</span></span>
+# <span data-ttu-id="9f3aa-101">Get-AzApplicationGatewayConnectionDraining</span><span class="sxs-lookup"><span data-stu-id="9f3aa-101">Get-AzApplicationGatewayConnectionDraining</span></span>
 
-## <span data-ttu-id="48093-102">Sinossi</span><span class="sxs-lookup"><span data-stu-id="48093-102">SYNOPSIS</span></span>
-<span data-ttu-id="48093-103">Ottiene la configurazione di svuotamento della connessione di un oggetto impostazioni HTTP back-end.</span><span class="sxs-lookup"><span data-stu-id="48093-103">Gets the connection draining configuration of a back-end HTTP settings object.</span></span>
+## <span data-ttu-id="9f3aa-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="9f3aa-102">SYNOPSIS</span></span>
+<span data-ttu-id="9f3aa-103">Recupera la configurazione di escolo della connessione di un oggetto impostazioni HTTP back-end.</span><span class="sxs-lookup"><span data-stu-id="9f3aa-103">Gets the connection draining configuration of a back-end HTTP settings object.</span></span>
 
-## <span data-ttu-id="48093-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="48093-104">SYNTAX</span></span>
+## <span data-ttu-id="9f3aa-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="9f3aa-104">SYNTAX</span></span>
 
 ```
 Get-AzApplicationGatewayConnectionDraining -BackendHttpSettings <PSApplicationGatewayBackendHttpSettings>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="48093-105">Descrizione</span><span class="sxs-lookup"><span data-stu-id="48093-105">DESCRIPTION</span></span>
-<span data-ttu-id="48093-106">Il cmdlet **Get-AzApplicationGatewayConnectionDraining** ottiene la configurazione di svuotamento della connessione di un oggetto impostazioni http back-end.</span><span class="sxs-lookup"><span data-stu-id="48093-106">The **Get-AzApplicationGatewayConnectionDraining** cmdlet gets the connection draining configuration of a back-end HTTP settings object.</span></span>
+## <span data-ttu-id="9f3aa-105">DESCRIZIONE</span><span class="sxs-lookup"><span data-stu-id="9f3aa-105">DESCRIPTION</span></span>
+<span data-ttu-id="9f3aa-106">Il cmdlet **Get-AzApplicationGatewayConnectionDraining ottiene** la configurazione di estraizione della connessione di un oggetto impostazioni HTTP back-end.</span><span class="sxs-lookup"><span data-stu-id="9f3aa-106">The **Get-AzApplicationGatewayConnectionDraining** cmdlet gets the connection draining configuration of a back-end HTTP settings object.</span></span>
 
-## <span data-ttu-id="48093-107">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="48093-107">EXAMPLES</span></span>
+## <span data-ttu-id="9f3aa-107">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="9f3aa-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="48093-108">Esempio 1</span><span class="sxs-lookup"><span data-stu-id="48093-108">Example 1</span></span>
+### <span data-ttu-id="9f3aa-108">Esempio 1</span><span class="sxs-lookup"><span data-stu-id="9f3aa-108">Example 1</span></span>
 ```
 PS C:\> $AppGw = Get-AzApplicationGateway -Name "ApplicationGateway01" -ResourceGroupName "ResourceGroup01"
 PS C:\> $Settings  = Get-AzApplicationGatewayBackendHttpSettings -Name "Settings01" -ApplicationGateway $AppGw
 PS C:\> $ConnectionDraining = Get-AzApplicationGatewayConnectionDraining -BackendHttpSettings $Settings
 ```
 
-<span data-ttu-id="48093-109">Il primo comando ottiene il gateway dell'applicazione denominato ApplicationGateway01 nel gruppo di risorse denominato ResourceGroup01 e lo archivia nella variabile $AppGw.</span><span class="sxs-lookup"><span data-stu-id="48093-109">The first command gets the application gateway named ApplicationGateway01 in the resource group named ResourceGroup01 and stores it in the $AppGw variable.</span></span>
-<span data-ttu-id="48093-110">Il secondo comando recupera le impostazioni HTTP di back-end denominate Settings01 per $AppGw e archivia le impostazioni nella variabile $Settings.</span><span class="sxs-lookup"><span data-stu-id="48093-110">The second command gets the back-end HTTP settings named Settings01 for $AppGw and stores the settings in the $Settings variable.</span></span>
-<span data-ttu-id="48093-111">L'ultimo comando consente di ottenere la configurazione di svuotamento della connessione dalle impostazioni HTTP di back-end $Settings e di archiviarla nella variabile $ConnectionDraining.</span><span class="sxs-lookup"><span data-stu-id="48093-111">The last command gets the connection draining configuration from the back-end HTTP settings $Settings and stores it in the $ConnectionDraining variable.</span></span>
+<span data-ttu-id="9f3aa-109">Il primo comando recupera il gateway applicazione denominato ApplicationGateway01 nel gruppo di risorse denominato ResourceGroup01 e lo archivia nella variabile $AppGw risorsa.</span><span class="sxs-lookup"><span data-stu-id="9f3aa-109">The first command gets the application gateway named ApplicationGateway01 in the resource group named ResourceGroup01 and stores it in the $AppGw variable.</span></span>
+<span data-ttu-id="9f3aa-110">Il secondo comando recupera le impostazioni HTTP di back-end denominate Settings01 per $AppGw e le archivia nella variabile $Settings back-end.</span><span class="sxs-lookup"><span data-stu-id="9f3aa-110">The second command gets the back-end HTTP settings named Settings01 for $AppGw and stores the settings in the $Settings variable.</span></span>
+<span data-ttu-id="9f3aa-111">L'ultimo comando recupera la configurazione di escolo della connessione dal $Settings HTTP back-end e la archivia nella variabile $ConnectionDraining locale.</span><span class="sxs-lookup"><span data-stu-id="9f3aa-111">The last command gets the connection draining configuration from the back-end HTTP settings $Settings and stores it in the $ConnectionDraining variable.</span></span>
 
-## <span data-ttu-id="48093-112">PARAMETRI</span><span class="sxs-lookup"><span data-stu-id="48093-112">PARAMETERS</span></span>
+## <span data-ttu-id="9f3aa-112">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="9f3aa-112">PARAMETERS</span></span>
 
-### <span data-ttu-id="48093-113">-BackendHttpSettings</span><span class="sxs-lookup"><span data-stu-id="48093-113">-BackendHttpSettings</span></span>
-<span data-ttu-id="48093-114">Impostazioni http di backend</span><span class="sxs-lookup"><span data-stu-id="48093-114">The backend http settings</span></span>
+### <span data-ttu-id="9f3aa-113">-BackendHttpSettings</span><span class="sxs-lookup"><span data-stu-id="9f3aa-113">-BackendHttpSettings</span></span>
+<span data-ttu-id="9f3aa-114">Impostazioni http back-end</span><span class="sxs-lookup"><span data-stu-id="9f3aa-114">The backend http settings</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings
@@ -57,8 +57,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="48093-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="48093-115">-DefaultProfile</span></span>
-<span data-ttu-id="48093-116">Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.</span><span class="sxs-lookup"><span data-stu-id="48093-116">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="9f3aa-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="9f3aa-115">-DefaultProfile</span></span>
+<span data-ttu-id="9f3aa-116">Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.</span><span class="sxs-lookup"><span data-stu-id="9f3aa-116">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -72,27 +72,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="48093-117">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="48093-117">CommonParameters</span></span>
-<span data-ttu-id="48093-118">Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="48093-118">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="48093-119">Per altre informazioni, Vedi [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="48093-119">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="9f3aa-117">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="9f3aa-117">CommonParameters</span></span>
+<span data-ttu-id="9f3aa-118">Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="9f3aa-118">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="9f3aa-119">Per altre informazioni, [vedere](https://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.</span><span class="sxs-lookup"><span data-stu-id="9f3aa-119">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="48093-120">INGRESSI</span><span class="sxs-lookup"><span data-stu-id="48093-120">INPUTS</span></span>
+## <span data-ttu-id="9f3aa-120">INPUT</span><span class="sxs-lookup"><span data-stu-id="9f3aa-120">INPUTS</span></span>
 
-### <span data-ttu-id="48093-121">Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayBackendHttpSettings</span><span class="sxs-lookup"><span data-stu-id="48093-121">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings</span></span>
+### <span data-ttu-id="9f3aa-121">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings</span><span class="sxs-lookup"><span data-stu-id="9f3aa-121">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings</span></span>
 
-## <span data-ttu-id="48093-122">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="48093-122">OUTPUTS</span></span>
+## <span data-ttu-id="9f3aa-122">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="9f3aa-122">OUTPUTS</span></span>
 
-### <span data-ttu-id="48093-123">Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayConnectionDraining</span><span class="sxs-lookup"><span data-stu-id="48093-123">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayConnectionDraining</span></span>
+### <span data-ttu-id="9f3aa-123">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayConnectionDraining</span><span class="sxs-lookup"><span data-stu-id="9f3aa-123">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayConnectionDraining</span></span>
 
-## <span data-ttu-id="48093-124">Note</span><span class="sxs-lookup"><span data-stu-id="48093-124">NOTES</span></span>
+## <span data-ttu-id="9f3aa-124">NOTE</span><span class="sxs-lookup"><span data-stu-id="9f3aa-124">NOTES</span></span>
 
-## <span data-ttu-id="48093-125">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="48093-125">RELATED LINKS</span></span>
+## <span data-ttu-id="9f3aa-125">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="9f3aa-125">RELATED LINKS</span></span>
 
-[<span data-ttu-id="48093-126">Get-AzApplicationGateway</span><span class="sxs-lookup"><span data-stu-id="48093-126">Get-AzApplicationGateway</span></span>](./Get-AzApplicationGateway.md)
+[<span data-ttu-id="9f3aa-126">Get-AzApplicationGateway</span><span class="sxs-lookup"><span data-stu-id="9f3aa-126">Get-AzApplicationGateway</span></span>](./Get-AzApplicationGateway.md)
 
-[<span data-ttu-id="48093-127">Get-AzApplicationGatewayBackendHttpSettings</span><span class="sxs-lookup"><span data-stu-id="48093-127">Get-AzApplicationGatewayBackendHttpSettings</span></span>](./Get-AzApplicationGatewayBackendHttpSettings.md)
 
-[<span data-ttu-id="48093-128">New-AzApplicationGatewayConnectionDraining</span><span class="sxs-lookup"><span data-stu-id="48093-128">New-AzApplicationGatewayConnectionDraining</span></span>](./New-AzApplicationGatewayConnectionDraining.md)
+[<span data-ttu-id="9f3aa-127">New-AzApplicationGatewayConnectionDraining</span><span class="sxs-lookup"><span data-stu-id="9f3aa-127">New-AzApplicationGatewayConnectionDraining</span></span>](./New-AzApplicationGatewayConnectionDraining.md)
 
-[<span data-ttu-id="48093-129">Remove-AzApplicationGatewayConnectionDraining</span><span class="sxs-lookup"><span data-stu-id="48093-129">Remove-AzApplicationGatewayConnectionDraining</span></span>](./Remove-AzApplicationGatewayConnectionDraining.md)
+[<span data-ttu-id="9f3aa-128">Remove-AzApplicationGatewayConnectionDraining</span><span class="sxs-lookup"><span data-stu-id="9f3aa-128">Remove-AzApplicationGatewayConnectionDraining</span></span>](./Remove-AzApplicationGatewayConnectionDraining.md)
 
-[<span data-ttu-id="48093-130">Set-AzApplicationGatewayConnectionDraining</span><span class="sxs-lookup"><span data-stu-id="48093-130">Set-AzApplicationGatewayConnectionDraining</span></span>](./Set-AzApplicationGatewayConnectionDraining.md)
+[<span data-ttu-id="9f3aa-129">Set-AzApplicationGatewayConnectionDraining</span><span class="sxs-lookup"><span data-stu-id="9f3aa-129">Set-AzApplicationGatewayConnectionDraining</span></span>](./Set-AzApplicationGatewayConnectionDraining.md)

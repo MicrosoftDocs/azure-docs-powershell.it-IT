@@ -6,55 +6,55 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleEmail.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleEmail.md
-ms.openlocfilehash: 30447992cd8159f56ae08d6cb2baf659c9ed7bb4
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: e7ba5bc42e08ce73fcfac5fcbb7ea614a43f2b3e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93853458"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100397884"
 ---
-# <span data-ttu-id="7dcc6-101">New-AzAlertRuleEmail</span><span class="sxs-lookup"><span data-stu-id="7dcc6-101">New-AzAlertRuleEmail</span></span>
+# <span data-ttu-id="3d806-101">New-AzAlertRuleEmail</span><span class="sxs-lookup"><span data-stu-id="3d806-101">New-AzAlertRuleEmail</span></span>
 
-## <span data-ttu-id="7dcc6-102">Sinossi</span><span class="sxs-lookup"><span data-stu-id="7dcc6-102">SYNOPSIS</span></span>
-<span data-ttu-id="7dcc6-103">Crea un'azione di posta elettronica per una regola di avviso.</span><span class="sxs-lookup"><span data-stu-id="7dcc6-103">Creates an email action for an alert rule.</span></span>
+## <span data-ttu-id="3d806-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="3d806-102">SYNOPSIS</span></span>
+<span data-ttu-id="3d806-103">Crea un'azione di posta elettronica per una regola di avviso.</span><span class="sxs-lookup"><span data-stu-id="3d806-103">Creates an email action for an alert rule.</span></span>
 
-## <span data-ttu-id="7dcc6-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="7dcc6-104">SYNTAX</span></span>
+## <span data-ttu-id="3d806-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="3d806-104">SYNTAX</span></span>
 
 ```
 New-AzAlertRuleEmail [[-CustomEmail] <String[]>] [-SendToServiceOwner]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="7dcc6-105">Descrizione</span><span class="sxs-lookup"><span data-stu-id="7dcc6-105">DESCRIPTION</span></span>
-<span data-ttu-id="7dcc6-106">Il cmdlet **New-AzAlertRuleEmail** crea un'azione di posta elettronica per una regola di avviso.</span><span class="sxs-lookup"><span data-stu-id="7dcc6-106">The **New-AzAlertRuleEmail** cmdlet creates an e-mail action for an alert rule.</span></span>
+## <span data-ttu-id="3d806-105">DESCRIZIONE</span><span class="sxs-lookup"><span data-stu-id="3d806-105">DESCRIPTION</span></span>
+<span data-ttu-id="3d806-106">Il cmdlet **New-AzAlertRuleEmail** crea un'azione di posta elettronica per una regola di avviso.</span><span class="sxs-lookup"><span data-stu-id="3d806-106">The **New-AzAlertRuleEmail** cmdlet creates an e-mail action for an alert rule.</span></span>
 
-## <span data-ttu-id="7dcc6-107">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="7dcc6-107">EXAMPLES</span></span>
+## <span data-ttu-id="3d806-107">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="3d806-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="7dcc6-108">Esempio 1: creare un'azione di posta elettronica regola di avviso per i proprietari dei servizi</span><span class="sxs-lookup"><span data-stu-id="7dcc6-108">Example 1: Create an alert rule email action for service owners</span></span>
+### <span data-ttu-id="3d806-108">Esempio 1: Creare un'azione di posta elettronica con una regola di avviso per i proprietari dei servizi</span><span class="sxs-lookup"><span data-stu-id="3d806-108">Example 1: Create an alert rule email action for service owners</span></span>
 ```
 PS C:\>New-AzAlertRuleEmail -SendToServiceOwners
 ```
 
-<span data-ttu-id="7dcc6-109">Questo comando crea un'azione di posta elettronica regola di avviso da inviare per i proprietari del servizio quando viene attivata una regola di avviso.</span><span class="sxs-lookup"><span data-stu-id="7dcc6-109">This command creates an alert rule email action to send for its service owners when an alert rule is fired.</span></span>
+<span data-ttu-id="3d806-109">Questo comando crea un'azione di posta elettronica relativa a una regola di avviso da inviare ai proprietari dei servizi quando viene creata una regola di avviso.</span><span class="sxs-lookup"><span data-stu-id="3d806-109">This command creates an alert rule email action to send for its service owners when an alert rule is fired.</span></span>
 
-### <span data-ttu-id="7dcc6-110">Esempio 2: creare un'azione di posta elettronica regola di avviso per i proprietari non del servizio</span><span class="sxs-lookup"><span data-stu-id="7dcc6-110">Example 2: Create an alert rule email action for non-service owners</span></span>
+### <span data-ttu-id="3d806-110">Esempio 2: Creare un'azione di posta elettronica con una regola di avviso per i proprietari di servizi non</span><span class="sxs-lookup"><span data-stu-id="3d806-110">Example 2: Create an alert rule email action for non-service owners</span></span>
 ```
 PS C:\>New-AzAlertRuleEmail -CustomEmail pattif@contoso.com,davidchew@contoso.net
 ```
 
-<span data-ttu-id="7dcc6-111">Questo comando crea un'azione di posta elettronica regola di avviso per gli indirizzi di posta elettronica specificati, ma non per i proprietari del servizio.</span><span class="sxs-lookup"><span data-stu-id="7dcc6-111">This command creates an alert rule email action for the specified email addresses, but not for the service owners.</span></span>
+<span data-ttu-id="3d806-111">Questo comando crea un'azione di posta elettronica con una regola di avviso per gli indirizzi di posta elettronica specificati, ma non per i proprietari dei servizi.</span><span class="sxs-lookup"><span data-stu-id="3d806-111">This command creates an alert rule email action for the specified email addresses, but not for the service owners.</span></span>
 
-### <span data-ttu-id="7dcc6-112">Esempio 3: creare un'azione di posta elettronica regola di avviso per proprietari di servizi e proprietari non di servizi</span><span class="sxs-lookup"><span data-stu-id="7dcc6-112">Example 3: Create an alert rule email action for service owners and non-service owners</span></span>
+### <span data-ttu-id="3d806-112">Esempio 3: Creare un'azione di posta elettronica con una regola di avviso per proprietari di servizi e non proprietari di servizi</span><span class="sxs-lookup"><span data-stu-id="3d806-112">Example 3: Create an alert rule email action for service owners and non-service owners</span></span>
 ```
 PS C:\>New-AzAlertRuleEmail -CustomEmail pattif@contoso.net -SendToServiceOwners
 ```
 
-<span data-ttu-id="7dcc6-113">Questo comando crea un'azione di posta elettronica regola di avviso per l'indirizzo specificato e per i proprietari del servizio.</span><span class="sxs-lookup"><span data-stu-id="7dcc6-113">This command creates an alert rule email action for the specified address and for its service owners.</span></span>
+<span data-ttu-id="3d806-113">Questo comando crea un'azione di posta elettronica con una regola di avviso per l'indirizzo specificato e per i proprietari dei servizi.</span><span class="sxs-lookup"><span data-stu-id="3d806-113">This command creates an alert rule email action for the specified address and for its service owners.</span></span>
 
-## <span data-ttu-id="7dcc6-114">PARAMETRI</span><span class="sxs-lookup"><span data-stu-id="7dcc6-114">PARAMETERS</span></span>
+## <span data-ttu-id="3d806-114">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="3d806-114">PARAMETERS</span></span>
 
-### <span data-ttu-id="7dcc6-115">-CustomEmail</span><span class="sxs-lookup"><span data-stu-id="7dcc6-115">-CustomEmail</span></span>
-<span data-ttu-id="7dcc6-116">Specifica un elenco di indirizzi di posta elettronica delimitati da virgole.</span><span class="sxs-lookup"><span data-stu-id="7dcc6-116">Specifies a list of comma-separated e-mail addresses.</span></span>
+### <span data-ttu-id="3d806-115">-CustomEmail</span><span class="sxs-lookup"><span data-stu-id="3d806-115">-CustomEmail</span></span>
+<span data-ttu-id="3d806-116">Specifica un elenco di indirizzi di posta elettronica separati da virgola.</span><span class="sxs-lookup"><span data-stu-id="3d806-116">Specifies a list of comma-separated e-mail addresses.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -68,8 +68,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7dcc6-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="7dcc6-117">-DefaultProfile</span></span>
-<span data-ttu-id="7dcc6-118">Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure</span><span class="sxs-lookup"><span data-stu-id="7dcc6-118">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="3d806-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="3d806-117">-DefaultProfile</span></span>
+<span data-ttu-id="3d806-118">Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure</span><span class="sxs-lookup"><span data-stu-id="3d806-118">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -83,8 +83,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7dcc6-119">-SendToServiceOwner</span><span class="sxs-lookup"><span data-stu-id="7dcc6-119">-SendToServiceOwner</span></span>
-<span data-ttu-id="7dcc6-120">Indica che questa operazione Invia un messaggio di posta elettronica ai proprietari del servizio quando viene attivata la regola.</span><span class="sxs-lookup"><span data-stu-id="7dcc6-120">Indicates that this operation sends an e-mail to the service owners when the rule fires.</span></span>
+### <span data-ttu-id="3d806-119">-SendToServiceOwner</span><span class="sxs-lookup"><span data-stu-id="3d806-119">-SendToServiceOwner</span></span>
+<span data-ttu-id="3d806-120">Indica che questa operazione invia un messaggio di posta elettronica ai proprietari del servizio quando la regola viene applicata.</span><span class="sxs-lookup"><span data-stu-id="3d806-120">Indicates that this operation sends an e-mail to the service owners when the rule fires.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -98,29 +98,28 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7dcc6-121">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="7dcc6-121">CommonParameters</span></span>
-<span data-ttu-id="7dcc6-122">Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="7dcc6-122">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="7dcc6-123">Per altre informazioni, Vedi [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="7dcc6-123">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="3d806-121">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="3d806-121">CommonParameters</span></span>
+<span data-ttu-id="3d806-122">Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="3d806-122">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="3d806-123">Per altre informazioni, [vedere](https://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.</span><span class="sxs-lookup"><span data-stu-id="3d806-123">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="7dcc6-124">INGRESSI</span><span class="sxs-lookup"><span data-stu-id="7dcc6-124">INPUTS</span></span>
+## <span data-ttu-id="3d806-124">INPUT</span><span class="sxs-lookup"><span data-stu-id="3d806-124">INPUTS</span></span>
 
-### <span data-ttu-id="7dcc6-125">System. String []</span><span class="sxs-lookup"><span data-stu-id="7dcc6-125">System.String[]</span></span>
+### <span data-ttu-id="3d806-125">System.String[]</span><span class="sxs-lookup"><span data-stu-id="3d806-125">System.String[]</span></span>
 
-### <span data-ttu-id="7dcc6-126">System. Management. Automation. SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="7dcc6-126">System.Management.Automation.SwitchParameter</span></span>
+### <span data-ttu-id="3d806-126">System.Management.Automation.SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="3d806-126">System.Management.Automation.SwitchParameter</span></span>
 
-## <span data-ttu-id="7dcc6-127">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="7dcc6-127">OUTPUTS</span></span>
+## <span data-ttu-id="3d806-127">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="3d806-127">OUTPUTS</span></span>
 
-### <span data-ttu-id="7dcc6-128">Microsoft. Azure. Management. monitor. Management. Models. RuleEmailAction</span><span class="sxs-lookup"><span data-stu-id="7dcc6-128">Microsoft.Azure.Management.Monitor.Management.Models.RuleEmailAction</span></span>
+### <span data-ttu-id="3d806-128">Microsoft.Azure.Management.Monitor.Management.Models.RuleEmailAction</span><span class="sxs-lookup"><span data-stu-id="3d806-128">Microsoft.Azure.Management.Monitor.Management.Models.RuleEmailAction</span></span>
 
-## <span data-ttu-id="7dcc6-129">Note</span><span class="sxs-lookup"><span data-stu-id="7dcc6-129">NOTES</span></span>
+## <span data-ttu-id="3d806-129">NOTE</span><span class="sxs-lookup"><span data-stu-id="3d806-129">NOTES</span></span>
 
-## <span data-ttu-id="7dcc6-130">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="7dcc6-130">RELATED LINKS</span></span>
+## <span data-ttu-id="3d806-130">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="3d806-130">RELATED LINKS</span></span>
 
-[<span data-ttu-id="7dcc6-131">Add-AzLogAlertRule</span><span class="sxs-lookup"><span data-stu-id="7dcc6-131">Add-AzLogAlertRule</span></span>](./Add-AzLogAlertRule.md)
 
-[<span data-ttu-id="7dcc6-132">Add-AzMetricAlertRule</span><span class="sxs-lookup"><span data-stu-id="7dcc6-132">Add-AzMetricAlertRule</span></span>](./Add-AzMetricAlertRule.md)
+[<span data-ttu-id="3d806-131">Add-AzMetricAlertRule</span><span class="sxs-lookup"><span data-stu-id="3d806-131">Add-AzMetricAlertRule</span></span>](./Add-AzMetricAlertRule.md)
 
-[<span data-ttu-id="7dcc6-133">Add-AzWebtestAlertRule</span><span class="sxs-lookup"><span data-stu-id="7dcc6-133">Add-AzWebtestAlertRule</span></span>](./Add-AzWebtestAlertRule.md)
+[<span data-ttu-id="3d806-132">Add-AzWebtestAlertRule</span><span class="sxs-lookup"><span data-stu-id="3d806-132">Add-AzWebtestAlertRule</span></span>](./Add-AzWebtestAlertRule.md)
 
-[<span data-ttu-id="7dcc6-134">New-AzAlertRuleWebhook</span><span class="sxs-lookup"><span data-stu-id="7dcc6-134">New-AzAlertRuleWebhook</span></span>](./New-AzAlertRuleWebhook.md)
+[<span data-ttu-id="3d806-133">New-AzAlertRuleWebhook</span><span class="sxs-lookup"><span data-stu-id="3d806-133">New-AzAlertRuleWebhook</span></span>](./New-AzAlertRuleWebhook.md)
 
 
