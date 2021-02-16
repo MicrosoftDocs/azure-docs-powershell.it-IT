@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Remove-AzADServicePrincipal.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Remove-AzADServicePrincipal.md
-ms.openlocfilehash: 966b9baf35f1719f29fda6355a9675739693314f
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: bd58a044db49cdd0cedf2872e97e64662a49372c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93862437"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398224"
 ---
 # Remove-AzADServicePrincipal
 
-## Sinossi
-Elimina l'entità servizio di Azure Active Directory.
+## SYNOPSIS
+Elimina l'entità servizio Azure Active Directory.
 
 ## SINTASSI
 
@@ -56,28 +56,28 @@ Remove-AzADServicePrincipal -ApplicationObject <PSADApplication> [-PassThru] [-F
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Descrizione
-Elimina l'entità servizio di Azure Active Directory.
+## DESCRIZIONE
+Elimina l'entità servizio Azure Active Directory.
 
 ## ESEMPI
 
-### Esempio 1-rimuovere un'entità servizio dall'ID oggetto
+### Esempio 1 - Rimuovere un'entità servizio in base all'ID oggetto
 
 ```
 PS C:\> Remove-AzADServicePrincipal -ObjectId 61b5d8ea-fdc6-40a2-8d5b-ad447c678d45
 ```
 
-Rimuove l'entità servizio con l'ID oggetto "61b5d8ea-FdC6-40A2-8D5B-ad447c678d45".
+Rimuove l'entità servizio con ID oggetto '61b5d8ea-fdc6-40a2-8d5b-ad447c678d45'.
 
-### Esempio 2-rimuovere un'entità servizio dall'ID applicazione
+### Esempio 2 - Rimuovere un'entità servizio in base all'ID applicazione
 
 ```
 PS C:\> Remove-AzADServicePrincipal -ApplicationId 9263469e-d328-4321-8646-3e3e75d20e76
 ```
 
-Rimuove l'entità servizio con l'ID applicazione "9263469e-D328-4321-8646-3e3e75d20e76".
+Rimuove l'entità servizio con ID applicazione '9263469e-d328-4321-8646-3e3e75d20e76'.
 
-### Esempio 3-rimuovere un'entità servizio per SPN
+### Esempio 3 - Rimuovere un'entità servizio per SPN
 
 ```
 PS C:\> Remove-AzADServicePrincipal -ServicePrincipalName MyServicePrincipal
@@ -85,26 +85,26 @@ PS C:\> Remove-AzADServicePrincipal -ServicePrincipalName MyServicePrincipal
 
 Rimuovere l'entità servizio con il nome dell'entità servizio "MyServicePrincipal"
 
-### Esempio 4-rimuovere un'entità servizio tramite piping
+### Esempio 4 - Rimuovere un'entità servizio tramite piping
 
 ```
 PS C:\> Get-AzADServicePrincipal -ObjectId 61b5d8ea-fdc6-40a2-8d5b-ad447c678d45 | Remove-AzADServicePrincipal
 ```
 
-Ottiene l'entità servizio con l'ID oggetto "61b5d8ea-FdC6-40A2-8D5B-ad447c678d45" e le pipe al cmdlet Remove-AzADServicePrincipal per rimuovere tale entità di servizio.
+Ottiene l'entità servizio con ID oggetto '61b5d8ea-fdc6-40a2-8d5b-ad447c678d45' e pipe che al cmdlet di Remove-AzADServicePrincipal per rimuovere tale entità servizio.
 
-### Esempio 5-rimuovere un'entità servizio eseguendo il piping di un'applicazione
+### Esempio 5 - Rimuovere un'entità servizio tramite piping di un'applicazione
 
 ```
 PS C:\> Get-AzApplication -ApplicationId 9263469e-d328-4321-8646-3e3e75d20e76 | Remove-AzADServicePrincipal
 ```
 
-Ottiene l'applicazione con l'ID applicazione ' 9263469e-D328-4321-8646-3e3e75d20e76' e Pipes che al cmdlet Remove-AzADServicePrincipal per rimuovere l'entità servizio associata a tale applicazione.
+Ottiene l'applicazione con ID applicazione '9263469e-d328-4321-8646-3e3e75d20e76' e pipe che al cmdlet di Remove-AzADServicePrincipal per rimuovere l'entità servizio associata all'applicazione.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -ApplicationId
-ID applicazione dell'entità servizio.
+ID applicazione entità servizio.
 
 ```yaml
 Type: System.Guid
@@ -119,7 +119,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationObject
-Oggetto Application di cui viene rimosso l'entità di servizio.
+Oggetto applicazione la cui entità servizio è in fase di rimozione.
 
 ```yaml
 Type: Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADApplication
@@ -164,7 +164,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Passare a Elimina entità servizio senza conferma.
+Passare all'eliminazione dell'entità servizio senza conferma.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -179,7 +179,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Oggetto Principal del servizio.
+Oggetto entità servizio.
 
 ```yaml
 Type: Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADServicePrincipal
@@ -209,7 +209,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Se specificato, restituisce l'entità di servizio eliminata.
+Se specificato, restituisce l'entità servizio eliminata.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -238,8 +238,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confermare
-Richiede la conferma prima di eseguire il cmdlet.
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -254,7 +254,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra cosa succede se il cmdlet viene eseguito.
+Mostra cosa accadrebbe se il cmdlet viene eseguito.
 Il cmdlet non viene eseguito.
 
 ```yaml
@@ -270,26 +270,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### System. Guid
+### System.Guid
 
-### System. String
+### System.String
 
-### Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADServicePrincipal
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADServicePrincipal
 Parametri: InputObject (ByValue)
 
-### Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADApplication
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADApplication
 Parametri: ApplicationObject (ByValue)
 
 ## OUTPUT
 
-### Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADServicePrincipal
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADServicePrincipal
 
-## Note
-Parole chiave: Azure, AZ, ARM, Resource, Management, Manager, Resource, Group, template, Deployment
+## NOTE
+Parole chiave: azure, Az, arm, risorsa, gestione, manager, risorsa, gruppo, modello, distribuzione
 
 ## COLLEGAMENTI CORRELATI
 
@@ -297,7 +297,6 @@ Parole chiave: Azure, AZ, ARM, Resource, Management, Manager, Resource, Group, t
 
 [Get-AzADServicePrincipal](./Get-AzADServicePrincipal.md)
 
-[Set-AzADServicePrincipal](./Set-AzADServicePrincipal.md)
 
 [Remove-AzADApplication](./Remove-AzADApplication.md)
 

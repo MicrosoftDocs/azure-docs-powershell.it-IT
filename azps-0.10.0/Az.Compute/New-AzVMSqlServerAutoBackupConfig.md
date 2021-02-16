@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/New-AzVMSqlServerAutoBackupConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/New-AzVMSqlServerAutoBackupConfig.md
-ms.openlocfilehash: 1ff53a29fa26ebe7ac78cac5140a9105b43bb27d
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: ecff02643dd6d0e017d56af01792a06dc7b8d998
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93863618"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398275"
 ---
 # New-AzVMSqlServerAutoBackupConfig
 
-## Sinossi
-Crea un oggetto Configuration per il backup automatico di SQL Server.
+## SYNOPSIS
+Crea un oggetto configurazione per il SQL Server di backup automatico.
 
 ## SINTASSI
 
@@ -39,12 +39,12 @@ New-AzVMSqlServerAutoBackupConfig [-ResourceGroupName] <String> [-Enable]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **New-AzVMSqlServerAutoBackupConfig** crea un oggetto Configuration per il backup automatico di SQL Server.
+## DESCRIZIONE
+Il cmdlet **New-AzVMSqlServerAutoBackupConfig crea** un oggetto di configurazione per SQL Server di backup automatico.
 
 ## ESEMPI
 
-### Esempio 1: creare una configurazione di backup automatica usando l'URI di archiviazione e la chiave dell'account
+### Esempio 1: Creare una configurazione di backup automatico con URI di archiviazione e chiave dell'account
 ```
 PS C:\> $AutoBackupConfig = New-AzVMSqlServerAutoBackupConfig -Enable -RetentionPeriod 10 -StorageUri "\\contoso\StorageGeneral" -StorageKey "< Storage Key for ContosoGeneral >"
 Enable                : True
@@ -52,12 +52,12 @@ EnableEncryption      : False
 RetentionPeriodInDays : 10
 ```
 
-Questo comando crea un oggetto di configurazione di backup automatico specificando l'URI di archiviazione e la chiave dell'account.
-Il backup automatico è abilitato e i backup automatici vengono conservati per 10 giorni.
-Il comando Archivia il risultato nella variabile $AutoBackupConfig.
-Puoi specificare questo elemento di configurazione per altri cmdlet, ad esempio il cmdlet Set-AzVMSqlServerExtension.
+Questo comando crea un oggetto configurazione di backup automatico specificando URI di archiviazione e chiave dell'account.
+Il backup automatico è abilitato e i backup automatici vengono mantenuti per 10 giorni.
+Il comando archivia il risultato nella $AutoBackupConfig variabile.
+È possibile specificare questo elemento di configurazione per altri cmdlet, ad esempio Set-AzVMSqlServerExtension cmdlet.
 
-### Esempio 2: creare una configurazione di backup automatica tramite il contesto di archiviazione
+### Esempio 2: Creare una configurazione di backup automatico usando il contesto di archiviazione
 ```
 PS C:\> $StorageContext = New-AzureStorageContext -StorageAccountName "ContosoGeneral" -StorageAccountKey "< Storage Key for ContosoGeneral >"
 PS C:\> $AutoBackupConfig = New-AzVMSqlServerAutoBackupConfig -StorageContext $StorageContext -Enable -RetentionPeriod 10
@@ -66,13 +66,13 @@ EnableEncryption      : False
 RetentionPeriodInDays : 10
 ```
 
-Il primo comando crea un contesto di archiviazione e lo archivia nella variabile $StorageContext.
+Il primo comando crea un contesto di archiviazione e quindi lo archivia nella $StorageContext variabile.
 Per altre informazioni, vedere New-AzureStorageContext.
 
-Il secondo comando crea un oggetto di configurazione di backup automatico specificando il contesto di archiviazione in $StorageContext.
-Il backup automatico è abilitato e i backup automatici vengono conservati per 10 giorni.
+Il secondo comando crea un oggetto configurazione di backup automatico specificando il contesto di archiviazione $StorageContext.
+Il backup automatico è abilitato e i backup automatici vengono mantenuti per 10 giorni.
 
-### Esempio 3: creare una configurazione di backup automatica tramite il contesto di archiviazione con crittografia e password
+### Esempio 3: Creare una configurazione di backup automatico usando il contesto di archiviazione con crittografia e password
 ```
 PS C:\> $StorageContext = New-AzVMSqlServerAutoBackupConfig -StorageContext $StorageContext -Enable -RetentionPeriod 10 -EnableEncryption -CertificatePassword $CertificatePassword
 Enable                : True
@@ -80,13 +80,13 @@ EnableEncryption      : True
 RetentionPeriodInDays : 10
 ```
 
-Questo comando crea e archivia un oggetto di configurazione di backup automatico.
+Questo comando crea e archivia un oggetto configurazione di backup automatico.
 Il comando specifica il contesto di archiviazione creato in un esempio precedente.
-Il comando consente la crittografia con password.
-La password è stata precedentemente archiviata come stringa sicura nella variabile $CertificatePassword.
-Per creare una stringa sicura, usa il cmdlet ConvertTo-SecureString.
+Il comando abilita la crittografia con password.
+La password in precedenza era archiviata come stringa sicura nella $CertificatePassword variabile.
+Per creare una stringa sicura, usare il cmdlet ConvertTo-SecureString sicurezza.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -BackupScheduleType
 Tipo di pianificazione del backup, manuale o automatizzato
@@ -94,7 +94,7 @@ Tipo di pianificazione del backup, manuale o automatizzato
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Manual, Automated
 
 Required: False
@@ -105,12 +105,12 @@ Accept wildcard characters: False
 ```
 
 ### -BackupSystemDbs
-Database di sistema di backup
+Backup di database di sistema
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -120,12 +120,12 @@ Accept wildcard characters: False
 ```
 
 ### -CertificatePassword
-Specifica una password per crittografare il certificato usato per eseguire backup crittografati di SQL Server.
+Specifica una password per crittografare il certificato usato per eseguire SQL Server backup crittografati.
 
 ```yaml
 Type: SecureString
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -135,7 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: IAzureContextContainer
@@ -150,14 +150,14 @@ Accept wildcard characters: False
 ```
 
 ### -Enable
-Indica che il backup automatizzato per la macchina virtuale di SQL Server è abilitato.
-Se specifichi questo parametro, il backup automatizzato imposta una pianificazione di backup per tutti i database correnti e nuovi.
-In questo articolo vengono aggiornate le impostazioni di backup gestite per seguire questa programmazione.
+Indica che è abilitato il backup SQL Server della macchina virtuale.
+Se si specifica questo parametro, il backup automatico imposta una pianificazione di backup per tutti i database correnti e nuovi.
+In questo modo, le impostazioni di Backup gestito vengono aggiornata in base a questa pianificazione.
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -167,12 +167,12 @@ Accept wildcard characters: False
 ```
 
 ### -EnableEncryption
-Indica che questo cmdlet Abilita la crittografia.
+Indica che questo cmdlet abilita la crittografia.
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -182,12 +182,12 @@ Accept wildcard characters: False
 ```
 
 ### -FullBackupFrequency
-Frequenza di backup completa di SQL Server, giornaliera o settimanale
+Frequenza di backup completo di Sql Server, giornaliera o settimanale
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Daily, Weekly
 
 Required: False
@@ -198,12 +198,12 @@ Accept wildcard characters: False
 ```
 
 ### -FullBackupStartHour
-Ora del giorno (0-23) quando il backup completo di SQL Server dovrebbe iniziare
+Ora del giorno (0-23) in cui dovrebbe iniziare il backup completo di Sql Server
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -213,12 +213,12 @@ Accept wildcard characters: False
 ```
 
 ### -FullBackupWindowInHours
-Finestra backup completo di SQL Server in ore
+Finestra Backup completo di Sql Server in ore
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -228,12 +228,12 @@ Accept wildcard characters: False
 ```
 
 ### -LogBackupFrequencyInMinutes
-Frequenza di backup del log di SQL Server, una volta ogni 1-60 minuti
+Frequenza di backup del log di Sql Server ogni 1-60 minuti
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -248,7 +248,7 @@ Specifica il nome del gruppo di risorse della macchina virtuale.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -258,12 +258,12 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionPeriodInDays
-Specifica il numero di giorni per cui mantenere un backup.
+Specifica il numero di giorni per cui conservare un backup.
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -274,13 +274,13 @@ Accept wildcard characters: False
 
 ### -StorageContext
 Specifica l'account di archiviazione che verrà usato per archiviare i backup.
-Per ottenere un oggetto **AzureStorageContext** , usa il cmdlet New-AzureStorageContext.
-L'impostazione predefinita è l'account di archiviazione associato alla macchina virtuale di SQL Server.
+Per ottenere un **oggetto AzureStorageContext,** usare il cmdlet New-AzureStorageContext.
+L'impostazione predefinita è l'account di archiviazione associato alla macchina SQL Server virtuale.
 
 ```yaml
 Type: IStorageContext
 Parameter Sets: StorageContextSqlServerAutoBackup
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -295,7 +295,7 @@ Specifica la chiave di archiviazione dell'account di archiviazione BLOB.
 ```yaml
 Type: SecureString
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -310,7 +310,7 @@ Specifica l'URI (Uniform Resource Identifier) dell'account di archiviazione BLOB
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -320,22 +320,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
 ### Nessuno
 Questo cmdlet non accetta alcun input.
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Compute. AutoBackupSettings
+### Microsoft.Azure.Commands.Compute.AutoBackupSettings
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[New-AzureVMSqlServerAutoPatchingConfig](./New-AzureVMSqlServerAutoPatchingConfig.md)
+[New-AzureVMSqlServerAutoPatchingConfig](./New-AzVMSqlServerAutoPatchingConfig.md)
 
 [Set-AzVMSqlServerExtension](./Set-AzVMSqlServerExtension.md)
 

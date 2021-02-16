@@ -6,22 +6,22 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzResource.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzResource.md
-ms.openlocfilehash: e1748bb3dbb5c2bb86f02ef9ec58d0d1eec55ba9
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 2926aa351e7e9f1f9251c5a6e6a2292b27ef93b0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94189905"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398190"
 ---
 # Get-AzResource
 
-## Sinossi
+## SYNOPSIS
 
-Ottiene le risorse.
+Ottiene risorse.
 
 ## SINTASSI
 
-### ByTagNameValueParameterSet (impostazione predefinita)
+### ByTagNameValueParameterSet (Impostazione predefinita)
 ```
 Get-AzResource [-Name <String>] [-ResourceType <String>] [-ODataQuery <String>] [-ResourceGroupName <String>]
  [-TagName <String>] [-TagValue <String>] [-ExpandProperties] [-ApiVersion <String>] [-Pre]
@@ -41,13 +41,13 @@ Get-AzResource [-Name <String>] [-ResourceType <String>] [-ODataQuery <String>] 
  [<CommonParameters>]
 ```
 
-## Descrizione
+## DESCRIZIONE
 
-Il cmdlet **Get-AzResource** ottiene le risorse Azure.
+Il cmdlet **Get-AzResource** ottiene risorse di Azure.
 
 ## ESEMPI
 
-### Esempio 1: ottenere tutte le risorse nell'abbonamento corrente
+### Esempio 1: Ottenere tutte le risorse nella sottoscrizione corrente
 
 ```
 PS C:\> Get-AzResource | ft
@@ -65,9 +65,9 @@ storage otherResourceGroup Microsoft.Storage/storageAccounts       eastus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines       eastus
 ```
 
-Questo comando consente di ottenere tutte le risorse dell'abbonamento corrente.
+Questo comando recupera tutte le risorse nella sottoscrizione corrente.
 
-### Esempio 2: ottenere tutte le risorse in un gruppo di risorse
+### Esempio 2: Recuperare tutte le risorse in un gruppo di risorse
 
 ```
 PS C:\> Get-AzResource -ResourceGroupName testRG | ft
@@ -82,9 +82,9 @@ ip     testRG            Microsoft.Network/publicIPAddresses     westus
 vnet   testRG            Microsoft.Network/virtualNetworks       westus
 ```
 
-Questo comando consente di ottenere tutte le risorse del gruppo di risorse "testRG".
+Questo comando recupera tutte le risorse nel gruppo di risorse "testRG".
 
-### Esempio 3: ottenere tutte le risorse il cui gruppo di risorse corrisponde al carattere jolly specificato
+### Esempio 3: Ottenere tutte le risorse il cui gruppo di risorse corrisponde al carattere jolly fornito
 
 ```
 PS C:\> Get-AzResource -ResourceGroupName other* | ft
@@ -96,9 +96,9 @@ storage otherResourceGroup Microsoft.Storage/storageAccounts eastus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines eastus
 ```
 
-Questo comando consente di ottenere tutte le risorse il cui gruppo di risorse appartiene agli esseri con "altro".
+Questo comando recupera tutte le risorse il cui gruppo di risorse appartiene a un altro.
 
-### Esempio 4: ottenere tutte le risorse con un nome specifico
+### Esempio 4: Ottenere tutte le risorse con un nome assegnato
 
 ```
 PS C:\> Get-AzResource -Name testVM | fl
@@ -116,9 +116,9 @@ Tags              :
                     Status  Approved
 ```
 
-Questo comando consente di ottenere tutte le risorse il cui nome di risorsa è "testVM".
+Questo comando recupera tutte le risorse il cui nome della risorsa è "testVM".
 
-### Esempio 5: ottenere tutte le risorse il cui nome corrisponde al carattere jolly specificato
+### Esempio 5: Ottenere tutte le risorse il cui nome corrisponde al carattere jolly fornito
 
 ```
 PS C:\> Get-AzResource -Name test* | ft
@@ -130,9 +130,9 @@ testKV  otherRG            Microsoft.KeyVault/vaults         eastus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines eastus
 ```
 
-Questo comando consente di ottenere tutte le risorse il cui nome di risorsa inizia con "test".
+Questo comando recupera tutte le risorse il cui nome di risorsa inizia con "test".
 
-### Esempio 6: ottenere tutte le risorse di un tipo di risorsa specifico
+### Esempio 6: Recuperare tutte le risorse di un determinato tipo di risorsa
 
 ```
 PS C:\> Get-AzResource -ResourceType Microsoft.Compute/virtualMachines | ft
@@ -143,9 +143,9 @@ testVM  testRG             Microsoft.Compute/virtualMachines westus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines eastus
 ```
 
-Questo comando consente di ottenere tutte le risorse degli abbonamenti correnti che sono macchine virtuali.
+Questo comando recupera tutte le risorse nelle sottoscrizioni correnti che sono macchine virtuali.
 
-### Esempio 7: ottenere una risorsa per ID risorsa
+### Esempio 7: Ottenere una risorsa in base all'ID risorsa
 
 ```
 PS C:\> Get-AzResource -ResourceId /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testRG/providers/Microsoft.Compute/virtualMachines/testVM
@@ -163,9 +163,9 @@ Tags              :
                     Status  Approved
 ```
 
-Questo comando consente di ottenere la risorsa con l'ID risorsa specificata, ovvero una macchina virtuale denominata "testVM" nel gruppo di risorse "testRG".
+Questo comando recupera la risorsa con l'ID risorsa fornito, ovvero una macchina virtuale denominata "testVM" nel gruppo di risorse "testRG".
 
-## PARAMETRI
+## PARAMETERS
 
 ### -ApiVersion
 
@@ -182,7 +182,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
+Le credenziali, l'account, il tenant e la sottoscrizione usati per le comunicazioni con Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -211,8 +211,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Nome
-Il nome della risorsa o delle risorse da recuperare. Questo parametro supporta i caratteri jolly all'inizio e/o alla fine della stringa.
+### -Name
+Nome delle risorse da recuperare. Questo parametro supporta i caratteri jolly all'inizio e/o alla fine della stringa.
 
 ```yaml
 Type: System.String
@@ -255,7 +255,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Gruppo risorse a cui appartiene la risorsa recuperata. Questo parametro supporta i caratteri jolly all'inizio e/o alla fine della stringa.
+Gruppo di risorse a cui appartengono le risorse recuperate. Questo parametro supporta i caratteri jolly all'inizio e/o alla fine della stringa.
 
 ```yaml
 Type: System.String
@@ -285,7 +285,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceType
-Tipo di risorsa per la risorsa o le risorse da recuperare. Ad esempio, Microsoft. Compute/virtualMachines
+Tipo di risorsa delle risorse da recuperare. Ad esempio, Microsoft.Compute/virtualMachines
 
 ```yaml
 Type: System.String
@@ -301,7 +301,7 @@ Accept wildcard characters: False
 
 ### -Tag
 
-Ottiene le risorse con il tag Azure specificato. Immettere una tabella hash con una chiave nome o un nome e chiavi di valore. I caratteri jolly non sono supportati. Un "tag" è una coppia nome-valore che puoi applicare alle risorse e ai gruppi di risorse. Usare i contrassegni per suddividere in categorie le risorse, ad esempio per reparto o centro costo, oppure per tenere traccia di note o commenti sulle risorse. Per aggiungere un contrassegno a una risorsa, usare il parametro tag dei cmdlet New-AzResource o Set-AzResource. Per creare un tag predefinito, usare il cmdlet New-AzTag. Per informazioni sulle tabelle hash in Windows PowerShell, eseguire ' Get-Help about_Hashtables '.
+Recupera le risorse con il tag di Azure specificato. Immettere una tabella hash con una chiave Nome o le chiavi Nome e Valore. I caratteri jolly non sono supportati. Un "tag" è una coppia nome-valore che è possibile applicare a risorse e gruppi di risorse. Usare i contrassegni per categorizzare le risorse, ad esempio per reparto o centro di costo, oppure per tenere traccia di note o commenti sulle risorse. Per aggiungere un tag a una risorsa, usare il parametro Tag dei cmdlet New-AzResource o Set-AzResource risorsa. Per creare un tag predefinito, usare il cmdlet New-AzTag tag. Per assistenza con le tabelle hash in Windows PowerShell, eseguire 'Get-Help about_Hashtables'.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -316,7 +316,7 @@ Accept wildcard characters: False
 ```
 
 ### -TagName
-La chiave nel contrassegno della risorsa o delle risorse da recuperare.
+Chiave nel tag delle risorse da recuperare.
 
 ```yaml
 Type: System.String
@@ -331,7 +331,7 @@ Accept wildcard characters: False
 ```
 
 ### -TagValue
-Il valore nel contrassegno della risorsa o delle risorse da recuperare.
+Valore nel tag delle risorse da recuperare.
 
 ```yaml
 Type: System.String
@@ -346,21 +346,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. ResourceManager. Cmdlets. SdkModels. PSResource
+### Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResource
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Trova-AzResource](./Find-AzResource.md)
 
 [Move-AzResource](./Move-AzResource.md)
 

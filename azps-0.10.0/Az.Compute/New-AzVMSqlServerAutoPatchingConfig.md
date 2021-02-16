@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/New-AzVMSqlServerAutoPatchingConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/New-AzVMSqlServerAutoPatchingConfig.md
-ms.openlocfilehash: 0ce851373ac31aaef4c5664db7085f345e9b947d
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: 3ba7ab00076a3a0634a0d4394270fe4a83ec8ede
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93863609"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398258"
 ---
 # New-AzVMSqlServerAutoPatchingConfig
 
-## Sinossi
-Crea un oggetto Configuration per l'aggiornamento automatico in una macchina virtuale.
+## SYNOPSIS
+Crea un oggetto configurazione per la distribuzione automatica di patch in una macchina virtuale.
 
 ## SINTASSI
 
@@ -26,12 +26,12 @@ New-AzVMSqlServerAutoPatchingConfig [-Enable] [-DayOfWeek <String>]
  [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **New-AzVMSqlServerAutoPatchingConfig** crea un oggetto Configuration per l'aggiornamento automatico in una macchina virtuale.
+## DESCRIZIONE
+Il cmdlet **New-AzVMSqlServerAutoPatchingConfig** crea un oggetto di configurazione per l'applicazione automatica delle patch in una macchina virtuale.
 
 ## ESEMPI
 
-### Esempio 1: creare un oggetto di configurazione per configurare l'aggiornamento automatico
+### Esempio 1: Creare un oggetto di configurazione per configurare la distribuzione automatica di patch
 ```
 PS C:\> $AutoPatchingConfig = New-AzVMSqlServerAutoPatchingConfig -Enable -DayOfWeek "Thursday" -MaintenanceWindowStartingHour 11 -MaintenanceWindowDuration 120 -PatchCategory "Important"
 Enable                        : True
@@ -41,18 +41,18 @@ MaintenanceWindowDuration     : 120
 PatchCategory                 : Important
 ```
 
-Questo comando crea l'oggetto Configuration per la creazione di patch.
+Questo comando crea un oggetto configurazione per la distribuzione delle patch.
 Il comando specifica il giorno della settimana e definisce la finestra di manutenzione.
-Questa configurazione consente di applicare le patch che usano questi valori.
-Il comando Archivia il risultato nella variabile $AutoBackupConfig.
-Puoi specificare questo elemento di configurazione per altri cmdlet, ad esempio il cmdlet Set-AzVMSqlServerExtension.
+Questa configurazione abilita la distribuzione di patch che usa questi valori.
+Il comando archivia il risultato nella $AutoBackupConfig variabile.
+È possibile specificare questo elemento di configurazione per altri cmdlet, ad esempio Set-AzVMSqlServerExtension cmdlet.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DayOfWeek
-Specifica il giorno della settimana in cui devono essere installati gli aggiornamenti.
+Specifica il giorno della settimana in cui installare gli aggiornamenti.
 
-I valori accettabili per questo parametro sono i seguenti:
+I valori accettabili per questo parametro sono:
 
 - Domenica
 - Lunedì
@@ -61,12 +61,12 @@ I valori accettabili per questo parametro sono i seguenti:
 - Giovedì
 - Venerdì
 - Sabato
-- Quotidiani
+- Ogni giorno
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Everyday
 
 Required: False
@@ -77,14 +77,14 @@ Accept wildcard characters: False
 ```
 
 ### -Enable
-Indica che è abilitata l'attivazione automatica delle patch per la macchina virtuale.
-Se si Abilita la patching automatizzato, il cmdlet inserisce Windows Update in modalità interattiva.
-Se si disattiva l'aggiornamento automatico, le impostazioni di Windows Update non cambiano.
+Indica che è abilitata la distribuzione automatica di patch per la macchina virtuale.
+Se si abilita la distribuzione automatica di patch, il cmdlet attiva la modalità interattiva di Windows Update.
+Se si disabilita la distribuzione automatica di patch, le impostazioni di Windows Update non vengono modificate.
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -94,14 +94,14 @@ Accept wildcard characters: False
 ```
 
 ### -MaintenanceWindowDuration
-Specifica la durata, in minuti, della finestra di manutenzione.
-La correzione automatica consente di evitare l'esecuzione di un'azione che può influire sulla disponibilità di una macchina virtuale all'esterno della finestra.
+Specifica la durata in minuti della finestra di manutenzione.
+La distribuzione automatizzata delle patch evita di eseguire un'azione che può influire sulla disponibilità di una macchina virtuale all'esterno di tale finestra.
 Specificare un multiplo di 30 minuti.
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -111,13 +111,13 @@ Accept wildcard characters: False
 ```
 
 ### -MaintenanceWindowStartingHour
-Specifica l'ora del giorno in cui viene avviata la finestra di manutenzione.
-Questa volta definisce gli aggiornamenti che iniziano a essere installati.
+Specifica l'ora del giorno in cui inizia la finestra di manutenzione.
+Questa volta definisce l'inizio dell'installazione degli aggiornamenti.
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -127,12 +127,12 @@ Accept wildcard characters: False
 ```
 
 ### -PatchCategory
-Specifica se gli aggiornamenti importanti devono essere inclusi.
+Specifica se includere gli aggiornamenti importanti.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Important
 
 Required: False
@@ -143,9 +143,9 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
 ### Nessuno
 Questo cmdlet non accetta alcun input.
@@ -153,13 +153,13 @@ Questo cmdlet non accetta alcun input.
 ## OUTPUT
 
 ### AutoPatchingSettings
-Questo cmdlet restituisce l'oggetto contenente le impostazioni per l'aggiornamento automatico.
+Questo cmdlet restituisce l'oggetto che contiene le impostazioni per la distribuzione automatica di patch.
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[New-AzureVMSqlServerAutoBackupConfig](./New-AzureVMSqlServerAutoBackupConfig.md)
+[New-AzureVMSqlServerAutoBackupConfig](./New-AzVMSqlServerAutoBackupConfig.md)
 
 [Set-AzVMSqlServerExtension](./Set-AzVMSqlServerExtension.md)
 
