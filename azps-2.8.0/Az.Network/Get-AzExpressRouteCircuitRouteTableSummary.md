@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitRouteTableSummary.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitRouteTableSummary.md
-ms.openlocfilehash: cc3057582876dd3836f6b157a8ee31bb5b232539
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: bca0dde2947b214d13032b54681f2fc179c26af1
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93853245"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411536"
 ---
-# <span data-ttu-id="4d065-101">Get-AzExpressRouteCircuitRouteTableSummary</span><span class="sxs-lookup"><span data-stu-id="4d065-101">Get-AzExpressRouteCircuitRouteTableSummary</span></span>
+# <span data-ttu-id="71beb-101">Get-AzExpressRouteCircuitRouteTableSummary</span><span class="sxs-lookup"><span data-stu-id="71beb-101">Get-AzExpressRouteCircuitRouteTableSummary</span></span>
 
-## <span data-ttu-id="4d065-102">Sinossi</span><span class="sxs-lookup"><span data-stu-id="4d065-102">SYNOPSIS</span></span>
-<span data-ttu-id="4d065-103">Ottiene un riepilogo della tabella di route di un circuito ExpressRoute.</span><span class="sxs-lookup"><span data-stu-id="4d065-103">Gets a route table summary of an ExpressRoute circuit.</span></span>
+## <span data-ttu-id="71beb-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="71beb-102">SYNOPSIS</span></span>
+<span data-ttu-id="71beb-103">Ottiene un riepilogo della tabella di route di un circuito ExpressRoute.</span><span class="sxs-lookup"><span data-stu-id="71beb-103">Gets a route table summary of an ExpressRoute circuit.</span></span>
 
-## <span data-ttu-id="4d065-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="4d065-104">SYNTAX</span></span>
+## <span data-ttu-id="71beb-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="71beb-104">SYNTAX</span></span>
 
 ```
 Get-AzExpressRouteCircuitRouteTableSummary -ResourceGroupName <String> -ExpressRouteCircuitName <String>
@@ -26,20 +26,20 @@ Get-AzExpressRouteCircuitRouteTableSummary -ResourceGroupName <String> -ExpressR
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="4d065-105">Descrizione</span><span class="sxs-lookup"><span data-stu-id="4d065-105">DESCRIPTION</span></span>
-<span data-ttu-id="4d065-106">Il cmdlet **Get-AzExpressRouteCircuitRouteTableSummary** recupera un riepilogo delle informazioni adiacenti BGP per un particolare contesto di routing.</span><span class="sxs-lookup"><span data-stu-id="4d065-106">The **Get-AzExpressRouteCircuitRouteTableSummary** cmdlet retrieves a summary of BGP neighbor information for a particular routing context.</span></span> <span data-ttu-id="4d065-107">Queste informazioni sono utili per determinare per quanto tempo è stato stabilito un contesto di routing e il numero di prefissi di route pubblicizzati dal router peering.</span><span class="sxs-lookup"><span data-stu-id="4d065-107">This information is useful to determine for how long a routing context has been established and the number of route prefixes advertised by the peering router.</span></span>
+## <span data-ttu-id="71beb-105">DESCRIZIONE</span><span class="sxs-lookup"><span data-stu-id="71beb-105">DESCRIPTION</span></span>
+<span data-ttu-id="71beb-106">Il cmdlet **Get-AzExpressRouteCircuitRouteTableSummary** recupera un riepilogo delle informazioni sui vicini BGP per un particolare contesto di routing.</span><span class="sxs-lookup"><span data-stu-id="71beb-106">The **Get-AzExpressRouteCircuitRouteTableSummary** cmdlet retrieves a summary of BGP neighbor information for a particular routing context.</span></span> <span data-ttu-id="71beb-107">Queste informazioni sono utili per determinare per quanto tempo è stato stabilito un contesto di routing e per il numero di prefissi di route annunciati dal router di peering.</span><span class="sxs-lookup"><span data-stu-id="71beb-107">This information is useful to determine for how long a routing context has been established and the number of route prefixes advertised by the peering router.</span></span>
 
-## <span data-ttu-id="4d065-108">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="4d065-108">EXAMPLES</span></span>
+## <span data-ttu-id="71beb-108">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="71beb-108">EXAMPLES</span></span>
 
-### <span data-ttu-id="4d065-109">Esempio 1: visualizzare il riepilogo della route per il percorso principale</span><span class="sxs-lookup"><span data-stu-id="4d065-109">Example 1: Display the route summary for the primary path</span></span>
+### <span data-ttu-id="71beb-109">Esempio 1: Visualizzare il riepilogo del percorso per il percorso principale</span><span class="sxs-lookup"><span data-stu-id="71beb-109">Example 1: Display the route summary for the primary path</span></span>
 ```
 Get-AzExpressRouteCircuitRouteTableSummary -ResourceGroupName $RG -ExpressRouteCircuitName $CircuitName -DevicePath 'Primary'
 ```
 
-## <span data-ttu-id="4d065-110">PARAMETRI</span><span class="sxs-lookup"><span data-stu-id="4d065-110">PARAMETERS</span></span>
+## <span data-ttu-id="71beb-110">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="71beb-110">PARAMETERS</span></span>
 
-### <span data-ttu-id="4d065-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="4d065-111">-DefaultProfile</span></span>
-<span data-ttu-id="4d065-112">Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.</span><span class="sxs-lookup"><span data-stu-id="4d065-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="71beb-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="71beb-111">-DefaultProfile</span></span>
+<span data-ttu-id="71beb-112">Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.</span><span class="sxs-lookup"><span data-stu-id="71beb-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -53,8 +53,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4d065-113">-DevicePath</span><span class="sxs-lookup"><span data-stu-id="4d065-113">-DevicePath</span></span>
-<span data-ttu-id="4d065-114">I valori accettabili per questo parametro sono: `Primary` o `Secondary`</span><span class="sxs-lookup"><span data-stu-id="4d065-114">The acceptable values for this parameter are: `Primary` or `Secondary`</span></span>
+### <span data-ttu-id="71beb-113">-DevicePath</span><span class="sxs-lookup"><span data-stu-id="71beb-113">-DevicePath</span></span>
+<span data-ttu-id="71beb-114">I valori accettabili per questo parametro sono: `Primary` o `Secondary`</span><span class="sxs-lookup"><span data-stu-id="71beb-114">The acceptable values for this parameter are: `Primary` or `Secondary`</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.DevicePathEnum
@@ -69,8 +69,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4d065-115">-ExpressRouteCircuitName</span><span class="sxs-lookup"><span data-stu-id="4d065-115">-ExpressRouteCircuitName</span></span>
-<span data-ttu-id="4d065-116">Nome del circuito di ExpressRoute esaminato.</span><span class="sxs-lookup"><span data-stu-id="4d065-116">The name of the ExpressRoute circuit being examined.</span></span>
+### <span data-ttu-id="71beb-115">-ExpressRouteCircuitName</span><span class="sxs-lookup"><span data-stu-id="71beb-115">-ExpressRouteCircuitName</span></span>
+<span data-ttu-id="71beb-116">Nome del circuito ExpressRoute da esaminare.</span><span class="sxs-lookup"><span data-stu-id="71beb-116">The name of the ExpressRoute circuit being examined.</span></span>
 
 ```yaml
 Type: System.String
@@ -84,8 +84,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4d065-117">-PeeringType</span><span class="sxs-lookup"><span data-stu-id="4d065-117">-PeeringType</span></span>
-<span data-ttu-id="4d065-118">I valori accettabili per questo parametro sono: `AzurePrivatePeering` , `AzurePublicPeering` e `MicrosoftPeering`</span><span class="sxs-lookup"><span data-stu-id="4d065-118">The acceptable values for this parameter are: `AzurePrivatePeering`, `AzurePublicPeering`, and `MicrosoftPeering`</span></span>
+### <span data-ttu-id="71beb-117">-PeeringType</span><span class="sxs-lookup"><span data-stu-id="71beb-117">-PeeringType</span></span>
+<span data-ttu-id="71beb-118">I valori accettabili per questo parametro sono: `AzurePrivatePeering` `AzurePublicPeering` , e `MicrosoftPeering`</span><span class="sxs-lookup"><span data-stu-id="71beb-118">The acceptable values for this parameter are: `AzurePrivatePeering`, `AzurePublicPeering`, and `MicrosoftPeering`</span></span>
 
 ```yaml
 Type: System.String
@@ -100,8 +100,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4d065-119">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="4d065-119">-ResourceGroupName</span></span>
-<span data-ttu-id="4d065-120">Nome del gruppo di risorse contenente il circuito ExpressRoute.</span><span class="sxs-lookup"><span data-stu-id="4d065-120">The name of the resource group containing the ExpressRoute circuit.</span></span>
+### <span data-ttu-id="71beb-119">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="71beb-119">-ResourceGroupName</span></span>
+<span data-ttu-id="71beb-120">Nome del gruppo di risorse che contiene il circuito ExpressRoute.</span><span class="sxs-lookup"><span data-stu-id="71beb-120">The name of the resource group containing the ExpressRoute circuit.</span></span>
 
 ```yaml
 Type: System.String
@@ -115,23 +115,23 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4d065-121">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="4d065-121">CommonParameters</span></span>
-<span data-ttu-id="4d065-122">Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="4d065-122">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="4d065-123">Per altre informazioni, Vedi [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="4d065-123">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="71beb-121">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="71beb-121">CommonParameters</span></span>
+<span data-ttu-id="71beb-122">Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="71beb-122">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="71beb-123">Per altre informazioni, [vedere](https://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.</span><span class="sxs-lookup"><span data-stu-id="71beb-123">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="4d065-124">INGRESSI</span><span class="sxs-lookup"><span data-stu-id="4d065-124">INPUTS</span></span>
+## <span data-ttu-id="71beb-124">INPUT</span><span class="sxs-lookup"><span data-stu-id="71beb-124">INPUTS</span></span>
 
-### <span data-ttu-id="4d065-125">System. String</span><span class="sxs-lookup"><span data-stu-id="4d065-125">System.String</span></span>
+### <span data-ttu-id="71beb-125">System.String</span><span class="sxs-lookup"><span data-stu-id="71beb-125">System.String</span></span>
 
-## <span data-ttu-id="4d065-126">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="4d065-126">OUTPUTS</span></span>
+## <span data-ttu-id="71beb-126">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="71beb-126">OUTPUTS</span></span>
 
-### <span data-ttu-id="4d065-127">Microsoft. Azure. Commands. Network. Models. PSExpressRouteCircuitRoutesTableSummary</span><span class="sxs-lookup"><span data-stu-id="4d065-127">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuitRoutesTableSummary</span></span>
+### <span data-ttu-id="71beb-127">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuitRoutesTableSummary</span><span class="sxs-lookup"><span data-stu-id="71beb-127">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuitRoutesTableSummary</span></span>
 
-## <span data-ttu-id="4d065-128">Note</span><span class="sxs-lookup"><span data-stu-id="4d065-128">NOTES</span></span>
+## <span data-ttu-id="71beb-128">NOTE</span><span class="sxs-lookup"><span data-stu-id="71beb-128">NOTES</span></span>
 
-## <span data-ttu-id="4d065-129">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="4d065-129">RELATED LINKS</span></span>
+## <span data-ttu-id="71beb-129">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="71beb-129">RELATED LINKS</span></span>
 
-[<span data-ttu-id="4d065-130">Get-AzExpressRouteCircuitARPTable</span><span class="sxs-lookup"><span data-stu-id="4d065-130">Get-AzExpressRouteCircuitARPTable</span></span>](Get-AzExpressRouteCircuitARPTable.md)
+[<span data-ttu-id="71beb-130">Get-AzExpressRouteCircuitARPTable</span><span class="sxs-lookup"><span data-stu-id="71beb-130">Get-AzExpressRouteCircuitARPTable</span></span>](Get-AzExpressRouteCircuitARPTable.md)
 
-[<span data-ttu-id="4d065-131">Get-AzExpressRouteCircuitRouteTable</span><span class="sxs-lookup"><span data-stu-id="4d065-131">Get-AzExpressRouteCircuitRouteTable</span></span>](Get-AzExpressRouteCircuitRouteTable.md)
+[<span data-ttu-id="71beb-131">Get-AzExpressRouteCircuitRouteTable</span><span class="sxs-lookup"><span data-stu-id="71beb-131">Get-AzExpressRouteCircuitRouteTable</span></span>](Get-AzExpressRouteCircuitRouteTable.md)
 
-[<span data-ttu-id="4d065-132">Get-AzExpressRouteCircuitStats</span><span class="sxs-lookup"><span data-stu-id="4d065-132">Get-AzExpressRouteCircuitStats</span></span>](Get-AzExpressRouteCircuitStats.md)
+[<span data-ttu-id="71beb-132">Get-AzExpressRouteCircuitStat</span><span class="sxs-lookup"><span data-stu-id="71beb-132">Get-AzExpressRouteCircuitStat</span></span>](Get-AzExpressRouteCircuitStat.md)
