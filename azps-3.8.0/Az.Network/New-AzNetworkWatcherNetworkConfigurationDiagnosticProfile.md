@@ -5,17 +5,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile.md
-ms.openlocfilehash: 009f294cd4d0277b925f36c3d6b7cc4e50e7f733
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: e879de96f861c5a102077c3d392944f79a293b10
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94019739"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100408611"
 ---
 # New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile
 
-## Sinossi
-Crea un nuovo oggetto del profilo di diagnostica della configurazione di rete. Questo oggetto viene usato per limitare la configurazione della rete durante una sessione di diagnostica usando i criteri specificati.
+## SYNOPSIS
+Crea un nuovo oggetto profilo di diagnostica della configurazione di rete. Questo oggetto viene usato per limitare la configurazione di rete durante una sessione di diagnostica usando i criteri specificati.
 
 ## SINTASSI
 
@@ -25,12 +25,12 @@ New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile -Direction <String> -P
  [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile crea un nuovo oggetto del profilo di diagnostica. Questo oggetto viene usato per limitare la configurazione della rete durante una sessione di diagnostica della configurazione di rete usando i criteri specificati.
+## DESCRIZIONE
+Il cmdlet New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile crea un nuovo oggetto profilo di diagnostica. Questo oggetto viene usato per limitare la configurazione di rete durante una sessione di diagnostica di configurazione di rete usando i criteri specificati.
 
 ## ESEMPI
 
-### Esempio 1: richiamare la sessione di diagnostica della configurazione di rete per VM e il profilo di rete specificato
+### Esempio 1: Richiamare la sessione di diagnostica della configurazione di rete per la macchina virtuale e il profilo di rete specificato
 ```
 PS C:\> $profile = New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile -Direction Inbound -Protocol Tcp -Source 10.1.1.4 -Destination * -DestinationPort 50
 PS C:\> Invoke-AzNetworkWatcherNetworkConfigurationDiagnostic -Location eastus -TargetResourceId /subscriptions/61cc8a98-a8be-4bfe-a04e-0b461f93fe35/resourceGroups/NwRgEastUS/providers/Microsoft.Compute/virtualMachines/vm1 -Profile $profile
@@ -65,10 +65,10 @@ Results : [
                       },
 ```
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -82,9 +82,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Destinazione
-Destinazione traffico.
-I valori accettati sono:' *', indirizzo IP/CIDR, tag di servizio.
+### -Destination
+Destinazione del traffico.
+I valori accettati sono: '*', Indirizzo IP/CIDR, Tag di servizio.
 
 ```yaml
 Type: System.String
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 
 ### -DestinationPort
 Porta di destinazione del traffico.
-I valori accettati sono "*", la porta (ad esempio 3389) e l'intervallo di porte, ad esempio 80-100.
+I valori accettati sono "*", "porta" (ad esempio 3389) e intervallo di porte (ad esempio, 80-100).
 
 ```yaml
 Type: System.String
@@ -114,9 +114,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Direzione
+### -Direction
 Direzione del traffico.
-I valori accettati sono "in ingresso" e "in uscita"
+I valori accettati sono "In ingresso" e "In uscita"
 
 ```yaml
 Type: System.String
@@ -130,7 +130,7 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Protocollo
+### -Protocol
 Protocollo da verificare.
 I valori accettati sono "*", TCP, UDP.
 
@@ -146,9 +146,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Origine
-Origine traffico.
-I valori accettati sono "*", indirizzo IP/CIDR, tag di servizio.
+### -Source
+Origine del traffico.
+I valori accettati sono '*', Indirizzo IP/CIDR, Tag di servizio.
 
 ```yaml
 Type: System.String
@@ -163,18 +163,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Network. Models. PSNetworkConfigurationDiagnosticProfile
+### Microsoft.Azure.Commands.Network.Models.PSNetworkConfigurationDiagnosticProfile
 
-## Note
-Parole chiave: Azure, azurerm, ARM, Resource, Management, Manager, Network, networking, Watcher, Diagnostic, profile
+## NOTE
+Parole chiave: azure, azurerm, arm, risorsa, gestione, manager, rete, rete, watcher, diagnostica, profilo
 
 ## COLLEGAMENTI CORRELATI
 
@@ -228,6 +228,6 @@ Parole chiave: Azure, azurerm, ARM, Resource, Management, Manager, Network, netw
 
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)

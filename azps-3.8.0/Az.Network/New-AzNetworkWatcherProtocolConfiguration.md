@@ -5,16 +5,16 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkWatcherProtocolConfiguration.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkWatcherProtocolConfiguration.md
-ms.openlocfilehash: 5358fa9898bca17f75c0111ef15b69e8cff4f75d
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: bd9b0064dd83d05b0250ab2bf7c3e5a0ef380f7f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94019793"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100408526"
 ---
 # New-AzNetworkWatcherProtocolConfiguration
 
-## Sinossi
+## SYNOPSIS
 Crea un nuovo oggetto di configurazione del protocollo.
 
 ## SINTASSI
@@ -24,12 +24,12 @@ New-AzNetworkWatcherProtocolConfiguration -Protocol <String> [-Method <String>] 
  [-ValidStatusCode <Int32[]>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
+## DESCRIZIONE
 Il cmdlet New-AzNetworkWatcherProtocolConfiguration crea un nuovo oggetto di configurazione del protocollo. Questo oggetto viene usato per limitare la configurazione del protocollo durante una sessione di controllo della connettività usando i criteri specificati. 
 
 ## ESEMPI
 
-### Esempio 1: testare la connettività di Network Watcher da una VM a un sito Web con la configurazione del protocollo
+### Esempio 1: Testare la connettività di Network Watcher da una macchina virtuale a un sito Web con configurazione del protocollo
 ```
 $config = New-AzNetworkWatcherProtocolConfiguration -Protocol Http -Method Get -Headers @{"accept"="application/json"} -ValidStatusCodes @(200,202,204)
 
@@ -64,12 +64,12 @@ Hops             : [
                    ]
 ```
 
-In questo esempio verifichiamo la connettività da una VM in Azure a www.bing.com.
+In questo esempio viene verificata la connettività da una macchina virtuale in Azure www.bing.com.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -83,8 +83,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Intestazione
-elenco di intestazioni HTTP
+### -Header
+Elenco di intestazioni HTTP
 
 ```yaml
 Type: System.Collections.IDictionary
@@ -113,7 +113,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Protocollo
+### -Protocol
 Tipo di protocollo
 
 ```yaml
@@ -144,18 +144,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
 ### Nessuno
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Network. Models. PSNetworkWatcherProtocolConfiguration
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcherProtocolConfiguration
 
-## Note
-Parole chiave: Azure, azurerm, ARM, Resource, Management, Manager, Network, networking, Watcher, Packet, Capture, Traffic, Filter
+## NOTE
+Parole chiave: azure, azurerm, arm, risorsa, gestione, manager, rete, rete, watcher, pacchetto, acquisizione, traffico, filtro
 
 ## COLLEGAMENTI CORRELATI
 
@@ -209,6 +209,6 @@ Parole chiave: Azure, azurerm, ARM, Resource, Management, Manager, Network, netw
 
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)

@@ -5,17 +5,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzPacketCaptureFilterConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzPacketCaptureFilterConfig.md
-ms.openlocfilehash: c81eada89865585ae56af2ed629ee17e43d57aa8
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: d7dac006abf09ec7c80d4a7e7659405936a8d20e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94019730"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100408543"
 ---
 # New-AzPacketCaptureFilterConfig
 
-## Sinossi
-Crea un nuovo oggetto filtro di acquisizione di pacchetti.
+## SYNOPSIS
+Crea un nuovo oggetto filtro di acquisizione pacchetti.
 
 ## SINTASSI
 
@@ -24,12 +24,12 @@ New-AzPacketCaptureFilterConfig [-Protocol <String>] [-RemoteIPAddress <String>]
  [-LocalPort <String>] [-RemotePort <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet New-AzPacketCaptureFilterConfig crea un nuovo oggetto filtro di acquisizione di pacchetti. Questo oggetto viene usato per limitare il tipo di pacchetti acquisiti durante una sessione di acquisizione di pacchetti usando i criteri specificati. Il cmdlet New-AzNetworkWatcherPacketCapture può accettare più oggetti Filter per abilitare sessioni di acquisizione componibili.
+## DESCRIZIONE
+Il New-AzPacketCaptureFilterConfig cmdlet crea un nuovo oggetto filtro di acquisizione pacchetti. Questo oggetto viene usato per limitare il tipo di pacchetti acquisiti durante una sessione di acquisizione pacchetti usando i criteri specificati. Il cmdlet New-AzNetworkWatcherPacketCapture può accettare più oggetti filtro per abilitare le sessioni di acquisizione componibile.
 
 ## ESEMPI
 
-### Esempio 1: creare un'acquisizione di pacchetti con più filtri
+### Esempio 1: Creare un packet capture con più filtri
 ```
 $nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" } 
 $networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName 
@@ -41,12 +41,12 @@ $filter2 = New-AzPacketCaptureFilterConfig -Protocol UDP
 New-AzNetworkWatcherPacketCapture -NetworkWatcher $networkWatcher -TargetVirtualMachineId $vm.Id -PacketCaptureName "PacketCaptureTest" -StorageAccountId $storageAccount.id -TimeLimitInSeconds 60 -Filters $filter1, $filter2
 ```
 
-In questo esempio creiamo un'acquisizione di pacchetti denominata "PacketCaptureTest" con più filtri e un limite di tempo. Una volta completata la sessione, verrà salvata nell'account di archiviazione specificato. Nota: l'estensione Azure Network Watcher deve essere installata nella macchina virtuale di destinazione per creare acquisizioni di pacchetti.
+In questo esempio viene creata un'acquisizione di pacchetti denominata "PacketCaptureTest" con più filtri e un limite di tempo. Una volta completata, la sessione verrà salvata nell'account di archiviazione specificato. Nota: l'estensione Network Watcher di Azure deve essere installata nella macchina virtuale di destinazione per creare acquisizioni di pacchetti.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -60,11 +60,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IndirizzoIPLocale
-Specifica l'indirizzo IP locale a cui applicare il filtro.
+### -LocalIPAddress
+Specifica l'indirizzo IP locale in base a cui filtrare.
 Input di esempio: "127.0.0.1" per l'immissione di un singolo indirizzo.
 "127.0.0.1-127.0.0.255" per l'intervallo.
-"127.0.0.1; 127.0.0.5;" per più voci.
+"127.0.0.1;127.0.0.5;" per più voci.
 
 ```yaml
 Type: System.String
@@ -79,10 +79,10 @@ Accept wildcard characters: False
 ```
 
 ### -LocalPort
-Specifica l'indirizzo IP locale a cui applicare il filtro.
+Specifica l'indirizzo IP locale in base a cui filtrare.
 Input di esempio: "127.0.0.1" per l'immissione di un singolo indirizzo.
 "127.0.0.1-127.0.0.255" per l'intervallo.
-"127.0.0.1; 127.0.0.5;" per più voci.
+"127.0.0.1;127.0.0.5;" per più voci.
 
 ```yaml
 Type: System.String
@@ -96,8 +96,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Protocollo
-Specifica il protocollo su cui applicare il filtro. Valori accettabili "TCP", "UDP", "any"
+### -Protocol
+Specifica il protocollo in base a cui filtrare. Valori accettabili "TCP","UDP","Qualsiasi"
 
 ```yaml
 Type: System.String
@@ -111,11 +111,11 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -IndirizzoIPRemoto
-Specifica l'indirizzo IP remoto su cui applicare il filtro.
+### -RemoteIPAddress
+Specifica l'indirizzo IP remoto in base a cui filtrare.
 Input di esempio: "127.0.0.1" per l'immissione di un singolo indirizzo.
 "127.0.0.1-127.0.0.255" per l'intervallo.
-"127.0.0.1; 127.0.0.5;" per più voci.
+"127.0.0.1;127.0.0.5;" per più voci.
 
 ```yaml
 Type: System.String
@@ -130,10 +130,10 @@ Accept wildcard characters: False
 ```
 
 ### -RemotePort
-Specifica la porta remota in cui applicare il filtro.
-Input di esempio di porta remota: "80" per l'immissione di una sola porta.
+Specifica la porta remota in base a cui filtrare.
+Input di esempio per la porta remota: "80" per l'immissione di una singola porta.
 "80-85" per l'intervallo.
-"80; 443;" per più voci.
+"80;443;" per più voci.
 
 ```yaml
 Type: System.String
@@ -148,18 +148,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Network. Models. PSPacketCaptureFilter
+### Microsoft.Azure.Commands.Network.Models.PSPacketCaptureFilter
 
-## Note
-Parole chiave: Azure, azurerm, ARM, Resource, Management, Manager, Network, networking, Watcher, Packet, Capture, Traffic, Filter 
+## NOTE
+Parole chiave: azure, azurerm, arm, risorsa, gestione, manager, rete, rete, watcher, pacchetto, acquisizione, traffico, filtro 
 
 ## COLLEGAMENTI CORRELATI
 
@@ -213,6 +213,6 @@ Parole chiave: Azure, azurerm, ARM, Resource, Management, Manager, Network, netw
 
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
