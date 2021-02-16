@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/st
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Start-AzNetworkWatcherResourceTroubleshooting.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Start-AzNetworkWatcherResourceTroubleshooting.md
-ms.openlocfilehash: e8e8b9dfd217f9407af8db18a5f468d7d971c97d
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 5f707b4e6a2610f8a62ce807c5549ee03e6697d8
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93864388"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100408832"
 ---
 # Start-AzNetworkWatcherResourceTroubleshooting
 
-## Sinossi
-Avvia la risoluzione dei problemi in una risorsa di rete in Azure.
+## SYNOPSIS
+Avvia la risoluzione dei problemi per una risorsa di rete in Azure.
 
 ## SINTASSI
 
-### SetByResource (impostazione predefinita)
+### SetByResource (Default)
 ```
 Start-AzNetworkWatcherResourceTroubleshooting -NetworkWatcher <PSNetworkWatcher> -TargetResourceId <String>
  -StorageId <String> -StoragePath <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -38,12 +38,12 @@ Start-AzNetworkWatcherResourceTroubleshooting -Location <String> -TargetResource
  -StoragePath <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet Start-AzNetworkWatcherResourceTroubleshooting avvia la risoluzione dei problemi per una risorsa di rete in Azure e restituisce informazioni su potenziali problemi e attenuazioni. Attualmente sono supportati i gateway e le connessioni di rete virtuali.
+## DESCRIZIONE
+Il cmdlet Start-AzNetworkWatcherResourceTroubleshooting avvia la risoluzione dei problemi per una risorsa di rete in Azure e restituisce informazioni su potenziali problemi e attenuazioni. Attualmente sono supportati i gateway e le connessioni di rete virtuale.
 
 ## ESEMPI
 
-### Esempio 1: avviare la risoluzione dei problemi in un gateway di rete virtuale
+### Esempio 1: Avviare la risoluzione dei problemi in un Gateway di rete virtuale
 ```
 $nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" } 
 $networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName 
@@ -55,12 +55,12 @@ $storagePath = 'https://{storageAccountName}.blob.core.windows.net/troubleshoot'
 Start-AzNetworkWatcherResourceTroubleshooting -NetworkWatcher $networkWatcher -TargetResourceId $target -StorageId $storageId -StoragePath $storagePath
 ```
 
-L'esempio precedente avvia la risoluzione dei problemi in un gateway di rete virtuale. L'operazione può richiedere alcuni minuti per il completamento.
+L'esempio precedente avvia la risoluzione dei problemi in un gateway di rete virtuale. Il completamento dell'operazione può richiedere alcuni minuti.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -74,8 +74,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Posizione
-Posizione del monitoraggio della rete.
+### -Location
+Posizione del network watcher.
 
 ```yaml
 Type: System.String
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcher
-Risorsa Watcher di rete.
+Risorsa Network Watcher.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -120,7 +120,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Nome del gruppo di risorse di Watcher di rete.
+Nome del gruppo di risorse Network Watcher.
 
 ```yaml
 Type: System.String
@@ -135,7 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -StorageId
-ID dello spazio di archiviazione.
+ID di archiviazione.
 
 ```yaml
 Type: System.String
@@ -165,7 +165,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetResourceId
-Specifica l'ID risorsa della risorsa per la risoluzione dei problemi. Formato di esempio: "/subscriptions/$ {subscriptionId}/resourceGroups/$ {resourceGroupName}/providers/Microsoft.Network/connections/$ {ConnectionName}"
+Specifica l'ID risorsa della risorsa da risolvere. Formato di esempio: "/subscriptions/${subscriptionId}/resourceGroups/${resourceGroupName}/providers/Microsoft.Network/connections/${connectionName}"
 
 ```yaml
 Type: System.String
@@ -180,20 +180,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### Microsoft. Azure. Commands. Network. Models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Network. Models. PSTroubleshootingResult
+### Microsoft.Azure.Commands.Network.Models.PSTroubleshootingResult
 
-## Note
-Parole chiave: Azure, azurerm, ARM, Resource, Management, Manager, Network, networking, Network Watcher, risoluzione dei problemi, VPN, connessione
+## NOTE
+Parole chiave: azure, azurerm, arm, risorsa, gestione, manager, rete, rete, network watcher, risoluzione dei problemi, VPN, connessione
 
 ## COLLEGAMENTI CORRELATI
 
@@ -247,6 +247,6 @@ Parole chiave: Azure, azurerm, ARM, Resource, Management, Manager, Network, netw
 
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
