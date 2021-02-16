@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.notificati
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubsNamespaceListKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubsNamespaceListKey.md
-ms.openlocfilehash: 90e617f35442470cef2d11c2de032679698ea167
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 5244602a6b6266ebabf02bbb927facda93e61d8b
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93865032"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403800"
 ---
 # Get-AzNotificationHubsNamespaceListKey
 
-## Sinossi
-Ottiene le stringhe di connessione primarie e secondarie associate a una regola di autorizzazione dello spazio dei nomi Hub notifica.
+## SYNOPSIS
+Ottiene le stringhe di connessione primaria e secondaria associate a una regola di autorizzazione dello spazio dei nomi dell'hub di notifica.
 
 ## SINTASSI
 
@@ -25,26 +25,26 @@ Get-AzNotificationHubsNamespaceListKey [-ResourceGroup] <String> [-Namespace] <S
  [-AuthorizationRule] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Get-AzNotificationHubsNamespaceListKey** restituisce le stringhe di connessione primarie e secondarie per una regola di autorizzazione della firma di accesso condiviso (SAS) assegnata a uno spazio dei nomi dell'hub di notifica.
-Le regole di autorizzazione gestiscono i diritti degli utenti in uno spazio dei nomi Hub notifica.
-Ogni regola include una stringa di connessione primaria e secondaria.
+## DESCRIZIONE
+Il cmdlet **Get-AzNotificationHubsNotificationListKey** restituisce le stringhe di connessione primaria e secondaria per una regola di autorizzazione della firma di accesso condiviso assegnata a uno spazio dei nomi dell'hub di notifica.
+Le regole di autorizzazione gestiscono i diritti utente per uno spazio dei nomi dell'hub di notifica.
+Ogni regola include una stringa di connessione principale e una secondaria.
 
 ## ESEMPI
 
-### Esempio 1: ottenere le stringhe di connessione primarie e secondarie per una regola di autorizzazione
+### Esempio 1: Ottenere le stringhe di connessione primaria e secondaria per una regola di autorizzazione
 ```
 PS C:\>Get-AzNotificationHubsNamespaceListKey -Namespace "ContosoNamespace" -ResourceGroup "ContosoNotificationsGroup" -AuthorizationRule "ListenRule"
 ```
 
-Questo comando restituisce le stringhe di connessione primarie e secondarie per la regola di autorizzazione denominata ListenRule assegnate allo spazio dei nomi ContosoNamespace.
-Quando si esegue questo comando, è necessario includere il nome del gruppo di risorse a cui è assegnato lo spazio dei nomi.
+Questo comando restituisce le stringhe di connessione primaria e secondaria per la regola di autorizzazione denominata ListenRule assegnata allo spazio dei nomi Contoso Contoso Contoso.
+Quando si esegue questo comando è necessario includere il nome del gruppo di risorse a cui è assegnato lo spazio dei nomi.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -AuthorizationRule
-Specifica il nome di una regola di autenticazione SAS.
-Queste regole determinano il tipo di accesso che gli utenti hanno all'hub di notifica.
+Specifica il nome di una regola di autenticazione della firma di accesso condiviso.
+Queste regole determinano il tipo di accesso all'hub di notifica a cui gli utenti hanno accesso.
 
 ```yaml
 Type: System.String
@@ -74,7 +74,7 @@ Accept wildcard characters: False
 ```
 
 ### -Spazio dei nomi
-Specifica lo spazio dei nomi contenente le stringhe di connessione ottenute da questo cmdlet.
+Specifica lo spazio dei nomi contenente le stringhe di connessione recuperate dal cmdlet.
 
 ```yaml
 Type: System.String
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 
 ### -ResourceGroup
 Specifica il gruppo di risorse a cui è assegnato lo spazio dei nomi.
-I gruppi di risorse organizzano elementi come gli spazi dei nomi, gli hub di notifica e le regole di autorizzazione in modi che semplificano la gestione dell'inventario e l'amministrazione di Azure.
+I gruppi di risorse organizzano elementi come gli spazi dei nomi, gli hub di notifica e le regole di autorizzazione in modi che consentono semplicemente la gestione dell'inventario e l'amministrazione di Azure.
 
 ```yaml
 Type: System.String
@@ -105,22 +105,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Management. NotificationHubs. Models. ResourceListKeys
+### Microsoft.Azure.Management.NotificationHubs.Models.ResourceListKeys
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Get-AzNotificationHubsNamespace](./Get-AzNotificationHubsNamespace.md)
+[Get-AzNotificationHubsHubsHubs](./Get-AzNotificationHubsNamespace.md)
 
-[Get-AzNotificationHubsNamespaceAuthorizationRules](./Get-AzNotificationHubsNamespaceAuthorizationRules.md)
 
 

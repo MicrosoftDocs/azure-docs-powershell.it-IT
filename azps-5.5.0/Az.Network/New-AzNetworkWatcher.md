@@ -1,71 +1,50 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
-online version: https://docs.microsoft.com/en-us/powershell/module/az.network/remove-aznetworkwatcherpacketcapture
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/new-aznetworkwatcher
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzNetworkWatcherPacketCapture.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzNetworkWatcherPacketCapture.md
-ms.openlocfilehash: d6d11590699b52bb7245222ddaa01fbc42938d22
-ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkWatcher.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkWatcher.md
+ms.openlocfilehash: 7c8f33d8339bb873b713acabd71ca57fe9107383
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100414000"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100202768"
 ---
-# Remove-AzNetworkWatcherPacketCapture
+# New-AzNetworkWatcher
 
 ## SYNOPSIS
-Rimuove una risorsa di acquisizione pacchetti.
+Crea una nuova risorsa Network Watcher.
 
 ## SINTASSI
 
-### SetByResource (Default)
 ```
-Remove-AzNetworkWatcherPacketCapture -NetworkWatcher <PSNetworkWatcher> -PacketCaptureName <String> [-PassThru]
- [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### SetByName
-```
-Remove-AzNetworkWatcherPacketCapture -NetworkWatcherName <String> -ResourceGroupName <String>
- -PacketCaptureName <String> [-PassThru] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
-```
-
-### SetByLocation
-```
-Remove-AzNetworkWatcherPacketCapture -Location <String> -PacketCaptureName <String> [-PassThru] [-AsJob]
+New-AzNetworkWatcher -Name <String> -ResourceGroupName <String> -Location <String> [-Tag <Hashtable>]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIZIONE
-LRemove-AzNetworkWatcherPacketCapture rimuove una risorsa di acquisizione pacchetti. È consigliabile chiamare il Stop-AzNetworkWatcherPacketCapture rimuovere-AzNetworkWatcherPacketCapture. Se la sessione di acquisizione pacchetti è in esecuzione quando Remove-AzNetworkWatcherPacketCapture è chiamata packet capture, l'acquisizione pacchetti potrebbe non essere salvata. Se la sessione viene interrotta prima della rimozione del file CAP contenente dati di acquisizione, non viene rimossa. 
+Il cmdlet New-AzNetworkWatcher crea una nuova risorsa Network Watcher.
 
 ## ESEMPI
 
-### Esempio 1: Rimuovere una sessione di acquisizione pacchetti
+### Esempio 1: Creare un Network Watcher
 ```
-Remove-AzNetworkWatcherPacketCapture -NetworkWatcher $networkWatcher -PacketCaptureName "PacketCaptureTest"
+New-AzResourceGroup -Name NetworkWatcherRG -Location westcentralus
+New-AzNetworkWatcher -Name NetworkWatcher_westcentralus -ResourceGroup NetworkWatcherRG
+
+Name              : NetworkWatcher_westcentralus
+Id                : /subscriptions/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourceGroups/NetworkWatcherRG/providers/Microsoft.Network/networkWatchers/NetworkWatcher_westcentralus
+Etag              : W/"7cf1f2fe-8445-4aa7-9bf5-c15347282c39"
+Location          : westcentralus
+Tags              :
+ProvisioningState : Succeeded
 ```
 
-In questo esempio viene rimosso un sessione di acquisizione pacchetti esistente denominata "PacketCaptureTest".
+Questo esempio crea un nuovo Network Watcher all'interno di un gruppo di risorse appena creato. Si noti che per ogni abbonamento è possibile creare un solo Network Watcher per ogni area geografica.
 
 ## PARAMETERS
-
-### -AsJob
-Eseguire il cmdlet in background
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -DefaultProfile
 Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
@@ -83,52 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -Location
-Posizione del network watcher.
-
-```yaml
-Type: System.String
-Parameter Sets: SetByLocation
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -NetworkWatcher
-Risorsa Network Watcher.
-
-```yaml
-Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
-Parameter Sets: SetByResource
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -NetworkWatcherName
-Nome di Network Watcher.
-
-```yaml
-Type: System.String
-Parameter Sets: SetByName
-Aliases: Name
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PacketCaptureName
-Nome di acquisizione pacchetti.
+Posizione.
 
 ```yaml
 Type: System.String
@@ -142,30 +76,45 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -PassThru
-Restituisce un oggetto che rappresenta l'elemento su cui si sta lavorando.
+### -Name
+Nome del network watcher.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: (All)
-Aliases:
+Aliases: ResourceName
 
-Required: False
+Required: True
 Position: Named
-Default value: False
-Accept pipeline input: False
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Nome del gruppo di risorse Network Watcher.
+Nome del gruppo di risorse.
 
 ```yaml
 Type: System.String
-Parameter Sets: SetByName
+Parameter Sets: (All)
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Tag
+Coppie chiave-valore sotto forma di tabella hash. Ad esempio: @{key0="value0";key1=$null;key2="value2"}
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
@@ -208,16 +157,16 @@ Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable,
 
 ## INPUT
 
-### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
-
 ### System.String
+
+### System.Collections.Hashtable
 
 ## OUTPUT
 
-### System.Boolean
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
 ## NOTE
-Parole chiave: azure, azurerm, arm, risorsa, gestione, manager, rete, rete, network watcher, pacchetto, acquisizione, traffico, rimuovere
+Parole chiave: azure, azurerm, arm, risorsa, gestione, manager, rete, rete, network watcher
 
 ## COLLEGAMENTI CORRELATI
 
@@ -273,4 +222,4 @@ Parole chiave: azure, azurerm, arm, risorsa, gestione, manager, rete, rete, netw
 
 [Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)

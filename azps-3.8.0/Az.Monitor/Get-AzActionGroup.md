@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzActionGroup.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzActionGroup.md
-ms.openlocfilehash: c297198a1e49b93d498c136d1cb099d2068d24db
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 90bd9c7943e6e788d81f8ddec85513676afade23
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94022964"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100414034"
 ---
 # Get-AzActionGroup
 
-## Sinossi
-Ottiene i gruppi di azioni.
+## SYNOPSIS
+Recupera i gruppi di azioni.
 
 ## SINTASSI
 
@@ -31,33 +31,33 @@ Get-AzActionGroup -ResourceGroupName <String> -Name <String> [-DefaultProfile <I
  [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Get-AzActionGroup** ottiene uno o più gruppi di azioni.
+## DESCRIZIONE
+Il **cmdlet Get-AzActionGroup** ottiene uno o più gruppi di azioni.
 
 ## ESEMPI
 
-### Esempio 1: ottenere un gruppo di azioni in base all'ID abbonamento
+### Esempio 1: Ottenere un gruppo di azioni in base all'ID sottoscrizione
 ```
 PS C:\>Get-AzActionGroup
 ```
 
-Questo comando elenca tutti i gruppi di azioni per l'abbonamento corrente.
+Questo comando elenca tutti i gruppi di azioni per la sottoscrizione corrente.
 
-### Esempio 2: ottenere gruppi di azioni per il gruppo di risorse specifico
+### Esempio 2: Ottenere gruppi di azioni per il gruppo di risorse specificato
 ```
 PS C:\>Get-AzActionGroup -ResourceGroup "Default-activityLogAlerts"
 ```
 
-Questo comando elenca i gruppi di azioni per il gruppo di risorse specifico.
+Questo comando elenca i gruppi di azioni per il gruppo di risorse specificato.
 
-### Esempio 3: ottenere un gruppo di azioni.
+### Esempio 3: Ottenere un gruppo di azioni.
 ```
 PS C:\>Get-AzActionGroup -ResourceGroup "Default-activityLogAlerts" -Name "actionGroup1"
 ```
 
-Questo comando elenca uno (un elenco con un singolo elemento) gruppo di azioni.
+Questo comando elenca un gruppo di azioni (un elenco con un singolo elemento).
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
 Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
@@ -74,7 +74,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Nome
+### -Name
 Nome del gruppo di azioni.
 
 ```yaml
@@ -117,20 +117,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSActionGroupResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
 [Set-AzActionGroup](./Set-AzActionGroup.md) 
  [Remove-AzActionGroup](./Remove-AzActionGroup.md) 
- [New-AzActionGroupReceiver](./AzureRmActionGroupReceiver.md)
+ [New-AzActionGroupReceiver](./New-AzActionGroupReceiver.md)

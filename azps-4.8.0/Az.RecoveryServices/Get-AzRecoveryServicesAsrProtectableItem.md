@@ -5,17 +5,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryse
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesAsrProtectableItem.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesAsrProtectableItem.md
-ms.openlocfilehash: c9c50e26e99493fb693b8bded693bceb24f5a40f
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: da9dd3d7b1ed0a54a34fdf5c8a0c9d65b507a07b
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94189434"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413983"
 ---
 # Get-AzRecoveryServicesAsrProtectableItem
 
-## Sinossi
-Ottenere gli elementi protettivi in un contenitore di protezione ASR.
+## SYNOPSIS
+Recuperare gli elementi proteggibili in un contenitore di protezione ASR.
 
 ## SINTASSI
 
@@ -37,8 +37,8 @@ Get-AzRecoveryServicesAsrProtectableItem -FriendlyName <String> -ProtectionConta
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Get-AzRecoveryServicesAsrProtectableItem** ottiene gli elementi protettivi in un contenitore di protezione per il ripristino di un sito Azure.
+## DESCRIZIONE
+Il cmdlet **Get-AzRecoveryServicesAsrProtectableItem** ottiene gli elementi proteggibili in un contenitore di protezione del sito di Azure.
 
 ## ESEMPI
 
@@ -47,7 +47,7 @@ Il cmdlet **Get-AzRecoveryServicesAsrProtectableItem** ottiene gli elementi prot
 PS C:\> $ProtectableItems = Get-AzRecoveryServicesAsrProtectableItem -ProtectionContainer $Container
 ```
 
-Ottiene tutti gli elementi protettivi nel contenitore di protezione ASR specificato.
+Ottiene tutti gli elementi proteggibili nel contenitore di protezione ASR specificato.
 
 ### Esempio 2
 ```
@@ -70,7 +70,7 @@ ReplicationProtectedItemId    :
 SupportedReplicationProviders : {InMage, InMageAzureV2}
 ```
 
-Ottenere gli elementi protettivi nel contenitore di protezione ASR specificato e con il nome descrittivo indicato.
+Ottenere gli elementi proteggibili nel contenitore di protezione ASR specificato e con un nome descrittivo specificato.
 
 ### Esempio 3
 ```
@@ -93,12 +93,12 @@ ReplicationProtectedItemId    :
 SupportedReplicationProviders : {InMage, InMageAzureV2}
 ```
 
-Ottiene tutti gli elementi protettivi nel contenitore di protezione ASR specificato.
+Ottiene tutti gli elementi proteggibili nel contenitore di protezione ASR specificato.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 
 ```yaml
@@ -114,7 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -FriendlyName
-Specifica il nome descrittivo dell'elemento protetto da ASR.
+Specifica il nome descrittivo dell'elemento protetto da AsR.
 
 ```yaml
 Type: System.String
@@ -128,8 +128,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Nome
-Specifica il nome dell'elemento protetto da ASR.
+### -Name
+Specifica il nome dell'elemento protetto da AsR.
 
 ```yaml
 Type: System.String
@@ -144,7 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProtectionContainer
-Specifica l'oggetto contenitore di protezione per il ripristino di Azure site.
+Specifica l'oggetto contenitore di Azure Site Protection.
 
 ```yaml
 Type: Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectionContainer
@@ -159,20 +159,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### Microsoft. Azure. Commands. RecoveryServices. SiteRecovery. ASRProtectionContainer
+### Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectionContainer
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. RecoveryServices. SiteRecovery. ASRProtectableItem
+### Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectableItem
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Get-AzRecoveryServicesAsrProtectionEntity](./Get-AzRecoveryServicesAsrProtectionEntity.md)
 
-[Set-AzRecoveryServicesAsrProtectionEntity](./Set-AzRecoveryServicesAsrProtectionEntity.md)
