@@ -3,17 +3,17 @@ external help file: Microsoft.Azure.Commands.RecoveryServicesRdfe.dll-Help.xml
 ms.assetid: 2957C0DE-3A2F-4337-A778-2B95654972E7
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: d0b272732cf6c1e1b2025c8e7f48b58e4807cdb3
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 8a7c99e2ce307d700e43094ffa9be47e5449acc0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94023553"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411654"
 ---
 # Get-AzureSiteRecoveryJob
 
-## Sinossi
-Ottiene le informazioni sull'operazione per un Vault di ripristino del sito.
+## SYNOPSIS
+Recupera le informazioni sull'operazione per un vault di Ripristino siti.
 
 ## SINTASSI
 
@@ -33,13 +33,13 @@ Get-AzureSiteRecoveryJob -Id <String> [-Profile <AzureSMProfile>] [<CommonParame
 Get-AzureSiteRecoveryJob -Job <ASRJob> [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Get-AzureSiteRecoveryJob** ottiene i processi di ripristino dei siti di Azure.
-Puoi usare questo cmdlet per visualizzare le informazioni sull'operazione per il Vault di ripristino del sito corrente.
+## DESCRIZIONE
+Il cmdlet **Get-AzureSiteRecoveryJob** ottiene i processi di Azure Site Recovery.
+È possibile usare questo cmdlet per visualizzare le informazioni sull'operazione per l'attuale vault di Ripristino siti.
 
 ## ESEMPI
 
-### Esempio 1: ottenere un processo specificando un ID
+### Esempio 1: Ottenere un processo specificando un ID
 ```
 PS C:\> Get-AzureSiteRecoveryJob -Id "033785cc-9f72-4f07-8e78-e4d1e942a7ae" 
 Name             : SaveRecoveryPlan
@@ -57,7 +57,7 @@ Tasks            : {Save a recovery plan task}
 Errors           : {}
 ```
 
-Questo comando ottiene il processo di ripristino del sito di Azure con l'ID specificato.
+Questo comando recupera il processo di Azure Site Recovery con l'ID specificato.
 
 ### Esempio 2: ottiene un processo in base al tempo
 ```
@@ -77,14 +77,14 @@ Tasks            : {Save a recovery plan task}
 Errors           : {}
 ```
 
-Questo comando ottiene i processi di ripristino del sito che rientrano tra l'ora di inizio e l'ora di fine specificati.
+Questo comando recupera i processi di ripristino del sito compresi tra l'ora di inizio e l'ora di fine specificate.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -EndTime
 Specifica l'ora di fine per i processi.
-Questo cmdlet ottiene tutti i processi avviati prima del tempo specificato.
-Per ottenere un oggetto **DateTime** , usare il cmdlet **get-date** .
+Questo cmdlet recupera tutti i processi avviati prima dell'ora specificata.
+Per ottenere un **oggetto DateTime,** usare il cmdlet **Get-Date.**
 Per altre informazioni, digitare `Get-Help Get-Date` .
 
 ```yaml
@@ -99,7 +99,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ID
+### -Id
 Specifica l'ID di un processo da ottenere.
 
 ```yaml
@@ -130,8 +130,8 @@ Accept wildcard characters: False
 ```
 
 ### -Profile
-Specifica il profilo Azure da cui viene letto il cmdlet.
-Se non specifichi un profilo, questo cmdlet viene letto dal profilo predefinito locale.
+Specifica il profilo di Azure da cui viene letto questo cmdlet.
+Se non si specifica un profilo, questo cmdlet legge dal profilo predefinito locale.
 
 ```yaml
 Type: AzureSMProfile
@@ -147,7 +147,7 @@ Accept wildcard characters: False
 
 ### -StartTime
 Specifica l'ora di inizio per i processi.
-Questo cmdlet ottiene tutti i processi avviati dopo il periodo di tempo specificato.
+Questo cmdlet recupera tutti i processi avviati dopo l'ora specificata.
 
 ```yaml
 Type: DateTime
@@ -161,17 +161,17 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Stato
+### -State
 Specifica lo stato di input per un processo di ripristino del sito.
 Questo cmdlet ottiene tutti i processi che corrispondono allo stato specificato.
-I valori accettabili per questo parametro sono i seguenti:
+I valori accettabili per questo parametro sono:
 
 - NotStarted
 - InProgress
 - Succeeded
-- Altri
-- Fallito
-- Annullata
+- Altro
+- Operazione non riuscita
+- Annullato
 - Sospeso
 
 ```yaml
@@ -187,7 +187,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetObjectId
-Specifica l'ID dell'oggetto di destinazione del processo.
+Specifica l'ID dell'oggetto mirato dal processo.
 
 ```yaml
 Type: String
@@ -202,21 +202,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
 ## OUTPUT
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Cmdlet di servizi di ripristino siti di Azure](./Azure.SiteRecoveryServices.md)
 
-[Riavviare-AzureSiteRecoveryJob](./Restart-AzureSiteRecoveryJob.md)
 
-[Curriculum vitae-AzureSiteRecoveryJob](./Resume-AzureSiteRecoveryJob.md)
+[Restart-AzureSiteRecoveryJob](./Restart-AzureSiteRecoveryJob.md)
+
+[Resume-AzureSiteRecoveryJob](./Resume-AzureSiteRecoveryJob.md)
 
 [Stop-AzureSiteRecoveryJob](./Stop-AzureSiteRecoveryJob.md)
 

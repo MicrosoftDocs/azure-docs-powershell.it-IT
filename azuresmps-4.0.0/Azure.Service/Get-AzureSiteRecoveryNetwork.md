@@ -3,17 +3,17 @@ external help file: Microsoft.Azure.Commands.RecoveryServicesRdfe.dll-Help.xml
 ms.assetid: 615D2C5D-AB31-45DB-9535-9B9C8E957322
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: 96b51b49d76093be96eeab26417f4a70f70c4627
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 4a5701fc6308f1884bbf0237887a223a62a58669
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94023550"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411586"
 ---
 # Get-AzureSiteRecoveryNetwork
 
-## Sinossi
-Ottiene informazioni sulle reti gestite dal ripristino del sito per il Vault corrente.
+## SYNOPSIS
+Recupera informazioni sulle reti gestite da Ripristino siti per il vault corrente.
 
 ## SINTASSI
 
@@ -21,12 +21,12 @@ Ottiene informazioni sulle reti gestite dal ripristino del sito per il Vault cor
 Get-AzureSiteRecoveryNetwork -Server <ASRServer> [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Get-AzureSiteRecoveryNetwork** ottiene informazioni sulle reti di ripristino dei siti di Azure per il Vault di ripristino del sito corrente.
+## DESCRIZIONE
+Il cmdlet **Get-AzureSiteRecoveryNetwork** ottiene informazioni sulle reti di Ripristino siti di Azure per l'attuale vault di Ripristino siti.
 
 ## ESEMPI
 
-### Esempio 1: ottenere reti di ripristino del sito
+### Esempio 1: Ottenere reti di ripristino dei siti
 ```
 PS C:\> $Servers = Get-AzureSiteRecoveryServer
 PS C:\> Get-AzureSiteRecoveryNetwork -Server $Servers[0]
@@ -47,16 +47,16 @@ FabricType          : VMM
 VmNetworkSubnetList : {}
 ```
 
-Il primo cmdlet di comando ottiene i server per il Vault di ripristino del sito Azure corrente usando il cmdlet **Get-AzureSiteRecoveryServer** .
-Il comando Archivia i server di ripristino del sito nella variabile di matrice $Servers.
+Il primo cmdlet del comando recupera i server per l'attuale vault di Azure Site Recovery usando il cmdlet **Get-AzureSiteRecoveryServer.**
+Il comando archivia i server Ripristino siti nella variabile $Servers di matrice.
 
-Il secondo comando consente di ottenere la rete di ripristino del sito per il primo server nella matrice $Servers.
+Il secondo comando recupera la rete di ripristino del sito per il primo server della $Servers matrice.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -Profile
-Specifica il profilo Azure da cui viene letto il cmdlet.
-Se non specifichi un profilo, questo cmdlet viene letto dal profilo predefinito locale.
+Specifica il profilo di Azure da cui viene letto questo cmdlet.
+Se non si specifica un profilo, questo cmdlet legge dal profilo predefinito locale.
 
 ```yaml
 Type: AzureSMProfile
@@ -86,16 +86,16 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
 ## OUTPUT
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Cmdlet di servizi di ripristino siti di Azure](./Azure.SiteRecoveryServices.md)
+
 
 

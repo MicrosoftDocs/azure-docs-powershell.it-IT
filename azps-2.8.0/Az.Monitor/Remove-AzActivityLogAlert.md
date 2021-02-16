@@ -6,16 +6,16 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Remove-AzActivityLogAlert.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Remove-AzActivityLogAlert.md
-ms.openlocfilehash: 1f1e6aa3d90bbb2569f4381b3ea047bce9e483ee
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 80b8bce24968a3b2daef459ac892a219a8d7fd6e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93854042"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411569"
 ---
 # Remove-AzActivityLogAlert
 
-## Sinossi
+## SYNOPSIS
 Rimuove un avviso del log attività.
 
 ## SINTASSI
@@ -38,14 +38,14 @@ Remove-AzActivityLogAlert -ResourceId <String> [-DefaultProfile <IAzureContextCo
  [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Remove-AzActivityLogAlert** rimuove un avviso del log attività.
-Questo cmdlet implementa il modello ShouldProcess, vale a dire che potrebbe richiedere la conferma da parte dell'utente prima di applicare la patch alla risorsa.
-Questo cmdlet implementa il modello ShouldProcess, vale a dire che potrebbe richiedere conferma all'utente prima di creare, modificare o rimuovere la risorsa.
+## DESCRIZIONE
+Il cmdlet **Remove-AzActivityLogAlert rimuove** un avviso del log attività.
+Questo cmdlet implementa il modello ShouldProcess, ad esempio potrebbe richiedere conferma all'utente prima di applicare effettivamente le patch alla risorsa.
+Questo cmdlet implementa il criterio ShouldProcess, ad esempio potrebbe richiedere conferma all'utente prima di creare, modificare o rimuovere effettivamente la risorsa.
 
 ## ESEMPI
 
-### Esempio 1: rimuovere un avviso del log attività
+### Esempio 1: Rimuovere un avviso del log attività
 ```
 PS C:\>Remove-AzActivityLogAlert -ResourceGroup "Default-Web-CentralUS" -Name "myalert"
 RequestId                                                                                                    StatusCode
@@ -53,9 +53,9 @@ RequestId                                                                       
 2c6c159b-0e73-4a01-a67b-c32c1a0008a3                                                                                 OK
 ```
 
-Rimuove un avviso del log attività usando il nome e il nome del gruppo di risorse come input.
+Rimuove un avviso del log attività usando come input il nome e il nome del gruppo di risorse.
 
-### Esempio 2: rimuovere un avviso del log attività usando un PSActivityLogAlertResource come input
+### Esempio 2: Rimuovere un avviso del log attività usando psActivityLogAlertResource come input
 ```
 PS C:\>Get-AzActivityLogAlert -ResourceGroup "Default-activityLogAlerts" -Name "alert1" | Remove-AzActivityLogAlert 
 RequestId                                                                                                    StatusCode
@@ -63,16 +63,16 @@ RequestId                                                                       
 5c371547-80b0-4185-9b95-700b129de9d4                                                                                 OK
 ```
 
-Rimuove un avviso del log attività usando un PSActivityLogAlertResource come input.
+Rimuove un avviso del log attività usando psActivityLogAlertResource come input.
 
-### Esempio 3: rimuovere il ActivityLogAlert usando il parametro ResourceId
+### Esempio 3: Rimuovere ActivityLogAlert usando il parametro ResourceId
 ```
 PS C:\>Get-AzResource -ResourceGroupName "myResourceGroup" -Name "myLogAlert" | Remove-AzActivityLogAlert
 ```
 
 Questo comando rimuove ActivityLogAlert usando il parametro ResourceId dalla pipe.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
 Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Imposta la proprietà InputObject tag della chiamata per estrarre il nome obbligatorio e le proprietà del nome del gruppo di risorse.
+Imposta la proprietà tag InputObject della chiamata per estrarre il nome richiesto e le proprietà del nome del gruppo di risorse.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
@@ -104,7 +104,7 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Nome
+### -Name
 Nome dell'avviso del log attività.
 
 ```yaml
@@ -120,7 +120,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Nome del gruppo di risorse in cui è presente la risorsa di avviso.
+Nome del gruppo di risorse in cui si trova la risorsa di avviso.
 
 ```yaml
 Type: System.String
@@ -135,7 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Imposta la proprietà ResourceId tag della chiamata per estrarre le proprietà nome obbligatorio, nome gruppo risorse.
+Imposta la proprietà tag ResourceId della chiamata per estrarre il nome richiesto e le proprietà del nome del gruppo di risorse.
 
 ```yaml
 Type: System.String
@@ -149,8 +149,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confermare
-Richiede la conferma prima di eseguire il cmdlet.
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -165,7 +165,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra cosa succede se il cmdlet viene eseguito. Il cmdlet non viene eseguito.
+Mostra cosa accadrebbe se il cmdlet viene eseguito. Il cmdlet non viene eseguito.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -180,19 +180,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](https://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSActivityLogAlertResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
 
 ## OUTPUT
 
-### Microsoft. Azure. AzureOperationResponse
+### Microsoft.Azure.AzureOperationResponse
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
@@ -206,5 +206,5 @@ Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-In
 
 [New-AzActionGroup](./New-AzActionGroup.md)
 
-[New-AzActivityLogAlertCondition](./Get-AzActivityLogAlertCondition.md)
+
 
