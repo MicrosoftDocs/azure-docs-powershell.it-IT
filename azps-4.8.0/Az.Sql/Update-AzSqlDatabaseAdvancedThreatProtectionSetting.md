@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/Update
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Update-AzSqlDatabaseAdvancedThreatProtectionSetting.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Update-AzSqlDatabaseAdvancedThreatProtectionSetting.md
-ms.openlocfilehash: 1bd5906ac4736fc2aace122070edfebe1e59fe3f
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: baa3e3d4b272bccab5fe33b9af05edc9ed254236
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94189246"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406707"
 ---
 # Update-AzSqlDatabaseAdvancedThreatProtectionSetting
 
-## Sinossi
-Imposta le impostazioni avanzate di protezione dalle minacce in un database.
+## SYNOPSIS
+Configura le impostazioni di Protezione avanzata dalle minacce in un database.
 
 ## SINTASSI
 
@@ -27,22 +27,22 @@ Update-AzSqlDatabaseAdvancedThreatProtectionSetting [-PassThru] [-NotificationRe
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Update-AzSqlDatabaseAdvancedThreatProtectionSetting** imposta le impostazioni avanzate per la protezione delle minacce in un database SQL di Azure.
-Per abilitare la protezione avanzata dalle minacce in un database, è necessario abilitare le impostazioni di controllo nel database.
-Per usare questo cmdlet, specificare i parametri *ResourceGroupName* , *ServerName* e *DatabaseName* per identificare il database.
-Questo cmdlet è supportato anche dal servizio database stretch di SQL Server in Azure.
+## DESCRIZIONE
+Il cmdlet **Update-AzSqlDatabaseAdvancedThreatProtectionSetting** configura le impostazioni di Protezione avanzata dalle minacce in un database SQL Azure.
+Per abilitare Advanced Threat Protection in un database, è necessario abilitare le impostazioni di controllo in tale database.
+Per usare questo cmdlet, specificare i *parametri ResourceGroupName,* *ServerName* e *DatabaseName* per identificare il database.
+Questo cmdlet è supportato anche dal servizio SQL Server stretch database in Azure.
 
 ## ESEMPI
 
-### Esempio 1: impostare le impostazioni avanzate di protezione dalle minacce per un database
+### Esempio 1: Configurare le impostazioni di Protezione avanzata dalle minacce per un database
 ```
 PS C:\>Update-AzSqlDatabaseAdvancedThreatProtectionSetting -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -DatabaseName "Database01" -NotificationRecipientsEmails "admin01@contoso.com;secadmin@contoso.com" -EmailAdmins $False -ExcludedDetectionType "Sql_Injection_Vulnerability", "SQL_Injection" -StorageAccountName "mystorageAccount"
 ```
 
-Questo comando imposta le impostazioni avanzate di protezione dalle minacce per un database denominato Database01 nel server denominato Server01.
+Questo comando configura le impostazioni di Protezione avanzata dalle minacce per un database denominato Database01 nel server denominato Server01.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DatabaseName
 Specifica il nome del database in cui sono impostate le impostazioni.
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -EmailAdmins
-Specifica se le impostazioni avanzate di protezione dalle minacce contattano gli amministratori tramite posta elettronica.
+Specifica se le impostazioni di Protezione avanzata dalle minacce contattano gli amministratori tramite posta elettronica.
 
 ```yaml
 Type: System.Nullable`1[System.Boolean]
@@ -91,10 +91,10 @@ Accept wildcard characters: False
 
 ### -ExcludedDetectionType
 Specifica una matrice di tipi di rilevamento da escludere dalle impostazioni.
-I valori accettabili per questo parametro sono i seguenti:
-- Sql_Injection 
-- Sql_Injection_Vulnerability 
-- Access_Anomaly 
+I valori accettabili per questo parametro sono:
+- Sql_Injection
+- Sql_Injection_Vulnerability
+- Access_Anomaly
 - Nessuno
 
 ```yaml
@@ -110,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -NotificationRecipientsEmails
-Specifica un elenco di indirizzi di posta elettronica separati da punti e virgola a cui le impostazioni inviano avvisi.
+Specifica un elenco di indirizzi di posta elettronica separati da punto e virgola a cui le impostazioni inviano avvisi.
 
 ```yaml
 Type: System.String
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Restituisce un oggetto che rappresenta l'elemento con cui si sta lavorando.
+Restituisce un oggetto che rappresenta l'elemento su cui si sta lavorando.
 Per impostazione predefinita, questo cmdlet non genera alcun output.
 
 ```yaml
@@ -156,7 +156,7 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionInDays
-Numero di giorni di conservazione per i registri di controllo
+Il numero di giorni di conservazione per i log di controllo
 
 ```yaml
 Type: System.Nullable`1[System.UInt32]
@@ -170,7 +170,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Nomeserver
+### -ServerName
 Specifica il nome del server.
 
 ```yaml
@@ -186,7 +186,7 @@ Accept wildcard characters: False
 ```
 
 ### -StorageAccountName
-Specifica il nome dell'account di archiviazione da usare. I caratteri jolly non sono consentiti. Questo parametro non è obbligatorio. Quando questo parametro non viene specificato, il cmdlet utilizzerà l'account di archiviazione definito in precedenza come parte delle impostazioni avanzate per la protezione delle minacce del database. Se è la prima volta che si definisce un database Advanced Threat Protection Settings e questo parametro non è disponibile, il cmdlet avrà esito negativo.
+Specifica il nome dell'account di archiviazione da usare. I caratteri jolly non sono consentiti. Questo parametro non è obbligatorio. Se questo parametro non è disponibile, il cmdlet userà l'account di archiviazione definito in precedenza nelle impostazioni di Protezione avanzata dalle minacce del database. Se è la prima volta che vengono definite le impostazioni di Protezione avanzata dalle minacce del database e questo parametro non viene fornito, il cmdlet non riesce.
 
 ```yaml
 Type: System.String
@@ -200,8 +200,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confermare
-Richiede la conferma prima di eseguire il cmdlet.
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -216,7 +216,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra cosa succede se il cmdlet viene eseguito.
+Mostra cosa accadrebbe se il cmdlet viene eseguito.
 Il cmdlet non viene eseguito.
 
 ```yaml
@@ -232,30 +232,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
-### System. Nullable ' 1 [[System. Boolean, System. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### Microsoft. Azure. Commands. SQL. ThreatDetection. Model. DetectionType []
+### Microsoft.Azure.Commands.Sql.ThreatDetection.Model.DetectionType[]
 
-### System. Nullable ' 1 [[System. UInt32, System. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.UInt32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. SQL. ThreatDetection. Model. DatabaseThreatDetectionsettingsModel
+### Microsoft.Azure.Commands.Sql.ThreatDetection.Model.DatabaseThreatDetectionsettingsModel
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Get-AzSqlDatabaseThreatDetectionsettings](./Get-AzSqlServerThreatDetectionsettings.md)
-
-[Remove-AzSqlDatabaseThreatDetectionsettings](./Remove-AzSqlDatabaseThreatDetectionsettings.md)
-
-[Documentazione di database SQL](https://docs.microsoft.com/azure/sql-database/)
-
-
+[documentazione SQL database](https://docs.microsoft.com/azure/sql-database/)
