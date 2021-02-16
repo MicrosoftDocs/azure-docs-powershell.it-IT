@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/te
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Test-AzNetworkWatcherIPFlow.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Test-AzNetworkWatcherIPFlow.md
-ms.openlocfilehash: 75b8d976dc4c7be0544f2445ef991723c692edbf
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: b16b405162a87c54c25f47b7e2a977a8e0022df5
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94189467"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100416176"
 ---
 # Test-AzNetworkWatcherIPFlow
 
-## Sinossi
-Restituisce un valore che indica se il pacchetto è consentito o negato per o da una determinata destinazione.
+## SYNOPSIS
+Restituisce se il pacchetto è consentito o negato a o da una destinazione specifica.
 
 ## SINTASSI
 
-### SetByResource (impostazione predefinita)
+### SetByResource (Default)
 ```
 Test-AzNetworkWatcherIPFlow -NetworkWatcher <PSNetworkWatcher> -TargetVirtualMachineId <String>
  -Direction <String> -Protocol <String> -RemoteIPAddress <String> -LocalIPAddress <String> -LocalPort <String>
@@ -43,12 +43,12 @@ Test-AzNetworkWatcherIPFlow -Location <String> -TargetVirtualMachineId <String> 
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet Test-AzNetworkWatcherIPFlow, per una risorsa VM specificata e un pacchetto con una direzione specificata con gli indirizzi IP locali e remoti e le porte, restituisce se il pacchetto è consentito o negato.
+## DESCRIZIONE
+Il cmdlet Test-AzNetworkWatcherIPFlow, per una risorsa VM specificata e un pacchetto con la direzione specificata usando porte e indirizzi IP locali e remoti, restituisce se il pacchetto è consentito o negato.
 
 ## ESEMPI
 
-### Esempio 1: eseguire Test-AzNetworkWatcherIPFlow
+### Esempio 1: Eseguire Test-AzNetworkWatcherIPFlow
 ```
 $nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" } 
 $networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName 
@@ -58,12 +58,12 @@ $Nics = Get-AzNetworkInterface | Where-Object { $vm.NetworkProfile.NetworkInterf
 Test-AzNetworkWatcherIPFlow -NetworkWatcher $networkWatcher -TargetVirtualMachineId $VM.Id -Direction Outbound -Protocol TCP -LocalIPAddress $nics[0].IpConfigurations[0].PrivateIpAddress -LocalPort 6895 -RemoteIPAddress 204.79.197.200 -RemotePort 80
 ```
 
-Ottiene il Network Watcher in West Central US per questo abbonamento, quindi ottiene la VM ed è associata alle interfacce di rete. Quindi, per la prima interfaccia di rete, viene eseguito Test-AzNetworkWatcherIPFlow usando il primo IP della prima interfaccia di rete per una connessione in uscita a un IP su Internet.
+Ottiene Network Watcher negli Stati Uniti centrali occidentali per questo abbonamento, quindi ottiene la macchina virtuale e le interfacce di rete associate. Quindi, per la prima interfaccia di rete, viene Test-AzNetworkWatcherIPFlow il primo IP dalla prima interfaccia di rete per una connessione in uscita a un indirizzo IP su Internet.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -AsJob
-Esegui cmdlet in background
+Eseguire il cmdlet in background
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -78,7 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -92,7 +92,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Direzione
+### -Direction
 Direzione.
 
 ```yaml
@@ -108,7 +108,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IndirizzoIPLocale
+### -LocalIPAddress
 Indirizzo IP locale.
 
 ```yaml
@@ -138,8 +138,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Posizione
-Posizione del monitoraggio della rete.
+### -Location
+Posizione del network watcher.
 
 ```yaml
 Type: System.String
@@ -154,7 +154,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcher
-Risorsa Watcher di rete.
+Risorsa Network Watcher.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -183,7 +183,7 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Protocollo
+### -Protocol
 Protocollo.
 
 ```yaml
@@ -199,7 +199,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IndirizzoIPRemoto
+### -RemoteIPAddress
 Indirizzo IP remoto.
 
 ```yaml
@@ -230,7 +230,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Nome del gruppo di risorse di Watcher di rete.
+Nome del gruppo di risorse Network Watcher.
 
 ```yaml
 Type: System.String
@@ -260,7 +260,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetVirtualMachineId
-ID macchina virtuale di destinazione.
+ID della macchina virtuale di destinazione.
 
 ```yaml
 Type: System.String
@@ -275,20 +275,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### Microsoft. Azure. Commands. Network. Models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Network. Models. PSIPFlowVerifyResult
+### Microsoft.Azure.Commands.Network.Models.PSIPFlowVerifyResult
 
-## Note
-Parole chiave: Azure, azurerm, ARM, Resource, Management, Manager, Network, networking, Network Watcher, Flow, IP 
+## NOTE
+Parole chiave: azure, azurerm, arm, risorsa, gestione, manager, rete, rete, network watcher, flusso, ip 
 
 ## COLLEGAMENTI CORRELATI
 
@@ -344,4 +344,4 @@ Parole chiave: Azure, azurerm, ARM, Resource, Management, Manager, Network, netw
 
 [Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)

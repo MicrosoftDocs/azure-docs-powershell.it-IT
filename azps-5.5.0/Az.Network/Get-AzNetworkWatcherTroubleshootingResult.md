@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherTroubleshootingResult.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherTroubleshootingResult.md
-ms.openlocfilehash: db3e3e529fd5c056acf793cd14280ef688c58a81
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 871509fc03a7cb80735b6f011a7103350fd945ac
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100193790"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100416125"
 ---
 # Get-AzNetworkWatcherTroubleshootingResult
 
@@ -38,11 +38,11 @@ Get-AzNetworkWatcherTroubleshootingResult -Location <String> -TargetResourceId <
 ```
 
 ## DESCRIZIONE
-Il cmdlet Get-AzNetworkWatcherTroubleshootingResult cmdlet recupera il risultato della risoluzione dei problemi dall'operazione eseguita in precedenza o da Start-AzNetworkWatcherResourceTroubleshooting in corso. Se è in corso l'operazione di risoluzione dei problemi, il completamento dell'operazione potrebbe richiedere alcuni minuti. Attualmente sono supportati i gateway e le connessioni di rete virtuale.
+Il Get-AzNetworkWatcherTroubleshootingResult cmdlet recupera il risultato della risoluzione dei problemi dall'operazione eseguita in precedenza o da Start-AzNetworkWatcherResourceTroubleshooting in corso. Se è in corso l'operazione di risoluzione dei problemi, il completamento dell'operazione potrebbe richiedere alcuni minuti. Attualmente sono supportati gateway e connessioni di rete virtuale.
 
 ## ESEMPI
 
-### Esempio 1: Avviare la risoluzione dei problemi in un Gateway di rete virtuale e recuperare i risultati
+### Esempio 1: Avviare la risoluzione dei problemi in un Gateway di rete virtuale e recuperare il risultato
 ```
 $nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" } 
 $networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName 
@@ -221,4 +221,4 @@ Parole chiave: azure, azurerm, arm, risorsa, gestione, manager, rete, rete, netw
 
 [Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
