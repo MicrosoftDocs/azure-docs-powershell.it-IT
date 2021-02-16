@@ -1,0 +1,166 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.DataFactoryV2.dll-Help.xml
+Module Name: Az.DataFactory
+online version: https://docs.microsoft.com/en-us/powershell/module/az.datafactory/get-azdatafactoryv2integrationruntimemetric
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Get-AzDataFactoryV2IntegrationRuntimeMetric.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Get-AzDataFactoryV2IntegrationRuntimeMetric.md
+ms.openlocfilehash: 9b82d302bba1c2f51de3748fb9c335dd0db2699d
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100208747"
+---
+# <span data-ttu-id="33492-101">Get-AzDataFactoryV2IntegrationRuntimeMetric</span><span class="sxs-lookup"><span data-stu-id="33492-101">Get-AzDataFactoryV2IntegrationRuntimeMetric</span></span>
+
+## <span data-ttu-id="33492-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="33492-102">SYNOPSIS</span></span>
+<span data-ttu-id="33492-103">Recupera i dati della metrica per un runtime di integrazione.</span><span class="sxs-lookup"><span data-stu-id="33492-103">Gets metric data for an integration runtime.</span></span> 
+
+## <span data-ttu-id="33492-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="33492-104">SYNTAX</span></span>
+
+### <span data-ttu-id="33492-105">ByIntegrationRuntimeName (impostazione predefinita)</span><span class="sxs-lookup"><span data-stu-id="33492-105">ByIntegrationRuntimeName (Default)</span></span>
+```
+Get-AzDataFactoryV2IntegrationRuntimeMetric [-Name] <String> [-ResourceGroupName] <String>
+ [-DataFactoryName] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="33492-106">ByResourceId</span><span class="sxs-lookup"><span data-stu-id="33492-106">ByResourceId</span></span>
+```
+Get-AzDataFactoryV2IntegrationRuntimeMetric [-ResourceId] <String> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="33492-107">ByIntegrationRuntimeObject</span><span class="sxs-lookup"><span data-stu-id="33492-107">ByIntegrationRuntimeObject</span></span>
+```
+Get-AzDataFactoryV2IntegrationRuntimeMetric [-InputObject] <PSIntegrationRuntime>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="33492-108">DESCRIZIONE</span><span class="sxs-lookup"><span data-stu-id="33492-108">DESCRIPTION</span></span>
+<span data-ttu-id="33492-109">Il Get-AzDataFactoryV2IntegrationRuntimeMetric cmdlet recupera i dati della metrica sul runtime di integrazione in un data factory.</span><span class="sxs-lookup"><span data-stu-id="33492-109">The Get-AzDataFactoryV2IntegrationRuntimeMetric cmdlet gets metric data about integration runtime in a data factory.</span></span>
+
+## <span data-ttu-id="33492-110">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="33492-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="33492-111">Esempio 1: Ottenere la metrica di runtime di integrazione</span><span class="sxs-lookup"><span data-stu-id="33492-111">Example 1: Get integration runtime metric</span></span>
+```
+PS C:\> Get-AzDataFactoryV2IntegrationRuntimeMetric -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df-eu2' -Name 'test-selfhost-ir'
+
+IntegrationRuntimeName ResourceGroupName DataFactoryName   Nodes   
+---------------------- ----------------- ---------------   -----   
+test-selfhost-ir       rg-test-dfv2      test-df-eu2       {Node_1}
+```
+
+<span data-ttu-id="33492-112">Questo comando visualizza i dati di metrica relativi al runtime di integrazione denominato "test-selfhost-ir" nella sottoscrizione per il gruppo di risorse denominato "rg-test-dfv2" e il data factory denominato "test-df-eu2".</span><span class="sxs-lookup"><span data-stu-id="33492-112">This command displays metric data about the integration runtime named 'test-selfhost-ir' in the subscription for the resource group named 'rg-test-dfv2' and data factory named 'test-df-eu2'.</span></span>
+
+## <span data-ttu-id="33492-113">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="33492-113">PARAMETERS</span></span>
+
+### <span data-ttu-id="33492-114">-DataFactoryName</span><span class="sxs-lookup"><span data-stu-id="33492-114">-DataFactoryName</span></span>
+<span data-ttu-id="33492-115">Nome del data factory.</span><span class="sxs-lookup"><span data-stu-id="33492-115">The data factory name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByIntegrationRuntimeName
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="33492-116">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="33492-116">-DefaultProfile</span></span>
+<span data-ttu-id="33492-117">Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.</span><span class="sxs-lookup"><span data-stu-id="33492-117">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="33492-118">-InputObject</span><span class="sxs-lookup"><span data-stu-id="33492-118">-InputObject</span></span>
+<span data-ttu-id="33492-119">Oggetto runtime di integrazione.</span><span class="sxs-lookup"><span data-stu-id="33492-119">The integration runtime object.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.DataFactoryV2.Models.PSIntegrationRuntime
+Parameter Sets: ByIntegrationRuntimeObject
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="33492-120">-Name</span><span class="sxs-lookup"><span data-stu-id="33492-120">-Name</span></span>
+<span data-ttu-id="33492-121">Nome del runtime di integrazione.</span><span class="sxs-lookup"><span data-stu-id="33492-121">The integration runtime name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByIntegrationRuntimeName
+Aliases: IntegrationRuntimeName
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="33492-122">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="33492-122">-ResourceGroupName</span></span>
+<span data-ttu-id="33492-123">Nome del gruppo di risorse.</span><span class="sxs-lookup"><span data-stu-id="33492-123">The resource group name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByIntegrationRuntimeName
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="33492-124">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="33492-124">-ResourceId</span></span>
+<span data-ttu-id="33492-125">ID della risorsa Azure.</span><span class="sxs-lookup"><span data-stu-id="33492-125">The Azure resource ID.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByResourceId
+Aliases: Id
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="33492-126">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="33492-126">CommonParameters</span></span>
+<span data-ttu-id="33492-127">Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="33492-127">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="33492-128">Per altre informazioni, vedere about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="33492-128">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="33492-129">INPUT</span><span class="sxs-lookup"><span data-stu-id="33492-129">INPUTS</span></span>
+
+### <span data-ttu-id="33492-130">System.String</span><span class="sxs-lookup"><span data-stu-id="33492-130">System.String</span></span>
+
+### <span data-ttu-id="33492-131">Microsoft.Azure.Commands.DataFactoryV2.Models.PSIntegrationRuntime</span><span class="sxs-lookup"><span data-stu-id="33492-131">Microsoft.Azure.Commands.DataFactoryV2.Models.PSIntegrationRuntime</span></span>
+
+## <span data-ttu-id="33492-132">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="33492-132">OUTPUTS</span></span>
+
+### <span data-ttu-id="33492-133">Microsoft.Azure.Commands.DataFactoryV2.Models.PSIntegrationRuntimeMetrics</span><span class="sxs-lookup"><span data-stu-id="33492-133">Microsoft.Azure.Commands.DataFactoryV2.Models.PSIntegrationRuntimeMetrics</span></span>
+
+## <span data-ttu-id="33492-134">NOTE</span><span class="sxs-lookup"><span data-stu-id="33492-134">NOTES</span></span>
+
+## <span data-ttu-id="33492-135">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="33492-135">RELATED LINKS</span></span>
+
+[<span data-ttu-id="33492-136">Get-AzDataFactoryV2IntegrationRuntime</span><span class="sxs-lookup"><span data-stu-id="33492-136">Get-AzDataFactoryV2IntegrationRuntime</span></span>]()
+
