@@ -6,40 +6,40 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/r
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultKey.md
-ms.openlocfilehash: bfdd237ecadadae181d9e9dd3a201580537097f0
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 75d781527a9783c81eba5bd2aacf07d237ef4f8f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93864804"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100412079"
 ---
-# <span data-ttu-id="7251c-101">Remove-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="7251c-101">Remove-AzKeyVaultKey</span></span>
+# <span data-ttu-id="93d83-101">Remove-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="93d83-101">Remove-AzKeyVaultKey</span></span>
 
-## <span data-ttu-id="7251c-102">Sinossi</span><span class="sxs-lookup"><span data-stu-id="7251c-102">SYNOPSIS</span></span>
-<span data-ttu-id="7251c-103">Elimina una chiave in un Vault chiave.</span><span class="sxs-lookup"><span data-stu-id="7251c-103">Deletes a key in a key vault.</span></span>
+## <span data-ttu-id="93d83-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="93d83-102">SYNOPSIS</span></span>
+<span data-ttu-id="93d83-103">Elimina una chiave in un vault delle chiavi.</span><span class="sxs-lookup"><span data-stu-id="93d83-103">Deletes a key in a key vault.</span></span>
 
-## <span data-ttu-id="7251c-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="7251c-104">SYNTAX</span></span>
+## <span data-ttu-id="93d83-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="93d83-104">SYNTAX</span></span>
 
-### <span data-ttu-id="7251c-105">ByVaultName (impostazione predefinita)</span><span class="sxs-lookup"><span data-stu-id="7251c-105">ByVaultName (Default)</span></span>
+### <span data-ttu-id="93d83-105">ByVaultName (impostazione predefinita)</span><span class="sxs-lookup"><span data-stu-id="93d83-105">ByVaultName (Default)</span></span>
 ```
 Remove-AzKeyVaultKey [-VaultName] <String> [-Name] <String> [-Force] [-PassThru] [-InRemovedState]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="7251c-106">ByInputObject</span><span class="sxs-lookup"><span data-stu-id="7251c-106">ByInputObject</span></span>
+### <span data-ttu-id="93d83-106">ByInputObject</span><span class="sxs-lookup"><span data-stu-id="93d83-106">ByInputObject</span></span>
 ```
 Remove-AzKeyVaultKey [-InputObject] <PSKeyVaultKeyIdentityItem> [-Force] [-PassThru] [-InRemovedState]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="7251c-107">Descrizione</span><span class="sxs-lookup"><span data-stu-id="7251c-107">DESCRIPTION</span></span>
-<span data-ttu-id="7251c-108">Il cmdlet Remove-AzKeyVaultKey Elimina una chiave in un Vault chiave.</span><span class="sxs-lookup"><span data-stu-id="7251c-108">The Remove-AzKeyVaultKey cmdlet deletes a key in a key vault.</span></span>
-<span data-ttu-id="7251c-109">Se la chiave è stata eliminata accidentalmente, la chiave può essere recuperata usando Undo-AzKeyVaultKeyRemoval da un utente con autorizzazioni di ripristino speciali.</span><span class="sxs-lookup"><span data-stu-id="7251c-109">If the key was accidentally deleted the key can be recovered using Undo-AzKeyVaultKeyRemoval by a user with special 'recover' permissions.</span></span>
-<span data-ttu-id="7251c-110">Questo cmdlet ha un valore elevato per la proprietà **ConfirmImpact** .</span><span class="sxs-lookup"><span data-stu-id="7251c-110">This cmdlet has a value of high for the **ConfirmImpact** property.</span></span>
+## <span data-ttu-id="93d83-107">DESCRIZIONE</span><span class="sxs-lookup"><span data-stu-id="93d83-107">DESCRIPTION</span></span>
+<span data-ttu-id="93d83-108">Il Remove-AzKeyVaultKey cmdlet elimina una chiave in un vault delle chiavi.</span><span class="sxs-lookup"><span data-stu-id="93d83-108">The Remove-AzKeyVaultKey cmdlet deletes a key in a key vault.</span></span>
+<span data-ttu-id="93d83-109">Se la chiave è stata eliminata accidentalmente, può essere recuperata usando Undo-AzKeyVaultKeyRemoval da un utente con speciali autorizzazioni di "recupero".</span><span class="sxs-lookup"><span data-stu-id="93d83-109">If the key was accidentally deleted the key can be recovered using Undo-AzKeyVaultKeyRemoval by a user with special 'recover' permissions.</span></span>
+<span data-ttu-id="93d83-110">Questo cmdlet ha un valore alto per la **proprietà ConfirmImpact.**</span><span class="sxs-lookup"><span data-stu-id="93d83-110">This cmdlet has a value of high for the **ConfirmImpact** property.</span></span>
 
-## <span data-ttu-id="7251c-111">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="7251c-111">EXAMPLES</span></span>
+## <span data-ttu-id="93d83-111">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="93d83-111">EXAMPLES</span></span>
 
-### <span data-ttu-id="7251c-112">Esempio 1: rimuovere una chiave da un Vault chiave</span><span class="sxs-lookup"><span data-stu-id="7251c-112">Example 1: Remove a key from a key vault</span></span>
+### <span data-ttu-id="93d83-112">Esempio 1: Rimuovere una chiave da un vault delle chiavi</span><span class="sxs-lookup"><span data-stu-id="93d83-112">Example 1: Remove a key from a key vault</span></span>
 ```powershell
 PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -PassThru
 
@@ -57,37 +57,37 @@ Purge Disabled       : False
 Tags                 :
 ```
 
-<span data-ttu-id="7251c-113">Questo comando rimuove la chiave denominata ITSoftware dal Vault chiave denominato contoso.</span><span class="sxs-lookup"><span data-stu-id="7251c-113">This command removes the key named ITSoftware from the key vault named Contoso.</span></span>
+<span data-ttu-id="93d83-113">Questo comando rimuove la chiave denominata ITSoftware dalla chiave vault denominata Contoso.</span><span class="sxs-lookup"><span data-stu-id="93d83-113">This command removes the key named ITSoftware from the key vault named Contoso.</span></span>
 
-### <span data-ttu-id="7251c-114">Esempio 2: rimuovere una chiave senza la conferma dell'utente</span><span class="sxs-lookup"><span data-stu-id="7251c-114">Example 2: Remove a key without user confirmation</span></span>
+### <span data-ttu-id="93d83-114">Esempio 2: Rimuovere una chiave senza conferma utente</span><span class="sxs-lookup"><span data-stu-id="93d83-114">Example 2: Remove a key without user confirmation</span></span>
 ```powershell
 PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -Force
 ```
 
-<span data-ttu-id="7251c-115">Questo comando rimuove la chiave denominata ITSoftware dal Vault chiave denominato contoso.</span><span class="sxs-lookup"><span data-stu-id="7251c-115">This command removes the key named ITSoftware from the key vault named Contoso.</span></span>
-<span data-ttu-id="7251c-116">Il comando specifica il parametro *Force* e, di conseguenza, il cmdlet non chiede conferma.</span><span class="sxs-lookup"><span data-stu-id="7251c-116">The command specifies the *Force* parameter, and, therefore, the cmdlet does not prompt you for confirmation.</span></span>
+<span data-ttu-id="93d83-115">Questo comando rimuove la chiave denominata ITSoftware dalla chiave vault denominata Contoso.</span><span class="sxs-lookup"><span data-stu-id="93d83-115">This command removes the key named ITSoftware from the key vault named Contoso.</span></span>
+<span data-ttu-id="93d83-116">Il comando specifica il *parametro Force* e, di conseguenza, il cmdlet non richiede conferma.</span><span class="sxs-lookup"><span data-stu-id="93d83-116">The command specifies the *Force* parameter, and, therefore, the cmdlet does not prompt you for confirmation.</span></span>
 
-### <span data-ttu-id="7251c-117">Esempio 3: eliminare definitivamente una chiave eliminata dal caveau della chiave</span><span class="sxs-lookup"><span data-stu-id="7251c-117">Example 3: Purge a deleted key from the key vault permanently</span></span>
+### <span data-ttu-id="93d83-117">Esempio 3: Eliminare definitivamente una chiave eliminata dal vault delle chiavi</span><span class="sxs-lookup"><span data-stu-id="93d83-117">Example 3: Purge a deleted key from the key vault permanently</span></span>
 ```powershell
 PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -InRemovedState
 ```
 
-<span data-ttu-id="7251c-118">Questo comando rimuove la chiave denominata ITSoftware dal Vault chiave denominato Contoso in modo permanente.</span><span class="sxs-lookup"><span data-stu-id="7251c-118">This command removes the key named ITSoftware from the key vault named Contoso permanently.</span></span>
-<span data-ttu-id="7251c-119">L'esecuzione di questo cmdlet richiede l'autorizzazione "Purge", che deve essere stata concessa in precedenza e esplicitamente all'utente per questo Vault chiave.</span><span class="sxs-lookup"><span data-stu-id="7251c-119">Executing this cmdlet requires the 'purge' permission, which must have been previously and explicitly granted to the user for this key vault.</span></span>
+<span data-ttu-id="93d83-118">Questo comando rimuove la chiave denominata ITSoftware dalla chiave vault denominata Contoso in modo permanente.</span><span class="sxs-lookup"><span data-stu-id="93d83-118">This command removes the key named ITSoftware from the key vault named Contoso permanently.</span></span>
+<span data-ttu-id="93d83-119">Per l'esecuzione di questo cmdlet è necessaria l'autorizzazione di eliminazione, che deve essere stata concessa in precedenza ed esplicitamente all'utente per il vault della chiave.</span><span class="sxs-lookup"><span data-stu-id="93d83-119">Executing this cmdlet requires the 'purge' permission, which must have been previously and explicitly granted to the user for this key vault.</span></span>
 
-### <span data-ttu-id="7251c-120">Esempio 4: rimuovere le chiavi usando l'operatore pipeline</span><span class="sxs-lookup"><span data-stu-id="7251c-120">Example 4: Remove keys by using the pipeline operator</span></span>
+### <span data-ttu-id="93d83-120">Esempio 4: Rimuovere chiavi usando l'operatore pipeline</span><span class="sxs-lookup"><span data-stu-id="93d83-120">Example 4: Remove keys by using the pipeline operator</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'Contoso' | Where-Object {$_.Attributes.Enabled -eq $False} | Remove-AzKeyVaultKey
 ```
 
-<span data-ttu-id="7251c-121">Questo comando consente di ottenere tutte le chiavi nel Vault chiave denominato Contoso e di passarle al cmdlet **Where-Object** usando l'operatore pipeline.</span><span class="sxs-lookup"><span data-stu-id="7251c-121">This command gets all the keys in the key vault named Contoso, and passes them to the **Where-Object** cmdlet by using the pipeline operator.</span></span>
-<span data-ttu-id="7251c-122">Questo cmdlet passa le chiavi che hanno un valore di $False per l'attributo **Enabled** al cmdlet Current.</span><span class="sxs-lookup"><span data-stu-id="7251c-122">That cmdlet passes the keys that have a value of $False for the **Enabled** attribute to the current cmdlet.</span></span>
-<span data-ttu-id="7251c-123">Questo cmdlet consente di rimuovere le chiavi.</span><span class="sxs-lookup"><span data-stu-id="7251c-123">That cmdlet removes those keys.</span></span>
+<span data-ttu-id="93d83-121">Questo comando recupera tutte le chiavi nel vault delle chiavi denominato Contoso e le passa al cmdlet **Where-Object** usando l'operatore pipeline.</span><span class="sxs-lookup"><span data-stu-id="93d83-121">This command gets all the keys in the key vault named Contoso, and passes them to the **Where-Object** cmdlet by using the pipeline operator.</span></span>
+<span data-ttu-id="93d83-122">Questo cmdlet passa le chiavi che hanno un valore di $False per **l'attributo Enabled** al cmdlet corrente.</span><span class="sxs-lookup"><span data-stu-id="93d83-122">That cmdlet passes the keys that have a value of $False for the **Enabled** attribute to the current cmdlet.</span></span>
+<span data-ttu-id="93d83-123">Questo cmdlet rimuove queste chiavi.</span><span class="sxs-lookup"><span data-stu-id="93d83-123">That cmdlet removes those keys.</span></span>
 
-## <span data-ttu-id="7251c-124">PARAMETRI</span><span class="sxs-lookup"><span data-stu-id="7251c-124">PARAMETERS</span></span>
+## <span data-ttu-id="93d83-124">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="93d83-124">PARAMETERS</span></span>
 
-### <span data-ttu-id="7251c-125">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="7251c-125">-DefaultProfile</span></span>
-<span data-ttu-id="7251c-126">Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure</span><span class="sxs-lookup"><span data-stu-id="7251c-126">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="93d83-125">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="93d83-125">-DefaultProfile</span></span>
+<span data-ttu-id="93d83-126">Le credenziali, l'account, il tenant e la sottoscrizione usati per le comunicazioni con Azure</span><span class="sxs-lookup"><span data-stu-id="93d83-126">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -101,8 +101,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7251c-127">-Force</span><span class="sxs-lookup"><span data-stu-id="7251c-127">-Force</span></span>
-<span data-ttu-id="7251c-128">Impone l'esecuzione del comando senza richiedere la conferma dell'utente.</span><span class="sxs-lookup"><span data-stu-id="7251c-128">Forces the command to run without asking for user confirmation.</span></span>
+### <span data-ttu-id="93d83-127">-Force</span><span class="sxs-lookup"><span data-stu-id="93d83-127">-Force</span></span>
+<span data-ttu-id="93d83-128">Forza l'esecuzione del comando senza chiedere conferma all'utente.</span><span class="sxs-lookup"><span data-stu-id="93d83-128">Forces the command to run without asking for user confirmation.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -116,8 +116,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7251c-129">-InputObject</span><span class="sxs-lookup"><span data-stu-id="7251c-129">-InputObject</span></span>
-<span data-ttu-id="7251c-130">Oggetto bundle</span><span class="sxs-lookup"><span data-stu-id="7251c-130">KeyBundle Object</span></span>
+### <span data-ttu-id="93d83-129">-InputObject</span><span class="sxs-lookup"><span data-stu-id="93d83-129">-InputObject</span></span>
+<span data-ttu-id="93d83-130">Oggetto KeyBundle</span><span class="sxs-lookup"><span data-stu-id="93d83-130">KeyBundle Object</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem
@@ -131,8 +131,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7251c-131">-InRemovedState</span><span class="sxs-lookup"><span data-stu-id="7251c-131">-InRemovedState</span></span>
-<span data-ttu-id="7251c-132">Rimuovere definitivamente la chiave eliminata in precedenza.</span><span class="sxs-lookup"><span data-stu-id="7251c-132">Remove the previously deleted key permanently.</span></span>
+### <span data-ttu-id="93d83-131">-InRemovedState</span><span class="sxs-lookup"><span data-stu-id="93d83-131">-InRemovedState</span></span>
+<span data-ttu-id="93d83-132">Rimuovere definitivamente la chiave eliminata in precedenza.</span><span class="sxs-lookup"><span data-stu-id="93d83-132">Remove the previously deleted key permanently.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -146,9 +146,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7251c-133">-Nome</span><span class="sxs-lookup"><span data-stu-id="7251c-133">-Name</span></span>
-<span data-ttu-id="7251c-134">Specifica il nome della chiave da rimuovere.</span><span class="sxs-lookup"><span data-stu-id="7251c-134">Specifies the name of the key to remove.</span></span>
-<span data-ttu-id="7251c-135">Questo cmdlet costruisce il nome di dominio completo (FQDN) di una chiave in base al nome specificato da questo parametro, il nome del Vault della chiave e l'ambiente corrente.</span><span class="sxs-lookup"><span data-stu-id="7251c-135">This cmdlet constructs the fully qualified domain name (FQDN) of a key based on the name that this parameter specifies, the name of the key vault, and your current environment.</span></span>
+### <span data-ttu-id="93d83-133">-Name</span><span class="sxs-lookup"><span data-stu-id="93d83-133">-Name</span></span>
+<span data-ttu-id="93d83-134">Specifica il nome della chiave da rimuovere.</span><span class="sxs-lookup"><span data-stu-id="93d83-134">Specifies the name of the key to remove.</span></span>
+<span data-ttu-id="93d83-135">Questo cmdlet crea il nome di dominio completo (FQDN) di una chiave in base al nome specificato da questo parametro, al nome del vault delle chiavi e all'ambiente corrente.</span><span class="sxs-lookup"><span data-stu-id="93d83-135">This cmdlet constructs the fully qualified domain name (FQDN) of a key based on the name that this parameter specifies, the name of the key vault, and your current environment.</span></span>
 
 ```yaml
 Type: System.String
@@ -162,9 +162,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7251c-136">-PassThru</span><span class="sxs-lookup"><span data-stu-id="7251c-136">-PassThru</span></span>
-<span data-ttu-id="7251c-137">Indica che questo cmdlet restituisce un oggetto **Microsoft. Azure. Commands. DataVault. Models. PSKeyVaultKey** .</span><span class="sxs-lookup"><span data-stu-id="7251c-137">Indicates that this cmdlet returns a **Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKey** object.</span></span>
-<span data-ttu-id="7251c-138">Per impostazione predefinita, questo cmdlet non genera alcun output.</span><span class="sxs-lookup"><span data-stu-id="7251c-138">By default, this cmdlet does not generate any output.</span></span>
+### <span data-ttu-id="93d83-136">-PassThru</span><span class="sxs-lookup"><span data-stu-id="93d83-136">-PassThru</span></span>
+<span data-ttu-id="93d83-137">Indica che questo cmdlet restituisce un **oggetto Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKey.**</span><span class="sxs-lookup"><span data-stu-id="93d83-137">Indicates that this cmdlet returns a **Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKey** object.</span></span>
+<span data-ttu-id="93d83-138">Per impostazione predefinita, questo cmdlet non genera alcun output.</span><span class="sxs-lookup"><span data-stu-id="93d83-138">By default, this cmdlet does not generate any output.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -178,9 +178,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7251c-139">-VAULTNAME</span><span class="sxs-lookup"><span data-stu-id="7251c-139">-VaultName</span></span>
-<span data-ttu-id="7251c-140">Specifica il nome del Vault chiave da cui rimuovere la chiave.</span><span class="sxs-lookup"><span data-stu-id="7251c-140">Specifies the name of the key vault from which to remove the key.</span></span>
-<span data-ttu-id="7251c-141">Questo cmdlet crea l'FQDN di un Vault chiave in base al nome specificato da questo parametro e all'ambiente corrente.</span><span class="sxs-lookup"><span data-stu-id="7251c-141">This cmdlet constructs the FQDN of a key vault based on the name that this parameter specifies and your current environment.</span></span>
+### <span data-ttu-id="93d83-139">-VaultName</span><span class="sxs-lookup"><span data-stu-id="93d83-139">-VaultName</span></span>
+<span data-ttu-id="93d83-140">Specifica il nome del vault della chiave da cui rimuovere la chiave.</span><span class="sxs-lookup"><span data-stu-id="93d83-140">Specifies the name of the key vault from which to remove the key.</span></span>
+<span data-ttu-id="93d83-141">Questo cmdlet crea l'FQDN di un vault delle chiavi in base al nome specificato da questo parametro e all'ambiente corrente.</span><span class="sxs-lookup"><span data-stu-id="93d83-141">This cmdlet constructs the FQDN of a key vault based on the name that this parameter specifies and your current environment.</span></span>
 
 ```yaml
 Type: System.String
@@ -194,8 +194,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7251c-142">-Confermare</span><span class="sxs-lookup"><span data-stu-id="7251c-142">-Confirm</span></span>
-<span data-ttu-id="7251c-143">Richiede la conferma prima di eseguire il cmdlet.</span><span class="sxs-lookup"><span data-stu-id="7251c-143">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="93d83-142">-Confirm</span><span class="sxs-lookup"><span data-stu-id="93d83-142">-Confirm</span></span>
+<span data-ttu-id="93d83-143">Chiede conferma prima di eseguire il cmdlet.</span><span class="sxs-lookup"><span data-stu-id="93d83-143">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -209,10 +209,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7251c-144">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="7251c-144">-WhatIf</span></span>
-<span data-ttu-id="7251c-145">Mostra cosa succede se il cmdlet viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="7251c-145">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="7251c-146">Il cmdlet non viene eseguito. Mostra cosa succede se il cmdlet viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="7251c-146">The cmdlet is not run.Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="7251c-147">Il cmdlet non viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="7251c-147">The cmdlet is not run.</span></span>
+### <span data-ttu-id="93d83-144">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="93d83-144">-WhatIf</span></span>
+<span data-ttu-id="93d83-145">Mostra cosa accadrebbe se il cmdlet viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="93d83-145">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="93d83-146">Il cmdlet non viene eseguito. Mostra cosa accadrebbe se il cmdlet viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="93d83-146">The cmdlet is not run.Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="93d83-147">Il cmdlet non viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="93d83-147">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -226,26 +226,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7251c-148">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="7251c-148">CommonParameters</span></span>
-<span data-ttu-id="7251c-149">Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="7251c-149">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="7251c-150">Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="7251c-150">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="93d83-148">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="93d83-148">CommonParameters</span></span>
+<span data-ttu-id="93d83-149">Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="93d83-149">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="93d83-150">Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.</span><span class="sxs-lookup"><span data-stu-id="93d83-150">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="7251c-151">INGRESSI</span><span class="sxs-lookup"><span data-stu-id="7251c-151">INPUTS</span></span>
+## <span data-ttu-id="93d83-151">INPUT</span><span class="sxs-lookup"><span data-stu-id="93d83-151">INPUTS</span></span>
 
-### <span data-ttu-id="7251c-152">Microsoft. Azure. Commands. Vault. Models. PSKeyVaultKeyIdentityItem</span><span class="sxs-lookup"><span data-stu-id="7251c-152">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem</span></span>
+### <span data-ttu-id="93d83-152">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem</span><span class="sxs-lookup"><span data-stu-id="93d83-152">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem</span></span>
 
-## <span data-ttu-id="7251c-153">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="7251c-153">OUTPUTS</span></span>
+## <span data-ttu-id="93d83-153">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="93d83-153">OUTPUTS</span></span>
 
-### <span data-ttu-id="7251c-154">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="7251c-154">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKey</span></span>
+### <span data-ttu-id="93d83-154">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="93d83-154">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKey</span></span>
 
-## <span data-ttu-id="7251c-155">Note</span><span class="sxs-lookup"><span data-stu-id="7251c-155">NOTES</span></span>
+## <span data-ttu-id="93d83-155">NOTE</span><span class="sxs-lookup"><span data-stu-id="93d83-155">NOTES</span></span>
 
-## <span data-ttu-id="7251c-156">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="7251c-156">RELATED LINKS</span></span>
+## <span data-ttu-id="93d83-156">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="93d83-156">RELATED LINKS</span></span>
 
-[<span data-ttu-id="7251c-157">Add-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="7251c-157">Add-AzKeyVaultKey</span></span>](./Add-AzKeyVaultKey.md)
+[<span data-ttu-id="93d83-157">Add-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="93d83-157">Add-AzKeyVaultKey</span></span>](./Add-AzKeyVaultKey.md)
 
-[<span data-ttu-id="7251c-158">Get-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="7251c-158">Get-AzKeyVaultKey</span></span>](./Get-AzKeyVaultKey.md)
+[<span data-ttu-id="93d83-158">Get-AzKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="93d83-158">Get-AzKeyVaultKey</span></span>](./Get-AzKeyVaultKey.md)
 
-[<span data-ttu-id="7251c-159">Set-AzKeyVaultKeyAttribute</span><span class="sxs-lookup"><span data-stu-id="7251c-159">Set-AzKeyVaultKeyAttribute</span></span>](./Set-AzKeyVaultKeyAttribute.md)
 
-[<span data-ttu-id="7251c-160">Undo-AzKeyVaultKeyRemoval</span><span class="sxs-lookup"><span data-stu-id="7251c-160">Undo-AzKeyVaultKeyRemoval</span></span>](./Undo-AzKeyVaultKeyRemoval.md)
+[<span data-ttu-id="93d83-159">Undo-AzKeyVaultKeyRemoval</span><span class="sxs-lookup"><span data-stu-id="93d83-159">Undo-AzKeyVaultKeyRemoval</span></span>](./Undo-AzKeyVaultKeyRemoval.md)
 
