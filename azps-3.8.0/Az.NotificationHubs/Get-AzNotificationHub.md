@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.notificati
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHub.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHub.md
-ms.openlocfilehash: 6fc2cfd47d9b03fc02d935245d1ec87d6831d173
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 85dd5d73d2f0f4ce15dcffb2733f803cf6e67c0a
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94022465"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406282"
 ---
 # Get-AzNotificationHub
 
-## Sinossi
-Ottiene le informazioni sugli hub di notifica.
+## SYNOPSIS
+Recupera informazioni sugli hub di notifica.
 
 ## SINTASSI
 
@@ -25,25 +25,25 @@ Get-AzNotificationHub [-ResourceGroup] <String> [-Namespace] <String> [[-Notific
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Get-AzNotificationHub** ottiene le informazioni sugli hub di notifica in uno spazio dei nomi specificato e assegnato a un gruppo di risorse specificato.
-Ad esempio, è possibile ottenere informazioni per tutti gli hub di notifica nello spazio dei nomi ContosoNamespace e assegnati al gruppo di risorse ContosoNotificationsGroup.
-In alternativa, puoi usare il parametro *NotificationHub* per limitare i dati restituiti alle informazioni relative a un hub di notifica specifico.
-Gli hub di notifica vengono usati per inviare notifiche push a più client, indipendentemente dalla piattaforma, ad esempio iOS, Android, Windows Phone 8 e Windows Store, usati da tali client.
-Questi hub equivalgono approssimativamente alle singole app e ognuna delle tue app avrà in genere un hub di notifica personalizzato.
-Questo cmdlet ottiene solo le informazioni sull'hub stesso.
-Per ottenere informazioni sulle regole di autorizzazione, le stringhe di connessione e le credenziali del servizio di notifica della piattaforma, sono necessari altri cmdlet, ad esempio Get-AzNotificationHubAuthorizationRules, Get-AzNotificationHubListKeys e Get-AzNotificationHubPNSCredentials.
+## DESCRIZIONE
+Il cmdlet **Get-AzNotificationHub** ottiene informazioni sugli hub di notifica in uno spazio dei nomi specificato e viene assegnato a un gruppo di risorse specificato.
+Ad esempio, è possibile ottenere informazioni per tutti gli hub di notifica nello spazio dei nomi ContosoCliente e assegnati al gruppo di risorse ContosoNotificationsGroup.
+In alternativa, è possibile usare il parametro *NotificationHub* per limitare i dati restituiti alle informazioni su uno specifico hub di notifica.
+Gli hub di notifica vengono usati per inviare notifiche push a più client, indipendentemente dalla piattaforma usata dai client, ad esempio iOS, Android, Windows Phone 8 e Windows Store.
+Questi hub sono approssimativamente equivalenti alle singole app e ognuna delle app in genere avrà un proprio hub di notifica.
+Questo cmdlet ottiene solo informazioni sull'hub stesso.
+Altri cmdlet, come Get-AzNotificationHubAuthorizationRules, Get-AzNotificationHubListKeys e Get-AzNotificationHubPNSCredentials, sono necessari per ottenere informazioni sulle regole di autorizzazione, sulle stringhe di connessione e sulle credenziali del servizio di notifica piattaforma di un hub.
 
 ## ESEMPI
 
-### Esempio 1: ottenere informazioni per tutti gli hub di notifica in uno spazio dei nomi specifico
+### Esempio 1: Ottenere informazioni per tutti gli hub di notifica in uno spazio dei nomi specifico
 ```
 PS C:\>Get-AzNotificationHub -Namespace "ContosoNamespace" -ResourceGroup "ContosoNotificationsGroup"
 ```
 
-Questo comando ottiene le informazioni per tutti gli hub di notifica nello spazio dei nomi denominato ContosoNamespace assegnati al gruppo di risorse ContosoNotificationsGroup.
+Questo comando recupera le informazioni per tutti gli hub di notifica nello spazio dei nomi denominato ContosoCliente che sono stati assegnati al gruppo di risorse ContosoNotificationsGroup.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
 Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
@@ -77,8 +77,8 @@ Accept wildcard characters: False
 ```
 
 ### -NotificationHub
-Specifica il nome dell'hub di notifica ottenuto da questo cmdlet.
-Gli hub di notifica vengono usati per inviare notifiche push a più client indipendentemente dalla piattaforma utilizzata da tali client.
+Specifica il nome dell'hub di notifica che riceve questo cmdlet.
+Gli hub di notifica vengono usati per inviare notifiche push a più client indipendentemente dalla piattaforma usata da tali client.
 
 ```yaml
 Type: System.String
@@ -94,7 +94,7 @@ Accept wildcard characters: False
 
 ### -ResourceGroup
 Specifica il gruppo di risorse a cui è assegnato l'hub di notifica.
-I gruppi di risorse organizzano elementi come gli spazi dei nomi, gli hub di notifica e le regole di autorizzazione in modi che semplificano la gestione dell'inventario e l'amministrazione di Azure.
+I gruppi di risorse organizzano elementi come gli spazi dei nomi, gli hub di notifica e le regole di autorizzazione in modi che consentono semplicemente la gestione dell'inventario e l'amministrazione di Azure.
 
 ```yaml
 Type: System.String
@@ -109,25 +109,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. NotificationHubs. Models. NotificationHubAttributes
+### Microsoft.Azure.Commands.NotificationHubs.Models.NotificationHubAttributes
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Get-AzNotificationHubAuthorizationRules](./Get-AzNotificationHubAuthorizationRules.md)
 
-[Get-AzNotificationHubListKeys](./Get-AzNotificationHubListKeys.md)
 
-[Get-AzNotificationHubPNSCredentials](./Get-AzNotificationHubPNSCredentials.md)
 
 [New-AzNotificationHub](./New-AzNotificationHub.md)
 

@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Monitor/Monitor/help/Get-AzAlertRule.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Monitor/Monitor/help/Get-AzAlertRule.md
-ms.openlocfilehash: 01774d80ce422c1ac0a48df61d44328b6b5b0105
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: c48a3fcf2441c7818d087e42b1271939963936ce
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93861206"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399057"
 ---
 # Get-AzAlertRule
 
-## Sinossi
-Ottiene le regole di avviso.
+## SYNOPSIS
+Recupera le regole di avviso.
 
 ## SINTASSI
 
@@ -38,36 +38,36 @@ Get-AzAlertRule -ResourceGroupName <String> -TargetResourceId <String> [-Detaile
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Get-AzAlertRule** ottiene una regola di avviso in base al nome o all'URI o a tutte le regole di avviso di un gruppo di risorse specificato.
+## DESCRIZIONE
+Il cmdlet **Get-AzAlertRule** ottiene una regola di avviso in base al nome o all'URI oppure a tutte le regole di avviso da un gruppo di risorse specificato.
 
 ## ESEMPI
 
-### Esempio 1: ottenere regole di avviso per un gruppo di risorse
+### Esempio 1: Ottenere regole di avviso per un gruppo di risorse
 ```
 PS C:\>Get-AzAlertRule -ResourceGroup "Default-Web-CentralUS"
 ```
 
-Questo comando consente di ottenere tutte le regole di avviso per il gruppo di risorse denominato Default-Web-Centralus.
-L'output non contiene dettagli sulle regole perché il parametro *DetailedOutput* non è specificato.
+Questo comando recupera tutte le regole di avviso per il gruppo di risorse denominato Default-Web-CentralUS.
+L'output non contiene dettagli sulle regole perché non è specificato il parametro *DetailedOutput.*
 
-### Esempio 2: ottenere una regola di avviso per nome
+### Esempio 2: Ottenere una regola di avviso in base al nome
 ```
 PS C:\>Get-AzAlertRule -ResourceGroup "Default-Web-CentralUS" -Name "myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8"
 ```
 
-Questo comando consente di ottenere la regola di avviso denominata avviso-7da64548-214d-42CA-B12B-b245bb8f0ac8.
-Dato che il parametro *DetailedOutput* non è specificato, l'output contiene solo informazioni di base sulla regola di avviso.
+Questo comando ottiene la regola di avviso denominata myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8.
+Poiché il *parametro DetailedOutput* non è specificato, l'output contiene solo informazioni di base sulla regola di avviso.
 
-### Esempio 3: ottenere una regola di avviso per nome con l'output dettagliato
+### Esempio 3: Ottenere una regola di avviso per nome con output dettagliato
 ```
 PS C:\>Get-AzAlertRule -ResourceGroup "Default-Web-CentralUS" -Name "myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8" -DetailedOutput
 ```
 
-Questo comando consente di ottenere la regola di avviso denominata avviso-7da64548-214d-42CA-B12B-b245bb8f0ac8.
-Il parametro *DetailedOutput* è specificato, quindi l'output è dettagliato.
+Questo comando ottiene la regola di avviso denominata myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8.
+Il *parametro DetailedOutput* è specificato, quindi l'output è dettagliato.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
 Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
@@ -99,7 +99,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Nome
+### -Name
 Specifica il nome della regola di avviso da ottenere.
 
 ```yaml
@@ -145,23 +145,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameter
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSAlertRule
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSAlertRule
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Add-AzLogAlertRule](./Add-AzLogAlertRule.md)
 
 [Add-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
 

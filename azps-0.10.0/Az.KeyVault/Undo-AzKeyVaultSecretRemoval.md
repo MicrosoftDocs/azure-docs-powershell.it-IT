@@ -5,17 +5,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/Az.keyvault/u
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/KeyVault/KeyVault/help/Undo-AzKeyVaultSecretRemoval.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/KeyVault/KeyVault/help/Undo-AzKeyVaultSecretRemoval.md
-ms.openlocfilehash: e65bef4119c51b989287bbf0db2e7587fef50271
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: 9c240d3902aeba38af4281ba31bacea76bad0a58
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93862989"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399091"
 ---
 # Undo-AzKeyVaultSecretRemoval
 
-## Sinossi
-Recuperare un segreto eliminato in un Vault chiave in uno stato attivo.
+## SYNOPSIS
+Recupera un segreto eliminato in un vault della chiave in stato attivo.
 
 ## SINTASSI
 
@@ -24,10 +24,10 @@ Undo-AzKeyVaultSecretRemoval [-VaultName] <String> [-Name] <String>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Descrizione
+## DESCRIZIONE
 Il cmdlet **Undo-AzKeyVaultSecretRemoval** recupera un segreto eliminato in precedenza.
 Il segreto recuperato sarà attivo e può essere usato per tutte le normali operazioni segrete.
-Per eseguire questa operazione, il chiamante deve avere l'autorizzazione "Recupera".
+Per eseguire questa operazione, il chiamante deve avere l'autorizzazione di recupero.
 
 ## ESEMPI
 
@@ -36,9 +36,9 @@ Per eseguire questa operazione, il chiamante deve avere l'autorizzazione "Recupe
 PS C:\> Undo-AzKeyVaultSecretRemoval -VaultName 'MyKeyVault' -Name 'MySecret'
 ```
 
-Questo comando recupererà il segreto "segrete" che è stato eliminato in precedenza in uno stato attivo e utilizzabile.
+Questo comando recupera il segreto "MySecret" eliminato in precedenza, in uno stato attivo e utilizzabile.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
 Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
@@ -55,9 +55,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Nome
+### -Name
 Nome segreto.
-Cmdlet costruisce il nome di dominio completo di un segreto dal nome della volta, dall'ambiente selezionato e da quello segreto.
+Il cmdlet crea l'FQDN di un segreto dal nome del vault, l'ambiente attualmente selezionato e il nome del segreto.
 
 ```yaml
 Type: String
@@ -71,9 +71,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -VAULTNAME
+### -VaultName
 Nome del Vault.
-Cmdlet costruisce il nome di dominio completo di un Vault in base all'ambiente Name e attualmente selezionato.
+Il cmdlet crea l'FQDN di un vault in base al nome e all'ambiente attualmente selezionato.
 
 ```yaml
 Type: String
@@ -87,8 +87,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confermare
-Richiede la conferma prima di eseguire il cmdlet.
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
 
 ```yaml
 Type: SwitchParameter
@@ -103,7 +103,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra cosa succede se il cmdlet viene eseguito.
+Mostra cosa accadrebbe se il cmdlet viene eseguito.
 Il cmdlet non viene eseguito.
 
 ```yaml
@@ -119,22 +119,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Vault. Models. Secret
+### Microsoft.Azure.Commands.KeyVault.Models.Secret
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
 [Remove-AzKeyVaultSecret](./Remove-AzKeyVaultSecret.md)
 
-[Add-AzKeyVaultSecret](./Add-AzKeyVaultSecret.md)
 
 [Get-AzKeyVaultSecret](./Get-AzKeyVaultSecret.md)
