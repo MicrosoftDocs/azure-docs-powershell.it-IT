@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/stop-a
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Stop-AzSqlDatabaseExecuteIndexRecommendation.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Stop-AzSqlDatabaseExecuteIndexRecommendation.md
-ms.openlocfilehash: 9b21c290b2d5e5b6056297bba7d4196dd68d68d2
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 7f13b1a1a5daad4e7c97de962943bb859f6a09df
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93676693"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399482"
 ---
 # Stop-AzSqlDatabaseExecuteIndexRecommendation
 
-## Sinossi
-Interrompe il flusso di lavoro che esegue un'operazione di indice consigliata.
+## SYNOPSIS
+Interrompe il flusso di lavoro che esegue un'operazione di indicizzazione consigliata.
 
 ## SINTASSI
 
@@ -26,22 +26,22 @@ Stop-AzSqlDatabaseExecuteIndexRecommendation -ServerName <String> -DatabaseName 
  [<CommonParameters>]
 ```
 
-## Descrizione
+## DESCRIZIONE
 Il cmdlet **Stop-AzSqlDatabaseExecuteIndexRecommendation** interrompe il flusso di lavoro che esegue un'operazione di indice consigliata.
 
 ## ESEMPI
 
-### Esempio 1: interrompere l'uso di una raccomandazione indice
+### Esempio 1: Interrompere l'esecuzione di un suggerimento per l'indice
 ```
 PS C:\>Stop-AzSqlDatabaseExecuteIndexRecommendation -ResourceGroup "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -IndexRecommendationName "INDEX_NAME"
 ```
 
-Questo comando interrompe l'uso di una raccomandazione indice.
+Questo comando interrompe l'esecuzione di un suggerimento per l'indice.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DatabaseName
-Specifica il nome del database per cui questo cmdlet arresta il flusso di lavoro.
+Specifica il nome del database per cui questo cmdlet interrompe il flusso di lavoro.
 
 ```yaml
 Type: System.String
@@ -56,7 +56,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
+Le credenziali, l'account, il tenant e la sottoscrizione usati per le comunicazioni con Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 ```
 
 ### -IndexRecommendationName
-Specifica il nome del suggerimento relativo all'indice che questo cmdlet si arresta.
+Specifica il nome del suggerimento per l'indice interrotto da questo cmdlet.
 
 ```yaml
 Type: System.String
@@ -100,8 +100,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Nomeserver
-Specifica il server che ospita il database per cui questo cmdlet arresta un flusso di lavoro.
+### -ServerName
+Specifica il server che ospita il database per cui questo cmdlet interrompe un flusso di lavoro.
 
 ```yaml
 Type: System.String
@@ -116,24 +116,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](https://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. SQL. Model. IndexRecommendation
+### Microsoft.Azure.Commands.Sql.Model.IndexRecommendation
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Get-AzSqlDatabaseIndexRecommendations](./Get-AzSqlDatabaseIndexRecommendations.md)
 
 [Start-AzSqlDatabaseExecuteIndexRecommendation](./Start-AzSqlDatabaseExecuteIndexRecommendation.md)
 
-[Documentazione di database SQL](https://docs.microsoft.com/azure/sql-database/)
+[SQL documentazione del database](https://docs.microsoft.com/azure/sql-database/)
 
 

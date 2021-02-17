@@ -5,17 +5,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendCredential.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendCredential.md
-ms.openlocfilehash: 2cde898622c870dc0598639addb1e8b30e438076
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: ded8b44940c227477f6ad3dfdd7d4b673161fca1
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93676019"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399448"
 ---
 # New-AzApiManagementBackendCredential
 
-## Sinossi
-Crea un nuovo contratto di credenziale back-end.
+## SYNOPSIS
+Crea un nuovo contratto per le credenziali back-end.
 
 ## SINTASSI
 
@@ -25,12 +25,12 @@ New-AzApiManagementBackendCredential [-CertificateThumbprint <String[]>] [-Query
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
-Crea un nuovo contratto di credenziale back-end.
+## DESCRIZIONE
+Crea un nuovo contratto di credenziali back-end.
 
 ## ESEMPI
 
-### Creare un oggetto In-Memory credenziali di backend
+### Creare un oggetto In-Memory Backend Credentials
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>$credential = New-AzApiManagementBackendCredential -AuthorizationHeaderScheme basic -AuthorizationHeaderParameter opensesame -Query @{"sv" = @('xx', 'bb'); "sr" = @('cc')} -Header @{"x-my-1" = @('val1', 'val2')}
@@ -40,10 +40,10 @@ PS C:\>$backend = New-AzApiManagementBackend -Context  $apimContext -BackendId 1
 
 Crea un contratto di credenziali back-end
 
-## PARAMETRI
+## PARAMETERS
 
 ### -AuthorizationHeaderParameter
-Intestazione di autorizzazione usata per il backend.
+Intestazione di autorizzazione usata per il back-end.
 Questo parametro è facoltativo.
 
 ```yaml
@@ -59,7 +59,7 @@ Accept wildcard characters: False
 ```
 
 ### -AuthorizationHeaderScheme
-Schema di autorizzazione usato per il backend.
+Schema di autorizzazione usato per il back-end.
 Questo parametro è facoltativo.
 
 ```yaml
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateThumbprint
-Identificazioni personali del certificato client.
+Thumbprint del certificato client.
 Questo parametro è facoltativo.
 
 ```yaml
@@ -91,7 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -105,8 +105,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Intestazione
-Valori dei parametri di intestazione accettati da backend.
+### -Header
+Valori dei parametri di intestazione accettati dal back-end.
 Questo parametro è facoltativo.
 
 ```yaml
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -Query
-Valori dei parametri di query accettati da backend.
+Valori dei parametri di query accettati dal back-end.
 Questo parametro è facoltativo.
 
 ```yaml
@@ -138,21 +138,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](https://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
 ### Nessuno
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementBackendCredential
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendCredential
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Get-AzApiManagementBackend](./Get-AzApiManagementBackend)
+[Get-AzApiManagementBackend](./Get-AzApiManagementBackend.md)
 
 [New-AzApiManagementBackend](./New-AzApiManagementBackend.md)
 

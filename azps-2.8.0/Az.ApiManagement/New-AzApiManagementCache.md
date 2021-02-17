@@ -5,16 +5,16 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementCache.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementCache.md
-ms.openlocfilehash: 90da707ce34c191a33a68473f41555a33c0e35b9
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: d4095c1a20c4cebc3fb5f9b58f6f696c9cf41dc7
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93676014"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399414"
 ---
 # New-AzApiManagementCache
 
-## Sinossi
+## SYNOPSIS
 Crea una nuova entità cache
 
 ## SINTASSI
@@ -25,12 +25,12 @@ New-AzApiManagementCache -Context <PsApiManagementContext> [-CacheId <String>] -
  [-Confirm] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **New-AzApiManagementCache** crea una nuova entità cache nel servizio di gestione API.
+## DESCRIZIONE
+Il cmdlet **New-AzApiManagementCache crea** una nuova entità cache nel servizio di gestione api.
 
 ## ESEMPI
 
-### Esempio 1: creare una nuova entità cache
+### Esempio 1: Creare una nuova entità Cache
 ```powershell
 PS c:\> New-AzApiManagementCache -Context $context -ConnectionString "teamdemo.redis.cache.windows.net:6380,password=xxxxxx+xxxxx=,ssl=True,abortConnect=False" -Description "Team Cache"
 
@@ -44,12 +44,12 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-I cmdlet creano una nuova entità cache nella posizione master del servizio di gestione delle API.
+I cmdlet creano una nuova entità cache nella posizione master del servizio di gestione api.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -AzureRedisResourceId
-ARM ResourceId dell'istanza della cache di Azure Redis. Questo parametro è facoltativo.
+Arm ResourceId dell'istanza della cache di Azure Redis. Questo parametro è facoltativo.
 
 ```yaml
 Type: System.String
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 ### -CacheId
 Identificatore della nuova cache.
 Questo parametro è facoltativo.
-Se non viene specificato verrà generato.
+Se non viene specificato, verrà generato.
 
 ```yaml
 Type: System.String
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionString
-Stringa di connessione Redis.
+Ridisposizione stringa di connessione.
 Questo parametro è obbligatorio.
 
 ```yaml
@@ -96,7 +96,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Contesto
+### -Context
 Istanza di PsApiManagementContext.
 Questo parametro è obbligatorio.
 
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -128,7 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -Descrizione
-Descrizione della cache.
+Descrizione cache.
 Questo parametro è facoltativo.
 
 ```yaml
@@ -143,8 +143,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confermare
-Richiede la conferma prima di eseguire il cmdlet.
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -159,7 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra cosa succede se il cmdlet viene eseguito.
+Mostra cosa accadrebbe se il cmdlet viene eseguito.
 Il cmdlet non viene eseguito.
 
 ```yaml
@@ -175,24 +175,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](https://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementCache
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Get-AzApiManagementCache](./Get-AzApiManagementCache)
-
-[Set-AzApiManagementCache](./Set-AzApiManagementCache.md)
+[Get-AzApiManagementCache](./Get-AzApiManagementCache.md)
 
 [Remove-AzApiManagementCache](./Remove-AzApiManagementCache.md)
+
+[Update-AzApiManagementCache](./Update-AzApiManagementCache.md)
