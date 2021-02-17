@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Move-AzResource.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Move-AzResource.md
-ms.openlocfilehash: 4f21ce7a14873d201fa18f45c96d508dcd38cb8e
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 561b19f7eb09d9addfda2b7f3c66c66f2d9f759d
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94192635"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415598"
 ---
 # Move-AzResource
 
-## Sinossi
-Sposta una risorsa in un gruppo o un abbonamento di risorse diverso.
+## SYNOPSIS
+Sposta una risorsa in un gruppo di risorse o una sottoscrizione diversa.
 
 ## SINTASSI
 
@@ -26,27 +26,27 @@ Move-AzResource -DestinationResourceGroupName <String> [-DestinationSubscription
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Move-AzResource** sposta le risorse esistenti in un gruppo di risorse diverso.
-Il gruppo di risorse può avere un abbonamento diverso.
+## DESCRIZIONE
+Il **cmdlet Move-AzResource** sposta le risorse esistenti in un gruppo di risorse diverso.
+Il gruppo di risorse può essere in una sottoscrizione diversa.
 
 ## ESEMPI
 
-### Esempio 1: trasferire una risorsa in un gruppo di risorse
+### Esempio 1: Spostare una risorsa in un gruppo di risorse
 ```
 PS C:\>$Resource = Get-AzResource -ResourceType "Microsoft.ClassicCompute/storageAccounts" -ResourceName "ContosoStorageAccount"
 PS C:\> Move-AzResource -ResourceId $Resource.ResourceId -DestinationResourceGroupName "ResourceGroup14"
 ```
 
-Con il primo comando viene ottenuta una risorsa denominata ContosoStorageAccount tramite il cmdlet Get-AzResource e la risorsa viene archiviata nella variabile $Resource.
-Il secondo comando Sposta la risorsa nel gruppo di risorse denominato ResourceGroup14.
-Il comando identifica la risorsa per lo stato di trasferimento tramite la proprietà **resourceId** di $Resource.
+Il primo comando ottiene una risorsa denominata ContosoStorageAccount usando il cmdlet Get-AzResource e quindi la archivia nella $Resource variabile.
+Il secondo comando sposta la risorsa nel gruppo di risorse denominato Gruppo Risorse14.
+Il comando identifica la risorsa da spostare usando la **proprietà ResourceId** di $Resource.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -ApiVersion
 Specifica la versione dell'API del provider di risorse da usare.
-Se non specifichi una versione, questo cmdlet usa la versione più recente disponibile.
+Se non si specifica una versione, questo cmdlet usa l'ultima versione disponibile.
 
 ```yaml
 Type: System.String
@@ -76,7 +76,7 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationResourceGroupName
-Specifica il nome del gruppo di risorse in cui questo cmdlet sposta le risorse.
+Specifica il nome del gruppo di risorse in cui il cmdlet sposta le risorse.
 
 ```yaml
 Type: System.String
@@ -106,7 +106,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Impone l'esecuzione del comando senza richiedere la conferma dell'utente.
+Forza l'esecuzione del comando senza chiedere conferma all'utente.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -121,7 +121,7 @@ Accept wildcard characters: False
 ```
 
 ### -Pre
-Indica che questo cmdlet considera le versioni dell'API di pre-rilascio quando determina automaticamente la versione da usare.
+Indica che questo cmdlet considera le versioni delle API non ancora rilasciate quando determina automaticamente la versione da usare.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -136,7 +136,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Specifica una matrice di ID delle risorse spostate da questo cmdlet.
+Specifica una matrice di ID delle risorse che il cmdlet sposta.
 
 ```yaml
 Type: System.String[]
@@ -150,8 +150,8 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -Confermare
-Richiede la conferma prima di eseguire il cmdlet.
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -166,7 +166,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra cosa succede se il cmdlet viene eseguito.
+Mostra cosa accadrebbe se il cmdlet viene eseguito.
 Il cmdlet non viene eseguito.
 
 ```yaml
@@ -182,23 +182,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### System. Nullable ' 1 [[System. Guid, System. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Guid, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### System. String []
+### System.String[]
 
 ## OUTPUT
 
-### System. Boolean
+### System.Boolean
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Trova-AzResource](./Find-AzResource.md)
 
 [Get-AzResource](./Get-AzResource.md)
 
