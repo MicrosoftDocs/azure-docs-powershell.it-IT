@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/g
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultCertificate.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultCertificate.md
-ms.openlocfilehash: 002cfba4a5660fa8996c30ff83a1011da669539b
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 92409b30e7a81f5d41a0af8ebb6466eb1e3053c9
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100192390"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405160"
 ---
 # Get-AzKeyVaultCertificate
 
@@ -232,7 +232,7 @@ This command gets all certificates starting with "test" from the key vault named
 ## PARAMETERS
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e la sottoscrizione usati per le comunicazioni con Azure
+Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -292,7 +292,7 @@ Accept wildcard characters: False
 ```
 
 ### -InRemovedState
-Specifica se includere certificati eliminati in precedenza nell'output
+Specifica se includere nell'output certificati eliminati in precedenza
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -407,4 +407,3 @@ Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable,
 
 [Remove-AzKeyVaultCertificate](./Remove-AzKeyVaultCertificate.md)
 
-[Undo-AzKeyVaultSecretCertificate](./Undo-AzKeyVaultSecretCertificate.md)
