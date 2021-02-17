@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/a
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Add-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Add-AzKeyVaultKey.md
-ms.openlocfilehash: f7447725e63634642f285b6a796a2b59b4d1d301
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: bb96183d5b1fb9b865bb4d30448c337ab58fbb09
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93835799"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400587"
 ---
 # Add-AzKeyVaultKey
 
-## Sinossi
-Crea una chiave in un Vault chiave o importa una chiave in un Vault chiave.
+## SYNOPSIS
+Crea una chiave in un vault delle chiavi o importa una chiave in un vault delle chiavi.
 
 ## SINTASSI
 
@@ -65,22 +65,22 @@ Add-AzKeyVaultKey [-ResourceId] <String> [-Name] <String> -KeyFilePath <String>
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Add-AzKeyVaultKey** crea una chiave in un Vault chiave in Azure Key Vault o importa una chiave in un Vault chiave.
-Questo cmdlet consente di aggiungere chiavi utilizzando uno dei metodi seguenti:
-- Creare una chiave in un modulo di sicurezza hardware (HSM) nel servizio Key Vault.
-- Creare una chiave nel software nel servizio Key Vault.
-- Importare una chiave da un modulo HSM (hardware Security Module) in HSM nel servizio Key Vault.
-- Importare una chiave da un file con estensione pfx nel computer.
-- Importare una chiave da un file PFX nel computer in moduli di sicurezza hardware (HSM) nel servizio Key Vault.
-Per ognuna di queste operazioni, è possibile specificare gli attributi chiave o accettare le impostazioni predefinite.
-Se si crea o si importa una chiave con lo stesso nome di una chiave esistente nel Vault chiave, la chiave originale viene aggiornata con i valori specificati per la nuova chiave. Puoi accedere ai valori precedenti usando l'URI specifico della versione per la versione della chiave. Per informazioni sulle versioni chiave e sulla struttura URI, vedere [informazioni sulle chiavi e i segreti](https://go.microsoft.com/fwlink/?linkid=518560) nella documentazione dell'API REST di Key Vault.
-Nota: per importare una chiave dal modulo di sicurezza hardware, è necessario prima di tutto generare un pacchetto BYOK (un file con estensione BYOK) usando il set di strumenti di BYOK Key Vault di Azure. Per altre informazioni, vedere [come generare e trasferire HSM-Protected chiavi per Azure Key Vault](https://go.microsoft.com/fwlink/?LinkId=522252).
-Come procedura consigliata, eseguire il backup della chiave dopo la creazione o l'aggiornamento usando il cmdlet Backup-AzKeyVaultKey. Non esiste alcuna funzionalità di annullamento dell'eliminazione, quindi se si elimina accidentalmente la chiave o la si elimina e quindi si cambia idea, la chiave non è recuperabile, a meno che non si disponga di un backup che è possibile ripristinare.
+## DESCRIZIONE
+Il cmdlet **Add-AzKeyVaultKey** crea una chiave in un vault delle chiavi nel Vault delle chiavi di Azure oppure importa una chiave in un vault delle chiavi.
+Usare questo cmdlet per aggiungere le chiavi usando uno dei metodi seguenti:
+- Creare una chiave in un modulo di sicurezza hardware (HSM) nel servizio Vault delle chiavi.
+- Creare una chiave nel software nel servizio Vault delle chiavi.
+- Importare una chiave dal proprio modulo di sicurezza hardware (HSM) a un sistema HMS nel servizio Vault delle chiavi.
+- Importare una chiave da un file PFX nel computer.
+- Importare una chiave da un file PFX nel computer nei moduli di sicurezza hardware (HMS) nel servizio Vault delle chiavi.
+Per una di queste operazioni, è possibile fornire attributi chiave o accettare le impostazioni predefinite.
+Se si crea o si importa una chiave con lo stesso nome di una chiave esistente nel vault delle chiavi, la chiave originale viene aggiornata con i valori specificati per la nuova chiave. È possibile accedere ai valori precedenti usando l'URI specifico della versione per tale versione della chiave. Per informazioni sulle versioni principali e sulla struttura DELL'URI, vedere [Informazioni sulle](https://go.microsoft.com/fwlink/?linkid=518560) chiavi e i segreti nella documentazione dell'API REST del Vault delle chiavi.
+Nota: per importare una chiave dal modulo di sicurezza hardware, è necessario generare prima un pacchetto BYOK (un file con estensione byok) usando il set di strumenti BYOK del Vault delle chiavi di Azure. Per altre informazioni, vedere Come generare e trasferire le chiavi [HSM-Protected per il Vault delle chiavi di Azure.](https://go.microsoft.com/fwlink/?LinkId=522252)
+Come procedura consigliata, eseguire il backup della chiave dopo che è stata creata o aggiornata, usando il cmdlet Backup-AzKeyVaultKey. Non sono disponibili funzionalità di annullamento dell'eliminazione, quindi se si elimina accidentalmente la chiave o la si elimina e quindi si cambia idea, la chiave non può essere recuperata a meno che non si abbia un backup che è possibile ripristinare.
 
 ## ESEMPI
 
-### Esempio 1: creare una chiave
+### Esempio 1: Creare una chiave
 ```powershell
 PS C:\> Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITSoftware' -Destination 'Software'
 
@@ -97,9 +97,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-Questo comando crea una chiave protetta dal software denominata ITSoftware nel caveau della chiave denominata Contoso.
+Questo comando crea una chiave protetta dal software denominata ITSoftware nella chiave vault denominata Contoso.
 
-### Esempio 2: creare un tasto protetto da HSM
+### Esempio 2: Creare una chiave protetta da HSM
 ```powershell
 PS C:\> Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITHsm' -Destination 'HSM'
 
@@ -116,9 +116,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-Questo comando crea una chiave con protezione HSM nel Vault chiave denominata Contoso.
+Questo comando crea una chiave protetta da HSM nella chiave vault denominata Contoso.
 
-### Esempio 3: creare una chiave con valori non predefiniti
+### Esempio 3: Creare una chiave con valori non predefiniti
 ```powershell
 PS C:\> $KeyOperations = 'decrypt', 'verify'
 PS C:\> $Expires = (Get-Date).AddYears(2).ToUniversalTime()
@@ -141,13 +141,13 @@ Tags           : Name        Value
                  Accounting  true
 ```
 
-Con il primo comando vengono archiviati i valori decrittografati e verificati nella variabile $KeyOperations.
-Il secondo comando crea un oggetto **DateTime** , definito in formato UTC, usando il cmdlet **get-date** .
-L'oggetto specifica un periodo di due anni nel futuro. Il comando archivia tale data nella variabile $Expires. Per altre informazioni, digitare `Get-Help Get-Date` .
-Il terzo comando crea un oggetto **DateTime** usando il cmdlet **get-date** . Tale oggetto specifica l'ora UTC corrente. Il comando archivia tale data nella variabile $NotBefore.
-Il comando finale crea una chiave denominata ITHsmNonDefault che è una chiave protetta da HSM. Il comando specifica i valori per le operazioni chiave consentite archiviate $KeyOperations. Il comando specifica gli orari per i parametri *Expires* e *NotBefore* creati nei comandi precedenti e i tag per l'elevata gravità. La nuova chiave è disabilitata. Puoi abilitarlo usando il cmdlet **set-AzKeyVaultKey** .
+Il primo comando archivia i valori decrittografa e verifica nella $KeyOperations variabile.
+Il secondo comando crea un **oggetto DateTime,** definito in UTC, usando il cmdlet **Get-Date.**
+L'oggetto specifica un periodo di tempo futuro di due anni. Il comando archivia tale data nella $Expires variabile. Per altre informazioni, digitare `Get-Help Get-Date` .
+Il terzo comando crea un **oggetto DateTime** usando il cmdlet **Get-Date.** Questo oggetto specifica l'ora UTC corrente. Il comando archivia tale data nella $NotBefore variabile.
+Il comando finale crea una chiave denominata ITHsmNonDefault che è una chiave protetta da HSM. Il comando specifica i valori per le operazioni chiave consentite $KeyOperations. Il comando specifica gli orari per i parametri *Expires* e *NotBefore* creati nei comandi precedenti e i tag per un livello di gravità elevato e per l'IT. La nuova chiave viene disabilitata. È possibile abilitarla usando il cmdlet **Set-AzKeyVaultKey.**
 
-### Esempio 4: importare un tasto protetto da HSM
+### Esempio 4: Importare una chiave protetta da HSM
 ```powershell
 PS C:\> Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITByok' -KeyFilePath 'C:\Contoso\ITByok.byok' -Destination 'HSM'
 
@@ -164,11 +164,11 @@ Purge Disabled : False
 Tags           :
 ```
 
-Questo comando importa la chiave denominata ITByok dalla posizione specificata dal parametro *filePath* . La chiave importata è una chiave con protezione HSM.
-Per importare una chiave dal modulo di sicurezza hardware, è necessario prima di tutto generare un pacchetto BYOK (un file con estensione BYOK) usando il set di strumenti di BYOK Key Vault di Azure.
-Per altre informazioni, vedere [come generare e trasferire HSM-Protected chiavi per Azure Key Vault](https://go.microsoft.com/fwlink/?LinkId=522252).
+Questo comando importa la chiave denominata ITByok dalla posizione specificata *dal parametro KeyFilePath.* La chiave importata è una chiave protetta da HSM.
+Per importare una chiave dal proprio modulo di sicurezza hardware, è necessario generare prima un pacchetto BYOK (un file con estensione byok) usando il set di strumenti BYOK del Vault delle chiavi di Azure.
+Per altre informazioni, vedere Come generare e trasferire le chiavi [HSM-Protected per il Vault delle chiavi di Azure.](https://go.microsoft.com/fwlink/?LinkId=522252)
 
-### Esempio 5: importare una chiave protetta dal software
+### Esempio 5: Importare una chiave protetta da software
 ```powershell
 PS C:\> $Password = ConvertTo-SecureString -String 'Password' -AsPlainText -Force
 PS C:\> Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITPfx' -KeyFilePath 'C:\Contoso\ITPfx.pfx' -KeyFilePassword $Password
@@ -186,11 +186,11 @@ Purge Disabled : False
 Tags           :
 ```
 
-Il primo comando converte una stringa in una stringa sicura usando il cmdlet **ConvertTo-SecureString** e quindi archivia la stringa nella variabile $password. Per altre informazioni, digitare `Get-Help
+Il primo comando converte una stringa in una stringa sicura usando il cmdlet **ConvertTo-SecureString** e quindi archivia la stringa nella $Password variabile. Per altre informazioni, digitare `Get-Help
 ConvertTo-SecureString` .
-Il secondo comando crea una password software nel caveau della chiave contoso. Il comando specifica la posizione per la chiave e la password archiviata in $Password.
+Il secondo comando crea una password software nel vault della chiave Contoso. Il comando specifica il percorso della chiave e la password archiviati nel $Password.
 
-### Esempio 6: importare una chiave e assegnare attributi
+### Esempio 6: Importare una chiave e assegnare attributi
 ```powershell
 PS C:\> $Password = ConvertTo-SecureString -String 'password' -AsPlainText -Force
 PS C:\> $Expires = (Get-Date).AddYears(2).ToUniversalTime()
@@ -212,12 +212,12 @@ Tags           : Name        Value
                  Accounting  true
 ```
 
-Il primo comando converte una stringa in una stringa sicura usando il cmdlet **ConvertTo-SecureString** e quindi archivia la stringa nella variabile $password.
-Il secondo comando crea un oggetto **DateTime** usando il cmdlet **get-date** e quindi archivia tale oggetto nella variabile $Expires.
-Il terzo comando crea la variabile $tags per impostare i contrassegni per l'elevata gravità.
-Il comando finale importa una chiave come chiave HSM dalla posizione specificata. Il comando specifica la data di scadenza archiviata in $Expires e la password archiviata in $Password e applica i tag archiviati in $tags.
+Il primo comando converte una stringa in una stringa sicura usando il cmdlet **ConvertTo-SecureString** e quindi archivia la stringa nella $Password variabile.
+Il secondo comando crea un **oggetto DateTime** usando il cmdlet **Get-Date** e quindi archivia l'oggetto nella $Expires variabile.
+Il terzo comando crea la variabile $tags per impostare tag di gravità elevata e per l'IT.
+Il comando finale importa una chiave come chiave HSM dalla posizione specificata. Il comando specifica la data di scadenza archiviata in $Expires e la password archiviate in $Password e applica i tag archiviati in $tags.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
 Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
@@ -234,13 +234,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Destinazione
-Specifica se aggiungere la chiave come chiave protetta dal software o con una chiave protetta da HSM nel servizio Key Vault.
-I valori validi sono: HSM e software.
-Nota: per usare HSM come destinazione, è necessario disporre di un Vault Key che supporti HSM. Per altre informazioni sui livelli di servizio e sulle funzionalità per l'archiviazione delle chiavi di Azure, vedere il [sito Web di Azure Key Vault pricing](https://go.microsoft.com/fwlink/?linkid=512521).
-Questo parametro è obbligatorio quando si crea una nuova chiave. Se si importa una chiave usando il parametro *filePath* , questo parametro è facoltativo:
-- Se non specifichi questo parametro e questo cmdlet importa una chiave con estensione Byok, questa viene importata come chiave protetta da HSM. Il cmdlet non può importare la chiave come chiave protetta dal software.
-- Se non specifichi questo parametro e questo cmdlet importa una chiave con estensione pfx, la chiave viene importata come chiave protetta dal software.
+### -Destination
+Specifica se aggiungere la chiave come chiave protetta dal software o come chiave protetta da HSM nel servizio Vault delle chiavi.
+I valori validi sono HSM e Software.
+Nota: per usare HSM come destinazione, è necessario avere un vault delle chiavi che supporti gli HMS. Per altre informazioni sui livelli di servizio e sulle funzionalità per il Vault delle chiavi di Azure, vedere il sito [Web prezzi del Vault delle chiavi di Azure.](https://go.microsoft.com/fwlink/?linkid=512521)
+Questo parametro è obbligatorio quando si crea una nuova chiave. Se si importa una chiave usando il *parametro KeyFilePath,* questo parametro è facoltativo:
+- Se non si specifica questo parametro e questo cmdlet importa una chiave con estensione byok, la importa come chiave protetta da HSM. Il cmdlet non può importare la chiave come chiave protetta da software.
+- Se non si specifica questo parametro e questo cmdlet importa una chiave con estensione pfx, la importa come chiave protetta dal software.
 
 ```yaml
 Type: System.String
@@ -269,7 +269,7 @@ Accept wildcard characters: False
 ```
 
 ### -Disable
-Indica che la chiave che si sta aggiungendo è impostata su uno stato iniziale di disabled. Qualsiasi tentativo di usare la chiave non riuscirà. Usare questo parametro se si precaricano le chiavi che si desidera abilitare in seguito.
+Indica che la chiave che si sta aggiungendo è impostata sullo stato iniziale Disabilitato. Qualsiasi tentativo di usare la chiave non riuscirà. Usare questo parametro se si precaricano chiavi che si intende abilitare in un secondo momento.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -284,7 +284,7 @@ Accept wildcard characters: False
 ```
 
 ### -Scadenza
-Specifica la data di scadenza, come oggetto **DateTime** , per la chiave aggiunta da questo cmdlet. Questo parametro usa l'ora UTC (Coordinated Universal Time). Per ottenere un oggetto **DateTime** , usare il cmdlet **get-date** . Per altre informazioni, digitare `Get-Help Get-Date` . Se non specifichi questo parametro, la chiave non scade.
+Specifica la scadenza, come oggetto **DateTime,** per la chiave aggiunta da questo cmdlet. Questo parametro usa l'ora UTC (Coordinated Universal Time). Per ottenere un **oggetto DateTime,** usare il cmdlet **Get-Date.** Per altre informazioni, digitare `Get-Help Get-Date` . Se non si specifica questo parametro, la chiave non scade.
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -314,7 +314,7 @@ Accept wildcard characters: False
 ```
 
 ### -KeyFilePassword
-Specifica una password per il file importato come oggetto **SecureString** . Per ottenere un oggetto **SecureString** , usa il cmdlet **ConvertTo-SecureString** . Per altre informazioni, digitare `Get-Help ConvertTo-SecureString` . Devi specificare questa password per importare un file con estensione pfx.
+Specifica una password per il file importato come **oggetto SecureString.** Per ottenere un **oggetto SecureString,** usare il cmdlet **ConvertTo-SecureString.** Per altre informazioni, digitare `Get-Help ConvertTo-SecureString` . È necessario specificare questa password per importare un file con estensione pfx.
 
 ```yaml
 Type: System.Security.SecureString
@@ -328,12 +328,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -FilePath
-Specifica il percorso di un file locale che contiene il materiale chiave importato da questo cmdlet.
-Le estensioni valide per i nomi di file sono Byok e PFX.
-- Se il file è un file con estensione Byok, la chiave viene protetta automaticamente da HSM dopo l'importazione e non è possibile eseguire l'override di questa impostazione predefinita.
-- Se il file è un file PFX, la chiave viene automaticamente protetta dal software dopo l'importazione. Per eseguire l'override di questo valore predefinito, imposta il parametro di *destinazione* su HSM in modo che la chiave sia protetta da HSM.
-Quando specifichi questo parametro, il parametro di *destinazione* è facoltativo.
+### -KeyFilePath
+Specifica il percorso di un file locale che contiene il materiale chiave importato dal cmdlet.
+Le estensioni di file valide sono byok e pfx.
+- Se il file è byok, la chiave viene protetta automaticamente dai messaggi hMS dopo l'importazione e non è possibile ignorare questa impostazione predefinita.
+- Se il file è un file PFX, la chiave viene protetta automaticamente dal software dopo l'importazione. Per ignorare questa impostazione predefinita, impostare *il parametro Destination* su HSM in modo che la chiave sia protetta da HSM.
+Quando si specifica questo parametro, *il parametro Destination* è facoltativo.
 
 ```yaml
 Type: System.String
@@ -348,15 +348,15 @@ Accept wildcard characters: False
 ```
 
 ### -KeyOps
-Specifica una matrice di operazioni che è possibile eseguire tramite la chiave aggiunta da questo cmdlet.
-Se non specifichi questo parametro, tutte le operazioni possono essere eseguite.
-I valori accettabili per questo parametro sono un elenco delimitato da virgole delle operazioni chiave definite dalla [specifica JSON Web Key (JWK)](https://go.microsoft.com/fwlink/?LinkID=613300):
-- Crittografare
-- Decrittografare
-- A capo
-- Annullare
-- Segno
-- Verificare
+Specifica una matrice di operazioni che possono essere eseguite usando la chiave aggiunta da questo cmdlet.
+Se non si specifica questo parametro, è possibile eseguire tutte le operazioni.
+I valori accettabili per questo parametro sono un elenco di operazioni chiave separate da virgole, come definito dalla specifica [JSON Web Key (JWK):](https://go.microsoft.com/fwlink/?LinkID=613300)
+- Crittografa
+- Decrittografa
+- Ritorno a capo
+- Unwrap
+- Firma
+- Verifica
 
 ```yaml
 Type: System.String[]
@@ -370,8 +370,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Nome
-Specifica il nome della chiave da aggiungere all'archivio della chiave. Questo cmdlet costruisce il nome di dominio completo (FQDN) di una chiave in base al nome specificato da questo parametro, il nome del Vault della chiave e l'ambiente corrente. Il nome deve essere una stringa da 1 a 63 caratteri di lunghezza che contiene solo 0-9, a-z, A-Z e-(il simbolo del trattino).
+### -Name
+Specifica il nome della chiave da aggiungere al vault delle chiavi. Questo cmdlet crea il nome di dominio completo (FQDN) di una chiave in base al nome specificato da questo parametro, al nome del vault delle chiavi e all'ambiente corrente. La lunghezza del nome deve essere di un massimo di 1 e 63 caratteri, contenente solo i caratteri 0-9, a-z, A-Z e - (il trattino).
 
 ```yaml
 Type: System.String
@@ -386,7 +386,7 @@ Accept wildcard characters: False
 ```
 
 ### -NotBefore
-Specifica il tempo, come oggetto **DateTime** , prima del quale non è possibile usare la chiave. Questo parametro usa l'ora UTC. Per ottenere un oggetto **DateTime** , usare il cmdlet **get-date** . Se non specifichi questo parametro, la chiave può essere usata immediatamente.
+Specifica l'ora, come oggetto **DateTime,** prima della quale non è possibile usare il tasto. Questo parametro usa utc. Per ottenere un **oggetto DateTime,** usare il cmdlet **Get-Date.** Se non si specifica questo parametro, la chiave può essere usata immediatamente.
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -401,7 +401,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-ID risorsa del Vault.
+ID risorsa Vault.
 
 ```yaml
 Type: System.String
@@ -415,8 +415,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Dimensione
-Dimensioni chiave RSA in bit. Se non viene specificato, il servizio fornirà un valore predefinito sicuro.
+### -Size
+Dimensioni della chiave RSA, in bit. Se non è specificato, il servizio fornirà un valore predefinito sicuro.
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -431,7 +431,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tag
-Coppie chiave-valore in forma di tabella hash. Ad esempio: @ {Key0 = "value0"; Key1 = $null; key2 = "value2"}
+Coppie chiave-valore sotto forma di tabella hash. Ad esempio: @{key0="value0";key1=$null;key2="value2"}
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -445,8 +445,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -VAULTNAME
-Specifica il nome del Vault chiave a cui questo cmdlet aggiunge la chiave. Questo cmdlet crea l'FQDN di un Vault chiave in base al nome specificato da questo parametro e all'ambiente corrente.
+### -VaultName
+Specifica il nome del vault della chiave a cui il cmdlet aggiunge la chiave. Questo cmdlet crea l'FQDN di un vault delle chiavi in base al nome specificato da questo parametro e all'ambiente corrente.
 
 ```yaml
 Type: System.String
@@ -460,8 +460,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confermare
-Richiede la conferma prima di eseguire il cmdlet.
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -476,7 +476,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra cosa succede se il cmdlet viene eseguito.
+Mostra cosa accadrebbe se il cmdlet viene eseguito.
 Il cmdlet non viene eseguito.
 
 ```yaml
@@ -492,19 +492,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### Microsoft. Azure. Commands. Vault. Models. PSKeyVault
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Vault. Models. PSKeyVaultKey
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKey
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
@@ -514,4 +514,3 @@ Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-In
 
 [Remove-AzKeyVaultKey](./Remove-AzKeyVaultKey.md)
 
-[Set-AzKeyVaultKeyAttribute](./Set-AzKeyVaultKeyAttribute.md)

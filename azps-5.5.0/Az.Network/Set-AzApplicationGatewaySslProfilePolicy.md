@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzApplicationGatewaySslProfilePolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzApplicationGatewaySslProfilePolicy.md
-ms.openlocfilehash: 344be8b71bc74f3620ca90dd60b61f9a59026ea0
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 7d04d73905bde7ab008c6910cab708e209125316
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100193390"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100407999"
 ---
 # Set-AzApplicationGatewaySslProfilePolicy
 
@@ -38,7 +38,7 @@ PS C:\> $profile  = Get-AzApplicationGatewaySslProfile -Name "SslProfile01" -App
 PS C:\> $profile = Set-AzApplicationGatewaySslProfilePolicy -SslProfile $profile -PolicyType Predefined -PolicyName AppGwSslPolicy20170401
 ```
 
-Il primo comando recupera il gateway applicazione denominato ApplicationGateway01 nel gruppo di risorse denominato ResourceGroup01 e lo archivia nella variabile $AppGw risorsa. Il secondo comando recupera il profilo SSL denominato SslProfile01 per $AppGw e archivia le impostazioni nella variabile $profile locale. L'ultimo comando modifica il criterio SSL dell'oggetto profilo SSL archiviato nel $profile.
+Il primo comando recupera il gateway applicazione denominato ApplicationGateway01 nel gruppo di risorse denominato ResourceGroup01 e lo archivia nella variabile $AppGw risorsa. Il secondo comando recupera il profilo SSL denominato SslProfile01 per $AppGw e archivia le impostazioni nella $profile variabile. L'ultimo comando modifica il criterio SSL dell'oggetto profilo SSL archiviato nel $profile.
 
 ## PARAMETERS
 
@@ -89,7 +89,7 @@ Accept wildcard characters: False
 ```
 
 ### -MinProtocolVersion
-Versione minima del protocollo Ssl da supportata nel gateway applicazione
+Versione minima del protocollo Ssl da supporto nel gateway applicazioni
 
 ```yaml
 Type: String
@@ -196,9 +196,7 @@ Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable,
 
 ## COLLEGAMENTI CORRELATI
 
-[Add-AzApplicationGatewaySslProfilePolicy](./Add-AzApplicationGatewaySslProfilePolicy.md)
 
-[New-AzApplicationGatewaySslProfilePolicy](./New-AzApplicationGatewaySslProfilePolicy.md)
 
 [Get-AzApplicationGatewaySslProfilePolicy](./Get-AzApplicationGatewaySslProfilePolicy.md)
 
