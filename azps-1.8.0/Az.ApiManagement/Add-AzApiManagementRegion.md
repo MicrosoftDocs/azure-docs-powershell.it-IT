@@ -6,16 +6,16 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Add-AzApiManagementRegion.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Add-AzApiManagementRegion.md
-ms.openlocfilehash: b180dabec976164eac70106b49378d832fb00db8
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: aebcb8be906811607aefee7dbdc2c7630b9e391e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93673666"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401182"
 ---
 # Add-AzApiManagementRegion
 
-## Sinossi
+## SYNOPSIS
 Aggiunge nuove aree di distribuzione a un'istanza di PsApiManagement.
 
 ## SINTASSI
@@ -26,31 +26,31 @@ Add-AzApiManagementRegion -ApiManagement <PsApiManagement> -Location <String> [-
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Add-AzApiManagementRegion** aggiunge una nuova istanza di tipo **PsApiManagementRegion** alla raccolta di **AdditionalRegions** dell'istanza specificata di tipo **Microsoft. Azure. Commands. ApiManagement. Models. PsApiManagement**.
-Questo cmdlet non distribuisce nulla da solo, ma aggiorna l'istanza di **PsApiManagement** in memoria.
-Per aggiornare una distribuzione di una gestione API, passare l'istanza di **PsApiManagement** modificata a Update-AzApiManagementDeployment.
+## DESCRIZIONE
+Il cmdlet **Add-AzApiManagementRegion** aggiunge una nuova istanza del tipo **PsApiManagementRegion** alla raccolta di **AdditionalRegions** dell'istanza fornita di **tipo Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement.**
+Questo cmdlet non distribuisce da solo, ma aggiorna l'istanza di **PsApiManagement** in memoria.
+Per aggiornare una distribuzione di gestione delle API, passare l'istanza **di PsApiManagement** modificata a Set-AzApiManagement.
 
 ## ESEMPI
 
-### Esempio 1: aggiungere nuove aree di distribuzione a un'istanza di PsApiManagement
+### Esempio 1: Aggiungere nuove aree di distribuzione a un'istanza di PsApiManagement
 ```
 PS C:\>Add-AzApiManagementRegion -ApiManagement $ApiManagement -Location "East US" -Sku "Premium" -Capacity 2
 ```
 
-Questo comando aggiunge due unità SKU Premium e l'area denominata East US all'istanza di **PsApiManagement** .
+Questo comando aggiunge due unità di SKU premium e l'area geografica Stati Uniti orientali **all'istanza PsApiManagement.**
 
-### Esempio 2: aggiungere nuove aree di distribuzione a un'istanza di PsApiManagement e quindi aggiornare la distribuzione
+### Esempio 2: Aggiungere nuove aree di distribuzione a un'istanza di PsApiManagement e quindi aggiornare la distribuzione
 ```
-PS C:\>Get-AzApiManagement -ResourceGroupName "Contoso" -Name "ContosoApi" | Add-AzApiManagementRegion -Location "East US" -Sku "Premium" -Capacity 2 | Update-AzApiManagementDeployment
+PS C:\>Get-AzApiManagement -ResourceGroupName "Contoso" -Name "ContosoApi" | Add-AzApiManagementRegion -Location "East US" -Sku "Premium" -Capacity 2 | Set-AzApiManagement
 ```
 
-Questo comando ottiene un oggetto **PsApiManagement** , aggiunge due unità SKU Premium per l'area denominata East US e quindi aggiorna la distribuzione.
+Questo comando ottiene un **oggetto PsApiManagement,** aggiunge due unità di SKU premium per l'area geografica degli Stati Uniti orientali e quindi aggiorna la distribuzione.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -ApiManagement
-Specifica l'istanza di **PsApiManagement** a cui questo cmdlet aggiunge altre aree di distribuzione.
+Specifica **l'istanza PsApiManagement** a cui questo cmdlet aggiunge altre aree di distribuzione.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 ```
 
 ### -Capacità
-Specifica la capacità SKU dell'area di distribuzione.
+Specifica la capacità di SKU dell'area di distribuzione.
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -80,7 +80,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -94,9 +94,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Posizione
-Specifica la posizione della nuova area di distribuzione tra l'area supportata per il servizio di gestione API.
-Per ottenere posizioni valide, usare il cmdlet Get-AzResourceProvider-ProviderNamespace "Microsoft. ApiManagement" | dove {$ _. ResourceTypes [0]. ResourceTypeName-EQ "servizio"} | Posizioni Select-Object
+### -Location
+Specifica la posizione della nuova area di distribuzione tra l'area supportata per il servizio di gestione delle API.
+Per ottenere posizioni valide, usare il cmdlet Get-AzResourceProvider -ProviderManagement "Microsoft.ApiManagement" | dove {$_. ResourceTypes[0]. ResourceTypeName -eq "service"} | Select-Object percorsi
 
 ```yaml
 Type: System.String
@@ -112,8 +112,8 @@ Accept wildcard characters: False
 
 ### -SKU
 Specifica il livello dell'area di distribuzione.
-I valori validi sono: 
-- Sviluppo
+I valori validi sono:
+- Sviluppatore
 - Standard
 - Premium
 
@@ -146,18 +146,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### Microsoft. Azure. Commands. ApiManagement. Models. PsApiManagement
+### Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. ApiManagement. Models. PsApiManagement
+### Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement
 
-## Note
-* Il cmdlet scrive l'istanza di **PsApiManagement** aggiornata in pipeline.
+## NOTE
+* Il cmdlet scrive **l'istanza di PsApiManagement aggiornata** nella pipeline.
 
 ## COLLEGAMENTI CORRELATI
 
@@ -165,6 +165,6 @@ Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-In
 
 [Update-AzApiManagementRegion](./Update-AzApiManagementRegion.md)
 
-[Update-AzApiManagementDeployment](./Update-AzApiManagementDeployment.md)
+[Set-AzApiManagement](./Set-AzApiManagement.md)
 
 

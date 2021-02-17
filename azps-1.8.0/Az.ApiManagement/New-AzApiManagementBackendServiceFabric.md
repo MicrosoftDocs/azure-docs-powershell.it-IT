@@ -5,16 +5,16 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendServiceFabric.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendServiceFabric.md
-ms.openlocfilehash: 193f8f64abee3514d94a0f825beb7190c8ea7fa6
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 8e78f50c7503f2fede223ba80c20474af02f84a4
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93673598"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400910"
 ---
 # New-AzApiManagementBackendServiceFabric
 
-## Sinossi
+## SYNOPSIS
 Crea un oggetto di `PsApiManagementServiceFabric`
 
 ## SINTASSI
@@ -25,13 +25,13 @@ New-AzApiManagementBackendServiceFabric -ManagementEndpoint <String[]> -ClientCe
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
+## DESCRIZIONE
 
-Il cmdlet **New-AzApiManagementBackendServiceFabric** crea un oggetto `PsApiManagementServiceFabric` da usare in cmdlet **New-AzApiManagementBackend** e **set-AzApiManagementBackend**.
+Il cmdlet **New-AzApiManagementBackendServiceFabric** crea un oggetto di cui usare i `PsApiManagementServiceFabric` cmdlet **New-AzApiManagementBackend** e **Set-AzApiManagementBackend.**
 
 ## ESEMPI
 
-### Esempio 1: creare un oggetto In-Memory tessuto del servizio back-end
+### Esempio 1: Creare un oggetto In-Memory Backend Service Fabric
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>$ManagementEndpoints = 'https://sfbackend-01.net:443', 'https://sfbackend-02.net:443'
@@ -41,12 +41,12 @@ PS C:\>$serviceFabric = New-AzApiManagementBackendServiceFabric -ManagementEndpo
 PS C:\>$backend = New-AzApiManagementBackend -Context  $apimContext -BackendId 123 -Url 'https://contoso.com/awesomeapi' -Protocol http -ServiceFabricCluster $serviceFabric -Description "service fabric backend" -PassThru
 ```
 
-Crea un contratto del tessuto del servizio back-end
+Crea un contratto Backend Service Fabric
 
-## PARAMETRI
+## PARAMETERS
 
 ### -ClientCertificateThumbprint
-Identificazione personale del certificato client per l'endpoint di gestione.
+Thumbprint certificato client per l'endpoint di gestione.
 Questo parametro è obbligatorio.
 
 ```yaml
@@ -62,7 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -77,7 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -ManagementEndpoint
-Endpoint di gestione dei cluster di servizi in tessuto.
+Endpoint di gestione del cluster Service Fabric.
 Questo parametro è obbligatorio.
 
 ```yaml
@@ -93,7 +93,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaxPartitionResolutionRetry
-Numero massimo di tentativi per la risoluzione di una partizione del tessuto del servizio.
+Numero massimo di tentativi durante la risoluzione di una partizione Service Fabric.
 Questo parametro è facoltativo e il valore predefinito è 5.
 
 ```yaml
@@ -109,7 +109,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServerCertificateThumbprint
-Identificazione personale del servizio di gestione cluster certificati utilizza per la comunicazione TLS. Questo parametro è facoltativo.
+Thumbprint dei certificati utilizzati dal servizio di gestione cluster per la comunicazione TLS. Questo parametro è facoltativo.
 
 ```yaml
 Type: System.String[]
@@ -124,7 +124,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServerX509Name
-Raccolta nomi certificati X509 server.
+Raccolta di nomi di certificati del server X509.
 Questo parametro è facoltativo.
 
 ```yaml
@@ -140,21 +140,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementServiceFabric
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementServiceFabric
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Get-AzApiManagementBackend](./Get-AzApiManagementBackend)
+[Get-AzApiManagementBackend](./Get-AzApiManagementBackend.md)
 
 [New-AzApiManagementBackend](./New-AzApiManagementBackend.md)
 
