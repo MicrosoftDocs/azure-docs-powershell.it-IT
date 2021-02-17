@@ -3,16 +3,16 @@ external help file: Microsoft.WindowsAzure.Commands.RemoteApp.dll-Help.xml
 ms.assetid: A1599617-FAB8-42AE-B066-2B4682F0BA21
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: 6b5c05a33ea14df95945d9539e53602db8abd79c
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: e453d8051e2be4ef72cc4d005c403ea051a6cdce
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94030040"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410940"
 ---
 # Get-AzureRemoteAppPlan
 
-## Sinossi
+## SYNOPSIS
 Elenca i piani di Azure RemoteApp.
 
 ## SINTASSI
@@ -21,16 +21,16 @@ Elenca i piani di Azure RemoteApp.
 Get-AzureRemoteAppPlan [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Get-AzureRemoteAppPlan** elenca i piani di Azure RemoteApp.
+## DESCRIZIONE
+Il **cmdlet Get-AzureRemoteAppPlan** elenca i piani di Azure RemoteApp.
 
 ## ESEMPI
 
-## PARAMETRI
+## PARAMETERS
 
 ### -Profile
-Specifica il profilo Azure da cui viene letto il cmdlet.
-Se non specifichi un profilo, questo cmdlet viene letto dal profilo predefinito locale.
+Specifica il profilo di Azure da cui viene letto questo cmdlet.
+Se non si specifica un profilo, questo cmdlet legge dal profilo predefinito locale.
 
 ```yaml
 Type: AzureSMProfile
@@ -45,16 +45,16 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
 ## OUTPUT
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Cmdlet RemoteApp di Azure](./Azure.RemoteApp.md)
+
 
 

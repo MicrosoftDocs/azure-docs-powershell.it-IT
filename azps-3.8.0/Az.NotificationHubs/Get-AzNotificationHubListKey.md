@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.notificati
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubListKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubListKey.md
-ms.openlocfilehash: b8fdacf86de0e85c6f0ce241e743fc73066beb71
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 81e246162fc6c28cb23fa3015f92e43116759b4b
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94019285"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413286"
 ---
 # Get-AzNotificationHubListKey
 
-## Sinossi
-Ottiene le stringhe di connessione primarie e secondarie associate a una regola di autorizzazione dell'hub di notifica.
+## SYNOPSIS
+Ottiene le stringhe di connessione primaria e secondaria associate a una regola di autorizzazione dell'hub di notifica.
 
 ## SINTASSI
 
@@ -25,30 +25,30 @@ Get-AzNotificationHubListKey [-ResourceGroup] <String> [-Namespace] <String> [-N
  [-AuthorizationRule] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Get-AzNotificationHubListKey** restituisce le stringhe di connessione primarie e secondarie della regola di autorizzazione della firma di accesso condiviso (SAS) dell'hub di notifica.
+## DESCRIZIONE
+Il cmdlet **Get-AzNotificationHubListKey** restituisce le stringhe di connessione primaria e secondaria di una regola di autorizzazione Firma di accesso condiviso dell'hub di notifica.
 Le regole di autorizzazione gestiscono i diritti utente per l'hub.
-Ogni regola include una stringa di connessione primaria e secondaria.
+Ogni regola include una stringa di connessione principale e una secondaria.
 Queste stringhe di connessione (URI) eseguono le operazioni seguenti:
-- Posizionare il puntatore degli utenti su una risorsa.
-- Includere un token contenente i parametri della query.
-Uno di questi parametri, la firma, viene usato per autenticare l'utente e specificare il livello di accesso specificato.
+- Puntare gli utenti a una risorsa.
+- Includere un token contenente parametri di query.
+Uno di questi parametri, la firma, viene usato per autenticare l'utente e fornire il livello di accesso specificato.
 
 ## ESEMPI
 
-### Esempio 1: ottenere le stringhe di connessione primarie e secondarie per una regola di autorizzazione
+### Esempio 1: Ottenere le stringhe di connessione primaria e secondaria per una regola di autorizzazione
 ```
 PS C:\>Get-AzNotificationHubListKey -Namespace "ContosoNamespace" -NotificationHub "ContosoInternalHub" -ResourceGroup "ContosoNotificationsGroup" -AuthorizationRule "ListenRule"
 ```
 
-Questo comando ottiene le stringhe di connessione primarie e secondarie per la regola di autorizzazione ListenRule, una regola assegnata all'hub di notifica di ContosoInternalHub.
-Il comando deve includere lo spazio dei nomi Hub e il gruppo di risorse.
+Questo comando ottiene le stringhe di connessione primaria e secondaria per la regola di autorizzazione ListenRule, una regola assegnata all'hub di notifica ContosoInternalHub.
+Il comando deve includere lo spazio dei nomi e il gruppo di risorse dell'hub.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -AuthorizationRule
-Specifica il nome di una regola di autenticazione SAS (Shared Access Signature).
-Queste regole determinano il tipo di accesso che gli utenti hanno all'hub di notifica.
+Specifica il nome di una regola di autenticazione della firma di accesso condiviso.
+Queste regole determinano il tipo di accesso all'hub di notifica a cui gli utenti hanno accesso.
 
 ```yaml
 Type: System.String
@@ -95,7 +95,7 @@ Accept wildcard characters: False
 
 ### -NotificationHub
 Specifica l'hub di notifica a cui questo cmdlet assegna una regola di autorizzazione.
-Gli hub di notifica vengono usati per inviare notifiche push a più client indipendentemente dalla piattaforma utilizzata da tali client.
+Gli hub di notifica vengono usati per inviare notifiche push a più client indipendentemente dalla piattaforma usata da tali client.
 
 ```yaml
 Type: System.String
@@ -111,7 +111,7 @@ Accept wildcard characters: False
 
 ### -ResourceGroup
 Specifica il gruppo di risorse a cui è assegnato l'hub di notifica.
-I gruppi di risorse organizzano elementi come gli spazi dei nomi, gli hub di notifica e le regole di autorizzazione in modi che semplificano la gestione dell'inventario e l'amministrazione di Azure.
+I gruppi di risorse organizzano elementi come gli spazi dei nomi, gli hub di notifica e le regole di autorizzazione in modi che consentono semplicemente la gestione dell'inventario e l'amministrazione di Azure.
 
 ```yaml
 Type: System.String
@@ -126,20 +126,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Management. NotificationHubs. Models. ResourceListKeys
+### Microsoft.Azure.Management.NotificationHubs.Models.ResourceListKeys
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Get-AzNotificationHubAuthorizationRules](./Get-AzNotificationHubAuthorizationRules.md)
 
 

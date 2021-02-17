@@ -5,17 +5,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/new-az
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlSyncGroup.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlSyncGroup.md
-ms.openlocfilehash: 7dc408b757c2bce197fcc6dd366c4ef64484eccf
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 5d4f8daa123b0bf90283eb29407ee3a47459dd47
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93864275"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413269"
 ---
 # New-AzSqlSyncGroup
 
-## Sinossi
-Crea un gruppo di sincronizzazione database SQL di Azure.
+## SYNOPSIS
+Crea un gruppo di sincronizzazione SQL database di Azure.
 
 ## SINTASSI
 
@@ -27,12 +27,12 @@ New-AzSqlSyncGroup [-Name] <String> -SyncDatabaseName <String> -SyncDatabaseServ
  [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **New-AzSqlSyncGroup** crea un gruppo di sincronizzazione di database SQL di Azure.
+## DESCRIZIONE
+Il cmdlet **New-AzSqlSyncGroup** crea un gruppo di SQL database di Azure.
 
 ## ESEMPI
 
-### Esempio 1: creare un gruppo di sincronizzazione per un database SQL di Azure.
+### Esempio 1: Creare un gruppo di sincronizzazione per un database SQL Azure.
 ```
 PS C:\> $credential = Get-Credential
 PS C:\> New-AzSqlSyncGroup -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -Name "SyncGroup01" -ConflictResolutionPolicy "HubWin"
@@ -53,12 +53,12 @@ LastSyncTime                : 1/1/0001 12:00:00 AM
 Schema                      :
 ```
 
-Questo comando crea un gruppo di sincronizzazione per un database SQL di Azure. "schema.json" è un file nel disco locale. Contiene il payload dello schema in formato JSON. Un esempio di JSON dello schema è il seguente: {"Tables": [{"Columns": [{"QuotedName": "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column1"}, {"QuotedName": "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column2"}], "QuotedName": "MayQuotedTable1"}, {"Columns": [{"QuotedName": "b3ee3a7f"-7614-4644-ad07-afa832620b4bManualTestsm4column1 "}, {" QuotedName ":" b3ee3a7f "-7614-4644-ad07-afa832620b4bManualTestsm4column2"}], "QuotedName": "MayQuotedTable2"}], "MasterSyncMemberName": null}
+Questo comando crea un gruppo di sincronizzazione per un database SQL Azure. "schema.js"è un file nel disco locale. Contiene il payload dello schema in formato JSON. Un esempio del json dello schema è: {"Tables": [{"Columns": [{"QuotedName": "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column1"}, {"QuotedName": "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column2"}], "QuotedName": "MayQuotedTable1"}, {"Columns": [{"QuotedName": "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column1"}, {"QuotedName": "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column2"}], "QuotedName": "MayQuotedTable2"}], "MasterSyncMemberName": null }
 
-## PARAMETRI
+## PARAMETERS
 
 ### -ConflictResolutionPolicy
-Criteri per la risoluzione dei conflitti tra hub e database membro nel gruppo di sincronizzazione.
+Criterio per la risoluzione dei conflitti tra database hub e membro nel gruppo di sincronizzazione.
 
 ```yaml
 Type: System.String
@@ -74,7 +74,7 @@ Accept wildcard characters: False
 ```
 
 ### -DatabaseCredential
-Credenziali di autenticazione SQL del database hub.
+Le SQL di autenticazione del database hub.
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -89,7 +89,7 @@ Accept wildcard characters: False
 ```
 
 ### -DatabaseName
-Nome del database SQL di Azure.
+Il nome del database SQL Azure.
 
 ```yaml
 Type: System.String
@@ -119,8 +119,8 @@ Accept wildcard characters: False
 ```
 
 ### -IntervalInSeconds
-Frequenza (in secondi) della sincronizzazione dei dati.
-Il valore predefinito è-1, che indica che la sincronizzazione automatica non è abilitata.
+Frequenza (in secondi) dell'operazione di sincronizzazione dei dati.
+Il valore predefinito è -1, ovvero la sincronizzazione automatica non è abilitata.
 
 ```yaml
 Type: System.Int32
@@ -134,7 +134,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Nome
+### -Name
 Nome del gruppo di sincronizzazione.
 
 ```yaml
@@ -179,8 +179,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Nomeserver
-Nome di Azure SQL Server.
+### -ServerName
+Il nome dell'account Azure SQL Server.
 
 ```yaml
 Type: System.String
@@ -195,7 +195,7 @@ Accept wildcard characters: False
 ```
 
 ### -SyncDatabaseName
-Database usato per archiviare i metadati correlati alla sincronizzazione.
+Database usato per archiviare metadati correlati alla sincronizzazione.
 
 ```yaml
 Type: System.String
@@ -210,7 +210,7 @@ Accept wildcard characters: False
 ```
 
 ### -SyncDatabaseResourceGroupName
-Il gruppo di risorse a cui appartiene il database di metadati di sincronizzazione.
+Gruppo di risorse a cui appartiene il database dei metadati di sincronizzazione.
 
 ```yaml
 Type: System.String
@@ -239,8 +239,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confermare
-Richiede la conferma prima di eseguire il cmdlet.
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -255,7 +255,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra cosa succede se il cmdlet viene eseguito.
+Mostra cosa accadrebbe se il cmdlet viene eseguito.
 Il cmdlet non viene eseguito.
 
 ```yaml
@@ -271,21 +271,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. SQL. datasync. Model. AzureSqlSyncGroupModel
+### Microsoft.Azure.Commands.Sql.DataSync.Model.AzureSqlSyncGroupModel
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Set-AzSqlSyncGroup](./Set-AzSqlSyncGroup.md)
 
 [Remove-AzSqlSyncGroup](./Remove-AzSqlSyncGroup.md)
 

@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.datafactor
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Remove-AzDataFactoryV2DataFlow.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Remove-AzDataFactoryV2DataFlow.md
-ms.openlocfilehash: 8b5b9e8cfd1909b0d91627a2c0600620f264da78
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: b441c354214775f3f6aad425513a953fbefe7810
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94018428"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410974"
 ---
 # Remove-AzDataFactoryV2DataFlow
 
-## Sinossi
-Rimuove un flusso di dati da data factory.
+## SYNOPSIS
+Rimuove un flusso di dati da Data factory.
 
 ## SINTASSI
 
-### ByFactoryName (impostazione predefinita)
+### ByFactoryName (Default)
 ```
 Remove-AzDataFactoryV2DataFlow [-Name] <String> [-Force] [-ResourceGroupName] <String>
  [-DataFactoryName] <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
@@ -38,8 +38,8 @@ Remove-AzDataFactoryV2DataFlow [-Force] [-ResourceId] <String> [-DefaultProfile 
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet Remove-AzDataFactoryV2DataFlow rimuove un flusso di dati da Azure Data Factory.
+## DESCRIZIONE
+Il cmdlet Remove-AzDataFactoryV2DataFlow rimuove un flusso di dati da Data factory di Azure.
 
 ## ESEMPI
 
@@ -53,12 +53,12 @@ Are you sure you want to remove data flow 'dataflow5' in data factory 'WikiADF'?
 PS C:\WINDOWS\system32>
 ```
 
-Questo comando rimuove il flusso di dati denominato dataflow5 dalla data factory denominata WikiADF.
+Questo comando rimuove il flusso di dati denominato dataflow5 dal data factory denominato WikiADF.
 
-## PARAMETRI
+## PARAMETERS
 
-### -Datafactoryname
-Nome della factory di dati.
+### -DataFactoryName
+Nome del data factory.
 
 ```yaml
 Type: System.String
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -117,7 +117,7 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Nome
+### -Name
 Nome del flusso di dati.
 
 ```yaml
@@ -148,7 +148,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-ID risorsa di Azure.
+ID della risorsa Azure.
 
 ```yaml
 Type: System.String
@@ -163,7 +163,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Se specificato scriverà true nel caso in cui l'operazione venga eseguita correttamente. Questo parametro è facoltativo.
+Se specificato, write true se l'operazione riesce. Questo parametro è facoltativo.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -177,8 +177,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confermare
-Richiede la conferma prima di eseguire il cmdlet.
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -193,7 +193,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra cosa succede se il cmdlet viene eseguito.
+Mostra cosa accadrebbe se il cmdlet viene eseguito.
 Il cmdlet non viene eseguito.
 
 ```yaml
@@ -209,26 +209,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
 ### Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataset
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### System. void
+### System.Void
 
-### System. Boolean
+### System.Boolean
 
-## Note
-Parole chiave: Azure, azurerm, ARM, Resource, Management, Manager, data, Factory
+## NOTE
+Parole chiave: azure, azurerm, arm, risorsa, gestione, manager, dati, fattori
 
 ## COLLEGAMENTI CORRELATI
 
-[Get-AzDataFactoryDataFlow](./Get-AzDataFactoryDataFlow.md)
 
-[Set-AzDataFactoryDataFlow](./Set-AzDataFactoryDataFlow.md)
 
