@@ -5,37 +5,37 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementCache.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementCache.md
-ms.openlocfilehash: 757332267d2db2f797bb2f7ca2a39dbb32ee06c7
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: fee978a1500c0fc472ec8015a3e8dbbbdc8015bd
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94019900"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100407761"
 ---
-# <span data-ttu-id="079da-101">Get-AzApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="079da-101">Get-AzApiManagementCache</span></span>
+# <span data-ttu-id="d89d6-101">Get-AzApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="d89d6-101">Get-AzApiManagementCache</span></span>
 
-## <span data-ttu-id="079da-102">Sinossi</span><span class="sxs-lookup"><span data-stu-id="079da-102">SYNOPSIS</span></span>
-<span data-ttu-id="079da-103">Ottenere i dettagli della cache.</span><span class="sxs-lookup"><span data-stu-id="079da-103">Get the details of the Cache.</span></span>
+## <span data-ttu-id="d89d6-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="d89d6-102">SYNOPSIS</span></span>
+<span data-ttu-id="d89d6-103">Ottenere i dettagli della cache.</span><span class="sxs-lookup"><span data-stu-id="d89d6-103">Get the details of the Cache.</span></span>
 
-## <span data-ttu-id="079da-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="079da-104">SYNTAX</span></span>
+## <span data-ttu-id="d89d6-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="d89d6-104">SYNTAX</span></span>
 
-### <span data-ttu-id="079da-105">ContextParameterSet (impostazione predefinita)</span><span class="sxs-lookup"><span data-stu-id="079da-105">ContextParameterSet (Default)</span></span>
+### <span data-ttu-id="d89d6-105">ContextParameterSet (impostazione predefinita)</span><span class="sxs-lookup"><span data-stu-id="d89d6-105">ContextParameterSet (Default)</span></span>
 ```
 Get-AzApiManagementCache -Context <PsApiManagementContext> [-CacheId <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="079da-106">ResourceIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="079da-106">ResourceIdParameterSet</span></span>
+### <span data-ttu-id="d89d6-106">ResourceIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="d89d6-106">ResourceIdParameterSet</span></span>
 ```
 Get-AzApiManagementCache -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="079da-107">Descrizione</span><span class="sxs-lookup"><span data-stu-id="079da-107">DESCRIPTION</span></span>
-<span data-ttu-id="079da-108">Ottenere i dettagli della cache configurata nel servizio di gestione API.</span><span class="sxs-lookup"><span data-stu-id="079da-108">Get the details of the Cache configured in Api Management service.</span></span>
+## <span data-ttu-id="d89d6-107">DESCRIZIONE</span><span class="sxs-lookup"><span data-stu-id="d89d6-107">DESCRIPTION</span></span>
+<span data-ttu-id="d89d6-108">Ottenere i dettagli della cache configurata nel servizio di gestione api.</span><span class="sxs-lookup"><span data-stu-id="d89d6-108">Get the details of the Cache configured in Api Management service.</span></span>
 
-## <span data-ttu-id="079da-109">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="079da-109">EXAMPLES</span></span>
+## <span data-ttu-id="d89d6-109">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="d89d6-109">EXAMPLES</span></span>
 
-### <span data-ttu-id="079da-110">Esempio 1: ottenere tutte le cache</span><span class="sxs-lookup"><span data-stu-id="079da-110">Example 1: Get all Caches</span></span>
+### <span data-ttu-id="d89d6-110">Esempio 1: Ottenere tutte le cache</span><span class="sxs-lookup"><span data-stu-id="d89d6-110">Example 1: Get all Caches</span></span>
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementCache -Context $apimContext
@@ -51,9 +51,9 @@ ResourceGroupName : Api-Default-West-US
 ServiceName       : contoso
 ```
 
-<span data-ttu-id="079da-111">Ottiene un elenco di tutte le cache configurate nel servizio di gestione delle API.</span><span class="sxs-lookup"><span data-stu-id="079da-111">Gets a list of all the Caches configured in the Api Management service.</span></span>
+<span data-ttu-id="d89d6-111">Ottiene un elenco di tutte le cache configurate nel servizio di gestione delle API.</span><span class="sxs-lookup"><span data-stu-id="d89d6-111">Gets a list of all the Caches configured in the Api Management service.</span></span>
 
-### <span data-ttu-id="079da-112">Esempio 2: ottenere la cache specificata dall'identificatore westus</span><span class="sxs-lookup"><span data-stu-id="079da-112">Example 2: Get the Cache specified by the Identifier westus</span></span>
+### <span data-ttu-id="d89d6-112">Esempio 2: Ottenere la cache specificata dall'identificatore westus</span><span class="sxs-lookup"><span data-stu-id="d89d6-112">Example 2: Get the Cache specified by the Identifier westus</span></span>
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementCache -Context $apimContext -cacheId westus
@@ -69,14 +69,14 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-<span data-ttu-id="079da-113">Ottenere i dettagli della cache specificata configurata per westus</span><span class="sxs-lookup"><span data-stu-id="079da-113">Get the details of the specified Cache configured for westus</span></span>
+<span data-ttu-id="d89d6-113">Ottenere i dettagli della cache specificata configurata per westus</span><span class="sxs-lookup"><span data-stu-id="d89d6-113">Get the details of the specified Cache configured for westus</span></span>
 
-## <span data-ttu-id="079da-114">PARAMETRI</span><span class="sxs-lookup"><span data-stu-id="079da-114">PARAMETERS</span></span>
+## <span data-ttu-id="d89d6-114">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="d89d6-114">PARAMETERS</span></span>
 
-### <span data-ttu-id="079da-115">-CacheId</span><span class="sxs-lookup"><span data-stu-id="079da-115">-CacheId</span></span>
-<span data-ttu-id="079da-116">Identificatore di una cache.</span><span class="sxs-lookup"><span data-stu-id="079da-116">Identifier of a cache.</span></span>
-<span data-ttu-id="079da-117">Se specificato cercherà di trovare la cache in base all'identificatore.</span><span class="sxs-lookup"><span data-stu-id="079da-117">If specified will try to find cache by the identifier.</span></span>
-<span data-ttu-id="079da-118">Questo parametro è facoltativo.</span><span class="sxs-lookup"><span data-stu-id="079da-118">This parameter is optional.</span></span>
+### <span data-ttu-id="d89d6-115">-CacheId</span><span class="sxs-lookup"><span data-stu-id="d89d6-115">-CacheId</span></span>
+<span data-ttu-id="d89d6-116">Identificatore di una cache.</span><span class="sxs-lookup"><span data-stu-id="d89d6-116">Identifier of a cache.</span></span>
+<span data-ttu-id="d89d6-117">Se specificato, tenterà di trovare la cache in base all'identificatore.</span><span class="sxs-lookup"><span data-stu-id="d89d6-117">If specified will try to find cache by the identifier.</span></span>
+<span data-ttu-id="d89d6-118">Questo parametro è facoltativo.</span><span class="sxs-lookup"><span data-stu-id="d89d6-118">This parameter is optional.</span></span>
 
 ```yaml
 Type: System.String
@@ -90,9 +90,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="079da-119">-Contesto</span><span class="sxs-lookup"><span data-stu-id="079da-119">-Context</span></span>
-<span data-ttu-id="079da-120">Istanza di PsApiManagementContext.</span><span class="sxs-lookup"><span data-stu-id="079da-120">Instance of PsApiManagementContext.</span></span>
-<span data-ttu-id="079da-121">Questo parametro è obbligatorio.</span><span class="sxs-lookup"><span data-stu-id="079da-121">This parameter is required.</span></span>
+### <span data-ttu-id="d89d6-119">-Context</span><span class="sxs-lookup"><span data-stu-id="d89d6-119">-Context</span></span>
+<span data-ttu-id="d89d6-120">Istanza di PsApiManagementContext.</span><span class="sxs-lookup"><span data-stu-id="d89d6-120">Instance of PsApiManagementContext.</span></span>
+<span data-ttu-id="d89d6-121">Questo parametro è obbligatorio.</span><span class="sxs-lookup"><span data-stu-id="d89d6-121">This parameter is required.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -106,8 +106,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="079da-122">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="079da-122">-DefaultProfile</span></span>
-<span data-ttu-id="079da-123">Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.</span><span class="sxs-lookup"><span data-stu-id="079da-123">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+### <span data-ttu-id="d89d6-122">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="d89d6-122">-DefaultProfile</span></span>
+<span data-ttu-id="d89d6-123">Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.</span><span class="sxs-lookup"><span data-stu-id="d89d6-123">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -121,8 +121,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="079da-124">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="079da-124">-ResourceId</span></span>
-<span data-ttu-id="079da-125">Identificatore delle risorse ARM di una cache.</span><span class="sxs-lookup"><span data-stu-id="079da-125">Arm Resource Identifier of a cache.</span></span> <span data-ttu-id="079da-126">Se specificato cercherà di trovare la cache in base all'identificatore.</span><span class="sxs-lookup"><span data-stu-id="079da-126">If specified will try to find cache by the identifier.</span></span> <span data-ttu-id="079da-127">Questo parametro è obbligatorio.</span><span class="sxs-lookup"><span data-stu-id="079da-127">This parameter is required.</span></span>
+### <span data-ttu-id="d89d6-124">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="d89d6-124">-ResourceId</span></span>
+<span data-ttu-id="d89d6-125">Arm Resource Identifier di una cache.</span><span class="sxs-lookup"><span data-stu-id="d89d6-125">Arm Resource Identifier of a cache.</span></span> <span data-ttu-id="d89d6-126">Se specificato, tenterà di trovare la cache in base all'identificatore.</span><span class="sxs-lookup"><span data-stu-id="d89d6-126">If specified will try to find cache by the identifier.</span></span> <span data-ttu-id="d89d6-127">Questo parametro è obbligatorio.</span><span class="sxs-lookup"><span data-stu-id="d89d6-127">This parameter is required.</span></span>
 
 ```yaml
 Type: System.String
@@ -136,25 +136,25 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="079da-128">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="079da-128">CommonParameters</span></span>
-<span data-ttu-id="079da-129">Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="079da-129">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="079da-130">Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="079da-130">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="d89d6-128">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="d89d6-128">CommonParameters</span></span>
+<span data-ttu-id="d89d6-129">Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="d89d6-129">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="d89d6-130">Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.</span><span class="sxs-lookup"><span data-stu-id="d89d6-130">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="079da-131">INGRESSI</span><span class="sxs-lookup"><span data-stu-id="079da-131">INPUTS</span></span>
+## <span data-ttu-id="d89d6-131">INPUT</span><span class="sxs-lookup"><span data-stu-id="d89d6-131">INPUTS</span></span>
 
-### <span data-ttu-id="079da-132">Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementContext</span><span class="sxs-lookup"><span data-stu-id="079da-132">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span></span>
+### <span data-ttu-id="d89d6-132">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span><span class="sxs-lookup"><span data-stu-id="d89d6-132">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span></span>
 
-### <span data-ttu-id="079da-133">System. String</span><span class="sxs-lookup"><span data-stu-id="079da-133">System.String</span></span>
+### <span data-ttu-id="d89d6-133">System.String</span><span class="sxs-lookup"><span data-stu-id="d89d6-133">System.String</span></span>
 
-## <span data-ttu-id="079da-134">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="079da-134">OUTPUTS</span></span>
+## <span data-ttu-id="d89d6-134">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="d89d6-134">OUTPUTS</span></span>
 
-### <span data-ttu-id="079da-135">Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="079da-135">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache</span></span>
+### <span data-ttu-id="d89d6-135">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="d89d6-135">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache</span></span>
 
-## <span data-ttu-id="079da-136">Note</span><span class="sxs-lookup"><span data-stu-id="079da-136">NOTES</span></span>
+## <span data-ttu-id="d89d6-136">NOTE</span><span class="sxs-lookup"><span data-stu-id="d89d6-136">NOTES</span></span>
 
-## <span data-ttu-id="079da-137">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="079da-137">RELATED LINKS</span></span>
+## <span data-ttu-id="d89d6-137">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="d89d6-137">RELATED LINKS</span></span>
 
-[<span data-ttu-id="079da-138">Get-AzApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="079da-138">Get-AzApiManagementCache</span></span>](./Get-AzApiManagementCache)
+[<span data-ttu-id="d89d6-138">New-AzApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="d89d6-138">New-AzApiManagementCache</span></span>](./New-AzApiManagementCache.md)
 
-[<span data-ttu-id="079da-139">Set-AzApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="079da-139">Set-AzApiManagementCache</span></span>](./Set-AzApiManagementCache.md)
+[<span data-ttu-id="d89d6-139">Remove-AzApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="d89d6-139">Remove-AzApiManagementCache</span></span>](./Remove-AzApiManagementCache.md)
 
-[<span data-ttu-id="079da-140">Remove-AzApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="079da-140">Remove-AzApiManagementCache</span></span>](./Remove-AzApiManagementCache.md)
+[<span data-ttu-id="d89d6-140">Update-AzApiManagementCache</span><span class="sxs-lookup"><span data-stu-id="d89d6-140">Update-AzApiManagementCache</span></span>](./Update-AzApiManagementCache.md)
