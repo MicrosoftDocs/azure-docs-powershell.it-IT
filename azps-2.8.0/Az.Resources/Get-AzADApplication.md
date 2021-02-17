@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADApplication.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADApplication.md
-ms.openlocfilehash: 18b5f64426b0a3c458ea489d27781f1a01336b52
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 545722e48095f8b77104bb6ff24b856bd76e3312
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93856461"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100407812"
 ---
 # Get-AzADApplication
 
-## Sinossi
-Elenca le applicazioni di Azure Active Directory esistenti.
+## SYNOPSIS
+Elenca le applicazioni azure Active Directory esistenti.
 
 ## SINTASSI
 
-### EmptyParameterSet (impostazione predefinita)
+### EmptyParameterSet (Impostazione predefinita)
 ```
 Get-AzADApplication [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount] [-Skip <UInt64>]
  [-First <UInt64>] [<CommonParameters>]
@@ -56,14 +56,14 @@ Get-AzADApplication -IdentifierUri <String> [-DefaultProfile <IAzureContextConta
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-## Descrizione
-Elenca le applicazioni di Azure Active Directory esistenti.
+## DESCRIZIONE
+Elenca le applicazioni azure Active Directory esistenti.
 La ricerca dell'applicazione può essere eseguita da ObjectId, ApplicationId, IdentifierUri o DisplayName.
-Se non viene specificato alcun parametro, recupera tutte le applicazioni sotto il tenant.
+Se non viene fornito alcun parametro, recupera tutte le applicazioni nel tenant.
 
 ## ESEMPI
 
-### Esempio 1-elenca tutte le applicazioni
+### Esempio 1 - Elencare tutte le applicazioni
 
 ```
 PS C:\> Get-AzADApplication
@@ -71,31 +71,31 @@ PS C:\> Get-AzADApplication
 
 Elenca tutte le applicazioni in un tenant.
 
-### Esempio 2-elenco delle applicazioni che usano il paging
+### Esempio 2 - Applicazioni elenco che usano la suddivisione in pagine
 
 ```
 PS C:\> Get-AzADApplication -First 100
 ```
 
-Elenca le prime applicazioni di 100 in un tenant.
+Elenca le prime 100 applicazioni in un tenant.
 
-### Esempio 3-ottenere l'applicazione dall'URI dell'identificatore
+### Esempio 3 - Ottenere l'URI dell'applicazione in base all'identificatore
 
 ```
 PS C:\> Get-AzADApplication -IdentifierUri http://mySecretApp1
 ```
 
-Ottiene l'applicazione con URI dell'identificatore come " http://mySecretApp1 ".
+Ottiene l'applicazione con URI identificatore come " http://mySecretApp1 ".
 
-### Esempio 4-ottenere l'applicazione dall'ID oggetto
+### Esempio 4 - Ottenere l'applicazione per ID oggetto
 
 ```
 PS C:\> Get-AzADApplication -ObjectId 39e64ec6-569b-4030-8e1c-c3c519a05d69
 ```
 
-Ottiene l'applicazione con l'ID oggetto "39e64ec6-569B-4030-8e1c-c3c519a05d69".
+Ottiene l'applicazione con l'ID oggetto '39e64ec6-569b-4030-8e1c-c3c519a05d69'.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -ApplicationId
 ID applicazione dell'applicazione da recuperare.
@@ -143,7 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayNameStartWith
-Recuperare tutte le applicazioni che iniziano con il nome visualizzato.
+Recuperare tutte le applicazioni a partire dal nome visualizzato.
 
 ```yaml
 Type: System.String
@@ -158,7 +158,7 @@ Accept wildcard characters: False
 ```
 
 ### -IdentifierUri
-URI identificatore univoco dell'applicazione da recuperare.
+Uri identificatore univoco dell'applicazione da recuperare.
 
 ```yaml
 Type: System.String
@@ -203,7 +203,7 @@ Accept wildcard characters: False
 ```
 
 ### -Skip
-Ignora i primi oggetti N e quindi recupera gli oggetti rimanenti.
+Ignora i primi N oggetti e quindi ottiene gli oggetti rimanenti.
 
 ```yaml
 Type: System.UInt64
@@ -217,7 +217,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Primo
+### -First
 Numero massimo di oggetti da restituire.
 
 ```yaml
@@ -233,19 +233,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
-### System. Guid
+### System.Guid
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. ActiveDirectory. PSADApplication
+### Microsoft.Azure.Commands.ActiveDirectory.PSADApplication
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
@@ -257,7 +257,6 @@ Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-In
 
 [Remove-AzADApplication](./Remove-AzADApplication.md)
 
-[Set-AzADApplication](./Set-AzADApplication.md)
 
 [New-AzADApplication](./New-AzADApplication.md)
 

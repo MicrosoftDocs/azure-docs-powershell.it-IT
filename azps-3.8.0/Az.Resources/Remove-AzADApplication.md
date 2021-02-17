@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzADApplication.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzADApplication.md
-ms.openlocfilehash: 70da17c175c49da80cf4ee5ed71509aa98db99b6
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 3059e5611f843244f69cc48ae432ef070627d29d
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93864612"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100407727"
 ---
 # Remove-AzADApplication
 
-## Sinossi
+## SYNOPSIS
 Elimina l'applicazione Azure Active Directory.
 
 ## SINTASSI
 
-### ObjectIdParameterSet (impostazione predefinita)
+### ObjectIdParameterSet (Impostazione predefinita)
 ```
 Remove-AzADApplication -ObjectId <String> [-PassThru] [-Force] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -44,36 +44,36 @@ Remove-AzADApplication -InputObject <PSADApplication> [-PassThru] [-Force]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Descrizione
+## DESCRIZIONE
 Elimina l'applicazione Azure Active Directory.
 
 ## ESEMPI
 
-### Esempio 1-rimuovere l'applicazione per ID oggetto
+### Esempio 1 - Rimuovere l'applicazione in base all'ID oggetto
 
 ```
 PS C:\> Remove-AzADApplication -ObjectId b4cd1619-80b3-4cfb-9f8f-9f2333425738
 ```
 
-Rimuove l'applicazione con l'ID oggetto "b4cd1619-80B3-4cfb-9f8f-9f2333425738" dal tenant.
+Rimuove l'applicazione con ID oggetto 'b4cd1619-80b3-4cfb-9f8f-9f2333425738' dal tenant.
 
-### Esempio 2-Rimuovere l'applicazione dall'ID applicazione
+### Esempio 2 - Rimuovere l'applicazione in base all'ID applicazione
 
 ```
 PS C:\> Remove-AzADApplication -ApplicationId f9c5ea4f-28f0-401a-a491-491a037fa346
 ```
 
-Rimuove l'applicazione con l'ID applicazione ' f9c5ea4f-28f0-401A-A491-491a037fa346' dal tenant.
+Rimuove l'applicazione con ID applicazione 'f9c5ea4f-28f0-401a-a491-491a037fa346' dal tenant.
 
-### Esempio 3-rimuovere l'applicazione tramite pipe
+### Esempio 3 - Rimuovere un'applicazione tramite piping
 
 ```
 PS C:\> Get-AzADApplication -ObjectId b4cd1619-80b3-4cfb-9f8f-9f2333425738 | Remove-AzADApplication
 ```
 
-Ottiene l'applicazione con l'ID oggetto "b4cd1619-80B3-4cfb-9f8f-9f2333425738" e le pipe al cmdlet Remove-AzADApplication per rimuovere l'applicazione dal tenant.
+Ottiene l'applicazione con ID oggetto 'b4cd1619-80b3-4cfb-9f8f-9f233425738' e pipe che al cmdlet di Remove-AzADApplication per rimuovere l'applicazione dal tenant.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -ApplicationId
 ID applicazione dell'applicazione da rimuovere.
@@ -121,7 +121,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Passare a eliminare un'applicazione senza conferma.
+Passare all'eliminazione di un'applicazione senza conferma.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -166,7 +166,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Se il comando ha avuto esito positivo, la specifica restituirà true.
+Se si specifica questo valore, viene restituito true se il comando ha esito positivo.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -180,8 +180,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confermare
-Richiede la conferma prima di eseguire il cmdlet.
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -196,7 +196,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra cosa succede se il cmdlet viene eseguito.
+Mostra cosa accadrebbe se il cmdlet viene eseguito.
 Il cmdlet non viene eseguito.
 
 ```yaml
@@ -212,22 +212,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
-### System. Guid
+### System.Guid
 
-### Microsoft. Azure. Commands. ActiveDirectory. PSADApplication
+### Microsoft.Azure.Commands.ActiveDirectory.PSADApplication
 
 ## OUTPUT
 
-### System. Boolean
+### System.Boolean
 
-## Note
-Parole chiave: Azure, azurerm, ARM, Resource, Management, Manager, Resource, Group, template, Deployment
+## NOTE
+Parole chiave: azure, azurerm, arm, risorsa, gestione, manager, risorsa, gruppo, modello, distribuzione
 
 ## COLLEGAMENTI CORRELATI
 
@@ -235,7 +235,6 @@ Parole chiave: Azure, azurerm, ARM, Resource, Management, Manager, Resource, Gro
 
 [Get-AzADApplication](./Get-AzADApplication.md)
 
-[Set-AzADApplication](./Set-AzADApplication.md)
 
 [Remove-AzADAppCredential](./Remove-AzADAppCredential.md)
 
