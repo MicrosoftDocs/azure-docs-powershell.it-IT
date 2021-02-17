@@ -6,16 +6,16 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitRouteTableSummary.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitRouteTableSummary.md
-ms.openlocfilehash: 78807c8504452479eef0cbe25a8e33cb017f4b9e
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 19a96083bc24c1ae50759aadd1a87b5bf23fdf48
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94021334"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100408186"
 ---
 # Get-AzExpressRouteCircuitRouteTableSummary
 
-## Sinossi
+## SYNOPSIS
 Ottiene un riepilogo della tabella di route di un circuito ExpressRoute.
 
 ## SINTASSI
@@ -26,20 +26,20 @@ Get-AzExpressRouteCircuitRouteTableSummary -ResourceGroupName <String> -ExpressR
  [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Get-AzExpressRouteCircuitRouteTableSummary** recupera un riepilogo delle informazioni adiacenti BGP per un particolare contesto di routing. Queste informazioni sono utili per determinare per quanto tempo è stato stabilito un contesto di routing e il numero di prefissi di route pubblicizzati dal router peering.
+## DESCRIZIONE
+Il cmdlet **Get-AzExpressRouteCircuitRouteTableSummary** recupera un riepilogo delle informazioni sui vicini BGP per un particolare contesto di routing. Queste informazioni sono utili per determinare per quanto tempo è stato stabilito un contesto di routing e per il numero di prefissi di route annunciati dal router di peering.
 
 ## ESEMPI
 
-### Esempio 1: visualizzare il riepilogo della route per il percorso principale
+### Esempio 1: Visualizzare il riepilogo del percorso per il percorso principale
 ```
 Get-AzExpressRouteCircuitRouteTableSummary -ResourceGroupName $RG -ExpressRouteCircuitName $CircuitName -DevicePath 'Primary'
 ```
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpressRouteCircuitName
-Nome del circuito di ExpressRoute esaminato.
+Nome del circuito ExpressRoute da esaminare.
 
 ```yaml
 Type: System.String
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -PeeringType
-I valori accettabili per questo parametro sono: `AzurePrivatePeering` , `AzurePublicPeering` e `MicrosoftPeering`
+I valori accettabili per questo parametro sono: `AzurePrivatePeering` `AzurePublicPeering` , e `MicrosoftPeering`
 
 ```yaml
 Type: System.String
@@ -101,7 +101,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Nome del gruppo di risorse contenente il circuito ExpressRoute.
+Nome del gruppo di risorse che contiene il circuito ExpressRoute.
 
 ```yaml
 Type: System.String
@@ -116,17 +116,17 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Network. Models. PSExpressRouteCircuitRoutesTableSummary
+### Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuitRoutesTableSummary
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
@@ -134,4 +134,4 @@ Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-In
 
 [Get-AzExpressRouteCircuitRouteTable](Get-AzExpressRouteCircuitRouteTable.md)
 
-[Get-AzExpressRouteCircuitStats](Get-AzExpressRouteCircuitStats.md)
+[Get-AzExpressRouteCircuitStat](Get-AzExpressRouteCircuitStat.md)
