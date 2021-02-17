@@ -6,16 +6,16 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleEmail.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleEmail.md
-ms.openlocfilehash: cfdd18a02a5e0507e86a37dee1e1662bb5094f37
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 063eccb7d42fdee26c642a866c2bce398c87662e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93835055"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403052"
 ---
 # New-AzAlertRuleEmail
 
-## Sinossi
+## SYNOPSIS
 Crea un'azione di posta elettronica per una regola di avviso.
 
 ## SINTASSI
@@ -25,36 +25,36 @@ New-AzAlertRuleEmail [[-CustomEmail] <String[]>] [-SendToServiceOwner]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
+## DESCRIZIONE
 Il cmdlet **New-AzAlertRuleEmail** crea un'azione di posta elettronica per una regola di avviso.
 
 ## ESEMPI
 
-### Esempio 1: creare un'azione di posta elettronica regola di avviso per i proprietari dei servizi
+### Esempio 1: Creare un'azione di posta elettronica con una regola di avviso per i proprietari dei servizi
 ```
 PS C:\>New-AzAlertRuleEmail -SendToServiceOwners
 ```
 
-Questo comando crea un'azione di posta elettronica regola di avviso da inviare per i proprietari del servizio quando viene attivata una regola di avviso.
+Questo comando crea un'azione di posta elettronica relativa a una regola di avviso da inviare ai proprietari dei servizi quando viene creata una regola di avviso.
 
-### Esempio 2: creare un'azione di posta elettronica regola di avviso per i proprietari non del servizio
+### Esempio 2: Creare un'azione di posta elettronica con una regola di avviso per i proprietari di servizi non
 ```
 PS C:\>New-AzAlertRuleEmail -CustomEmails pattif@contoso.com,davidchew@contoso.net
 ```
 
-Questo comando crea un'azione di posta elettronica regola di avviso per gli indirizzi di posta elettronica specificati, ma non per i proprietari del servizio.
+Questo comando crea un'azione di posta elettronica con una regola di avviso per gli indirizzi di posta elettronica specificati, ma non per i proprietari dei servizi.
 
-### Esempio 3: creare un'azione di posta elettronica regola di avviso per proprietari di servizi e proprietari non di servizi
+### Esempio 3: Creare un'azione di posta elettronica con una regola di avviso per proprietari di servizi e non proprietari di servizi
 ```
 PS C:\>New-AzAlertRuleEmail -CustomEmails pattif@contoso.net -SendToServiceOwners
 ```
 
-Questo comando crea un'azione di posta elettronica regola di avviso per l'indirizzo specificato e per i proprietari del servizio.
+Questo comando crea un'azione di posta elettronica con una regola di avviso per l'indirizzo specificato e per i proprietari dei servizi.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -CustomEmail
-Specifica un elenco di indirizzi di posta elettronica delimitati da virgole.
+Specifica un elenco di indirizzi di posta elettronica separati da virgola.
 
 ```yaml
 Type: System.String[]
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
+Le credenziali, l'account, il tenant e la sottoscrizione usati per le comunicazioni con Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 ```
 
 ### -SendToServiceOwner
-Indica che questa operazione Invia un messaggio di posta elettronica ai proprietari del servizio quando viene attivata la regola.
+Indica che questa operazione invia un messaggio di posta elettronica ai proprietari del servizio quando la regola viene applicata.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -99,23 +99,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### System. String []
+### System.String[]
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameter
 
 ## OUTPUT
 
-### Microsoft. Azure. Management. monitor. Management. Models. RuleEmailAction
+### Microsoft.Azure.Management.Monitor.Management.Models.RuleEmailAction
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Add-AzLogAlertRule](./Add-AzLogAlertRule.md)
 
 [Add-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
 

@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Set-AzActivityLogAlert.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Set-AzActivityLogAlert.md
-ms.openlocfilehash: 0813f91a3d82a40bc5b8d02c0a1e3f9579e0067a
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 6c7b867add359edec8379f20e630c9aca5fed00e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93678745"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402882"
 ---
 # Set-AzActivityLogAlert
 
-## Sinossi
-Crea un nuovo o imposta un avviso del log attività esistente.
+## SYNOPSIS
+Crea un nuovo avviso del log attività o lo imposta.
 
 ## SINTASSI
 
@@ -51,15 +51,15 @@ Set-AzActivityLogAlert [-Scope <System.Collections.Generic.List`1[System.String]
  [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **set-AzActivityLogAlert** crea un nuovo o imposta un avviso del log attività esistente.
-Per tag, condizioni e azioni gli oggetti devono essere creati in anticipo e passati come parametri in questa chiamata come separati da virgola (Vedi l'esempio seguente).
-Questo cmdlet implementa il modello ShouldProcess, ossia potrebbe richiedere la conferma da parte dell'utente prima di creare o modificare effettivamente la risorsa.
-**Nota** : questo cmdlet e i relativi correlati sostituiscono il **componente aggiuntivo** deprecato (2017 novembre) AzLogAlertRule.
+## DESCRIZIONE
+Il cmdlet **Set-AzActivityLogAlert** crea una nuova azione o imposta un avviso del log attività esistente.
+Per tag, condizioni e azioni, gli oggetti devono essere creati in anticipo e passati come parametri in questa chiamata come valori separati da virgola (vedere l'esempio seguente).
+Questo cmdlet implementa il criterio ShouldProcess, ad esempio potrebbe richiedere conferma all'utente prima di creare o modificare effettivamente la risorsa.
+**NOTA:** questo cmdlet e quelli correlati sostituiscono **add-AzLogAlertRule** deprecato (novembre 2017).
 
 ## ESEMPI
 
-### Esempio 1: creare un avviso del log attività
+### Esempio 1: Creare un avviso di log attività
 ```
 PS C:\>$location = 'Global'
 PS C:\>$alertName = 'myAlert'
@@ -75,7 +75,7 @@ PS C:\>Set-AzActivityLogAlert -Location $location -Name $alertName -ResourceGrou
 I primi quattro comandi creano la condizione foglia e il gruppo di azioni.
 Il comando finale crea un avviso del log attività usando la condizione e il gruppo di azioni.
 
-### Esempio 2: creare un avviso del log attività disabilitato
+### Esempio 2: Creare un avviso di log attività disabilitato
 ```
 PS C:\>$location = 'Global'
 PS C:\>$alertName = 'myAlert'
@@ -88,10 +88,10 @@ PS C:\>$actionGrp1 = New-AzActionGroup -ActionGroupId 'actiongr1' -WebhookProper
 PS C:\>Set-AzActivityLogAlert -Location $location -Name $alertName -ResourceGroupName $resourceGroupName -Scope 'scope1','scope2' -Action $actionGrp1 -Condition $condition1, $condition2 -DisableAlert
 ```
 
-I primi quattro comandi creano la condizione foglia e il gruppo di azioni.
+I primi quattro comandi creano una condizione foglia e un gruppo di azioni.
 Il comando finale crea un avviso del log attività usando la condizione e il gruppo di azioni, ma crea l'avviso disabilitato.
 
-### Esempio 3: impostare un avviso del log attività basato su un valore della pipe o del parametro InputObject
+### Esempio 3: Impostare un avviso del log attività in base a un valore della barra verticale o al parametro InputObject
 ```
 PS C:\>Get-AzActivityLogAlert -Name $alertName -ResourceGroupName $resourceGroupName | Set-AzActivityLogAlert
 PS C:\>$alert = Get-AzActivityLogAlert -Name $alertName -ResourceGroupName $resourceGroupName
@@ -100,18 +100,18 @@ PS C:\>$alert.Enabled = $false
 PS C:\>Set-AzActivityLogAlert -InputObject $alert
 ```
 
-Il primo comando è simile a un NOP, imposta l'avviso con gli stessi valori già contenuta nel resto dei comandi recupera la regola di avviso, modifica la descrizione e la Disabilita, quindi usa il parametro InputObject per rendere persistenti tali modifiche.
+Il primo comando è simile a nop, imposta l'avviso con gli stessi valori che conteneva Già Gli altri comandi recuperano la regola di avviso, modificano la descrizione e la disabilitano, quindi usano il parametro InputObject per rendere persistenti le modifiche
 
-### Esempio 4: impostare un avviso del log attività basato sul valore ResourceId della pipe
+### Esempio 4: Impostare un avviso del log attività in base al valore ResourceId della barra verticale
 ```
 PS C:\>Find-AzResource -ResourceGroupEquals "myResourceGroup" -ResourceNameEquals "myLogAlert" | Set-AzActivityLogAlert -DisableAlert
 ```
 
-Se la regola di avviso del log specificata esiste, questo comando lo Disabilita.
+Se esiste una determinata regola di avviso per il log, questo comando la disabilita.
 
-## PARAMETRI
+## PARAMETERS
 
-### -Azione
+### -Action
 Elenco di gruppi di azioni per l'avviso del log attività.
 
 ```yaml
@@ -150,9 +150,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Condition
-Elenco delle condizioni per l'avviso del log attività.
-**Nota** : nell'elenco delle condizioni deve essere presente almeno uno con il campo uguale a "Category". Il backend risponde con 400 (BadRequest) se questa condizione non è presente.
+### -Condizione
+Elenco di condizioni per l'avviso del log attività.
+**NOTA:** nell'elenco delle condizioni deve esserci almeno un campo il cui campo è uguale a "Categoria". Il back-end risponde con 400 (BadRequest) se questa condizione non è presente.
 
 ```yaml
 Type: System.Collections.Generic.List`1[Microsoft.Azure.Management.Monitor.Management.Models.ActivityLogAlertLeafCondition]
@@ -191,7 +191,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
+Le credenziali, l'account, il tenant e la sottoscrizione usati per le comunicazioni con Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -206,7 +206,7 @@ Accept wildcard characters: False
 ```
 
 ### -Descrizione
-Descrizione della risorsa di avviso.
+Descrizione della risorsa avviso.
 
 ```yaml
 Type: System.String
@@ -233,7 +233,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisableAlert
-Consente all'utente di creare un avviso di registro attività disabilitato. Se non viene assegnato, gli avvisi vengono creati abilitati.
+Consente all'utente di creare un avviso nel log attività disabilitato. Se non viene specificato, gli avvisi vengono creati abilitati.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -248,7 +248,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Imposta la proprietà InputObject tag della chiamata per estrarre il nome obbligatorio e le proprietà del nome del gruppo di risorse.
+Imposta la proprietà tag InputObject della chiamata per estrarre il nome richiesto e le proprietà del nome del gruppo di risorse.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
@@ -262,8 +262,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Posizione
-Posizione in cui è presente l'avviso del log attività.
+### -Location
+Posizione in cui verrà visualizzato l'avviso del log attività.
 
 ```yaml
 Type: System.String
@@ -289,7 +289,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Nome
+### -Name
 Nome dell'avviso del log attività.
 
 ```yaml
@@ -305,7 +305,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Nome del gruppo di risorse in cui sta per esistere la risorsa di avviso.
+Nome del gruppo di risorse in cui si trova la risorsa di avviso.
 
 ```yaml
 Type: System.String
@@ -320,7 +320,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Imposta la proprietà ResourceId tag della chiamata per estrarre le proprietà nome obbligatorio, nome gruppo risorse.
+Imposta la proprietà tag ResourceId della chiamata per estrarre il nome richiesto e le proprietà del nome del gruppo di risorse.
 
 ```yaml
 Type: System.String
@@ -334,8 +334,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Ambito
-Elenco di ambiti per l'avviso del log attività.
+### -Scope
+Elenco degli ambiti per l'avviso del log attività.
 
 ```yaml
 Type: System.Collections.Generic.List`1[System.String]
@@ -374,7 +374,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tag
-Imposta la proprietà Tags della risorsa di avviso del log attività.
+Imposta la proprietà tag della risorsa avviso del log attività.
 
 ```yaml
 Type: System.Collections.Generic.Dictionary`2[System.String,System.String]
@@ -400,8 +400,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confermare
-Richiede la conferma prima di eseguire il cmdlet.
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -416,7 +416,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra cosa succede se il cmdlet viene eseguito. Il cmdlet non viene eseguito.
+Mostra cosa accadrebbe se il cmdlet viene eseguito. Il cmdlet non viene eseguito.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -431,27 +431,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
-### System. Collections. Generic. list ' 1 [[System. String, System. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Collections.Generic.List'1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### System. Collections. Generic. list ' 1 [[Microsoft. Azure. Management. monitor. Management. Models. ActivityLogAlertLeafCondition, Microsoft. Azure. PowerShell. cmdlet. monitor, versione = 1.0.0.0, Culture = neutral, PublicKeyToken = null]]
+### System.Collections.Generic.List'1[[Microsoft.Azure.Management.Monitor.Management.Models.ActivityLogAlertLeafCondition, Microsoft.Azure.PowerShell.Cmdlets.Monitor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 
-### System. Collections. Generic. list ' 1 [[Microsoft. Azure. Management. monitor. Management. Models. ActivityLogAlertActionGroup, Microsoft. Azure. PowerShell. cmdlet. monitor, versione = 1.0.0.0, Culture = neutral, PublicKeyToken = null]]
+### System.Collections.Generic.List'1[[Microsoft.Azure.Management.Monitor.Management.Models.ActivityLogAlertActionGroup, Microsoft.Azure.PowerShell.Cmdlets.Monitor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 
-### System. Collections. Generic. Dictionary ' 2 [[System. String, System. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e], [System. String, System. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Collections.Generic.Dictionary'2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSActivityLogAlertResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSActivityLogAlertResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
@@ -464,5 +464,3 @@ Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-In
 [Remove-AzActivityLogAlert](./Remove-AzActivityLogAlert.md)
 
 [New-AzActionGroup](./New-AzActionGroup.md)
-
-[New-AzActivityLogAlertCondition](./Get-AzActivityLogAlertCondition.md)
