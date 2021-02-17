@@ -1,0 +1,190 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Synapse.dll-Help.xml
+Module Name: Az.Synapse
+online version: https://docs.microsoft.com/en-us/powershell/module/az.synapse/set-azsynapsetrigger
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Synapse/Synapse/help/Set-AzSynapseTrigger.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Synapse/Synapse/help/Set-AzSynapseTrigger.md
+ms.openlocfilehash: 289e601ab80e4842b493cd6852839bec544bcc36
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100207602"
+---
+# Set-AzSynapseTrigger
+
+## SYNOPSIS
+Crea un trigger in un'area di lavoro.
+
+## SINTASSI
+
+### SetByName (Impostazione predefinita)
+```
+Set-AzSynapseTrigger -WorkspaceName <String> -Name <String> -DefinitionFile <String> [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### SetByObject
+```
+Set-AzSynapseTrigger -WorkspaceObject <PSSynapseWorkspace> -Name <String> -DefinitionFile <String> [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIZIONE
+Il cmdlet **Set-AzSynapseTrigger** crea un trigger in un'area di lavoro. I trigger vengono creati nello stato "Arrestato", ovvero non iniziano immediatamente a richiamare pipeline a cui fanno riferimento.
+
+## ESEMPI
+
+### Esempio 1
+```powershell
+PS C:\> Set-AzSynapseTrigger -WorkspaceName ContosoWorkspace -Name ContosoTrigger -DefinitionFile ".\scheduledTrigger.json"
+```
+
+Creare un nuovo trigger denominato ContosoTrigger nell'area di lavoro ContosoWorkspace. Il trigger viene creato nello stato "Arrestato", ovvero non viene avviato immediatamente. È possibile avviare un trigger con il `Start-AzDataFactoryV2Trigger` cmdlet.
+
+### Esempio 2
+```powershell
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Set-AzSynapseTrigger -Name ContosoTrigger -DefinitionFile ".\scheduledTrigger.json"
+```
+
+Creare un nuovo trigger denominato ContosoTrigger nell'area di lavoro ContosoWorkspace tramite pipeline. Il trigger viene creato nello stato "Arrestato", ovvero non viene avviato immediatamente. È possibile avviare un trigger con il `Start-AzDataFactoryV2Trigger` cmdlet.
+
+## PARAMETERS
+
+### -AsJob
+Eseguire il cmdlet in background
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefinitionFile
+Percorso del file JSON.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: File
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+Nome del trigger.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: TriggerName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WorkspaceName
+Nome dell'area di lavoro Synapse.
+
+```yaml
+Type: System.String
+Parameter Sets: SetByName
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WorkspaceObject
+Oggetto di input dell'area di lavoro, in genere passato attraverso la pipeline.
+
+```yaml
+Type: Microsoft.Azure.Commands.Synapse.Models.PSSynapseWorkspace
+Parameter Sets: SetByObject
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Mostra cosa accadrebbe se il cmdlet viene eseguito.
+Il cmdlet non viene eseguito.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
+
+## INPUT
+
+### Microsoft.Azure.Commands.Synapse.Models.PSSynapseWorkspace
+
+## OUTPUT
+
+### Microsoft.Azure.Commands.Synapse.Models.PSTriggerResource
+
+## NOTE
+
+## COLLEGAMENTI CORRELATI

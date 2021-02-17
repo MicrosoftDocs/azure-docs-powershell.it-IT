@@ -5,17 +5,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.kusto/get-
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Kusto/Kusto/help/Get-AzKustoCluster.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Kusto/Kusto/help/Get-AzKustoCluster.md
-ms.openlocfilehash: a68604e9701a6ae2c251edf3f2a0935df5ffa94f
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: c5c7cdffc8b329fdff426f48f60869ca6821f32d
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93674068"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401352"
 ---
 # Get-AzKustoCluster
 
-## Sinossi
-Elencare tutti i cluster di Kusto in un gruppo di risorse o ottenere uno specifico cluster di Kusto.
+## SYNOPSIS
+Elencare tutti i cluster Kusto in un gruppo di risorse o ottenere un cluster Kusto specifico.
 
 ## SINTASSI
 
@@ -30,25 +30,25 @@ Get-AzKustoCluster -ResourceGroupName <String> [-Name <String>] [-DefaultProfile
 Get-AzKustoCluster -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
-Elencare tutti i cluster di Kusto in un gruppo di risorse o ottenere uno specifico cluster di Kusto.
+## DESCRIZIONE
+Elencare tutti i cluster Kusto in un gruppo di risorse o ottenere un cluster Kusto specifico.
 
 ## ESEMPI
 
-### Esempio 1-elenca tutti i cluster di Kusto in un gruppo di risorse
+### Esempio 1 - Elencare tutti i cluster Kusto in un gruppo di risorse
 
-Digitare: Microsoft. kusto/Clusters ID:/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster1 ResourceGroup: testrg Name: mykustocluster1 location: Central US Capacity: 3 SKU: D13_v2 ProvisioningState: succeeded state: in corso Tag: {} URI: https://mykustocluster1.centralus.kusto.windows.net DataIngestionUri: https://ingest-mykustocluster1.centralus.kusto.windows.net
+Tipo: Microsoft.Kusto/Clusters Id : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster1 ResourceGroup : testrg Name : mykustocluster1 Location : Central US Capacity : 3 SKU : D13_v2 ProvisioningState : Succeeded State Tag : Running Tag : {} Uri : `https://mykustocluster1.centralus.kusto.windows.net` DataIngestionUri : `https://ingest-mykustocluster1.centralus.kusto.windows.net`
 
-Digitare: Microsoft. kusto/Clusters ID:/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster2 ResourceGroup: testrg nome: mykustocluster2 posizione: centrale US capacità: 5 SKU: D13_v2 ProvisioningState: stato riuscito: in corso Tag: {} URI: https://mykustocluster2.centralus.kusto.windows.net DataIngestionUri: https://ingest-mykustocluster2.centralus.kusto.windows.net
+Tipo: Microsoft.Kusto/Clusters Id : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster2 ResourceGroup : testrg Name : mykustocluster2 Location : Central US Capacity : 5 SKU : D13_v2 ProvisioningState : Succeeded State Tag : Running Tag : {} Uri : `https://mykustocluster2.centralus.kusto.windows.net` DataIngestionUri : `https://ingest-mykustocluster2.centralus.kusto.windows.net`
 
 
 ```
 PS C:\> Get-AzKustoCluster -ResourceGroupName testrg
 ```
 
-Il comando precedente elenca tutti i cluster kusto nel gruppo di risorse "testrg".
+Il comando precedente elenca tutti i cluster Kusto nel gruppo di risorse "testrg".
 
-### Esempio 2-ottenere un cluster specifico di Kusto per nome
+### Esempio 2 - Ottenere un cluster Kusto specifico per nome
 
 ```
 PS C:\> Get-AzKustoCluster -ResourceGroupName testrg -Name mykustocluster
@@ -67,9 +67,9 @@ Uri               : https://mykustocluster.centralus.kusto.windows.net
 DataIngestionUri  : https://ingest-mykustocluster.centralus.kusto.windows.net
 ```
 
-Il comando precedente restituisce il cluster kusto denominato "mykustocluster" nel gruppo di risorse "testrg".
+Il comando precedente restituisce il cluster Kusto denominato "mykustocluster" nel gruppo di risorse "testrg".
 
-### Esempio 3-ottenere un cluster kusto specifico per ID risorsa
+### Esempio 3 - Ottenere un cluster Kusto specifico in base all'ID risorsa
 
 ```
 PS C:\> Get-AzKustoCluster -ResourceId /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/clusters/mykustocluster
@@ -87,12 +87,12 @@ Uri               : https://mykustocluster.centralus.kusto.windows.net
 DataIngestionUri  : https://ingest-mykustocluster.centralus.kusto.windows.net
 ```
 
-Il comando precedente restituisce il cluster kusto denominato "mykustocluster" nel gruppo di risorse "testrg".
+Il comando precedente restituisce il cluster Kusto denominato "mykustocluster" nel gruppo di risorse "testrg".
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -106,7 +106,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Nome
+### -Name
 Nome di un cluster specifico.
 
 ```yaml
@@ -137,7 +137,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Kusto cluster ResourceID.
+ID Risorsa cluster Kusto.
 
 ```yaml
 Type: System.String
@@ -152,16 +152,16 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. kusto. Models. PSKustoCluster
+### Microsoft.Azure.Commands.Kusto.Models.PSKustoCluster
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI

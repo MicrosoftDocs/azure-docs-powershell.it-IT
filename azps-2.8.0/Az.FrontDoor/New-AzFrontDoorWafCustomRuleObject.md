@@ -5,16 +5,16 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafCustomRuleObject.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafCustomRuleObject.md
-ms.openlocfilehash: 6c40a54dd230bc4c7e45f97b4fa6f969940e1673
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: c59e0f90ae8b6d7839c7bb845b56e31a42b2d033
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93674374"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100412793"
 ---
 # New-AzFrontDoorWafCustomRuleObject
 
-## Sinossi
+## SYNOPSIS
 Creare un oggetto CustomRule per la creazione di criteri WAF
 
 ## SINTASSI
@@ -25,7 +25,7 @@ New-AzFrontDoorWafCustomRuleObject -Name <String> -RuleType <String> -MatchCondi
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
+## DESCRIZIONE
 Creare un oggetto CustomRule per la creazione di criteri WAF
 
 ## ESEMPI
@@ -41,11 +41,11 @@ Rule1 MatchRule  Block        2                          1
 
 Creare un oggetto CustomRule
 
-## PARAMETRI
+## PARAMETERS
 
-### -Azione
+### -Action
 Tipo di azioni.
-I valori possibili includono:' Consenti ',' blocco ',' log '
+I valori possibili includono: 'Consenti', 'Blocca', 'Log'
 
 ```yaml
 Type: System.String
@@ -60,7 +60,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -MatchCondition
-Elenco delle condizioni di corrispondenza.
+Elenco di condizioni di corrispondenza.
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSMatchCondition[]
@@ -89,7 +89,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Nome
+### -Name
 Nome della regola
 
 ```yaml
@@ -104,7 +104,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Priorità
+### -Priority
 Descrive la priorità della regola.
 
 ```yaml
@@ -120,7 +120,7 @@ Accept wildcard characters: False
 ```
 
 ### -RateLimitDurationInMinutes
-Durata del limite di frequenza. Impostazione predefinita: 1 minuto
+Durata del limite di tariffa. Impostazione predefinita - 1 minuto
 
 ```yaml
 Type: System.Int32
@@ -135,7 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -RateLimitThreshold
-Soglia limite tasso
+Soglia del limite di tariffa
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -150,8 +150,8 @@ Accept wildcard characters: False
 ```
 
 ### -RuleType
-Tipo della regola.
-I valori possibili includono: "MatchRule", "RateLimitRule"
+Tipo di regola.
+I valori possibili includono: 'MatchRule', 'RateLimitRule'
 
 ```yaml
 Type: System.String
@@ -166,19 +166,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](https://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
 ### Nessuno
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. FrontDoor. Models. PSCustomRule
+### Microsoft.Azure.Commands.FrontDoor.Models.PSCustomRule
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
 [New-AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md) 
- [Set-AzFrontDoorWafPolicy](./Set-AzFrontDoorWafPolicy.md)
+ [Update-AzFrontDoorWafPolicy](./Update-AzFrontDoorWafPolicy.md)
