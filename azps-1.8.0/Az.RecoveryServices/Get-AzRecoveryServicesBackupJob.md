@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryse
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesBackupJob.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesBackupJob.md
-ms.openlocfilehash: 21498e13490b22b58621e2100dcc885442db7607
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 5dab5eaca48152dc573caf75f5d80737802bfcdf
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93677664"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399822"
 ---
 # Get-AzRecoveryServicesBackupJob
 
-## Sinossi
-Ottiene i processi di backup.
+## SYNOPSIS
+Recupera i processi di backup.
 
 ## SINTASSI
 
@@ -26,13 +26,13 @@ Get-AzRecoveryServicesBackupJob [[-Status] <JobStatus>] [[-Operation] <JobOperat
  [-VaultId <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Get-AzRecoveryServicesBackupJob** ottiene i processi di backup di Azure per un Vault specifico.
-Impostare il contesto del Vault usando il cmdlet Set-AzRecoveryServicesVaultContext prima di usare il cmdlet corrente.
+## DESCRIZIONE
+Il cmdlet **Get-AzRecoveryServicesBackupJob** ottiene i processi di Backup di Azure per un vault specifico.
+Impostare il contesto del vault usando il cmdlet Set-AzRecoveryServicesVaultContext prima di usare il cmdlet corrente.
 
 ## ESEMPI
 
-### Esempio 1: ottenere tutti i processi in corso
+### Esempio 1: Ottenere tutti i processi in corso
 ```
 PS C:\>$Joblist = Get-AzRecoveryservicesBackupJob -Status Inprogress
 PS C:\> $Joblist[0]
@@ -41,20 +41,20 @@ WorkloadName     Operation            Status               StartTime            
 V2VM             Backup               InProgress           4/23/2016 5:00:30 PM      1/1/2001 12:00:00
 ```
 
-Il primo comando ottiene lo stato di un processo in corso come matrice e lo archivia nella variabile $Joblist.
-Il secondo comando Visualizza il primo elemento nella matrice $Joblist.
+Il primo comando ottiene lo stato di un processo in corso come matrice e quindi lo archivia nella $Joblist variabile.
+Il secondo comando visualizza il primo elemento della $Joblist matrice.
 
-### Esempio 2: ottenere tutti i processi non riusciti negli ultimi 7 giorni
+### Esempio 2: Ottenere tutti i processi non riusciti negli ultimi 7 giorni
 ```
 PS C:\>Get-AzRecoveryServicesBackupJob -From (Get-Date).AddDays(-7).ToUniversalTime() -Status Failed
 ```
 
-Questo comando restituisce i processi non riusciti dell'ultima settimana nel Vault.
-Il parametro *from* specifica un tempo di sette giorni nel passato specificato in UTC.
-Il comando non specifica un valore per il parametro *to* .
+Questo comando recupera i processi non riusciti dell'ultima settimana nel Vault.
+Il *parametro From* specifica un'ora di sette giorni nel passato specificato in UTC.
+Il comando non specifica un valore per il *parametro To.*
 Di conseguenza, usa il valore predefinito dell'ora corrente.
 
-### Esempio 3: ottenere un processo in corso e attendere il completamento
+### Esempio 3: Ottenere un processo in corso e attendere il completamento
 ```
 PS C:\> 
 $Jobs = Get-AzRecoveryServicesBackupJob -Status InProgress
@@ -72,9 +72,9 @@ $Job = $Jobs[0]
     Done!
 ```
 
-Questo script esegue il polling del primo processo che è attualmente in corso fino al completamento del processo.
+Questo script esegue il polling del primo processo attualmente in corso finché non viene completato.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -BackupManagementType
 Specifica il tipo di gestione del backup.
@@ -94,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -109,10 +109,10 @@ Accept wildcard characters: False
 ```
 
 ### -Da
-Specifica l'inizio, come oggetto **DateTime** , di un intervallo di tempo per i processi ottenuti da questo cmdlet.
-Per ottenere un oggetto **DateTime** , usare il cmdlet Get-Date.
-Per altre informazioni sugli oggetti **DateTime** , digitare `Get-Help Get-Date` .
-Usare il formato UTC per le date.
+Specifica l'inizio, come oggetto **DateTime,** di un intervallo di tempo per i processi che questo cmdlet ottiene.
+Per ottenere un **oggetto DateTime,** usare il cmdlet Get-Date.
+Per altre informazioni sugli **oggetti DateTime,** digitare `Get-Help Get-Date` .
+Utilizzare il formato UTC per le date.
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -142,9 +142,9 @@ Accept wildcard characters: False
 ```
 
 ### -JobId
-Specifica l'ID di un processo ottenuto da questo cmdlet.
-L'ID è la proprietà InstanceId di un oggetto **AzureRmRecoveryServicesBackupJob** .
-Per ottenere un oggetto **AzureRmRecoveryServicesBackupJob** , USA Get-AzRecoveryServicesBackupJob.
+Specifica l'ID di un processo che riceve questo cmdlet.
+L'ID è la proprietà InstanceId di un **oggetto AzureRmRecoveryServicesBackupJob.**
+Per ottenere un **oggetto AzureRmRecoveryServicesBackupJob,** usare Get-AzRecoveryServicesBackupJob.
 
 ```yaml
 Type: System.String
@@ -159,15 +159,15 @@ Accept wildcard characters: False
 ```
 
 ### -Operazione
-Specifica un'operazione dei processi ottenuti da questo cmdlet.
-I valori accettabili per questo parametro sono i seguenti:
+Specifica un'operazione dei processi che riceve questo cmdlet.
+I valori accettabili per questo parametro sono:
 - Backup
 - ConfigureBackup
 - DeleteBackupData
-- Registrare
-- Ripristinare
-- Rimuovi protezione
-- Unregister
+- Registra
+- Ripristina
+- UnProtect
+- Annulla registrazione
 
 ```yaml
 Type: System.Nullable`1[Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.JobOperation]
@@ -183,11 +183,11 @@ Accept wildcard characters: False
 ```
 
 ### -Stato
-Specifica lo stato dei processi ottenuti da questo cmdlet.
-I valori accettabili per questo parametro sono i seguenti:
+Specifica lo stato dei processi che riceve questo cmdlet.
+I valori accettabili per questo parametro sono:
 - InProgress
-- Fallito
-- Annullata
+- Operazione non riuscita
+- Annullato
 - Annullamento
 - Completato
 - CompletedWithWarnings
@@ -205,11 +205,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -To
-Specifica la fine, come oggetto **DateTime** , di un intervallo di tempo per i processi ottenuti da questo cmdlet.
+### -A
+Specifica la fine, come oggetto **DateTime,** di un intervallo di tempo per i processi che il cmdlet ottiene.
 Il valore predefinito è l'ora di sistema corrente.
-Se specifichi questo parametro, devi anche specificare il parametro *from* .
-Usare il formato UTC per le date.
+Se si specifica questo parametro, è necessario specificare anche il *parametro From.*
+Utilizzare il formato UTC per le date.
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -224,7 +224,7 @@ Accept wildcard characters: False
 ```
 
 ### -VaultId
-ID ARM dell'archivio servizi di ripristino.
+ARM ID del Vault dei servizi di ripristino.
 
 ```yaml
 Type: System.String
@@ -239,21 +239,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. RecoveryServices. backup. Cmdlets. Models. JobBase
+### Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.JobBase
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Get-AzRecoveryServicesBackupJobDetails](./Get-AzRecoveryServicesBackupJobDetails.md)
 
 [Stop-AzRecoveryServicesBackupJob](./Stop-AzRecoveryServicesBackupJob.md)
 
