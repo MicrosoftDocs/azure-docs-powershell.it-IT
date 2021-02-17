@@ -5,17 +5,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryse
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Start-AzRecoveryServicesAsrApplyRecoveryPoint.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Start-AzRecoveryServicesAsrApplyRecoveryPoint.md
-ms.openlocfilehash: d669e450e096e4d9c0c61a3e1d485e3caaaa9ae3
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 6200ea42da8a15c96b8138acbd4a54ce7d88b101
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93856610"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100408662"
 ---
 # Start-AzRecoveryServicesAsrApplyRecoveryPoint
 
-## Sinossi
-Modifica un punto di ripristino per un elemento non superato protetto prima di eseguire il commit dell'operazione di failover.
+## SYNOPSIS
+Modifica un punto di ripristino per un elemento protetto con errore prima di eseguire il commit dell'operazione di failover.
 
 ## SINTASSI
 
@@ -26,8 +26,8 @@ Start-AzRecoveryServicesAsrApplyRecoveryPoint -RecoveryPoint <ASRRecoveryPoint>
  [<CommonParameters>]
 ```
 
-## Descrizione
-**Start-AzRecoveryServicesAsrApplyRecoveryPoint** modifica il punto di ripristino per un elemento non riuscito tramite protezione prima di eseguire il commit dell'operazione di failover.
+## DESCRIZIONE
+**Start-AzRecoveryServicesAsrApplyRecoveryPoint** cambia il punto di ripristino per un elemento protetto con failover prima di eseguire il commit dell'operazione di failover.
 
 ## ESEMPI
 
@@ -36,12 +36,12 @@ Start-AzRecoveryServicesAsrApplyRecoveryPoint -RecoveryPoint <ASRRecoveryPoint>
 PS C:\> $currentJob = Start-AzRecoveryServicesAsrApplyRecoveryPoint -RecoveryPoint $RecoveryPoint -ReplicationProtectedItem $RPI
 ```
 
-Inizia ad applicare il punto di ripristino specificato all'elemento protetto da replica e restituisce il processo ASR usato per tenere traccia dell'operazione.
+Avvia l'applicazione del punto di ripristino specificato all'elemento protetto da replica e restituisce il processo ASR usato per tenere traccia dell'operazione.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DataEncryptionPrimaryCertFile
-Specifica il file di certificato principale se viene usata la crittografia dei dati.
+Specifica il file del certificato primario se viene usata la crittografia dei dati.
 
 ```yaml
 Type: System.String
@@ -56,7 +56,7 @@ Accept wildcard characters: False
 ```
 
 ### -DataEncryptionSecondaryCertFile
-Specifica il file di certificato secondario se viene usata la crittografia dei dati.
+Specifica il file del certificato secondario se viene usata la crittografia dei dati.
 
 ```yaml
 Type: System.String
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 
 ```yaml
@@ -87,7 +87,7 @@ Accept wildcard characters: False
 ```
 
 ### -RecoveryPoint
-Specifica l'oggetto punto di ripristino che corrisponde al punto di recupero da applicare.
+Specifica l'oggetto punto di ripristino corrispondente al punto di ripristino da applicare.
 
 ```yaml
 Type: Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRRecoveryPoint
@@ -102,7 +102,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReplicationProtectedItem
-Specifica l'oggetto elemento protetto per la replica ASR.
+Specifica l'oggetto elemento protetto da replica ASR.
 
 ```yaml
 Type: Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRReplicationProtectedItem
@@ -116,8 +116,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Confermare
-Richiede la conferma prima di eseguire il cmdlet.
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra cosa succede se il cmdlet viene eseguito. Il cmdlet non viene eseguito.
+Mostra cosa accadrebbe se il cmdlet viene eseguito. Il cmdlet non viene eseguito.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -147,18 +147,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### Microsoft. Azure. Commands. RecoveryServices. SiteRecovery. ASRReplicationProtectedItem
+### Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRReplicationProtectedItem
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. RecoveryServices. SiteRecovery. ASRJob
+### Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRJob
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Cmdlet di ripristino del sito di Azure](./Az.SiteRecovery.md)
+

@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzADApplication.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzADApplication.md
-ms.openlocfilehash: 7b66dff3f59e3ad186bfc559343aebf484ff2bc2
-ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+ms.openlocfilehash: e27dcc838499e742c887f60a30021d8ac99277f4
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100399619"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100208419"
 ---
 # Remove-AzADApplication
 
@@ -20,7 +20,7 @@ Elimina l'applicazione Azure Active Directory.
 
 ## SINTASSI
 
-### ObjectIdParameterSet (Impostazione predefinita)
+### ObjectIdParameterSet (impostazione predefinita)
 ```
 Remove-AzADApplication -ObjectId <String> [-PassThru] [-Force] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -49,25 +49,25 @@ Elimina l'applicazione Azure Active Directory.
 
 ## ESEMPI
 
-### Esempio 1 - Rimuovere l'applicazione in base all'ID oggetto
+### Esempio 1: Rimuovere un'applicazione in base all'ID oggetto
 
-```
+```powershell
 PS C:\> Remove-AzADApplication -ObjectId b4cd1619-80b3-4cfb-9f8f-9f2333425738
 ```
 
 Rimuove l'applicazione con ID oggetto 'b4cd1619-80b3-4cfb-9f8f-9f2333425738' dal tenant.
 
-### Esempio 2 - Rimuovere l'applicazione in base all'ID applicazione
+### Esempio 2: Rimuovere l'applicazione in base all'ID applicazione
 
-```
+```powershell
 PS C:\> Remove-AzADApplication -ApplicationId f9c5ea4f-28f0-401a-a491-491a037fa346
 ```
 
 Rimuove l'applicazione con ID applicazione 'f9c5ea4f-28f0-401a-a491-491a037fa346' dal tenant.
 
-### Esempio 3 - Rimuovere un'applicazione tramite piping
+### Esempio 3: Rimuovere un'applicazione tramite piping
 
-```
+```powershell
 PS C:\> Get-AzADApplication -ObjectId b4cd1619-80b3-4cfb-9f8f-9f2333425738 | Remove-AzADApplication
 ```
 
@@ -212,7 +212,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
 ## INPUT
 
@@ -235,6 +235,7 @@ Parole chiave: azure, azurerm, arm, risorsa, gestione, manager, risorsa, gruppo,
 
 [Get-AzADApplication](./Get-AzADApplication.md)
 
+[Update-AzADApplication](./Update-AzADApplication.md)
 
 [Remove-AzADAppCredential](./Remove-AzADAppCredential.md)
 

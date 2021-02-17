@@ -6,16 +6,16 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzADUser.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzADUser.md
-ms.openlocfilehash: 2dc9a0d3d41ca1bccb131e92cf514fd2f814943b
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 8799450cc73784b45804ea1fa26785716a895bed
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93677311"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399584"
 ---
 # Remove-AzADUser
 
-## Sinossi
+## SYNOPSIS
 Elimina un utente di Active Directory.
 
 ## SINTASSI
@@ -50,36 +50,36 @@ Remove-AzADUser -InputObject <PSADUser> [-PassThru] [-Force] [-DefaultProfile <I
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Descrizione
-Elimina un utente di Active Directory (account aziendale o dell'Istituto di istruzione noto anche come org-ID).
+## DESCRIZIONE
+Elimina un utente di Active Directory (account aziendale o dell'istituto di istruzione noto anche come org-id).
 
 ## ESEMPI
 
-### Esempio 1-rimuovere un utente in base al nome dell'entità utente
+### Esempio 1 - Rimuovere un utente in base al nome dell'entità utente
 
 ```
 PS C:\> Remove-AzADUser -UserPrincipalName foo@domain.com
 ```
 
-Rimuove l'utente con il nome dell'entità utente " foo@domain.com " dal tenant.
+Rimuove l'utente con il nome dell'entità foo@domain.com utente " " dal tenant.
 
-### Esempio 2-rimuovere un utente per ID oggetto
+### Esempio 2 - Rimuovere un utente in base all'ID oggetto
 
 ```
 PS C:\> Remove-AzADUser -ObjectId 7a9582cf-88c4-4319-842b-7a5d60967a69
 ```
 
-Rimuove l'utente con l'ID oggetto "7a9582cf-88c4-4319-842b-7a5d60967a69" dal tenant.
+Rimuove l'utente con ID oggetto '7a9582cf-88c4-4319-842b-7a5d60967a69' dal tenant.
 
-### Esempio 3-rimuovere un utente tramite pipe
+### Esempio 3 - Rimuovere un utente tramite piping
 
 ```
 PS C:\> Get-AzADUser -ObjectId 7a9582cf-88c4-4319-842b-7a5d60967a69 | Remove-AzADUser
 ```
 
-Ottiene l'utente con l'ID oggetto "7a9582cf-88c4-4319-842b-7a5d60967a69" e convoglia il cmdlet Remove-AzADUser per rimuovere l'utente dal tenant.
+Ottiene l'utente con ID oggetto '7a9582cf-88c4-4319-842b-7a5d60967a69' e pipe che al cmdlet di Remove-AzADUser per rimuovere l'utente dal tenant.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
 Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-L'oggetto utente da eliminare.
+Oggetto utente da eliminare.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADUser
@@ -157,7 +157,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Se il comando ha avuto esito positivo, la specifica restituirà true.
+Se si specifica questo valore, viene restituito true se il comando ha esito positivo.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -172,7 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -UPNOrObjectId
-Nome dell'entità utente o objectId dell'utente da eliminare.
+Il nome dell'entità utente o l'id oggetto dell'utente da eliminare.
 
 ```yaml
 Type: System.String
@@ -187,7 +187,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserPrincipalName
-Nome dell'entità utente dell'utente da eliminare.
+Il nome dell'entità utente dell'utente da eliminare.
 
 ```yaml
 Type: System.String
@@ -201,8 +201,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confermare
-Richiede la conferma prima di eseguire il cmdlet.
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -217,7 +217,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra cosa succede se il cmdlet viene eseguito.
+Mostra cosa accadrebbe se il cmdlet viene eseguito.
 Il cmdlet non viene eseguito.
 
 ```yaml
@@ -233,19 +233,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
-### Microsoft. Azure. Commands. ActiveDirectory. PSADUser
+### Microsoft.Azure.Commands.ActiveDirectory.PSADUser
 
 ## OUTPUT
 
-### System. Boolean
+### System.Boolean
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
@@ -253,5 +253,4 @@ Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-In
 
 [Get-AzADUser](./Get-AzADUser.md)
 
-[Set-AzADUser](./Set-AzADUser.md)
 

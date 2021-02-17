@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.datafactor
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Set-AzDataFactoryV2DataFlow.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Set-AzDataFactoryV2DataFlow.md
-ms.openlocfilehash: 42d9de3f23f1aca904aa0f42722217d0b9bf8a3a
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 44439d49fc89f00abaef904e80112d076121890f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93865267"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100408645"
 ---
 # Set-AzDataFactoryV2DataFlow
 
-## Sinossi
-Crea un flusso di dati in data factory.
+## SYNOPSIS
+Crea un flusso di dati in Data factory.
 
 ## SINTASSI
 
-### ByFactoryName (impostazione predefinita)
+### ByFactoryName (Default)
 ```
 Set-AzDataFactoryV2DataFlow [-Name] <String> [-DefinitionFile] <String> [-Force] [-ResourceGroupName] <String>
  [-DataFactoryName] <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
@@ -32,12 +32,12 @@ Set-AzDataFactoryV2DataFlow [-DefinitionFile] <String> [-Force] [-ResourceId] <S
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet Set-AzDataFactoryV2DataFlow crea un flusso di dati o aggiorna un flusso di dati esistente in Azure Data Factory.
+## DESCRIZIONE
+Il cmdlet Set-AzDataFactoryV2DataFlow crea un flusso di dati o aggiorna un flusso di dati esistente in Data factory di Azure.
 
 ## ESEMPI
 
-### Esempio 1: creare un flusso di dati
+### Esempio 1: Creare un flusso di dati
 ```powershell
 PS C:\> Set-AzDataFactoryV2DataFlow -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "TaxiDemo1" -DefinitionFile "C:\\samples\\WikiSample\\TaxiDemo1.json"
 
@@ -46,13 +46,13 @@ DataFlowName           DataFactoryName ResourceGroupName                        
 TaxiDemo1                      WikiADF               adf Microsoft.Azure.Management.DataFactory.Models.MappingDataFlow
 ```
 
-Questo comando crea un flusso di dati denominato TaxiDemo1 nella data factory denominata WikiADF.
-Il comando basa il flusso di dati sulle informazioni nella TaxiDemo1.jssu file.
+Questo comando crea un flusso di dati denominatoDemo1 nel data factory denominato WikiADF.
+Il comando basa il flusso di dati sulle informazioni TaxiDemo1.jssu file.
 
-## PARAMETRI
+## PARAMETERS
 
-### -Datafactoryname
-Nome della factory di dati.
+### -DataFactoryName
+Nome del data factory.
 
 ```yaml
 Type: System.String
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -111,7 +111,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Nome
+### -Name
 Nome del flusso di dati.
 
 ```yaml
@@ -142,7 +142,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-ID risorsa di Azure.
+ID della risorsa Azure.
 
 ```yaml
 Type: System.String
@@ -156,8 +156,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confermare
-Richiede la conferma prima di eseguire il cmdlet.
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -172,7 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra cosa succede se il cmdlet viene eseguito.
+Mostra cosa accadrebbe se il cmdlet viene eseguito.
 Il cmdlet non viene eseguito.
 
 ```yaml
@@ -188,21 +188,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
 ## OUTPUT
 
 ### Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataFlow
 
-## Note
-Parole chiave: Azure, azurerm, ARM, Resource, Management, Manager, data, Factory
+## NOTE
+Parole chiave: azure, azurerm, arm, risorsa, gestione, manager, dati, fattori
 
 ## COLLEGAMENTI CORRELATI
 
-[Get-AzDataFactoryDataFlow](./Get-AzDataFactoryDataFlow.md)
 
-[Remove-AzDataFactoryDataFlow](./Remove-AzDataFactoryDataFlow.md)

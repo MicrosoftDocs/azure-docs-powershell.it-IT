@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzADUser.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzADUser.md
-ms.openlocfilehash: cd8834dd329ab82e98316cb0d94b554eb3bb6c13
-ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+ms.openlocfilehash: c7863e62330dc26d9733d21eb8e4d11753e06d1c
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100399652"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100208474"
 ---
 # New-AzADUser
 
@@ -32,8 +32,8 @@ Per altre informazioni: https://msdn.microsoft.com/en-us/library/azure/ad/graph/
 
 ## ESEMPI
 
-### Esempio 1 - Creare un nuovo utente di Active Directory
-```
+### Esempio 1: Creare un nuovo utente di Active Directory
+```powershell
 PS C:\> $SecureStringPassword = ConvertTo-SecureString -String "password" -AsPlainText -Force
 PS C:\> New-AzADUser -DisplayName "MyDisplayName" -UserPrincipalName "myemail@domain.com" -Password $SecureStringPassword -MailNickname "MyMailNickName"
 ```
@@ -43,7 +43,7 @@ Crea un nuovo utente Active Directory con il nome "MyDisplayName" e il nome dell
 ## PARAMETERS
 
 ### -DefaultProfile
-Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
+Le credenziali, l'account, il tenant e la sottoscrizione usati per le comunicazioni con Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -184,7 +184,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
 ## INPUT
 
@@ -204,5 +204,6 @@ Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable,
 
 [Get-AzADUser](./Get-AzADUser.md)
 
+[Update-AzADUser](./Update-AzADUser.md)
 
 [Remove-AzADUser](./Remove-AzADUser.md)
