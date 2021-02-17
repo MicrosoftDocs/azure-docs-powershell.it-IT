@@ -1,44 +1,46 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.ApiManagement.ServiceManagement.dll-Help.xml
 Module Name: Az.ApiManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagement/remove-azapimanagementbackend
+online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagement/remove-azapimanagementapifromgateway
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementBackend.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementBackend.md
-ms.openlocfilehash: 35a6731848c7695a8c649d344abaf466437a34f9
-ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementApiFromGateway.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementApiFromGateway.md
+ms.openlocfilehash: 506287812f684a778fdb96e750aac34049912b58
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100401582"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100210346"
 ---
-# Remove-AzApiManagementBackend
+# Remove-AzApiManagementApiFromGateway
 
 ## SYNOPSIS
-Rimuove un back-end.
+Collega un'API a un gateway.
 
 ## SINTASSI
 
 ```
-Remove-AzApiManagementBackend -Context <PsApiManagementContext> -BackendId <String> [-PassThru]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzApiManagementApiFromGateway -Context <PsApiManagementContext> -GatewayId <String> -ApiId <String>
+ [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIZIONE
-Rimuove un back-end specificato dall'identificatore da Gestione api.
+Il cmdlet **Remove-AzApiManagementApiFromGateway** collega un'API a un gateway.
 
 ## ESEMPI
 
-### Esempio 1: Rimuovere il back-end 123
-```powershell
-PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
-PS C:\>Remove-AzApiManagementBackend -Context $apimContext -BackendId 123 -PassThru
+### Esempio 1: Rimuovere un'API da un gateway
 ```
+PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Remove-AzApiManagementApiFromGateway -Context $ApiMgmtContext -GatewayId "0123456789" -ApiId "0001" -PassThru
+```
+
+Questo comando rimuove l'API specificata da un gateway.
 
 ## PARAMETERS
 
-### -BackendId
-Identificatore del back-end esistente.
+### -ApiId
+Identificatore delle API esistenti da rimuovere dal gateway.
 Questo parametro è obbligatorio.
 
 ```yaml
@@ -81,6 +83,22 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -GatewayId
+Identificatore del gateway esistente da cui rimuovere l'API.
+Questo parametro è obbligatorio.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
@@ -132,7 +150,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](https://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
 ## INPUT
 
@@ -149,13 +167,3 @@ Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable,
 ## NOTE
 
 ## COLLEGAMENTI CORRELATI
-
-[Get-AzApiManagementBackend](./Get-AzApiManagementBackend.md)
-
-[New-AzApiManagementBackend](./New-AzApiManagementBackend.md)
-
-[New-AzApiManagementBackendCredential](./New-AzApiManagementBackendCredential.md)
-
-[New-AzApiManagementBackendProxy](./New-AzApiManagementBackendProxy.md)
-
-[Set-AzApiManagementBackend](./Set-AzApiManagementBackend.md)
