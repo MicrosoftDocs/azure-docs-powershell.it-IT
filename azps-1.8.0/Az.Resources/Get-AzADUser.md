@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADUser.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADUser.md
-ms.openlocfilehash: 910df03db722636e91e95ff1c6aad7898b333740
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 1ba85aa3a692f0e74fc695aacd5ffdff5dd07877
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93677406"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399669"
 ---
 # Get-AzADUser
 
-## Sinossi
+## SYNOPSIS
 Filtra gli utenti di Active Directory.
 
 ## SINTASSI
 
-### EmptyParameterSet (impostazione predefinita)
+### EmptyParameterSet (Impostazione predefinita)
 ```
 Get-AzADUser [-UserPrincipalName <String>] [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
@@ -56,44 +56,44 @@ Get-AzADUser -Mail <String> [-DefaultProfile <IAzureContextContainer>] [-Include
  [-First <UInt64>] [<CommonParameters>]
 ```
 
-## Descrizione
+## DESCRIZIONE
 Filtra gli utenti di Active Directory.
 
 ## ESEMPI
 
-### Esempio 1-elenca tutti gli utenti
+### Esempio 1 - Elencare tutti gli utenti
 
 ```
 PS C:\> Get-AzADUser
 ```
 
-Elenca tutti gli utenti degli annunci in un tenant.
+Elenca tutti gli utenti di Active Directory in un tenant.
 
-### Esempio 2-elenca tutti gli utenti che usano il paging
+### Esempio 2 - Elencare tutti gli utenti tramite suddivisione in pagine
 
 ```
 PS C:\> Get-AzADUser -First 100
 ```
 
-Elenca i primi utenti di annunci di 100 in un tenant.
+Elenca i primi 100 utenti di Active Directory in un tenant.
 
-### Esempio 3-ottenere l'utente degli annunci per nome dell'entità utente
+### Esempio 3 - Ottenere un utente di Active Directory in base al nome dell'entità utente
 
 ```
 PS C:\> Get-AzADUser -UserPrincipalName foo@domain.com
 ```
 
-Ottiene l'utente dell'annuncio con il nome dell'entità utente " foo@domain.com ".
+Ottiene l'utente Active Directory con il nome dell'entità utente " foo@domain.com ".
 
-### Esempio 4-elenco per stringa di ricerca
+### Esempio 4 - Elencare per stringa di ricerca
 
 ```
 PS C:\> Get-AzADUser -SearchString Joe
 ```
 
-Elenca tutti gli utenti di Active Directory il cui nome visualizzato inizia con "Joe".
+Elenca tutti gli utenti di Active Directory il cui nome visualizzato inizia con "Luca".
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
 Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
@@ -125,8 +125,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Posta elettronica
-Messaggio di posta elettronica dell'utente.
+### -Mail
+Posta elettronica dell'utente.
 
 ```yaml
 Type: System.String
@@ -156,7 +156,7 @@ Accept wildcard characters: False
 ```
 
 ### -StartsWith
-Usato per trovare gli utenti che iniziano con la stringa specificata.
+Consente di trovare gli utenti che iniziano con la stringa specificata.
 
 ```yaml
 Type: System.String
@@ -213,7 +213,7 @@ Accept wildcard characters: False
 ```
 
 ### -Skip
-Ignora i primi oggetti N e quindi recupera gli oggetti rimanenti.
+Ignora i primi N oggetti e quindi ottiene gli oggetti rimanenti.
 
 ```yaml
 Type: System.UInt64
@@ -227,7 +227,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Primo
+### -First
 Numero massimo di oggetti da restituire.
 
 ```yaml
@@ -243,23 +243,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. ActiveDirectory. PSADUser
+### Microsoft.Azure.Commands.ActiveDirectory.PSADUser
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
 [New-AzADUser](./New-AzADUser.md)
 
-[Set-AzADUser](./Set-AzADUser.md)
 
 [Remove-AzADUser](./Remove-AzADUser.md)
 
