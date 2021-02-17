@@ -6,31 +6,31 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertHistory.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertHistory.md
-ms.openlocfilehash: 559bc8183f6ac80e248099ea95bf6a957b5ea1f5
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 8c5c6f5039b143c97071e181b249591be3a69b12
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93835107"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403137"
 ---
-# <span data-ttu-id="a501b-101">Get-AzAlertHistory</span><span class="sxs-lookup"><span data-stu-id="a501b-101">Get-AzAlertHistory</span></span>
+# <span data-ttu-id="e859a-101">Get-AzAlertHistory</span><span class="sxs-lookup"><span data-stu-id="e859a-101">Get-AzAlertHistory</span></span>
 
-## <span data-ttu-id="a501b-102">Sinossi</span><span class="sxs-lookup"><span data-stu-id="a501b-102">SYNOPSIS</span></span>
-<span data-ttu-id="a501b-103">Ottiene la cronologia degli avvisi.</span><span class="sxs-lookup"><span data-stu-id="a501b-103">Gets the history of alerts.</span></span>
+## <span data-ttu-id="e859a-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="e859a-102">SYNOPSIS</span></span>
+<span data-ttu-id="e859a-103">Recupera la cronologia degli avvisi.</span><span class="sxs-lookup"><span data-stu-id="e859a-103">Gets the history of alerts.</span></span>
 
-## <span data-ttu-id="a501b-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="a501b-104">SYNTAX</span></span>
+## <span data-ttu-id="e859a-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="e859a-104">SYNTAX</span></span>
 
 ```
 Get-AzAlertHistory [-ResourceId <String>] [-StartTime <DateTime>] [-EndTime <DateTime>] [-Status <String>]
  [-Caller <String>] [-DetailedOutput] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="a501b-105">Descrizione</span><span class="sxs-lookup"><span data-stu-id="a501b-105">DESCRIPTION</span></span>
-<span data-ttu-id="a501b-106">Il cmdlet **Get-AzAlertHistory** ottiene la cronologia degli avvisi Man mano che vengono abilitati, disabilitati, licenziati, risolti e così via.</span><span class="sxs-lookup"><span data-stu-id="a501b-106">The **Get-AzAlertHistory** cmdlet gets the history of alerts as they are enabled, disabled, fired, resolved, and so on.</span></span>
+## <span data-ttu-id="e859a-105">DESCRIZIONE</span><span class="sxs-lookup"><span data-stu-id="e859a-105">DESCRIPTION</span></span>
+<span data-ttu-id="e859a-106">Il cmdlet **Get-AzAlertHistory** recupera la cronologia degli avvisi quando vengono abilitati, disabilitati, non risolti, risolti e così via.</span><span class="sxs-lookup"><span data-stu-id="e859a-106">The **Get-AzAlertHistory** cmdlet gets the history of alerts as they are enabled, disabled, fired, resolved, and so on.</span></span>
 
-## <span data-ttu-id="a501b-107">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="a501b-107">EXAMPLES</span></span>
+## <span data-ttu-id="e859a-107">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="e859a-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="a501b-108">Esempio 1: ottenere la cronologia degli avvisi</span><span class="sxs-lookup"><span data-stu-id="a501b-108">Example 1: Get the alert history</span></span>
+### <span data-ttu-id="e859a-108">Esempio 1: Ottenere la cronologia degli avvisi</span><span class="sxs-lookup"><span data-stu-id="e859a-108">Example 1: Get the alert history</span></span>
 ```
 PS C:\>Get-AzAlertHistory -StartTime 2015-02-11T11:00:00 -EndTime 2015-02-11T12:00:00 -DetailedOutput
 Authorization        : 
@@ -170,9 +170,9 @@ SubscriptionId       : b93fb07a-6f93-30be-bf3e-4f0deca15f4f
 SubStatus            :
 ```
 
-<span data-ttu-id="a501b-109">Questo comando consente di ottenere la cronologia degli avvisi per l'intervallo di tempo specificato per l'abbonamento corrente.</span><span class="sxs-lookup"><span data-stu-id="a501b-109">This command gets the alert history for the specified time frame for the current subscription.</span></span>
+<span data-ttu-id="e859a-109">Questo comando recupera la cronologia degli avvisi per l'intervallo di tempo specificato per la sottoscrizione corrente.</span><span class="sxs-lookup"><span data-stu-id="e859a-109">This command gets the alert history for the specified time frame for the current subscription.</span></span>
 
-### <span data-ttu-id="a501b-110">Esempio 2: ottenere la cronologia degli avvisi per una risorsa specificata</span><span class="sxs-lookup"><span data-stu-id="a501b-110">Example 2: Get alert history for a specified resource</span></span>
+### <span data-ttu-id="e859a-110">Esempio 2: Ottenere la cronologia degli avvisi per una risorsa specificata</span><span class="sxs-lookup"><span data-stu-id="e859a-110">Example 2: Get alert history for a specified resource</span></span>
 ```
 PS C:\>Get-AzAlertHistory -StartTime 2015-02-11T11:00:00 -EndTime 2015-02-11T12:00:00 -ResourceId "/subscriptions/b93fb07a-6f93-30be-bf3e-4f0deca15f4f/resourceGroups/Default-Web-EastUS/providers/microsoft.insights/alertrules/checkrule3-4b135401-a30c-4224-ae21-fa53a5bd253d" -DetailedOutput
 
@@ -268,12 +268,12 @@ SubscriptionId       : b93fb07a-6f93-30be-bf3e-4f0deca15f4f
 SubStatus            :
 ```
 
-<span data-ttu-id="a501b-111">Questo comando ottiene gli eventi correlati alle regole di avviso per una risorsa specificata.</span><span class="sxs-lookup"><span data-stu-id="a501b-111">This command gets the alert rule-related events for a specified resource.</span></span>
+<span data-ttu-id="e859a-111">Questo comando recupera gli eventi correlati alle regole di avviso per una risorsa specificata.</span><span class="sxs-lookup"><span data-stu-id="e859a-111">This command gets the alert rule-related events for a specified resource.</span></span>
 
-## <span data-ttu-id="a501b-112">PARAMETRI</span><span class="sxs-lookup"><span data-stu-id="a501b-112">PARAMETERS</span></span>
+## <span data-ttu-id="e859a-112">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="e859a-112">PARAMETERS</span></span>
 
-### <span data-ttu-id="a501b-113">-Chiamante</span><span class="sxs-lookup"><span data-stu-id="a501b-113">-Caller</span></span>
-<span data-ttu-id="a501b-114">Specifica il chiamante.</span><span class="sxs-lookup"><span data-stu-id="a501b-114">Specifies the caller.</span></span>
+### <span data-ttu-id="e859a-113">-Caller</span><span class="sxs-lookup"><span data-stu-id="e859a-113">-Caller</span></span>
+<span data-ttu-id="e859a-114">Specifica il chiamante.</span><span class="sxs-lookup"><span data-stu-id="e859a-114">Specifies the caller.</span></span>
 
 ```yaml
 Type: System.String
@@ -287,8 +287,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a501b-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="a501b-115">-DefaultProfile</span></span>
-<span data-ttu-id="a501b-116">Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure</span><span class="sxs-lookup"><span data-stu-id="a501b-116">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="e859a-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="e859a-115">-DefaultProfile</span></span>
+<span data-ttu-id="e859a-116">Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure</span><span class="sxs-lookup"><span data-stu-id="e859a-116">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -302,8 +302,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a501b-117">-DetailedOutput</span><span class="sxs-lookup"><span data-stu-id="a501b-117">-DetailedOutput</span></span>
-<span data-ttu-id="a501b-118">Visualizza tutti i dettagli nell'output.</span><span class="sxs-lookup"><span data-stu-id="a501b-118">Displays full details in the output.</span></span>
+### <span data-ttu-id="e859a-117">-DetailedOutput</span><span class="sxs-lookup"><span data-stu-id="e859a-117">-DetailedOutput</span></span>
+<span data-ttu-id="e859a-118">Visualizza tutti i dettagli nell'output.</span><span class="sxs-lookup"><span data-stu-id="e859a-118">Displays full details in the output.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -317,9 +317,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a501b-119">-EndTime</span><span class="sxs-lookup"><span data-stu-id="a501b-119">-EndTime</span></span>
-<span data-ttu-id="a501b-120">Specifica l'ora di fine della query in ora locale.</span><span class="sxs-lookup"><span data-stu-id="a501b-120">Specifies the end time of the query in local time.</span></span>
-<span data-ttu-id="a501b-121">L'impostazione predefinita è l'ora corrente.</span><span class="sxs-lookup"><span data-stu-id="a501b-121">The default is the current time.</span></span>
+### <span data-ttu-id="e859a-119">-EndTime</span><span class="sxs-lookup"><span data-stu-id="e859a-119">-EndTime</span></span>
+<span data-ttu-id="e859a-120">Specifica l'ora di fine della query nell'ora locale.</span><span class="sxs-lookup"><span data-stu-id="e859a-120">Specifies the end time of the query in local time.</span></span>
+<span data-ttu-id="e859a-121">L'impostazione predefinita è l'ora corrente.</span><span class="sxs-lookup"><span data-stu-id="e859a-121">The default is the current time.</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -333,8 +333,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a501b-122">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="a501b-122">-ResourceId</span></span>
-<span data-ttu-id="a501b-123">Specifica l'ID risorsa a cui è associata la regola.</span><span class="sxs-lookup"><span data-stu-id="a501b-123">Specifies the resource ID the rule is associated with.</span></span>
+### <span data-ttu-id="e859a-122">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="e859a-122">-ResourceId</span></span>
+<span data-ttu-id="e859a-123">Specifica l'ID risorsa a cui è associata la regola.</span><span class="sxs-lookup"><span data-stu-id="e859a-123">Specifies the resource ID the rule is associated with.</span></span>
 
 ```yaml
 Type: System.String
@@ -348,9 +348,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a501b-124">-StartTime</span><span class="sxs-lookup"><span data-stu-id="a501b-124">-StartTime</span></span>
-<span data-ttu-id="a501b-125">Specifica l'ora di inizio della query in ora locale.</span><span class="sxs-lookup"><span data-stu-id="a501b-125">Specifies the start time of the query in local time.</span></span>
-<span data-ttu-id="a501b-126">L'impostazione predefinita è l'ora locale corrente meno un'ora.</span><span class="sxs-lookup"><span data-stu-id="a501b-126">The default is the current local time minus one hour.</span></span>
+### <span data-ttu-id="e859a-124">-StartTime</span><span class="sxs-lookup"><span data-stu-id="e859a-124">-StartTime</span></span>
+<span data-ttu-id="e859a-125">Specifica l'ora di inizio della query nell'ora locale.</span><span class="sxs-lookup"><span data-stu-id="e859a-125">Specifies the start time of the query in local time.</span></span>
+<span data-ttu-id="e859a-126">L'impostazione predefinita è l'ora locale corrente meno un'ora.</span><span class="sxs-lookup"><span data-stu-id="e859a-126">The default is the current local time minus one hour.</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -364,8 +364,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a501b-127">-Stato</span><span class="sxs-lookup"><span data-stu-id="a501b-127">-Status</span></span>
-<span data-ttu-id="a501b-128">Specifica lo stato.</span><span class="sxs-lookup"><span data-stu-id="a501b-128">Specifies the status.</span></span>
+### <span data-ttu-id="e859a-127">-Stato</span><span class="sxs-lookup"><span data-stu-id="e859a-127">-Status</span></span>
+<span data-ttu-id="e859a-128">Specifica lo stato.</span><span class="sxs-lookup"><span data-stu-id="e859a-128">Specifies the status.</span></span>
 
 ```yaml
 Type: System.String
@@ -379,33 +379,32 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a501b-129">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="a501b-129">CommonParameters</span></span>
-<span data-ttu-id="a501b-130">Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="a501b-130">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="a501b-131">Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="a501b-131">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="e859a-129">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="e859a-129">CommonParameters</span></span>
+<span data-ttu-id="e859a-130">Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="e859a-130">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="e859a-131">Per altre informazioni, vedere about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="e859a-131">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="a501b-132">INGRESSI</span><span class="sxs-lookup"><span data-stu-id="a501b-132">INPUTS</span></span>
+## <span data-ttu-id="e859a-132">INPUT</span><span class="sxs-lookup"><span data-stu-id="e859a-132">INPUTS</span></span>
 
-### <span data-ttu-id="a501b-133">System. String</span><span class="sxs-lookup"><span data-stu-id="a501b-133">System.String</span></span>
+### <span data-ttu-id="e859a-133">System.String</span><span class="sxs-lookup"><span data-stu-id="e859a-133">System.String</span></span>
 
-### <span data-ttu-id="a501b-134">System. Nullable ' 1 [[System. DateTime, System. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="a501b-134">System.Nullable\`1[[System.DateTime, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
+### <span data-ttu-id="e859a-134">System.Nullable'1[[System.DateTime, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="e859a-134">System.Nullable\`1[[System.DateTime, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
 
-### <span data-ttu-id="a501b-135">System. Management. Automation. SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="a501b-135">System.Management.Automation.SwitchParameter</span></span>
+### <span data-ttu-id="e859a-135">System.Management.Automation.SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="e859a-135">System.Management.Automation.SwitchParameter</span></span>
 
-## <span data-ttu-id="a501b-136">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="a501b-136">OUTPUTS</span></span>
+## <span data-ttu-id="e859a-136">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="e859a-136">OUTPUTS</span></span>
 
-### <span data-ttu-id="a501b-137">Microsoft. Azure. Commands. Insights. OutputClasses. PSEventData</span><span class="sxs-lookup"><span data-stu-id="a501b-137">Microsoft.Azure.Commands.Insights.OutputClasses.PSEventData</span></span>
+### <span data-ttu-id="e859a-137">Microsoft.Azure.Commands.Insights.OutputClasses.PSEventData</span><span class="sxs-lookup"><span data-stu-id="e859a-137">Microsoft.Azure.Commands.Insights.OutputClasses.PSEventData</span></span>
 
-## <span data-ttu-id="a501b-138">Note</span><span class="sxs-lookup"><span data-stu-id="a501b-138">NOTES</span></span>
+## <span data-ttu-id="e859a-138">NOTE</span><span class="sxs-lookup"><span data-stu-id="e859a-138">NOTES</span></span>
 
-## <span data-ttu-id="a501b-139">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="a501b-139">RELATED LINKS</span></span>
+## <span data-ttu-id="e859a-139">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="e859a-139">RELATED LINKS</span></span>
 
-[<span data-ttu-id="a501b-140">Add-AzLogAlertRule</span><span class="sxs-lookup"><span data-stu-id="a501b-140">Add-AzLogAlertRule</span></span>](./Add-AzLogAlertRule.md)
 
-[<span data-ttu-id="a501b-141">Add-AzMetricAlertRule</span><span class="sxs-lookup"><span data-stu-id="a501b-141">Add-AzMetricAlertRule</span></span>](./Add-AzMetricAlertRule.md)
+[<span data-ttu-id="e859a-140">Add-AzMetricAlertRule</span><span class="sxs-lookup"><span data-stu-id="e859a-140">Add-AzMetricAlertRule</span></span>](./Add-AzMetricAlertRule.md)
 
-[<span data-ttu-id="a501b-142">Add-AzWebtestAlertRule</span><span class="sxs-lookup"><span data-stu-id="a501b-142">Add-AzWebtestAlertRule</span></span>](./Add-AzWebtestAlertRule.md)
+[<span data-ttu-id="e859a-141">Add-AzWebtestAlertRule</span><span class="sxs-lookup"><span data-stu-id="e859a-141">Add-AzWebtestAlertRule</span></span>](./Add-AzWebtestAlertRule.md)
 
-[<span data-ttu-id="a501b-143">Get-AzAlertRule</span><span class="sxs-lookup"><span data-stu-id="a501b-143">Get-AzAlertRule</span></span>](./Get-AzAlertRule.md)
+[<span data-ttu-id="e859a-142">Get-AzAlertRule</span><span class="sxs-lookup"><span data-stu-id="e859a-142">Get-AzAlertRule</span></span>](./Get-AzAlertRule.md)
 
-[<span data-ttu-id="a501b-144">Remove-AzAlertRule</span><span class="sxs-lookup"><span data-stu-id="a501b-144">Remove-AzAlertRule</span></span>](./Remove-AzAlertRule.md)
+[<span data-ttu-id="e859a-143">Remove-AzAlertRule</span><span class="sxs-lookup"><span data-stu-id="e859a-143">Remove-AzAlertRule</span></span>](./Remove-AzAlertRule.md)
 
 
