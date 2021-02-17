@@ -6,97 +6,97 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADUser.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADUser.md
-ms.openlocfilehash: d0391b47e4060b2b93206c8e4d2722ca682a0db4
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 80df38532d5d5ce14b27f40bed04678e80752fca
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93865080"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406996"
 ---
-# <span data-ttu-id="34563-101">Get-AzADUser</span><span class="sxs-lookup"><span data-stu-id="34563-101">Get-AzADUser</span></span>
+# <span data-ttu-id="501fe-101">Get-AzADUser</span><span class="sxs-lookup"><span data-stu-id="501fe-101">Get-AzADUser</span></span>
 
-## <span data-ttu-id="34563-102">Sinossi</span><span class="sxs-lookup"><span data-stu-id="34563-102">SYNOPSIS</span></span>
-<span data-ttu-id="34563-103">Filtra gli utenti di Active Directory.</span><span class="sxs-lookup"><span data-stu-id="34563-103">Filters active directory users.</span></span>
+## <span data-ttu-id="501fe-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="501fe-102">SYNOPSIS</span></span>
+<span data-ttu-id="501fe-103">Filtra gli utenti di Active Directory.</span><span class="sxs-lookup"><span data-stu-id="501fe-103">Filters active directory users.</span></span>
 
-## <span data-ttu-id="34563-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="34563-104">SYNTAX</span></span>
+## <span data-ttu-id="501fe-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="501fe-104">SYNTAX</span></span>
 
-### <span data-ttu-id="34563-105">EmptyParameterSet (impostazione predefinita)</span><span class="sxs-lookup"><span data-stu-id="34563-105">EmptyParameterSet (Default)</span></span>
+### <span data-ttu-id="501fe-105">EmptyParameterSet (Impostazione predefinita)</span><span class="sxs-lookup"><span data-stu-id="501fe-105">EmptyParameterSet (Default)</span></span>
 ```
 Get-AzADUser [-UserPrincipalName <String>] [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="34563-106">SearchStringParameterSet</span><span class="sxs-lookup"><span data-stu-id="34563-106">SearchStringParameterSet</span></span>
+### <span data-ttu-id="501fe-106">SearchStringParameterSet</span><span class="sxs-lookup"><span data-stu-id="501fe-106">SearchStringParameterSet</span></span>
 ```
 Get-AzADUser -StartsWith <String> [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="34563-107">DisplayNameParameterSet</span><span class="sxs-lookup"><span data-stu-id="34563-107">DisplayNameParameterSet</span></span>
+### <span data-ttu-id="501fe-107">DisplayNameParameterSet</span><span class="sxs-lookup"><span data-stu-id="501fe-107">DisplayNameParameterSet</span></span>
 ```
 Get-AzADUser -DisplayName <String> [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="34563-108">ObjectIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="34563-108">ObjectIdParameterSet</span></span>
+### <span data-ttu-id="501fe-108">ObjectIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="501fe-108">ObjectIdParameterSet</span></span>
 ```
 Get-AzADUser -ObjectId <String> [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="34563-109">UPNParameterSet</span><span class="sxs-lookup"><span data-stu-id="34563-109">UPNParameterSet</span></span>
+### <span data-ttu-id="501fe-109">UPNParameterSet</span><span class="sxs-lookup"><span data-stu-id="501fe-109">UPNParameterSet</span></span>
 ```
 Get-AzADUser -UserPrincipalName <String> [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="34563-110">MailParameterSet</span><span class="sxs-lookup"><span data-stu-id="34563-110">MailParameterSet</span></span>
+### <span data-ttu-id="501fe-110">MailParameterSet</span><span class="sxs-lookup"><span data-stu-id="501fe-110">MailParameterSet</span></span>
 ```
 Get-AzADUser -Mail <String> [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount] [-Skip <UInt64>]
  [-First <UInt64>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="34563-111">Descrizione</span><span class="sxs-lookup"><span data-stu-id="34563-111">DESCRIPTION</span></span>
-<span data-ttu-id="34563-112">Filtra gli utenti di Active Directory.</span><span class="sxs-lookup"><span data-stu-id="34563-112">Filters active directory users.</span></span>
+## <span data-ttu-id="501fe-111">DESCRIZIONE</span><span class="sxs-lookup"><span data-stu-id="501fe-111">DESCRIPTION</span></span>
+<span data-ttu-id="501fe-112">Filtra gli utenti di Active Directory.</span><span class="sxs-lookup"><span data-stu-id="501fe-112">Filters active directory users.</span></span>
 
-## <span data-ttu-id="34563-113">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="34563-113">EXAMPLES</span></span>
+## <span data-ttu-id="501fe-113">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="501fe-113">EXAMPLES</span></span>
 
-### <span data-ttu-id="34563-114">Esempio 1-elenca tutti gli utenti</span><span class="sxs-lookup"><span data-stu-id="34563-114">Example 1 - List all users</span></span>
+### <span data-ttu-id="501fe-114">Esempio 1 - Elencare tutti gli utenti</span><span class="sxs-lookup"><span data-stu-id="501fe-114">Example 1 - List all users</span></span>
 
 ```
 PS C:\> Get-AzADUser
 ```
 
-<span data-ttu-id="34563-115">Elenca tutti gli utenti degli annunci in un tenant.</span><span class="sxs-lookup"><span data-stu-id="34563-115">Lists all AD users in a tenant.</span></span>
+<span data-ttu-id="501fe-115">Elenca tutti gli utenti di Active Directory in un tenant.</span><span class="sxs-lookup"><span data-stu-id="501fe-115">Lists all AD users in a tenant.</span></span>
 
-### <span data-ttu-id="34563-116">Esempio 2-elenca tutti gli utenti che usano il paging</span><span class="sxs-lookup"><span data-stu-id="34563-116">Example 2 - List all users using paging</span></span>
+### <span data-ttu-id="501fe-116">Esempio 2 - Elencare tutti gli utenti tramite suddivisione in pagine</span><span class="sxs-lookup"><span data-stu-id="501fe-116">Example 2 - List all users using paging</span></span>
 
 ```
 PS C:\> Get-AzADUser -First 100
 ```
 
-<span data-ttu-id="34563-117">Elenca i primi utenti di annunci di 100 in un tenant.</span><span class="sxs-lookup"><span data-stu-id="34563-117">Lists the first 100 AD users in a tenant.</span></span>
+<span data-ttu-id="501fe-117">Elenca i primi 100 utenti di Active Directory in un tenant.</span><span class="sxs-lookup"><span data-stu-id="501fe-117">Lists the first 100 AD users in a tenant.</span></span>
 
-### <span data-ttu-id="34563-118">Esempio 3-ottenere l'utente degli annunci per nome dell'entità utente</span><span class="sxs-lookup"><span data-stu-id="34563-118">Example 3 - Get AD user by user principal name</span></span>
+### <span data-ttu-id="501fe-118">Esempio 3 - Ottenere un utente di Active Directory in base al nome dell'entità utente</span><span class="sxs-lookup"><span data-stu-id="501fe-118">Example 3 - Get AD user by user principal name</span></span>
 
 ```
 PS C:\> Get-AzADUser -UserPrincipalName foo@domain.com
 ```
 
-<span data-ttu-id="34563-119">Ottiene l'utente dell'annuncio con il nome dell'entità utente " foo@domain.com ".</span><span class="sxs-lookup"><span data-stu-id="34563-119">Gets the AD user with user principal name "foo@domain.com".</span></span>
+<span data-ttu-id="501fe-119">Ottiene l'utente Active Directory con il nome dell'entità utente " foo@domain.com ".</span><span class="sxs-lookup"><span data-stu-id="501fe-119">Gets the AD user with user principal name "foo@domain.com".</span></span>
 
-### <span data-ttu-id="34563-120">Esempio 4-elenco per stringa di ricerca</span><span class="sxs-lookup"><span data-stu-id="34563-120">Example 4 - List by search string</span></span>
+### <span data-ttu-id="501fe-120">Esempio 4 - Elencare per stringa di ricerca</span><span class="sxs-lookup"><span data-stu-id="501fe-120">Example 4 - List by search string</span></span>
 
 ```
 PS C:\> Get-AzADUser -SearchString Joe
 ```
 
-<span data-ttu-id="34563-121">Elenca tutti gli utenti di Active Directory il cui nome visualizzato inizia con "Joe".</span><span class="sxs-lookup"><span data-stu-id="34563-121">Lists all AD users whose display name starts with "Joe".</span></span>
+<span data-ttu-id="501fe-121">Elenca tutti gli utenti di Active Directory il cui nome visualizzato inizia con "Luca".</span><span class="sxs-lookup"><span data-stu-id="501fe-121">Lists all AD users whose display name starts with "Joe".</span></span>
 
-## <span data-ttu-id="34563-122">PARAMETRI</span><span class="sxs-lookup"><span data-stu-id="34563-122">PARAMETERS</span></span>
+## <span data-ttu-id="501fe-122">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="501fe-122">PARAMETERS</span></span>
 
-### <span data-ttu-id="34563-123">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="34563-123">-DefaultProfile</span></span>
-<span data-ttu-id="34563-124">Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure</span><span class="sxs-lookup"><span data-stu-id="34563-124">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="501fe-123">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="501fe-123">-DefaultProfile</span></span>
+<span data-ttu-id="501fe-124">Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure</span><span class="sxs-lookup"><span data-stu-id="501fe-124">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -110,8 +110,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="34563-125">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="34563-125">-DisplayName</span></span>
-<span data-ttu-id="34563-126">Nome visualizzato dell'utente.</span><span class="sxs-lookup"><span data-stu-id="34563-126">The display name of the user.</span></span>
+### <span data-ttu-id="501fe-125">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="501fe-125">-DisplayName</span></span>
+<span data-ttu-id="501fe-126">Nome visualizzato dell'utente.</span><span class="sxs-lookup"><span data-stu-id="501fe-126">The display name of the user.</span></span>
 
 ```yaml
 Type: System.String
@@ -125,8 +125,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="34563-127">-Posta elettronica</span><span class="sxs-lookup"><span data-stu-id="34563-127">-Mail</span></span>
-<span data-ttu-id="34563-128">Messaggio di posta elettronica dell'utente.</span><span class="sxs-lookup"><span data-stu-id="34563-128">The user mail.</span></span>
+### <span data-ttu-id="501fe-127">-Mail</span><span class="sxs-lookup"><span data-stu-id="501fe-127">-Mail</span></span>
+<span data-ttu-id="501fe-128">Posta elettronica dell'utente.</span><span class="sxs-lookup"><span data-stu-id="501fe-128">The user mail.</span></span>
 
 ```yaml
 Type: System.String
@@ -140,8 +140,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="34563-129">-ObjectId</span><span class="sxs-lookup"><span data-stu-id="34563-129">-ObjectId</span></span>
-<span data-ttu-id="34563-130">ID oggetto dell'utente.</span><span class="sxs-lookup"><span data-stu-id="34563-130">Object id of the user.</span></span>
+### <span data-ttu-id="501fe-129">-ObjectId</span><span class="sxs-lookup"><span data-stu-id="501fe-129">-ObjectId</span></span>
+<span data-ttu-id="501fe-130">ID oggetto dell'utente.</span><span class="sxs-lookup"><span data-stu-id="501fe-130">Object id of the user.</span></span>
 
 ```yaml
 Type: System.String
@@ -155,8 +155,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="34563-131">-StartsWith</span><span class="sxs-lookup"><span data-stu-id="34563-131">-StartsWith</span></span>
-<span data-ttu-id="34563-132">Usato per trovare gli utenti che iniziano con la stringa specificata.</span><span class="sxs-lookup"><span data-stu-id="34563-132">Used to find users that begin with the provided string.</span></span>
+### <span data-ttu-id="501fe-131">-StartsWith</span><span class="sxs-lookup"><span data-stu-id="501fe-131">-StartsWith</span></span>
+<span data-ttu-id="501fe-132">Consente di trovare gli utenti che iniziano con la stringa specificata.</span><span class="sxs-lookup"><span data-stu-id="501fe-132">Used to find users that begin with the provided string.</span></span>
 
 ```yaml
 Type: System.String
@@ -170,8 +170,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="34563-133">-UserPrincipalName</span><span class="sxs-lookup"><span data-stu-id="34563-133">-UserPrincipalName</span></span>
-<span data-ttu-id="34563-134">UPN dell'utente.</span><span class="sxs-lookup"><span data-stu-id="34563-134">UPN of the user.</span></span>
+### <span data-ttu-id="501fe-133">-UserPrincipalName</span><span class="sxs-lookup"><span data-stu-id="501fe-133">-UserPrincipalName</span></span>
+<span data-ttu-id="501fe-134">UPN dell'utente.</span><span class="sxs-lookup"><span data-stu-id="501fe-134">UPN of the user.</span></span>
 
 ```yaml
 Type: System.String
@@ -197,8 +197,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="34563-135">-IncludeTotalCount</span><span class="sxs-lookup"><span data-stu-id="34563-135">-IncludeTotalCount</span></span>
-<span data-ttu-id="34563-136">Segnala il numero di oggetti nel set di dati.</span><span class="sxs-lookup"><span data-stu-id="34563-136">Reports the number of objects in the data set.</span></span> <span data-ttu-id="34563-137">Attualmente, questo parametro non esegue alcuna operazione.</span><span class="sxs-lookup"><span data-stu-id="34563-137">Currently, this parameter does nothing.</span></span>
+### <span data-ttu-id="501fe-135">-IncludeTotalCount</span><span class="sxs-lookup"><span data-stu-id="501fe-135">-IncludeTotalCount</span></span>
+<span data-ttu-id="501fe-136">Segnala il numero di oggetti nel set di dati.</span><span class="sxs-lookup"><span data-stu-id="501fe-136">Reports the number of objects in the data set.</span></span> <span data-ttu-id="501fe-137">Attualmente, questo parametro non esegue alcuna operazione.</span><span class="sxs-lookup"><span data-stu-id="501fe-137">Currently, this parameter does nothing.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -212,8 +212,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="34563-138">-Skip</span><span class="sxs-lookup"><span data-stu-id="34563-138">-Skip</span></span>
-<span data-ttu-id="34563-139">Ignora i primi oggetti N e quindi recupera gli oggetti rimanenti.</span><span class="sxs-lookup"><span data-stu-id="34563-139">Ignores the first N objects and then gets the remaining objects.</span></span>
+### <span data-ttu-id="501fe-138">-Skip</span><span class="sxs-lookup"><span data-stu-id="501fe-138">-Skip</span></span>
+<span data-ttu-id="501fe-139">Ignora i primi N oggetti e quindi ottiene gli oggetti rimanenti.</span><span class="sxs-lookup"><span data-stu-id="501fe-139">Ignores the first N objects and then gets the remaining objects.</span></span>
 
 ```yaml
 Type: System.UInt64
@@ -227,8 +227,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="34563-140">-Primo</span><span class="sxs-lookup"><span data-stu-id="34563-140">-First</span></span>
-<span data-ttu-id="34563-141">Numero massimo di oggetti da restituire.</span><span class="sxs-lookup"><span data-stu-id="34563-141">The maximum number of objects to return.</span></span>
+### <span data-ttu-id="501fe-140">-First</span><span class="sxs-lookup"><span data-stu-id="501fe-140">-First</span></span>
+<span data-ttu-id="501fe-141">Numero massimo di oggetti da restituire.</span><span class="sxs-lookup"><span data-stu-id="501fe-141">The maximum number of objects to return.</span></span>
 
 ```yaml
 Type: System.UInt64
@@ -242,24 +242,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="34563-142">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="34563-142">CommonParameters</span></span>
-<span data-ttu-id="34563-143">Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="34563-143">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="34563-144">Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="34563-144">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="501fe-142">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="501fe-142">CommonParameters</span></span>
+<span data-ttu-id="501fe-143">Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="501fe-143">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="501fe-144">Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.</span><span class="sxs-lookup"><span data-stu-id="501fe-144">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="34563-145">INGRESSI</span><span class="sxs-lookup"><span data-stu-id="34563-145">INPUTS</span></span>
+## <span data-ttu-id="501fe-145">INPUT</span><span class="sxs-lookup"><span data-stu-id="501fe-145">INPUTS</span></span>
 
-### <span data-ttu-id="34563-146">System. String</span><span class="sxs-lookup"><span data-stu-id="34563-146">System.String</span></span>
+### <span data-ttu-id="501fe-146">System.String</span><span class="sxs-lookup"><span data-stu-id="501fe-146">System.String</span></span>
 
-## <span data-ttu-id="34563-147">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="34563-147">OUTPUTS</span></span>
+## <span data-ttu-id="501fe-147">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="501fe-147">OUTPUTS</span></span>
 
-### <span data-ttu-id="34563-148">Microsoft. Azure. Commands. ActiveDirectory. PSADUser</span><span class="sxs-lookup"><span data-stu-id="34563-148">Microsoft.Azure.Commands.ActiveDirectory.PSADUser</span></span>
+### <span data-ttu-id="501fe-148">Microsoft.Azure.Commands.ActiveDirectory.PSADUser</span><span class="sxs-lookup"><span data-stu-id="501fe-148">Microsoft.Azure.Commands.ActiveDirectory.PSADUser</span></span>
 
-## <span data-ttu-id="34563-149">Note</span><span class="sxs-lookup"><span data-stu-id="34563-149">NOTES</span></span>
+## <span data-ttu-id="501fe-149">NOTE</span><span class="sxs-lookup"><span data-stu-id="501fe-149">NOTES</span></span>
 
-## <span data-ttu-id="34563-150">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="34563-150">RELATED LINKS</span></span>
+## <span data-ttu-id="501fe-150">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="501fe-150">RELATED LINKS</span></span>
 
-[<span data-ttu-id="34563-151">New-AzADUser</span><span class="sxs-lookup"><span data-stu-id="34563-151">New-AzADUser</span></span>](./New-AzADUser.md)
+[<span data-ttu-id="501fe-151">New-AzADUser</span><span class="sxs-lookup"><span data-stu-id="501fe-151">New-AzADUser</span></span>](./New-AzADUser.md)
 
-[<span data-ttu-id="34563-152">Set-AzADUser</span><span class="sxs-lookup"><span data-stu-id="34563-152">Set-AzADUser</span></span>](./Set-AzADUser.md)
 
-[<span data-ttu-id="34563-153">Remove-AzADUser</span><span class="sxs-lookup"><span data-stu-id="34563-153">Remove-AzADUser</span></span>](./Remove-AzADUser.md)
+[<span data-ttu-id="501fe-152">Remove-AzADUser</span><span class="sxs-lookup"><span data-stu-id="501fe-152">Remove-AzADUser</span></span>](./Remove-AzADUser.md)
 
