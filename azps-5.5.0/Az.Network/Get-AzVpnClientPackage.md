@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzVpnClientPackage.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzVpnClientPackage.md
-ms.openlocfilehash: 8eba8d26bcac5de16be3e2cda5e8ca80356aea11
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: ec91fecd41138238bc4d89fa81d77bae4730c770
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100191911"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100407608"
 ---
 # Get-AzVpnClientPackage
 
@@ -27,7 +27,7 @@ Get-AzVpnClientPackage -ResourceGroupName <String> -VirtualNetworkGatewayName <S
 
 ## DESCRIZIONE
 Il cmdlet **Get-AzVpnClientPackage** ottiene informazioni sui pacchetti del client VPN disponibili da un gateway di rete virtuale.
-I pacchetti client contengono dati di configurazione che consentono a un computer client di effettuare una connessione VPN a una rete virtuale di Azure; I computer client devono avere installato il pacchetto di configurazione corretto per poter stabilire una connessione VPN.
+I pacchetti client contengono dati di configurazione che consentono a un computer client di effettuare una connessione VPN a una rete virtuale di Azure; Per effettuare una connessione VPN, nei computer client deve essere installato il pacchetto di configurazione corretto.
 Pacchetti di configurazione diversi sono disponibili in base alla versione di Windows del computer client (ad esempio, Windows 7 o Windows 10) e all'architettura del processore del computer client (AMD64 o x86).
 È necessario specificare il tipo di architettura quando si esegue **Get-AzVpnClientPackage.**
 
@@ -123,6 +123,5 @@ Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable,
 
 [Resize-AzVirtualNetworkGateway](./Resize-AzVirtualNetworkGateway.md)
 
-[Set-AzVirtualNetworkGatewayVpnClientConfig](./Set-AzVirtualNetworkGatewayVpnClientConfig.md)
 
 
