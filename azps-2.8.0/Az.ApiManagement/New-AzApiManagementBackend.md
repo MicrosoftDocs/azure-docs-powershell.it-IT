@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackend.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackend.md
-ms.openlocfilehash: 5caef678df0aef88f4655c031d53e995920d0379
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: f26cb91ef820df6dfa67a0fb5664d4607df8fb21
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93676022"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399465"
 ---
-# <span data-ttu-id="f0fde-101">New-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="f0fde-101">New-AzApiManagementBackend</span></span>
+# <span data-ttu-id="66e83-101">New-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="66e83-101">New-AzApiManagementBackend</span></span>
 
-## <span data-ttu-id="f0fde-102">Sinossi</span><span class="sxs-lookup"><span data-stu-id="f0fde-102">SYNOPSIS</span></span>
-<span data-ttu-id="f0fde-103">Crea una nuova entità back-end.</span><span class="sxs-lookup"><span data-stu-id="f0fde-103">Creates a new backend entity.</span></span>
+## <span data-ttu-id="66e83-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="66e83-102">SYNOPSIS</span></span>
+<span data-ttu-id="66e83-103">Crea una nuova entità back-end.</span><span class="sxs-lookup"><span data-stu-id="66e83-103">Creates a new backend entity.</span></span>
 
-## <span data-ttu-id="f0fde-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="f0fde-104">SYNTAX</span></span>
+## <span data-ttu-id="66e83-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="66e83-104">SYNTAX</span></span>
 
 ```
 New-AzApiManagementBackend -Context <PsApiManagementContext> [-BackendId <String>] -Protocol <String>
@@ -28,12 +28,12 @@ New-AzApiManagementBackend -Context <PsApiManagementContext> [-BackendId <String
  [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="f0fde-105">Descrizione</span><span class="sxs-lookup"><span data-stu-id="f0fde-105">DESCRIPTION</span></span>
-<span data-ttu-id="f0fde-106">Crea una nuova entità back-end nella gestione delle API.</span><span class="sxs-lookup"><span data-stu-id="f0fde-106">Creates a new backend entity in Api Management.</span></span>
+## <span data-ttu-id="66e83-105">DESCRIZIONE</span><span class="sxs-lookup"><span data-stu-id="66e83-105">DESCRIPTION</span></span>
+<span data-ttu-id="66e83-106">Crea una nuova entità back-end in Gestione api.</span><span class="sxs-lookup"><span data-stu-id="66e83-106">Creates a new backend entity in Api Management.</span></span>
 
-## <span data-ttu-id="f0fde-107">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="f0fde-107">EXAMPLES</span></span>
+## <span data-ttu-id="66e83-107">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="66e83-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="f0fde-108">Creare un backend 123 con uno schema di autorizzazione di base</span><span class="sxs-lookup"><span data-stu-id="f0fde-108">Create Backend 123 with a Basic Authorization Scheme</span></span>
+### <span data-ttu-id="66e83-108">Creare back-end 123 con uno schema di autorizzazione di base</span><span class="sxs-lookup"><span data-stu-id="66e83-108">Create Backend 123 with a Basic Authorization Scheme</span></span>
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>$credential = New-AzApiManagementBackendCredential -AuthorizationHeaderScheme basic -AuthorizationHeaderParameter opensesame -Query @{"sv" = @('xx', 'bb'); "sr" = @('cc')} -Header @{"x-my-1" = @('val1', 'val2')}
@@ -41,14 +41,14 @@ PS C:\>$credential = New-AzApiManagementBackendCredential -AuthorizationHeaderSc
 PS C:\>$backend = New-AzApiManagementBackend -Context  $apimContext -BackendId 123 -Url 'https://contoso.com/awesomeapi' -Protocol http -Title "first backend" -SkipCertificateChainValidation $true -Credential $credential -Description "my backend"
 ```
 
-<span data-ttu-id="f0fde-109">Crea un nuovo backend</span><span class="sxs-lookup"><span data-stu-id="f0fde-109">Creates a new Backend</span></span>
+<span data-ttu-id="66e83-109">Crea un nuovo back-end</span><span class="sxs-lookup"><span data-stu-id="66e83-109">Creates a new Backend</span></span>
 
-## <span data-ttu-id="f0fde-110">PARAMETRI</span><span class="sxs-lookup"><span data-stu-id="f0fde-110">PARAMETERS</span></span>
+## <span data-ttu-id="66e83-110">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="66e83-110">PARAMETERS</span></span>
 
-### <span data-ttu-id="f0fde-111">-BackendId</span><span class="sxs-lookup"><span data-stu-id="f0fde-111">-BackendId</span></span>
-<span data-ttu-id="f0fde-112">Identificatore del nuovo backend.</span><span class="sxs-lookup"><span data-stu-id="f0fde-112">Identifier of new backend.</span></span>
-<span data-ttu-id="f0fde-113">Questo parametro è facoltativo.</span><span class="sxs-lookup"><span data-stu-id="f0fde-113">This parameter is optional.</span></span>
-<span data-ttu-id="f0fde-114">Se non viene specificato verrà generato.</span><span class="sxs-lookup"><span data-stu-id="f0fde-114">If not specified will be generated.</span></span>
+### <span data-ttu-id="66e83-111">-BackendId</span><span class="sxs-lookup"><span data-stu-id="66e83-111">-BackendId</span></span>
+<span data-ttu-id="66e83-112">Identificatore del nuovo back-end.</span><span class="sxs-lookup"><span data-stu-id="66e83-112">Identifier of new backend.</span></span>
+<span data-ttu-id="66e83-113">Questo parametro è facoltativo.</span><span class="sxs-lookup"><span data-stu-id="66e83-113">This parameter is optional.</span></span>
+<span data-ttu-id="66e83-114">Se non viene specificato, verrà generato.</span><span class="sxs-lookup"><span data-stu-id="66e83-114">If not specified will be generated.</span></span>
 
 ```yaml
 Type: System.String
@@ -62,9 +62,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f0fde-115">-Contesto</span><span class="sxs-lookup"><span data-stu-id="f0fde-115">-Context</span></span>
-<span data-ttu-id="f0fde-116">Istanza di PsApiManagementContext.</span><span class="sxs-lookup"><span data-stu-id="f0fde-116">Instance of PsApiManagementContext.</span></span>
-<span data-ttu-id="f0fde-117">Questo parametro è obbligatorio.</span><span class="sxs-lookup"><span data-stu-id="f0fde-117">This parameter is required.</span></span>
+### <span data-ttu-id="66e83-115">-Context</span><span class="sxs-lookup"><span data-stu-id="66e83-115">-Context</span></span>
+<span data-ttu-id="66e83-116">Istanza di PsApiManagementContext.</span><span class="sxs-lookup"><span data-stu-id="66e83-116">Instance of PsApiManagementContext.</span></span>
+<span data-ttu-id="66e83-117">Questo parametro è obbligatorio.</span><span class="sxs-lookup"><span data-stu-id="66e83-117">This parameter is required.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -78,9 +78,9 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f0fde-118">-Credenziale</span><span class="sxs-lookup"><span data-stu-id="f0fde-118">-Credential</span></span>
-<span data-ttu-id="f0fde-119">Dettagli delle credenziali che dovrebbero essere usati per comunicare con il backend.</span><span class="sxs-lookup"><span data-stu-id="f0fde-119">Credential details which should be used when talking to the Backend.</span></span>
-<span data-ttu-id="f0fde-120">Questo parametro è facoltativo.</span><span class="sxs-lookup"><span data-stu-id="f0fde-120">This parameter is optional.</span></span>
+### <span data-ttu-id="66e83-118">-Credential</span><span class="sxs-lookup"><span data-stu-id="66e83-118">-Credential</span></span>
+<span data-ttu-id="66e83-119">Dettagli delle credenziali che devono essere usati quando si parla con il back-end.</span><span class="sxs-lookup"><span data-stu-id="66e83-119">Credential details which should be used when talking to the Backend.</span></span>
+<span data-ttu-id="66e83-120">Questo parametro è facoltativo.</span><span class="sxs-lookup"><span data-stu-id="66e83-120">This parameter is optional.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendCredential
@@ -94,8 +94,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f0fde-121">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="f0fde-121">-DefaultProfile</span></span>
-<span data-ttu-id="f0fde-122">Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.</span><span class="sxs-lookup"><span data-stu-id="f0fde-122">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="66e83-121">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="66e83-121">-DefaultProfile</span></span>
+<span data-ttu-id="66e83-122">Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.</span><span class="sxs-lookup"><span data-stu-id="66e83-122">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -109,9 +109,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f0fde-123">-Descrizione</span><span class="sxs-lookup"><span data-stu-id="f0fde-123">-Description</span></span>
-<span data-ttu-id="f0fde-124">Descrizione del backend.</span><span class="sxs-lookup"><span data-stu-id="f0fde-124">Backend Description.</span></span>
-<span data-ttu-id="f0fde-125">Questo parametro è facoltativo.</span><span class="sxs-lookup"><span data-stu-id="f0fde-125">This parameter is optional.</span></span>
+### <span data-ttu-id="66e83-123">-Descrizione</span><span class="sxs-lookup"><span data-stu-id="66e83-123">-Description</span></span>
+<span data-ttu-id="66e83-124">Descrizione back-end.</span><span class="sxs-lookup"><span data-stu-id="66e83-124">Backend Description.</span></span>
+<span data-ttu-id="66e83-125">Questo parametro è facoltativo.</span><span class="sxs-lookup"><span data-stu-id="66e83-125">This parameter is optional.</span></span>
 
 ```yaml
 Type: System.String
@@ -125,10 +125,10 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f0fde-126">-Protocollo</span><span class="sxs-lookup"><span data-stu-id="f0fde-126">-Protocol</span></span>
-<span data-ttu-id="f0fde-127">Protocollo di comunicazione backend.</span><span class="sxs-lookup"><span data-stu-id="f0fde-127">Backend Communication protocol.</span></span>
-<span data-ttu-id="f0fde-128">Questo parametro è obbligatorio.</span><span class="sxs-lookup"><span data-stu-id="f0fde-128">This parameter is required.</span></span>
-<span data-ttu-id="f0fde-129">I valori validi sono "http" e "SOAP".</span><span class="sxs-lookup"><span data-stu-id="f0fde-129">Valid values are 'http' and 'soap'.</span></span>
+### <span data-ttu-id="66e83-126">-Protocol</span><span class="sxs-lookup"><span data-stu-id="66e83-126">-Protocol</span></span>
+<span data-ttu-id="66e83-127">Protocollo Back-End Communication.</span><span class="sxs-lookup"><span data-stu-id="66e83-127">Backend Communication protocol.</span></span>
+<span data-ttu-id="66e83-128">Questo parametro è obbligatorio.</span><span class="sxs-lookup"><span data-stu-id="66e83-128">This parameter is required.</span></span>
+<span data-ttu-id="66e83-129">I valori validi sono "http" e "soap".</span><span class="sxs-lookup"><span data-stu-id="66e83-129">Valid values are 'http' and 'soap'.</span></span>
 
 ```yaml
 Type: System.String
@@ -143,9 +143,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f0fde-130">-Proxy</span><span class="sxs-lookup"><span data-stu-id="f0fde-130">-Proxy</span></span>
-<span data-ttu-id="f0fde-131">Dettagli del server proxy da usare durante l'invio di una richiesta al backend.</span><span class="sxs-lookup"><span data-stu-id="f0fde-131">Proxy Server details to be used while sending request to the Backend.</span></span>
-<span data-ttu-id="f0fde-132">Questo parametro è facoltativo.</span><span class="sxs-lookup"><span data-stu-id="f0fde-132">This parameter is optional.</span></span>
+### <span data-ttu-id="66e83-130">-Proxy</span><span class="sxs-lookup"><span data-stu-id="66e83-130">-Proxy</span></span>
+<span data-ttu-id="66e83-131">Dettagli del server proxy da usare durante l'invio di una richiesta al back-end.</span><span class="sxs-lookup"><span data-stu-id="66e83-131">Proxy Server details to be used while sending request to the Backend.</span></span>
+<span data-ttu-id="66e83-132">Questo parametro è facoltativo.</span><span class="sxs-lookup"><span data-stu-id="66e83-132">This parameter is optional.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendProxy
@@ -159,10 +159,10 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f0fde-133">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="f0fde-133">-ResourceId</span></span>
-<span data-ttu-id="f0fde-134">URI di gestione della risorsa nel sistema esterno.</span><span class="sxs-lookup"><span data-stu-id="f0fde-134">Management Uri of the Resource in External System.</span></span>
-<span data-ttu-id="f0fde-135">Questo parametro è facoltativo.</span><span class="sxs-lookup"><span data-stu-id="f0fde-135">This parameter is optional.</span></span>
-<span data-ttu-id="f0fde-136">Questo URL può essere l'ID delle risorse ARM delle app logiche, delle app funzioni o delle app API.</span><span class="sxs-lookup"><span data-stu-id="f0fde-136">This url can be the Arm Resource Id of Logic Apps, Function Apps or Api Apps.</span></span>
+### <span data-ttu-id="66e83-133">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="66e83-133">-ResourceId</span></span>
+<span data-ttu-id="66e83-134">Uri gestione della risorsa nel sistema esterno.</span><span class="sxs-lookup"><span data-stu-id="66e83-134">Management Uri of the Resource in External System.</span></span>
+<span data-ttu-id="66e83-135">Questo parametro è facoltativo.</span><span class="sxs-lookup"><span data-stu-id="66e83-135">This parameter is optional.</span></span>
+<span data-ttu-id="66e83-136">Questo URL può essere l'ID risorsa Arm di App logica, App per funzioni o App Api.</span><span class="sxs-lookup"><span data-stu-id="66e83-136">This url can be the Arm Resource Id of Logic Apps, Function Apps or Api Apps.</span></span>
 
 ```yaml
 Type: System.String
@@ -176,8 +176,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f0fde-137">-ServiceFabricCluster</span><span class="sxs-lookup"><span data-stu-id="f0fde-137">-ServiceFabricCluster</span></span>
-<span data-ttu-id="f0fde-138">Dettagli del backend del cluster del servizio Fabric.</span><span class="sxs-lookup"><span data-stu-id="f0fde-138">Service Fabric Cluster Backend details.</span></span> <span data-ttu-id="f0fde-139">Questo parametro è facoltativo.</span><span class="sxs-lookup"><span data-stu-id="f0fde-139">This parameter is optional.</span></span>
+### <span data-ttu-id="66e83-137">-ServiceFabricCluster</span><span class="sxs-lookup"><span data-stu-id="66e83-137">-ServiceFabricCluster</span></span>
+<span data-ttu-id="66e83-138">Dettagli back-end del cluster Service Fabric.</span><span class="sxs-lookup"><span data-stu-id="66e83-138">Service Fabric Cluster Backend details.</span></span> <span data-ttu-id="66e83-139">Questo parametro è facoltativo.</span><span class="sxs-lookup"><span data-stu-id="66e83-139">This parameter is optional.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementServiceFabric
@@ -191,9 +191,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f0fde-140">-SkipCertificateChainValidation</span><span class="sxs-lookup"><span data-stu-id="f0fde-140">-SkipCertificateChainValidation</span></span>
-<span data-ttu-id="f0fde-141">Se ignorare la convalida della catena di certificati quando si parla con il backend.</span><span class="sxs-lookup"><span data-stu-id="f0fde-141">Whether to Skip Certificate Chain Validation when talking to the Backend.</span></span>
-<span data-ttu-id="f0fde-142">Questo parametro è facoltativo.</span><span class="sxs-lookup"><span data-stu-id="f0fde-142">This parameter is optional.</span></span>
+### <span data-ttu-id="66e83-140">-SkipCertificateChainValid</span><span class="sxs-lookup"><span data-stu-id="66e83-140">-SkipCertificateChainValidation</span></span>
+<span data-ttu-id="66e83-141">Se ignorare la convalida della catena di certificati quando si parla con il back-end.</span><span class="sxs-lookup"><span data-stu-id="66e83-141">Whether to Skip Certificate Chain Validation when talking to the Backend.</span></span>
+<span data-ttu-id="66e83-142">Questo parametro è facoltativo.</span><span class="sxs-lookup"><span data-stu-id="66e83-142">This parameter is optional.</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.Boolean]
@@ -207,9 +207,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f0fde-143">-SkipCertificateNameValidation</span><span class="sxs-lookup"><span data-stu-id="f0fde-143">-SkipCertificateNameValidation</span></span>
-<span data-ttu-id="f0fde-144">Se ignorare la convalida del nome del certificato quando si parla con il backend.</span><span class="sxs-lookup"><span data-stu-id="f0fde-144">Whether to skip Certificate Name Validation when talking to the Backend.</span></span>
-<span data-ttu-id="f0fde-145">Questo parametro è facoltativo.</span><span class="sxs-lookup"><span data-stu-id="f0fde-145">This parameter is optional.</span></span>
+### <span data-ttu-id="66e83-143">-SkipCertificateNameValid</span><span class="sxs-lookup"><span data-stu-id="66e83-143">-SkipCertificateNameValidation</span></span>
+<span data-ttu-id="66e83-144">Se ignorare la convalida del nome del certificato quando si parla con il back-end.</span><span class="sxs-lookup"><span data-stu-id="66e83-144">Whether to skip Certificate Name Validation when talking to the Backend.</span></span>
+<span data-ttu-id="66e83-145">Questo parametro è facoltativo.</span><span class="sxs-lookup"><span data-stu-id="66e83-145">This parameter is optional.</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.Boolean]
@@ -223,9 +223,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f0fde-146">-Titolo</span><span class="sxs-lookup"><span data-stu-id="f0fde-146">-Title</span></span>
-<span data-ttu-id="f0fde-147">Titolo del backend.</span><span class="sxs-lookup"><span data-stu-id="f0fde-147">Backend Title.</span></span>
-<span data-ttu-id="f0fde-148">Questo parametro è facoltativo.</span><span class="sxs-lookup"><span data-stu-id="f0fde-148">This parameter is optional.</span></span>
+### <span data-ttu-id="66e83-146">-Title</span><span class="sxs-lookup"><span data-stu-id="66e83-146">-Title</span></span>
+<span data-ttu-id="66e83-147">Titolo back-end.</span><span class="sxs-lookup"><span data-stu-id="66e83-147">Backend Title.</span></span>
+<span data-ttu-id="66e83-148">Questo parametro è facoltativo.</span><span class="sxs-lookup"><span data-stu-id="66e83-148">This parameter is optional.</span></span>
 
 ```yaml
 Type: System.String
@@ -239,9 +239,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f0fde-149">-URL</span><span class="sxs-lookup"><span data-stu-id="f0fde-149">-Url</span></span>
-<span data-ttu-id="f0fde-150">URL di runtime per il backend.</span><span class="sxs-lookup"><span data-stu-id="f0fde-150">Runtime Url for the Backend.</span></span>
-<span data-ttu-id="f0fde-151">Questo parametro è obbligatorio.</span><span class="sxs-lookup"><span data-stu-id="f0fde-151">This parameter is required.</span></span>
+### <span data-ttu-id="66e83-149">-URL</span><span class="sxs-lookup"><span data-stu-id="66e83-149">-Url</span></span>
+<span data-ttu-id="66e83-150">URL di runtime per il back-end.</span><span class="sxs-lookup"><span data-stu-id="66e83-150">Runtime Url for the Backend.</span></span>
+<span data-ttu-id="66e83-151">Questo parametro è obbligatorio.</span><span class="sxs-lookup"><span data-stu-id="66e83-151">This parameter is required.</span></span>
 
 ```yaml
 Type: System.String
@@ -255,8 +255,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f0fde-152">-Confermare</span><span class="sxs-lookup"><span data-stu-id="f0fde-152">-Confirm</span></span>
-<span data-ttu-id="f0fde-153">Richiede la conferma prima di eseguire il cmdlet.</span><span class="sxs-lookup"><span data-stu-id="f0fde-153">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="66e83-152">-Confirm</span><span class="sxs-lookup"><span data-stu-id="66e83-152">-Confirm</span></span>
+<span data-ttu-id="66e83-153">Chiede conferma prima di eseguire il cmdlet.</span><span class="sxs-lookup"><span data-stu-id="66e83-153">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -270,8 +270,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f0fde-154">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="f0fde-154">-WhatIf</span></span>
-<span data-ttu-id="f0fde-155">Mostra cosa succede se il cmdlet viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="f0fde-155">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="f0fde-156">Il cmdlet non viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="f0fde-156">The cmdlet is not run.</span></span>
+### <span data-ttu-id="66e83-154">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="66e83-154">-WhatIf</span></span>
+<span data-ttu-id="66e83-155">Mostra cosa accadrebbe se il cmdlet viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="66e83-155">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="66e83-156">Il cmdlet non viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="66e83-156">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -285,38 +285,38 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f0fde-157">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="f0fde-157">CommonParameters</span></span>
-<span data-ttu-id="f0fde-158">Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="f0fde-158">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="f0fde-159">Per altre informazioni, Vedi [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="f0fde-159">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="66e83-157">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="66e83-157">CommonParameters</span></span>
+<span data-ttu-id="66e83-158">Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="66e83-158">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="66e83-159">Per altre informazioni, [vedere](https://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.</span><span class="sxs-lookup"><span data-stu-id="66e83-159">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="f0fde-160">INGRESSI</span><span class="sxs-lookup"><span data-stu-id="f0fde-160">INPUTS</span></span>
+## <span data-ttu-id="66e83-160">INPUT</span><span class="sxs-lookup"><span data-stu-id="66e83-160">INPUTS</span></span>
 
-### <span data-ttu-id="f0fde-161">Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementContext</span><span class="sxs-lookup"><span data-stu-id="f0fde-161">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span></span>
+### <span data-ttu-id="66e83-161">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span><span class="sxs-lookup"><span data-stu-id="66e83-161">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span></span>
 
-### <span data-ttu-id="f0fde-162">System. String</span><span class="sxs-lookup"><span data-stu-id="f0fde-162">System.String</span></span>
+### <span data-ttu-id="66e83-162">System.String</span><span class="sxs-lookup"><span data-stu-id="66e83-162">System.String</span></span>
 
-### <span data-ttu-id="f0fde-163">System. Nullable ' 1 [[System. Boolean, System. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="f0fde-163">System.Nullable\`1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
+### <span data-ttu-id="66e83-163">System.Nullable'1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="66e83-163">System.Nullable\`1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
 
-### <span data-ttu-id="f0fde-164">Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementBackendCredential</span><span class="sxs-lookup"><span data-stu-id="f0fde-164">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendCredential</span></span>
+### <span data-ttu-id="66e83-164">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendCredential</span><span class="sxs-lookup"><span data-stu-id="66e83-164">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendCredential</span></span>
 
-### <span data-ttu-id="f0fde-165">Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementBackendProxy</span><span class="sxs-lookup"><span data-stu-id="f0fde-165">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendProxy</span></span>
+### <span data-ttu-id="66e83-165">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendProxy</span><span class="sxs-lookup"><span data-stu-id="66e83-165">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendProxy</span></span>
 
-### <span data-ttu-id="f0fde-166">Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementServiceFabric</span><span class="sxs-lookup"><span data-stu-id="f0fde-166">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementServiceFabric</span></span>
+### <span data-ttu-id="66e83-166">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementServiceFabric</span><span class="sxs-lookup"><span data-stu-id="66e83-166">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementServiceFabric</span></span>
 
-## <span data-ttu-id="f0fde-167">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="f0fde-167">OUTPUTS</span></span>
+## <span data-ttu-id="66e83-167">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="66e83-167">OUTPUTS</span></span>
 
-### <span data-ttu-id="f0fde-168">Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="f0fde-168">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackend</span></span>
+### <span data-ttu-id="66e83-168">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="66e83-168">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackend</span></span>
 
-## <span data-ttu-id="f0fde-169">Note</span><span class="sxs-lookup"><span data-stu-id="f0fde-169">NOTES</span></span>
+## <span data-ttu-id="66e83-169">NOTE</span><span class="sxs-lookup"><span data-stu-id="66e83-169">NOTES</span></span>
 
-## <span data-ttu-id="f0fde-170">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="f0fde-170">RELATED LINKS</span></span>
+## <span data-ttu-id="66e83-170">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="66e83-170">RELATED LINKS</span></span>
 
-[<span data-ttu-id="f0fde-171">Get-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="f0fde-171">Get-AzApiManagementBackend</span></span>](./Get-AzApiManagementBackend)
+[<span data-ttu-id="66e83-171">Get-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="66e83-171">Get-AzApiManagementBackend</span></span>](./Get-AzApiManagementBackend.md)
 
-[<span data-ttu-id="f0fde-172">New-AzApiManagementBackendCredential</span><span class="sxs-lookup"><span data-stu-id="f0fde-172">New-AzApiManagementBackendCredential</span></span>](./New-AzApiManagementBackendCredential.md)
+[<span data-ttu-id="66e83-172">New-AzApiManagementBackendCredential</span><span class="sxs-lookup"><span data-stu-id="66e83-172">New-AzApiManagementBackendCredential</span></span>](./New-AzApiManagementBackendCredential.md)
 
-[<span data-ttu-id="f0fde-173">New-AzApiManagementBackendProxy</span><span class="sxs-lookup"><span data-stu-id="f0fde-173">New-AzApiManagementBackendProxy</span></span>](./New-AzApiManagementBackendProxy.md)
+[<span data-ttu-id="66e83-173">New-AzApiManagementBackendProxy</span><span class="sxs-lookup"><span data-stu-id="66e83-173">New-AzApiManagementBackendProxy</span></span>](./New-AzApiManagementBackendProxy.md)
 
-[<span data-ttu-id="f0fde-174">Set-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="f0fde-174">Set-AzApiManagementBackend</span></span>](./Set-AzApiManagementBackend.md)
+[<span data-ttu-id="66e83-174">Set-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="66e83-174">Set-AzApiManagementBackend</span></span>](./Set-AzApiManagementBackend.md)
 
-[<span data-ttu-id="f0fde-175">Remove-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="f0fde-175">Remove-AzApiManagementBackend</span></span>](./Remove-AzApiManagementBackend.md)
+[<span data-ttu-id="66e83-175">Remove-AzApiManagementBackend</span><span class="sxs-lookup"><span data-stu-id="66e83-175">Remove-AzApiManagementBackend</span></span>](./Remove-AzApiManagementBackend.md)
 
