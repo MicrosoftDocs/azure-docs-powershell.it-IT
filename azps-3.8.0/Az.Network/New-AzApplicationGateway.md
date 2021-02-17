@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGateway.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGateway.md
-ms.openlocfilehash: 46eb4979c62a5c1f2cb8277ddc1461ee09a339c7
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: d78daedb0d8e5b8767e596316d7da8d252b59805
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94022804"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405177"
 ---
 # New-AzApplicationGateway
 
-## Sinossi
-Crea un gateway dell'applicazione.
+## SYNOPSIS
+Crea un gateway applicazione.
 
 ## SINTASSI
 
-### IdentityByUserAssignedIdentityId (impostazione predefinita)
+### IdentityByUserAssignedIdentityId (Impostazione predefinita)
 ```
 New-AzApplicationGateway -Name <String> -ResourceGroupName <String> -Location <String>
  -Sku <PSApplicationGatewaySku> [-SslPolicy <PSApplicationGatewaySslPolicy>]
@@ -113,21 +113,21 @@ New-AzApplicationGateway -Name <String> -ResourceGroupName <String> -Location <S
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **New-AzApplicationGateway** crea un gateway dell'applicazione Azure.
-Un gateway applicazione richiede le operazioni seguenti:
+## DESCRIZIONE
+Il cmdlet **New-AzApplicationGateway** crea un gateway applicazione di Azure.
+Un gateway applicazione richiede quanto segue:
 - Un gruppo di risorse.
 - Una rete virtuale.
-- Un pool di server back-end contenente gli indirizzi IP dei server back-end.
-- Impostazioni del pool di server back-end. Ogni pool include impostazioni come la porta, il protocollo e l'affinità basata su cookie, che vengono applicati a tutti i server all'interno del pool.
-- Indirizzi IP front-end, ovvero gli indirizzi IP aperti nel gateway dell'applicazione. Un indirizzo IP front-end può essere un indirizzo IP pubblico o un indirizzo IP interno.
-- Porte front-end, che sono le porte pubbliche aperte nel gateway dell'applicazione. Il traffico che colpisce queste porte viene reindirizzato ai server back-end.
-- Regola di routing delle richieste che associa il listener e il pool di server back-end. La regola definisce il pool di server back-end a cui il traffico deve essere indirizzato quando colpisce un determinato listener.
-Un listener ha una porta front-end, un indirizzo IP front-end, un protocollo (HTTP o HTTPS) e un nome di certificato SSL (Secure Sockets Layer) (se si configura SSL Offload).
+- Pool di server back-end contenente gli indirizzi IP dei server back-end.
+- Impostazioni del pool di server back-end. Ogni pool include impostazioni come porta, protocollo e affinità basata su cookie, applicate a tutti i server all'interno del pool.
+- Indirizzi IP front-end, ovvero gli indirizzi IP aperti nel gateway applicazione. Un indirizzo IP front-end può essere un indirizzo IP pubblico o interno.
+- Porte front-end, ovvero le porte pubbliche aperte nel gateway applicazione. Il traffico che raggiunge queste porte viene reindirizzato ai server back-end.
+- Regola di routing delle richieste che associa il listener e il pool di server back-end. La regola definisce il pool di server back-end a cui deve essere indirizzato il traffico quando raggiunge un determinato ascoltatore.
+Un ascoltatore ha una porta front-end, un indirizzo IP front-end, un protocollo (HTTP o HTTPS) e un nome di certificato SSL (Secure Sockets Layer) (se si configura l'offload SSL).
 
 ## ESEMPI
 
-### Esempio 1: creare un gateway applicazione
+### Esempio 1: Creare un gateway applicazione
 ```
 PS C:\> $ResourceGroup = New-AzResourceGroup -Name "ResourceGroup01" -Location "West US" -Tag @{Name = "Department"; Value = "Marketing"} 
 PS C:\> $Subnet = New-AzVirtualNetworkSubnetConfig -Name "Subnet01" -AddressPrefix 10.0.0.0/24
@@ -147,28 +147,28 @@ PS C:\> $Sku = New-AzApplicationGatewaySku -Name "Standard_Small" -Tier Standard
 PS C:\> $Gateway = New-AzApplicationGateway -Name "AppGateway01" -ResourceGroupName "ResourceGroup01" -Location "West US" -BackendAddressPools $Pool -BackendHttpSettingsCollection $PoolSetting -FrontendIpConfigurations $FrontEndIpConfig  -GatewayIpConfigurations $GatewayIpConfig -FrontendPorts $FrontEndPort -HttpListeners $Listener -RequestRoutingRules $Rule -Sku $Sku
 ```
 
-L'esempio seguente crea un gateway dell'applicazione creando prima di tutto un gruppo di risorse e una rete virtuale, nonché le operazioni seguenti:
-- Un pool di server back-end
-- Impostazioni del pool di server back-end
+L'esempio seguente crea un gateway applicazione creando prima un gruppo di risorse e una rete virtuale, oltre a quanto segue:
+- Pool di server back-end
+- Impostazioni pool di server back-end
 - Porte front-end
 - Indirizzi IP front-end
-- Regola di routing delle richieste questi quattro comandi creano una rete virtuale.
-Il primo comando crea una configurazione di subnet.
+- Una regola di routing delle richieste Questi quattro comandi creano una rete virtuale.
+Il primo comando crea una configurazione subnet.
 Il secondo comando crea una rete virtuale.
-Il terzo comando verifica la configurazione della subnet e il quarto comando verifica che la rete virtuale venga creata correttamente.
-I comandi seguenti creano il gateway dell'applicazione.
+Il terzo comando verifica la configurazione della subnet e il quarto comando verifica che la rete virtuale sia stata creata correttamente.
+I comandi seguenti creano il gateway applicazione.
 Il primo comando crea una configurazione IP denominata GatewayIp01 per la subnet creata in precedenza.
-Il secondo comando crea un pool di server back-end denominato Pool01 con un elenco di indirizzi IP di back-end e archivia il pool nella variabile $Pool.
-Il terzo comando crea le impostazioni per il pool di server back-end e archivia le impostazioni nella variabile $PoolSetting.
-Il comando Forth crea una porta front-end sulla porta 80, la chiama FrontEndPort01 e archivia la porta nella variabile $FrontEndPort.
+Il secondo comando crea un pool di server back-end denominato Pool01 con un elenco di indirizzi IP back-end e archivia il pool nella variabile $Pool back-end.
+Il terzo comando crea le impostazioni per il pool di server back-end e le archivia nella variabile $PoolSetting back-end.
+Il comando crea una porta front-end sulla porta 80, la crea FrontEndPort01 e la archivia nella variabile $FrontEndPort locale.
 Il quinto comando crea un indirizzo IP pubblico usando New-AzPublicIpAddress.
-Il sesto comando crea una configurazione IP front-end usando $PublicIp, la chiama FrontEndPortConfig01 e la memorizza nella variabile $FrontEndIpConfig.
-Il settimo comando crea un listener usando il $FrontEndPort $FrontEndIpConfig creato in precedenza.
-L'ottavo comando crea una regola per il listener.
-Il nono comando imposta l'USK.
+Il sesto comando crea una configurazione IP front-end con $PublicIp, la denome FrontEndPortConfig01 e la archivia nella variabile $FrontEndIpConfig front-end.
+Il settimo comando crea un ascoltatore usando i comandi creati in precedenza $FrontEndIpConfig $FrontEndPort.
+L'ottavo comando crea una regola per chi ascolta.
+Il nono comando imposta lo SKU.
 Il decimo comando crea il gateway usando gli oggetti impostati dai comandi precedenti.
 
-### Esempio 2: creare un gateway dell'applicazione con l'identità UserAssigned
+### Esempio 2: Creare un gateway applicazione con identità UserAssigned
 ```
 PS C:\> $ResourceGroup = New-AzResourceGroup -Name "ResourceGroup01" -Location "West US" -Tag @{Name = "Department"; Value = "Marketing"} 
 PS C:\> $Subnet = New-AzVirtualNetworkSubnetConfig -Name "Subnet01" -AddressPrefix 10.0.0.0/24
@@ -190,10 +190,10 @@ PS C:\> $AppgwIdentity = New-AzApplicationGatewayIdentity -UserAssignedIdentity 
 PS C:\> $Gateway = New-AzApplicationGateway -Name "AppGateway01" -ResourceGroupName "ResourceGroup01" -Location "West US" -Identity $AppgwIdentity -BackendAddressPools $Pool -BackendHttpSettingsCollection $PoolSetting -FrontendIpConfigurations $FrontEndIpConfig  -GatewayIpConfigurations $GatewayIpConfig -FrontendPorts $FrontEndPort -HttpListeners $Listener -RequestRoutingRules $Rule -Sku $Sku
 ```
 
-## PARAMETRI
+## PARAMETERS
 
 ### -AsJob
-Esegui cmdlet in background
+Eseguire il cmdlet in background
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -208,7 +208,7 @@ Accept wildcard characters: False
 ```
 
 ### -AuthenticationCertificates
-Specifica i certificati di autenticazione per il gateway dell'applicazione.
+Specifica i certificati di autenticazione per il gateway applicazione.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAuthenticationCertificate[]
@@ -223,7 +223,7 @@ Accept wildcard characters: False
 ```
 
 ### -AutoscaleConfiguration
-Configurazione di scala automatica
+Configurazione della scala automatica
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAutoscaleConfiguration
@@ -238,7 +238,7 @@ Accept wildcard characters: False
 ```
 
 ### -BackendAddressPools
-Specifica l'elenco dei pool di indirizzi back-end per il gateway dell'applicazione.
+Specifica l'elenco di pool di indirizzi back-end per il gateway applicazione.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendAddressPool[]
@@ -253,7 +253,7 @@ Accept wildcard characters: False
 ```
 
 ### -BackendHttpSettingsCollection
-Specifica l'elenco delle impostazioni HTTP di back-end per il gateway dell'applicazione.
+Specifica l'elenco delle impostazioni HTTP di back-end per il gateway applicazione.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings[]
@@ -268,7 +268,7 @@ Accept wildcard characters: False
 ```
 
 ### -CustomErrorConfiguration
-Errore del cliente di un gateway applicazione
+Errore del cliente di un gateway applicazioni
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayCustomError[]
@@ -283,7 +283,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -313,7 +313,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableHttp2
-Se HTTP2 è abilitato.
+Se è abilitato HTTP2.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -358,7 +358,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Impone l'esecuzione del comando senza richiedere la conferma dell'utente.
+Forza l'esecuzione del comando senza chiedere conferma all'utente.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -373,7 +373,7 @@ Accept wildcard characters: False
 ```
 
 ### -ForceFirewallPolicyAssociation
-Se Force firewallPolicy Association è abilitato.
+Se l'associazione Force firewallPolicy è abilitata.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -388,7 +388,7 @@ Accept wildcard characters: False
 ```
 
 ### -FrontendIPConfigurations
-Specifica un elenco di configurazioni IP front-end per il gateway dell'applicazione.
+Specifica un elenco di configurazioni IP front-end per il gateway applicazione.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFrontendIPConfiguration[]
@@ -403,7 +403,7 @@ Accept wildcard characters: False
 ```
 
 ### -FrontendPorts
-Specifica un elenco di porte front-end per il gateway dell'applicazione.
+Specifica un elenco di porte front-end per il gateway applicazione.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFrontendPort[]
@@ -418,7 +418,7 @@ Accept wildcard characters: False
 ```
 
 ### -GatewayIPConfigurations
-Specifica un elenco di configurazioni IP per il gateway dell'applicazione.
+Specifica un elenco di configurazioni IP per il gateway applicazioni.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayIPConfiguration[]
@@ -432,8 +432,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -HttpListeners
-Specifica un elenco di listener HTTP per il gateway dell'applicazione.
+### -Http AllIs
+Specifica un elenco di listener HTTP per il gateway applicazione.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayHttpListener[]
@@ -447,8 +447,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Identità
-Identità del gateway dell'applicazione da assegnare al gateway dell'applicazione.
+### -Identity
+Identità del Gateway applicazione da assegnare al Gateway applicazioni.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSManagedServiceIdentity
@@ -462,8 +462,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Posizione
-Specifica l'area geografica in cui creare il gateway dell'applicazione.
+### -Location
+Specifica l'area in cui creare il gateway applicazione.
 
 ```yaml
 Type: System.String
@@ -477,8 +477,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Nome
-Specifica il nome del gateway dell'applicazione.
+### -Name
+Specifica il nome del gateway applicazione.
 
 ```yaml
 Type: System.String
@@ -492,8 +492,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Sonde
-Specifica le sonde per il gateway dell'applicazione.
+### -Avari
+Specifica i domini per il gateway applicazione.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayProbe[]
@@ -508,7 +508,7 @@ Accept wildcard characters: False
 ```
 
 ### -RedirectConfigurations
-Elenco della configurazione di Reindirizzamento
+Elenco della configurazione di reindirizzamento
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRedirectConfiguration[]
@@ -523,7 +523,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequestRoutingRules
-Specifica un elenco di regole di routing delle richieste per il gateway dell'applicazione.
+Specifica un elenco di regole di routing delle richieste per il gateway applicazioni.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRequestRoutingRule[]
@@ -538,7 +538,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Specifica il nome del gruppo di risorse in cui creare il gateway dell'applicazione.
+Specifica il nome del gruppo di risorse in cui creare il gateway applicazione.
 
 ```yaml
 Type: System.String
@@ -568,7 +568,7 @@ Accept wildcard characters: False
 ```
 
 ### -SKU
-Specifica l'unità di conservazione delle scorte (SKU) del gateway dell'applicazione.
+Specifica l'unità di conservazione dei titoli azionari del gateway applicazione.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySku
@@ -583,7 +583,7 @@ Accept wildcard characters: False
 ```
 
 ### -SslCertificates
-Specifica l'elenco dei certificati SSL (Secure Sockets Layer) per il gateway dell'applicazione.
+Specifica l'elenco di certificati SSL (Secure Sockets Layer) per il gateway applicazione.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslCertificate[]
@@ -598,7 +598,7 @@ Accept wildcard characters: False
 ```
 
 ### -SslPolicy
-Specifica un criterio SSL per il gateway dell'applicazione.
+Specifica un criterio SSL per il gateway applicazione.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslPolicy
@@ -613,7 +613,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tag
-Coppie chiave-valore in forma di tabella hash. Ad esempio: @ {Key0 = "value0"; Key1 = $null; key2 = "value2"}
+Coppie chiave-valore sotto forma di tabella hash. Ad esempio: @{key0="value0";key1=$null;key2="value2"}
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -628,7 +628,7 @@ Accept wildcard characters: False
 ```
 
 ### -TrustedRootCertificate
-Elenco dei certificati radice attendibili
+Elenco di certificati radice attendibili
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayTrustedRootCertificate[]
@@ -643,7 +643,7 @@ Accept wildcard characters: False
 ```
 
 ### -UrlPathMaps
-Specifica le mappe Path URL per il gateway dell'applicazione.
+Specifica i mapping del percorso URL per il gateway applicazione.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayUrlPathMap[]
@@ -658,7 +658,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserAssignedIdentityId
-ResourceId dell'identità assegnata dall'utente da assegnare al gateway dell'applicazione.
+ResourceId dell'identità assegnata all'utente da assegnare a Gateway applicazione.
 
 ```yaml
 Type: System.String
@@ -673,7 +673,7 @@ Accept wildcard characters: False
 ```
 
 ### -WebApplicationFirewallConfiguration
-Specifica una configurazione WAF (Web Application Firewall). Puoi usare il cmdlet Get-AzApplicationGatewayWebApplicationFirewallConfiguration per ottenere un WAF.
+Specifica una configurazione firewall applicazione Web (WAF). È possibile usare il cmdlet Get-AzApplicationGatewayWebApplicationFirewallConfiguration per ottenere un waf.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayWebApplicationFirewallConfiguration
@@ -687,8 +687,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Zona
-Elenco delle aree di disponibilità che indicano da dove deve provenire il gateway dell'applicazione.
+### -Zone
+Elenco di aree di disponibilità che denotono la destinazione del gateway applicazione.
 
 ```yaml
 Type: System.String[]
@@ -702,8 +702,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confermare
-Richiede la conferma prima di eseguire il cmdlet.
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -718,7 +718,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra cosa succede se il cmdlet viene eseguito.
+Mostra cosa accadrebbe se il cmdlet viene eseguito.
 Il cmdlet non viene eseguito.
 
 ```yaml
@@ -734,69 +734,68 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewaySku
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySku
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewaySslPolicy
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslPolicy
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayIPConfiguration []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayIPConfiguration[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewaySslCertificate []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslCertificate[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayAuthenticationCertificate []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAuthenticationCertificate[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayTrustedRootCertificate []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayTrustedRootCertificate[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayFrontendIPConfiguration []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFrontendIPConfiguration[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayFrontendPort []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFrontendPort[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayProbe []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayProbe[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayBackendAddressPool []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendAddressPool[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayBackendHttpSettings []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayHttpListener []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayHttpHttpApplication[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayUrlPathMap []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayUrlPathMap[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayRequestRoutingRule []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRequestRoutingRule[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayRewriteRuleSet []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRewriteRuleSet[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayRedirectConfiguration []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRedirectConfiguration[]
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayWebApplicationFirewallConfiguration
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayWebApplicationFirewallConfiguration
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayAutoscaleConfiguration
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAutoscaleConfiguration
 
-### System. Collections. Hashtable
+### System.Collections.Hashtable
 
-### Microsoft. Azure. Commands. Network. Models. PSManagedServiceIdentity
+### Microsoft.Azure.Commands.Network.Models.PSManagedServiceIdentity
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGateway
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGateway
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
 [New-AzApplicationGatewayBackendAddressPool](./New-AzApplicationGatewayBackendAddressPool.md)
 
-[New-AzApplicationGatewayBackendHttpSettings](./New-AzApplicationGatewayBackendHttpSettings.md)
 
 [New-AzApplicationGatewayFrontendIPConfig](./New-AzApplicationGatewayFrontendIPConfig.md)
 
 [New-AzApplicationGatewayFrontendPort](./New-AzApplicationGatewayFrontendPort.md)
 
-[New-AzApplicationGatewayHttpListener](./New-AzApplicationGatewayHttpListener.md)
+[New-AzApplicationGatewayHttpHttp Più](./New-AzApplicationGatewayHttpListener.md)
 
 [New-AzApplicationGatewayIPConfiguration](./New-AzApplicationGatewayIPConfiguration.md)
 

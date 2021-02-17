@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitConnectionConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitConnectionConfig.md
-ms.openlocfilehash: 70badaebf0b6b8a35fd96cc20a54aab1ff316bef
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 0adba1dfe453852b0797f40d6cd4d188db87169f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93678559"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401998"
 ---
 # Get-AzExpressRouteCircuitConnectionConfig
 
-## Sinossi
-Ottiene una configurazione di connessione circuitale ExpressRoute associata a peering privato di ExpressRouteCircuit.
+## SYNOPSIS
+Ottiene una configurazione della connessione del circuito ExpressRoute associata al peering privato di ExpressRouteCircuit.
 
 ## SINTASSI
 
@@ -25,26 +25,26 @@ Get-AzExpressRouteCircuitConnectionConfig [[-Name] <String>] [-ExpressRouteCircu
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Get-AzExpressRouteCircuitConnectionConfig** recupera la configurazione di una connessione Circuit associata a un peering privato per un circuito ExpressRoute.
+## DESCRIZIONE
+Il cmdlet **Get-AzExpressRouteCircuitConnectionConfig** recupera la configurazione di una connessione a un circuito associato al peering privato per un circuito ExpressRoute.
 
 ## ESEMPI
 
-### Esempio 1: visualizzare la configurazione della connessione Circuit per un circuito ExpressRoute
+### Esempio 1: Visualizzare la configurazione della connessione del circuito per un circuito ExpressRoute
 ```
 $circuit_init = Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg
 Get-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -ExpressRouteCircuit $circuit_init
 ```
 
-### Esempio 2: ottenere una risorsa di connessione circuitale associata a un circuito ExpressRoute tramite piping
+### Esempio 2: Ottenere la risorsa della connessione del circuito associata a un circuito ExpressRoute tramite piping
 ```
 Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg|Get-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName
 ```
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -59,7 +59,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpressRouteCircuit
-L'oggetto Circuit ExpressRoute che contiene la configurazione della connessione Circuit.
+Oggetto circuito ExpressRoute contenente la configurazione della connessione del circuito.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit
@@ -73,8 +73,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Nome
-Nome della configurazione della connessione circuitale da recuperare.
+### -Name
+Nome della configurazione di connessione al circuito da recuperare.
 
 ```yaml
 Type: System.String
@@ -89,17 +89,17 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](https://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### Microsoft. Azure. Commands. Network. Models. PSExpressRouteCircuit
+### Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Network. Models. PSExpressRouteCircuitConnection
+### Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuitConnection
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
@@ -109,6 +109,6 @@ Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-In
 
 [Remove-AzExpressRouteCircuitConnectionConfig](Remove-AzExpressRouteCircuitConnectionConfig.md)
 
-[Set-AzExpressRouteCircuitConnectionConfig](Set-AzExpressRouteCircuitConnectionConfig.md)
 
-[New-AzExpressRouteCircuitConnectionConfig](New-AzExpressRouteCircuitConnectionConfig.md)
+
+

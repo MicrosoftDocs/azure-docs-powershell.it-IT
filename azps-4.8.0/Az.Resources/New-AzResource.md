@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzResource.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzResource.md
-ms.openlocfilehash: 0c4f351ca224991862e6b050462270fd64fd2a33
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: eea8d72285e478f9eecb0a34f80cae5787ecec83
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94032803"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405296"
 ---
 # New-AzResource
 
-## Sinossi
+## SYNOPSIS
 Crea una risorsa.
 
 ## SINTASSI
 
-### ByResourceId (impostazione predefinita)
+### ByResourceId (Impostazione predefinita)
 ```
 New-AzResource [-Location <String>] [-Kind <String>] [-Properties <PSObject>] [-Plan <Hashtable>]
  [-Sku <Hashtable>] [-Tag <Hashtable>] [-IsFullObject] [-AsJob] -ResourceId <String> [-ODataQuery <String>]
@@ -46,19 +46,19 @@ New-AzResource [-Location <String>] [-Kind <String>] [-Properties <PSObject>] [-
  [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **New-AzResource** crea una risorsa Azure, ad esempio un sito Web, un server di database SQL di Azure o un database SQL di Azure, in un gruppo di risorse.
+## DESCRIZIONE
+Il cmdlet **New-AzResource** crea una risorsa di Azure, ad esempio un sito Web, un server di database di Azure SQL o un database SQL di Azure, in un gruppo di risorse.
 
 ## ESEMPI
 
-### Esempio 1: creare una risorsa
+### Esempio 1: Creare una risorsa
 ```
 PS> New-AzResource -Location "West US" -Properties @{test="test"} -ResourceName TestSite06 -ResourceType microsoft.web/sites -ResourceGroupName ResourceGroup11 -Force
 ```
 
 Questo comando crea una risorsa che è un sito Web in ResourceGroup11.
 
-### Esempio 2: creare una risorsa con splatting
+### Esempio 2: Creare una risorsa usando la creazione di una risorsa
 ```
 PS> $prop = @{
     Location          = "West US" 
@@ -74,10 +74,10 @@ PS> New-AzResource @prop
 
 Questo comando crea una risorsa che è un sito Web in ResourceGroup11.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -ApiVersion
-Specifica la versione dell'API del provider di risorse da usare. Se non specifichi una versione, questo cmdlet usa la versione più recente disponibile.
+Specifica la versione dell'API del provider di risorse da usare. Se non si specifica una versione, questo cmdlet usa l'ultima versione disponibile.
 
 ```yaml
 Type: System.String
@@ -92,7 +92,7 @@ Accept wildcard characters: False
 ```
 
 ### -AsJob
-Esegui cmdlet in background
+Eseguire il cmdlet in background
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -107,7 +107,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
+Le credenziali, l'account, il tenant e la sottoscrizione usati per le comunicazioni con Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExtensionResourceName
-Specifica il nome di una risorsa di estensione per la risorsa. Ad esempio, per specificare un database, usare il formato seguente: nome del database del nome del server `/`
+Specifica il nome di una risorsa di estensione per la risorsa. Ad esempio, per specificare un database, usare il formato seguente: nome database nome `/` server
 
 ```yaml
 Type: System.String
@@ -138,7 +138,7 @@ Accept wildcard characters: False
 
 ### -ExtensionResourceType
 Specifica il tipo di risorsa per una risorsa di estensione.
-Ad esempio, se la risorsa di estensione è un database, specifica il tipo seguente: `Microsoft.Sql/Servers/Databases`
+Ad esempio, se la risorsa dell'estensione è un database, specificare il tipo seguente: `Microsoft.Sql/Servers/Databases`
 
 ```yaml
 Type: System.String
@@ -153,7 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -Force
-Impone l'esecuzione del comando senza richiedere la conferma dell'utente.
+Forza l'esecuzione del comando senza chiedere conferma all'utente.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -168,7 +168,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsFullObject
-Indica che l'oggetto specificato dal parametro *Properties* è l'oggetto completo.
+Indica che l'oggetto specificato dal *parametro Properties* è l'oggetto completo.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -182,7 +182,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Tipo
+### -Kind
 Specifica il tipo di risorsa per la risorsa.
 
 ```yaml
@@ -197,10 +197,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Posizione
+### -Location
 Specifica la posizione della risorsa.
-Specificare la posizione del centro dati, ad esempio Stati Uniti centrali o Asia sud-orientale.
-Puoi inserire una risorsa in qualsiasi posizione che supporti le risorse del tipo. I gruppi di risorse possono contenere risorse da posizioni diverse. Per determinare quali posizioni supportano ogni tipo di risorsa, usare il cmdlet Get-AzLocation.
+Specificare la posizione del data center, ad esempio Stati Uniti centrali o Asia sud-orientale.
+È possibile inserire una risorsa in qualsiasi posizione che supporti risorse di quel tipo. I gruppi di risorse possono contenere risorse da posizioni diverse. Per determinare le posizioni che supportano ogni tipo di risorsa, usare Get-AzLocation cmdlet.
 
 ```yaml
 Type: System.String
@@ -215,7 +215,7 @@ Accept wildcard characters: False
 ```
 
 ### -ODataQuery
-Specifica un filtro di stile OData (Open Data Protocol). Questo cmdlet aggiunge questo valore alla richiesta oltre ad altri filtri.
+Specifica un filtro di stile OData (Open Data Protocol). Questo cmdlet aggiunge questo valore alla richiesta in aggiunta ad altri filtri.
 
 ```yaml
 Type: System.String
@@ -229,8 +229,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Piano
-Tabella hash che rappresenta le proprietà del piano risorse.
+### -Plan
+Tabella hash che rappresenta le proprietà del piano delle risorse.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -245,7 +245,7 @@ Accept wildcard characters: False
 ```
 
 ### -Pre
-Indica che questo cmdlet considera le versioni dell'API di pre-rilascio quando determina automaticamente la versione da usare.
+Indica che questo cmdlet considera le versioni delle API non ancora rilasciate quando determina automaticamente la versione da usare.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -259,8 +259,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Proprietà
-Specifica le proprietà delle risorse per la risorsa. Usa questo parametro per specificare i valori delle proprietà specifiche di un tipo di risorsa.
+### -Properties
+Specifica le proprietà delle risorse per la risorsa. Usare questo parametro per specificare i valori delle proprietà specifiche di un tipo di risorsa.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -290,7 +290,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Specifica l'ID risorsa completo, incluso l'abbonamento, come nell'esempio seguente: `/subscriptions/` ID abbonamento`/providers/Microsoft.Sql/servers/ContosoServer/databases/ContosoDatabase`
+Specifica l'ID risorsa completo, inclusa la sottoscrizione, come nell'esempio seguente: `/subscriptions/` ID sottoscrizione`/providers/Microsoft.Sql/servers/ContosoServer/databases/ContosoDatabase`
 
 ```yaml
 Type: System.String
@@ -305,7 +305,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceName
-Specifica il nome della risorsa. Ad esempio, per specificare un database, usa il formato seguente: `ContosoServer/ContosoDatabase`
+Specifica il nome della risorsa. Ad esempio, per specificare un database, usare il formato seguente: `ContosoServer/ContosoDatabase`
 
 ```yaml
 Type: System.String
@@ -336,7 +336,7 @@ Accept wildcard characters: False
 ```
 
 ### -SKU
-Tabella hash che rappresenta le proprietà SKU.
+Tabella hash che rappresenta le proprietà delle SKU.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -351,7 +351,7 @@ Accept wildcard characters: False
 ```
 
 ### -Tag
-Coppie chiave-valore in forma di tabella hash. Ad esempio: @ {Key0 = "value0"; Key1 = $null; key2 = "value2"}
+Coppie chiave-valore sotto forma di tabella hash. Ad esempio: @{key0="value0";key1=$null;key2="value2"}
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -366,7 +366,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantLevel
-Indica che il cmdlet funziona a livello di tenant.
+Indica che questo cmdlet opera a livello di tenant.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -380,8 +380,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confermare
-Richiede la conferma prima di eseguire il cmdlet.
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -396,7 +396,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra cosa succede se il cmdlet viene eseguito.
+Mostra cosa accadrebbe se il cmdlet viene eseguito.
 Il cmdlet non viene eseguito.
 
 ```yaml
@@ -412,23 +412,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### System. Collections. Hashtable
+### System.Collections.Hashtable
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### System. Management. Automation. PSObject
+### System.Management.Automation.PSObject
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Trova-AzResource](./Find-AzResource.md)
 
 [Get-AzResource](./Get-AzResource.md)
 
