@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/s
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Set-AzKeyVaultAccessPolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Set-AzKeyVaultAccessPolicy.md
-ms.openlocfilehash: 4ef8c131e0094928808e6479b2c5ffe40090c5d0
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 5f47237088808fe8966d239f9a0de7c892301db0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94189667"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410719"
 ---
 # Set-AzKeyVaultAccessPolicy
 
-## Sinossi
-Concede o modifica le autorizzazioni esistenti per un utente, un'applicazione o un gruppo di sicurezza per eseguire operazioni con un Vault chiave.
+## SYNOPSIS
+Concede o modifica le autorizzazioni esistenti per un utente, un'applicazione o un gruppo di sicurezza per eseguire operazioni con un vault delle chiavi.
 
 ## SINTASSI
 
@@ -135,26 +135,26 @@ Set-AzKeyVaultAccessPolicy [-ResourceId] <String> [-EnabledForDeployment] [-Enab
  [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **set-AzKeyVaultAccessPolicy** concede o modifica le autorizzazioni esistenti per un utente, un'applicazione o un gruppo di sicurezza per eseguire le operazioni specificate con un Vault chiave. Non modifica le autorizzazioni di altri utenti, applicazioni o gruppi di sicurezza nel Vault chiave.
-Se si stanno impostando le autorizzazioni per un gruppo di sicurezza, questa operazione interessa solo gli utenti del gruppo di sicurezza.
-Le directory seguenti devono essere tutte della stessa directory di Azure: 
-- Directory predefinita dell'abbonamento a Azure in cui si trova il Vault chiave.
-- Directory di Azure che contiene l'utente o il gruppo di applicazioni a cui si stanno concedendo le autorizzazioni.
-Esempi di scenari in cui queste condizioni non vengono soddisfatte e questo cmdlet non funziona: 
-- Autorizzazione di un utente di un'organizzazione diversa per gestire il Vault chiave.
-Ogni organizzazione ha una propria directory. 
-- L'account di Azure include più directory.
-Se si registra un'applicazione in una directory diversa da quella predefinita, non è possibile autorizzare l'applicazione a usare il Vault chiave.
+## DESCRIZIONE
+Il cmdlet **Set-AzKeyVaultAccessPolicy** concede o modifica le autorizzazioni esistenti per un utente, un'applicazione o un gruppo di sicurezza per eseguire le operazioni specificate con un vault delle chiavi. Non modifica le autorizzazioni di altri utenti, applicazioni o gruppi di sicurezza nel vault delle chiavi.
+Se si impostano le autorizzazioni per un gruppo di sicurezza, questa operazione interessa solo gli utenti di tale gruppo.
+Le directory seguenti devono essere tutte della stessa directory di Azure:
+- Directory predefinita della sottoscrizione di Azure in cui si trova il vault della chiave.
+- La directory di Azure che contiene l'utente o il gruppo di applicazioni a cui si concedono le autorizzazioni.
+Esempi di scenari in cui queste condizioni non sono soddisfatte e questo cmdlet non funziona sono:
+- Autorizzazione di un utente di un'altra organizzazione per la gestione del vault delle chiavi.
+Ogni organizzazione ha una propria directory.
+- L'account azure ha più directory.
+Se si registra un'applicazione in una directory diversa da quella predefinita, non è possibile autorizzare l'applicazione all'uso del vault delle chiavi.
 L'applicazione deve essere nella directory predefinita.
-Tieni presente che, anche se specificando il gruppo di risorse è facoltativo per questo cmdlet, devi farlo per migliorare le prestazioni.
+Anche se è facoltativo specificare il gruppo di risorse per questo cmdlet, è consigliabile farlo per migliorare le prestazioni.
 
 > [!NOTE]
-> Quando si usa un'entità servizio per concedere autorizzazioni per i criteri di accesso, è necessario usare il `-BypassObjectIdValidation` parametro.
+> Quando si usa un'entità servizio per concedere le autorizzazioni per i criteri di accesso, è necessario usare il `-BypassObjectIdValidation` parametro.
 
 ## ESEMPI
 
-### Esempio 1: concedere le autorizzazioni a un utente per un Vault chiave e modificare le autorizzazioni
+### Esempio 1: Concedere a un utente le autorizzazioni per un vault chiave e modificare le autorizzazioni
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -UserPrincipalName 'PattiFuller@contoso.com' -PermissionsToKeys create,import,delete,list -PermissionsToSecrets set,delete -PassThru
 
@@ -235,63 +235,64 @@ Access Policies                  :
 Tags                             :
 ```
 
-Il primo comando concede le autorizzazioni per un utente in Azure Active Directory, PattiFuller@contoso.com per eseguire operazioni su chiavi e segreti con un Vault chiave denominato Contoso03Vault. Il parametro *PassThru* genera l'oggetto updated restituito dal cmdlet.
-Il secondo comando modifica le autorizzazioni concesse al PattiFuller@contoso.com primo comando per consentire l'ottenimento di segreti oltre a impostarli ed eliminarli. Le autorizzazioni per le operazioni chiave restano invariate dopo questo comando.
-Il comando finale modifica ulteriormente le autorizzazioni esistenti per PattiFuller@contoso.com rimuovere tutte le autorizzazioni per le operazioni principali. Le autorizzazioni per le operazioni segrete restano invariate dopo questo comando. 
+Il primo comando concede a un utente di Azure Active Directory le autorizzazioni per eseguire operazioni su chiavi e segreti con un vault delle chiavi denominato PattiFuller@contoso.com Contoso03Vault. Il *parametro PassThru* restituisce l'oggetto aggiornato restituito dal cmdlet.
+Il secondo comando modifica le autorizzazioni concesse nel primo comando per consentire ora di ottenere informazioni segrete oltre a impostarle PattiFuller@contoso.com ed eliminarle. Le autorizzazioni per le operazioni chiave rimangono invariate dopo questo comando.
+Il comando finale modifica ulteriormente le autorizzazioni esistenti per PattiFuller@contoso.com rimuovere tutte le autorizzazioni per le operazioni chiave. Le autorizzazioni per le operazioni segrete rimangono invariate dopo questo comando.
 
-### Esempio 2: concedere le autorizzazioni per un'entità del servizio applicazione per la lettura e la scrittura di segreti
+### Esempio 2: Concedere a un'entità servizio applicazioni le autorizzazioni per leggere e scrivere segreti
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ServicePrincipalName 'http://payroll.contoso.com' -PermissionsToSecrets Get,Set
 ```
 
-Questo comando consente di concedere le autorizzazioni per un'applicazione per un Vault chiave denominato Contoso03Vault. Il parametro *servicePrincipalName* specifica l'applicazione. L'applicazione deve essere registrata in Azure Active Directory. Il valore del parametro *servicePrincipalName* deve essere il nome dell'entità servizio dell'applicazione o il GUID dell'ID applicazione.
-Questo esempio specifica il nome dell'entità servizio http://payroll.contoso.com e il comando concede alle autorizzazioni dell'applicazione la lettura e la scrittura dei segreti.
+Questo comando concede le autorizzazioni per un'applicazione per una chiave vault denominata Contoso03Vault.
+Il *parametro ServicePrincipalName* specifica l'applicazione. L'applicazione deve essere registrata in Azure Active Directory. Il valore del parametro *ServicePrincipalName* deve essere il nome dell'entità servizio dell'applicazione o il GUID dell'ID applicazione.
+Questo esempio specifica il nome dell'entità servizio e il comando concede all'applicazione le autorizzazioni `http://payroll.contoso.com` per leggere e scrivere segreti.
 
-### Esempio 3: concedere le autorizzazioni per un'applicazione usando il relativo ID oggetto
+### Esempio 3: Concedere le autorizzazioni per un'applicazione usando l'ID oggetto
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ObjectId 34595082-9346-41b6-8d6b-295a2808b8db -PermissionsToSecrets Get,Set
 ```
 
-Questo comando concede alle autorizzazioni dell'applicazione la lettura e la scrittura di segreti.
-Questo esempio specifica l'applicazione che usa l'ID oggetto dell'entità servizio dell'applicazione.
+Questo comando concede all'applicazione le autorizzazioni per leggere e scrivere segreti.
+Questo esempio specifica l'applicazione usando l'ID oggetto dell'entità servizio dell'applicazione.
 
-### Esempio 4: concedere le autorizzazioni per un nome dell'entità utente
+### Esempio 4: Concedere le autorizzazioni per un nome dell'entità utente
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -UserPrincipalName 'PattiFuller@contoso.com' -PermissionsToSecrets Get,List,Set
 ```
 
-Questo comando consente di concedere le autorizzazioni Get, List e set per il nome dell'entità utente specificato per l'accesso ai segreti.
+Questo comando consente di ottenere, elencare e impostare le autorizzazioni per il nome dell'entità utente specificata per l'accesso ai segreti.
 
-### Esempio 5: abilitare i segreti da recuperare da un Vault chiave dal provider di risorse Microsoft. Compute
+### Esempio 5: Consentire il recupero di informazioni segrete da un vault delle chiavi da parte del provider di risorse Microsoft.Compute
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ResourceGroupName 'Group14' -EnabledForDeployment
 ```
 
-Questo comando concede le autorizzazioni per i segreti da recuperare dall'archivio della chiave Contoso03Vault dal provider di risorse Microsoft. Compute.
+Questo comando concede le autorizzazioni per il recupero di informazioni segrete dal vault della chiave Contoso03Vault da parte del provider di risorse Microsoft.Compute.
 
-### Esempio 6: concedere le autorizzazioni a un gruppo di sicurezza
+### Esempio 6: Concedere autorizzazioni a un gruppo di sicurezza
 ```powershell
 PS C:\> Get-AzADGroup
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'myownvault' -ObjectId (Get-AzADGroup -SearchString 'group2')[0].Id -PermissionsToKeys get, set -PermissionsToSecrets get, set
 ```
 
-Il primo comando usa il cmdlet Get-AzADGroup per ottenere tutti i gruppi di Active Directory. Nell'output vengono visualizzati 3 gruppi restituiti, denominati **Group1** , **group2** e **Group3**. Più gruppi possono avere lo stesso nome, ma hanno sempre un ObjectId univoco. Quando viene restituito più di un gruppo con lo stesso nome, usare il parametro ObjectId nell'output per identificare quello che si vuole usare.
-Si usa quindi l'output di questo comando con Set-AzKeyVaultAccessPolicy per concedere le autorizzazioni a group2 per il Vault chiave, denominato **myownvault**. Questo esempio enumera i gruppi denominati "group2" inline nella stessa riga di comando.
-Nell'elenco restituito possono essere presenti più gruppi denominati "group2".
+Il primo comando usa il cmdlet Get-AzADGroup per ottenere tutti i gruppi di Active Directory. Dall'output vengono restituiti 3 gruppi denominati **gruppo1,** **gruppo2** e **gruppo3.** Più gruppi possono avere lo stesso nome, ma hanno sempre un Id Oggetto univoco. Quando vengono restituiti più gruppi con lo stesso nome, usare ObjectId nell'output per identificare quello che si vuole usare.
+Usare quindi l'output di questo comando con Set-AzKeyVaultAccessPolicy per concedere le autorizzazioni a gruppo2 per il vault della chiave, **denominato myownvault.** Questo esempio enumera i gruppi denominati "gruppo2" in linea nella stessa riga di comando.
+Nell'elenco restituito potrebbero essere presenti più gruppi denominati "gruppo2".
 Questo esempio seleziona il primo, indicato dall'indice \[ 0 \] nell'elenco restituito.
 
-### Esempio 7: concedere ad Azure Information Protection Access alla chiave tenant gestita dal cliente (BYOK)
+### Esempio 7: Concedere ad Azure Information Protection l'accesso alla chiave del tenant gestita dal cliente (BYOK)
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso04Vault' -ServicePrincipalName 00000012-0000-0000-c000-000000000000 -PermissionsToKeys decrypt,sign,get
 ```
 
-Questo comando autorizza Azure Information Protection a usare una chiave gestita dal cliente (la chiave Bring your own o "BYOK") come chiave del tenant di Azure Information Protection.
-Quando si esegue questo comando, specificare il proprio nome per il Vault chiave, ma è necessario specificare il parametro *servicePrincipalName* con il GUID **00000012-0000-0000-C000-000000000000** e specificare le autorizzazioni nell'esempio.
+Questo comando autorizza Azure Information Protection a usare una chiave gestita dal cliente (lo scenario bring your own key, o "BYOK") come chiave tenant di Azure Information Protection.
+Quando si esegue questo comando, specificare il nome del vault della chiave, ma è necessario specificare il parametro *ServicePrincipalName* con il GUID **00000012-0000-0000-c000-000000000000 e** specificare le autorizzazioni nell'esempio.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -ApplicationId
-Per un uso futuro.
+Per usi futuri.
 
 ```yaml
 Type: System.Nullable`1[System.Guid]
@@ -305,9 +306,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -BypassObjectIdValidation
-Consente di specificare un ID oggetto senza convalidare che l'oggetto esiste in Azure Active Directory.
-Usare questo parametro solo se si vuole concedere l'accesso al Vault della chiave a un ID oggetto che fa riferimento a un gruppo di sicurezza delegata di un altro tenant Azure.
+### -BypassObjectIdValid
+Consente di specificare un ID oggetto senza convalidare l'esistenza dell'oggetto in Azure Active Directory.
+Usare questo parametro solo se si vuole concedere l'accesso al vault della chiave a un ID oggetto che fa riferimento a un gruppo di sicurezza delegato di un altro tenant di Azure.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -322,7 +323,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
+Le credenziali, l'account, il tenant e la sottoscrizione usati per le comunicazioni con Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -338,7 +339,7 @@ Accept wildcard characters: False
 
 ### -EmailAddress
 Specifica l'indirizzo di posta elettronica dell'utente a cui concedere le autorizzazioni.
-Questo indirizzo di posta elettronica deve esistere nella directory associata alla sottoscrizione corrente ed essere univoco.
+Questo indirizzo e-mail deve essere presente nella directory associata all'abbonamento corrente ed essere univoco.
 
 ```yaml
 Type: System.String
@@ -353,7 +354,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForDeployment
-Consente al provider di risorse Microsoft. Compute di recuperare i segreti da questo Vault chiave quando si fa riferimento a questo Vault chiave nella creazione di risorse, ad esempio quando si crea una macchina virtuale.
+Consente al provider di risorse Microsoft.Compute di recuperare i dati nascosti da questo vault della chiave quando si fa riferimento a questo vault chiave nella creazione di risorse, ad esempio durante la creazione di una macchina virtuale.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -368,7 +369,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForDiskEncryption
-Abilita il servizio di crittografia di Azure disk per ottenere segreti e scartare le chiavi da questo caveau chiave.
+Consente al servizio di crittografia del disco di Azure di ottenere informazioni segrete e chiavi di annullamento della sincronizzazione da questo vault delle chiavi.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -383,7 +384,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForTemplateDeployment
-Consente a Azure Resource Manager di ottenere segreti da questo Vault chiave quando si fa riferimento a questo Vault chiave in una distribuzione di modelli.
+Consente a Gestione risorse di Azure di ottenere informazioni segrete da questo vault chiave quando si fa riferimento a questo vault chiave in una distribuzione di modelli.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -398,7 +399,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Oggetto Key Vault
+Oggetto Vault chiave
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultIdentityItem
@@ -413,7 +414,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-Specifica l'ID oggetto dell'entità di servizio o dell'utente in Azure Active Directory per cui concedere le autorizzazioni.
+Specifica l'ID oggetto dell'utente o dell'entità servizio in Azure Active Directory per cui concedere le autorizzazioni.
 
 ```yaml
 Type: System.String
@@ -428,7 +429,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Restituisce un oggetto che rappresenta l'elemento con cui si sta lavorando.
+Restituisce un oggetto che rappresenta l'elemento su cui si sta lavorando.
 Per impostazione predefinita, questo cmdlet non genera alcun output.
 
 ```yaml
@@ -444,24 +445,24 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionsToCertificates
-Specifica una matrice di autorizzazioni di certificato da concedere a un utente o a un'entità di servizio.
+Specifica una matrice di autorizzazioni per i certificati da concedere a un utente o a un'entità servizio.
 Valori accettabili per questo parametro:
 - Ottieni
 - Elenco
-- Eliminare
-- Creare
-- Importazione
-- Aggiornamento
+- Elimina
+- Crea
+- Importare
+- Aggiorna
 - Managecontacts
 - Getissuers
 - Listissuers
-- Emittenti
-- Deleteissuers
+- Setissuers
+- Eliminaissuers
 - Manageissuers
-- Recuperare
+- Recupera
 - Backup
-- Ripristinare
-- Eliminazione
+- Ripristina
+- Ripulire
 
 ```yaml
 Type: System.String[]
@@ -477,24 +478,24 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionsToKeys
-Specifica una matrice di autorizzazioni per le operazioni chiave da concedere a un utente o a un'entità di servizio.
+Specifica una matrice di autorizzazioni per le operazioni chiave da concedere a un utente o a un'entità servizio.
 Valori accettabili per questo parametro:
-- Decrittografare
-- Crittografare
+- Decrittografa
+- Crittografa
 - UnwrapKey
 - WrapKey
-- Verificare
-- Segno
+- Verifica
+- Firma
 - Ottieni
 - Elenco
-- Aggiornamento
-- Creare
-- Importazione
-- Eliminare
+- Aggiorna
+- Crea
+- Importare
+- Elimina
 - Backup
-- Ripristinare
-- Recuperare
-- Eliminazione
+- Ripristina
+- Recupera
+- Ripulire
 
 ```yaml
 Type: System.String[]
@@ -510,16 +511,16 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionsToSecrets
-Specifica una matrice di autorizzazioni per le operazioni segrete da concedere a un utente o a un'entità di servizio.
+Specifica una matrice di autorizzazioni per le operazioni segrete da concedere a un utente o a un'entità servizio.
 Valori accettabili per questo parametro:
 - Ottieni
 - Elenco
-- Impostare
-- Eliminare
+- Imposta
+- Elimina
 - Backup
-- Ripristinare
-- Recuperare
-- Eliminazione
+- Ripristina
+- Recupera
+- Ripulire
 
 ```yaml
 Type: System.String[]
@@ -535,7 +536,7 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionsToStorage
-Specifica le autorizzazioni dell'account di archiviazione gestita e delle operazioni di definizione SaS per concedere a un utente o a un servizio Principal.
+Specifica le autorizzazioni per l'operazione di definizione saS e l'account di archiviazione gestito da concedere a un utente o a un'entità servizio.
 
 ```yaml
 Type: System.String[]
@@ -566,7 +567,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-ID risorsa chiave Vault
+ID risorsa Vault chiave
 
 ```yaml
 Type: System.String
@@ -582,7 +583,7 @@ Accept wildcard characters: False
 
 ### -ServicePrincipalName
 Specifica il nome dell'entità servizio dell'applicazione a cui concedere le autorizzazioni.
-Specifica l'ID applicazione, noto anche come ID client, registrato per l'applicazione nella directory AzureActive. L'applicazione con il nome dell'entità servizio specificata da questo parametro deve essere registrata nella directory Azure che contiene l'abbonamento corrente.
+Specificare l'ID applicazione, noto anche come ID client, registrato per l'applicazione in AzureActive Directory. L'applicazione con il nome dell'entità servizio specificata da questo parametro deve essere registrata nella directory di Azure che contiene la sottoscrizione corrente.
 
 ```yaml
 Type: System.String
@@ -598,7 +599,7 @@ Accept wildcard characters: False
 
 ### -UserPrincipalName
 Specifica il nome dell'entità utente dell'utente a cui concedere le autorizzazioni.
-Il nome dell'entità utente deve esistere nella directory associata alla sottoscrizione corrente.
+Il nome dell'entità utente deve essere presente nella directory associata alla sottoscrizione corrente.
 
 ```yaml
 Type: System.String
@@ -612,9 +613,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -VAULTNAME
-Specifica il nome di un Vault chiave.
-Questo cmdlet modifica i criteri di accesso per il Vault chiave specificato da questo parametro.
+### -VaultName
+Specifica il nome di un vault delle chiavi.
+Questo cmdlet modifica i criteri di accesso per il vault delle chiavi specificato da questo parametro.
 
 ```yaml
 Type: System.String
@@ -628,8 +629,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confermare
-Richiede la conferma prima di eseguire il cmdlet.
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -644,7 +645,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra cosa succede se il cmdlet viene eseguito. Il cmdlet non viene eseguito.
+Mostra cosa accadrebbe se il cmdlet viene eseguito. Il cmdlet non viene eseguito.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -659,19 +660,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### Microsoft. Azure. Commands. Vault. Models. PSKeyVaultIdentityItem
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultIdentityItem
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Vault. Models. PSKeyVault
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
