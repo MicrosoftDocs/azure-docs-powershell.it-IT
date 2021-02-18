@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Set-AzDiagnosticSetting.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Set-AzDiagnosticSetting.md
-ms.openlocfilehash: 554a754d8d7e6000556b2141807d2b6fe86cc230
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: a1ccbf6ee912c26bc4ecbe3b58a9db12dac112e6
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93864228"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100409716"
 ---
-# <span data-ttu-id="87f03-101">Set-AzDiagnosticSetting</span><span class="sxs-lookup"><span data-stu-id="87f03-101">Set-AzDiagnosticSetting</span></span>
+# <span data-ttu-id="2ccbd-101">Set-AzDiagnosticSetting</span><span class="sxs-lookup"><span data-stu-id="2ccbd-101">Set-AzDiagnosticSetting</span></span>
 
-## <span data-ttu-id="87f03-102">Sinossi</span><span class="sxs-lookup"><span data-stu-id="87f03-102">SYNOPSIS</span></span>
-<span data-ttu-id="87f03-103">Imposta le impostazioni dei registri e delle metriche per la risorsa.</span><span class="sxs-lookup"><span data-stu-id="87f03-103">Sets the logs and metrics settings for the resource.</span></span>
+## <span data-ttu-id="2ccbd-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="2ccbd-102">SYNOPSIS</span></span>
+<span data-ttu-id="2ccbd-103">Imposta le impostazioni di log e metriche per la risorsa.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-103">Sets the logs and metrics settings for the resource.</span></span>
 
-## <span data-ttu-id="87f03-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="87f03-104">SYNTAX</span></span>
+## <span data-ttu-id="2ccbd-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="2ccbd-104">SYNTAX</span></span>
 
-### <span data-ttu-id="87f03-105">OldSetDiagnosticSetting (impostazione predefinita)</span><span class="sxs-lookup"><span data-stu-id="87f03-105">OldSetDiagnosticSetting (Default)</span></span>
+### <span data-ttu-id="2ccbd-105">OldSetDiagnosticSetting (impostazione predefinita)</span><span class="sxs-lookup"><span data-stu-id="2ccbd-105">OldSetDiagnosticSetting (Default)</span></span>
 ```
 Set-AzDiagnosticSetting -ResourceId <String> [-Name <String>] [-StorageAccountId <String>]
  [-ServiceBusRuleId <String>] [-EventHubName <String>] [-EventHubAuthorizationRuleId <String>]
@@ -31,34 +31,34 @@ Set-AzDiagnosticSetting -ResourceId <String> [-Name <String>] [-StorageAccountId
  [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="87f03-106">NewSetDiagnosticSetting</span><span class="sxs-lookup"><span data-stu-id="87f03-106">NewSetDiagnosticSetting</span></span>
+### <span data-ttu-id="2ccbd-106">NewSetDiagnosticSetting</span><span class="sxs-lookup"><span data-stu-id="2ccbd-106">NewSetDiagnosticSetting</span></span>
 ```
 Set-AzDiagnosticSetting -InputObject <PSServiceDiagnosticSettings> [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="87f03-107">Descrizione</span><span class="sxs-lookup"><span data-stu-id="87f03-107">DESCRIPTION</span></span>
-<span data-ttu-id="87f03-108">Il cmdlet **set-AzDiagnosticSetting** Abilita o disabilita ogni categoria di granulosità e log per la particolare risorsa.</span><span class="sxs-lookup"><span data-stu-id="87f03-108">The **Set-AzDiagnosticSetting** cmdlet enables or disables each time grain and log category for the particular resource.</span></span>
-<span data-ttu-id="87f03-109">I registri e le metriche sono archiviati nell'account di archiviazione specificato.</span><span class="sxs-lookup"><span data-stu-id="87f03-109">The logs and metrics are stored in the specified storage account.</span></span>
-<span data-ttu-id="87f03-110">Questo cmdlet implementa il modello ShouldProcess, vale a dire che potrebbe richiedere conferma all'utente prima di creare, modificare o rimuovere la risorsa.</span><span class="sxs-lookup"><span data-stu-id="87f03-110">This cmdlet implements the ShouldProcess pattern, i.e. it might request confirmation from the user before actually creating, modifying, or removing the resource.</span></span>
+## <span data-ttu-id="2ccbd-107">DESCRIZIONE</span><span class="sxs-lookup"><span data-stu-id="2ccbd-107">DESCRIPTION</span></span>
+<span data-ttu-id="2ccbd-108">Il cmdlet **Set-AzDiagnosticSetting** abilita o disabilita ogni grana temporale e categoria di log per la risorsa specifica.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-108">The **Set-AzDiagnosticSetting** cmdlet enables or disables each time grain and log category for the particular resource.</span></span>
+<span data-ttu-id="2ccbd-109">I log e le metriche vengono archiviati nell'account di archiviazione specificato.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-109">The logs and metrics are stored in the specified storage account.</span></span>
+<span data-ttu-id="2ccbd-110">Questo cmdlet implementa il criterio ShouldProcess, ad esempio potrebbe richiedere conferma all'utente prima di creare, modificare o rimuovere effettivamente la risorsa.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-110">This cmdlet implements the ShouldProcess pattern, i.e. it might request confirmation from the user before actually creating, modifying, or removing the resource.</span></span>
 
-## <span data-ttu-id="87f03-111">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="87f03-111">EXAMPLES</span></span>
+## <span data-ttu-id="2ccbd-111">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="2ccbd-111">EXAMPLES</span></span>
 
-### <span data-ttu-id="87f03-112">Esempio 1: abilitare tutte le metriche e i registri per una risorsa</span><span class="sxs-lookup"><span data-stu-id="87f03-112">Example 1: Enable all metrics and logs for a resource</span></span>
+### <span data-ttu-id="2ccbd-112">Esempio 1: Abilitare tutte le metriche e i log per una risorsa</span><span class="sxs-lookup"><span data-stu-id="2ccbd-112">Example 1: Enable all metrics and logs for a resource</span></span>
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True
 ```
 
-<span data-ttu-id="87f03-113">Questo comando consente di abilitare tutte le metriche e i registri disponibili per Resource01.</span><span class="sxs-lookup"><span data-stu-id="87f03-113">This command enables all available metrics and logs for Resource01.</span></span>
+<span data-ttu-id="2ccbd-113">Questo comando abilita tutte le metriche e i log disponibili per Resource01.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-113">This command enables all available metrics and logs for Resource01.</span></span>
 
-### <span data-ttu-id="87f03-114">Esempio 2: disabilitare tutte le metriche e i registri</span><span class="sxs-lookup"><span data-stu-id="87f03-114">Example 2: Disable all metrics and logs</span></span>
+### <span data-ttu-id="2ccbd-114">Esempio 2: Disabilitare tutte le metriche e i log</span><span class="sxs-lookup"><span data-stu-id="2ccbd-114">Example 2: Disable all metrics and logs</span></span>
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $False
 ```
 
-<span data-ttu-id="87f03-115">Questo comando Disabilita tutte le metriche e i registri disponibili per la risorsa Resource01.</span><span class="sxs-lookup"><span data-stu-id="87f03-115">This command disables all available metrics and logs for the resource Resource01.</span></span>
+<span data-ttu-id="2ccbd-115">Questo comando disabilita tutte le metriche e i log disponibili per la risorsa Resource01.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-115">This command disables all available metrics and logs for the resource Resource01.</span></span>
 
-### <span data-ttu-id="87f03-116">Esempio 3: abilitare/disabilitare più categorie di metriche</span><span class="sxs-lookup"><span data-stu-id="87f03-116">Example 3: Enable/disable multiple metrics categories</span></span>
+### <span data-ttu-id="2ccbd-116">Esempio 3: Abilitare/disabilitare più categorie di metriche</span><span class="sxs-lookup"><span data-stu-id="2ccbd-116">Example 3: Enable/disable multiple metrics categories</span></span>
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $False -MetricCategory MetricCategory1,MetricCategory2
 StorageAccountId   : <storageAccountId>
@@ -84,10 +84,10 @@ Logs
    Category : Category4
 ```
 
-<span data-ttu-id="87f03-117">Questo comando Disabilita le categorie metriche denominate Categoria1 e Categoria2.</span><span class="sxs-lookup"><span data-stu-id="87f03-117">This command disables the metrics categories called Category1 and Category2.</span></span>
-<span data-ttu-id="87f03-118">Tutte le altre categorie restano invariate.</span><span class="sxs-lookup"><span data-stu-id="87f03-118">All the other categories remain the same.</span></span>
+<span data-ttu-id="2ccbd-117">Questo comando disabilita le categorie di metriche denominate Categoria1 e Categoria2.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-117">This command disables the metrics categories called Category1 and Category2.</span></span>
+<span data-ttu-id="2ccbd-118">Tutte le altre categorie rimangono invariate.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-118">All the other categories remain the same.</span></span>
 
-### <span data-ttu-id="87f03-119">Esempio 4: abilitare/disabilitare più categorie di log</span><span class="sxs-lookup"><span data-stu-id="87f03-119">Example 4: Enable/disable multiple log categories</span></span>
+### <span data-ttu-id="2ccbd-119">Esempio 4: Abilitare/disabilitare più categorie di log</span><span class="sxs-lookup"><span data-stu-id="2ccbd-119">Example 4: Enable/disable multiple log categories</span></span>
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True -Category Category1,Category2
 StorageAccountId   : <storageAccountId>
@@ -113,29 +113,29 @@ Logs
    Category : Category4
 ```
 
-<span data-ttu-id="87f03-120">Questo comando consente di abilitare Categoria1 e Categoria2.</span><span class="sxs-lookup"><span data-stu-id="87f03-120">This command enables Category1 and Category2.</span></span>
-<span data-ttu-id="87f03-121">Tutte le altre categorie di metriche e registri restano le stesse.</span><span class="sxs-lookup"><span data-stu-id="87f03-121">All the other metrics and logs categories remain the same.</span></span>
+<span data-ttu-id="2ccbd-120">Questo comando abilita Categoria1 e Categoria2.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-120">This command enables Category1 and Category2.</span></span>
+<span data-ttu-id="2ccbd-121">Tutte le altre metriche e le categorie di log rimangono invariate.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-121">All the other metrics and logs categories remain the same.</span></span>
 
-### <span data-ttu-id="87f03-122">Esempio 4: abilitare una granulosità temporale e più categorie</span><span class="sxs-lookup"><span data-stu-id="87f03-122">Example 4: Enable a time grain and multiple categories</span></span>
+### <span data-ttu-id="2ccbd-122">Esempio 4: Abilitare le granularità temporale e più categorie</span><span class="sxs-lookup"><span data-stu-id="2ccbd-122">Example 4: Enable a time grain and multiple categories</span></span>
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True -Category Category1,Category2 -Timegrain PT1M
 ```
 
-<span data-ttu-id="87f03-123">Questo comando consente di abilitare solo Categoria1, Categoria2 e Time Grain PT1M.</span><span class="sxs-lookup"><span data-stu-id="87f03-123">This command enables only Category1, Category2, and time grain PT1M.</span></span>
-<span data-ttu-id="87f03-124">Tutti gli altri grani e categorie di tempo sono invariati.</span><span class="sxs-lookup"><span data-stu-id="87f03-124">All other time grains and categories are unchanged.</span></span>
+<span data-ttu-id="2ccbd-123">Questo comando abilita solo Categoria1, Categoria2 e Grana temporale PT1M.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-123">This command enables only Category1, Category2, and time grain PT1M.</span></span>
+<span data-ttu-id="2ccbd-124">Tutti gli altri grani e categorie rimangono invariati.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-124">All other time grains and categories are unchanged.</span></span>
 
-### <span data-ttu-id="87f03-125">Esempio 5: uso della pipeline</span><span class="sxs-lookup"><span data-stu-id="87f03-125">Example 5: Using pipeline</span></span>
+### <span data-ttu-id="2ccbd-125">Esempio 5: Uso della pipeline</span><span class="sxs-lookup"><span data-stu-id="2ccbd-125">Example 5: Using pipeline</span></span>
 ```
 PS C:\>Get-AzDiagnosticSetting -ResourceId "Resource01" | Set-AzDiagnosticSetting -Enabled $True -Category Category1,Category2
 ```
 
-<span data-ttu-id="87f03-126">Questo comando usa la pipeline di PowerShell per impostare (nessuna modifica apportata) un'impostazione di diagnostica.</span><span class="sxs-lookup"><span data-stu-id="87f03-126">This command uses the PowerShell pipeline to set (no change made) a diagnostic setting.</span></span>
+<span data-ttu-id="2ccbd-126">Questo comando usa la pipeline di PowerShell per impostare (senza alcuna modifica) un'impostazione diagnostica.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-126">This command uses the PowerShell pipeline to set (no change made) a diagnostic setting.</span></span>
 
-## <span data-ttu-id="87f03-127">PARAMETRI</span><span class="sxs-lookup"><span data-stu-id="87f03-127">PARAMETERS</span></span>
+## <span data-ttu-id="2ccbd-127">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="2ccbd-127">PARAMETERS</span></span>
 
-### <span data-ttu-id="87f03-128">-Categoria</span><span class="sxs-lookup"><span data-stu-id="87f03-128">-Category</span></span>
-<span data-ttu-id="87f03-129">Specifica l'elenco delle categorie di log da abilitare o disabilitare, in base al valore di *Enabled*.</span><span class="sxs-lookup"><span data-stu-id="87f03-129">Specifies the list of log categories to enable or disable, according to the value of *Enabled*.</span></span>
-<span data-ttu-id="87f03-130">Se non è specificata alcuna categoria, questo comando funziona in tutte le categorie supportate.</span><span class="sxs-lookup"><span data-stu-id="87f03-130">If no category is specified, this command operates on all supported categories.</span></span> 
+### <span data-ttu-id="2ccbd-128">-Categoria</span><span class="sxs-lookup"><span data-stu-id="2ccbd-128">-Category</span></span>
+<span data-ttu-id="2ccbd-129">Specifica l'elenco delle categorie di log da abilitare o disabilitare, in base al valore di *Abilitato.*</span><span class="sxs-lookup"><span data-stu-id="2ccbd-129">Specifies the list of log categories to enable or disable, according to the value of *Enabled*.</span></span>
+<span data-ttu-id="2ccbd-130">Se non viene specificata alcuna categoria, questo comando opera su tutte le categorie supportate.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-130">If no category is specified, this command operates on all supported categories.</span></span>
 
 ```yaml
 Type: System.Collections.Generic.List`1[System.String]
@@ -149,8 +149,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="87f03-131">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="87f03-131">-DefaultProfile</span></span>
-<span data-ttu-id="87f03-132">Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure</span><span class="sxs-lookup"><span data-stu-id="87f03-132">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="2ccbd-131">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="2ccbd-131">-DefaultProfile</span></span>
+<span data-ttu-id="2ccbd-132">Le credenziali, l'account, il tenant e la sottoscrizione usati per le comunicazioni con Azure</span><span class="sxs-lookup"><span data-stu-id="2ccbd-132">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -164,9 +164,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="87f03-133">-Enabled</span><span class="sxs-lookup"><span data-stu-id="87f03-133">-Enabled</span></span>
-<span data-ttu-id="87f03-134">Indica se abilitare la diagnostica.</span><span class="sxs-lookup"><span data-stu-id="87f03-134">Indicates whether to enable diagnostics.</span></span>
-<span data-ttu-id="87f03-135">Specificare $True per abilitare la diagnostica o $False per disabilitare la diagnostica.</span><span class="sxs-lookup"><span data-stu-id="87f03-135">Specify $True to enable diagnostics, or $False to disable diagnostics.</span></span>
+### <span data-ttu-id="2ccbd-133">-Enabled</span><span class="sxs-lookup"><span data-stu-id="2ccbd-133">-Enabled</span></span>
+<span data-ttu-id="2ccbd-134">Indica se abilitare la diagnostica.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-134">Indicates whether to enable diagnostics.</span></span>
+<span data-ttu-id="2ccbd-135">Specificare $True per abilitare la diagnostica oppure specificare $False per disabilitare la diagnostica.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-135">Specify $True to enable diagnostics, or $False to disable diagnostics.</span></span>
 
 ```yaml
 Type: System.Boolean
@@ -180,8 +180,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="87f03-136">-EventHubAuthorizationRuleId</span><span class="sxs-lookup"><span data-stu-id="87f03-136">-EventHubAuthorizationRuleId</span></span>
-<span data-ttu-id="87f03-137">ID regola di autorizzazione Hub eventi</span><span class="sxs-lookup"><span data-stu-id="87f03-137">The event hub authorization rule id</span></span>
+### <span data-ttu-id="2ccbd-136">-EventHubAuthorizationRuleId</span><span class="sxs-lookup"><span data-stu-id="2ccbd-136">-EventHubAuthorizationRuleId</span></span>
+<span data-ttu-id="2ccbd-137">ID regola di autorizzazione dell'hub eventi</span><span class="sxs-lookup"><span data-stu-id="2ccbd-137">The event hub authorization rule id</span></span>
 
 ```yaml
 Type: System.String
@@ -195,8 +195,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="87f03-138">-EventHubName</span><span class="sxs-lookup"><span data-stu-id="87f03-138">-EventHubName</span></span>
-<span data-ttu-id="87f03-139">Nome Hub dell'evento</span><span class="sxs-lookup"><span data-stu-id="87f03-139">The event hub name</span></span>
+### <span data-ttu-id="2ccbd-138">-EventHubName</span><span class="sxs-lookup"><span data-stu-id="2ccbd-138">-EventHubName</span></span>
+<span data-ttu-id="2ccbd-139">Nome dell'hub eventi</span><span class="sxs-lookup"><span data-stu-id="2ccbd-139">The event hub name</span></span>
 
 ```yaml
 Type: System.String
@@ -210,10 +210,10 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="87f03-140">-ExportToResourceSpecific</span><span class="sxs-lookup"><span data-stu-id="87f03-140">-ExportToResourceSpecific</span></span>
-<span data-ttu-id="87f03-141">Contrassegno che indica che l'esportazione in LA deve essere eseguita in una tabella specifica delle risorse, alias</span><span class="sxs-lookup"><span data-stu-id="87f03-141">Flag indicating that the export to LA must be done to a resource specific table, a.k.a.</span></span> <span data-ttu-id="87f03-142">tabella schema dedicata o fissa, invece della tabella schema dinamico **predefinita** denominata **AzureDiagnostics**.</span><span class="sxs-lookup"><span data-stu-id="87f03-142">dedicated or fixed schema table, as opposed to the **default** dynamic schema table called **AzureDiagnostics**.</span></span>
+### <span data-ttu-id="2ccbd-140">-ExportToResourceSpecific</span><span class="sxs-lookup"><span data-stu-id="2ccbd-140">-ExportToResourceSpecific</span></span>
+<span data-ttu-id="2ccbd-141">Flag che indica che l'esportazione in La deve essere eseguita in una tabella specifica della risorsa, come nell'esempio seguente.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-141">Flag indicating that the export to LA must be done to a resource specific table, a.k.a.</span></span> <span data-ttu-id="2ccbd-142">dedicato o tabella dello schema fissa,  a differenza della tabella schema dinamico predefinita denominata **AzureDiagnostics.**</span><span class="sxs-lookup"><span data-stu-id="2ccbd-142">dedicated or fixed schema table, as opposed to the **default** dynamic schema table called **AzureDiagnostics**.</span></span>
 
-<span data-ttu-id="87f03-143">Questo argomento è efficace solo quando viene assegnato anche l'argomento **-workspaceId** .</span><span class="sxs-lookup"><span data-stu-id="87f03-143">This argument is effective only when the argument **-workspaceId** is also given.</span></span>
+<span data-ttu-id="2ccbd-143">Questo argomento è valido solo quando viene specificato anche **l'argomento -workspaceId.**</span><span class="sxs-lookup"><span data-stu-id="2ccbd-143">This argument is effective only when the argument **-workspaceId** is also given.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -227,8 +227,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="87f03-144">-InputObject</span><span class="sxs-lookup"><span data-stu-id="87f03-144">-InputObject</span></span>
-<span data-ttu-id="87f03-145">L'oggetto di input (possibile dalla pipeline) Il nome e resourceId verranno estratti dall'oggetto.</span><span class="sxs-lookup"><span data-stu-id="87f03-145">The input object (possible from the pipeline.) The name and resourceId will be extracted from this object.</span></span>
+### <span data-ttu-id="2ccbd-144">-InputObject</span><span class="sxs-lookup"><span data-stu-id="2ccbd-144">-InputObject</span></span>
+<span data-ttu-id="2ccbd-145">Oggetto di input (possibile dalla pipeline). Il nome e l'ID risorsa verranno estratti dall'oggetto.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-145">The input object (possible from the pipeline.) The name and resourceId will be extracted from this object.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSServiceDiagnosticSettings
@@ -242,8 +242,9 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="87f03-146">-MetricCategory</span><span class="sxs-lookup"><span data-stu-id="87f03-146">-MetricCategory</span></span>
-<span data-ttu-id="87f03-147">Elenco di categorie metriche.</span><span class="sxs-lookup"><span data-stu-id="87f03-147">The list of metric categories.</span></span> <span data-ttu-id="87f03-148">Se non è specificata alcuna categoria, questo comando funziona in tutte le categorie supportate.</span><span class="sxs-lookup"><span data-stu-id="87f03-148">If no category is specified, this command operates on all supported categories.</span></span> 
+### <span data-ttu-id="2ccbd-146">-MetricCategory</span><span class="sxs-lookup"><span data-stu-id="2ccbd-146">-MetricCategory</span></span>
+<span data-ttu-id="2ccbd-147">Elenco delle categorie metriche.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-147">The list of metric categories.</span></span>
+<span data-ttu-id="2ccbd-148">Se non viene specificata alcuna categoria, questo comando opera su tutte le categorie supportate.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-148">If no category is specified, this command operates on all supported categories.</span></span>
 
 ```yaml
 Type: System.Collections.Generic.List`1[System.String]
@@ -257,8 +258,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="87f03-149">-Nome</span><span class="sxs-lookup"><span data-stu-id="87f03-149">-Name</span></span>
-<span data-ttu-id="87f03-150">Nome dell'impostazione di diagnostica.</span><span class="sxs-lookup"><span data-stu-id="87f03-150">The name of the diagnostic setting.</span></span> <span data-ttu-id="87f03-151">Il valore predefinito è **Service**.</span><span class="sxs-lookup"><span data-stu-id="87f03-151">The default value is **service**.</span></span>
+### <span data-ttu-id="2ccbd-149">-Name</span><span class="sxs-lookup"><span data-stu-id="2ccbd-149">-Name</span></span>
+<span data-ttu-id="2ccbd-150">Nome dell'impostazione diagnostica.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-150">The name of the diagnostic setting.</span></span> <span data-ttu-id="2ccbd-151">Il valore predefinito è **servizio.**</span><span class="sxs-lookup"><span data-stu-id="2ccbd-151">The default value is **service**.</span></span>
 
 ```yaml
 Type: System.String
@@ -272,8 +273,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="87f03-152">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="87f03-152">-ResourceId</span></span>
-<span data-ttu-id="87f03-153">Specifica l'ID della risorsa.</span><span class="sxs-lookup"><span data-stu-id="87f03-153">Specifies the ID of the resource.</span></span>
+### <span data-ttu-id="2ccbd-152">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="2ccbd-152">-ResourceId</span></span>
+<span data-ttu-id="2ccbd-153">Specifica l'ID della risorsa.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-153">Specifies the ID of the resource.</span></span>
 
 ```yaml
 Type: System.String
@@ -287,8 +288,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="87f03-154">-RetentionEnabled</span><span class="sxs-lookup"><span data-stu-id="87f03-154">-RetentionEnabled</span></span>
-<span data-ttu-id="87f03-155">Indica se la conservazione delle informazioni di diagnostica è abilitata.</span><span class="sxs-lookup"><span data-stu-id="87f03-155">Indicates whether retention of diagnostic information is enabled.</span></span>
+### <span data-ttu-id="2ccbd-154">-RetentionEnabled</span><span class="sxs-lookup"><span data-stu-id="2ccbd-154">-RetentionEnabled</span></span>
+<span data-ttu-id="2ccbd-155">Indica se la conservazione delle informazioni diagnostiche è abilitata.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-155">Indicates whether retention of diagnostic information is enabled.</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.Boolean]
@@ -302,8 +303,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="87f03-156">-RetentionInDays</span><span class="sxs-lookup"><span data-stu-id="87f03-156">-RetentionInDays</span></span>
-<span data-ttu-id="87f03-157">Specifica i criteri di conservazione, in giorni.</span><span class="sxs-lookup"><span data-stu-id="87f03-157">Specifies the retention policy, in days.</span></span>
+### <span data-ttu-id="2ccbd-156">-RetentionInDays</span><span class="sxs-lookup"><span data-stu-id="2ccbd-156">-RetentionInDays</span></span>
+<span data-ttu-id="2ccbd-157">Specifica i criteri di conservazione, in giorni.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-157">Specifies the retention policy, in days.</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -317,8 +318,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="87f03-158">-ServiceBusRuleId</span><span class="sxs-lookup"><span data-stu-id="87f03-158">-ServiceBusRuleId</span></span>
-<span data-ttu-id="87f03-159">ID regola del bus di servizio.</span><span class="sxs-lookup"><span data-stu-id="87f03-159">The Service Bus Rule id.</span></span>
+### <span data-ttu-id="2ccbd-158">-ServiceBusRuleId</span><span class="sxs-lookup"><span data-stu-id="2ccbd-158">-ServiceBusRuleId</span></span>
+<span data-ttu-id="2ccbd-159">ID regola bus di servizio.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-159">The Service Bus Rule id.</span></span>
 
 ```yaml
 Type: System.String
@@ -332,8 +333,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="87f03-160">-StorageAccountId</span><span class="sxs-lookup"><span data-stu-id="87f03-160">-StorageAccountId</span></span>
-<span data-ttu-id="87f03-161">Specifica l'ID dell'account di archiviazione in cui salvare i dati.</span><span class="sxs-lookup"><span data-stu-id="87f03-161">Specifies the ID of the Storage account in which to save the data.</span></span>
+### <span data-ttu-id="2ccbd-160">-StorageAccountId</span><span class="sxs-lookup"><span data-stu-id="2ccbd-160">-StorageAccountId</span></span>
+<span data-ttu-id="2ccbd-161">Specifica l'ID dell'account di archiviazione in cui salvare i dati.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-161">Specifies the ID of the Storage account in which to save the data.</span></span>
 
 ```yaml
 Type: System.String
@@ -347,9 +348,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="87f03-162">-Timegrain</span><span class="sxs-lookup"><span data-stu-id="87f03-162">-Timegrain</span></span>
-<span data-ttu-id="87f03-163">Specifica i grani temporali da abilitare o disabilitare per le metriche, in base al valore di *Enabled*.</span><span class="sxs-lookup"><span data-stu-id="87f03-163">Specifies the time grains to enable or disable for metrics, according to the value of *Enabled*.</span></span>
-<span data-ttu-id="87f03-164">Se non specifichi una granulosità temporale, questo comando funziona in tutti i grani temporali disponibili.</span><span class="sxs-lookup"><span data-stu-id="87f03-164">If you do not specify a time grain, this command operates on all available time grains.</span></span>
+### <span data-ttu-id="2ccbd-162">-Timegrain</span><span class="sxs-lookup"><span data-stu-id="2ccbd-162">-Timegrain</span></span>
+<span data-ttu-id="2ccbd-163">Specifica i grani tempo da abilitare o disabilitare per le metriche, in base al valore di *Abilitato.*</span><span class="sxs-lookup"><span data-stu-id="2ccbd-163">Specifies the time grains to enable or disable for metrics, according to the value of *Enabled*.</span></span>
+<span data-ttu-id="2ccbd-164">Se non si specificano le granularità per l'ora, questo comando viene eseguito in tutte le grane del tempo disponibili.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-164">If you do not specify a time grain, this command operates on all available time grains.</span></span>
 
 ```yaml
 Type: System.Collections.Generic.List`1[System.String]
@@ -363,8 +364,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="87f03-165">-WorkspaceId</span><span class="sxs-lookup"><span data-stu-id="87f03-165">-WorkspaceId</span></span>
-<span data-ttu-id="87f03-166">ID dell'area di lavoro</span><span class="sxs-lookup"><span data-stu-id="87f03-166">The Id of the workspace</span></span>
+### <span data-ttu-id="2ccbd-165">-WorkspaceId</span><span class="sxs-lookup"><span data-stu-id="2ccbd-165">-WorkspaceId</span></span>
+<span data-ttu-id="2ccbd-166">ID della risorsa dell'area di lavoro Analisi log a cui inviare log/metriche</span><span class="sxs-lookup"><span data-stu-id="2ccbd-166">The resource Id of the Log Analytics workspace to send logs/metrics to</span></span>
 
 ```yaml
 Type: System.String
@@ -378,8 +379,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="87f03-167">-Confermare</span><span class="sxs-lookup"><span data-stu-id="87f03-167">-Confirm</span></span>
-<span data-ttu-id="87f03-168">Richiede la conferma prima di eseguire il cmdlet.</span><span class="sxs-lookup"><span data-stu-id="87f03-168">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="2ccbd-167">-Confirm</span><span class="sxs-lookup"><span data-stu-id="2ccbd-167">-Confirm</span></span>
+<span data-ttu-id="2ccbd-168">Chiede conferma prima di eseguire il cmdlet.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-168">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -393,8 +394,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="87f03-169">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="87f03-169">-WhatIf</span></span>
-<span data-ttu-id="87f03-170">Mostra cosa succede se il cmdlet viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="87f03-170">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="87f03-171">Il cmdlet non viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="87f03-171">The cmdlet is not run.</span></span>
+### <span data-ttu-id="2ccbd-169">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="2ccbd-169">-WhatIf</span></span>
+<span data-ttu-id="2ccbd-170">Mostra cosa accadrebbe se il cmdlet viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-170">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="2ccbd-171">Il cmdlet non viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-171">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -408,31 +409,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="87f03-172">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="87f03-172">CommonParameters</span></span>
-<span data-ttu-id="87f03-173">Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="87f03-173">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="87f03-174">Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="87f03-174">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="2ccbd-172">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="2ccbd-172">CommonParameters</span></span>
+<span data-ttu-id="2ccbd-173">Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-173">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="2ccbd-174">Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.</span><span class="sxs-lookup"><span data-stu-id="2ccbd-174">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="87f03-175">INGRESSI</span><span class="sxs-lookup"><span data-stu-id="87f03-175">INPUTS</span></span>
+## <span data-ttu-id="2ccbd-175">INPUT</span><span class="sxs-lookup"><span data-stu-id="2ccbd-175">INPUTS</span></span>
 
-### <span data-ttu-id="87f03-176">Microsoft. Azure. Commands. Insights. OutputClasses. PSServiceDiagnosticSettings</span><span class="sxs-lookup"><span data-stu-id="87f03-176">Microsoft.Azure.Commands.Insights.OutputClasses.PSServiceDiagnosticSettings</span></span>
+### <span data-ttu-id="2ccbd-176">Microsoft.Azure.Commands.Insights.OutputClasses.PSServiceDiagnosticSettings</span><span class="sxs-lookup"><span data-stu-id="2ccbd-176">Microsoft.Azure.Commands.Insights.OutputClasses.PSServiceDiagnosticSettings</span></span>
 
-### <span data-ttu-id="87f03-177">System. String</span><span class="sxs-lookup"><span data-stu-id="87f03-177">System.String</span></span>
+### <span data-ttu-id="2ccbd-177">System.String</span><span class="sxs-lookup"><span data-stu-id="2ccbd-177">System.String</span></span>
 
-### <span data-ttu-id="87f03-178">System. Boolean</span><span class="sxs-lookup"><span data-stu-id="87f03-178">System.Boolean</span></span>
+### <span data-ttu-id="2ccbd-178">System.Boolean</span><span class="sxs-lookup"><span data-stu-id="2ccbd-178">System.Boolean</span></span>
 
-### <span data-ttu-id="87f03-179">System. Collections. Generic. list ' 1 [[System. String, System. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="87f03-179">System.Collections.Generic.List\`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
+### <span data-ttu-id="2ccbd-179">System.Collections.Generic.List'1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="2ccbd-179">System.Collections.Generic.List\`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
 
-### <span data-ttu-id="87f03-180">System. Nullable ' 1 [[System. Boolean, System. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="87f03-180">System.Nullable\`1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
+### <span data-ttu-id="2ccbd-180">System.Nullable'1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="2ccbd-180">System.Nullable\`1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
 
-### <span data-ttu-id="87f03-181">System. Nullable ' 1 [[System. Int32, System. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="87f03-181">System.Nullable\`1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
+### <span data-ttu-id="2ccbd-181">System.Nullable'1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="2ccbd-181">System.Nullable\`1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
 
-## <span data-ttu-id="87f03-182">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="87f03-182">OUTPUTS</span></span>
+## <span data-ttu-id="2ccbd-182">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="2ccbd-182">OUTPUTS</span></span>
 
-### <span data-ttu-id="87f03-183">Microsoft. Azure. Commands. Insights. OutputClasses. PSServiceDiagnosticSettings</span><span class="sxs-lookup"><span data-stu-id="87f03-183">Microsoft.Azure.Commands.Insights.OutputClasses.PSServiceDiagnosticSettings</span></span>
+### <span data-ttu-id="2ccbd-183">Microsoft.Azure.Commands.Insights.OutputClasses.PSServiceDiagnosticSettings</span><span class="sxs-lookup"><span data-stu-id="2ccbd-183">Microsoft.Azure.Commands.Insights.OutputClasses.PSServiceDiagnosticSettings</span></span>
 
-## <span data-ttu-id="87f03-184">Note</span><span class="sxs-lookup"><span data-stu-id="87f03-184">NOTES</span></span>
+## <span data-ttu-id="2ccbd-184">NOTE</span><span class="sxs-lookup"><span data-stu-id="2ccbd-184">NOTES</span></span>
 
-## <span data-ttu-id="87f03-185">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="87f03-185">RELATED LINKS</span></span>
+## <span data-ttu-id="2ccbd-185">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="2ccbd-185">RELATED LINKS</span></span>
 
-<span data-ttu-id="87f03-186">[Get-AzDiagnosticSetting](./Get-AzDiagnosticSetting.md) 
- [Remove-AzDiagnosticSetting](./Remove-AzDiagnosticSetting.md)</span><span class="sxs-lookup"><span data-stu-id="87f03-186">[Get-AzDiagnosticSetting](./Get-AzDiagnosticSetting.md)
+<span data-ttu-id="2ccbd-186">[Get-AzDiagnosticSetting](./Get-AzDiagnosticSetting.md) 
+ [Remove-AzDiagnosticSetting](./Remove-AzDiagnosticSetting.md)</span><span class="sxs-lookup"><span data-stu-id="2ccbd-186">[Get-AzDiagnosticSetting](./Get-AzDiagnosticSetting.md)
 [Remove-AzDiagnosticSetting](./Remove-AzDiagnosticSetting.md)</span></span>
