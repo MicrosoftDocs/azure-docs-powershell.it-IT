@@ -5,16 +5,16 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementCache.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementCache.md
-ms.openlocfilehash: b43aba64f30c4a1987f2bcd8dec3edb7834f2082
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 26704dd0ff44bf8a9e96dde15ebd52b57fa17ae2
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94020186"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100414561"
 ---
 # Remove-AzApiManagementCache
 
-## Sinossi
+## SYNOPSIS
 Rimuove l'entità cache.
 
 ## SINTASSI
@@ -37,23 +37,23 @@ Remove-AzApiManagementCache -ResourceId <String> [-PassThru] [-DefaultProfile <I
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Remove-AzApiManagementCache** rimuove l'entità cache.
+## DESCRIZIONE
+Il cmdlet **Remove-AzApiManagementCache rimuove** l'entità cache.
 
 ## ESEMPI
 
-### Esempio 1: rimuovere l'entità della cache
+### Esempio 1: Rimuovere l'entità Cache
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Remove-AzApiManagementCache -Context $apimContext -CacheId "centralus"
 ```
 
-Questo cmdlet consente di rimuovere la cache `centralus` dal servizio di gestione API.
+Questo cmdlet rimuove la cache `centralus` dal servizio di gestione api.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -CacheId
-Identificatore della cacheId esistente.
+Identificatore di cacheId esistente.
 Questo parametro è obbligatorio.
 
 ```yaml
@@ -68,7 +68,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Contesto
+### -Context
 Istanza di PsApiManagementContext.
 Questo parametro è obbligatorio.
 
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Se specificato scriverà true nel caso in cui l'operazione venga eseguita correttamente.
+Se specificato, write true se l'operazione riesce.
 Questo parametro è facoltativo.
 Il valore predefinito è false.
 
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-ResourceId del braccio della cache. Questo parametro è obbligatorio.
+Arm ResourceId of Cache. Questo parametro è obbligatorio.
 
 ```yaml
 Type: System.String
@@ -146,8 +146,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confermare
-Richiede la conferma prima di eseguire il cmdlet.
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -162,7 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra cosa succede se il cmdlet viene eseguito.
+Mostra cosa accadrebbe se il cmdlet viene eseguito.
 Il cmdlet non viene eseguito.
 
 ```yaml
@@ -178,26 +178,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### Microsoft. Azure. Commands. ApiManagement. ServiceManagement. Models. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameter
 
 ## OUTPUT
 
-### System. Boolean
+### System.Boolean
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[New-AzApiManagementCache](./New-AzApiManagementCache)
-
-[Set-AzApiManagementCache](./Set-AzApiManagementCache.md)
-
 [Get-AzApiManagementCache](./Get-AzApiManagementCache.md)
+
+[New-AzApiManagementCache](./New-AzApiManagementCache.md)
+
+[Update-AzApiManagementCache](./Update-AzApiManagementCache.md)
