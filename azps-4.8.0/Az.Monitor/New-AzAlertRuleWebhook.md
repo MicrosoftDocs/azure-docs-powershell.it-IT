@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleWebhook.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleWebhook.md
-ms.openlocfilehash: 03459cedbebaeba46331edf7aeb9a7972711912a
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 8410ca475ed17376e01a526512d758c4712f2726
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94191438"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415938"
 ---
 # New-AzAlertRuleWebhook
 
-## Sinossi
-Crea una regola di avviso webhook.
+## SYNOPSIS
+Crea una webhook della regola di avviso.
 
 ## SINTASSI
 
@@ -25,29 +25,29 @@ New-AzAlertRuleWebhook [-ServiceUri] <String> [[-Property] <Hashtable>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
+## DESCRIZIONE
 Il cmdlet **New-AzAlertRuleWebhook** crea una regola di avviso webhook.
 
 ## ESEMPI
 
-### Esempio 1: creare un hook di regole di avviso
+### Esempio 1: Creare una regola di avviso webhook
 ```
 PS C:\>New-AzAlertRuleWebhook -ServiceUri "http://contoso.com"
 ```
 
-Questo comando crea una regola di avviso webhook specificando solo l'URI del servizio.
+Questo comando crea una webhook della regola di avviso specificando solo l'URI del servizio.
 
-### Esempio 2: creare un hook con una proprietà
+### Esempio 2: Creare un webhook con una proprietà
 ```
 PS C:\>$Actual = New-AzAlertRuleWebhook -ServiceUri "http://contoso.com" -Property @{prop1 = 'value1'}
 ```
 
-Questo comando crea una regola di avviso webhook per Contoso.com che contiene una proprietà e la archivia nella variabile $Actual.
+Questo comando crea una webhook della regola di avviso per Contoso.com ha una proprietà e quindi la archivia nella $Actual variabile.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
-Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
+Le credenziali, l'account, il tenant e la sottoscrizione usati per le comunicazioni con Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -61,8 +61,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Property
-Specifica l'elenco di proprietà nel formato @ (Property1 =' value1',....).
+### -Proprietà
+Specifica l'elenco delle proprietà nel formato @(proprietà1 = 'valore1',....).
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -92,23 +92,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
-### System. Collections. Hashtable
+### System.Collections.Hashtable
 
 ## OUTPUT
 
-### Microsoft. Azure. Management. monitor. Management. Models. RuleWebhookAction
+### Microsoft.Azure.Management.Monitor.Management.Models.RuleWebhookAction
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Add-AzLogAlertRule](./Add-AzLogAlertRule.md)
 
 [Add-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
 
