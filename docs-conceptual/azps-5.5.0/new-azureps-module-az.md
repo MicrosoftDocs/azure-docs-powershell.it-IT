@@ -1,17 +1,17 @@
 ---
 title: Introduzione al modulo Azure Az di PowerShell
 description: Introduzione al modulo Az di PowerShell, la scelta consigliata per interagire con Azure, che sostituisce il modulo AzureRM di PowerShell.
-ms.date: 12/1/2020
+ms.date: 02/12/2021
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 9021a1d8fdc73aedb87b17631f8e67cb8ef79166
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: b52b6995fb50a6ce502d42e7df588ca72340a1e7
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100012666"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100409478"
 ---
 # <a name="introducing-the-azure-az-powershell-module"></a>Introduzione al modulo Azure Az di PowerShell
 
@@ -78,7 +78,9 @@ Se gli script sono ancora basati sul modulo AzureRM, sono disponibili diverse ri
 
 Az è il modulo di PowerShell più recente per Azure. Problemi o richieste di funzionalità possono essere registrati direttamente nel [repository GitHub](https://github.com/Azure/azure-powershell) oppure tramite il supporto tecnico Microsoft, se è stato sottoscritto un contratto. Le funzionalità richieste verranno implementate nella versione più recente di Az. Le soluzioni dei problemi critici verranno implementate nelle ultime due versioni di Az.
 
-AzureRM non riceverà più nuovi cmdlet o nuove funzionalità. Tuttavia, il modulo AzureRM è ancora ufficialmente supportato e riceverà correzioni di problemi critici fino a febbraio 2021.
+Poiché i moduli AZ PowerShell ora hanno tutte le funzionalità dei moduli di AzureRM PowerShell e altro ancora, i moduli AzureRM PowerShell verranno ritirati il 29 febbraio 2024.
+
+Per evitare interruzioni del servizio, [aggiornare gli script](https://aka.ms/azpsmigrate) che usano i moduli di PowerShell AzureRM per usare i moduli AZ PowerShell del 29 febbraio 2024. Per aggiornare automaticamente gli script, seguire la [Guida introduttiva](/powershell/azure/quickstart-migrate-azurerm-to-az-automatically).
 
 ## <a name="data-collection"></a>Raccolta dati
 

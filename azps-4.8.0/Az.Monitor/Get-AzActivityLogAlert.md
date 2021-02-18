@@ -6,16 +6,16 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzActivityLogAlert.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzActivityLogAlert.md
-ms.openlocfilehash: 030564f700f399b1880d36e4dac628a9fc3efa35
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 6f171edc1bc9b3d5f4d1f2a5d3ec568fac42929f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94192403"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100409665"
 ---
 # Get-AzActivityLogAlert
 
-## Sinossi
+## SYNOPSIS
 Ottiene una o più risorse di avviso del log attività.
 
 ## SINTASSI
@@ -32,33 +32,33 @@ Get-AzActivityLogAlert [[-ResourceGroupName] <String>] [-DefaultProfile <IAzureC
  [<CommonParameters>]
 ```
 
-## Descrizione
+## DESCRIZIONE
 Il cmdlet **Get-AzActivityLogAlert** ottiene una o più risorse di avviso del log attività.
 
 ## ESEMPI
 
-### Esempio 1: ottenere avvisi del log attività tramite ID abbonamento
+### Esempio 1: Ottenere avvisi di un log attività in base all'ID sottoscrizione
 ```
 PS C:\>Get-AzActivityLogAlert
 ```
 
-Questo comando elenca tutti gli avvisi del log attività per l'abbonamento corrente.
+Questo comando elenca tutti gli avvisi del log attività per la sottoscrizione corrente.
 
-### Esempio 2: ottenere avvisi del log attività per il gruppo di risorse specifico
+### Esempio 2: Ottenere avvisi del log attività per il gruppo di risorse specificato
 ```
 PS C:\>Get-AzActivityLogAlert -ResourceGroupName "Default-activityLogAlerts"
 ```
 
-Questo comando elenca gli avvisi del log attività per il gruppo di risorse specifico.
+Questo comando elenca gli avvisi del log attività per il gruppo di risorse specificato.
 
-### Esempio 3: ottenere un avviso del log attività.
+### Esempio 3: ricevere un avviso del log attività.
 ```
 PS C:\>Get-AzActivityLogAlert -ResourceGroupName "Default-activityLogAlerts" -Name "alert1"
 ```
 
-Questo comando elenca uno (un elenco con un singolo elemento) Avviso del log attività.
+Questo comando elenca un avviso del log attività (un elenco con un singolo elemento).
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
 Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
@@ -75,7 +75,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Nome
+### -Name
 Nome dell'avviso del log attività.
 
 ```yaml
@@ -91,8 +91,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Nome del gruppo di risorse in cui è presente la risorsa di avviso.
-Se nome non è null o vuoto, questo parametro deve contenere una stringa non vuota.
+Nome del gruppo di risorse in cui si trova la risorsa di avviso.
+Se Name non è Null o vuoto, questo parametro deve contenere e una stringa non vuota.
 
 ```yaml
 Type: System.String
@@ -119,23 +119,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSActivityLogAlertResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
 [Set-AzActivityLogAlert](./Set-AzActivityLogAlert.md)
 
-[Update-AzActivityLogAlert](./Update-AzActivityLogAlert.md)
 
 [Remove-AzActivityLogAlert](./Remove-AzActivityLogAlert.md)
 
