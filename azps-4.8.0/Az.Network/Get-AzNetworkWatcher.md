@@ -5,17 +5,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcher.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcher.md
-ms.openlocfilehash: dc8d3a3db0eaa76974e02a62111b022ed81524b0
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: ea4eb4b7c6a8b88d78db809ee85ab0f484a9eba6
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94189043"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410073"
 ---
 # Get-AzNetworkWatcher
 
-## Sinossi
-Ottiene le proprietà di un Watcher di rete
+## SYNOPSIS
+Ottiene le proprietà di un Network Watcher
 
 ## SINTASSI
 
@@ -30,12 +30,12 @@ Get-AzNetworkWatcher [-Name <String>] [-ResourceGroupName <String>] [-DefaultPro
 Get-AzNetworkWatcher -Location <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet Get-AzNetworkWatcher ottiene una o più risorse di monitoraggio di rete Azure.
+## DESCRIZIONE
+Il cmdlet Get-AzNetworkWatcher cmdlet ottiene una o più risorse di Azure Network Watcher.
 
 ## ESEMPI
 
-### Esempio 1: ottenere un Watcher di rete
+### Esempio 1: Ottenere un Network Watcher
 ```
 Get-AzNetworkWatcher -Name NetworkWatcher_westcentralus -ResourceGroup NetworkWatcherRG
 
@@ -47,9 +47,9 @@ Tags              :
 ProvisioningState : Succeeded
 ```
 
-Ottiene il monitoraggio della rete denominato NetworkWatcher_westcentralus nel gruppo di risorse NetworkWatcherRG.
+Ottiene il network watcher denominato NetworkWatcher_westcentralus nel gruppo di risorse NetworkWatcherRG.
 
-### Esempio 2: elencare gli osservatori di rete usando il filtro
+### Esempio 2: Elencare Network Watchers con i filtri
 ```
 Get-AzNetworkWatcher -Name NetworkWatcher*
 
@@ -68,12 +68,12 @@ Tags              :
 ProvisioningState : Succeeded
 ```
 
-Ottiene gli osservatori di rete che iniziano con "NetworkWatcher"
+Recupera Network Watcher che iniziano con "NetworkWatcher"
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -87,8 +87,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Posizione
-Posizione del monitoraggio della rete.
+### -Location
+Posizione del network watcher.
 
 ```yaml
 Type: System.String
@@ -102,8 +102,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Nome
-Nome del Watcher di rete.
+### -Name
+Nome del network watcher.
 
 ```yaml
 Type: System.String
@@ -133,18 +133,18 @@ Accept wildcard characters: True
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
 ### Nessuno
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Network. Models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-## Note
-Parole chiave: Azure, azurerm, ARM, Resource, Management, Manager, Network, networking, Network Watcher 
+## NOTE
+Parole chiave: azure, azurerm, arm, risorsa, gestione, manager, rete, rete, network watcher 
 
 ## COLLEGAMENTI CORRELATI
 
@@ -200,4 +200,4 @@ Parole chiave: Azure, azurerm, ARM, Resource, Management, Manager, Network, netw
 
 [Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)

@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/r
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultAccessPolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultAccessPolicy.md
-ms.openlocfilehash: e084894c26cee1a619f418437986593fe86876bb
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: e19565aa8ae249acf61fce67f0a2b54e20143758
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94033055"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410158"
 ---
 # Remove-AzKeyVaultAccessPolicy
 
-## Sinossi
-Rimuove tutte le autorizzazioni per un utente o un'applicazione da un Vault chiave.
+## SYNOPSIS
+Rimuove tutte le autorizzazioni per un utente o un'applicazione da un vault delle chiavi.
 
 ## SINTASSI
 
@@ -115,14 +115,14 @@ Remove-AzKeyVaultAccessPolicy [-ResourceId] <String> [-EnabledForDeployment] [-E
  [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Remove-AzKeyVaultAccessPolicy** consente di rimuovere tutte le autorizzazioni per un utente o un'applicazione o per tutti gli utenti e le applicazioni da un Vault chiave.
-Anche se si rimuovono tutte le autorizzazioni, il proprietario dell'abbonamento Azure che contiene il Vault chiave può aggiungere le autorizzazioni per il Vault chiave.
-Tieni presente che, anche se specificando il gruppo di risorse è facoltativo per questo cmdlet, devi farlo per migliorare le prestazioni.
+## DESCRIZIONE
+Il cmdlet **Remove-AzKeyVaultAccessPolicy** rimuove tutte le autorizzazioni per un utente o un'applicazione o per tutti gli utenti e le applicazioni da un vault delle chiavi.
+Anche se si rimuovono tutte le autorizzazioni, il proprietario della sottoscrizione di Azure che contiene la chiave vault può aggiungere autorizzazioni al vault delle chiavi.
+Anche se è facoltativo specificare il gruppo di risorse per questo cmdlet, è consigliabile farlo per migliorare le prestazioni.
 
 ## ESEMPI
 
-### Esempio 1: rimuovere le autorizzazioni per un utente
+### Esempio 1: Rimuovere le autorizzazioni per un utente
 ```powershell
 PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -UserPrincipalName 'PattiFuller@contoso.com' -PassThru
 
@@ -158,35 +158,35 @@ Network Rule Set                 :
 Tags                             :
 ```
 
-Questo comando rimuove tutte le autorizzazioni che un utente PattiFuller@contoso.com ha sul Vault chiave denominato Contoso03Vault.  Se viene specificato-PassThru, viene restituito l'oggetto Vault.
+Questo comando rimuove tutte le autorizzazioni di un utente nella chiave PattiFuller@contoso.com vault denominata Contoso03Vault.  Se si imposta -PassThru, viene restituito l'oggetto KeyVault.
 
-### Esempio 2: rimuovere le autorizzazioni per un'applicazione
+### Esempio 2: Rimuovere le autorizzazioni per un'applicazione
 ```powershell
 PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ServicePrincipalName 'http://payroll.contoso.com'
 ```
 
-Questo comando consente di rimuovere tutte le autorizzazioni di un'applicazione nel Vault chiave denominato Contoso03Vault.
-Questo esempio identifica l'applicazione usando il nome dell'entità servizio registrata in Azure Active Directory http://payroll.contoso.com .
+Questo comando rimuove tutte le autorizzazioni di un'applicazione sulla chiave vault denominata Contoso03Vault.
+Questo esempio identifica l'applicazione usando il nome dell'entità servizio registrato in Azure Active `http://payroll.contoso.com` Directory.
 
-### Esempio 3: rimuovere le autorizzazioni per un'applicazione usando l'ID oggetto
+### Esempio 3: Rimuovere le autorizzazioni per un'applicazione usando l'ID oggetto
 ```powershell
 PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ObjectID 34595082-9346-41b6-8d6b-295a2808b8db
 ```
 
-Questo comando consente di rimuovere tutte le autorizzazioni di un'applicazione nel Vault chiave denominato Contoso03Vault.
-Questo esempio identifica l'applicazione dall'ID oggetto dell'entità servizio.
+Questo comando rimuove tutte le autorizzazioni di un'applicazione sulla chiave vault denominata Contoso03Vault.
+Questo esempio identifica l'applicazione in base all'ID oggetto dell'entità servizio.
 
-### Esempio 4: rimuovere le autorizzazioni per il provider di risorse Microsoft. Compute
+### Esempio 4: Rimuovere le autorizzazioni per il provider di risorse Microsoft.Compute
 ```powershell
 PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ResourceGroupName 'Group14' -EnabledForDeployment
 ```
 
-Questo comando rimuove l'autorizzazione per il provider di risorse Microsoft. COMPUTE per ottenere i segreti da Contoso03Vault.
+Questo comando rimuove l'autorizzazione per il provider di risorse Microsoft.Compute per ottenere informazioni segrete da Contoso03Vault.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -ApplicationId
-Specifica l'ID dell'applicazione di cui devono essere rimosse le autorizzazioni
+Specifica l'ID dell'applicazione di cui rimuovere le autorizzazioni
 
 ```yaml
 Type: System.Nullable`1[System.Guid]
@@ -231,7 +231,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForDeployment
-Se specificato, disattiva il recupero dei segreti da questo Vault chiave dal provider di risorse Microsoft. COMPUTE quando viene fatto riferimento nella creazione di risorse.
+Se specificato, disabilita il recupero dei dati nascosti da questo vault della chiave da parte del provider di risorse Microsoft.Compute quando si fa riferimento nella creazione delle risorse.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -246,7 +246,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForDiskEncryption
-Se specificato, disattiva il recupero dei segreti da questo Vault chiave tramite la crittografia di Azure disk.
+Se specificato, disabilita il recupero delle informazioni segrete da questo vault della chiave da parte di Crittografia disco di Azure.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -261,7 +261,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForTemplateDeployment
-Se specificato, disattiva il recupero dei segreti da questo Vault chiave da Gestione risorse di Azure quando viene fatto riferimento nei modelli.
+Se specificato, disabilita il recupero di informazioni segrete da questo vault delle chiavi da parte di Gestione risorse di Azure quando viene fatto riferimento nei modelli.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -276,7 +276,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Oggetto Key Vault.
+Oggetto Vault chiave.
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
@@ -291,7 +291,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-Specifica l'ID oggetto dell'entità di servizio o dell'utente in Azure Active Directory per cui rimuovere le autorizzazioni.
+Specifica l'ID oggetto dell'utente o dell'entità servizio in Azure Active Directory per cui rimuovere le autorizzazioni.
 
 ```yaml
 Type: System.String
@@ -306,7 +306,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Restituisce un oggetto che rappresenta l'elemento con cui si sta lavorando.
+Restituisce un oggetto che rappresenta l'elemento su cui si sta lavorando.
 Per impostazione predefinita, questo cmdlet non genera alcun output.
 
 ```yaml
@@ -322,8 +322,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Specifica il nome del gruppo di risorse associato alla volta chiave in cui vengono modificati i criteri di accesso.
-Se non viene specificato, questo cmdlet cerca il Vault chiave nell'abbonamento corrente.
+Specifica il nome del gruppo di risorse associato alla chiave vault di cui si stanno modificando i criteri di accesso.
+Se non è specificato, questo cmdlet cerca il vault delle chiavi nella sottoscrizione corrente.
 
 ```yaml
 Type: System.String
@@ -338,7 +338,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-ID risorsa di un Vault.
+ID risorsa KeyVault.
 
 ```yaml
 Type: System.String
@@ -383,9 +383,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -VAULTNAME
-Specifica il nome del Vault chiave.
-Questo cmdlet consente di rimuovere le autorizzazioni per il Vault chiave specificato da questo parametro.
+### -VaultName
+Specifica il nome del vault della chiave.
+Questo cmdlet rimuove le autorizzazioni per il vault delle chiavi specificato da questo parametro.
 
 ```yaml
 Type: System.String
@@ -399,8 +399,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confermare
-Richiede la conferma prima di eseguire il cmdlet.
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -415,7 +415,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra cosa succede se il cmdlet viene eseguito.
+Mostra cosa accadrebbe se il cmdlet viene eseguito.
 Il cmdlet non viene eseguito.
 
 ```yaml
@@ -431,19 +431,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
 
-## INGRESSI
+## INPUT
 
-### Microsoft. Azure. Commands. Vault. Models. PSKeyVault
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Vault. Models. PSKeyVault
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
