@@ -6,17 +6,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/get-az
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlServerAdvancedThreatProtectionSettings.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlServerAdvancedThreatProtectionSettings.md
-ms.openlocfilehash: 1895fe45f51782cc1a3a54d8b2d0f2da752c2990
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 38388f4a2d1d88ae668b8a6384ca228a9436ac68
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93856905"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405908"
 ---
 # Get-AzSqlServerAdvancedThreatProtectionSettings
 
-## Sinossi
-Ottiene le impostazioni avanzate per la protezione delle minacce per un server.
+## SYNOPSIS
+Ottiene le impostazioni di Protezione dalle minacce avanzate per un server.
 
 ## SINTASSI
 
@@ -25,13 +25,13 @@ Get-AzSqlServerAdvancedThreatProtectionSettings -ServerName <String> [-ResourceG
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet **Get-AzSqlServerAdvancedThreatProtectionSettings** ottiene le impostazioni avanzate per la protezione delle minacce di un server SQL di Azure.
-Per usare questo cmdlet, specificare i parametri *ResourceGroupName* e *ServerName* per identificare il server per cui questo cmdlet ottiene le impostazioni.
+## DESCRIZIONE
+Il cmdlet **Get-AzSqlServerAdvancedThreatProtectionSettings** ottiene le impostazioni di Protezione avanzata dalle minacce di un server SQL Azure.
+Per usare questo cmdlet, specificare i *parametri ResourceGroupName* e *ServerName* per identificare il server per cui il cmdlet ottiene le impostazioni.
 
 ## ESEMPI
 
-### Esempio 1: ottenere le impostazioni avanzate di protezione dalle minacce per un server
+### Esempio 1: Ottenere le impostazioni di Protezione avanzata dalle minacce per un server
 ```
 PS C:\>Get-AzSqlServerAdvancedThreatProtectionSettings -ResourceGroupName "ResourceGroup11" -ServerName "Server01"
 ResourceGroupName            : ResourceGroup11
@@ -44,13 +44,13 @@ ExcludedDetectionTypes       : {}
 RetentionInDays              : 0
 ```
 
-Questo comando consente di ottenere le impostazioni avanzate di protezione dalle minacce per un server denominato Server01.
-Il server viene assegnato al gruppo di risorse ResourceGroup11.
+Questo comando recupera le impostazioni di Protezione avanzata dalle minacce per un server denominato Server01.
+Il server è assegnato al gruppo di risorse ResourceGroup11.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -DefaultProfile
-Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
+Le credenziali, l'account, il tenant e la sottoscrizione usati per le comunicazioni con Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -79,7 +79,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Nomeserver
+### -ServerName
 Specifica il nome del server.
 
 ```yaml
@@ -94,8 +94,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confermare
-Richiede la conferma prima di eseguire il cmdlet.
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -110,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra cosa succede se il cmdlet viene eseguito.
+Mostra cosa accadrebbe se il cmdlet viene eseguito.
 Il cmdlet non viene eseguito.
 
 ```yaml
@@ -126,22 +126,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### System. String
+### System.String
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. SQL. ThreatDetection. Model. ServerAdvancedThreatProtectionSettingsModel
+### Microsoft.Azure.Commands.Sql.ThreatDetection.Model.ServerAdvancedThreatProtectionSettingsModel
 
-## Note
+## NOTE
 
 ## COLLEGAMENTI CORRELATI
 
-[Remove-AzSqlDatabaseAdvancedThreatProtectionSettings](./Remove-AzSqlDatabaseAdvancedThreatProtectionSettings.md)
 
-[Documentazione di database SQL](https://docs.microsoft.com/azure/sql-database/)
+[SQL documentazione del database](https://docs.microsoft.com/azure/sql-database/)
 
 

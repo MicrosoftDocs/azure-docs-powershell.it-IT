@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/te
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Test-AzNetworkWatcherConnectivity.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Test-AzNetworkWatcherConnectivity.md
-ms.openlocfilehash: b6c33809c1b738db47407ec65352adfcfb001957
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 2fb702a0382e13b3ca5af2a5cad95b72ba2e63d2
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94019054"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100408798"
 ---
 # Test-AzNetworkWatcherConnectivity
 
-## Sinossi
-Restituisce le informazioni di connettività per una VM di origine specificata e una destinazione.
+## SYNOPSIS
+Restituisce le informazioni sulla connettività per una macchina virtuale di origine specificata e una destinazione.
 
 ## SINTASSI
 
-### SetByResource (impostazione predefinita)
+### SetByResource (Default)
 ```
 Test-AzNetworkWatcherConnectivity -NetworkWatcher <PSNetworkWatcher> -SourceId <String> [-SourcePort <Int32>]
  [-DestinationId <String>] [-DestinationAddress <String>] [-DestinationPort <Int32>]
@@ -43,12 +43,12 @@ Test-AzNetworkWatcherConnectivity -Location <String> -SourceId <String> [-Source
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Descrizione
-Il cmdlet Test-AzNetworkWatcherConnectivity restituisce le informazioni di connettività per una VM di origine specificata e una destinazione. Se non è possibile stabilire la connettività tra l'origine e la destinazione, il cmdlet restituisce i dettagli sul problema.
+## DESCRIZIONE
+Il Test-AzNetworkWatcherConnectivity cmdlet restituisce le informazioni sulla connettività per una macchina virtuale di origine specificata e una destinazione. Se non è possibile stabilire la connettività tra l'origine e la destinazione, il cmdlet restituisce dettagli sul problema.
 
 ## ESEMPI
 
-### Esempio 1: testare la connettività di Network Watcher da una VM a un sito Web
+### Esempio 1: Testare la connettività di Network Watcher da una macchina virtuale a un sito Web
 ```
 Test-AzNetworkWatcherConnectivity -NetworkWatcherName NetworkWatcher -ResourceGroupName NetworkWatcherRG -SourceId "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/ContosoRG/providers/Microsoft.Compute/virtualMachines/MultiTierApp0" -DestinationAddress "bing.com" -DestinationPort 80
 
@@ -81,12 +81,12 @@ Hops             : [
                    ]
 ```
 
-In questo esempio verifichiamo la connettività da una VM in Azure a www.bing.com.
+In questo esempio viene verificata la connettività da una macchina virtuale in Azure www.bing.com.
 
-## PARAMETRI
+## PARAMETERS
 
 ### -AsJob
-Esegui cmdlet in background
+Eseguire il cmdlet in background
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -101,7 +101,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -116,7 +116,7 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationAddress
-Indirizzo IP o URI la risorsa a cui verrà eseguito un tentativo di connessione.
+Indirizzo IP o URI della risorsa a cui verrà eseguito un tentativo di connessione.
 
 ```yaml
 Type: System.String
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationPort
-Porta in cui verrà eseguito il controllo della connettività.
+Porta su cui verrà eseguita la verifica della connettività.
 
 ```yaml
 Type: System.Int32
@@ -160,8 +160,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Posizione
-Posizione del monitoraggio della rete.
+### -Location
+Posizione del network watcher.
 
 ```yaml
 Type: System.String
@@ -176,7 +176,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcher
-Risorsa Watcher di rete.
+Risorsa Network Watcher.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -206,7 +206,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProtocolConfiguration
-Configurazione del protocollo in cui verrà eseguito il controllo della connettività.
+Configurazione del protocollo su cui verrà eseguita la verifica della connettività.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcherProtocolConfiguration
@@ -221,7 +221,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Nome del gruppo di risorse di Watcher di rete.
+Nome del gruppo di risorse Network Watcher.
 
 ```yaml
 Type: System.String
@@ -236,7 +236,7 @@ Accept wildcard characters: False
 ```
 
 ### -SourceId
-ID della risorsa da cui verrà avviata una verifica della connettività.
+ID della risorsa da cui verrà avviato un controllo della connettività.
 
 ```yaml
 Type: System.String
@@ -251,7 +251,7 @@ Accept wildcard characters: False
 ```
 
 ### -SourcePort
-La porta di origine da cui verrà eseguito un controllo della connettività.
+Porta di origine da cui verrà eseguito un controllo della connettività.
 
 ```yaml
 Type: System.Int32
@@ -266,22 +266,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable. Per altre informazioni, Vedi about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## INGRESSI
+## INPUT
 
-### Microsoft. Azure. Commands. Network. Models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-### System. String
+### System.String
 
-### System. Int32
+### System.Int32
 
 ## OUTPUT
 
-### Microsoft. Azure. Commands. Network. Models. PSConnectivityInformation
+### Microsoft.Azure.Commands.Network.Models.PSConnectivityInformation
 
-## Note
-Parole chiave: Azure, azurerm, ARM, Resource, Connectivity, Management, Manager, Network, networking, Network Watcher
+## NOTE
+Parole chiave: azure, azurerm, arm, risorsa, connettività, gestione, manager, rete, rete, network watcher
 
 ## COLLEGAMENTI CORRELATI
 
@@ -314,5 +314,5 @@ Parole chiave: Azure, azurerm, ARM, Resource, Connectivity, Management, Manager,
  [Get-AzNetworkWatcherReachabilityReport](./Get-AzNetworkWatcherReachabilityReport.md) 
  [Get-AzNetworkWatcherReachabilityProvidersList](./Get-AzNetworkWatcherReachabilityProvidersList.md) 
  [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md) 
- [Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport) 
- [Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+ [Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md) 
+ [Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
