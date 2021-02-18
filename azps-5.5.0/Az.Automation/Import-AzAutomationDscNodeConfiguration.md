@@ -1,0 +1,210 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Automation.dll-Help.xml
+Module Name: Az.Automation
+ms.assetid: CC9D74BB-DFB2-41F3-B5CF-B265C549EC33
+online version: https://docs.microsoft.com/en-us/powershell/module/az.automation/import-azautomationdscnodeconfiguration
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Import-AzAutomationDscNodeConfiguration.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Import-AzAutomationDscNodeConfiguration.md
+ms.openlocfilehash: 3036b02d280542ffa4c8eea85dafed2da8eb5e28
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100201102"
+---
+# Import-AzAutomationDscNodeConfiguration
+
+## SYNOPSIS
+Importa un documento MOF come configurazione nodo DSC nell'automazione.
+
+## SINTASSI
+
+```
+Import-AzAutomationDscNodeConfiguration -Path <String> -ConfigurationName <String> [-Force]
+ [-ResourceGroupName] <String> [-AutomationAccountName] <String> [-DefaultProfile <IAzureContextContainer>]
+ [-IncrementNodeConfigurationBuild] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIZIONE
+Il cmdlet **Import-AzAutomationDscConfiguration** importa un documento di configurazione MOF (Managed Object Format) in Automazione di Azure come configurazione del nodo DSC (Desired State Configuration).
+Specificare il percorso di un file con estensione mof.
+
+## ESEMPI
+
+### Esempio 1: Importare una configurazione nodo DSC nell'automazione
+```
+PS C:\>Import-AzAutomationDscNodeConfiguration -AutomationAccountName "Contoso17" -ResourceGroupName "ResourceGroup01" -ConfigurationName "ContosoConfiguration" -Path "C:\DSC\webserver.mof" -Force
+```
+
+Questo comando importa una configurazione nodo DSC dal file denominato webserver.mof nell'account di automazione denominato Contoso17, nella configurazione DSC ContosoConfiguration.
+Il comando specifica il *parametro Force.*
+Se esiste una configurazione nodo DSC esistente denominata ContosoConfiguration.webserver, questo comando la sostituisce.
+
+### Esempio 2: importare una configurazione nodo DSC nell'automazione e creare una nuova versione della build e non sovrascrivere la nodeConfiguration esistente.
+```
+PS C:\>Import-AzAutomationDscNodeConfiguration -AutomationAccountName "Contoso17" -ResourceGroupName "ResourceGroup01" -ConfigurationName "ContosoConfiguration" -Path "C:\DSC\webserver.mof" -IncrementNodeConfigurationBuild
+```
+
+Questo comando importa una configurazione nodo DSC dal file denominato webserver.mof nell'account di automazione denominato Contoso17, nella configurazione DSC ContosoConfiguration.
+Il comando specifica il *parametro Force.*
+Se è presente una configurazione nodo DSC esistente denominata ContosoConfiguration.webserver, questo comando aggiunge una nuova versione di build con il nome ContosoConfiguration[2].webserver.
+
+## PARAMETERS
+
+### -AutomationAccountName
+Specifica il nome dell'account di automazione in cui questo cmdlet importa una configurazione del nodo DSC.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ConfigurationName
+Specifica il nome di una configurazione DSC nell'automazione da usare come spazio dei nomi e contenitore per la configurazione del nodo da importare.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Le credenziali, l'account, il tenant e la sottoscrizione usati per le comunicazioni con Azure
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Force
+Indica che questo cmdlet sostituisce la configurazione di un nodo DSC esistente nell'automazione.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IncrementNodeConfigurationBuild
+Crea una nuova versione della build Node Configuration.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Path
+Specifica il percorso del documento di configurazione MOF importato da questo cmdlet.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Specifica il nome di un gruppo di risorse per cui questo cmdlet importa una configurazione del nodo DSC.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Mostra cosa accadrebbe se il cmdlet viene eseguito.
+Il cmdlet non viene eseguito.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## INPUT
+
+### System.String
+
+## OUTPUT
+
+### Microsoft.Azure.Commands.Automation.Model.NodeConfiguration
+
+## NOTE
+
+## COLLEGAMENTI CORRELATI
+
+[Export-AzAutomationDscConfiguration](./Export-AzAutomationDscConfiguration.md)
+
+[Get-AzAutomationDscConfiguration](./Get-AzAutomationDscConfiguration.md)
+
+
