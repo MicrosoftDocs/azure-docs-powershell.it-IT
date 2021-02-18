@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/a
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Add-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Add-AzKeyVaultKey.md
-ms.openlocfilehash: da6460bf0a1126a11345336e4d55c300728bbd66
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 61125ae7d9fa78ec9f121cc9b60610258ad2c67c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100203839"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405398"
 ---
 # Add-AzKeyVaultKey
 
@@ -119,7 +119,7 @@ Usare questo cmdlet per aggiungere le chiavi usando uno dei metodi seguenti:
 - Importare una chiave da un file PFX nel computer nei moduli di sicurezza hardware (HMS) nel servizio Vault delle chiavi.
 Per una di queste operazioni, è possibile fornire attributi chiave o accettare le impostazioni predefinite.
 Se si crea o si importa una chiave con lo stesso nome di una chiave esistente nel vault delle chiavi, la chiave originale viene aggiornata con i valori specificati per la nuova chiave. È possibile accedere ai valori precedenti usando l'URI specifico della versione per tale versione della chiave. Per informazioni sulle versioni principali e sulla struttura DELL'URI, vedere [Informazioni sulle](http://go.microsoft.com/fwlink/?linkid=518560) chiavi e i segreti nella documentazione dell'API REST del Vault delle chiavi.
-Nota: per importare una chiave dal modulo di sicurezza hardware, è necessario generare prima un pacchetto BYOK (un file con estensione byok) usando il set di strumenti BYOK del Vault delle chiavi di Azure. Per altre informazioni, vedere Come generare e trasferire le chiavi HSM-Protected [per il Vault delle chiavi di Azure.](http://go.microsoft.com/fwlink/?LinkId=522252)
+Nota: per importare una chiave dal modulo di sicurezza hardware, è necessario generare prima un pacchetto BYOK (un file con estensione byok) usando il set di strumenti BYOK del Vault delle chiavi di Azure. Per altre informazioni, vedere Come generare e trasferire le chiavi [HSM-Protected per il Vault delle chiavi di Azure.](http://go.microsoft.com/fwlink/?LinkId=522252)
 Come procedura consigliata, eseguire il backup della chiave dopo che è stata creata o aggiornata, usando il cmdlet Backup-AzKeyVaultKey. Non sono disponibili funzionalità di annullamento dell'eliminazione, quindi se si elimina accidentalmente la chiave o la si elimina e quindi si cambia idea, la chiave non può essere recuperata a meno che non si abbia un backup che è possibile ripristinare.
 
 ## ESEMPI
@@ -141,7 +141,7 @@ Purge Disabled : False
 Tags           :
 ```
 
-Questo comando crea una chiave protetta da software denominata ITSoftware nella chiave vault denominata Contoso.
+Questo comando crea una chiave protetta dal software denominata ITSoftware nella chiave vault denominata Contoso.
 
 ### Esempio 2: Creare una chiave protetta da HSM
 ```powershell
@@ -208,9 +208,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-Questo comando importa la chiave denominata ITByok dalla posizione specificata *dal parametro KeyFilePath.* La chiave importata è una chiave protetta da HSM.
+Questo comando importa la chiave denominata ITByok dalla posizione specificata dal parametro *KeyFilePath.* La chiave importata è una chiave protetta da HSM.
 Per importare una chiave dal proprio modulo di sicurezza hardware, è necessario generare prima un pacchetto BYOK (un file con estensione byok) usando il set di strumenti BYOK del Vault delle chiavi di Azure.
-Per altre informazioni, vedere Come generare e trasferire le chiavi HSM-Protected [per il Vault delle chiavi di Azure.](http://go.microsoft.com/fwlink/?LinkId=522252)
+Per altre informazioni, vedere Come generare e trasferire le chiavi [HSM-Protected per il Vault delle chiavi di Azure.](http://go.microsoft.com/fwlink/?LinkId=522252)
 
 ### Esempio 5: Importare una chiave protetta da software
 ```powershell
@@ -258,8 +258,8 @@ Tags           : Name        Value
 
 Il primo comando converte una stringa in una stringa sicura usando il cmdlet **ConvertTo-SecureString** e quindi archivia la stringa nella $Password variabile.
 Il secondo comando crea un **oggetto DateTime** usando il cmdlet **Get-Date** e quindi archivia l'oggetto nella $Expires variabile.
-Il terzo comando crea la variabile $tags per impostare tag di gravità elevata e per l'IT.
-Il comando finale importa una chiave come chiave HSM dalla posizione specificata. Il comando specifica la data di scadenza archiviata in $Expires e la password archiviate in $Password e applica i tag archiviati in $tags.
+Il terzo comando crea la $tags variabile per impostare tag di gravità elevata e it.
+Il comando finale importa una chiave come chiave HSM dalla posizione specificata. Il comando specifica la scadenza archiviata in $Expires e la password archiviati in $Password e applica i tag archiviati in $tags.
 
 ### Esempio 7: Generare una chiave di exchange chiave (KEK) per la caratteristica BYOK (Bring Your Own Key)
 
@@ -397,7 +397,7 @@ Accept wildcard characters: False
 ```
 
 ### -HsmResourceId
-ID risorsa dell'HSM.
+ID risorsa di HSM.
 
 ```yaml
 Type: System.String
@@ -463,7 +463,7 @@ Accept wildcard characters: False
 ### -KeyOps
 Specifica una matrice di operazioni che possono essere eseguite usando la chiave aggiunta da questo cmdlet.
 Se non si specifica questo parametro, è possibile eseguire tutte le operazioni.
-I valori accettabili per questo parametro sono un elenco di operazioni chiave separate da virgole, come definito dalla specifica [JSON Web Key (JWK):](http://go.microsoft.com/fwlink/?LinkID=613300)
+I valori accettabili per questo parametro sono un elenco di operazioni chiave separate da virgole, come definito dalla specifica della chiave [Web JSON (JWK):](http://go.microsoft.com/fwlink/?LinkID=613300)
 - crittografare
 - decrittografare
 - wrapKey
@@ -485,7 +485,7 @@ Accept wildcard characters: False
 ```
 
 ### -KeyType
-Specifica il tipo di chiave. Quando si importano chiavi BYOK, per impostazione predefinita viene visualizzato "RSA".
+Specifica il tipo di chiave. Quando si importano le chiavi BYOK, per impostazione predefinita viene visualizzato "RSA".
 
 ```yaml
 Type: System.String
@@ -655,4 +655,3 @@ Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable,
 
 [Remove-AzKeyVaultKey](./Remove-AzKeyVaultKey.md)
 
-[Set-AzKeyVaultKeyAttribute](./Set-AzKeyVaultKeyAttribute.md)
