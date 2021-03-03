@@ -5,21 +5,21 @@ online version: ''
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/ServiceFabric/Commands.ServiceFabric/help/Update-AzureRmServiceFabricDurability.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/ServiceFabric/Commands.ServiceFabric/help/Update-AzureRmServiceFabricDurability.md
-ms.openlocfilehash: 1c62c637324f19088dfffcfb4c8defae0a056b4c
-ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.openlocfilehash: b056e5328c24270df6a95e33b079e7b907f29fa3
+ms.sourcegitcommit: 608289d079b819df2b8d1a2f7935cc500367a312
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "93512927"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685021"
 ---
-# <span data-ttu-id="1311d-101">Update-AzureRmServiceFabricDurability</span><span class="sxs-lookup"><span data-stu-id="1311d-101">Update-AzureRmServiceFabricDurability</span></span>
+# <span data-ttu-id="b60e8-101">Update-AzureRmServiceFabricDurability</span><span class="sxs-lookup"><span data-stu-id="b60e8-101">Update-AzureRmServiceFabricDurability</span></span>
 
-## <span data-ttu-id="1311d-102">Sinossi</span><span class="sxs-lookup"><span data-stu-id="1311d-102">SYNOPSIS</span></span>
-<span data-ttu-id="1311d-103">Aggiornare il livello di durabilità o VmSku di un tipo di nodo nel cluster.</span><span class="sxs-lookup"><span data-stu-id="1311d-103">Update the durability tier or VmSku of a node type in the cluster.</span></span>
+## <span data-ttu-id="b60e8-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="b60e8-102">SYNOPSIS</span></span>
+<span data-ttu-id="b60e8-103">Aggiornare il livello di durabilità o VmSKU di un tipo di nodo nel cluster.</span><span class="sxs-lookup"><span data-stu-id="b60e8-103">Update the durability tier or VmSku of a node type in the cluster.</span></span> <span data-ttu-id="b60e8-104">Inoltre aggiornerà il livello di durabilità nell'estensione Service Fabric VM nel set di scala delle macchine virtuali associato.</span><span class="sxs-lookup"><span data-stu-id="b60e8-104">It will also update the durability tier in the Service Fabric VM extension on the associated Virtual Machine Scale Set.</span></span>
 
 [!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
-## <span data-ttu-id="1311d-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="1311d-104">SYNTAX</span></span>
+## <span data-ttu-id="b60e8-105">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="b60e8-105">SYNTAX</span></span>
 
 ```
 Update-AzureRmServiceFabricDurability [-ResourceGroupName] <String> [-Name] <String> -NodeType <String>
@@ -27,22 +27,22 @@ Update-AzureRmServiceFabricDurability [-ResourceGroupName] <String> [-Name] <Str
  [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="1311d-105">Descrizione</span><span class="sxs-lookup"><span data-stu-id="1311d-105">DESCRIPTION</span></span>
-<span data-ttu-id="1311d-106">Usare **Update-AzureRmServiceFabricDurability** per aggiornare la durabilità o il SKU del cluster.</span><span class="sxs-lookup"><span data-stu-id="1311d-106">Use **Update-AzureRmServiceFabricDurability** to update durability or SKU of the cluster.</span></span>
+## <span data-ttu-id="b60e8-106">DESCRIZIONE</span><span class="sxs-lookup"><span data-stu-id="b60e8-106">DESCRIPTION</span></span>
+<span data-ttu-id="b60e8-107">Usare **Update-AzureRmServiceFabricDurability per** aggiornare la durabilità o SKU del cluster.</span><span class="sxs-lookup"><span data-stu-id="b60e8-107">Use **Update-AzureRmServiceFabricDurability** to update durability or SKU of the cluster.</span></span>
 
-## <span data-ttu-id="1311d-107">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="1311d-107">EXAMPLES</span></span>
+## <span data-ttu-id="b60e8-108">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="b60e8-108">EXAMPLES</span></span>
 
-### <span data-ttu-id="1311d-108">Esempio 1</span><span class="sxs-lookup"><span data-stu-id="1311d-108">Example 1</span></span>
+### <span data-ttu-id="b60e8-109">Esempio 1</span><span class="sxs-lookup"><span data-stu-id="b60e8-109">Example 1</span></span>
 ```
 PS c:> Update-AzureRmServiceFabricDurability -ResourceGroupName 'Group1' -Name 'Contoso01SFCluster' -DurabilityLevel Silver -NodeType nt1
 ```
 
-<span data-ttu-id="1311d-109">Questo comando modifica il livello di durabilità di NodeType ' NT1' in Silver.</span><span class="sxs-lookup"><span data-stu-id="1311d-109">This command changes durability tier of the NodeType 'nt1' to silver.</span></span>
+<span data-ttu-id="b60e8-110">Questo comando modifica il livello di durata del nodeType 'nt1' in silver.</span><span class="sxs-lookup"><span data-stu-id="b60e8-110">This command changes durability tier of the NodeType 'nt1' to silver.</span></span>
 
-## <span data-ttu-id="1311d-110">PARAMETRI</span><span class="sxs-lookup"><span data-stu-id="1311d-110">PARAMETERS</span></span>
+## <span data-ttu-id="b60e8-111">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="b60e8-111">PARAMETERS</span></span>
 
-### <span data-ttu-id="1311d-111">-DurabilityLevel</span><span class="sxs-lookup"><span data-stu-id="1311d-111">-DurabilityLevel</span></span>
-<span data-ttu-id="1311d-112">Specificare il livello di durabilità.</span><span class="sxs-lookup"><span data-stu-id="1311d-112">Specify durability level.</span></span>
+### <span data-ttu-id="b60e8-112">-DurabilityLevel</span><span class="sxs-lookup"><span data-stu-id="b60e8-112">-DurabilityLevel</span></span>
+<span data-ttu-id="b60e8-113">Specificare il livello di durabilità.</span><span class="sxs-lookup"><span data-stu-id="b60e8-113">Specify durability level.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ServiceFabric.Models.DurabilityLevel
@@ -57,8 +57,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1311d-113">-Nome</span><span class="sxs-lookup"><span data-stu-id="1311d-113">-Name</span></span>
-<span data-ttu-id="1311d-114">Specificare il nome del cluster.</span><span class="sxs-lookup"><span data-stu-id="1311d-114">Specify the name of the cluster.</span></span>
+### <span data-ttu-id="b60e8-114">-Name</span><span class="sxs-lookup"><span data-stu-id="b60e8-114">-Name</span></span>
+<span data-ttu-id="b60e8-115">Specificare il nome del cluster.</span><span class="sxs-lookup"><span data-stu-id="b60e8-115">Specify the name of the cluster.</span></span>
 
 ```yaml
 Type: System.String
@@ -72,8 +72,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1311d-115">-NodeType</span><span class="sxs-lookup"><span data-stu-id="1311d-115">-NodeType</span></span>
-<span data-ttu-id="1311d-116">Specificare il nome del tipo di nodo Service Fabric.</span><span class="sxs-lookup"><span data-stu-id="1311d-116">Specify Service Fabric node type name.</span></span>
+### <span data-ttu-id="b60e8-116">-NodeType</span><span class="sxs-lookup"><span data-stu-id="b60e8-116">-NodeType</span></span>
+<span data-ttu-id="b60e8-117">Specificare il nome del tipo di nodo Service Fabric.</span><span class="sxs-lookup"><span data-stu-id="b60e8-117">Specify Service Fabric node type name.</span></span>
 
 ```yaml
 Type: System.String
@@ -87,8 +87,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1311d-117">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="1311d-117">-ResourceGroupName</span></span>
-<span data-ttu-id="1311d-118">Specifica il nome del gruppo di risorse.</span><span class="sxs-lookup"><span data-stu-id="1311d-118">Specifies the name of the resource group.</span></span>
+### <span data-ttu-id="b60e8-118">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="b60e8-118">-ResourceGroupName</span></span>
+<span data-ttu-id="b60e8-119">Specifica il nome del gruppo di risorse.</span><span class="sxs-lookup"><span data-stu-id="b60e8-119">Specifies the name of the resource group.</span></span>
 
 ```yaml
 Type: System.String
@@ -102,8 +102,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1311d-119">-SKU</span><span class="sxs-lookup"><span data-stu-id="1311d-119">-Sku</span></span>
-<span data-ttu-id="1311d-120">Specificare l'USK del tipo di nodo.</span><span class="sxs-lookup"><span data-stu-id="1311d-120">Specify the SKU of the node type.</span></span>
+### <span data-ttu-id="b60e8-120">-SKU</span><span class="sxs-lookup"><span data-stu-id="b60e8-120">-Sku</span></span>
+<span data-ttu-id="b60e8-121">Specificare lo SKU del tipo di nodo.</span><span class="sxs-lookup"><span data-stu-id="b60e8-121">Specify the SKU of the node type.</span></span>
 
 ```yaml
 Type: System.String
@@ -117,8 +117,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1311d-121">-Confermare</span><span class="sxs-lookup"><span data-stu-id="1311d-121">-Confirm</span></span>
-<span data-ttu-id="1311d-122">Richiede la conferma prima di eseguire il cmdlet.</span><span class="sxs-lookup"><span data-stu-id="1311d-122">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="b60e8-122">-Confirm</span><span class="sxs-lookup"><span data-stu-id="b60e8-122">-Confirm</span></span>
+<span data-ttu-id="b60e8-123">Chiede conferma prima di eseguire il cmdlet.</span><span class="sxs-lookup"><span data-stu-id="b60e8-123">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -132,8 +132,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1311d-123">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="1311d-123">-WhatIf</span></span>
-<span data-ttu-id="1311d-124">Mostra cosa succede se il cmdlet viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="1311d-124">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="1311d-125">Il cmdlet non viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="1311d-125">The cmdlet is not run.</span></span>
+### <span data-ttu-id="b60e8-124">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="b60e8-124">-WhatIf</span></span>
+<span data-ttu-id="b60e8-125">Mostra cosa accadrebbe se il cmdlet viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="b60e8-125">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="b60e8-126">Il cmdlet non viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="b60e8-126">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -147,8 +147,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1311d-126">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="1311d-126">-DefaultProfile</span></span>
-<span data-ttu-id="1311d-127">Le credenziali, l'account, il tenant e l'abbonamento usati per la comunicazione con Azure.</span><span class="sxs-lookup"><span data-stu-id="1311d-127">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="b60e8-127">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="b60e8-127">-DefaultProfile</span></span>
+<span data-ttu-id="b60e8-128">Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.</span><span class="sxs-lookup"><span data-stu-id="b60e8-128">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
@@ -162,19 +162,19 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1311d-128">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="1311d-128">CommonParameters</span></span>
-<span data-ttu-id="1311d-129">Questo cmdlet supporta i parametri comuni:-debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose,-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="1311d-129">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="1311d-130">Per altre informazioni, Vedi about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="1311d-130">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="b60e8-129">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="b60e8-129">CommonParameters</span></span>
+<span data-ttu-id="b60e8-130">Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="b60e8-130">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="b60e8-131">Per altre informazioni, vedere about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="b60e8-131">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="1311d-131">INGRESSI</span><span class="sxs-lookup"><span data-stu-id="1311d-131">INPUTS</span></span>
+## <span data-ttu-id="b60e8-132">INPUT</span><span class="sxs-lookup"><span data-stu-id="b60e8-132">INPUTS</span></span>
 
-### <span data-ttu-id="1311d-132">Microsoft. Azure. Commands. ServiceFabric. Models. DurabilityLevel</span><span class="sxs-lookup"><span data-stu-id="1311d-132">Microsoft.Azure.Commands.ServiceFabric.Models.DurabilityLevel</span></span>
-<span data-ttu-id="1311d-133">System. String</span><span class="sxs-lookup"><span data-stu-id="1311d-133">System.String</span></span>
+### <span data-ttu-id="b60e8-133">Microsoft.Azure.Commands.ServiceFabric.Models.DurabilityLevel</span><span class="sxs-lookup"><span data-stu-id="b60e8-133">Microsoft.Azure.Commands.ServiceFabric.Models.DurabilityLevel</span></span>
+<span data-ttu-id="b60e8-134">System.String</span><span class="sxs-lookup"><span data-stu-id="b60e8-134">System.String</span></span>
 
-## <span data-ttu-id="1311d-134">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="1311d-134">OUTPUTS</span></span>
+## <span data-ttu-id="b60e8-135">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="b60e8-135">OUTPUTS</span></span>
 
-### <span data-ttu-id="1311d-135">Microsoft. Azure. Commands. ServiceFabric. Models. PsCluster</span><span class="sxs-lookup"><span data-stu-id="1311d-135">Microsoft.Azure.Commands.ServiceFabric.Models.PsCluster</span></span>
+### <span data-ttu-id="b60e8-136">Microsoft.Azure.Commands.ServiceFabric.Models.PsCluster</span><span class="sxs-lookup"><span data-stu-id="b60e8-136">Microsoft.Azure.Commands.ServiceFabric.Models.PsCluster</span></span>
 
-## <span data-ttu-id="1311d-136">Note</span><span class="sxs-lookup"><span data-stu-id="1311d-136">NOTES</span></span>
+## <span data-ttu-id="b60e8-137">NOTE</span><span class="sxs-lookup"><span data-stu-id="b60e8-137">NOTES</span></span>
 
-## <span data-ttu-id="1311d-137">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="1311d-137">RELATED LINKS</span></span>
+## <span data-ttu-id="b60e8-138">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="b60e8-138">RELATED LINKS</span></span>
 
