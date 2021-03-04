@@ -1,0 +1,201 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.CosmosDB.dll-Help.xml
+Module Name: Az.CosmosDB
+online version: https://docs.microsoft.com/powershell/module/az.cosmosdb/remove-azcosmosdbmongodbcollection
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CosmosDB/CosmosDB/help/Remove-AzCosmosDBMongoDBCollection.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CosmosDB/CosmosDB/help/Remove-AzCosmosDBMongoDBCollection.md
+ms.openlocfilehash: 1b4d205460992843e6801ecee13605effb351b77
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101958845"
+---
+# <span data-ttu-id="af06e-101">Remove-AzCosmosDBMongoDBCollection</span><span class="sxs-lookup"><span data-stu-id="af06e-101">Remove-AzCosmosDBMongoDBCollection</span></span>
+
+## <span data-ttu-id="af06e-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="af06e-102">SYNOPSIS</span></span>
+<span data-ttu-id="af06e-103">Elimina una raccolta MagaDBDb.</span><span class="sxs-lookup"><span data-stu-id="af06e-103">Deletes a CosmosDB MongoDB Collection.</span></span>
+
+## <span data-ttu-id="af06e-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="af06e-104">SYNTAX</span></span>
+
+### <span data-ttu-id="af06e-105">ByNameParameterSet (Impostazione predefinita)</span><span class="sxs-lookup"><span data-stu-id="af06e-105">ByNameParameterSet (Default)</span></span>
+```
+Remove-AzCosmosDBMongoDBCollection -ResourceGroupName <String> -AccountName <String> -DatabaseName <String>
+ -Name <String> [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="af06e-106">ByObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="af06e-106">ByObjectParameterSet</span></span>
+```
+Remove-AzCosmosDBMongoDBCollection -InputObject <PSMongoDBCollectionGetResults> [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="af06e-107">DESCRIZIONE</span><span class="sxs-lookup"><span data-stu-id="af06e-107">DESCRIPTION</span></span>
+<span data-ttu-id="af06e-108">Il cmdlet **Remove-AzCosmosDBMongoDBCollection** elimina una raccolta Dibdb MongoDB.</span><span class="sxs-lookup"><span data-stu-id="af06e-108">The **Remove-AzCosmosDBMongoDBCollection** cmdlet deletes a CosmosDB MongoDB Collection.</span></span>
+
+## <span data-ttu-id="af06e-109">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="af06e-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="af06e-110">Esempio 1</span><span class="sxs-lookup"><span data-stu-id="af06e-110">Example 1</span></span>
+```powershell
+PS C:\> Remove-AzCosmosDBMongoDBCollection -ResourceGroupName {rgName} -AccountName {accountName} -DatabaseName {dbName} -Name {collectionName}
+```
+
+<span data-ttu-id="af06e-111">Il cmdlet restituisce un oggetto di tipo bool(when -PassThru is passed), che è true se l'eliminazione è riuscita.</span><span class="sxs-lookup"><span data-stu-id="af06e-111">The cmdlet returns an object of type bool(when -PassThru is passed) which is true, if the delete was successful.</span></span>
+
+## <span data-ttu-id="af06e-112">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="af06e-112">PARAMETERS</span></span>
+
+### <span data-ttu-id="af06e-113">-AccountName</span><span class="sxs-lookup"><span data-stu-id="af06e-113">-AccountName</span></span>
+<span data-ttu-id="af06e-114">Nome dell'account di database DB di Dellis.</span><span class="sxs-lookup"><span data-stu-id="af06e-114">Name of the Cosmos DB database account.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: ByNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="af06e-115">-Confirm</span><span class="sxs-lookup"><span data-stu-id="af06e-115">-Confirm</span></span>
+<span data-ttu-id="af06e-116">Chiede conferma prima di eseguire il cmdlet.</span><span class="sxs-lookup"><span data-stu-id="af06e-116">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="af06e-117">-DatabaseName</span><span class="sxs-lookup"><span data-stu-id="af06e-117">-DatabaseName</span></span>
+<span data-ttu-id="af06e-118">Nome del database.</span><span class="sxs-lookup"><span data-stu-id="af06e-118">Database name.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: ByNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="af06e-119">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="af06e-119">-DefaultProfile</span></span>
+<span data-ttu-id="af06e-120">Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.</span><span class="sxs-lookup"><span data-stu-id="af06e-120">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="af06e-121">-InputObject</span><span class="sxs-lookup"><span data-stu-id="af06e-121">-InputObject</span></span>
+<span data-ttu-id="af06e-122">Oggetto Contenitore Sql.</span><span class="sxs-lookup"><span data-stu-id="af06e-122">Sql Container object.</span></span>
+
+```yaml
+Type: PSMongoDBCollectionGetResults
+Parameter Sets: ByObjectParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="af06e-123">-Name</span><span class="sxs-lookup"><span data-stu-id="af06e-123">-Name</span></span>
+<span data-ttu-id="af06e-124">Nome della raccolta.</span><span class="sxs-lookup"><span data-stu-id="af06e-124">Collection name.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: ByNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="af06e-125">-PassThru</span><span class="sxs-lookup"><span data-stu-id="af06e-125">-PassThru</span></span>
+<span data-ttu-id="af06e-126">Per essere impostato su true se l'utente vuole ricevere un output.</span><span class="sxs-lookup"><span data-stu-id="af06e-126">To be set to true if the user wants to receive an output.</span></span>
+<span data-ttu-id="af06e-127">L'output è true se l'operazione è riuscita e in caso contrario viene generato un errore.</span><span class="sxs-lookup"><span data-stu-id="af06e-127">The output is true if the operation was successful and an error is thrown if not.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="af06e-128">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="af06e-128">-ResourceGroupName</span></span>
+<span data-ttu-id="af06e-129">Nome del gruppo di risorse.</span><span class="sxs-lookup"><span data-stu-id="af06e-129">Name of resource group.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: ByNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="af06e-130">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="af06e-130">-WhatIf</span></span>
+<span data-ttu-id="af06e-131">Mostra cosa accadrebbe se il cmdlet viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="af06e-131">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="af06e-132">Il cmdlet non viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="af06e-132">The cmdlet is not run.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="af06e-133">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="af06e-133">CommonParameters</span></span>
+<span data-ttu-id="af06e-134">Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="af06e-134">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="af06e-135">Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.</span><span class="sxs-lookup"><span data-stu-id="af06e-135">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="af06e-136">INPUT</span><span class="sxs-lookup"><span data-stu-id="af06e-136">INPUTS</span></span>
+
+### <span data-ttu-id="af06e-137">Microsoft.Azure.Commands.EnterpriseDb.Models.PSMongoDBCollectionGetResults</span><span class="sxs-lookup"><span data-stu-id="af06e-137">Microsoft.Azure.Commands.CosmosDB.Models.PSMongoDBCollectionGetResults</span></span>
+
+## <span data-ttu-id="af06e-138">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="af06e-138">OUTPUTS</span></span>
+
+### <span data-ttu-id="af06e-139">System.Void</span><span class="sxs-lookup"><span data-stu-id="af06e-139">System.Void</span></span>
+
+### <span data-ttu-id="af06e-140">System.Boolean</span><span class="sxs-lookup"><span data-stu-id="af06e-140">System.Boolean</span></span>
+
+## <span data-ttu-id="af06e-141">NOTE</span><span class="sxs-lookup"><span data-stu-id="af06e-141">NOTES</span></span>
+
+## <span data-ttu-id="af06e-142">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="af06e-142">RELATED LINKS</span></span>
