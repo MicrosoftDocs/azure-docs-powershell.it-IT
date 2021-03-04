@@ -1,0 +1,210 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Sql.dll-Help.xml
+Module Name: Az.Sql
+ms.assetid: 8C5D29AD-0B15-4CD4-8637-86ABD19F41C8
+online version: https://docs.microsoft.com/powershell/module/az.sql/get-azsqlcapability
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlCapability.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlCapability.md
+ms.openlocfilehash: 7c45cb511fe1466aa2ac210ceeb2b609f6c0e97a
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101993269"
+---
+# <span data-ttu-id="d5a36-101">Get-AzSqlCapability</span><span class="sxs-lookup"><span data-stu-id="d5a36-101">Get-AzSqlCapability</span></span>
+
+## <span data-ttu-id="d5a36-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="d5a36-102">SYNOPSIS</span></span>
+<span data-ttu-id="d5a36-103">Recupera SQL funzionalità di database per l'abbonamento corrente.</span><span class="sxs-lookup"><span data-stu-id="d5a36-103">Gets SQL Database capabilities for the current subscription.</span></span>
+
+## <span data-ttu-id="d5a36-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="d5a36-104">SYNTAX</span></span>
+
+### <span data-ttu-id="d5a36-105">FilterResults (Default)</span><span class="sxs-lookup"><span data-stu-id="d5a36-105">FilterResults (Default)</span></span>
+```
+Get-AzSqlCapability [-LocationName] <String> [-ServerVersionName <String>] [-EditionName <String>]
+ [-ServiceObjectiveName <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="d5a36-106">DefaultResults</span><span class="sxs-lookup"><span data-stu-id="d5a36-106">DefaultResults</span></span>
+```
+Get-AzSqlCapability [-LocationName] <String> [-Defaults] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="d5a36-107">DESCRIZIONE</span><span class="sxs-lookup"><span data-stu-id="d5a36-107">DESCRIPTION</span></span>
+<span data-ttu-id="d5a36-108">Il cmdlet **Get-AzSqlCapability** ottiene le funzionalità di Azure SQL Database sono disponibili nella sottoscrizione corrente per un'area geografica.</span><span class="sxs-lookup"><span data-stu-id="d5a36-108">The **Get-AzSqlCapability** cmdlet gets the Azure SQL Database capabilities available on the current subscription for a region.</span></span>
+<span data-ttu-id="d5a36-109">Se si specificano i *parametri ServerVersionName,* *EditionName* o *ServiceObjectiveName,* questo cmdlet restituisce i valori specificati e i predecessori.</span><span class="sxs-lookup"><span data-stu-id="d5a36-109">If you specify the *ServerVersionName*, *EditionName*, or *ServiceObjectiveName* parameters, this cmdlet returns the specified values and their predecessors.</span></span>
+
+## <span data-ttu-id="d5a36-110">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="d5a36-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="d5a36-111">Esempio 1: Ottenere funzionalità per l'abbonamento corrente per un'area geografica</span><span class="sxs-lookup"><span data-stu-id="d5a36-111">Example 1: Get capabilities for the current subscription for a region</span></span>
+```
+PS C:\>Get-AzSqlCapability -LocationName "Central US"
+Location                : Central US
+Status                  : Available
+SupportedServerVersions : {12.0, 2.0}
+```
+
+<span data-ttu-id="d5a36-112">Questo comando restituisce le funzionalità per SQL istanze di database nella sottoscrizione corrente per l'area geografica Stati Uniti centrali.</span><span class="sxs-lookup"><span data-stu-id="d5a36-112">This command returns the capabilities for SQL Database instances on the current subscription for the Central US region.</span></span>
+
+### <span data-ttu-id="d5a36-113">Esempio 2: Ottenere funzionalità predefinite per l'abbonamento corrente per un'area geografica</span><span class="sxs-lookup"><span data-stu-id="d5a36-113">Example 2: Get default capabilities for the current subscription for a region</span></span>
+```
+PS C:\>Get-AzSqlCapability -LocationName "Central US" -Defaults
+Location        : Central US
+Status          : Available
+ExpandedDetails : Version: 2.0 (Default) -> Edition: Standard (Default) -> Service Objective: S0 (Default)
+```
+
+<span data-ttu-id="d5a36-114">Questo comando restituisce le funzionalità predefinite per SQL database della sottoscrizione corrente nell'area centrale degli Stati Uniti.</span><span class="sxs-lookup"><span data-stu-id="d5a36-114">This command returns the default capabilities for SQL Databases on the current subscription in the Central US region.</span></span>
+
+### <span data-ttu-id="d5a36-115">Esempio 3: Ottenere i dettagli per un obiettivo del servizio</span><span class="sxs-lookup"><span data-stu-id="d5a36-115">Example 3: Get details for a service objective</span></span>
+```
+PS C:\>Get-AzSqlCapability -LocationName "Central US" -ServiceObjectiveName "S1"
+Location        : Central US
+Status          : Available
+ExpandedDetails : Version: 12.0 (Available) -> Edition: Standard (Default) -> Service Objective: S1 (Available) 
+                  Version: 2.0 (Default) -> Edition: Standard (Default) -> Service Objective: S1 (Available)
+```
+
+<span data-ttu-id="d5a36-116">Questo comando recupera le funzionalità predefinite per SQL database per l'obiettivo di servizio specificato nella sottoscrizione corrente.</span><span class="sxs-lookup"><span data-stu-id="d5a36-116">This command gets default capabilities for SQL Databases for the specified service objective on the current subscription.</span></span>
+
+## <span data-ttu-id="d5a36-117">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="d5a36-117">PARAMETERS</span></span>
+
+### <span data-ttu-id="d5a36-118">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="d5a36-118">-DefaultProfile</span></span>
+<span data-ttu-id="d5a36-119">Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure</span><span class="sxs-lookup"><span data-stu-id="d5a36-119">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d5a36-120">-Defaults</span><span class="sxs-lookup"><span data-stu-id="d5a36-120">-Defaults</span></span>
+<span data-ttu-id="d5a36-121">Indica che questo cmdlet ottiene solo le impostazioni predefinite.</span><span class="sxs-lookup"><span data-stu-id="d5a36-121">Indicates that this cmdlet gets only defaults.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: DefaultResults
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d5a36-122">-EditionName</span><span class="sxs-lookup"><span data-stu-id="d5a36-122">-EditionName</span></span>
+<span data-ttu-id="d5a36-123">Specifica il nome dell'edizione del database per cui il cmdlet ottiene le funzionalità.</span><span class="sxs-lookup"><span data-stu-id="d5a36-123">Specifies the name of the database edition for which this cmdlet gets capabilities.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: FilterResults
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d5a36-124">-LocationName</span><span class="sxs-lookup"><span data-stu-id="d5a36-124">-LocationName</span></span>
+<span data-ttu-id="d5a36-125">Specifica il nome della posizione per cui il cmdlet ottiene funzionalità.</span><span class="sxs-lookup"><span data-stu-id="d5a36-125">Specifies the name of the Location for which this cmdlet gets capabilities.</span></span>
+<span data-ttu-id="d5a36-126">Per altre informazioni, vedere Azure Regions http://azure.microsoft.com/en-us/regions/ ( http://azure.microsoft.com/en-us/regions/) .</span><span class="sxs-lookup"><span data-stu-id="d5a36-126">For more information, see Azure Regionshttp://azure.microsoft.com/en-us/regions/ (http://azure.microsoft.com/en-us/regions/).</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d5a36-127">-ServerVersionName</span><span class="sxs-lookup"><span data-stu-id="d5a36-127">-ServerVersionName</span></span>
+<span data-ttu-id="d5a36-128">Specifica il nome della versione del server per cui il cmdlet ottiene le funzionalità.</span><span class="sxs-lookup"><span data-stu-id="d5a36-128">Specifies the name of the server version for which this cmdlet gets capabilities.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: FilterResults
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d5a36-129">-ServiceObjectiveName</span><span class="sxs-lookup"><span data-stu-id="d5a36-129">-ServiceObjectiveName</span></span>
+<span data-ttu-id="d5a36-130">Specifica il nome dell'obiettivo del servizio per cui questo cmdlet ottiene funzionalità.</span><span class="sxs-lookup"><span data-stu-id="d5a36-130">Specifies the name of the service objective for which this cmdlet gets capabilities.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: FilterResults
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d5a36-131">-Confirm</span><span class="sxs-lookup"><span data-stu-id="d5a36-131">-Confirm</span></span>
+<span data-ttu-id="d5a36-132">Chiede conferma prima di eseguire il cmdlet.</span><span class="sxs-lookup"><span data-stu-id="d5a36-132">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d5a36-133">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="d5a36-133">-WhatIf</span></span>
+<span data-ttu-id="d5a36-134">Mostra cosa accadrebbe se il cmdlet viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="d5a36-134">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="d5a36-135">Il cmdlet non viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="d5a36-135">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d5a36-136">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="d5a36-136">CommonParameters</span></span>
+<span data-ttu-id="d5a36-137">Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="d5a36-137">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="d5a36-138">Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.</span><span class="sxs-lookup"><span data-stu-id="d5a36-138">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="d5a36-139">INPUT</span><span class="sxs-lookup"><span data-stu-id="d5a36-139">INPUTS</span></span>
+
+### <span data-ttu-id="d5a36-140">System.String</span><span class="sxs-lookup"><span data-stu-id="d5a36-140">System.String</span></span>
+
+## <span data-ttu-id="d5a36-141">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="d5a36-141">OUTPUTS</span></span>
+
+### <span data-ttu-id="d5a36-142">Microsoft.Azure.Commands.Sql.Location_Capabilities.Model.LocationCapabilityModel</span><span class="sxs-lookup"><span data-stu-id="d5a36-142">Microsoft.Azure.Commands.Sql.Location_Capabilities.Model.LocationCapabilityModel</span></span>
+
+## <span data-ttu-id="d5a36-143">NOTE</span><span class="sxs-lookup"><span data-stu-id="d5a36-143">NOTES</span></span>
+
+## <span data-ttu-id="d5a36-144">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="d5a36-144">RELATED LINKS</span></span>
