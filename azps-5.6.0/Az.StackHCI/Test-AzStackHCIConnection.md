@@ -1,0 +1,134 @@
+---
+external help file: Az.StackHCI-help.xml
+Module Name: Az.StackHCI
+online version: https://docs.microsoft.com/powershell/module/az.stackhci/test-azstackhciconnection
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/StackHCI/help/Test-AzStackHCIConnection.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/StackHCI/help/Test-AzStackHCIConnection.md
+ms.openlocfilehash: 4de1e1467e1bc422666b7144f5d5fcd6c30c0c63
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101976206"
+---
+# Test-AzStackHCIConnection
+
+## SYNOPSIS
+Test-AzStackHCIConnection verifica la connettività dai nodi cluster locali ai servizi di Azure richiesti da Azure Stack HCI.
+
+## SINTASSI
+
+```
+Test-AzStackHCIConnection [[-EnvironmentName] <String>] [[-Region] <String>] [[-ComputerName] <String>]
+ [[-Credential] <PSCredential>] [<CommonParameters>]
+```
+
+## DESCRIZIONE
+Test-AzStackHCIConnection verifica la connettività dai nodi cluster locali ai servizi di Azure richiesti da Azure Stack HCI.
+
+## ESEMPI
+
+### ESEMPIO 1
+```powershell
+C:\PS\>Test-AzStackHCIConnection
+Test: Connect to Azure Stack HCI Service
+EndpointTested: https://azurestackhci-df.azurefd.net/health
+IsRequired: True
+Result: Succeeded
+```
+Richiamo in uno dei nodi del cluster. Caso di esito positivo.
+
+### ESEMPIO 2
+```powershell
+C:\PS\>Test-AzStackHCIConnection
+Test: Connect to Azure Stack HCI Service
+EndpointTested: https://azurestackhci-df.azurefd.net/health
+IsRequired: True
+Result: Failed
+FailedNodes: Node1inClus2, Node2inClus3
+```
+Richiamo in uno dei nodi del cluster. Caso non riuscito.
+
+## PARAMETERS
+
+### -ComputerName
+Specifica uno del nodo del cluster nel cluster locale che viene registrato in Azure.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Credential
+Specifica le credenziali per NomeComputer.
+Il valore predefinito è l'utente corrente che esegue il cmdlet.
+
+```yaml
+Type: System.Management.Automation.PSCredential
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EnvironmentName
+Specifica l'ambiente di Azure.
+Il valore predefinito è AzureCloud.
+I valori validi sono AzureCloud, AzureChinaCloud, AzureUSGovernment, AzureGermanCloud, AzurePPE
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: $AzureCloud
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Region
+Specifica l'area geografica a cui connettersi.
+Non usato a meno che non si tratta dell'area Canary.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
+
+## INPUT
+
+## OUTPUT
+
+### PSCustomObject. Restituisce le proprietà seguenti in PSCustomObject
+### Test: nome del test eseguito.
+### EndpointTested: endpoint utilizzato nel test.
+### IsRequired: True o False
+### Risultato: Operazione riuscita o Non riuscita
+### FailedNodes: elenco dei nodi in cui il test non è riuscito.
+## NOTE
+
+## COLLEGAMENTI CORRELATI
