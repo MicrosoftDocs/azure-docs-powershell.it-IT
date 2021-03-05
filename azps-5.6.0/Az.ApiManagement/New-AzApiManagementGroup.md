@@ -1,0 +1,184 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ApiManagement.ServiceManagement.dll-Help.xml
+Module Name: Az.ApiManagement
+ms.assetid: EE2BC1F7-E6F3-477D-8416-8E61893534E2
+online version: https://docs.microsoft.com/powershell/module/az.apimanagement/new-azapimanagementgroup
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementGroup.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementGroup.md
+ms.openlocfilehash: 99967c385896350d4a994fd27b432e26639628f1
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101988552"
+---
+# New-AzApiManagementGroup
+
+## SYNOPSIS
+Crea un gruppo di gestione delle API.
+
+## SINTASSI
+
+```
+New-AzApiManagementGroup -Context <PsApiManagementContext> [-GroupId <String>] -Name <String>
+ [-Description <String>] [-Type <PsApiManagementGroupType>] [-ExternalId <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## DESCRIZIONE
+Il cmdlet **New-AzApiManagementGroup** crea un gruppo di gestione delle API.
+
+## ESEMPI
+
+### Esempio 1: Creare un gruppo di gestione
+```powershell
+PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>New-AzApiManagementGroup -Context $apimContext -Name "Group0001"
+```
+
+Questo comando crea un gruppo di gestione.
+
+### Esempio 2
+
+Crea un gruppo di gestione delle API. (autogenerati)
+
+```powershell
+<!-- Aladdin Generated Example --> 
+New-AzApiManagementGroup -Context <PsApiManagementContext> -Description 'Create Echo Api V4' -GroupId '0001' -Name 'Group0001' -Type Custom
+```
+
+## PARAMETERS
+
+### -Context
+Specifica l'istanza **dell'oggetto PsApiManagementContext.**
+
+```yaml
+Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Descrizione
+Specifica la descrizione del gruppo di gestione.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ExternalId
+Per i gruppi esterni, questa proprietà contiene l'ID del gruppo del provider di identità esterno, ad esempio Azure Active Directory aad://contoso5api.onmicrosoft.com/groups/12ad42b1-592f-4664-a77b4250-2f2e82579f4c; in caso contrario, il valore è Null.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -GroupId
+Specifica l'identificatore del nuovo gruppo di gestione.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Name
+Specifica il nome del gruppo di gestione.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Type
+Tipo di gruppo. Il gruppo personalizzato è un gruppo definito dall'utente. Il gruppo di sistema include amministratori, sviluppatori e guest. Non è possibile creare o aggiornare un gruppo di sistema.  Il gruppo esterno è un gruppo del provider di identità esterno come Azure Active Directory. Questo parametro è facoltativo e per impostazione predefinita viene considerato come un gruppo personalizzato.
+
+```yaml
+Type: System.Nullable`1[Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementGroupType]
+Parameter Sets: (All)
+Aliases:
+Accepted values: Custom, System, External
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.
+
+## INPUT
+
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
+
+### System.String
+
+### System.Nullable'1[[Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementGroupType, Microsoft.Azure.PowerShell.Cmdlets.ApiManagement.ServiceManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+
+## OUTPUT
+
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementGroup
+
+## NOTE
+
+## COLLEGAMENTI CORRELATI
+
+[Get-AzApiManagementGroup](./Get-AzApiManagementGroup.md)
+
+[Remove-AzApiManagementGroup](./Remove-AzApiManagementGroup.md)
+
+[Set-AzApiManagementGroup](./Set-AzApiManagementGroup.md)
+
+
