@@ -1,0 +1,309 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+online version: https://docs.microsoft.com/powershell/module/az.network/new-azapplicationgatewaybackendhttpsetting
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGatewayBackendHttpSetting.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGatewayBackendHttpSetting.md
+ms.openlocfilehash: ab461fd6038b8a1feac5b870b86d5eabefb0caa7
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101961757"
+---
+# New-AzApplicationGatewayBackendHttpSetting
+
+## SYNOPSIS
+Crea l'impostazione HTTP back-end per un gateway applicazione.
+
+## SINTASSI
+
+```
+New-AzApplicationGatewayBackendHttpSetting -Name <String> -Port <Int32> -Protocol <String>
+ -CookieBasedAffinity <String> [-RequestTimeout <Int32>]
+ [-ConnectionDraining <PSApplicationGatewayConnectionDraining>] [-ProbeId <String>]
+ [-Probe <PSApplicationGatewayProbe>]
+ [-AuthenticationCertificates <PSApplicationGatewayAuthenticationCertificate[]>]
+ [-TrustedRootCertificate <PSApplicationGatewayTrustedRootCertificate[]>] [-PickHostNameFromBackendAddress]
+ [-HostName <String>] [-AffinityCookieName <String>] [-Path <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## DESCRIZIONE
+Il cmdlet New-AzApplicationGatewayBackendHttpSetting crea impostazioni HTTP back-end per un gateway applicazione.
+Le impostazioni HTTP di back-end vengono applicate a tutti i server back-end in un pool.
+
+## ESEMPI
+
+### Esempio 1: Creare impostazioni HTTP di back-end
+```powershell
+PS C:\>$Setting = New-AzApplicationGatewayBackendHttpSetting -Name "Setting01" -Port 80 -Protocol Http -CookieBasedAffinity Disabled
+```
+
+Questo comando crea impostazioni HTTP back-end denominate Setting01 sulla porta 80, usando il protocollo HTTP, con affinità basata su cookie disabilitata.
+Le impostazioni vengono archiviate nella $Setting variabile.
+
+### Esempio 2
+
+Crea l'impostazione HTTP back-end per un gateway applicazione. (autogenerati)
+
+<!-- Aladdin Generated Example -->
+```powershell
+New-AzApplicationGatewayBackendHttpSetting -CookieBasedAffinity Enabled -Name 'Setting01' -PickHostNameFromBackendAddress -Port 80 -Probe <PSApplicationGatewayProbe> -Protocol http -RequestTimeout <Int32>
+```
+
+## PARAMETERS
+
+### -AffinityCookieName
+Nome cookie da usare per il cookie di affinità
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AuthenticationCertificates
+Specifica i certificati di autenticazione per il gateway applicazione.
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAuthenticationCertificate[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ConnectionDraining
+Esigomento della connessione della risorsa delle impostazioni http back-end.
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayConnectionDraining
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CookieBasedAffinity
+Specifica se l'affinità basata su cookie deve essere abilitata o disabilitata per il pool di server back-end.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+Accepted values: Enabled, Disabled
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HostName
+Imposta l'intestazione host da inviare ai server back-end.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+Specifica il nome delle impostazioni HTTP back-end create dal cmdlet.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Path
+Percorso che deve essere usato come prefisso per tutte le richieste HTTP.
+Se per questo parametro non viene fornito alcun valore, non verrà specificato alcun percorso con prefisso.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PickHostNameFromBackendAddress
+Contrassegnare se è necessario selezionare l'intestazione host dal nome host del server back-end.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Port
+Specifica la porta del pool di server back-end.
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Snodato
+Specifica un valore da associare al pool di server back-end.
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayProbe
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LambdaId
+Specifica l'ID del database da associare al pool di server back-end.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Protocol
+Specifica il protocollo da usare per le comunicazioni tra il gateway applicazione e i server back-end.
+I valori accettabili per questo parametro sono Http e Https.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+Accepted values: Http, Https
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RequestTimeout
+Specifica un valore di timeout della richiesta.
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TrustedRootCertificate
+Certificati radice attendibili per gateway applicazione
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayTrustedRootCertificate[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## INPUT
+
+### Nessuno
+
+## OUTPUT
+
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings
+
+## NOTE
+
+## COLLEGAMENTI CORRELATI
+
+[Add-AzApplicationGatewayBackendHttpSetting](./Add-AzApplicationGatewayBackendHttpSetting.md)
+
+[Get-AzApplicationGatewayBackendHttpSetting](./Get-AzApplicationGatewayBackendHttpSetting.md)
+
+[Remove-AzApplicationGatewayBackendHttpSetting](./Remove-AzApplicationGatewayBackendHttpSetting.md)
+
+[Set-AzApplicationGatewayBackendHttpSetting](./Set-AzApplicationGatewayBackendHttpSetting.md)
+
