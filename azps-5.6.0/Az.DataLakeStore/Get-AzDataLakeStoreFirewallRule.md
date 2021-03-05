@@ -1,0 +1,124 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.DataLakeStore.dll-Help.xml
+Module Name: Az.DataLakeStore
+ms.assetid: 7D27F7B1-BAF8-4A01-8BA7-A75A4CFAE370
+online version: https://docs.microsoft.com/powershell/module/az.datalakestore/get-azdatalakestorefirewallrule
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataLakeStore/DataLakeStore/help/Get-AzDataLakeStoreFirewallRule.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataLakeStore/DataLakeStore/help/Get-AzDataLakeStoreFirewallRule.md
+ms.openlocfilehash: 580b5518e1fc0894a51920e781464258bef9e9cc
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101966669"
+---
+# Get-AzDataLakeStoreFirewallRule
+
+## SYNOPSIS
+Ottiene le regole del firewall specificate nel Data Lake Store specificato.
+Se non viene specificata alcuna regola del firewall, vengono elencate tutte le regole del firewall per l'account.
+
+## SINTASSI
+
+```
+Get-AzDataLakeStoreFirewallRule [-Account] <String> [[-Name] <String>] [[-ResourceGroupName] <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## DESCRIZIONE
+Il Get-AzDataLakeStoreFirewallRule cmdlet recupera le regole del firewall specificate nel Data Lake Store specificato.
+Se non viene specificata alcuna regola del firewall, vengono elencate tutte le regole del firewall per l'account.
+
+## ESEMPI
+
+### Esempio 1: Recuperare una regola del firewall specifica
+```
+PS C:\> Get-AzDataLakeStoreFirewallRule -AccountName "ContosoADL" -Name MyFirewallRule
+```
+
+Restituisce la regola del firewall denominata "MyFirewallRule" dall'account "ContosoADL"
+
+### Esempio 2: Elencare tutte le regole del firewall in un account
+```
+PS C:\> Get-AzDataLakeStoreFirewallRule -AccountName "ContosoADL"
+```
+
+Restituisce tutte le regole del firewall nell'account "ContosoADL"
+
+## PARAMETERS
+
+### -Account
+Account Data Lake Store da cui recuperare la regola del firewall.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: AccountName
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Credenziali, account, tenant e abbonamento usati per la comunicazione con Azure
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+Nome della regola del firewall da recuperare
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Nome del gruppo di risorse in cui si vuole recuperare la regola del firewall specificata dall'account specificato.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## INPUT
+
+### System.String
+
+## OUTPUT
+
+### Microsoft.Azure.Commands.DataLakeStore.Models.DataLakeStoreFirewallRule
+
+## NOTE
+
+## COLLEGAMENTI CORRELATI
