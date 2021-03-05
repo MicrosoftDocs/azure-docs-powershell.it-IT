@@ -1,0 +1,156 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.CosmosDB.dll-Help.xml
+Module Name: Az.CosmosDB
+online version: https://docs.microsoft.com/powershell/module/az.cosmosdb/get-azcosmosdbcassandratable
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CosmosDB/CosmosDB/help/Get-AzCosmosDBCassandraTable.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CosmosDB/CosmosDB/help/Get-AzCosmosDBCassandraTable.md
+ms.openlocfilehash: 2d784a82974f47c67bae89d55042b81c9c83e273
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101978734"
+---
+# <span data-ttu-id="e9d7d-101">Get-AzCosmosDBCassandraTable</span><span class="sxs-lookup"><span data-stu-id="e9d7d-101">Get-AzCosmosDBCassandraTable</span></span>
+
+## <span data-ttu-id="e9d7d-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="e9d7d-102">SYNOPSIS</span></span>
+<span data-ttu-id="e9d7d-103">Ottiene una tabella della Cassa seguente: Cassandra.</span><span class="sxs-lookup"><span data-stu-id="e9d7d-103">Gets a CosmosDB Cassandra Table.</span></span>
+
+## <span data-ttu-id="e9d7d-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="e9d7d-104">SYNTAX</span></span>
+
+### <span data-ttu-id="e9d7d-105">ByNameParameterSet (Impostazione predefinita)</span><span class="sxs-lookup"><span data-stu-id="e9d7d-105">ByNameParameterSet (Default)</span></span>
+```
+Get-AzCosmosDBCassandraTable -AccountName <String> -KeyspaceName <String> -ResourceGroupName <String>
+ [-Name <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="e9d7d-106">ByParentObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="e9d7d-106">ByParentObjectParameterSet</span></span>
+```
+Get-AzCosmosDBCassandraTable [-Name <String>] -ParentObject <PSCassandraKeyspaceGetResults>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="e9d7d-107">DESCRIZIONE</span><span class="sxs-lookup"><span data-stu-id="e9d7d-107">DESCRIPTION</span></span>
+<span data-ttu-id="e9d7d-108">Il cmdlet **Get-AzCosmosDBCassandraTable** crea un nuovo elemento o aggiorna un elemento Esistente CassasDB Cassandra Keyspace.</span><span class="sxs-lookup"><span data-stu-id="e9d7d-108">The **Get-AzCosmosDBCassandraTable** cmdlet creates a new or updates an existing CosmosDB Cassandra Keyspace.</span></span>
+
+## <span data-ttu-id="e9d7d-109">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="e9d7d-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="e9d7d-110">Esempio 1</span><span class="sxs-lookup"><span data-stu-id="e9d7d-110">Example 1</span></span>
+```powershell
+PS C:\> $table = Get-AzCosmosDBCassandraTable -ResourceGroupName {resourceGroupName} -AccountName {accountName} -Keyspace {keyspaceName} -Name {name}
+
+Name    Id   Resource
+{name}  {id} {resourceObject}
+```
+
+<span data-ttu-id="e9d7d-111">{{ Get-AzCosmosDBCassandraTable ottiene le proprietà di una CassandraKeyspace esistente.</span><span class="sxs-lookup"><span data-stu-id="e9d7d-111">{{ Get-AzCosmosDBCassandraTable gets the properties of an existing CassandraKeyspace.</span></span> <span data-ttu-id="e9d7d-112">È possibile espandere la risorsa per ottenere le proprietà DefaultTtl, Schema, _etag, _ts _rid.}}</span><span class="sxs-lookup"><span data-stu-id="e9d7d-112">You can expand the Resource to get the DefaultTtl, Schema, _etag, _ts, _rid properties.}}</span></span>
+
+## <span data-ttu-id="e9d7d-113">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="e9d7d-113">PARAMETERS</span></span>
+
+### <span data-ttu-id="e9d7d-114">-AccountName</span><span class="sxs-lookup"><span data-stu-id="e9d7d-114">-AccountName</span></span>
+<span data-ttu-id="e9d7d-115">Nome dell'account di database DB di Dellis.</span><span class="sxs-lookup"><span data-stu-id="e9d7d-115">Name of the Cosmos DB database account.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: ByNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e9d7d-116">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="e9d7d-116">-DefaultProfile</span></span>
+<span data-ttu-id="e9d7d-117">Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.</span><span class="sxs-lookup"><span data-stu-id="e9d7d-117">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e9d7d-118">-KeyspaceName</span><span class="sxs-lookup"><span data-stu-id="e9d7d-118">-KeyspaceName</span></span>
+<span data-ttu-id="e9d7d-119">Nome spazio tasti Cassandra.</span><span class="sxs-lookup"><span data-stu-id="e9d7d-119">Cassandra Keyspace Name.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: ByNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e9d7d-120">-Name</span><span class="sxs-lookup"><span data-stu-id="e9d7d-120">-Name</span></span>
+<span data-ttu-id="e9d7d-121">Nome tabella Cassandra.</span><span class="sxs-lookup"><span data-stu-id="e9d7d-121">Cassandra Table Name.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e9d7d-122">-ParentObject</span><span class="sxs-lookup"><span data-stu-id="e9d7d-122">-ParentObject</span></span>
+<span data-ttu-id="e9d7d-123">Oggetto Cassandra Keyspace.</span><span class="sxs-lookup"><span data-stu-id="e9d7d-123">Cassandra Keyspace object.</span></span>
+
+```yaml
+Type: PSCassandraKeyspaceGetResults
+Parameter Sets: ByParentObjectParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e9d7d-124">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="e9d7d-124">-ResourceGroupName</span></span>
+<span data-ttu-id="e9d7d-125">Nome del gruppo di risorse.</span><span class="sxs-lookup"><span data-stu-id="e9d7d-125">Name of resource group.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: ByNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e9d7d-126">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="e9d7d-126">CommonParameters</span></span>
+<span data-ttu-id="e9d7d-127">Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="e9d7d-127">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="e9d7d-128">Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.</span><span class="sxs-lookup"><span data-stu-id="e9d7d-128">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="e9d7d-129">INPUT</span><span class="sxs-lookup"><span data-stu-id="e9d7d-129">INPUTS</span></span>
+
+### <span data-ttu-id="e9d7d-130">Microsoft.Azure.Commands.CommonsDB.Models.PSCassandraKeyspaceGetResults</span><span class="sxs-lookup"><span data-stu-id="e9d7d-130">Microsoft.Azure.Commands.CosmosDB.Models.PSCassandraKeyspaceGetResults</span></span>
+
+## <span data-ttu-id="e9d7d-131">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="e9d7d-131">OUTPUTS</span></span>
+
+### <span data-ttu-id="e9d7d-132">Microsoft.Azure.Commands.EnterpriseDb.Models.PSCassandraTableGetResults</span><span class="sxs-lookup"><span data-stu-id="e9d7d-132">Microsoft.Azure.Commands.CosmosDB.Models.PSCassandraTableGetResults</span></span>
+
+### <span data-ttu-id="e9d7d-133">Microsoft.Azure.Commands.EnterpriseDb.Models.PSThroughputSettingsGetResults</span><span class="sxs-lookup"><span data-stu-id="e9d7d-133">Microsoft.Azure.Commands.CosmosDB.Models.PSThroughputSettingsGetResults</span></span>
+
+## <span data-ttu-id="e9d7d-134">NOTE</span><span class="sxs-lookup"><span data-stu-id="e9d7d-134">NOTES</span></span>
+
+## <span data-ttu-id="e9d7d-135">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="e9d7d-135">RELATED LINKS</span></span>
