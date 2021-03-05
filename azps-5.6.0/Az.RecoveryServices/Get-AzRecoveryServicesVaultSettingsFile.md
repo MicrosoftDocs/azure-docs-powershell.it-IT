@@ -1,0 +1,218 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices.dll-Help.xml
+Module Name: Az.RecoveryServices
+ms.assetid: 56074606-28A6-4F91-A56C-4C8A9A31543F
+online version: https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesvaultsettingsfile
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesVaultSettingsFile.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesVaultSettingsFile.md
+ms.openlocfilehash: b71da123933cd190038164b67d37fb81b0d5c973
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102003181"
+---
+# <span data-ttu-id="a0d0e-101">Get-AzRecoveryServicesVaultSettingsFile</span><span class="sxs-lookup"><span data-stu-id="a0d0e-101">Get-AzRecoveryServicesVaultSettingsFile</span></span>
+
+## <span data-ttu-id="a0d0e-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="a0d0e-102">SYNOPSIS</span></span>
+<span data-ttu-id="a0d0e-103">Recupera il file di impostazioni del vault di Azure Site Recovery.</span><span class="sxs-lookup"><span data-stu-id="a0d0e-103">Gets the Azure Site Recovery vault settings file.</span></span>
+
+## <span data-ttu-id="a0d0e-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="a0d0e-104">SYNTAX</span></span>
+
+### <span data-ttu-id="a0d0e-105">ForSiteWithCertificate</span><span class="sxs-lookup"><span data-stu-id="a0d0e-105">ForSiteWithCertificate</span></span>
+```
+Get-AzRecoveryServicesVaultSettingsFile [-Vault] <ARSVault> [[-Path] <String>] -SiteIdentifier <String>
+ -Certificate <String> -SiteFriendlyName <String> [-SiteRecovery] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="a0d0e-106">ByDefaultWithCertificate</span><span class="sxs-lookup"><span data-stu-id="a0d0e-106">ByDefaultWithCertificate</span></span>
+```
+Get-AzRecoveryServicesVaultSettingsFile [-Vault] <ARSVault> [[-Path] <String>] -Certificate <String>
+ [-SiteRecovery] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="a0d0e-107">ForBackupVaultTypeWithCertificate</span><span class="sxs-lookup"><span data-stu-id="a0d0e-107">ForBackupVaultTypeWithCertificate</span></span>
+```
+Get-AzRecoveryServicesVaultSettingsFile [-Vault] <ARSVault> [[-Path] <String>] -Certificate <String> [-Backup]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="a0d0e-108">DESCRIZIONE</span><span class="sxs-lookup"><span data-stu-id="a0d0e-108">DESCRIPTION</span></span>
+<span data-ttu-id="a0d0e-109">Il cmdlet **Get-AzRecoveryServicesVaultSettingsFile** ottiene il file di impostazioni per un vault di Azure Site Recovery.</span><span class="sxs-lookup"><span data-stu-id="a0d0e-109">The **Get-AzRecoveryServicesVaultSettingsFile** cmdlet gets the settings file for an Azure Site Recovery vault.</span></span>
+
+## <span data-ttu-id="a0d0e-110">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="a0d0e-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="a0d0e-111">Esempio 1: Registrare un computer Windows Server o DPM per il backup di Azure</span><span class="sxs-lookup"><span data-stu-id="a0d0e-111">Example 1: Register a Windows Server or DPM machine for Azure Backup</span></span>
+```powershell
+PS C:\> $Vault01 = Get-AzRecoveryServicesVault -Name "TestVault"
+PS C:\> $CredsPath = "C:\Downloads"
+PS C:\> $Credsfilename = Get-AzRecoveryServicesVaultSettingsFile -Backup -Vault $Vault01 -Path $CredsPath
+```
+
+<span data-ttu-id="a0d0e-112">Il primo comando recupera il vault denominato TestVault e quindi lo archivia nella variabile $Vault 01.</span><span class="sxs-lookup"><span data-stu-id="a0d0e-112">The first command gets the vault named TestVault, and then stores it in the $Vault01 variable.</span></span>
+<span data-ttu-id="a0d0e-113">Il secondo comando imposta la $CredsPath variabile su C:\Downloads.</span><span class="sxs-lookup"><span data-stu-id="a0d0e-113">The second command sets the $CredsPath variable to C:\Downloads.</span></span>
+<span data-ttu-id="a0d0e-114">L'ultimo comando recupera il file delle credenziali del vault per $Vault 01 usando le credenziali in $CredsPath per Il backup di Azure.</span><span class="sxs-lookup"><span data-stu-id="a0d0e-114">The last command gets the vault credentials file for $Vault01 using the credentials in $CredsPath for Azure Backup.</span></span>
+
+### <span data-ttu-id="a0d0e-115">Esempio 2</span><span class="sxs-lookup"><span data-stu-id="a0d0e-115">Example 2</span></span>
+```powershell
+PS C:\> $Credsfilename = Get-AzRecoveryServicesVaultSettingsFile -SiteIdentifier -Vault $Vault01
+```
+
+<span data-ttu-id="a0d0e-116">Il comando recupera il file delle credenziali del vault per $Vault 01 di tipo vault siteRecovery.</span><span class="sxs-lookup"><span data-stu-id="a0d0e-116">The command gets the vault credentials file for $Vault01 of vault type siteRecovery.</span></span>
+
+### <span data-ttu-id="a0d0e-117">Esempio 3: Registrare un computer Windows Server o DPM per il backup di Azure</span><span class="sxs-lookup"><span data-stu-id="a0d0e-117">Example 3: Register a Windows Server or DPM machine for Azure Backup</span></span>
+```powershell
+PS C:\> $Credsfilename = Get-AzRecoveryServicesVaultSettingsFile -SiteIdentifier -Vault $Vault01
+```
+
+<span data-ttu-id="a0d0e-118">Il comando recupera il file delle credenziali del vault per $Vault 01.</span><span class="sxs-lookup"><span data-stu-id="a0d0e-118">The command gets the vault credentials file for $Vault01.</span></span>
+
+## <span data-ttu-id="a0d0e-119">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="a0d0e-119">PARAMETERS</span></span>
+
+### <span data-ttu-id="a0d0e-120">-Backup</span><span class="sxs-lookup"><span data-stu-id="a0d0e-120">-Backup</span></span>
+<span data-ttu-id="a0d0e-121">Indica che il file delle credenziali del vault è applicabile al backup di Azure.</span><span class="sxs-lookup"><span data-stu-id="a0d0e-121">Indicates the vault credentials file is applicable to Azure Backup.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: ForBackupVaultTypeWithCertificate
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="a0d0e-122">-Certificato</span><span class="sxs-lookup"><span data-stu-id="a0d0e-122">-Certificate</span></span>
+<span data-ttu-id="a0d0e-123">{{Fill Certificate Description}}</span><span class="sxs-lookup"><span data-stu-id="a0d0e-123">{{Fill Certificate Description}}</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="a0d0e-124">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="a0d0e-124">-DefaultProfile</span></span>
+<span data-ttu-id="a0d0e-125">Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.</span><span class="sxs-lookup"><span data-stu-id="a0d0e-125">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="a0d0e-126">-Path</span><span class="sxs-lookup"><span data-stu-id="a0d0e-126">-Path</span></span>
+<span data-ttu-id="a0d0e-127">Specifica il percorso del file di impostazioni del vault di Azure Site Recovery.</span><span class="sxs-lookup"><span data-stu-id="a0d0e-127">Specifies the path to the Azure Site Recovery vault settings file.</span></span>
+<span data-ttu-id="a0d0e-128">È possibile scaricare questo file dal portale del vault di Azure Site Recovery e archiviarlo in locale.</span><span class="sxs-lookup"><span data-stu-id="a0d0e-128">You can download this file from the Azure Site Recovery vault portal and store it locally.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="a0d0e-129">-SiteFriendlyName</span><span class="sxs-lookup"><span data-stu-id="a0d0e-129">-SiteFriendlyName</span></span>
+<span data-ttu-id="a0d0e-130">Specifica il nome descrittivo del sito.</span><span class="sxs-lookup"><span data-stu-id="a0d0e-130">Specifies the site friendly name.</span></span>
+<span data-ttu-id="a0d0e-131">Usare questo parametro se si scaricano le credenziali del vault per un sito di Hyper-V.</span><span class="sxs-lookup"><span data-stu-id="a0d0e-131">Use this parameter if you are downloading the vault credentials for a Hyper-V site.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ForSiteWithCertificate
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="a0d0e-132">-SiteIdentifier</span><span class="sxs-lookup"><span data-stu-id="a0d0e-132">-SiteIdentifier</span></span>
+<span data-ttu-id="a0d0e-133">Specifica l'identificatore del sito.</span><span class="sxs-lookup"><span data-stu-id="a0d0e-133">Specifies the site identifier.</span></span>
+<span data-ttu-id="a0d0e-134">Usare questo parametro se si scaricano le credenziali del vault per un sito di Hyper-V.</span><span class="sxs-lookup"><span data-stu-id="a0d0e-134">Use this parameter if you are downloading the vault credentials for a Hyper-V site.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ForSiteWithCertificate
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="a0d0e-135">-SiteRecovery</span><span class="sxs-lookup"><span data-stu-id="a0d0e-135">-SiteRecovery</span></span>
+<span data-ttu-id="a0d0e-136">Indica che il file delle credenziali del vault è applicabile a Azure Site Recovery.</span><span class="sxs-lookup"><span data-stu-id="a0d0e-136">Indicates the vault credentials file is applicable to Azure Site Recovery.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: ForSiteWithCertificate, ByDefaultWithCertificate
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="a0d0e-137">-Vault</span><span class="sxs-lookup"><span data-stu-id="a0d0e-137">-Vault</span></span>
+<span data-ttu-id="a0d0e-138">Specifica l'oggetto vault di Azure Site Recovery.</span><span class="sxs-lookup"><span data-stu-id="a0d0e-138">Specifies the Azure Site Recovery vault object.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.RecoveryServices.ARSVault
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="a0d0e-139">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="a0d0e-139">CommonParameters</span></span>
+<span data-ttu-id="a0d0e-140">Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="a0d0e-140">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="a0d0e-141">Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.</span><span class="sxs-lookup"><span data-stu-id="a0d0e-141">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="a0d0e-142">INPUT</span><span class="sxs-lookup"><span data-stu-id="a0d0e-142">INPUTS</span></span>
+
+### <span data-ttu-id="a0d0e-143">Microsoft.Azure.Commands.RecoveryServices.ARSVault</span><span class="sxs-lookup"><span data-stu-id="a0d0e-143">Microsoft.Azure.Commands.RecoveryServices.ARSVault</span></span>
+
+## <span data-ttu-id="a0d0e-144">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="a0d0e-144">OUTPUTS</span></span>
+
+### <span data-ttu-id="a0d0e-145">Microsoft.Azure.Commands.RecoveryServices.VaultSettingsFilePath</span><span class="sxs-lookup"><span data-stu-id="a0d0e-145">Microsoft.Azure.Commands.RecoveryServices.VaultSettingsFilePath</span></span>
+
+## <span data-ttu-id="a0d0e-146">NOTE</span><span class="sxs-lookup"><span data-stu-id="a0d0e-146">NOTES</span></span>
+
+## <span data-ttu-id="a0d0e-147">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="a0d0e-147">RELATED LINKS</span></span>
+
+[<span data-ttu-id="a0d0e-148">Get-AzRecoveryServicesVault</span><span class="sxs-lookup"><span data-stu-id="a0d0e-148">Get-AzRecoveryServicesVault</span></span>](./Get-AzRecoveryServicesVault.md)
+
+[<span data-ttu-id="a0d0e-149">New-AzRecoveryServicesVault</span><span class="sxs-lookup"><span data-stu-id="a0d0e-149">New-AzRecoveryServicesVault</span></span>](./New-AzRecoveryServicesVault.md)
+
+[<span data-ttu-id="a0d0e-150">Remove-AzRecoveryServicesVault</span><span class="sxs-lookup"><span data-stu-id="a0d0e-150">Remove-AzRecoveryServicesVault</span></span>](./Remove-AzRecoveryServicesVault.md)
+
+
