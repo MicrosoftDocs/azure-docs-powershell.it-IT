@@ -1,0 +1,261 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.KeyVault.dll-Help.xml
+Module Name: Az.KeyVault
+online version: https://docs.microsoft.com/powershell/module/az.keyvault/update-azkeyvaultcertificate
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Update-AzKeyVaultCertificate.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Update-AzKeyVaultCertificate.md
+ms.openlocfilehash: 0ec3336ea19a9676902f11c92e50f211ab4f5cec
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101976974"
+---
+# <span data-ttu-id="bfdd4-101">Update-AzKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="bfdd4-101">Update-AzKeyVaultCertificate</span></span>
+
+## <span data-ttu-id="bfdd4-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="bfdd4-102">SYNOPSIS</span></span>
+<span data-ttu-id="bfdd4-103">Modifica gli attributi modificabili di un certificato.</span><span class="sxs-lookup"><span data-stu-id="bfdd4-103">Modifies editable attributes of a certificate.</span></span>
+
+## <span data-ttu-id="bfdd4-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="bfdd4-104">SYNTAX</span></span>
+
+### <span data-ttu-id="bfdd4-105">ByName (Impostazione predefinita)</span><span class="sxs-lookup"><span data-stu-id="bfdd4-105">ByName (Default)</span></span>
+```
+Update-AzKeyVaultCertificate [-VaultName] <String> [-Name] <String> [[-Version] <String>] [-Enable <Boolean>]
+ [-Tag <Hashtable>] [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="bfdd4-106">ByInputObject</span><span class="sxs-lookup"><span data-stu-id="bfdd4-106">ByInputObject</span></span>
+```
+Update-AzKeyVaultCertificate [-InputObject] <PSKeyVaultCertificateIdentityItem> [[-Version] <String>]
+ [-Enable <Boolean>] [-Tag <Hashtable>] [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="bfdd4-107">DESCRIZIONE</span><span class="sxs-lookup"><span data-stu-id="bfdd4-107">DESCRIPTION</span></span>
+<span data-ttu-id="bfdd4-108">Il cmdlet **Update-AzKeyVaultCertificate** modifica gli attributi modificabili di un certificato.</span><span class="sxs-lookup"><span data-stu-id="bfdd4-108">The **Update-AzKeyVaultCertificate** cmdlet modifies the editable attributes of a certificate.</span></span>
+
+## <span data-ttu-id="bfdd4-109">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="bfdd4-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="bfdd4-110">Esempio 1: Modificare i tag associati a un certificato</span><span class="sxs-lookup"><span data-stu-id="bfdd4-110">Example 1: Modify the tags associated with a certificate</span></span>
+```powershell
+PS C:\> $Tags = @{ "Team" = "Azure" ; "Role" = "Engg" }
+PS C:\> Update-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "TestCert01" -Tag $Tags -PassThru
+
+Name        : TestCert01
+Certificate : [Subject]
+                CN=AZURE
+
+              [Issuer]
+                CN=AZURE
+
+              [Serial Number]
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+              [Not Before]
+                7/27/2016 6:50:01 PM
+
+              [Not After]
+                7/27/2018 7:00:01 PM
+
+              [Thumbprint]
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+Id          : https://ContosoKV01.vault.azure.net:443/certificates/TestCert01
+KeyId       : https://ContosoKV01.vault.azure.net:443/keys/TestCert01
+SecretId    : https://ContosoKV01.vault.azure.net:443/secrets/TestCert01
+Thumbprint  : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Tags        : {[Role, Engg], [Team, Azure]}
+Enabled     : True
+Created     : 7/28/2016 2:00:01 AM
+Updated     : 8/1/2016 5:37:48 PM
+```
+
+<span data-ttu-id="bfdd4-111">Il primo comando assegna una matrice di coppie chiave/valore alla $Tags variabile.</span><span class="sxs-lookup"><span data-stu-id="bfdd4-111">The first command assigns an array of key/value pairs to the $Tags variable.</span></span>
+<span data-ttu-id="bfdd4-112">Il secondo comando imposta il valore tag del certificato denominato TestCert01 $Tags.</span><span class="sxs-lookup"><span data-stu-id="bfdd4-112">The second command sets the tags value of the certificate named TestCert01 to be $Tags.</span></span>
+
+### <span data-ttu-id="bfdd4-113">Esempio 2</span><span class="sxs-lookup"><span data-stu-id="bfdd4-113">Example 2</span></span>
+
+<span data-ttu-id="bfdd4-114">Modifica gli attributi modificabili di un certificato.</span><span class="sxs-lookup"><span data-stu-id="bfdd4-114">Modifies editable attributes of a certificate.</span></span> <span data-ttu-id="bfdd4-115">(autogenerati)</span><span class="sxs-lookup"><span data-stu-id="bfdd4-115">(autogenerated)</span></span>
+
+```powershell
+<!-- Aladdin Generated Example --> 
+Update-AzKeyVaultCertificate -Enable $true -Name 'TestCert01' -VaultName 'ContosoKV01'
+```
+
+## <span data-ttu-id="bfdd4-116">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="bfdd4-116">PARAMETERS</span></span>
+
+### <span data-ttu-id="bfdd4-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="bfdd4-117">-DefaultProfile</span></span>
+<span data-ttu-id="bfdd4-118">Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.</span><span class="sxs-lookup"><span data-stu-id="bfdd4-118">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfdd4-119">-Enable</span><span class="sxs-lookup"><span data-stu-id="bfdd4-119">-Enable</span></span>
+<span data-ttu-id="bfdd4-120">Se presente, abilitare un certificato se il valore è vero.</span><span class="sxs-lookup"><span data-stu-id="bfdd4-120">If present, enable a certificate if value is true.</span></span>
+<span data-ttu-id="bfdd4-121">Disabilitare un certificato se il valore è falso.</span><span class="sxs-lookup"><span data-stu-id="bfdd4-121">Disable a certificate if value is false.</span></span>
+<span data-ttu-id="bfdd4-122">Se non viene specificato, il valore esistente dello stato abilitato/disabilitato del certificato rimane invariato.</span><span class="sxs-lookup"><span data-stu-id="bfdd4-122">If not specified, the existing value of the certificate's enabled/disabled state remains unchanged.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Boolean]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfdd4-123">-InputObject</span><span class="sxs-lookup"><span data-stu-id="bfdd4-123">-InputObject</span></span>
+<span data-ttu-id="bfdd4-124">Oggetto Certificato</span><span class="sxs-lookup"><span data-stu-id="bfdd4-124">Certificate object</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificateIdentityItem
+Parameter Sets: ByInputObject
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfdd4-125">-Name</span><span class="sxs-lookup"><span data-stu-id="bfdd4-125">-Name</span></span>
+<span data-ttu-id="bfdd4-126">Nome certificato.</span><span class="sxs-lookup"><span data-stu-id="bfdd4-126">Certificate name.</span></span>
+<span data-ttu-id="bfdd4-127">Il cmdlet crea l'FQDN di un segreto dal nome del vault, l'ambiente attualmente selezionato e il nome del segreto.</span><span class="sxs-lookup"><span data-stu-id="bfdd4-127">Cmdlet constructs the FQDN of a secret from vault name, currently selected environment and secret name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByName
+Aliases: CertificateName
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfdd4-128">-PassThru</span><span class="sxs-lookup"><span data-stu-id="bfdd4-128">-PassThru</span></span>
+<span data-ttu-id="bfdd4-129">Il cmdlet non restituisce l'oggetto per impostazione predefinita.</span><span class="sxs-lookup"><span data-stu-id="bfdd4-129">Cmdlet does not return object by default.</span></span>
+<span data-ttu-id="bfdd4-130">Se questa opzione è specificata, restituire l'oggetto certificato.</span><span class="sxs-lookup"><span data-stu-id="bfdd4-130">If this switch is specified, return certificate object.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfdd4-131">-Tag</span><span class="sxs-lookup"><span data-stu-id="bfdd4-131">-Tag</span></span>
+<span data-ttu-id="bfdd4-132">Tabella hash che rappresenta i tag di certificato.</span><span class="sxs-lookup"><span data-stu-id="bfdd4-132">A hashtable representing certificate tags.</span></span>
+<span data-ttu-id="bfdd4-133">Se non viene specificato, i tag esistenti della notifica restano invariati.</span><span class="sxs-lookup"><span data-stu-id="bfdd4-133">If not specified, the existing tags of the sertificate remain unchanged.</span></span>
+<span data-ttu-id="bfdd4-134">Rimuovere un tag specificando una tabella hash vuota.</span><span class="sxs-lookup"><span data-stu-id="bfdd4-134">Remove a tag by specifying an empty Hashtable.</span></span>
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfdd4-135">-VaultName</span><span class="sxs-lookup"><span data-stu-id="bfdd4-135">-VaultName</span></span>
+<span data-ttu-id="bfdd4-136">Nome del Vault.</span><span class="sxs-lookup"><span data-stu-id="bfdd4-136">Vault name.</span></span>
+<span data-ttu-id="bfdd4-137">Il cmdlet crea l'FQDN di un vault in base al nome e all'ambiente attualmente selezionato.</span><span class="sxs-lookup"><span data-stu-id="bfdd4-137">Cmdlet constructs the FQDN of a vault based on the name and currently selected environment.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByName
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfdd4-138">-Version</span><span class="sxs-lookup"><span data-stu-id="bfdd4-138">-Version</span></span>
+<span data-ttu-id="bfdd4-139">Versione del certificato.</span><span class="sxs-lookup"><span data-stu-id="bfdd4-139">Certificate version.</span></span>
+<span data-ttu-id="bfdd4-140">Il cmdlet crea l'FQDN di un certificato dal nome dell'insieme di credenziali, l'ambiente attualmente selezionato, il nome del certificato e la versione del certificato.</span><span class="sxs-lookup"><span data-stu-id="bfdd4-140">Cmdlet constructs the FQDN of a certificate from vault name, currently selected environment, certificate name and certificate version.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: CertificateVersion
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfdd4-141">-Confirm</span><span class="sxs-lookup"><span data-stu-id="bfdd4-141">-Confirm</span></span>
+<span data-ttu-id="bfdd4-142">Chiede conferma prima di eseguire il cmdlet.</span><span class="sxs-lookup"><span data-stu-id="bfdd4-142">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfdd4-143">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="bfdd4-143">-WhatIf</span></span>
+<span data-ttu-id="bfdd4-144">Mostra cosa accadrebbe se il cmdlet viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="bfdd4-144">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="bfdd4-145">Il cmdlet non viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="bfdd4-145">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfdd4-146">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="bfdd4-146">CommonParameters</span></span>
+<span data-ttu-id="bfdd4-147">Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="bfdd4-147">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="bfdd4-148">Per altre informazioni, [vedere](http://go.microsoft.com/fwlink/?LinkID=113216)about_CommonParameters.</span><span class="sxs-lookup"><span data-stu-id="bfdd4-148">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="bfdd4-149">INPUT</span><span class="sxs-lookup"><span data-stu-id="bfdd4-149">INPUTS</span></span>
+
+### <span data-ttu-id="bfdd4-150">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificateIdentityItem</span><span class="sxs-lookup"><span data-stu-id="bfdd4-150">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificateIdentityItem</span></span>
+
+## <span data-ttu-id="bfdd4-151">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="bfdd4-151">OUTPUTS</span></span>
+
+### <span data-ttu-id="bfdd4-152">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="bfdd4-152">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificate</span></span>
+
+## <span data-ttu-id="bfdd4-153">NOTE</span><span class="sxs-lookup"><span data-stu-id="bfdd4-153">NOTES</span></span>
+
+## <span data-ttu-id="bfdd4-154">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="bfdd4-154">RELATED LINKS</span></span>
