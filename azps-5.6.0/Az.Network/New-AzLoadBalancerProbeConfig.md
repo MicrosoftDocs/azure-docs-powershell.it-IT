@@ -1,0 +1,214 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+ms.assetid: 2049CB74-E3CB-4294-B97C-B41E91209A1E
+online version: https://docs.microsoft.com/powershell/module/az.network/new-azloadbalancerprobeconfig
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzLoadBalancerProbeConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzLoadBalancerProbeConfig.md
+ms.openlocfilehash: b06679d47bdbedb2cdcf3584d23cf43b5fcc0c99
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101970061"
+---
+# New-AzLoadBalancerProbeConfig
+
+## SYNOPSIS
+Crea una configurazione di configurazione per una bilanciamento del carico.
+
+## SINTASSI
+
+```
+New-AzLoadBalancerProbeConfig -Name <String> [-Protocol <String>] -Port <Int32> -IntervalInSeconds <Int32>
+ -ProbeCount <Int32> [-RequestPath <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+## DESCRIZIONE
+Il cmdlet **New-AzLoadBalancerProbeConfig crea** una configurazione preconfigurata per una bilanciamento del carico di Azure.
+
+## ESEMPI
+
+### Esempio 1: Creare una configurazione di configurazione
+```powershell
+PS C:\>New-AzLoadBalancerProbeConfig -Name "MyProbe" -Protocol "http" -Port 80 -IntervalInSeconds 15 -ProbeCount 15
+```
+
+Questo comando crea una configurazione denominata MyProbe usando il protocollo HTTP.
+La nuova versione si connetterà a un servizio con carico bilanciato sulla porta 80.
+
+### Esempio 2
+
+Crea una configurazione di configurazione per una bilanciamento del carico. (autogenerati)
+
+<!-- Aladdin Generated Example -->
+```powershell
+New-AzLoadBalancerProbeConfig -IntervalInSeconds 15 -Name 'MyProbe' -Port 80 -ProbeCount 15 -Protocol 'http' -RequestPath 'healthcheck.aspx'
+```
+
+## PARAMETERS
+
+### -DefaultProfile
+Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IntervalInSeconds
+Specifica l'intervallo, in secondi, tra le due istanze di un servizio con carico bilanciato.
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Name
+Specifica il nome della configurazione di configurazione da creare.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Porta
+Specifica la porta su cui il nuovo sistema dovrebbe connettersi a un servizio con carico bilanciato.
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Count
+Specifica il numero di errori consecutivi per istanza per cui un'istanza deve essere considerata non integra.
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Protocol
+Specifica il protocollo da usare per la configurazione dell'esempio.
+I valori accettabili per questo parametro sono: Tcp o Http.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -RequestPath
+Specifica il percorso in un servizio con carico bilanciato per determinare l'integrità.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Confirm
+Chiede conferma prima di eseguire il cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Mostra cosa accadrebbe se il cmdlet viene eseguito. Il cmdlet non viene eseguito.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Per altre informazioni, vedere about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## INPUT
+
+### System.String
+
+### System.Int32
+
+## OUTPUT
+
+### Microsoft.Azure.Commands.Network.Models.PSProbe
+
+## NOTE
+
+## COLLEGAMENTI CORRELATI
+
+[Add-AzLoadBalancerProbeConfig](./Add-AzLoadBalancerProbeConfig.md)
+
+[Get-AzLoadBalancerProbeConfig](./Get-AzLoadBalancerProbeConfig.md)
+
+[Remove-AzLoadBalancerProbeConfig](./Remove-AzLoadBalancerProbeConfig.md)
+
+[Set-AzLoadBalancerProbeConfig](./Set-AzLoadBalancerProbeConfig.md)
+
+
