@@ -1,0 +1,303 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.IotHub.dll-Help.xml
+Module Name: Az.IotHub
+online version: https://docs.microsoft.com/powershell/module/az.iothub/add-aziothubdeployment
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/IotHub/IotHub/help/Add-AzIotHubDeployment.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/IotHub/IotHub/help/Add-AzIotHubDeployment.md
+ms.openlocfilehash: 80494fd18216ce42883a962920ab78bbc2aa628b
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101997931"
+---
+# <span data-ttu-id="58977-101">Add-AzIotHubDeployment</span><span class="sxs-lookup"><span data-stu-id="58977-101">Add-AzIotHubDeployment</span></span>
+
+## <span data-ttu-id="58977-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="58977-102">SYNOPSIS</span></span>
+<span data-ttu-id="58977-103">Aggiungere una distribuzione Edge IoT in un Hub IoT di destinazione.</span><span class="sxs-lookup"><span data-stu-id="58977-103">Add an IoT Edge deployment in a target IoT Hub.</span></span>
+
+## <span data-ttu-id="58977-104">SINTASSI</span><span class="sxs-lookup"><span data-stu-id="58977-104">SYNTAX</span></span>
+
+### <span data-ttu-id="58977-105">ResourceSet (impostazione predefinita)</span><span class="sxs-lookup"><span data-stu-id="58977-105">ResourceSet (Default)</span></span>
+```
+Add-AzIotHubDeployment [-ResourceGroupName] <String> [-IotHubName] <String> -Name <String>
+ [-ModulesContent <Hashtable>] [-Priority <Int32>] [-TargetCondition <String>] [-Metric <Hashtable>]
+ [-Label <Hashtable>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="58977-106">InputObjectSet</span><span class="sxs-lookup"><span data-stu-id="58977-106">InputObjectSet</span></span>
+```
+Add-AzIotHubDeployment [-InputObject] <PSIotHub> -Name <String> [-ModulesContent <Hashtable>]
+ [-Priority <Int32>] [-TargetCondition <String>] [-Metric <Hashtable>] [-Label <Hashtable>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="58977-107">ResourceIdSet</span><span class="sxs-lookup"><span data-stu-id="58977-107">ResourceIdSet</span></span>
+```
+Add-AzIotHubDeployment [-ResourceId] <String> -Name <String> [-ModulesContent <Hashtable>] [-Priority <Int32>]
+ [-TargetCondition <String>] [-Metric <Hashtable>] [-Label <Hashtable>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="58977-108">DESCRIZIONE</span><span class="sxs-lookup"><span data-stu-id="58977-108">DESCRIPTION</span></span>
+<span data-ttu-id="58977-109">Le distribuzioni Edge possono essere create con metriche definite dall'utente per la valutazione su richiesta.</span><span class="sxs-lookup"><span data-stu-id="58977-109">Edge deployments can be created with user defined metrics for on demand evaluation.</span></span>
+<span data-ttu-id="58977-110">Per https://docs.microsoft.com/azure/iot-edge/module-deployment-monitoring altre informazioni, vedere.</span><span class="sxs-lookup"><span data-stu-id="58977-110">See https://docs.microsoft.com/azure/iot-edge/module-deployment-monitoring for more information.</span></span>
+
+## <span data-ttu-id="58977-111">ESEMPI</span><span class="sxs-lookup"><span data-stu-id="58977-111">EXAMPLES</span></span>
+
+### <span data-ttu-id="58977-112">Esempio 1</span><span class="sxs-lookup"><span data-stu-id="58977-112">Example 1</span></span>
+```powershell
+PS C:\> Add-AzIotHubDeployment -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -Name "deploy1"
+```
+
+<span data-ttu-id="58977-113">Creare una distribuzione Edge con metadati predefiniti.</span><span class="sxs-lookup"><span data-stu-id="58977-113">Create an Edge deployment with default metadata.</span></span>
+
+### <span data-ttu-id="58977-114">Esempio 2</span><span class="sxs-lookup"><span data-stu-id="58977-114">Example 2</span></span>
+```powershell
+PS C:\> Add-AzIotHubDeployment -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -Name "deploy1" -Priority 3 -TargetCondition "tags.building=9 and tags.environment='test'"
+```
+
+<span data-ttu-id="58977-115">Creare una distribuzione Edge con priorità 3 che si applica a una condizione quando un dispositivo è contrassegnato nell'edificio 9 e l'ambiente è "test".</span><span class="sxs-lookup"><span data-stu-id="58977-115">Create an Edge deployment with a priority of 3 that applies on condition when a device is tagged in building 9 and the environment is 'test'.</span></span>
+
+### <span data-ttu-id="58977-116">Esempio 2</span><span class="sxs-lookup"><span data-stu-id="58977-116">Example 2</span></span>
+```powershell
+PS C:\> $metrics = @{}
+PS C:\> $metrics.add("query1", "select deviceId from devices where tags.location='US'")
+PS C:\> Add-AzIotHubDeployment -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -Name "deploy1" -Metric $metrics
+```
+
+<span data-ttu-id="58977-117">Crea una distribuzione Edge con metriche utente.</span><span class="sxs-lookup"><span data-stu-id="58977-117">Create an Edge deployment with user metrics.</span></span>
+
+### <span data-ttu-id="58977-118">Esempio 3</span><span class="sxs-lookup"><span data-stu-id="58977-118">Example 3</span></span>
+```powershell
+PS C:\> $labels = @{}
+PS C:\> $labels.add("key0","value0")
+PS C:\> $labels.add("key1","value1")
+PS C:\> Add-AzIotHubDeployment -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -Name "deploy1" -Label $labels
+```
+
+<span data-ttu-id="58977-119">Creare una distribuzione Edge con etichette.</span><span class="sxs-lookup"><span data-stu-id="58977-119">Create an Edge deployment with labels.</span></span>
+
+### <span data-ttu-id="58977-120">Esempio 4</span><span class="sxs-lookup"><span data-stu-id="58977-120">Example 4</span></span>
+```powershell
+PS C:\> $content = Get-Content "C:/Edge/modules.json" | ConvertFrom-Json -AsHashtable
+PS C:\> Add-AzIotHubDeployment -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -Name "deploy1" -ModulesContent $content -TargetCondition "from devices.modules where tags.environment='test'"
+```
+
+<span data-ttu-id="58977-121">Creare una distribuzione Edge con contenuto.</span><span class="sxs-lookup"><span data-stu-id="58977-121">Create an Edge deployment with content.</span></span>
+
+## <span data-ttu-id="58977-122">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="58977-122">PARAMETERS</span></span>
+
+### <span data-ttu-id="58977-123">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="58977-123">-DefaultProfile</span></span>
+<span data-ttu-id="58977-124">Le credenziali, l'account, il tenant e la sottoscrizione usati per la comunicazione con Azure.</span><span class="sxs-lookup"><span data-stu-id="58977-124">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="58977-125">-InputObject</span><span class="sxs-lookup"><span data-stu-id="58977-125">-InputObject</span></span>
+<span data-ttu-id="58977-126">Oggetto IotHub</span><span class="sxs-lookup"><span data-stu-id="58977-126">IotHub object</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Management.IotHub.Models.PSIotHub
+Parameter Sets: InputObjectSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="58977-127">-IotHubName</span><span class="sxs-lookup"><span data-stu-id="58977-127">-IotHubName</span></span>
+<span data-ttu-id="58977-128">Nome dell'hub Iot</span><span class="sxs-lookup"><span data-stu-id="58977-128">Name of the Iot Hub</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ResourceSet
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="58977-129">-Label</span><span class="sxs-lookup"><span data-stu-id="58977-129">-Label</span></span>
+<span data-ttu-id="58977-130">Mappa di etichette da applicare alla distribuzione di destinazione.</span><span class="sxs-lookup"><span data-stu-id="58977-130">Map of labels to be applied to target deployment.</span></span>
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="58977-131">-Metrico</span><span class="sxs-lookup"><span data-stu-id="58977-131">-Metric</span></span>
+<span data-ttu-id="58977-132">Raccolta di query per la definizione delle metriche di distribuzione di IoT Edge.</span><span class="sxs-lookup"><span data-stu-id="58977-132">Queries collection for IoT Edge deployment metrics definition.</span></span>
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="58977-133">-ModulesContent</span><span class="sxs-lookup"><span data-stu-id="58977-133">-ModulesContent</span></span>
+<span data-ttu-id="58977-134">Contenuto della distribuzione dei moduli per dispositivi Edge IoT.</span><span class="sxs-lookup"><span data-stu-id="58977-134">Deployment content of modules for IoT Edge devices.</span></span>
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="58977-135">-Name</span><span class="sxs-lookup"><span data-stu-id="58977-135">-Name</span></span>
+<span data-ttu-id="58977-136">Identificatore per la distribuzione.</span><span class="sxs-lookup"><span data-stu-id="58977-136">Identifier for the deployment.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="58977-137">-Priority</span><span class="sxs-lookup"><span data-stu-id="58977-137">-Priority</span></span>
+<span data-ttu-id="58977-138">Peso della distribuzione in caso di regole concorrenti (il punteggio più alto).</span><span class="sxs-lookup"><span data-stu-id="58977-138">Weight of deployment in case of competing rules (highest wins).</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="58977-139">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="58977-139">-ResourceGroupName</span></span>
+<span data-ttu-id="58977-140">Nome del gruppo di risorse</span><span class="sxs-lookup"><span data-stu-id="58977-140">Name of the Resource Group</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ResourceSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="58977-141">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="58977-141">-ResourceId</span></span>
+<span data-ttu-id="58977-142">ID risorsa IotHub</span><span class="sxs-lookup"><span data-stu-id="58977-142">IotHub Resource Id</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ResourceIdSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="58977-143">-TargetCondition</span><span class="sxs-lookup"><span data-stu-id="58977-143">-TargetCondition</span></span>
+<span data-ttu-id="58977-144">Condizione di destinazione in cui si applica una distribuzione Edge.</span><span class="sxs-lookup"><span data-stu-id="58977-144">Target condition in which an Edge deployment applies to.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="58977-145">-Confirm</span><span class="sxs-lookup"><span data-stu-id="58977-145">-Confirm</span></span>
+<span data-ttu-id="58977-146">Chiede conferma prima di eseguire il cmdlet.</span><span class="sxs-lookup"><span data-stu-id="58977-146">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="58977-147">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="58977-147">-WhatIf</span></span>
+<span data-ttu-id="58977-148">Mostra cosa accadrebbe se il cmdlet viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="58977-148">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="58977-149">Il cmdlet non viene eseguito.</span><span class="sxs-lookup"><span data-stu-id="58977-149">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="58977-150">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="58977-150">CommonParameters</span></span>
+<span data-ttu-id="58977-151">Questo cmdlet supporta i parametri comuni: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutAction, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="58977-151">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="58977-152">Per altre informazioni, vedere about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="58977-152">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="58977-153">INPUT</span><span class="sxs-lookup"><span data-stu-id="58977-153">INPUTS</span></span>
+
+### <span data-ttu-id="58977-154">Microsoft.Azure.Commands.Management.IotHub.Models.PSIotHub</span><span class="sxs-lookup"><span data-stu-id="58977-154">Microsoft.Azure.Commands.Management.IotHub.Models.PSIotHub</span></span>
+
+### <span data-ttu-id="58977-155">System.String</span><span class="sxs-lookup"><span data-stu-id="58977-155">System.String</span></span>
+
+## <span data-ttu-id="58977-156">OUTPUT</span><span class="sxs-lookup"><span data-stu-id="58977-156">OUTPUTS</span></span>
+
+### <span data-ttu-id="58977-157">Microsoft.Azure.Commands.Management.IotHub.Models.PSDeployment</span><span class="sxs-lookup"><span data-stu-id="58977-157">Microsoft.Azure.Commands.Management.IotHub.Models.PSDeployment</span></span>
+
+## <span data-ttu-id="58977-158">NOTE</span><span class="sxs-lookup"><span data-stu-id="58977-158">NOTES</span></span>
+
+## <span data-ttu-id="58977-159">COLLEGAMENTI CORRELATI</span><span class="sxs-lookup"><span data-stu-id="58977-159">RELATED LINKS</span></span>
