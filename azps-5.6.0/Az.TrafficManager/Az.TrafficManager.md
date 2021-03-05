@@ -1,0 +1,86 @@
+---
+Module Name: Az.TrafficManager
+Module Guid: D48CF693-4125-4D2D-8790-1514F44CE325
+Download Help Link: http://go.microsoft.com/fwlink/?LinkId=280237
+Help Version: 4.0.0.0
+Locale: en-US
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/TrafficManager/TrafficManager/help/Az.TrafficManager.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/TrafficManager/TrafficManager/help/Az.TrafficManager.md
+ms.openlocfilehash: c87d9b9a01daba27406b8afa40f9e392b1c24e9b
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101987347"
+---
+# Modulo Az.TrafficManager
+## Descrizione
+Questo argomento elenca gli argomenti della Guida per i cmdlet di Gestione traffico di Azure. I cmdlet usano Gestione risorse di Azure.
+
+## Cmdlet di Az.TrafficManager
+### [Add-AzTrafficManagerCustomHeaderToEndpoint](Add-AzTrafficManagerCustomHeaderToEndpoint.md)
+Aggiunge informazioni di intestazione personalizzate a un oggetto endpoint di Gestione traffico locale.
+
+### [Add-AzTrafficManagerCustomHeaderToProfile](Add-AzTrafficManagerCustomHeaderToProfile.md)
+Aggiunge informazioni di intestazione personalizzate a un oggetto profilo di Gestione traffico locale.
+
+### [Add-AzTrafficManagerEndpointConfig](Add-AzTrafficManagerEndpointConfig.md)
+Aggiunge un endpoint a un oggetto profilo di Gestione traffico locale.
+
+### [Add-AzTrafficManagerExpectedStatusCodeRange](Add-AzTrafficManagerExpectedStatusCodeRange.md)
+Aggiunge un intervallo di codici di stato previsto a un oggetto profilo di Gestione traffico locale.
+
+### [Add-AzTrafficManagerIpAddressRange](Add-AzTrafficManagerIpAddressRange.md)
+Aggiunge un intervallo di indirizzi o una subnet a un oggetto endpoint di Gestione traffico locale.
+
+### [Disable-AzTrafficManagerEndpoint](Disable-AzTrafficManagerEndpoint.md)
+Disabilita un endpoint in un profilo di Gestione traffico.
+
+### [Disable-AzTrafficManagerProfile](Disable-AzTrafficManagerProfile.md)
+Disabilita un profilo di Gestione traffico.
+
+### [Enable-AzTrafficManagerEndpoint](Enable-AzTrafficManagerEndpoint.md)
+Abilita un endpoint in un profilo di Gestione traffico.
+
+### [Enable-AzTrafficManagerProfile](Enable-AzTrafficManagerProfile.md)
+Abilita un profilo di Gestione traffico.
+
+### [Get-AzTrafficManagerEndpoint](Get-AzTrafficManagerEndpoint.md)
+Ottiene un endpoint per un profilo di Gestione traffico.
+
+### [Get-AzTrafficManagerProfile](Get-AzTrafficManagerProfile.md)
+Ottiene un profilo di Gestione traffico.
+
+### [New-AzTrafficManagerEndpoint](New-AzTrafficManagerEndpoint.md)
+Crea un endpoint in un profilo di Gestione traffico.
+
+### [New-AzTrafficManagerProfile](New-AzTrafficManagerProfile.md)
+Crea un profilo di Gestione traffico.
+
+### [Remove-AzTrafficManagerCustomHeaderFromEndpoint](Remove-AzTrafficManagerCustomHeaderFromEndpoint.md)
+Rimuove informazioni di intestazione personalizzate da un oggetto endpoint di Gestione traffico locale.
+
+### [Remove-AzTrafficManagerCustomHeaderFromProfile](Remove-AzTrafficManagerCustomHeaderFromProfile.md)
+Rimuove le informazioni di intestazione personalizzate da un oggetto profilo di Gestione traffico locale.
+
+### [Remove-AzTrafficManagerEndpoint](Remove-AzTrafficManagerEndpoint.md)
+Rimuove un endpoint da Gestione traffico.
+
+### [Remove-AzTrafficManagerEndpointConfig](Remove-AzTrafficManagerEndpointConfig.md)
+Rimuove un endpoint da un oggetto profilo di Gestione traffico locale.
+
+### [Remove-AzTrafficManagerExpectedStatusCodeRange](Remove-AzTrafficManagerExpectedStatusCodeRange.md)
+Rimuove un intervallo di codici di stato previsto da un oggetto profilo di Gestione traffico locale.
+
+### [Remove-AzTrafficManagerIpAddressRange](Remove-AzTrafficManagerIpAddressRange.md)
+Rimuove un intervallo di indirizzi o una subnet da un oggetto endpoint di Gestione traffico locale.
+
+### [Remove-AzTrafficManagerProfile](Remove-AzTrafficManagerProfile.md)
+Elimina un profilo di Gestione traffico.
+
+### [Set-AzTrafficManagerEndpoint](Set-AzTrafficManagerEndpoint.md)
+Aggiorna un endpoint di Gestione traffico.
+
+### [Set-AzTrafficManagerProfile](Set-AzTrafficManagerProfile.md)
+Aggiorna un profilo di Gestione traffico.
+
